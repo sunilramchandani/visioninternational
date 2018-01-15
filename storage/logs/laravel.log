@@ -5099,6 +5099,7 @@ Stack trace:
 #24 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(114): Illuminate\Foundation\Console\Kernel->bootstrap()
 #25 C:\Users\crissah\Desktop\visioninternational\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #26 {main}  
+<<<<<<< HEAD
 [2018-01-15 09:49:10] local.ERROR: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'visionin_international.contact_us' doesn't exist in C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Database\Connection.php:319
 Stack trace:
 #0 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Database\Connection.php(319): PDO->prepare('select * from `...')
@@ -5750,3 +5751,63 @@ Stack trace:
 #7 C:\Users\crissah\Desktop\visioninternational\public\index.php(58): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
 #8 C:\Users\crissah\Desktop\visioninternational\server.php(21): require_once('C:\\Users\\crissa...')
 #9 {main}  
+=======
+[2018-01-15 09:27:36] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Parse error: syntax error, unexpected '<<' (T_SL), expecting end of file in C:\xampp\htdocs\vision_sr\visioninternational\routes\web.php:141
+Stack trace:
+#0 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\Router.php(283): Illuminate\Routing\Router->loadRoutes('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, 'C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(56): Illuminate\Routing\RouteRegistrar->group('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(40): App\Providers\RouteServiceProvider->mapWebRoutes()
+#4 [internal function]: App\Providers\RouteServiceProvider->map()
+#5 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#8 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#9 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(74): Illuminate\Container\Container->call(Array)
+#10 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(33): Illuminate\Foundation\Support\Providers\RouteServiceProvider->loadRoutes()
+#11 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(28): Illuminate\Foundation\Support\Providers\RouteServiceProvider->boot()
+#12 [internal function]: App\Providers\RouteServiceProvider->boot()
+#13 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#15 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#16 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#17 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(788): Illuminate\Container\Container->call(Array)
+#18 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(771): Illuminate\Foundation\Application->bootProvider(Object(App\Providers\RouteServiceProvider))
+#19 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(App\Providers\RouteServiceProvider), 17)
+#20 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(772): array_walk(Array, Object(Closure))
+#21 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#22 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(208): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#23 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(267): Illuminate\Foundation\Application->bootstrapWith(Array)
+#24 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(114): Illuminate\Foundation\Console\Kernel->bootstrap()
+#25 C:\xampp\htdocs\vision_sr\visioninternational\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 {main}  
+[2018-01-15 09:27:41] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Parse error: syntax error, unexpected '<<' (T_SL), expecting end of file in C:\xampp\htdocs\vision_sr\visioninternational\routes\web.php:141
+Stack trace:
+#0 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\Router.php(283): Illuminate\Routing\Router->loadRoutes('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, 'C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(56): Illuminate\Routing\RouteRegistrar->group('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(40): App\Providers\RouteServiceProvider->mapWebRoutes()
+#4 [internal function]: App\Providers\RouteServiceProvider->map()
+#5 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#8 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#9 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(74): Illuminate\Container\Container->call(Array)
+#10 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(33): Illuminate\Foundation\Support\Providers\RouteServiceProvider->loadRoutes()
+#11 C:\xampp\htdocs\vision_sr\visioninternational\app\Providers\RouteServiceProvider.php(28): Illuminate\Foundation\Support\Providers\RouteServiceProvider->boot()
+#12 [internal function]: App\Providers\RouteServiceProvider->boot()
+#13 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#15 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#16 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#17 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(788): Illuminate\Container\Container->call(Array)
+#18 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(771): Illuminate\Foundation\Application->bootProvider(Object(App\Providers\RouteServiceProvider))
+#19 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(App\Providers\RouteServiceProvider), 17)
+#20 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(772): array_walk(Array, Object(Closure))
+#21 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#22 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(208): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#23 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(267): Illuminate\Foundation\Application->bootstrapWith(Array)
+#24 C:\xampp\htdocs\vision_sr\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(114): Illuminate\Foundation\Console\Kernel->bootstrap()
+#25 C:\xampp\htdocs\vision_sr\visioninternational\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 {main}  
+>>>>>>> 5afd27c6096a47c63e4a398124c1c27cf91cfb8d
