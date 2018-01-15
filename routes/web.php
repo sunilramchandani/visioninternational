@@ -138,12 +138,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 Route::get('/login', ['uses' => 'CustomAuth\LoginController@index', 'as' => 'login']);
 Route::post('/login', ['uses' => 'CustomAuth\LoginController@auth', 'as' => 'auth']);
 Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'logout']);
-<<<<<<< HEAD
-Route::get('/contactus', ['uses' => function () {
-    return view('user/contactUs');
-}]);
-=======
-
-//
 Route::resource('contactus', 'ContactUsController');
->>>>>>> 4760c4989b257e66c7d23436aa847699d7e38d6f
+
