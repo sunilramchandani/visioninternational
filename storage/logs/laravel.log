@@ -5070,3 +5070,32 @@ Stack trace:
 #49 C:\xampp\htdocs\vision_sr\visioninternational\server.php(21): require_once('C:\\xampp\\htdocs...')
 #50 {main}  
 >>>>>>> 4760c4989b257e66c7d23436aa847699d7e38d6f
+[2018-01-15 09:09:49] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Parse error: syntax error, unexpected '<<' (T_SL), expecting end of file in C:\Users\crissah\Desktop\visioninternational\routes\web.php:141
+Stack trace:
+#0 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\Router.php(283): Illuminate\Routing\Router->loadRoutes('C:\\Users\\crissa...')
+#1 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Routing\RouteRegistrar.php(104): Illuminate\Routing\Router->group(Array, 'C:\\Users\\crissa...')
+#2 C:\Users\crissah\Desktop\visioninternational\app\Providers\RouteServiceProvider.php(56): Illuminate\Routing\RouteRegistrar->group('C:\\Users\\crissa...')
+#3 C:\Users\crissah\Desktop\visioninternational\app\Providers\RouteServiceProvider.php(40): App\Providers\RouteServiceProvider->mapWebRoutes()
+#4 [internal function]: App\Providers\RouteServiceProvider->map()
+#5 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#6 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#8 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#9 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(74): Illuminate\Container\Container->call(Array)
+#10 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(33): Illuminate\Foundation\Support\Providers\RouteServiceProvider->loadRoutes()
+#11 C:\Users\crissah\Desktop\visioninternational\app\Providers\RouteServiceProvider.php(28): Illuminate\Foundation\Support\Providers\RouteServiceProvider->boot()
+#12 [internal function]: App\Providers\RouteServiceProvider->boot()
+#13 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#14 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#15 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#16 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#17 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(788): Illuminate\Container\Container->call(Array)
+#18 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(771): Illuminate\Foundation\Application->bootProvider(Object(App\Providers\RouteServiceProvider))
+#19 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(App\Providers\RouteServiceProvider), 17)
+#20 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(772): array_walk(Array, Object(Closure))
+#21 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#22 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(208): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#23 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(267): Illuminate\Foundation\Application->bootstrapWith(Array)
+#24 C:\Users\crissah\Desktop\visioninternational\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(114): Illuminate\Foundation\Console\Kernel->bootstrap()
+#25 C:\Users\crissah\Desktop\visioninternational\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 {main}  
