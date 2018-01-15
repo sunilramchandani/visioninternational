@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ContactUs;
+use Mail;
 
 class ContactUsController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactUsController extends Controller
     public function index()
     {
         $contactus_table = ContactUs::all();
-        return view('users.contact_us', compact('contactus_table'));
+        return view('users.contact_us.contact_us', compact('contactus_table'));
     }
 
     /**
@@ -54,6 +55,26 @@ class ContactUsController extends Controller
         $contactus->general_inquiries = $request['general_inquiries'];
         $contactus->message = $request['message'];
         $contactus->save();
+
+        $data = array(
+            'name' => $request->name,
+            'email'   => $request->email,
+            'contact_no'   => $request->contact_no,
+            'country'   => $request->country,
+            'general_inquiries'   => $request->general_inquiries,
+            'bodyMessage'   => $request->message,
+        );
+
+        Mail::send('users.contact_us.contact_received', $data, function ($mail) use($data) {
+            $mail->from($data['email']);
+            $mail->to('careers@visioninternational.skyrocketph.technology')->subject($data['general_inquiries']);
+        });
+
+        Mail::send('users.contact_us.contact_sent', $data, function ($mail) use($data) {
+            $mail->from('careers@visioninternational.skyrocketph.technology');
+            $mail->to($data['email'])->subject($data['name']);
+        });
+
 
         $success = array('ok'=> 'Success');
         

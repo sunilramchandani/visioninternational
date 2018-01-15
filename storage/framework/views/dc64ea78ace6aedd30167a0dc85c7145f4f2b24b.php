@@ -8,8 +8,9 @@
 </head>
 <body>
 
-<form action="{{route('contactus.store')}}" method="post" role="form">
-        {{csrf_field()}}
+<form action="<?php echo e(route('contactus.store')); ?>" method="post" role="form">
+        <?php echo e(csrf_field()); ?>
+
 
         <div class="form-group">
             <label for="name"><i class="fa fa-id-badge" aria-hidden="true"></i> Name</label>
