@@ -1,5 +1,29 @@
 # ramsey/uuid Changelog
 
+## 3.7.2
+
+_Released: 2018-01-13_
+
+  * On Linux, first check sysfs to determine node identifier; this provides a reliable way to identify the node on Docker images, etc. [#185](https://github.com/ramsey/uuid/pull/185)
+
+## 3.7.1
+
+_Released: 2017-09-22_
+
+  * Use `random_bytes()` when generating random nodes
+  * Set the multicast bit for random nodes, according to RFC 4122, §4.5, [#170](https://github.com/ramsey/uuid/pull/170), [#171](https://github.com/ramsey/uuid/pull/171), [#182](https://github.com/ramsey/uuid/pull/182)
+
+## 3.7.0
+
+_Released: 2017-08-04_
+
+  * Add UUID version constants [#173](https://github.com/ramsey/uuid/issues/173), [#177](https://github.com/ramsey/uuid/pull/177)
+    * `Uuid::UUID_TYPE_TIME`
+    * `Uuid::UUID_TYPE_IDENTIFIER`
+    * `Uuid::UUID_TYPE_HASH_MD5`
+    * `Uuid::UUID_TYPE_RANDOM`
+    * `Uuid::UUID_TYPE_HASH_SHA1`
+
 ## 3.6.1
 
 _Released: 2017-03-26_
