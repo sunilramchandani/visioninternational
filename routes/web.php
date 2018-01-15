@@ -138,3 +138,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 Route::get('/login', ['uses' => 'CustomAuth\LoginController@index', 'as' => 'login']);
 Route::post('/login', ['uses' => 'CustomAuth\LoginController@auth', 'as' => 'auth']);
 Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'logout']);
+
+//
+Route::resource('contactus', 'ContactUsController');
