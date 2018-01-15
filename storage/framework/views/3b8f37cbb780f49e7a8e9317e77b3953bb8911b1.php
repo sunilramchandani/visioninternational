@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/contact-us.css" />
     <title>Vision International</title>
 </head>
 <body>
-<form action="{{route('contactus.store')}}" method="post" role="form">
-        {{csrf_field()}}
+<form action="<?php echo e(route('contactus.store')); ?>" method="post" role="form">
+        <?php echo e(csrf_field()); ?>
+
     <div class="container-fluid">
         <div class = "col-lg-12">
             <div class = "col-lg-12 header-image">
-                <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded" alt="Company Banner">
+                <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded" alt="Company Banner">
             </div>
             <div class = "Say Hello row">
                 <div class = "col-lg-12 text-center">
@@ -148,5 +149,5 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
 </html>

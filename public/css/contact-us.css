@@ -1,4 +1,67 @@
-.textboxes-contact{
-	border: none;
-	border-bottom: 2px solid 	#F5F5DC;
+.textarea-input{
+	border: 2px solid #DCDCDC !important;
+}
+.form-control {
+    border: 0;
+    border-bottom: 2px solid #DCDCDC;
+    box-shadow: none;
+    margin-top:5%;
+}
+.form-control:active {
+	border: 0;
+    border-bottom: 2px solid #DCDCDC;
+    box-shadow: none;
+}
+.submit{
+	font-size: 14px;
+	border-radius: 8px;
+	background-color: 	#B22222;
+	color:white;
+	 transition: all 0.5s;
+  	cursor: pointer;
+  	margin: 5px;
+}
+body{
+	background-color: white;
+}
+.submit span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.submit span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.submit:hover span {
+  padding-right: 25px;
+  color:white;
+}
+
+.submit:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ul{
+	list-style: none;
+}
+.country{
+	border-left: 5px solid red;
+	padding-left: 5%;
+	font-size: 1.5em;
+}
+li{
+	text-align: left;
+}
+.inline-header{
+	display:inline;
+}
+.top-header{
+	border-bottom: 3px solid #DCDCDC;
 }
