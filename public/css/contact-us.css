@@ -65,3 +65,15 @@ li{
 .top-header{
 	border-bottom: 3px solid #DCDCDC;
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:black; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

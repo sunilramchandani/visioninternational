@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/contact-us.css" />
-    <title>Vision International</title>
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/font-awesome.min.css') }}">
-    
-</head>
-<body>
+@extends('layouts.master')
+
+@section('page-css')
+<link rel="stylesheet" href="{{ asset('css/contact-us.css') }}">
+@stop
+
+@section('content')
 <form action="{{route('contactus.store')}}" method="post" role="form">
         {{csrf_field()}}
-    <div class="container-fluid">
-        <div class = "col-lg-12">
+        <div class = "col-lg-12 content">
             <div class = "col-lg-12 header-image">
                 <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded" alt="Company Banner">
             </div>
@@ -128,29 +118,27 @@
                     </div>
                 </div>
                 <div class = "office-details row">
-                    <div class = "col-lg-12 form-group">
-                        <label for = "telephone"><span class="glyphicon glyphicon-earphone"></span></label>
-                        <h4 id = "telephone" name = "telephone">TELEPHONE HERE</h4>
+                    <div class = "col-lg-12">
+                        <h4 id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> Telephone Here</h4>
                     </div>
                     <div class = "col-lg-12">
-                        <label for = "mobilephone"><span class="glyphicon glyphicon-phone"></span></label>
-                        <h4 id = "mobilephone" name="mobilephone">MOBILEPHONE HERE</h4>
+                        <h4 id = "mobilephone" name="mobilephone"><i class="fa fa-mobile" aria-hidden="true"></i> Mobilephone Here</h4>
                     </div>
                      <div class = "col-lg-12">
-                        <label for = "address"><span class="glyphicon glyphicon-pushpin"></span></p>
-                        <h4 id = "address" name="address">ADDRESS HERE</h4> 
+                        <h4 id = "address" name="address"> <i class="fa fa-map-pin" aria-hidden="true"></i> Office Address</h4> 
+                    </div>
+                     <div class = "col-lg-12">
+                        <h4 id = "hours" name="hours"> <i class="fa fa-clock-o" aria-hidden="true"></i> Office Hours </h4>
+                    </div>
+                    <div class = "col-lg-12">
+                        <h4 id = "hours" name="hours"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Office Email Address </h4>
                     </div>
                 </div>
             </div>
             <div class = "col-lg-5 col-lg-offset-1">
-                
+                <div class = "map">
+                    <img src="{{ URL::asset('image/map-placeholder.png')}}" class="img img-responsive" alt="Location Map">
+                </div>
             </div>
         </div>
-    </div>
 </form>
-</body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-</html>
