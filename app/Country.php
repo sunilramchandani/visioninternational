@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    protected $table = 'contact_us'; 
-    protected $primaryKey = 'contact-us_id';
+    protected $table = 'country'; 
+    protected $primaryKey = 'country_id';
 }
