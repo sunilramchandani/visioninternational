@@ -140,3 +140,6 @@ Route::post('/login', ['uses' => 'CustomAuth\LoginController@auth', 'as' => 'aut
 Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'logout']);
 Route::resource('contactus', 'ContactUsController');
 
+Route::get('/application', function () {
+    return view('users.application_form.application_form'); 
+});

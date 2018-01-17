@@ -21,9 +21,6 @@
   	cursor: pointer;
   	margin: 5px;
 }
-body{
-	background-color: white;
-}
 .submit span {
   cursor: pointer;
   display: inline-block;
