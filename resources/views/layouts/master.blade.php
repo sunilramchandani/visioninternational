@@ -17,6 +17,7 @@
 <body>
     <div class="container-fluid content">
         @yield('content')
+        @include('layouts.prefooter')
         @include('layouts.footer')
     </div>
        

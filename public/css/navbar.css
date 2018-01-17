@@ -1,0 +1,12 @@
+.nav-whole{
+	min-height:70px;
+	max-height:70px;
+	border: 2px solid black;
+}
+.link{
+	display: inline !important;
+	margin-right: 5% !important;
+}
+.nav-links{
+	margin-top: 20px;
+}
