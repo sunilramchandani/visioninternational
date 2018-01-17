@@ -4,13 +4,13 @@
 <link rel="stylesheet" href="{{ asset('css/contact-us.css') }}">
 @stop
 
+@include('layouts.navbar')
 @section('content')
 <form action="{{route('contactus.store')}}" method="post" role="form">
         {{csrf_field()}}
         <div class = "col-lg-12 content">
-            <div class = "col-lg-12 header-image">
-                <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded" alt="Company Banner">
-            </div>
+            <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+            <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
             <div class = "Say Hello row">
                 <div class = "col-lg-12 text-center">
                     <h1>Say Hello!</h1>
