@@ -2,16 +2,17 @@
   color:white;
   letter-spacing: 2px;
   height:70px;
-  background-image: url("/image/photos/Internship.jpg");
-  opacity: 0.3;
-  background-size: 100% 100%;
+  background-color: #800000;
+  opacity: 0.8;
+  
 }
 .prefooter{
   width: 100%;
   
 }
 .bg-color{
-   background-color: #800000;
+  background-image: url("/image/photos/Internship.jpg");
+  background-size: 100% 100%;
 }
 .applynow-button{
   border-radius: 8px;
