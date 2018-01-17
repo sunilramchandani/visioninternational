@@ -1,12 +1,18 @@
 .top-prefooter-content{
-  background-color: #800000;
   color:white;
   letter-spacing: 2px;
   height:70px;
+  background-color: #800000;
+  opacity: 0.8;
+  
 }
 .prefooter{
   width: 100%;
   
+}
+.bg-color{
+  background-image: url("/image/photos/Internship.jpg");
+  background-size: 100% 100%;
 }
 .applynow-button{
   border-radius: 8px;
@@ -28,13 +34,24 @@
 .subscribe-paragraph{
   display:inline-block;
   margin-top: 65px;
+  color:#C8C8C8 ;
 }
 .subscribe-button{
-  background-color: #800000;
+  background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
   color: white;
   margin-left: -7px;
+  height:45px;
+  display:inline-block;
 }
 .input-email-subscribe{
-  border: 2px solid gray;
+  border: 2px solid   #C8C8C8;
   border-radius: 4px;
+  height:45px;
+  width:20%;
+  color:#C8C8C8 ;
+  display:inline-block;
+}
+::placeholder { 
+    color:  #C8C8C8;
+    opacity: 1; 
 }
