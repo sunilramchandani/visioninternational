@@ -6,3 +6,24 @@
   height: 50%;
   width:100%;
 }
+body{
+	background-color: white;
+}
+.labels{
+	display:inline;
+	color:#B0B0B0;
+}
+.form-control {
+    border: 0;
+    border-bottom: 2px solid #DCDCDC;
+    box-shadow: none;
+    margin-top:5%;
+}
+.textarea-input{
+	border: 1px solid #DCDCDC;
+}
+.submit{
+	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	color:white;
+	border-radius: 8px;
+}
