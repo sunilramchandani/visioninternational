@@ -24,37 +24,75 @@ foreach($data['data'] as $action) {
     }     
   }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-<div>
-<table class="table table-border table-hover" id="abstractticketrequest-table">
-                            <thead>
-                                <tr>
-                                    <th>Terminal</th>
-                                    <th>Form</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        @foreach($data['data'] as $picture)
 
-                        <img src="{{$picture['full_picture']}}" alt="" height="300" width= "300" >
-                        <input type="text" value="{{$picture['message']}}" >
-                        
-                        @endforeach
+@extends('layouts.master')
 
+@section('page-css')
+<link rel="stylesheet" href="{{ asset('css/events.css') }}">
+@stop
 
+@include('layouts.navbar')
+@section('content')
 
-</div>
-</body>
-</html>
+<form action="" method="post" role="form">
+ {{csrf_field()}}
+<div class = "col-lg-12 events">
+  <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+  <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+  <div class ="row col-lg-12">
+    <div class = "col-lg-9 events-header">
+      <h2>Events</h2>
+    </div>
+    <div class="col-lg-3 search-row">
+      <input class="form-control search" type="text" name="searchroleName" id='search-text-input' placeholder="Search"/>
+      <div id='button-holder'>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-9 events-content-container">
+      @foreach($data['data'] as $picture)
+        <div class = "col-lg-3 events-content">
+          <img src="{{$picture['full_picture']}}" alt="" class = "event-img img">
+          <p class = "text-center">{{$picture['message']}}</p>
+          <button class = "submit btn"><span>More Info</span></button>
+        </div>
+      @endforeach
+    </div>
+    <div class = "col-lg-3 categories-sidebar">
+      <table class="table table-categories">
+        <thead bgcolor="#800000">
+          <tr>
+            <th colspan="2" class = "header-table">CATEGORIES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creative</td>
+            <td>(02)</td>
+          </tr>
+          <tr>
+            <td>Design</td>
+            <td>(01)</td>
+          </tr>
+          <tr>
+            <td>Events</td>
+            <td>(10)</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>(03)</td>
+          </tr>
+          <tr>
+            <td>Job Fair</td>
+            <td>(04)</td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
+  </div>
+</div> 
+<div class = "row filler"></div>
+</form>
+@stop
