@@ -40,11 +40,17 @@
                         <p><strong>Stipend</strong></p>
                         <p>${{$company->stipend}} / Month</p>
                     </div>
+<<<<<<< HEAD
                     <div class = "col-lg-12">
+=======
+                    <div class = "col-lg-6">
+>>>>>>> a4da420ef44fbcb2c38d4b75aac3ebacc7f2ab89
                         <p><strong>Opportunity</strong></p>
                     @foreach ($company->opportunity as $opportunities)
-                    
+                        @if ($opportunities->status == "Inactive" )
+                        @else
                         <p>{{$opportunities->opportunity_name}}</p>
+                        @endif
                     @endforeach
                     </div>
                 @endforeach
