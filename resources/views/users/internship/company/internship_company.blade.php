@@ -20,9 +20,9 @@
         </div>
     </div>
     <div class = "body-content">
-        <div class = "col-lg-12">
+        <div class = "col-lg-12 company-whole">
             <div class = "col-lg-4 picture">
-                <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+                <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
             </div>
             <div class = "col-lg-8 company-details">
                 @foreach ($internshipCompany_table as $company)
@@ -55,7 +55,18 @@
                     </div>
                     <div class = "col-lg-12 qualifications">
                         <p><strong>Do I Qualify?</strong></p>
-                        <!--NIKKO DITO YUNG QUALIFICATIONS LOOP -->
+                        <!-- NIKKO DITO YUNG QUALIFICATIONS LOOP -->
+                    </div>
+                    <div class = "col-lg-12 legend">
+                        <p>Opportunity Availability:</p>
+                        <div class ="col-lg-5">
+                            <div class ="col-lg-6">
+                                <p> <i class="fa fa-circle" aria-hidden="true" style="color:#80bf40">  </i> Available </p>
+                            </div>
+                            <div class ="col-lg-6">
+                                <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"> </i> Unavailable </p>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

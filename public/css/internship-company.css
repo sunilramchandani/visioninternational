@@ -13,3 +13,12 @@ hr{
 	background-color:#cccccc;
 	color:#cccccc;
 }
+.legend{
+	background-color:#f2f2f2;
+}
+.company-whole{
+	box-shadow: 5px 5px 5px grey;
+}
+.picture img{
+height:100%;
+}
