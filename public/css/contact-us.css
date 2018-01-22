@@ -9,8 +9,8 @@
 }
 .form-control:active {
 	border: 0;
-    border-bottom: 2px solid #DCDCDC;
-    box-shadow: none;
+  border-bottom: 2px solid #DCDCDC;
+  box-shadow: none;
 }
 .submit{
 	font-size: 14px;

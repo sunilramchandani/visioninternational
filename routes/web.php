@@ -139,6 +139,10 @@ Route::get('/login', ['uses' => 'CustomAuth\LoginController@index', 'as' => 'log
 Route::post('/login', ['uses' => 'CustomAuth\LoginController@auth', 'as' => 'auth']);
 Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'logout']);
 
+Route::get('/application', function () {
+    return view('users.application_form.application_form'); 
+});
+
 
 
 
@@ -147,3 +151,4 @@ Route::resource('fb', 'FacebookPluginController');
 Route::get('/fb', function () {
     return view('facebook');
 });
+
