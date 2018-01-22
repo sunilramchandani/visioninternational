@@ -144,7 +144,6 @@ Route::resource('application', 'ApplicationController');
 
 Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('contactus', 'ContactUsController');
-Route::resource('fb', 'FacebookPluginController');
 Route::get('/fb', function () {
     return view('facebook');
 });
