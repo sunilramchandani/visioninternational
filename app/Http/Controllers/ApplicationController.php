@@ -23,7 +23,7 @@ class ApplicationController extends Controller
         $application_table = Application::all();
         $location_table = Location::all();
         $country_table = Country::all();
-        $program_table = Program::all();
+        $program_table    = Program::all();
         $university_table = University::all();
         $degree_table = Degree::all();
         $major_table = Major::all();
@@ -91,6 +91,40 @@ class ApplicationController extends Controller
 
 
         $application->save();
+
+
+        $data = array(
+            'program_id' => $request->program_id,
+            'country_id'   => $request->country_id,
+            'location_id'   => $request->location_id,
+            'last_name'   => $request->last_name,
+            'first_name'   => $request->first_name,
+            'email'   => $request->email,
+            'contact_no'   => $request->contact_no,
+            'birthdate'   => $request->birthdate,
+            'gender'   => $request->gender,
+            'current_city'   => $request->current_city,
+            'university_id'   => $request->university_id,
+            'degree_id'   => $request->degree_id,
+            'major_id'   => $request->major_id,
+            'grad_date'   => $request->grad_date,
+            'start_date'   => $request->start_date,
+        );
+
+        Mail::send('users.application_form.application_received', $data, function ($mail) use($data) {
+            $mail->from($data['email']);
+            $mail->to('careers@visioninternational.skyrocketph.technology')->subject("Application");
+        });
+
+        Mail::send('users.application_form.application_sent', $data, function ($mail) use($data) {
+            $mail->from('careers@visioninternational.skyrocketph.technology');
+            $mail->to($data['email'])->subject($data['name']);
+        });
+
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('application.index')->with($success);
     }
 
     /**

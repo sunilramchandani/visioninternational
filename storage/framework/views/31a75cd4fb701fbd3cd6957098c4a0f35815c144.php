@@ -24,37 +24,78 @@ foreach($data['data'] as $action) {
     }     
   }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-<div>
-<table class="table table-border table-hover" id="abstractticketrequest-table">
-                            <thead>
-                                <tr>
-                                    <th>Terminal</th>
-                                    <th>Form</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <?php $__currentLoopData = $data['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $picture): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-                        <img src="<?php echo e($picture['full_picture']); ?>" alt="" height="300" width= "300" >
-                        <input type="text" value="<?php echo e($picture['message']); ?>" >
-                        
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
-</div>
-</body>
-</html>
+<?php $__env->startSection('page-css'); ?>
+<link rel="stylesheet" href="<?php echo e(asset('css/events.css')); ?>">
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->startSection('content'); ?>
+
+<form action="" method="post" role="form">
+ <?php echo e(csrf_field()); ?>
+
+<div class = "col-lg-12 events">
+  <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+  <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
+  <div class ="row col-lg-12">
+    <div class = "col-lg-9 events-header">
+      <h2>Events</h2>
+    </div>
+    <div class="col-lg-3 search-row">
+      <input class="form-control search" type="text" name="searchroleName" id='search-text-input' placeholder="Search"/>
+      <div id='button-holder'>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-9 events-content-container">
+      <?php $__currentLoopData = $data['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $picture): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class = "col-lg-3 events-content">
+          <img src="<?php echo e($picture['full_picture']); ?>" alt="" class = "event-img img">
+          <p class = "text-center"><?php echo e($picture['message']); ?></p>
+          <button class = "submit btn"><span>More Info</span></button>
+        </div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+    <div class = "col-lg-3 categories-sidebar">
+      <table class="table table-categories">
+        <thead bgcolor="#800000">
+          <tr>
+            <th colspan="2" class = "header-table">CATEGORIES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creative</td>
+            <td>(02)</td>
+          </tr>
+          <tr>
+            <td>Design</td>
+            <td>(01)</td>
+          </tr>
+          <tr>
+            <td>Events</td>
+            <td>(10)</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>(03)</td>
+          </tr>
+          <tr>
+            <td>Job Fair</td>
+            <td>(04)</td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
+  </div>
+</div> 
+<div class = "row filler"></div>
+</form>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
