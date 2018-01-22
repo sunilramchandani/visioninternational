@@ -53,6 +53,19 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class = "col-lg-12 opportunities">
+                        <hr>
+                        <p><strong>Qualification</strong></p>
+                         @foreach ($company->qualifications as $qualifications)
+                            <div class = "col-lg-6">
+                                @if ($qualifications->status == "Inactive" )
+                                <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> {{$qualifications->qualification}}</p>
+                                @else
+                                <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> {{$qualifications->qualification}}</p>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
                     <div class = "col-lg-12 qualifications">
                         <p><strong>Do I Qualify?</strong></p>
                         <!-- NIKKO DITO YUNG QUALIFICATIONS LOOP -->

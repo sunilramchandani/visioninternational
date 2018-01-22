@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\InternshipCompany;
 use App\Opportunity;
+use App\Qualification;
 class InternshipCompanyController extends Controller
 {
     /**
@@ -15,7 +16,7 @@ class InternshipCompanyController extends Controller
     public function index()
     {
 
-        $internshipCompany_table = InternshipCompany::with('opportunity')->get();
+        $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications')->get();
         
         return view('users.internship.company.internship_company', compact('internshipCompany_table'));
     }

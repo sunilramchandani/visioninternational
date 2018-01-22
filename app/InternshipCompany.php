@@ -13,5 +13,10 @@ class InternshipCompany extends Model
     {
         return $this->hasMany('App\Opportunity', 'company_id');
     }
+
+    public function qualifications()
+    {
+        return $this->hasMany('App\Qualification', 'company_id');
+    }
     
 }
