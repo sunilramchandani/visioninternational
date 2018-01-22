@@ -42,8 +42,10 @@
                     <div class = "col-lg-6">
                         <p><strong>Opportunity</strong></p>
                     <?php $__currentLoopData = $company->opportunity; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opportunities): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    
+                        <?php if($opportunities->status == "Inactive" ): ?>
+                        <?php else: ?>
                         <p><?php echo e($opportunities->opportunity_name); ?></p>
+                        <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

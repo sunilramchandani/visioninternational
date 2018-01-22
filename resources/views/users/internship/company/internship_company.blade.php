@@ -43,8 +43,10 @@
                     <div class = "col-lg-6">
                         <p><strong>Opportunity</strong></p>
                     @foreach ($company->opportunity as $opportunities)
-                    
+                        @if ($opportunities->status == "Inactive" )
+                        @else
                         <p>{{$opportunities->opportunity_name}}</p>
+                        @endif
                     @endforeach
                     </div>
                 @endforeach
