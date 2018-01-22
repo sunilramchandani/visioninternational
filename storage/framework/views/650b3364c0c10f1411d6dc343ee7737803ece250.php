@@ -39,7 +39,16 @@
                         <p><strong>Stipend</strong></p>
                         <p>$<?php echo e($company->stipend); ?> / Month</p>
                     </div>
+                    <div class = "col-lg-12">
+                        <p><strong>Opportunity</strong></p>
+                    <?php $__currentLoopData = $company->opportunity; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opportunities): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    
+                        <p><?php echo e($opportunities->opportunity_name); ?></p>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                <hr>
             </div>
         </div>
     </div>
