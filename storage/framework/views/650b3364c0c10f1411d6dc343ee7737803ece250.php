@@ -54,7 +54,17 @@
                     </div>
                     <div class = "col-lg-12 qualifications">
                         <p><strong>Do I Qualify?</strong></p>
-                        <!-- NIKKO DITO YUNG QUALIFICATIONS LOOP -->
+                             <?php $__currentLoopData = $company->qualifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $qualifications): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($qualifications->status == "Inactive" ): ?>
+                                    <div class = "col-lg-6">
+                                        <p><strike><?php echo e($qualifications->qualification); ?></strike></p>
+                                    </div>
+                                    <?php else: ?>
+                                    <div class = "col-lg-6">
+                                        <p><?php echo e($qualifications->qualification); ?></p>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                     <div class = "col-lg-12 legend">
                         <p>Opportunity Availability:</p>
