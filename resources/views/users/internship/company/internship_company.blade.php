@@ -40,10 +40,6 @@
                         <p><strong>Stipend</strong></p>
                         <p>${{$company->stipend}} / Month</p>
                     </div>
-<<<<<<< HEAD
-                    @foreach(opportunity where $opportunity.company_id = $company.company_id)
-                    @endforeach
-=======
                     <div class = "col-lg-6">
                         <p><strong>Opportunity</strong></p>
                     @foreach ($company->opportunity as $opportunities)
@@ -53,7 +49,6 @@
                         @endif
                     @endforeach
                     </div>
->>>>>>> 70bae1abcfbc3ce6123991219c1b623ed20b062a
                 @endforeach
 
                 <hr>
