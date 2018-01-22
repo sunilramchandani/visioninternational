@@ -1,5 +1,5 @@
 <?php $__env->startSection('page-css'); ?>
-<link rel="stylesheet" href="<?php echo e(asset('css/internship-home.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('css/internship-company.css')); ?>">
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -26,7 +26,7 @@
             <div class = "col-lg-8 company-details">
                 <?php $__currentLoopData = $internshipCompany_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class ="col-lg-12">
-                        <p><strong><?php echo e($company->company_name); ?></strong></p>
+                        <h1><strong><?php echo e($company->company_name); ?></strong></h1>
                         <p><?php echo e($company->description); ?></p>
                     </div>
                     <div class = "col-lg-6">
@@ -39,11 +39,17 @@
                         <p><strong>Stipend</strong></p>
                         <p>$<?php echo e($company->stipend); ?> / Month</p>
                     </div>
-                    <div class = "col-lg-12">
-                        <p><strong>Opportunity</strong></p>
+                    <div class = "col-lg-12 opportunities">
+                        <hr>
+                        <p><strong>Opportunities</strong></p>
                     <?php $__currentLoopData = $company->opportunity; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opportunities): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    
-                        <p><?php echo e($opportunities->opportunity_name); ?></p>
+                        <div class = "col-lg-6">
+                            <?php if($opportunities->status == "Inactive" ): ?>
+                            <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> <?php echo e($opportunities->opportunity_name); ?></p>
+                            <?php else: ?>
+                            <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> <?php echo e($opportunities->opportunity_name); ?></p>
+                            <?php endif; ?>
+                        </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

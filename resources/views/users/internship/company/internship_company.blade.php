@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('page-css')
-<link rel="stylesheet" href="{{ asset('css/internship-home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/internship-company.css') }}">
 @stop
 
 @include('layouts.navbar')
@@ -27,7 +27,7 @@
             <div class = "col-lg-8 company-details">
                 @foreach ($internshipCompany_table as $company)
                     <div class ="col-lg-12">
-                        <p><strong>{{$company->company_name}}</strong></p>
+                        <h1><strong>{{$company->company_name}}</strong></h1>
                         <p>{{$company->description}}</p>
                     </div>
                     <div class = "col-lg-6">
@@ -40,22 +40,24 @@
                         <p><strong>Stipend</strong></p>
                         <p>${{$company->stipend}} / Month</p>
                     </div>
-<<<<<<< HEAD
-                    <div class = "col-lg-12">
-=======
-                    <div class = "col-lg-6">
->>>>>>> a4da420ef44fbcb2c38d4b75aac3ebacc7f2ab89
-                        <p><strong>Opportunity</strong></p>
-                    @foreach ($company->opportunity as $opportunities)
-                        @if ($opportunities->status == "Inactive" )
-                        @else
-                        <p>{{$opportunities->opportunity_name}}</p>
-                        @endif
-                    @endforeach
+                    <div class = "col-lg-12 opportunities">
+                        <hr>
+                        <p><strong>Opportunities</strong></p>
+                         @foreach ($company->opportunity as $opportunities)
+                            <div class = "col-lg-6">
+                                @if ($opportunities->status == "Inactive" )
+                                <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> {{$opportunities->opportunity_name}}</p>
+                                @else
+                                <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> {{$opportunities->opportunity_name}}</p>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class = "col-lg-12 qualifications">
+                        <p><strong>Do I Qualify?</strong></p>
+                        <!--NIKKO DITO YUNG QUALIFICATIONS LOOP -->
                     </div>
                 @endforeach
-
-                <hr>
             </div>
         </div>
     </div>
