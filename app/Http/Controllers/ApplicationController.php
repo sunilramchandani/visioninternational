@@ -10,6 +10,7 @@ use App\Program;
 use App\University;
 use App\Degree;
 use App\Major;
+use Mail;
 
 class ApplicationController extends Controller
 {
