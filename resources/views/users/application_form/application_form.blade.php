@@ -26,11 +26,13 @@
         			<label for = "program" class = "labels">Program</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="program" id="">
+	                <select class = "form-control" name="program_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
-	                    <option value=""></option>
+						<option value="1">test</option>
+						@foreach($program_table as $program )
+						<option value="{{ $program->program_id }}">{{ $program->title }}</option>
+					  	@endforeach
+						  
 	                </select>
             	</div>
             </div>
@@ -39,19 +41,11 @@
         			<label for = "country" class = "labels">Country</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="country" id="">
+	                <select class = "form-control" name="country_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="PS">Palestinian Territory, Occupied</option>
-	                    <option value="PA">Panama</option>
-	                    <option value="PG">Papua New Guinea</option>
-	                    <option value="PY">Paraguay</option>
-	                    <option value="PE">Peru</option>
-	                    <option value="PH">Philippines</option>
-	                    <option value="PN">Pitcairn</option>
-	                    <option value="PL">Poland</option>
-	                    <option value="PT">Portugal</option>
-	                    <option value="PR">Puerto Rico</option>
-	                    <option value="QA">Qatar</option>
+	                    @foreach($country_table as $country )
+						<option value="{{ $country->country_id }}">{{ $country->country_name }}</option>
+					  	@endforeach
 	                </select>
 	           </div>
             </div>
@@ -60,9 +54,9 @@
         			<label for = "location" class = "labels">Location</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="location" id="">
+	                <select class = "form-control" name="location_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="1">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -105,7 +99,7 @@
         			<label for = "bdate" class = "labels">Birthdate</label>
         		</div>
         		<div class = "col-lg-8">
-                	<input type = "date" class = "form-control"  name="bdate" id="" >
+                	<input type = "date" class = "form-control"  name="birthdate" id="" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -115,7 +109,7 @@
         		<div class = "col-lg-8">
 	                <select class = "form-control" name="gender" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="m">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -128,7 +122,7 @@
         		<div class = "col-lg-8">
 	                <select class = "form-control" name="current_city" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="test">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -141,9 +135,9 @@
         			<label for = "school" class = "labels">University/School</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="school" id="school">
+	                <select class = "form-control" name="university_id" id="school">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="5">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -154,9 +148,9 @@
         			<label for = "degree" class = "labels">Degree</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="degree" id="degree">
+	                <select class = "form-control" name="degree_id" id="degree">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="6">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -167,9 +161,9 @@
         			<label for = "major" class = "labels">Major</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="major" id="major">
+	                <select class = "form-control" name="major_id" id="major">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="7">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -180,7 +174,7 @@
         			<label for = "grad" class = "labels">Graduation Date</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "date" class = "form-control"  name="grad" id="grad" >
+                	<input type = "date" class = "form-control"  name="grad_date" id="grad" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -188,7 +182,7 @@
         			<label for = "start" class = "labels">Preferred Start Date</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "date" class = "form-control"  name="start" id="start" >
+                	<input type = "date" class = "form-control"  name="start_date" id="start" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -196,7 +190,7 @@
         			<label for = "resume" class = "labels">Upload Resume</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "file" class = "form-control"  name="resume" id="resume" >
+                	<input type = "file" class = "form-control"  name="upload_resume" id="resume" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -204,9 +198,9 @@
         			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="learn" id="learn">
+	                <select class = "form-control" name="about_vip" id="learn">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="dada">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
