@@ -37,9 +37,18 @@ foreach($data['data'] as $action) {
 <form action="" method="post" role="form">
  <?php echo e(csrf_field()); ?>
 
+<img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive header" alt="Company Banner">
+<img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
+<div class = "col-lg-3 col-lg-offset-9 sticky">
+  <div class = "col-lg-6">
+    <p> Start an <strong> amazing </strong> </p>
+    <p> future with us </p>
+  </div>
+  <div class = "col-lg-6 button-apply-sticky">
+    <a href = "" class = "btn applynow-sticky">Apply Now</a>
+  </div>
+</div>
 <div class = "col-lg-12 events">
-  <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
-  <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
   <div class ="row col-lg-12">
     <div class = "col-lg-9 events-header">
       <h2>Events</h2>
@@ -62,7 +71,7 @@ foreach($data['data'] as $action) {
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
     <div class = "col-lg-3 categories-sidebar">
-      <table class="table table-categories">
+      <table class="table table-categories table-hover">
         <thead bgcolor="#800000">
           <tr>
             <th colspan="2" class = "header-table">CATEGORIES</th>
