@@ -40,7 +40,11 @@
                         <p><strong>Stipend</strong></p>
                         <p>${{$company->stipend}} / Month</p>
                     </div>
+                    @foreach(opportunity where $opportunity.company_id = $company.company_id)
+                    @endforeach
                 @endforeach
+
+                <hr>
             </div>
         </div>
     </div>
