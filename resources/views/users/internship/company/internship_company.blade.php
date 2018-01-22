@@ -40,6 +40,13 @@
                         <p><strong>Stipend</strong></p>
                         <p>${{$company->stipend}} / Month</p>
                     </div>
+                    <div class = "col-lg-6">
+                        <p><strong>Opportunity</strong></p>
+                    @foreach ($company->opportunity as $opportunities)
+                    
+                        <p>{{$opportunities->opportunity_name}}</p>
+                    @endforeach
+                    </div>
                 @endforeach
             </div>
         </div>

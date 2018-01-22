@@ -19,6 +19,36 @@
         </div>
     </div>
     <div class = "body-content">
+        <div class = "col-lg-12">
+            <div class = "col-lg-4 picture">
+                <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+            </div>
+            <div class = "col-lg-8 company-details">
+                <?php $__currentLoopData = $internshipCompany_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class ="col-lg-12">
+                        <p><strong><?php echo e($company->company_name); ?></strong></p>
+                        <p><?php echo e($company->description); ?></p>
+                    </div>
+                    <div class = "col-lg-6">
+                        <p><strong>Housing</strong></p>
+                        <p> Type: <?php echo e($company->housing_type); ?></p>
+                        <p> Distance: <?php echo e($company->housing_distance); ?></p>
+                        <p> Address : <?php echo e($company->housing_address); ?></p>
+                    </div>
+                    <div class = "col-lg-6">
+                        <p><strong>Stipend</strong></p>
+                        <p>$<?php echo e($company->stipend); ?> / Month</p>
+                    </div>
+                    <div class = "col-lg-6">
+                        <p><strong>Opportunity</strong></p>
+                    <?php $__currentLoopData = $company->opportunity; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opportunities): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    
+                        <p><?php echo e($opportunities->opportunity_name); ?></p>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        </div>
     </div>
 </div>
 <div class = "filler row">

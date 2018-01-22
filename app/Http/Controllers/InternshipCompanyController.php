@@ -14,9 +14,10 @@ class InternshipCompanyController extends Controller
      */
     public function index()
     {
-        $internshipCompany_table = InternshipCompany::all();
-        $opportunity_table    = Opportunity::all();
-        return view('users.internship.company.internship_company', compact('internshipCompany_table', 'opportunity_table'));
+
+        $internshipCompany_table = InternshipCompany::with('opportunity')->get();
+        
+        return view('users.internship.company.internship_company', compact('internshipCompany_table'));
     }
 
     /**
