@@ -143,7 +143,9 @@ Route::get('/application', function () {
     return view('users.application_form.application_form'); 
 });
 
-
+Route::get('/internship', function () {
+    return view('users.internship.internship_home'); 
+});
 
 
 Route::resource('contactus', 'ContactUsController');
