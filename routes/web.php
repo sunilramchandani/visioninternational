@@ -139,19 +139,10 @@ Route::get('/login', ['uses' => 'CustomAuth\LoginController@index', 'as' => 'log
 Route::post('/login', ['uses' => 'CustomAuth\LoginController@auth', 'as' => 'auth']);
 Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'logout']);
 
-<<<<<<< HEAD
-=======
-Route::get('/application', function () {
-    return view('users.application_form.application_form'); 
-});
-
-Route::get('/internship', function () {
-    return view('users.internship.internship_home'); 
-});
->>>>>>> e0b4fcb34a92b6519a5bcd112dd1ab0f9e7bce97
 
 Route::resource('application', 'ApplicationController');
 
+Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'FacebookPluginController');
 Route::get('/fb', function () {
