@@ -1,18 +1,3 @@
-<?php
-$curl = curl_init();
-$rss_url = "https://graph.facebook.com/v2.11/2092525184364641/events?fields=name,cover,description,end_time,start_time,place,timezone&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
-curl_setopt($curl, CURLOPT_URL, $rss_url);
-curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
-curl_setopt($curl, CURLOPT_REFERER, '');
-curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-$result = curl_exec($curl); // execute the curl command
-curl_close($curl);
-$data = json_decode($result, true);
-
-?>
 
 @extends('layouts.master')
 
@@ -52,9 +37,7 @@ $data = json_decode($result, true);
     <div class = "col-lg-9 events-content-container">
       @foreach($data['data'] as $picture)
         <div class = "col-lg-3 events-content">
-        @foreach($picture['cover'] as $cvr)
-          <img src="{{$cvr['full_picture']}}" alt="" class = "event-img img">
-        @endforeach
+          <img src="{{$picture['cover']['source']}}" alt="" class = "event-img img">
           <p class = "text-center">{{$picture['description']}}</p>
           <button class = "submit btn"><span>More Info</span></button>
         </div>

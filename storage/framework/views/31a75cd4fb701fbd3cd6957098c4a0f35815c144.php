@@ -1,21 +1,3 @@
-<?php
-$curl = curl_init();
-$rss_url = "https://graph.facebook.com/v2.11/2092525184364641/events?fields=name,cover,description,end_time,start_time,place,timezone&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
-curl_setopt($curl, CURLOPT_URL, $rss_url);
-curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
-curl_setopt($curl, CURLOPT_REFERER, '');
-curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-$result = curl_exec($curl); // execute the curl command
-curl_close($curl);
-$data = json_decode($result, true);
-
-?>
-
-
-
 <?php $__env->startSection('page-css'); ?>
 <link rel="stylesheet" href="<?php echo e(asset('css/events.css')); ?>">
 <?php $__env->stopSection(); ?>
@@ -53,9 +35,7 @@ $data = json_decode($result, true);
     <div class = "col-lg-9 events-content-container">
       <?php $__currentLoopData = $data['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $picture): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class = "col-lg-3 events-content">
-        <?php $__currentLoopData = $picture['place']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cvr): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <img src="<?php echo e($cvr['name']); ?>" alt="" class = "event-img img">
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <img src="<?php echo e($picture['cover']['source']); ?>" alt="" class = "event-img img">
           <p class = "text-center"><?php echo e($picture['description']); ?></p>
           <button class = "submit btn"><span>More Info</span></button>
         </div>
