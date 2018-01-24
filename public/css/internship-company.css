@@ -21,10 +21,73 @@ hr{
 .company-whole{
 	box-shadow: 5px 5px 5px grey;
 	height:95%;
+	padding: 0;
 }
 .qualifications{
 	padding-top: 2%;
 }
 .img-map{
 	height:100%;
+	width: 100%;
+}
+.dropdown-content-filler {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 10px;
+    border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-filler a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-filler a:hover {background-color: #cc0000;color:white;    border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content-filler {
+    display: block;
+}
+.filter-top{
+	background-color:#f2f2f2;
+	padding-bottom: 3%;
+	border-bottom: 2px solid #808080 ;
+	height:50px;
+}
+
+.dropbtn-filter{
+	text-decoration: none;
+	color:black;
+	padding-bottom: 30px;
+}
+.dropbtn-filter:hover{
+	text-decoration: none;
+	color:#cc0000;
+}
+.dropdown:hover .dropbtn-filter {
+    color:#cc0000;
+}
+.filter-main{
+	margin-top: 15px;
+}
+.filter-result{
+	margin-top: 15px
+}
+.whole-page{
+	padding: 0;
+}
+.picture{
+	padding: 0;
+}
+.dropdown{
+	padding-right: 25px;
 }

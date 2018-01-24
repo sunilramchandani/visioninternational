@@ -18,5 +18,13 @@ class InternshipCompany extends Model
     {
         return $this->hasMany('App\Qualification', 'company_id');
     }
+    public function internship_industry()
+    {
+        return $this->hasMany('App\InternshipIndustry', 'company_id');
+    }
+    public function internship_duration()
+    {
+        return $this->hasMany('App\InternshipDuration', 'company_id');
+    }
     
 }

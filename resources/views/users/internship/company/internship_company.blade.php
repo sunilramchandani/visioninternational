@@ -8,10 +8,10 @@
 @section('content')
 <form action="" method="post" role="form">
  {{csrf_field()}}
-<div class = "col-lg-12">
+<div class = "col-lg-12 whole-page">
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class = "Top-header-message">
+    <div class = " row Top-header-message">
         <div class = "col-lg-12 text-center">
             <h1>Your Destination</h1>
             <br/>
@@ -20,6 +20,43 @@
         </div>
     </div>
     <div class = "body-content">
+        <div class = "row filter-top">
+            <div class = "col-lg-9 col-lg-offset-1 filter-main">
+                <div class="dropdown">
+                  <a class="dropbtn-filter">State</a>
+                  <div class="dropdown-content-filler">
+                    @foreach ($internshipCompany_table as $company)
+                        <a href="#">{{$company->state}}</a>
+                    @endforeach
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <a class="dropbtn-filter">Industry</a>
+                  <div class="dropdown-content-filler">
+                    @foreach ($internshipCompany_table as $company)
+                        @foreach ($company->internship_industry as $industry)
+                            <a href="#">{{$industry->industry_name}}</a>
+                        @endforeach
+                    @endforeach
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <a class="dropbtn-filter">Start Dates</a>
+                  <div class="dropdown-content-filler">
+                    @foreach ($internshipCompany_table as $company)
+                         @foreach ($company->internship_duration as $duration)
+                            <a href="#">{{$duration->duration_start_date}}</a>
+                        @endforeach
+                    @endforeach
+                  </div>
+                </div>
+            </div>
+            <div class = "col-lg-2 filter-result">
+                @foreach ($internshipCompany_table as $company)
+                    <p>Total Results: <strong> {{ $loop->count }} </strong></p> 
+                @endforeach
+            </div>
+        </div>
         <div class = "col-lg-12 company-whole">
             <div class = "col-lg-4 picture">
                 <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
