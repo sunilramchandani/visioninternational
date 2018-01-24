@@ -13,11 +13,24 @@ class InternshipCompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-        
+
+        if (request()->has('state')){
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')
+            ->where('state', request('state'))->paginate(0)->appends('state', request('state'));
+
+            $lolo = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+
+
+            return view('users.internship.company.internship_company', compact('internshipCompany_table', 'lolo'));
+
+        }
+        else{
+            return view('users.internship.company.internship_company', compact('internshipCompany_table'));
+        }
         return view('users.internship.company.internship_company', compact('internshipCompany_table'));
     }
 
