@@ -91,3 +91,6 @@ hr{
 .dropdown{
 	padding-right: 25px;
 }
+.company-whole{
+	overflow-y:scroll;
+}
