@@ -17,21 +17,19 @@ class InternshipCompanyController extends Controller
     {
 
         $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+        $internship_addresses = InternshipCompany::pluck('housing_address');
 
         if (request()->has('state')){
             $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')
             ->where('state', request('state'))->paginate(0)->appends('state', request('state'));
 
             $lolo = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-
-
-            return view('users.internship.company.internship_company', compact('internshipCompany_table', 'lolo'));
-
+            
+            return view('users.internship.internship', compact('internshipCompany_table', 'lolo','internship_addresses'));
         }
         else{
-            return view('users.internship.company.internship_company', compact('internshipCompany_table'));
+            return view('users.internship.internship', compact('internshipCompany_table','internship_duration','internship_addresses'));
         }
-        return view('users.internship.company.internship_company', compact('internshipCompany_table'));
     }
 
     /**
