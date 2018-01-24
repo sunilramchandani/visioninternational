@@ -16,7 +16,7 @@ class InternshipCompanyController extends Controller
     public function index()
     {
 
-        $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications')->get();
+        $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
         
         return view('users.internship.company.internship_company', compact('internshipCompany_table'));
     }
