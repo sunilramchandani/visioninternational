@@ -33,10 +33,12 @@
   </div>
   <div class = "row">
     <div class = "col-lg-9 events-content-container">
-      <?php $__currentLoopData = $data['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $picture): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <?php $__currentLoopData = $data['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class = "col-lg-3 events-content">
-          <img src="<?php echo e($picture['cover']['source']); ?>" alt="" class = "event-img img">
-          <p class = "text-center"><?php echo e($picture['description']); ?></p>
+          <img src="<?php echo e($events['cover']['source']); ?>" alt="" class = "event-img img">
+          
+          <p class = "text-center"><?php echo e($events['start_time']); ?> - <?php echo e($events['end_time']); ?> </p>
+          <p class = "text-center"><?php echo e($events['description']); ?></p>
           <button class = "submit btn"><span>More Info</span></button>
         </div>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -76,6 +78,19 @@
 </div> 
 <div class = "row filler"></div>
 </form>
+<div id="map"></div>
+    <script>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap"
+    async defer></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
