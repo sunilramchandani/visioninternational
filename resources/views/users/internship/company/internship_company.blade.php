@@ -25,9 +25,17 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
+
                     @foreach ($internshipCompany_table as $company)
-                        <a href="#">{{$company->state}}</a>
+                        <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                        @if(Request::url() === 'internshipcompany?state={{$company->state}}')
+                        @foreach ($lolo as $lolos)
+                         <a href="/internshipcompany?state={{$lolos->state}}">{{$lolos->state}}</a>
+                        @endforeach
+                        @endif
+                        
                     @endforeach
+
                   </div>
                 </div>
                 <div class="dropdown">
