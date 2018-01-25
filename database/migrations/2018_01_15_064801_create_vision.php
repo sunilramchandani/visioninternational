@@ -13,7 +13,7 @@ class CreateVision extends Migration
      */
     public function up()
     {
-        Schema::create('contact_us', function (Blueprint $table) {
+        Schema::create('subscribe', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email');

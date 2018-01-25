@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\EventPlugin;
 use Illuminate\Support\Facades\DB;
+use DateTime;
+use DateTimeZone;
+
 class EventPluginController extends Controller
 {
     /**
@@ -30,10 +33,40 @@ class EventPluginController extends Controller
 
 
         
+       
         foreach ($insertResult['data'] as $result) {
+                // convert time to datetime instance
+                $starttimestamp = strtotime($result['start_time']);
+                $endtimestamp = strtotime($result['end_time']);
+
+                $datetime = new DateTime;
+                $datetime->setTimestamp($starttimestamp);
+                $datetime->setTimezone(new DateTimeZone('US/Eastern'));
+                $datetime->format('g:i a');
+                $datetime->format('l, F j, Y');
+
+                $endtime = new DateTime;
+                $endtime->setTimestamp($endtimestamp);
+                $endtime->setTimezone(new DateTimeZone('US/Eastern'));
+                $endtime->format('g:i a');
+                $endtime->format('l, F j, Y');
+
         $dataset = array(
-            'name' => $result['name'],
-            'description' => $result['description'],
+            'event_name' => $result['name'],
+            'event_description' => $result['description'],
+            'cover_source' => $result['cover']['source'],
+            'end_time' => $endtime,
+            'start_time' => $datetime,
+            'place_name' => $result['place']['name'],
+            'place_id' => $result['place']['id'],
+            'location_city' => $result['place']['location']['city'],
+            'location_country' => $result['place']['location']['country'],
+            'location_latitude' => $result['place']['location']['latitude'],
+            'location_longtitude' => $result['place']['location']['longitude'],
+            'location_street' => $result['place']['location']['street'],
+            'location_zip' => $result['place']['location']['zip'],
+            'timezone' => $result['timezone'],
+            'post_id' => $result['id'],
         );
     }
         $event = EventPlugin::firstOrCreate($dataset);

@@ -40,7 +40,7 @@ class SubscribeController extends Controller
         ]);
 
         $subscribe = new Subscribe;
-        $subscribe->email = $request['subscribe'];
+        $subscribe->email = $request['email'];
         $subscribe->save();
 
         $success = array('ok'=> 'Success');
