@@ -86,8 +86,11 @@ hr{
 	padding: 0;
 }
 .picture{
-	padding: 0;
+	height:100%;
 }
 .dropdown{
 	padding-right: 25px;
+}
+.company-whole{
+	overflow-y:scroll;
 }

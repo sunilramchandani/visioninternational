@@ -10,7 +10,7 @@ class Application extends Model
     use SoftDeletes;
 
     protected $table = 'application'; 
-    public $timestamps = false;
+    
     
     protected $fillable = [
         'program_id',
