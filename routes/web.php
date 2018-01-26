@@ -21,6 +21,24 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/{id}', ['uses' => 'News\NewsController@view', 'as' => 'news.view']);
     });
 
+    // Appllication Routes
+    Route::group(['prefix' => 'application'], function() {
+
+        Route::get('/list', [
+            'uses' => 'ApplicationController@index',
+            'as' => 'application.list'
+        ]);
+        Route::get('/delete/{application_id}', [
+            'uses' => 'ApplicationController@delete',
+            'as' => 'application.delete'
+        ]);
+
+        Route::get('/{application_id}', [
+            'uses' => 'ApplicationController@view',
+            'as' => 'application.view'
+        ]);
+    });
+
     // Opportunities Routes
     Route::group(['prefix' => 'opportunities'], function() {
         Route::get('/new', [

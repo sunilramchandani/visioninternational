@@ -11,6 +11,7 @@ use App\University;
 use App\Degree;
 use App\Major;
 use Mail;
+use App\Lib\ApplicationLib;
 
 class ApplicationController extends Controller
 {
@@ -21,14 +22,23 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $application_table = Application::all();
-        $location_table = Location::all();
-        $country_table = Country::all();
-        $program_table    = Program::all();
-        $university_table = University::all();
-        $degree_table = Degree::all();
-        $major_table = Major::all();
-        return view('users.application_form.application_form', compact('major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table'));
+        $limit = request()->get('limit', 10);
+        $current_page = request()->get('page', 1);
+
+
+        $params = [
+            'limit' => $limit,
+            'current_page' => $current_page
+        ];
+
+        $pagination = ApplicationLib::getPaginated($params);
+        $app = $pagination->items();
+
+
+        return view('admin.application.list', [
+            'app' => $app,
+            'paginator' => $pagination
+        ]);
     }
 
     /**
@@ -171,5 +181,39 @@ class ApplicationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete($id)
+    {
+        $app = ApplicationLib::getById($id);
+
+        $data = [
+            'type' => 'success',
+            'message' => 'Successfully Deleted'
+        ];
+
+        $result = $app->delete();
+        if(!$result) {
+            $data['type'] = 'danger';
+            $data['message'] = 'Invalid Application';
+        }
+
+        return redirect()->route('application.list')->with('flash', $data);
+    }
+
+    public function view($id)
+    {
+        $app = ApplicationLib::getById($id);
+
+        if(!$app) {
+           return redirect()->route('application.list')->with('flash', [
+               'type' => 'danger',
+               'message' => 'Invalid News'
+           ]);
+        }
+
+        return view('admin.application.view', [
+            'app' => $app
+        ]);
     }
 }

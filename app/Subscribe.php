@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Subscribe extends Model
 {
     protected $table = 'subscribe'; 
-    protected $primaryKey = 'subscription_id';
+    protected $primaryKey = 'subscribe_id';
 
 }
