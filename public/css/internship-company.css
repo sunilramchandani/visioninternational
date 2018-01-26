@@ -92,5 +92,32 @@ hr{
 	padding-right: 25px;
 }
 .company-whole{
+}
+.side-content{
+	height:100%;
 	overflow-y:scroll;
+}
+.locate-me{
+	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	color:white;
+	border-radius: 8px;
+	font-size: 15px;
+}
+.info{
+	padding-right: 3%;
+	padding-left: 3%;
+}
+.company-head{
+	height:37%;
+	width:100%;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.info-container{
+	background: #f2f2f2;
+	padding-bottom: 3%;
+	box-shadow: 2px 4px 12px 2px #B0B0B0;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	margin-top: 3%;
 }

@@ -16,19 +16,21 @@ class InternshipCompanyController extends Controller
     public function index(Request $request)
     {
 
-        $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-        $internship_addresses = InternshipCompany::pluck('housing_address');
-
         if (request()->has('state')){
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')
-            ->where('state', request('state'))->paginate(0)->appends('state', request('state'));
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
+        
+            $internship_addresses = InternshipCompany::where('state', request('state'))->pluck('housing_address');
 
-            $lolo = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-            
-            return view('users.internship.internship', compact('internshipCompany_table', 'lolo','internship_addresses'));
+            $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+
+            return view('users.internship.internship', compact('internshipCompany_table', 'internship_filter','internship_addresses'));
         }
         else{
-            return view('users.internship.internship', compact('internshipCompany_table','internship_duration','internship_addresses'));
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+        
+            $internship_addresses = InternshipCompany::pluck('housing_address');
+
+            return view('users.internship.internship', compact('internshipCompany_table','internship_addresses'));
         }
     }
 
