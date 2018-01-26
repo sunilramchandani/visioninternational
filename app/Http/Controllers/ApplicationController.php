@@ -11,7 +11,11 @@ use App\University;
 use App\Degree;
 use App\Major;
 use Mail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Lib\ApplicationLib;
+use Storage;
+use Carbon\Carbon;
 
 class ApplicationController extends Controller
 {
@@ -22,23 +26,14 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $limit = request()->get('limit', 10);
-        $current_page = request()->get('page', 1);
-
-
-        $params = [
-            'limit' => $limit,
-            'current_page' => $current_page
-        ];
-
-        $pagination = ApplicationLib::getPaginated($params);
-        $app = $pagination->items();
-
-
-        return view('admin.application.list', [
-            'app' => $app,
-            'paginator' => $pagination
-        ]);
+        $application_table = Application::all();
+        $location_table = Location::all();
+        $country_table = Country::all();
+        $program_table    = Program::all();
+        $university_table = University::all();
+        $degree_table = Degree::all();
+        $major_table = Major::all();
+        return view('users.application_form.application_form', compact('major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table'));
     }
 
     /**
@@ -79,6 +74,8 @@ class ApplicationController extends Controller
             'message'   => 'required',
             ]);
         */
+        $file = Input::file('upload_resume');
+
 
         $application = new Application;
         $application->program_id = $request['program_id'];
@@ -96,12 +93,19 @@ class ApplicationController extends Controller
         $application->major_id = $request['major_id'];
         $application->grad_date = $request['grad_date'];
         $application->start_date = $request['start_date'];
-        $application->upload_resume = $request['upload_resume'];
         $application->about_vip = $request['about_vip'];
         $application->message = $request['message'];
+        
+        $file = $request->file('upload_resume');
+        $name = $file->getClientOriginalName();
+        $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+        $file->move('../storage/app/upload_resume', $fileName);
 
-
+        $application->upload_resume = $fileName;
         $application->save();
+
+        
+
 
 
         $data = array(
@@ -129,7 +133,7 @@ class ApplicationController extends Controller
 
         Mail::send('users.application_form.application_sent', $data, function ($mail) use($data) {
             $mail->from('careers@visioninternational.skyrocketph.technology');
-            $mail->to($data['email'])->subject($data['name']);
+            $mail->to($data['email'])->subject($data['first_name']);
         });
 
 
@@ -146,7 +150,16 @@ class ApplicationController extends Controller
      */
     public function show($id)
     {
-        //
+        $app = ApplicationLib::getById($id);
+
+        $get_resume = DB::table('Application')
+        ->where('id', $id)
+        ->first()
+        ->upload_resume;
+
+        $path = storage_path('app/upload/'.$get_resume);
+        
+        return response()->download($path);
     }
 
     /**
@@ -183,6 +196,34 @@ class ApplicationController extends Controller
         //
     }
 
+    public function upload()
+    {
+        //
+    }
+
+    public function adminIndex()
+    {
+        $limit = request()->get('limit', 10);
+        $current_page = request()->get('page', 1);
+
+
+        $params = [
+            'limit' => $limit,
+            'current_page' => $current_page
+        ];
+
+        $pagination = ApplicationLib::getPaginated($params);
+        $app = $pagination->items();
+
+
+        return view('admin.application.list', [
+            'app' => $app,
+            'paginator' => $pagination
+        ]);
+    }
+
+
+
     public function delete($id)
     {
         $app = ApplicationLib::getById($id);
@@ -212,8 +253,7 @@ class ApplicationController extends Controller
            ]);
         }
 
-        return view('admin.application.view', [
-            'app' => $app
-        ]);
+        return view('admin.application.view', [ 'app' => $app]);
     }
+
 }

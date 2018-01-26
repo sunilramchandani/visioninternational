@@ -47,7 +47,7 @@ class ApplicationLib
         $app->about_vip = $data['about_vip'];
         $app->message = $data['message'];
         
-        $result = $news->save();
+        $result = $app->save();
 
         return ($result) ? true : false;
     }

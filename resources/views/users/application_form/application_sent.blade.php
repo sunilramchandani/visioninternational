@@ -2,5 +2,5 @@
 Hello There</h3>
 
 <div>
-{{ $bodyMessage }}
+
 </div>

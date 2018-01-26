@@ -17,8 +17,11 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="page-header">
-                    {{ $app->program_id }}
+                    {{ $app->upload_resume }}
                 </h2>
+                <form action="{{route('application.show', $app)}}">
+                <button type="submit"> Download </button>
+                </form>
             </div>
 
             <div class="col-xs-12">

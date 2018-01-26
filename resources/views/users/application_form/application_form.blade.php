@@ -7,8 +7,6 @@
 @include('layouts.navbar')
 
 @section('content')
-<form action="" method="post" role="form">
- {{csrf_field()}}
 <div class = "col-lg-12">
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
@@ -20,6 +18,9 @@
             <p> ASAP about the program you are interested in. We recommend you check carefully all</p>
             <p> the information you provide in order to have a smoother application process. Thank you!</p>
         </div>
+
+		<form action="{{route('application.store')}}" method="post" role="form"  enctype="multipart/form-data"> 
+		{{csrf_field()}}
         <div class = "col-lg-4 col-lg-offset-1">
         	<div class = "row form-group">
         		<div class = "col-lg-4">
@@ -190,7 +191,7 @@
         			<label for = "resume" class = "labels">Upload Resume</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "file" class = "form-control"  name="upload_resume" id="resume" >
+                	<input type = "file" class = "form-control"  name="upload_resume" id="resume"  >
                 </div>
             </div>
             <div class = "row form-group">
@@ -215,6 +216,7 @@
         </div>
     </div>  
 </div>
+</form>
 <div class = "filler row">
 </div>
 </form>

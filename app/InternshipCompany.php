@@ -3,11 +3,31 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InternshipCompany extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'internship_company'; 
-    protected $primaryKey = 'company_id';
+
+    protected $fillable = [
+        'company_name',
+        'description',
+        'housing_type',
+        'housing_distance',
+        'housing_address',
+        'full_address',
+        'stipend',
+        'state',
+        'image',
+    ];
+    protected $dates = [
+        'created_at',
+        'deleted_at',
+        'updated_at'
+    ];
+
 
     public function opportunity()
     {
