@@ -67,6 +67,9 @@
     <a href="{{ route('internshipcompany.new_qualification', $company->id) }}" class="btn btn-warning">
         Hello
     </a>
+    <a href="{{ route('internshipcompany.new_duration', $company->id) }}" class="btn btn-warning">
+        Duration
+    </a>
     </div>
 
     </div>

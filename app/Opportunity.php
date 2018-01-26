@@ -8,7 +8,7 @@ class Opportunity extends Model
 {
     protected $table = 'opportunity'; 
     protected $primaryKey = 'opportunity_id';
-    public $timestamps = false;
+        
 
     public function internshipCompany()
     {

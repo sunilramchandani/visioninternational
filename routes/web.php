@@ -73,6 +73,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'uses' => 'InternshipCompanyController@storeQualification',
             'as' => 'internshipcompany.store_qualification'
         ]);
+
+        Route::get('/new_duration/{id}', [
+            'uses' => 'InternshipCompanyController@createDuration',
+            'as' => 'internshipcompany.new_duration'
+        ]);
+
+        Route::post('/new_duration/{id}', [
+            'uses' => 'InternshipCompanyController@storeDuration',
+            'as' => 'internshipcompany.store_duration'
+        ]);
     });
 
 

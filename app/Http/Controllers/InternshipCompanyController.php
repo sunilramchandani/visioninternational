@@ -8,6 +8,7 @@ use App\Opportunity;
 use App\Qualification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\InternshipDuration;
 
 
 use App\Lib\CompanyLib;
@@ -297,4 +298,44 @@ class InternshipCompanyController extends Controller
         
         return redirect()->route('internshipcompany.list')->with($success);
     }
+
+    public function createDuration($id)
+    {
+        $company = CompanyLib::getById($id);
+
+        if(!$company) {
+           return redirect()->route('internshipcompany.list')->with('flash', [
+               'type' => 'danger',
+               'message' => 'Invalid Duration'
+           ]);
+        }
+
+        return view('admin.internship_company.duration', [ 'company' => $company]);
+    }
+
+    public function storeDuration($id, Request $request)
+    {
+        $company = CompanyLib::getById($id);
+
+        if(!$company) {
+           return redirect()->route('internshipcompany.list')->with('flash', [
+               'type' => 'danger',
+               'message' => 'Invalid Duration'
+           ]);
+        }
+
+        $duration = new InternshipDuration();
+        $duration->company_id = $id;
+        $duration->duration_months	 = $request['duration_months'];
+        $duration->duration_price = $request['duration_price'];
+        $duration->duration_start_date = $request['duration_start_date'];
+        $duration->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('internshipcompany.list')->with($success);
+    }
+
+
+    
 }
