@@ -24,9 +24,11 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
+
                     <?php $__currentLoopData = $internshipCompany_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <a href="#"><?php echo e($company->state); ?></a>
+                        <a href="/internshipcompany?state=<?php echo e($company->state); ?>"><?php echo e($company->state); ?></a>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                   </div>
                 </div>
                 <div class="dropdown">

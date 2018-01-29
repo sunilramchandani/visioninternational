@@ -28,12 +28,6 @@
 
                     @foreach ($internshipCompany_table as $company)
                         <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
-                        @if(Request::url() === 'internshipcompany?state={{$company->state}}')
-                        @foreach ($lolo as $lolos)
-                         <a href="/internshipcompany?state={{$lolos->state}}">{{$lolos->state}}</a>
-                        @endforeach
-                        @endif
-                        
                     @endforeach
 
                   </div>

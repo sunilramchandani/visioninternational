@@ -78,9 +78,9 @@
                             <h4>{{$company->full_address}}</h4>
                             <h2>{{$company->company_name}}</h2>
                             <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                            <a href="/internshipcompany?{{$company->id}}" class = "btn locate-me"> Locate Me </a>
+                            <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
                         </div>
-                    </div>
+                    </div> 
                 @endforeach
             </div>
         </div>
@@ -90,7 +90,12 @@
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-  
+  var gmarkers = [];
+  var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
+  var gname = {!! json_encode($internship_name->toArray()) !!};
+  var gdesc = {!! json_encode($internship_desc->toArray()) !!};
+  var gid = {!! json_encode($internship_id->toArray()) !!};
+  var counter = 0 ;
 function initMap() {
     var map;
     var elevator;
@@ -119,8 +124,8 @@ function initMap() {
             var p = data.results[0].geometry.location
             var latlng = new google.maps.LatLng(p.lat, p.lng);     
             addMarker(map,bounds,latlng);
+           
         });
-  
     }
 } 
     function addMarker(map,bounds, latlng){
@@ -128,19 +133,28 @@ function initMap() {
                 position: latlng,
                 map: map
         });
+        gmarkers.push(markers);
         bounds.extend(markers.getPosition());
         map.fitBounds(bounds);
         addInfoWindow(markers);
     }
     function addInfoWindow(markers){
-        var secretMessage = "Hello World";
+        var secretMessage = '<div id="content">'+
+                                '<div id="siteNotice">'+
+                                + '</div>'+
+                                '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
+                                '<div id="bodyContent">'+
+                                    gdesc[counter] +
+                                    '<a class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More'
+                                '</div>'+
+                            '</div>';
         var infowindow = new google.maps.InfoWindow({
           content: secretMessage
         });
-
         markers.addListener('click', function() {
           infowindow.open(markers.get('map'), markers);
         });
+        counter++;
     }
 </script>
 <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap">

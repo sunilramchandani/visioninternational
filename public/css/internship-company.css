@@ -121,3 +121,7 @@ hr{
 	border-top-right-radius: 12px;
 	margin-top: 3%;
 }
+#content {
+  width: 300px; 
+  min-height: 150px;
+}

@@ -164,4 +164,4 @@ Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
-
+Route::resource('internship', 'InternshipController');

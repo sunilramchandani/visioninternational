@@ -20,17 +20,20 @@ class InternshipCompanyController extends Controller
             $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
         
             $internship_addresses = InternshipCompany::where('state', request('state'))->pluck('housing_address');
-
+            $internship_name = InternshipCompany::where('state', request('state'))->pluck('company_name');
+            $internship_desc = InternshipCompany::where('state', request('state'))->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-
-            return view('users.internship.internship', compact('internshipCompany_table', 'internship_filter','internship_addresses'));
+            $internship_id = InternshipCompany::where('state', request('state'))->pluck('id');
+            return view('users.internship.internship', compact('internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id'));
         }
         else{
             $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
         
             $internship_addresses = InternshipCompany::pluck('housing_address');
-
-            return view('users.internship.internship', compact('internshipCompany_table','internship_addresses'));
+            $internship_name = InternshipCompany::pluck('company_name');
+            $internship_desc = InternshipCompany::pluck('description');
+            $internship_id = InternshipCompany::pluck('id');
+            return view('users.internship.internship', compact('internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id'));
         }
     }
 
