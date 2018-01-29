@@ -21,11 +21,76 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/{id}', ['uses' => 'News\NewsController@view', 'as' => 'news.view']);
     });
 
+    //company routes
+    Route::group(['prefix' => 'internshipcompany'], function() {
+
+
+        Route::get('/new', ['uses' => 'InternshipCompanyController@adminCreate', 'as' => 'internshipcompany.new']);
+        Route::post('/new', ['uses' => 'InternshipCompanyController@adminCreate', 'as' => 'internshipcompany.save']);
+
+        Route::get('/edit/{id}', [
+            'uses' => 'InternshipCompanyController@adminEdit',
+            'as' => 'internshipcompany.adminedit'
+        ]);
+
+        Route::post('/edit/{id}', [
+            'uses' => 'InternshipCompanyController@adminEdit',
+            'as' => 'internshipcompany.saveadminedit'
+        ]);
+
+
+        Route::get('/list', [
+            'uses' => 'InternshipCompanyController@adminIndex',
+            'as' => 'internshipcompany.list'
+        ]);
+
+        Route::get('/delete/{id}', [
+            'uses' => 'InternshipCompanyController@delete',
+            'as' => 'internshipcompany.delete'
+        ]);
+
+        Route::get('/{id}', [
+            'uses' => 'InternshipCompanyController@view',
+            'as' => 'internshipcompany.view'
+        ]);
+
+        Route::get('/new_opportunity/{id}', [
+            'uses' => 'InternshipCompanyController@createOpportunity',
+            'as' => 'internshipcompany.new_opportunity'
+        ]);
+
+        Route::post('/new_opportunity/{id}', [
+            'uses' => 'InternshipCompanyController@storeOpportunity',
+            'as' => 'internshipcompany.store_opportunity'
+        ]);
+
+        Route::get('/new_qualification/{id}', [
+            'uses' => 'InternshipCompanyController@createQualification',
+            'as' => 'internshipcompany.new_qualification'
+        ]);
+
+        Route::post('/new_qualification/{id}', [
+            'uses' => 'InternshipCompanyController@storeQualification',
+            'as' => 'internshipcompany.store_qualification'
+        ]);
+
+        Route::get('/new_duration/{id}', [
+            'uses' => 'InternshipCompanyController@createDuration',
+            'as' => 'internshipcompany.new_duration'
+        ]);
+
+        Route::post('/new_duration/{id}', [
+            'uses' => 'InternshipCompanyController@storeDuration',
+            'as' => 'internshipcompany.store_duration'
+        ]);
+    });
+
+
     // Appllication Routes
     Route::group(['prefix' => 'application'], function() {
 
         Route::get('/list', [
-            'uses' => 'ApplicationController@index',
+            'uses' => 'ApplicationController@adminIndex',
             'as' => 'application.list'
         ]);
         Route::get('/delete/{application_id}', [
@@ -159,6 +224,7 @@ Route::get('/logout', ['uses' => 'CustomAuth\LoginController@logout', 'as' => 'l
 
 
 Route::resource('application', 'ApplicationController');
+Route::resource('fileupload', 'FileUploadController');
 
 Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('contactus', 'ContactUsController');

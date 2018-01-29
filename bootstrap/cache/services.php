@@ -1,6 +1,7 @@
 <?php return array (
   'providers' => 
   array (
+<<<<<<< HEAD
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     2 => 'Illuminate\\Bus\\BusServiceProvider',
@@ -45,6 +46,54 @@
     11 => 'App\\Providers\\AuthServiceProvider',
     12 => 'App\\Providers\\EventServiceProvider',
     13 => 'App\\Providers\\RouteServiceProvider',
+=======
+    0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    1 => 'Illuminate\\Auth\\AuthServiceProvider',
+    2 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
+    3 => 'Illuminate\\Bus\\BusServiceProvider',
+    4 => 'Illuminate\\Cache\\CacheServiceProvider',
+    5 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
+    6 => 'Illuminate\\Cookie\\CookieServiceProvider',
+    7 => 'Illuminate\\Database\\DatabaseServiceProvider',
+    8 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
+    9 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
+    10 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
+    11 => 'Illuminate\\Hashing\\HashServiceProvider',
+    12 => 'Illuminate\\Mail\\MailServiceProvider',
+    13 => 'Illuminate\\Notifications\\NotificationServiceProvider',
+    14 => 'Illuminate\\Pagination\\PaginationServiceProvider',
+    15 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
+    16 => 'Illuminate\\Queue\\QueueServiceProvider',
+    17 => 'Illuminate\\Redis\\RedisServiceProvider',
+    18 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
+    19 => 'Illuminate\\Session\\SessionServiceProvider',
+    20 => 'Illuminate\\Translation\\TranslationServiceProvider',
+    21 => 'Illuminate\\Validation\\ValidationServiceProvider',
+    22 => 'Illuminate\\View\\ViewServiceProvider',
+    23 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    24 => 'App\\Providers\\AppServiceProvider',
+    25 => 'App\\Providers\\AuthServiceProvider',
+    26 => 'App\\Providers\\EventServiceProvider',
+    27 => 'App\\Providers\\RouteServiceProvider',
+  ),
+  'eager' => 
+  array (
+    0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    1 => 'Illuminate\\Auth\\AuthServiceProvider',
+    2 => 'Illuminate\\Cookie\\CookieServiceProvider',
+    3 => 'Illuminate\\Database\\DatabaseServiceProvider',
+    4 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
+    5 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
+    6 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
+    7 => 'Illuminate\\Notifications\\NotificationServiceProvider',
+    8 => 'Illuminate\\Pagination\\PaginationServiceProvider',
+    9 => 'Illuminate\\Session\\SessionServiceProvider',
+    10 => 'Illuminate\\View\\ViewServiceProvider',
+    11 => 'App\\Providers\\AppServiceProvider',
+    12 => 'App\\Providers\\AuthServiceProvider',
+    13 => 'App\\Providers\\EventServiceProvider',
+    14 => 'App\\Providers\\RouteServiceProvider',
+>>>>>>> 55859f55f49073c7f2da6ae96598cd0f0bafe716
   ),
   'deferred' => 
   array (
