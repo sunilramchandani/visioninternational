@@ -9,6 +9,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         return view('admin.home');
     }, 'as' => 'admin.home']);
 
+    Route::resource('featuredimage', 'FeaturedImageController');
+
+    
     // News Routes
     Route::group(['prefix' => 'news'], function() {
         Route::get('/new', ['uses' => 'News\NewsController@create', 'as' => 'news.new']);

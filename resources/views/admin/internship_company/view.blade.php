@@ -71,7 +71,6 @@
         Duration
     </a>
     </div>
-
     </div>
     </div>
     
