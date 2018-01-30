@@ -1,68 +1,79 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-    <title>Laravel</title>
+@section('page-css')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+@stop
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-        .full-height {
-            height: 100vh;
-        }
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        .position-ref {
-            position: relative;
-        }
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        .content {
-            text-align: center;
-        }
-        .title {
-            font-size: 84px;
-        }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-<body>
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Vision International
+@include('layouts.navbar')
+@section('content')
+<div class = "col-lg-12 whole-page">
+    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <div class = "text-inside-header-picture">
+        <div class = "row dynamic-text-container">
+            <div class ="col-lg-6 dynamic-text">
+                <h4> WE PROVIDE UNLIMITED OPPORTUNITIES FOR STUDENTS, GRADUATES, THOSE WITH INDUSTRY EXPERIENCE AND ANYONE ELSE LOOKING TO WORK, TRAVEL, LEARN AND GO ABROAD</h4>
+            </div>
+        </div>
+        <div class = "row counters">
+            <div class ="col-lg-6">
+                <div class = "col-lg-2 counter-container">
+                    <h1 class = "counter text-center">2</h1>
+                </div>
+                <div class = "col-lg-2 counter-container">
+                     <h1 class = "counter text-center">40</h1>
+                </div>
+                <div class = "col-lg-2 counter-container">
+                    <h1 class = "counter text-center">300</h1>
+                </div>
+                <div class = "col-lg-2 counter-container">
+                     <h1 class = "counter text-center">560</h1>
+                </div>
+                <div class = "col-lg-2 counter-container-infinity">
+                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded" alt="Company Banner">
+                </div>
+            </div>
+        </div>
+        <div class = "row counter-label">
+            <div class ="col-lg-6">
+                <div class = "col-lg-2 counter-label-container">
+                    <h4 class = "labels">Countries</h4>
+                </div>
+                <div class = "col-lg-2 counter-label-container">
+                     <h4 class = "labels">States</h4>
+                </div>
+                <div class = "col-lg-2 counter-label-container">
+                    <h4 class = "labels">Companies</h4>
+                </div> 
+                <div class = "col-lg-2 counter-label-container">
+                     <h4 class = "labels">Applicants</h4>
+                </div>
+                <div class = "col-lg-2 counter-container-infinity-label">
+                    <h4 class = "labels">Opportunities</h4>
+                </div>
+            </div>
+        </div>
+        <div class = "row link-button">
+            <div class = "col-lg-3">
+                <a href = "www.fb.com" class = "btn fblink">#onevision #vip</a>
+            </div>
+        </div>
+    </div>
+    <!------------------------- CONTENT ---------------------->
+    <div class = "col-lg-12 text-center Top-header-message">
+        <h3>We believe that...</h3>
+        <br/>
+        <p> Every Filipino deserves an opportunity to </p>
+        <p> showcase his or her talent to the world.</p>
+    </div>
+    <div class = "row images-dual">
+        <div class = "col-lg-6">
+            <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+        </div>
+        <div class = "col-lg-6">
+            <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
         </div>
     </div>
 </div>
-</body>
-</html>
+<div class = "row">
+</div>

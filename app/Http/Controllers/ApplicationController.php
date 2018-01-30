@@ -74,8 +74,6 @@ class ApplicationController extends Controller
             'message'   => 'required',
             ]);
         */
-        $file = Input::file('upload_resume');
-
 
         $application = new Application;
         $application->program_id = $request['program_id'];

@@ -11,8 +11,8 @@
 <div class = "col-lg-12 whole-page">
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class = " row Top-header-message">
-        <div class = "col-lg-12 text-center">
+    <div class = " row">
+        <div class = "col-lg-12 Top-header-message" text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>

@@ -5,9 +5,6 @@
 <?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <?php $__env->startSection('content'); ?>
-<form action="" method="post" role="form">
- <?php echo e(csrf_field()); ?>
-
 <div class = "col-lg-12">
     <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
@@ -19,17 +16,23 @@
             <p> ASAP about the program you are interested in. We recommend you check carefully all</p>
             <p> the information you provide in order to have a smoother application process. Thank you!</p>
         </div>
+
+		<form action="<?php echo e(route('application.store')); ?>" method="post" role="form"  enctype="multipart/form-data"> 
+		<?php echo e(csrf_field()); ?>
+
         <div class = "col-lg-4 col-lg-offset-1">
         	<div class = "row form-group">
         		<div class = "col-lg-4">
         			<label for = "program" class = "labels">Program</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="program" id="">
+	                <select class = "form-control" name="program_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
-	                    <option value=""></option>
+						<option value="1">test</option>
+						<?php $__currentLoopData = $program_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $program): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<option value="<?php echo e($program->program_id); ?>"><?php echo e($program->title); ?></option>
+					  	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						  
 	                </select>
             	</div>
             </div>
@@ -38,19 +41,11 @@
         			<label for = "country" class = "labels">Country</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="country" id="">
+	                <select class = "form-control" name="country_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="PS">Palestinian Territory, Occupied</option>
-	                    <option value="PA">Panama</option>
-	                    <option value="PG">Papua New Guinea</option>
-	                    <option value="PY">Paraguay</option>
-	                    <option value="PE">Peru</option>
-	                    <option value="PH">Philippines</option>
-	                    <option value="PN">Pitcairn</option>
-	                    <option value="PL">Poland</option>
-	                    <option value="PT">Portugal</option>
-	                    <option value="PR">Puerto Rico</option>
-	                    <option value="QA">Qatar</option>
+	                    <?php $__currentLoopData = $country_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<option value="<?php echo e($country->country_id); ?>"><?php echo e($country->country_name); ?></option>
+					  	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 	                </select>
 	           </div>
             </div>
@@ -59,9 +54,9 @@
         			<label for = "location" class = "labels">Location</label>
         		</div>
         		<div class = "col-lg-8">
-	                <select class = "form-control" name="location" id="">
+	                <select class = "form-control" name="location_id" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="1">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -104,7 +99,7 @@
         			<label for = "bdate" class = "labels">Birthdate</label>
         		</div>
         		<div class = "col-lg-8">
-                	<input type = "date" class = "form-control"  name="bdate" id="" >
+                	<input type = "date" class = "form-control"  name="birthdate" id="" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -114,7 +109,7 @@
         		<div class = "col-lg-8">
 	                <select class = "form-control" name="gender" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="m">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -127,7 +122,7 @@
         		<div class = "col-lg-8">
 	                <select class = "form-control" name="current_city" id="">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="test">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -140,9 +135,9 @@
         			<label for = "school" class = "labels">University/School</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="school" id="school">
+	                <select class = "form-control" name="university_id" id="school">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="5">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -153,9 +148,9 @@
         			<label for = "degree" class = "labels">Degree</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="degree" id="degree">
+	                <select class = "form-control" name="degree_id" id="degree">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="6">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -166,9 +161,9 @@
         			<label for = "major" class = "labels">Major</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="major" id="major">
+	                <select class = "form-control" name="major_id" id="major">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="7">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -179,7 +174,7 @@
         			<label for = "grad" class = "labels">Graduation Date</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "date" class = "form-control"  name="grad" id="grad" >
+                	<input type = "date" class = "form-control"  name="grad_date" id="grad" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -187,7 +182,7 @@
         			<label for = "start" class = "labels">Preferred Start Date</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "date" class = "form-control"  name="start" id="start" >
+                	<input type = "date" class = "form-control"  name="start_date" id="start" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -195,7 +190,7 @@
         			<label for = "resume" class = "labels">Upload Resume</label>
         		</div>
         		<div class = "col-lg-7">
-                	<input type = "file" class = "form-control"  name="resume" id="resume" >
+                	<input type = "file" class = "form-control"  name="upload_resume" id="resume"  >
                 </div>
             </div>
             <div class = "row form-group">
@@ -203,9 +198,9 @@
         			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
         		</div>
         		<div class = "col-lg-7">
-	                <select class = "form-control" name="learn" id="learn">
+	                <select class = "form-control" name="about_vip" id="learn">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value=""></option>
+	                    <option value="dada">test</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -220,6 +215,7 @@
         </div>
     </div>  
 </div>
+</form>
 <div class = "filler row">
 </div>
 </form>

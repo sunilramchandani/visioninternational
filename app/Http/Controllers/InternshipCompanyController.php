@@ -31,6 +31,7 @@ class InternshipCompanyController extends Controller
             $internship_desc = InternshipCompany::where('state', request('state'))->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
             $internship_id = InternshipCompany::where('state', request('state'))->pluck('id');
+            
             return view('users.internship.internship', compact('internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id'));
         }
         else{
