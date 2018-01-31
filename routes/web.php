@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', ['uses' => function () {
-    return view('welcome');
-}, 'as' => 'home']);
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::get('/', ['uses' => function () {

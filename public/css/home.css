@@ -1,0 +1,69 @@
+.img-border{
+  margin-top: -17%;
+  width:105%;
+}
+.header{
+  height: 90%;
+  width:100%;
+}
+.counters{
+	color:white;
+	padding-left: 5%;
+	
+}
+.counter{
+	font-weight: bold;
+}
+.counter-container{
+	border-right: solid 2px white;
+}
+.counter-container-infinity{
+	padding-top: 19;
+}
+
+.counter-label{
+	color:white;
+	padding-left: 5%;
+	padding-bottom: 2%;
+	
+}
+.labels{
+	border-bottom: 5px solid red;
+	border-radius:3px;
+}
+.fblink{
+	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	 display: inline-block;
+	 color:white;
+	 border-radius: 8px;
+	 width:50%;
+	 height:40;
+	 font-size: 120%
+}
+.link-button{
+	padding-left: 5%;
+}
+.Top-header-message{
+	letter-spacing: 2px;
+}
+.images-dual{
+	height:50%;
+}
+.dynamic-text{
+	background-color:black;
+	z-index:1;
+	opacity: 0.7;
+	border-radius:12px;
+	letter-spacing: 2px;
+}
+	
+.dynamic-text-container{
+	padding-left: 5%;
+	color:white;
+	padding-bottom: 3%;
+}
+
+.text-inside-header-picture{
+	margin-top: -430px;
+	padding-bottom: 15%;
+}
