@@ -5,13 +5,16 @@
 <?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->startSection('content'); ?>
 <div class = "col-lg-12 whole-page">
-    <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+<?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->header); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
-            <div class ="col-lg-6 dynamic-text">
-                <h4> WE PROVIDE UNLIMITED OPPORTUNITIES FOR STUDENTS, GRADUATES, THOSE WITH INDUSTRY EXPERIENCE AND ANYONE ELSE LOOKING TO WORK, TRAVEL, LEARN AND GO ABROAD</h4>
+            <div class ="col-lg-6 dynamic-text-container-box">
+            
+                <h4 class = "dynamic-text"> <?php echo e($featured->description); ?></h4>
             </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
         <div class = "row counters">
             <div class ="col-lg-6">
@@ -19,13 +22,13 @@
                     <h1 class = "counter text-center">2</h1>
                 </div>
                 <div class = "col-lg-2 counter-container">
-                     <h1 class = "counter text-center">40</h1>
+                     <p><h1 class = "counter text-center"> <?php echo e($state_count); ?> </h1>  
                 </div>
                 <div class = "col-lg-2 counter-container">
-                    <h1 class = "counter text-center">300</h1>
+                    <h1 class = "counter text-center"><?php echo e($company_count); ?></h1>
                 </div>
                 <div class = "col-lg-2 counter-container">
-                     <h1 class = "counter text-center">560</h1>
+                     <h1 class = "counter text-center"><?php echo e($applicant_count); ?></h1>
                 </div>
                 <div class = "col-lg-2 counter-container-infinity">
                     <img src="<?php echo e(URL::asset('image/icons/InfinitySign.png')); ?>" class="img img-responsive img-rounded" alt="Company Banner">
