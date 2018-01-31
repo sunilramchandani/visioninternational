@@ -8,13 +8,21 @@
 @section('content')
 <div class = "col-lg-12 whole-page">
 @foreach ($featuredimage_home as $featured)
+<<<<<<< HEAD
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->header}}" class="img img-responsive img-rounded header" alt="Company Banner">
+=======
+    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
+>>>>>>> 6421522412cd251cc1e861cf684886a642363d17
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text-container-box">
             
+<<<<<<< HEAD
                 <h4 class = "dynamic-text"> {{$featured->description}}</h4>
+=======
+                <h4> {{$featured->main_image_description}}</h4>
+>>>>>>> 6421522412cd251cc1e861cf684886a642363d17
             </div>
             @endforeach
         </div>
