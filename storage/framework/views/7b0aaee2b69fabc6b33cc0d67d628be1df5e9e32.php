@@ -3,7 +3,7 @@
 <div class = "col-lg-12 footer">
     <div class = "row top-footer-content">
         <div class = "col-lg-3 col-lg-offset-1 vip-logo">
-            <img src = "<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class = "img img-responsive footer-logo">
+            <img src = "<?php echo e(URL::asset('image/footer-logo.png')); ?>" class = "img img-responsive footer-logo">
         </div>
         <div class = "col-lg-2 company">
             <p>COMPANY</p>

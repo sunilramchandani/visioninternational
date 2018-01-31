@@ -7,13 +7,16 @@
 @include('layouts.navbar')
 @section('content')
 <div class = "col-lg-12 whole-page">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+@foreach ($featuredimage_home as $featured)
+    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->image}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text">
-                <h4> WE PROVIDE UNLIMITED OPPORTUNITIES FOR STUDENTS, GRADUATES, THOSE WITH INDUSTRY EXPERIENCE AND ANYONE ELSE LOOKING TO WORK, TRAVEL, LEARN AND GO ABROAD</h4>
+            
+                <h4> {{$featured->description}}</h4>
             </div>
+            @endforeach
         </div>
         <div class = "row counters">
             <div class ="col-lg-6">

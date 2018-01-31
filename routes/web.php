@@ -1,14 +1,15 @@
 <?php
 
-Route::get('/', ['uses' => function () {
-    return view('welcome');
-}, 'as' => 'home']);
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::get('/', ['uses' => function () {
         return view('admin.home');
     }, 'as' => 'admin.home']);
 
+    Route::resource('featuredimage', 'FeaturedImageController');
+
+    
     // News Routes
     Route::group(['prefix' => 'news'], function() {
         Route::get('/new', ['uses' => 'News\NewsController@create', 'as' => 'news.new']);
