@@ -14,7 +14,7 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text">
             
-                <h4> {{$featured->description}}</h4>
+                <h4> {{$featured->main_image_description}}</h4>
             </div>
             @endforeach
         </div>
