@@ -27,12 +27,6 @@
 
                     <?php $__currentLoopData = $internshipCompany_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <a href="/internshipcompany?state=<?php echo e($company->state); ?>"><?php echo e($company->state); ?></a>
-                        <?php if(Request::url() === 'internshipcompany?state=<?php echo e($company->state); ?>'): ?>
-                        <?php $__currentLoopData = $lolo; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lolos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                         <a href="/internshipcompany?state=<?php echo e($lolos->state); ?>"><?php echo e($lolos->state); ?></a>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
-                        
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                   </div>

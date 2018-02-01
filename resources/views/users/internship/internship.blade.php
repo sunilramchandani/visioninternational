@@ -82,6 +82,7 @@
                         </div>
                     </div> 
                 @endforeach
+                            
             </div>
         </div>
 </div>
@@ -145,7 +146,7 @@ function initMap() {
                                 '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                 '<div id="bodyContent">'+
                                     gdesc[counter] +
-                                    '<a class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More'
+                                    '<a data-toggle="modal" data-target="#createremark" class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>'
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({

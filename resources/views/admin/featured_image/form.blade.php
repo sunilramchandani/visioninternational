@@ -49,8 +49,8 @@
                                 <label for="main_image_description">
                                     Header Description
                                 </label>
-                                <input type="text" class="form-control" id="main_image_description" name="main_image_description" value="{{ isset($featuredimage) ? $featuredimage->main_image_description : '' }}"
-                                placeholder="Some Title">
+                                <input type="longtext" class="form-control" id="main_image_description" name="main_image_description" value="{{ isset($featuredimage) ? $featuredimage->main_image_description : '' }}"
+                                placeholder="   ">
                             </div>
                         </div>
                     </div>
@@ -59,14 +59,14 @@
 
                    
 
-                        @if(isset($featuredimage->sub_image1))
+                    @if(isset($featuredimage->sub_image1))
 
 
-                        <div class="row">
+                    <div class="row">
                         <div class="col-xs-6">
                             <div class="form-group">
                                 <label for="sub_image1">
-                                    Header Image
+                                    Sub Image 1
                                 </label>
                                 <input type="file" class="form-control" name="sub_image1" id="sub_image1" value="{{ isset($featuredimage) ? $featuredimage->sub_image1 : '' }}">
                             </div>
@@ -77,7 +77,7 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label for="sub_image1_description">
-                                    Header Description
+                                    Sub image 1 Description
                                 </label>
                                 <input type="text" class="form-control" id="sub_image1_description" name="sub_image1_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image1_description : '' }}"
                                 placeholder="Some Title">
@@ -85,56 +85,145 @@
                         </div>
                     </div>
 
-                        @endif @if(isset($featuredimage->sub_image2)) Sub Image 1
-                        <div class="col-lg-7">
-                            <input type="file" class="form-control" name="sub_image2" id="sub_image2" value="{{ isset($featuredimage) ? $featuredimage->sub_image2 : '' }}">
+                    
+                    <div class="border-bot"></div>
+                    <br>
+
+                    @endif
+
+                    @if(isset($featuredimage->sub_image2))
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image2">
+                                    Sub Image 2
+                                </label>
+                                <input type="file" class="form-control" name="sub_image2" id="sub_image2" value="{{ isset($featuredimage) ? $featuredimage->sub_image2 : '' }}">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="stipend">
-                                Sub Image 1 Description
-                            </label>
-                            <input type="text" class="form-control" id="sub_image2_description" name="sub_image2_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image2_description : '' }}"
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="sub_image2_description">
+                                    Sub image 2 Description
+                                </label>
+                                <input type="text" class="form-control" id="sub_image2_description" name="sub_image2_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image2_description : '' }}"
                                 placeholder="Some Title">
+                            </div>
                         </div>
-                        @endif @if(isset($featuredimage->sub_image3)) Sub Image 1
-                        <div class="col-lg-7">
-                            <input type="file" class="form-control" name="sub_image3" id="sub_image3" value="{{ isset($featuredimage) ? $featuredimage->sub_image3 : '' }}">
+                    </div>
+
+                    
+                    <div class="border-bot"></div>
+                    <br>
+                    @endif
+
+
+             @if($featuredimage->page_name == "home")
+                @if(isset($featuredimage->sub_image3))
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image3">
+                                    Promo Image
+                                </label>
+                                <input type="file" class="form-control" name="sub_image3" id="sub_image3" value="{{ isset($featuredimage) ? $featuredimage->sub_image3 : '' }}">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="stipend">
-                                Sub Image 1 Description
-                            </label>
-                            <input type="text" class="form-control" id="sub_image3_description" name="sub_image3_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_description : '' }}"
-                                placeholder="Some Title">
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="sub_image3_description">
+                                    Promo Description
+                                </label>
+                                <input type="text" class="form-control" name="sub_image3_description" id="sub_image3_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_description : '' }}">
+                            </div>
                         </div>
-                        @if(isset($featuredimage->sub_image3_title))
-                        <div class="form-group">
-                            <label for="stipend">
-                                Sub Image 3 Title
-                            </label>
-                            <input type="text" class="form-control" id="sub_image3_title" name="sub_image3_title" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_title : '' }}"
-                                placeholder="Some Title">
+                    </div>
+                    
+                @endif
+                @if(isset($featuredimage->sub_image3_title))
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image3_title">
+                                    Promo Title
+                                </label>
+                                <input type="text" class="form-control" name="sub_image3_title" id="sub_image3_title" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_title : '' }}">
+                            </div>
                         </div>
-                        @endif @if(isset($featuredimage->sub_image3_validity))
-                        <div class="form-group">
-                            <label for="stipend">
-                                Sub Image 3 Title
-                            </label>
-                            <input type="text" class="form-control" id="sub_image3_validity" name="sub_image3_validity" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_validity : '' }}"
-                                placeholder="Some Title">
+                @endif
+                        
+                @if(isset($featuredimage->sub_image3_validity))
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image3_validity">
+                                    Promo Validity
+                                </label>
+                                <input type="text" class="form-control" name="sub_image3_validity" id="sub_image3_validity" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_validity : '' }}">
+                            </div>
                         </div>
-                        @endif @endif @if(isset($featuredimage->sub_image4)) Sub Image 1
-                        <div class="col-lg-7">
-                            <input type="file" class="form-control" name="sub_image4" id="sub_image4" value="{{ isset($featuredimage) ? $featuredimage->sub_image4 : '' }}">
+                    </div>
+                    <div class="border-bot"></div>
+                    <br>
+                @endif
+
+             @endif
+                        
+             @if($featuredimage->page_name == "home")
+                @if(isset($featuredimage->sub_image4))
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image4">
+                                    Testimony Image
+                                </label>
+                                <input type="file" class="form-control" name="sub_image4" id="sub_image4" value="{{ isset($featuredimage) ? $featuredimage->sub_image4 : '' }}">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="stipend">
-                                Sub Image 1 Description
-                            </label>
-                            <input type="text" class="form-control" id="sub_image4_description" name="sub_image4_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image4_description : '' }}"
-                                placeholder="Some Title">
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="sub_image4_description">
+                                    Testimony Description
+                                </label>
+                                <input type="text" class="form-control" name="sub_image4_description" id="sub_image4_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image4_description : '' }}">
+                            </div>
                         </div>
-                        @endif @if(isset($featuredimage->sub_image5)) Sub Image 1
+                    </div>
+                    <div class="border-bot"></div>
+                    <br>
+                @endif  
+
+                @if(isset($featuredimage->sub_image4_sender_title))
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image4_sender_title">
+                                    Promo Title
+                                </label>
+                                <input type="text" class="form-control" name="sub_image4_sender_title" id="sub_image4_sender_title" value="{{ isset($featuredimage) ? $featuredimage->sub_image4_sender_title : '' }}">
+                            </div>
+                        </div>
+                    
+                @endif
+                        
+                @if(isset($featuredimage->sub_image4_sender))
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="sub_image4_sender">
+                                    Promo Validity
+                                </label>
+                                <input type="text" class="form-control" name="sub_image4_sender" id="sub_image4_sender" value="{{ isset($featuredimage) ? $featuredimage->sub_image4_sender : '' }}">
+                            </div>
+                        </div>
+                    </div>
+                @endif
+         @endif
+                         @if(isset($featuredimage->sub_image5)) Sub Image 1
                         <div class="col-lg-7">
                             <input type="file" class="form-control" name="sub_image5" id="sub_image5" value="{{ isset($featuredimage) ? $featuredimage->sub_image5 : '' }}">
                         </div>

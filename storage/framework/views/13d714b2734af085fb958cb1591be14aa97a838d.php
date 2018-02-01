@@ -155,7 +155,20 @@
         <h1>Events</h1>
     </div>
 </div>
-
+    <div class="row home-page-events">
+      <?php $__currentLoopData = $events_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class = "col-lg-3 events-content">
+          <img src="<?php echo e($events->cover_source); ?>" alt="" class = "event-img img">
+          
+          <h4 class = " details text-center"><?php echo e($events->event_name); ?> </h4> 
+          <p class = "details text-center"><strong><?php echo e(Carbon\Carbon::parse($events->start_time)->toFormattedDateString()); ?> | <?php echo e(Carbon\Carbon::parse($events->start_time)->format('h:i')); ?> - <?php echo e($events->place_name); ?></strong> </p>
+          <p class = "details text-center"><?php echo e(\Illuminate\Support\Str::words($events->event_description, 15,' .... ')); ?></p>
+         
+          <button class = "submit btn"><span>More Info</span></button>
+        </div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</div>
 
 <!--End of Events -->
 <?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -167,9 +180,9 @@
            <h1>Promos</h1>
            <p>Get one step closer to your dreams
             <br>Take advantage of this amazing deal on our programs!
-        </p>
+            </p>
+        </div>
     </div>
-</div>
 </div>
 
 

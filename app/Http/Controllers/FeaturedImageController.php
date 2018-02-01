@@ -74,44 +74,68 @@ class FeaturedImageController extends Controller
     {
         $featuredimage = FeaturedImage::find($id);
        
+        //Main Image
         if ($request->hasFile('main_image')){
-        $file = $request->file('main_image');
-        $name = $file->getClientOriginalName();
-        $fileName = $name;
-        $file->move('image/uploaded_featured_image', $fileName);
-        $featuredimage->main_image = $fileName;
-        $featuredimage->main_image_description = $request['main_image_description'];
+            $file = $request->file('main_image');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->main_image = $fileName;
         }
 
+        if ($request->has('main_image_description')){
+            $featuredimage->main_image_description = $request['main_image_description'];
+        }
+
+        //Sub Image 1
         if ($request->hasFile('sub_image1')){
             $file = $request->file('sub_image1');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image1 = $fileName;
+        }
+
+        if ($request->has('sub_image1_description')){
             $featuredimage->sub_image1_description = $request['sub_image1_description'];
         }
 
+        //Sub Image 2
         if ($request->hasFile('sub_image2')){
             $file = $request->file('sub_image2');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image2 = $fileName;
+            
+        }
+
+        if ($request->has('sub_image2_description')){
             $featuredimage->sub_image2_description = $request['sub_image2_description'];
         }
 
+        //Sub Image 3
         if ($request->hasFile('sub_image3')){
             $file = $request->file('sub_image3');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image3 = $fileName;
+        }
+
+        if ($request->has('sub_image3_validity')){
             $featuredimage->sub_image3_validity = $request['sub_image3_validity'];
+        }
+
+        if ($request->has('sub_image3_title')){
             $featuredimage->sub_image3_title = $request['sub_image3_title'];
+        }
+
+        if ($request->has('sub_image3_description')){
             $featuredimage->sub_image3_description = $request['sub_image3_description'];
         }
 
+        //Sub Image 4
         if ($request->hasFile('sub_image4')){
             $file = $request->file('sub_image4');
             $name = $file->getClientOriginalName();
@@ -121,6 +145,20 @@ class FeaturedImageController extends Controller
             $featuredimage->sub_image4_description = $request['sub_image4_description'];
         }
 
+        if ($request->has('sub_image4_description')){
+            $featuredimage->sub_image4_description = $request['sub_image4_description'];
+        }   
+
+        //Home Only
+        if ($request->has('sub_image3_sender')){
+            $featuredimage->sub_image3_sender = $request['sub_image3_sender'];
+        }
+
+        if ($request->has('sub_image3_sender_title')){
+            $featuredimage->sub_image3_sender = $request['sub_image3_sender'];
+        }
+
+        //Sub Image 5
         if ($request->hasFile('sub_image5')){
             $file = $request->file('sub_image5');
             $name = $file->getClientOriginalName();
@@ -128,48 +166,73 @@ class FeaturedImageController extends Controller
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image5 = $fileName;
             $featuredimage->sub_image5_description = $request['sub_image5_description'];
-       }
+        }
 
-       if ($request->hasFile('sub_image6')){
+       if ($request->has('sub_image3_description')){
+            $featuredimage->sub_image3_description = $request['sub_image3_description'];
+        }
+        //Sub Image 6
+        if ($request->hasFile('sub_image6')){
             $file = $request->file('sub_image6');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image6 = $fileName;
+        }
+
+        if ($request->has('sub_image6_description')){
             $featuredimage->sub_image6_description = $request['sub_image6_description'];
-       }
-       if ($request->hasFile('sub_image7')){
+        }
+        //Sub Image 7
+        if ($request->hasFile('sub_image7')){
             $file = $request->file('sub_image7');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image7 = $fileName;
+        }
+
+        if ($request->has('sub_image7_description')){
             $featuredimage->sub_image7_description = $request['sub_image7_description'];
-       }
+        }
+
+        //Sub Image 8
        if ($request->hasFile('sub_image8')){
             $file = $request->file('sub_image8');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image8 = $fileName;
+        }
+
+        if ($request->has('sub_image8_description')){
             $featuredimage->sub_image8_description = $request['sub_image8_description'];
-       }
-       if ($request->hasFile('sub_image9')){
+        }
+         //Sub Image 9
+        if ($request->hasFile('sub_image9')){
             $file = $request->file('sub_image9');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image9 = $fileName;
+        }
+
+       if ($request->has('sub_image9_description')){
             $featuredimage->sub_image9_description = $request['sub_image9_description'];
-       }
-       if ($request->hasFile('sub_image10')){
+        }
+
+        //Sub Image 10
+        if ($request->hasFile('sub_image10')){
             $file = $request->file('sub_image10');
             $name = $file->getClientOriginalName();
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image10 = $fileName;
+        }
+
+        if ($request->has('sub_image10_description')){
             $featuredimage->sub_image10_description = $request['sub_image10_description'];
-       }
+        }
        
         $featuredimage->save();
         $success = array('ok'=> 'The Request has been approved!');
