@@ -129,6 +129,47 @@ class FeaturedImageController extends Controller
             $featuredimage->sub_image5 = $fileName;
             $featuredimage->sub_image5_description = $request['sub_image5_description'];
        }
+
+       if ($request->hasFile('sub_image6')){
+            $file = $request->file('sub_image6');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->sub_image6 = $fileName;
+            $featuredimage->sub_image6_description = $request['sub_image6_description'];
+       }
+       if ($request->hasFile('sub_image7')){
+            $file = $request->file('sub_image7');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->sub_image7 = $fileName;
+            $featuredimage->sub_image7_description = $request['sub_image7_description'];
+       }
+       if ($request->hasFile('sub_image8')){
+            $file = $request->file('sub_image8');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->sub_image8 = $fileName;
+            $featuredimage->sub_image8_description = $request['sub_image8_description'];
+       }
+       if ($request->hasFile('sub_image9')){
+            $file = $request->file('sub_image9');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->sub_image9 = $fileName;
+            $featuredimage->sub_image9_description = $request['sub_image9_description'];
+       }
+       if ($request->hasFile('sub_image10')){
+            $file = $request->file('sub_image10');
+            $name = $file->getClientOriginalName();
+            $fileName = $name;
+            $file->move('image/uploaded_featured_image', $fileName);
+            $featuredimage->sub_image10 = $fileName;
+            $featuredimage->sub_image10_description = $request['sub_image10_description'];
+       }
        
         $featuredimage->save();
         $success = array('ok'=> 'The Request has been approved!');

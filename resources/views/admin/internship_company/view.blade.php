@@ -36,32 +36,37 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-3">
                     <span class="label">Housing Address:</span>
                     {{ $company->housing_address }}
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
+
+                <div class="col-xs-12 col-md-3">
                     <span class="label">Full Address:</span>
                     {{ $company->full_address }}
                 </div>
-            </div>
 
-            <div class="col-xs-12 col-md-6">
-                <span class="label">Stipend:</span>
-                {{ $company->stipend }}
+                <div class="col-xs-12 col-md-3">
+                    <span class="label">Stipend:</span>
+                    {{ $company->stipend }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <span class="label">State:</span>
+                    {{ $company->state }}
+                </div>
+            
+            <div class="col-xs-12 col-md-3">
+                <span class="label">Image:</span>
+                {{ $company->image }}
+            </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-            <span class="label">Duration:</span>
-            {{ $company->state }}
-        </div>
+
+
     </div>
-    <div class="col-xs-12 col-md-6">
-        <span class="label">Duration:</span>
-        {{ $company->image }}
-    </div>
+    </br>
     <a href="{{ route('internshipcompany.new_opportunity', $company->id) }}" class="btn btn-warning">
         Opportunity
     </a>
@@ -74,6 +79,6 @@
     </div>
     </div>
     </div>
-    
+
 </section>
 @endsection
