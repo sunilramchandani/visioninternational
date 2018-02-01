@@ -9,22 +9,10 @@
 <form action="" method="post" role="form">
  {{csrf_field()}}
 <div class = "col-lg-12 whole-page">
-@foreach ($featuredimage_internship as $featured)
-    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
+    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class = "text-inside-header-picture">
-        <div class = "row dynamic-text-container">
-            <div class ="col-lg-6 dynamic-text-container-box">
-                <h4> {{$featured->main_image_description}}</h4>
-            </div>
-        
-@endforeach
-        </div>
-            </div>
-
-    
     <div class = " row">
-        <div class = "col-lg-12 Top-header-message" "text-center">
+        <div class = "col-lg-12 Top-header-message" text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
@@ -161,11 +149,7 @@ function initMap() {
                                 '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                 '<div id="bodyContent">'+
                                     gdesc[counter] +
-<<<<<<< HEAD
                                     '<a class="btn btn-primary btn-single btn-sm showme" href = "internship?cid=' + gid[counter] + '"> Learn More'
-=======
-                                    '<a data-toggle="modal" data-target="#createremark" class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>'
->>>>>>> c7a6c5e79dd19f89c9d3dacbeb7bb9c34867b192
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
