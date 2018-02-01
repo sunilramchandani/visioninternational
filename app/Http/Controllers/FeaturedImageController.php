@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FeaturedImage;
+use Illuminate\Support\Facades\DB;
 class FeaturedImageController extends Controller
 {
     /**
@@ -46,9 +47,11 @@ class FeaturedImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($featured)
     {
-        //
+        $featured = DB::table('featuredimage')->select('page_name')->get();
+        return view('layouts.admin', compact('featured'));
+
     }
 
     /**
