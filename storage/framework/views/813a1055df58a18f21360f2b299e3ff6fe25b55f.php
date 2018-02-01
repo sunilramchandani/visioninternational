@@ -22,8 +22,10 @@
     </div>
        
 </body>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+
+<script src="<?php echo e(asset('/js/jquery-3.2.1.min.js')); ?>"></script>
+<script src="<?php echo e(asset('/js/bootstrap.min.js')); ?>"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo e(asset('/js/jquery.dataTables.min.js')); ?>"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo e(asset('/js/dataTables.bootstrap.min.js')); ?>"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo e(asset('/js/dataTables.buttons.min.js')); ?>"></script>
 </html>

@@ -6,12 +6,13 @@
 <?php $__env->startSection('content'); ?>
 <div class = "col-lg-12 whole-page">
 <?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
     <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->main_image); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+
     <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
-            <div class ="col-lg-6 dynamic-text">
-            
+            <div class ="col-lg-6 dynamic-text-container-box">
                 <h4> <?php echo e($featured->main_image_description); ?></h4>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -22,13 +23,13 @@
                     <h1 class = "counter text-center">2</h1>
                 </div>
                 <div class = "col-lg-2 counter-container">
-                     <h1 class = "counter text-center">40</h1>
+                     <p><h1 class = "counter text-center"> <?php echo e($state_count); ?> </h1>  
                 </div>
                 <div class = "col-lg-2 counter-container">
-                    <h1 class = "counter text-center">300</h1>
+                    <h1 class = "counter text-center"><?php echo e($company_count); ?></h1>
                 </div>
                 <div class = "col-lg-2 counter-container">
-                     <h1 class = "counter text-center">560</h1>
+                     <h1 class = "counter text-center"><?php echo e($applicant_count); ?></h1>
                 </div>
                 <div class = "col-lg-2 counter-container-infinity">
                     <img src="<?php echo e(URL::asset('image/icons/InfinitySign.png')); ?>" class="img img-responsive img-rounded" alt="Company Banner">
@@ -73,23 +74,25 @@
     </div>
 
     <!--Picture -->
-    <div class="container-fluid">
-     <div class="row">
+    <?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<div class="container-fluid">
+     <div class="row picture-header">
         <div class="col-lg-12 home-pic-container">
           <div class="col-lg-6">
             <div class="home-pic">
-                <img src="<?php echo e(URL::asset('image/home-left.png')); ?>" class="img-rounded img-responsive" alt="Photo" >
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image1); ?>" class="img-rounded img-responsive" alt="Photo" >
             </div>
          </div>
         <div class="col-lg-6">
             <div class="home-pic">
-                <img src="<?php echo e(URL::asset('image/home-right.png')); ?>" class="img-rounded img-responsive" alt="Photo" >
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image2); ?>" class="img-rounded img-responsive" alt="Photo" >
             </div>
         </div>
         </div>
     </div>
 </div>
-    <div class="container">
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<div class="container">
     <div class="about row">
         <div class="col-lg-12 text-center about-font">
             <h1>Our Commitments</h1>
@@ -152,41 +155,89 @@
         <h1>Events</h1>
     </div>
 </div>
-
+    <div class="row home-page-events">
+      <?php $__currentLoopData = $events_table; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class = "col-lg-3 events-content">
+          <img src="<?php echo e($events->cover_source); ?>" alt="" class = "event-img img">
+          
+          <h4 class = " details text-center"><?php echo e($events->event_name); ?> </h4> 
+          <p class = "details text-center"><strong><?php echo e(Carbon\Carbon::parse($events->start_time)->toFormattedDateString()); ?> | <?php echo e(Carbon\Carbon::parse($events->start_time)->format('h:i')); ?> - <?php echo e($events->place_name); ?></strong> </p>
+          <p class = "details text-center"><?php echo e(\Illuminate\Support\Str::words($events->event_description, 15,' .... ')); ?></p>
+         
+          <button class = "submit btn"><span>More Info</span></button>
+        </div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</div>
 
 <!--End of Events -->
-
+<?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php if($featured->sub_image3_title != Null): ?>
 <!-- Start of Promos -->
 <div class="container text-center">
-    <div class="row">
+    <div class="row promos-header">
         <div class="about-font">
            <h1>Promos</h1>
            <p>Get one step closer to your dreams
             <br>Take advantage of this amazing deal on our programs!
-        </p>
-    </div>
-</div>
-</div>
-
-
-<!-- Promo picture -->
-<div class="container text-center">
-    <div class="col-lg-12">
-        <img src="<?php echo e(URL::asset('image/photos/APPLICATION.jpg')); ?>" alt="Promo Picture" class="img-responsive img-rounded" id=promo-pict>
-    </div>
-</div>
-<!-- End of Promos -->
-
-<div class="container">
-    <div class="row">
-        <div class="about-font text-center">
-             <h1>Our Community</h1>
-             <p>We are proud to have an amazing community of students and professionals
-                <br>who have received the VIP treatment. Listen to their stories.
             </p>
         </div>
     </div>
 </div>
+
+
+<!-- Promo picture -->
+
+        <div class="container text-center promos">
+            <div class="col-lg-6 col-lg-offset-1 promo-pic-container">
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image3); ?>" class="img img-responsive  promo-pic" alt="Company Banner">
+            </div>
+            <div class = "col-lg-4 promo-desc">
+                <div class = "upper-content">
+                    <h4 class = "dynamic-promo-title"> <?php echo e($featured->sub_image3_title); ?></h4>
+                    <h4 class = "dynamic-promo-text"><?php echo e($featured->sub_image3_description); ?></h4>
+                    <?php if($featured->link == "internship"): ?>
+                        <a href = "/internshipcompany" class = "btn moreinfo">More Info </a>
+                    <?php else: ?>
+                        <a href = "/Jobs" class = "btn moreinfo">More Info </a>
+                    <?php endif; ?>
+                </div>
+                <div class = "lowe-content">
+                    <p>Valid Until: <?php echo e($featured->sub_image3_validity); ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<!-- End of Promos -->
+<?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php if($featured->sub_image4 != Null): ?>
+        <div class="container">
+            <div class="row testimony-header">
+                <div class="about-font text-center">
+                     <h1>Our Community</h1>
+                     <p>We are proud to have an amazing community of students and professionals
+                        <br>who have received the VIP treatment. Listen to their stories.
+                    </p>
+                </div>
+            </div>
+            <div class = "row testimony-content">
+                <div class = "col-lg-12">
+                    <div class = "col-lg-8 testimony-description">
+                        <blockquote><?php echo e($featured->sub_image4_description); ?>
+
+                            <cite><?php echo e($featured->sub_image4_sender); ?></cite>
+                            <cite><?php echo e($featured->sub_image4_sender_title); ?></cite>
+                        </blockquote>
+                    </div>
+                    <div clas = "col-lg-4">
+                         <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image4); ?>" class="img img-rounded testimony-picture" alt="Company Banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <div class = "row">
 </div>
 

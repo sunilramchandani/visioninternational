@@ -82,6 +82,7 @@
                         </div>
                     </div> 
                 @endforeach
+                            
             </div>
         </div>
 </div>
@@ -149,7 +150,11 @@ function initMap() {
                                 '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                 '<div id="bodyContent">'+
                                     gdesc[counter] +
+<<<<<<< HEAD
                                     '<a class="btn btn-primary btn-single btn-sm showme" href = "internship?cid=' + gid[counter] + '"> Learn More'
+=======
+                                    '<a data-toggle="modal" data-target="#createremark" class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>'
+>>>>>>> c7a6c5e79dd19f89c9d3dacbeb7bb9c34867b192
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
