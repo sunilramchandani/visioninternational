@@ -158,6 +158,67 @@
                     </ul>
                 </li>
 
+                <li class="treeview <?php echo e(($currentRoutePrefix === 'admin/application') ? 'active' : ''); ?>">
+                    <a href="#">
+                        <i class="fa fa-envelope"></i>
+                        <span>Application</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo e(route('application.list')); ?>">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview <?php echo e(($currentRoutePrefix === 'admin/internshipcompany') ? 'active' : ''); ?>">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Internship Company</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo e(route('internshipcompany.list')); ?>">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo e(route('internshipcompany.new')); ?>">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview <?php echo e(($currentRoutePrefix === 'admin/featuredimage') ? 'active' : ''); ?>">
+                    <a href="#">
+                        <i class="fa fa-bookmark"></i>
+                        <span>Featured Images   </span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?php echo e(route('featuredimage.index')); ?>">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
                 <li class="">
                     <a href="#">
                         <i class="fa fa-cog"></i>
