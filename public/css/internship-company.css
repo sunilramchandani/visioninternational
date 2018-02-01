@@ -143,3 +143,23 @@ hr{
   width: 300px; 
   min-height: 150px;
 }
+#y{
+	display: none;
+}
+#x{
+	display: block;
+}
+.map-img{
+	height:220px;
+	width: 100%;
+	padding:0;
+}
+.gm-style-iw {
+    height: 220px;
+    width: 300px !important;
+    padding:0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right:0 !important ;
+    bottom:0 !important ;
+}
