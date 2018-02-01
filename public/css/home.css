@@ -142,7 +142,7 @@
 }
 .home-pic img {
   height: inherit;
-  width: 100%;
+  width: 95%;
   margin: 20px;
 }
 
@@ -182,9 +182,75 @@
 div.promos{
 	color:white;
 	width:100%;
+	padding-bottom: 5%;
+}
+.testimony-description{
+	padding-top: 5%;
 }
 .promo-pic-container{
 	padding-right: 0;
 	border-bottom-left-radius: 12px;
 	border-top-left-radius: 12px;
 }
+.testimony-picture{
+	height:335px;
+	width:370px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.picture-header{
+	padding-bottom: 5%;
+}
+.testimony-content{
+	padding-bottom: 7%;
+}
+.testimony-header{
+	padding-bottom: 5%;
+}
+.promos-header{
+	padding-bottom: 5%;
+}
+.sender-name{
+	padding-top: 5%;
+}
+blockquote {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+margin: 0.25em 0;
+padding: 0.35em 40px;
+line-height: 1.45;
+position: relative;
+color: #383838;
+border:none;
+}
+
+blockquote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -30px;
+color: #7a7a7a;
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
+    float:right;
+    line-height: 1;
+    right:60;
+    bottom: 6px;
+    content: "\201D";
+    font-size: 80px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+
