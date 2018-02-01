@@ -107,6 +107,8 @@ class FeaturedImageController extends Controller
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image3 = $fileName;
+            $featuredimage->sub_image3_validity = $request['sub_image3_validity'];
+            $featuredimage->sub_image3_title = $request['sub_image3_title'];
             $featuredimage->sub_image3_description = $request['sub_image3_description'];
         }
 

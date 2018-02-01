@@ -19,15 +19,27 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
+                            <th>Application ID</th>
                             <th>Program ID</th>
                             <th>Country ID</th>
+                            <th>Location ID</th>
+                            <th>Lastname</th>
+                            <th>Firstname</th>
+                            <th>Email</th>
+                            <th>Contact No</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         @foreach($app as $single_app)
                             <tr>
+                                <td>{{ $single_app->id }}</td>
+                                <td>{{ $single_app->program_id }}</td>
+                                <td>{{ $single_app->country_id }}</td>
+                                <td>{{ $single_app->location_id }}</td>
                                 <td>{{ $single_app->last_name }}</td>
+                                <td>{{ $single_app->first_name }}</td>
+                                <td>{{ $single_app->email }}</td>
                                 <td>
                                     <a
                                         href="{{ route('application.view', $single_app->id) }}"

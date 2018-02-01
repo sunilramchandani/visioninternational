@@ -18,7 +18,7 @@ class EventPluginController extends Controller
     public function index()
     {
         $curl = curl_init();
-        $rss_url = "https://graph.facebook.com/v2.11/2092525184364641/events?fields=name,cover,description,end_time,start_time,place,timezone&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
+        $rss_url = "https://graph.facebook.com/v2.11/2092525184364641/events?fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
         curl_setopt($curl, CURLOPT_URL, $rss_url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
         curl_setopt($curl, CURLOPT_REFERER, '');
@@ -30,9 +30,6 @@ class EventPluginController extends Controller
         curl_close($curl);
 
         $insertResult = json_decode($data, true);
-
-
-        
        
         foreach ($insertResult['data'] as $result) {
                 // convert time to datetime instance
@@ -49,8 +46,8 @@ class EventPluginController extends Controller
                 $endtime->setTimestamp($endtimestamp);
                 $endtime->setTimezone(new DateTimeZone('US/Eastern'));
                 $endtime->format('g:i a');
-                $endtime->format('l, F j, Y');
-
+                $endtime->format('l, F j, Y');  
+        
         $dataset = array(
             'event_name' => $result['name'],
             'event_description' => $result['description'],
@@ -68,8 +65,10 @@ class EventPluginController extends Controller
             'timezone' => $result['timezone'],
             'post_id' => $result['id'],
         );
+        $event = EventPlugin::firstorCreate($dataset);
     }
-        $event = EventPlugin::firstOrCreate($dataset);
+        
+        
     
         return view('users.facebook')->with('data', json_decode($data, true));  
     }
