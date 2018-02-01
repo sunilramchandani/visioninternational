@@ -19,8 +19,9 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Program ID</th>
-                            <th>Country ID</th>
+                            <th>Company Name</th>
+                            <th>Company Description</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -28,6 +29,7 @@
                         @foreach($company as $single_company)
                             <tr>
                                 <td>{{ $single_company->company_name }}</td>
+                                <td>{{ $single_company->description }}</td>
                                 <td>
                                     <a
                                         href="{{ route('internshipcompany.view', $single_company->id) }}"

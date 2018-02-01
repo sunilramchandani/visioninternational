@@ -8,8 +8,18 @@
         <?php echo e(csrf_field()); ?>
 
         <div class = "col-lg-12 content">
-            <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
-            <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
+        <?php $__currentLoopData = $featuredimage_contactus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->main_image); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+        <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
+        <div class = "text-inside-header-picture">
+            <div class = "row dynamic-text-container">
+                <div class ="col-lg-6 dynamic-text-container-box">
+                    <h4> <?php echo e($featured->main_image_description); ?></h4>
+                </div>
+            
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        </div>
             <div class = "Say Hello row">
                 <div class = "col-lg-12 text-center">
                     <h1>Say Hello!</h1>
@@ -141,5 +151,6 @@
             </div>
         </div>
 </form>
+<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

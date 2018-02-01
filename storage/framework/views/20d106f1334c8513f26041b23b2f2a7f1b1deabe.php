@@ -6,17 +6,18 @@
 
 <?php $__env->startSection('content'); ?>
 <div class = "col-lg-12">
-    <img src="<?php echo e(URL::asset('image/photos/Internship.jpg')); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
-    <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
-    <div class = "Say Hello row">
-        <div class = "col-lg-12 text-center">
-            <h1>Your Assesment Form</h1>
-            <br/>
-            <p> Fill in the assesment form below and a VIP representative will reach out to you</p>
-            <p> ASAP about the program you are interested in. We recommend you check carefully all</p>
-            <p> the information you provide in order to have a smoother application process. Thank you!</p>
+<?php $__currentLoopData = $featuredimage_application; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->main_image); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+<img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
+<div class = "text-inside-header-picture">
+    <div class = "row dynamic-text-container">
+        <div class ="col-lg-6 dynamic-text-container-box">
+            <h4> <?php echo e($featured->main_image_description); ?></h4>
         </div>
-
+    
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</div>
 		<form action="<?php echo e(route('application.store')); ?>" method="post" role="form"  enctype="multipart/form-data"> 
 		<?php echo e(csrf_field()); ?>
 

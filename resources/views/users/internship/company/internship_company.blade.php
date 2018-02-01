@@ -9,8 +9,18 @@
 <form action="" method="post" role="form">
  {{csrf_field()}}
 <div class = "col-lg-12 whole-page">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+@foreach ($featuredimage_internship as $featured)
+<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
+<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+<div class = "text-inside-header-picture">
+    <div class = "row dynamic-text-container">
+        <div class ="col-lg-6 dynamic-text-container-box">
+            <h4> {{$featured->main_image_description}}</h4>
+        </div>
+    
+@endforeach
+    </div>
+</div>
     <div class = " row Top-header-message">
         <div class = "col-lg-12 text-center">
             <h1>Your Destination</h1>

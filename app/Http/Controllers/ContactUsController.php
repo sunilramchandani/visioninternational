@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ContactUs;
 use Mail;
+use App\FeaturedImage;
 
 class ContactUsController extends Controller
 {
@@ -15,8 +16,9 @@ class ContactUsController extends Controller
      */
     public function index()
     {
+        $featuredimage_contactus = FeaturedImage::where('page_name','contact_us')->get();
         $contactus_table = ContactUs::all();
-        return view('users.contact_us.contact_us', compact('contactus_table'));
+        return view('users.contact_us.contact_us', compact('featuredimage_contactus', 'contactus_table'));
     }
 
     /**

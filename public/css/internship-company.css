@@ -1,3 +1,21 @@
+.dynamic-text-container-box{
+	background-color: rgba(54,56,60,0.7);
+	z-index:1;
+	border-radius:12px;
+	letter-spacing: 2px;
+}
+	
+.dynamic-text-container{
+	padding-left: 5%;
+	color:white !important; 
+	padding-bottom: 3%;
+}
+
+.text-inside-header-picture{
+	margin-top: -200px;
+	padding-bottom: 15%;
+}
+
 .img-border{
   margin-top: -17%;
   width:105%;

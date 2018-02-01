@@ -58,6 +58,7 @@
 .images-dual{
 	height:50%;
 }
+/* Dynamic Text on Image Header */
 .dynamic-text-container-box{
 	background-color: rgba(54,56,60,0.7);
 	z-index:1;
@@ -75,6 +76,8 @@
 	margin-top: -480px;
 	padding-bottom: 15%;
 }
+
+
 .about-font {
   font-size: large;
   margin-bottom: 25px;

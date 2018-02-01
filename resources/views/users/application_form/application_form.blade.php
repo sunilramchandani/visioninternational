@@ -8,17 +8,18 @@
 
 @section('content')
 <div class = "col-lg-12">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class = "Say Hello row">
-        <div class = "col-lg-12 text-center">
-            <h1>Your Assesment Form</h1>
-            <br/>
-            <p> Fill in the assesment form below and a VIP representative will reach out to you</p>
-            <p> ASAP about the program you are interested in. We recommend you check carefully all</p>
-            <p> the information you provide in order to have a smoother application process. Thank you!</p>
+@foreach ($featuredimage_application as $featured)
+<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
+<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+<div class = "text-inside-header-picture">
+    <div class = "row dynamic-text-container">
+        <div class ="col-lg-6 dynamic-text-container-box">
+            <h4> {{$featured->main_image_description}}</h4>
         </div>
-
+    
+@endforeach
+    </div>
+</div>
 		<form action="{{route('application.store')}}" method="post" role="form"  enctype="multipart/form-data"> 
 		{{csrf_field()}}
         <div class = "col-lg-4 col-lg-offset-1">

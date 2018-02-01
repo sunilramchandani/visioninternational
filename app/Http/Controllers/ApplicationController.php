@@ -17,6 +17,7 @@ use App\Lib\ApplicationLib;
 use Storage;
 use PDF;
 use Carbon\Carbon;
+use App\FeaturedImage;
 
 class ApplicationController extends Controller
 {
@@ -27,6 +28,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+        $featuredimage_application = FeaturedImage::where('page_name','application')->get();
         $application_table = Application::all();
         $location_table = Location::all();
         $country_table = Country::all();
@@ -34,7 +36,7 @@ class ApplicationController extends Controller
         $university_table = University::all();
         $degree_table = Degree::all();
         $major_table = Major::all();
-        return view('users.application_form.application_form', compact('major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table'));
+        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table'));
     }
 
     /**
