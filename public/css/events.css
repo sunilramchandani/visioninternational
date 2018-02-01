@@ -14,22 +14,27 @@
 	box-shadow: 2px 2px 2px 2px #B0B0B0;
 }
 .events-content:hover{
-	background-color:#FA8072;
+	background-color:#d64c39;
 	color:white !important;
 }
+.events-content:hover p{ color:white }
 .events-content-container{
 	text-align:center;
 	padding-left: 2%;
+}
+.details{
+	padding-top: 5%;
+	letter-spacing: 2px;
 }
 .events-header{
     color:gray;
 }
 .event-img{
-	width:112%;
+	width:112.5%;
 	margin-left: -6%;
 	height:40%;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 .submit{
 	font-size: 14px;

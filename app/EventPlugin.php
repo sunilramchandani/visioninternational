@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EventPlugin extends Model
 {
     protected $table = 'fbevents'; 
-    protected $primaryKey = 'fbevent_id';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     protected $fillable = [

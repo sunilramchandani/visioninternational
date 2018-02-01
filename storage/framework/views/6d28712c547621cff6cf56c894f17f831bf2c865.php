@@ -6,13 +6,14 @@
 <?php $__env->startSection('content'); ?>
 <div class = "col-lg-12 whole-page">
 <?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->header); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+
+    <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->main_image); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
+
     <img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text-container-box">
-            
-                <h4 class = "dynamic-text"> <?php echo e($featured->description); ?></h4>
+                <h4> <?php echo e($featured->main_image_description); ?></h4>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
@@ -73,23 +74,25 @@
     </div>
 
     <!--Picture -->
-    <div class="container-fluid">
+    <?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<div class="container-fluid">
      <div class="row">
         <div class="col-lg-12 home-pic-container">
           <div class="col-lg-6">
             <div class="home-pic">
-                <img src="<?php echo e(URL::asset('image/home-left.png')); ?>" class="img-rounded img-responsive" alt="Photo" >
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image1); ?>" class="img-rounded img-responsive" alt="Photo" >
             </div>
          </div>
         <div class="col-lg-6">
             <div class="home-pic">
-                <img src="<?php echo e(URL::asset('image/home-right.png')); ?>" class="img-rounded img-responsive" alt="Photo" >
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image2); ?>" class="img-rounded img-responsive" alt="Photo" >
             </div>
         </div>
         </div>
     </div>
 </div>
-    <div class="container">
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<div class="container">
     <div class="about row">
         <div class="col-lg-12 text-center about-font">
             <h1>Our Commitments</h1>
@@ -155,7 +158,8 @@
 
 
 <!--End of Events -->
-
+<?php $__currentLoopData = $featuredimage_home; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php if($featured->sub_image3_title != Null): ?>
 <!-- Start of Promos -->
 <div class="container text-center">
     <div class="row">
@@ -170,11 +174,28 @@
 
 
 <!-- Promo picture -->
-<div class="container text-center">
-    <div class="col-lg-12">
-        <img src="<?php echo e(URL::asset('image/photos/APPLICATION.jpg')); ?>" alt="Promo Picture" class="img-responsive img-rounded" id=promo-pict>
-    </div>
-</div>
+
+        <div class="container text-center promos">
+            <div class="col-lg-7 promo-pic-container">
+                <img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->sub_image3); ?>" class="img img-responsive  promo-pic" alt="Company Banner">
+            </div>
+            <div class = "col-lg-5 promo-desc">
+                <div class = "upper-content">
+                    <h4 class = "dynamic-promo-title"> <?php echo e($featured->sub_image3_title); ?></h4>
+                    <h4 class = "dynamic-promo-text"><?php echo e($featured->sub_image3_description); ?></h4>
+                    <?php if($featured->link == "internship"): ?>
+                        <a href = "/internshipcompany" class = "btn moreinfo">More Info </a>
+                    <?php else: ?>
+                        <a href = "/Jobs" class = "btn moreinfo">More Info </a>
+                    <?php endif; ?>
+                </div>
+                <div class = "lowe-content">
+                    <p>Valid Until: <?php echo e($featured->sub_image3_validity); ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <!-- End of Promos -->
 
 <div class="container">

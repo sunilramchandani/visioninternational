@@ -40,6 +40,15 @@
 	 height:40;
 	 font-size: 120%
 }
+.moreinfo{
+	 background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	 display: inline-block;
+	 color:white;
+	 border-radius: 8px;
+	 width:25%;
+	 height:40;
+	 font-size: 120%;
+}
 .link-button{
 	padding-left: 5%;
 }
@@ -125,7 +134,12 @@
   height: 450px;
 
 }
-
+.promo-pic{
+ 	width: 100%;
+ 	height: 420px;
+ 	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+}
 .home-pic img {
   height: inherit;
   width: 100%;
@@ -142,14 +156,35 @@
   font-size: 20px;
 }
 
-@media only screen and (min-width: 370px) and (max-width: 480px) {
-  .icon-container{
-    width: 100%;
-  }
-}
 .whole-page{
 	padding:0;
 }
-.dynamic-text{
+.promo-desc{
+	-webkit-align-content: center;
+    align-content: center;
+    background-color: #d54b39;
+    height: 420px;
+    border-bottom-right-radius: 12px;
+	border-top-right-radius: 12px;
+	letter-spacing: 2px;
+}
+.dynamic-promo-text{
 	line-height: 1.8;
+	padding-bottom: 5%;
+	padding-left: 5;
+	padding-right: 5;
+}
+
+.dynamic-promo-title{
+	padding-bottom: 5%;
+	padding-top: 10%;
+}
+div.promos{
+	color:white;
+	width:100%;
+}
+.promo-pic-container{
+	padding-right: 0;
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
 }

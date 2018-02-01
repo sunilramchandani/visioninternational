@@ -38,8 +38,10 @@
         <div class = "col-lg-3 events-content">
           <img src="{{$events['cover']['source']}}" alt="" class = "event-img img">
           
-          <p class = "text-center">{{$events['start_time']}} - {{$events['end_time']}} </p>
-          <p class = "text-center">{{$events['description']}}</p>
+          <h4 class = " details text-center">{{$events['name']}} </h4> 
+          <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events['start_time'])->toFormattedDateString()}} | {{Carbon\Carbon::parse($events['start_time'])->format('h:i')}} - {{$events['place']['name']}}</strong> </p>
+          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events['description'], 15,' .... ')}}</p>
+         
           <button class = "submit btn"><span>More Info</span></button>
         </div>
       @endforeach
