@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\InternshipDuration;
 use App\Application;
+use App\EventPlugin;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,8 @@ class HomeController extends Controller
         $state_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->distinct('state')->count('state');
         $company_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->count('id');
         $applicant_count = Application::count('id');
-
-        return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count'));
+        $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
+        return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count','events_table'));
     }
 
     /**

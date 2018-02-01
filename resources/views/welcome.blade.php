@@ -157,7 +157,20 @@
         <h1>Events</h1>
     </div>
 </div>
-
+    <div class="row home-page-events">
+      @foreach($events_table as $events)
+        <div class = "col-lg-3 events-content">
+          <img src="{{$events->cover_source}}" alt="" class = "event-img img">
+          
+          <h4 class = " details text-center">{{$events->event_name}} </h4> 
+          <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
+          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
+         
+          <button class = "submit btn"><span>More Info</span></button>
+        </div>
+      @endforeach
+    </div>
+</div>
 
 <!--End of Events -->
 @foreach ($featuredimage_home as $featured)
@@ -169,9 +182,9 @@
            <h1>Promos</h1>
            <p>Get one step closer to your dreams
             <br>Take advantage of this amazing deal on our programs!
-        </p>
+            </p>
+        </div>
     </div>
-</div>
 </div>
 
 

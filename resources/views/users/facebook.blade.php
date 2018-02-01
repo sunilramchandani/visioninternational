@@ -34,48 +34,51 @@
   </div>
   <div class = "row">
     <div class = "col-lg-9 events-content-container">
-      @foreach($data['data'] as $events)
-        <div class = "col-lg-3 events-content">
-          <img src="{{$events['cover']['source']}}" alt="" class = "event-img img">
+      @foreach($events_table as $events)
+        <div class = "col-lg-4 events-content">
+          <img src="{{$events->cover_source}}" alt="" class = "event-img img">
           
-          <h4 class = " details text-center">{{$events['name']}} </h4> 
-          <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events['start_time'])->toFormattedDateString()}} | {{Carbon\Carbon::parse($events['start_time'])->format('h:i')}} - {{$events['place']['name']}}</strong> </p>
-          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events['description'], 15,' .... ')}}</p>
+          <h4 class = " details text-center">{{$events->event_name}} </h4> 
+          <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
+          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
          
           <button class = "submit btn"><span>More Info</span></button>
         </div>
       @endforeach
     </div>
     <div class = "col-lg-3 categories-sidebar">
-      <table class="table table-categories table-hover">
-        <thead bgcolor="#800000">
-          <tr>
-            <th colspan="2" class = "header-table">CATEGORIES</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Creative</td>
-            <td>(02)</td>
-          </tr>
-          <tr>
-            <td>Design</td>
-            <td>(01)</td>
-          </tr>
-          <tr>
-            <td>Events</td>
-            <td>(10)</td>
-          </tr>
-          <tr>
-            <td>Food</td>
-            <td>(03)</td>
-          </tr>
-          <tr>
-            <td>Job Fair</td>
-            <td>(04)</td>
-          </tr>
-        </tbody>
-      </table>    
+      <div class = "col-lg-12">
+        <table class="table table-categories table-borderless table-hover">
+          <thead bgcolor="#800000">
+            <tr>
+              <th class = "header-table text-center">CATEGORIES</th>
+              <th class = "header-table text-center"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class='clickable-row' data-href='fb?ecat=General'>
+              <td>General</td>
+              <td>({{$category_events_general}})</td>
+            </tr>
+            <tr class='clickable-row' data-href='fb?ecat=Design'>
+              <td>Design</td>
+              <td>({{$category_events_design}})</td>
+            </tr>
+            <tr class='clickable-row' data-href='fb?ecat=Events'>
+              <td>Events</td>
+              <td>({{$category_events_events}})</td>
+            </tr>
+            <tr class='clickable-row' data-href='fb?ecat=Food'>
+              <td>Food</td>
+              <td>({{$category_events_food}})</td>
+            </tr>
+            <tr class='clickable-row' data-href='fb?ecat=JobFair'>
+              <td>Job Fair</td>
+              <td>({{$category_events_jobfair}})</td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
     </div>
   </div>
 </div> 
@@ -94,4 +97,15 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap"
     async defer></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
+
+</script>
 @stop
