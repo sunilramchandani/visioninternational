@@ -108,6 +108,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'uses' => 'ApplicationController@view',
             'as' => 'application.view'
         ]);
+
+
+        Route::get('/pdf/{application_id}', [
+            'uses' => 'ApplicationController@downloadPDF',
+            'as' => 'application.pdf'
+        ]);
     });
 
     // Opportunities Routes

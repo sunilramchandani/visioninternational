@@ -24,39 +24,63 @@
                 </form>
             </div>
 
+            <form action="{{route('application.pdf', $app)}}">
+                <button type="submit"> Download as PDF </button>
+                </form>
+            </div>
+
             <div class="col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-md-3">
-                        <span class="label">Company: </span>
+                        <span class="label">Program ID: </span>
+                        {{ $app->program_id }}
+                    </div>
+
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Country ID: </span>
                         {{ $app->country_id }}
                     </div>
 
                     <div class="col-xs-12 col-md-3">
-                        <span class="label">Company Website:</span>
+                        <span class="label">Location ID:</span>
                         {{ $app->location_id }}
                     </div>  
-
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Company Email:</span>
-                        {{ $app->first_name }}
-                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <span class="label">Location:</span>
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Lastname:</span>
                         {{ $app->last_name }}
                     </div>
 
-                    <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Firstname:</span>
+                        {{ $app->first_name }} 
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Email:</span>
                         {{ $app->email }} 
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
-                        {{ $app->contact_no }} 
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Contact Number:</span>
+                        {{ $app->contact_no }}
+                    </div>
+
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Birthdate:</span>
+                        {{ $app->birthdate }} 
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-3">
+                        <span class="label">Gender:</span>
+                        {{ $app->gender }} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">

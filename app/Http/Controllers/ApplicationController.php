@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Lib\ApplicationLib;
 use Storage;
+use PDF;
 use Carbon\Carbon;
 
 class ApplicationController extends Controller
@@ -155,10 +156,20 @@ class ApplicationController extends Controller
         ->first()
         ->upload_resume;
 
-        $path = storage_path('app/upload/'.$get_resume);
+        $path = storage_path('app/upload_resume/'.$get_resume);
         
         return response()->download($path);
     }
+
+    public function downloadPDF($id){
+        $application_table = Application::all();
+        $pdf = ApplicationLib::getById($id);
+
+        $pdf = PDF::loadView('admin.application.pdf', compact('pdf', 'application_table'));
+        
+        return $pdf->download('invoice.pdf');
+
+      }
 
     /**
      * Show the form for editing the specified resource.
