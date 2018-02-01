@@ -160,7 +160,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-envelope"></i>
                         <span>Application</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -178,7 +178,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/internshipcompany') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-comment"></i>
+                        <i class="fa fa-building"></i>
                         <span>Internship Company</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -197,6 +197,25 @@
                                 New
                             </a>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/featuredimage') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-bookmark"></i>
+                        <span>Featured Images   </span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('featuredimage.index') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

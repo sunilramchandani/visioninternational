@@ -76,6 +76,24 @@
                     </label>
                     <input type="text" class="form-control" id="sub_image3_description" name="sub_image3_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_description : '' }}" placeholder="Some Title">
                 </div>
+                @if(isset($featuredimage->sub_image3_title)) 
+                <div class="form-group">
+                    <label for="stipend">
+                        Sub Image 3 Title
+                    </label>
+                    <input type="text" class="form-control" id="sub_image3_title" name="sub_image3_title" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_title : '' }}" placeholder="Some Title">
+                </div>
+                @endif 
+
+                @if(isset($featuredimage->sub_image3_validity)) 
+                <div class="form-group">
+                    <label for="stipend">
+                        Sub Image 3 Title
+                    </label>
+                    <input type="text" class="form-control" id="sub_image3_validity" name="sub_image3_validity" value="{{ isset($featuredimage) ? $featuredimage->sub_image3_validity : '' }}" placeholder="Some Title">
+                </div>
+                @endif 
+
                     @endif
 
                     @if(isset($featuredimage->sub_image4))  
