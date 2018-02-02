@@ -97,12 +97,14 @@ class ApplicationController extends Controller
         $application->about_vip = $request['about_vip'];
         $application->message = $request['message'];
         
+        if ($request->hasFile('upload_resume')){
         $file = $request->file('upload_resume');
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_resume', $fileName);
 
         $application->upload_resume = $fileName;
+        }
         $application->save();
 
         

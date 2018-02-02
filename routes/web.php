@@ -27,6 +27,70 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/{id}', ['uses' => 'News\NewsController@view', 'as' => 'news.view']);
     });
 
+    //Work company routes
+    Route::group(['prefix' => 'workcompany'], function() {
+
+
+        Route::get('/new', ['uses' => 'WorkCompanyController@adminCreate', 'as' => 'workcompany.new']);
+        Route::post('/new', ['uses' => 'WorkCompanyController@adminCreate', 'as' => 'workcompany.save']);
+
+        Route::get('/edit/{id}', [
+            'uses' => 'WorkCompanyController@adminEdit',
+            'as' => 'workcompany.adminedit'
+        ]);
+
+        Route::post('/edit/{id}', [
+            'uses' => 'WorkCompanyController@adminEdit',
+            'as' => 'workcompany.saveadminedit'
+        ]);
+
+
+        Route::get('/list', [
+            'uses' => 'WorkCompanyController@adminIndex',
+            'as' => 'workcompany.list'
+        ]);
+
+        Route::get('/delete/{id}', [
+            'uses' => 'WorkCompanyController@delete',
+            'as' => 'workcompany.delete'
+        ]);
+
+        Route::get('/{id}', [
+            'uses' => 'WorkCompanyController@view',
+            'as' => 'workcompany.view'
+        ]);
+
+        Route::get('/new_opportunity/{id}', [
+            'uses' => 'WorkCompanyController@createOpportunity',
+            'as' => 'workcompany.new_opportunity'
+        ]);
+
+        Route::post('/new_opportunity/{id}', [
+            'uses' => 'WorkCompanyController@storeOpportunity',
+            'as' => 'workcompany.store_opportunity'
+        ]);
+
+        Route::get('/new_qualification/{id}', [
+            'uses' => 'WorkCompanyController@createQualification',
+            'as' => 'workcompany.new_qualification'
+        ]);
+
+        Route::post('/new_qualification/{id}', [
+            'uses' => 'WorkCompanyController@storeQualification',
+            'as' => 'workcompany.store_qualification'
+        ]);
+
+        Route::get('/new_duration/{id}', [
+            'uses' => 'WorkCompanyController@createDuration',
+            'as' => 'workcompany.new_duration'
+        ]);
+
+        Route::post('/new_duration/{id}', [
+            'uses' => 'WorkCompanyController@storeDuration',
+            'as' => 'workcompany.store_duration'
+        ]);
+    });
+
     //company routes
     Route::group(['prefix' => 'internshipcompany'], function() {
 
@@ -239,6 +303,7 @@ Route::resource('application', 'ApplicationController');
 Route::resource('fileupload', 'FileUploadController');
 
 Route::resource('internshipcompany', 'InternshipCompanyController');
+Route::resource('workcompany', 'WorkCompanyController');
 Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');

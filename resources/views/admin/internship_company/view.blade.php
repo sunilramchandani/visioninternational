@@ -71,7 +71,7 @@
         Opportunity
     </a>
     <a href="{{ route('internshipcompany.new_qualification', $company->id) }}" class="btn btn-warning">
-        Hello
+        Qualification
     </a>
     <a href="{{ route('internshipcompany.new_duration', $company->id) }}" class="btn btn-warning">
         Duration

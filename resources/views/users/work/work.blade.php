@@ -9,13 +9,25 @@
 <form action="" method="post" role="form">
  {{csrf_field()}}
 <div class = "col-lg-12 whole-page">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+@foreach ($featuredimage_work as $featured)
+    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <div class = "text-inside-header-picture">
+        <div class = "row dynamic-text-container">
+            <div class ="col-lg-6 dynamic-text-container-box">
+                <h4> {{$featured->main_image_description}}</h4>
+            </div>
+        
+@endforeach
+        </div>
+            </div>
+
+    
     <div class = " row">
-        <div class = "col-lg-12 Top-header-message" text-center">
+        <div class = "col-lg-12 Top-header-message" "text-center">
             <h1>Your Destination</h1>
             <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
+            <p> Our work Programs prepare students for life and work outside of school.Participants  </p>
             <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
         </div>
     </div>
@@ -26,12 +38,12 @@
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
                     @if ( Request::get('state')  )
-                        @foreach ($internship_filter as $filter)
-                            <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                        @foreach ($work_filter as $filter)
+                            <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
-                        @foreach ($internshipCompany_table as $company)
-                            <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                        @foreach ($workCompany_table as $company)
+                            <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                         @endforeach
                     @endif
                   </div>
@@ -39,8 +51,8 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">Industry</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($internshipCompany_table as $company)
-                        @foreach ($company->internship_industry as $industry)
+                    @foreach ($workCompany_table as $company)
+                        @foreach ($company->work_industry as $industry)
                             <a href="#">{{$industry->industry_name}}</a>
                         @endforeach
                     @endforeach
@@ -49,8 +61,8 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">Start Dates</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($internshipCompany_table as $company)
-                         @foreach ($company->internship_duration as $duration)
+                    @foreach ($workCompany_table as $company)
+                         @foreach ($company->work_duration as $duration)
                             <a href="#">{{$duration->duration_start_date}}</a>
                         @endforeach
                     @endforeach
@@ -58,8 +70,8 @@
                 </div>
             </div>
             <div class = "col-lg-2 filter-result">
-                @for ($i = 0; $i < count($internshipCompany_table)+1; $i++)
-                    @if ($i == count($internshipCompany_table))
+                @for ($i = 0; $i < count($workCompany_table)+1; $i++)
+                    @if ($i == count($workCompany_table))
                         <p>Total Results: <strong> {{ $i }} </strong></p>
                     @endif
                 @endfor
@@ -69,7 +81,7 @@
             <div class = "col-lg-5 picture" id = "map">  
             </div>
             <div class = "col-lg-7 side-content">
-                @foreach ($internshipCompany_table as $company)
+                @foreach ($workCompany_table as $company)
                     <div class = "col-lg-5 col-lg-offset-1 info-container">
                         <div class = "row company-picture">
                             <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
@@ -95,10 +107,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
   var gmarkers = [];
-  var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
-  var gname = {!! json_encode($internship_name->toArray()) !!};
-  var gdesc = {!! json_encode($internship_desc->toArray()) !!};
-  var gid = {!! json_encode($internship_id->toArray()) !!};
+  var gaddress = {!! json_encode($work_addresses->toArray()) !!};
+  var gname = {!! json_encode($work_name->toArray()) !!};
+  var gdesc = {!! json_encode($work_desc->toArray()) !!};
+  var gid = {!! json_encode($work_id->toArray()) !!};
   var counter = 0 ;
 function initMap() {
     var map;
@@ -121,7 +133,7 @@ function initMap() {
     }
 
     //controller addresses
-    var addresses = {!! json_encode($internship_addresses->toArray()) !!};
+    var addresses = {!! json_encode($work_addresses->toArray()) !!};
 
     for (var x = 0; x < addresses.length; x++) {
         $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
@@ -149,7 +161,7 @@ function initMap() {
                                 '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                 '<div id="bodyContent">'+
                                     gdesc[counter] +
-                                    '<a class="btn btn-primary btn-single btn-sm showme" href = "internship?cid=' + gid[counter] + '"> Learn More'
+                                    '<a class="btn btn-primary btn-single btn-sm showme" href = "work?cid=' + gid[counter] + '"> Learn More'
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
