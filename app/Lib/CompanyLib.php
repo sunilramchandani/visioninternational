@@ -37,12 +37,14 @@ class CompanyLib
         $company->full_address = $data['full_address'];
         $company->stipend = $data['stipend'];
         $company->state = $data['state'];
+
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_company_image', $fileName);
 
-        $company->image = $file;    
+        $company->image = $fileName;   
+
 
         
         $result = $company->save();
@@ -73,7 +75,7 @@ class CompanyLib
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_company_image', $fileName);
 
-        $company->image = $file; 
+        $company->image = $fileName; 
 
         $result = $company->save();
 
