@@ -200,6 +200,30 @@
                     </ul>
                 </li>
 
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/workcompany') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Work Company</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('workpcompany.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('workpcompany.new') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/featuredimage') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-bookmark"></i>
