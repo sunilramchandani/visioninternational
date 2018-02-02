@@ -13,7 +13,7 @@
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text-container-box">
-                <h4> <?php echo e($featured->main_image_description); ?></h4>
+                <h4 class = "text-description"> <?php echo e($featured->main_image_description); ?></h4>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
@@ -117,7 +117,7 @@
                 </p>
             </div>
             <div class="icon-container">
-                <img src="<?php echo e(URL::asset('image/icons/1.png')); ?>" alt="Content" id=icon>
+                <img src="<?php echo e(URL::asset('image/icons/fastproc.png')); ?>" alt="Content" id=icon>
                 <p>Fast
                     <br> procesing
                 </p>
@@ -129,7 +129,7 @@
                 </p>
             </div>
             <div class="icon-container">
-                <img src="<?php echo e(URL::asset('image/icons/1.png')); ?>" alt="Content" id=icon>
+                <img src="<?php echo e(URL::asset('image/icons/highest.png')); ?>" alt="Content" id=icon>
                 <p>Highest level
                     <br> of service
                 </p>
@@ -240,6 +240,7 @@
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <div class = "row">
 </div>
+
 
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

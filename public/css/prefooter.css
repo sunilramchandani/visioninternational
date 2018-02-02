@@ -2,8 +2,6 @@
   color:white;
   letter-spacing: 2px;
   height:70px;
-  background-color: #800000;
-  opacity: 0.8;
   
 }
 .prefooter{
@@ -11,7 +9,7 @@
   
 }
 .bg-color{
-  background-image: url("/image/photos/Internship.jpg");
+  background-image: url("/image/prefooter-image.png");
   background-size: 100% 100%;
 }
 .applynow-button{
@@ -20,6 +18,9 @@
   background-color: transparent;
   color:white;
   font-size: 12px;
+}
+.applynow-button:hover{
+  color:white;
 }
 .banner-paragraph{
   color: white;
@@ -42,6 +43,9 @@
   margin-left: -7px;
   height:45px;
   display:inline-block;
+}
+.subscribe-button:hover{
+  color:white;
 }
 .input-email-subscribe{
   border: 2px solid   #C8C8C8;

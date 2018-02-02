@@ -22,7 +22,7 @@
   width:105%;
 }
 .header{
-  height: 50%;
+  height: 402px;
   width:100%;
 }
 body{
@@ -45,4 +45,10 @@ body{
 	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
 	color:white;
 	border-radius: 8px;
+}
+.submit:hover{
+	color:white;
+	}
+.button-submit{
+	padding-bottom: 5%;
 }

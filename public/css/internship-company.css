@@ -126,7 +126,7 @@ hr{
 	padding-left: 3%;
 }
 .company-head{
-	height:37%;
+	height: 52%;
 	width:100%;
 	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
@@ -138,6 +138,7 @@ hr{
 	border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
 	margin-top: 3%;
+	height: 68%;
 }
 #content {
   width: 300px; 

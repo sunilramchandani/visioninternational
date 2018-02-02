@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class = "applynow-btn">
-				<a href = "" class = "btn applynow-btn">Apply Now</a>
+				<a href = "application" class = "btn applynow-btn">Apply Now</a>
 			</div>
 		</ul>
 	</div>

@@ -15,7 +15,7 @@
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
             <div class ="col-lg-6 dynamic-text-container-box">
-                <h4> {{$featured->main_image_description}}</h4>
+                <h4 class = "text-description"> {{$featured->main_image_description}}</h4>
             </div>
             @endforeach
         </div>
@@ -119,7 +119,7 @@
                 </p>
             </div>
             <div class="icon-container">
-                <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
+                <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
                 <p>Fast
                     <br> procesing
                 </p>
@@ -131,7 +131,7 @@
                 </p>
             </div>
             <div class="icon-container">
-                <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
+                <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
                 <p>Highest level
                     <br> of service
                 </p>

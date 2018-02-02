@@ -212,7 +212,7 @@
                 <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="5" cols="50" name="message" id=""></textarea>
             </div>
         </div>
-        <div class = "col-lg-3 col-lg-offset-8 text-center">
+        <div class = "col-lg-3 col-lg-offset-8 button-submit text-center">
             <button class = "submit btn"><span>Submit Form</span></button>
         </div>
     </div>  

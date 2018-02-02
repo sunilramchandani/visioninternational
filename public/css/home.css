@@ -1,3 +1,6 @@
+.text-description{
+line-height: 1.5;
+}
 .img-border{
   margin-top: -17%;
   width:105%;
@@ -63,7 +66,6 @@
 	background-color: rgba(54,56,60,0.7);
 	z-index:1;
 	border-radius:12px;
-	letter-spacing: 2px;
 }
 	
 .dynamic-text-container{
@@ -198,7 +200,6 @@ div.promos{
 .testimony-picture{
 	height:335px;
 	width:370px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .picture-header{
 	padding-bottom: 5%;
