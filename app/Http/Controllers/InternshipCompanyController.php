@@ -23,12 +23,11 @@ class InternshipCompanyController extends Controller
      */
     public function index(Request $request)
     {
-
         if (request()->has('state')){
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->where('id', request('id'))->paginate(0)->appends('id', request('id'));
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->where('id', request('id'))->paginate(0)->appends('id', request('id'))->orderBy('ID','ASC');
         
-            $internship_addresses = InternshipCompany::where('state', request('state'))->pluck('housing_address');
+            $internship_addresses = InternshipCompany::where('state', request('state'))->orderBy('ID','ASC')->pluck('housing_address');
             $internship_name = InternshipCompany::where('state', request('state'))->pluck('company_name');
             $internship_desc = InternshipCompany::where('state', request('state'))->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
@@ -38,9 +37,9 @@ class InternshipCompanyController extends Controller
         }
         else{
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('ID','ASC')->get();
         
-            $internship_addresses = InternshipCompany::pluck('housing_address');
+            $internship_addresses = InternshipCompany::orderBy('ID','ASC')->pluck('housing_address');
             $internship_name = InternshipCompany::pluck('company_name');
             $internship_desc = InternshipCompany::pluck('description');
             $internship_id = InternshipCompany::pluck('id');

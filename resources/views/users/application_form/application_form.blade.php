@@ -10,19 +10,18 @@
 <div class = "col-lg-12">
 @foreach ($featuredimage_application as $featured)
 <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
-<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-<div class = "text-inside-header-picture">
-    <div class = "row dynamic-text-container">
-        <div class ="col-lg-6 dynamic-text-container-box">
-            <h4> {{$featured->main_image_description}}</h4>
-        </div>
-    
+<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">   
 @endforeach
-    </div>
 </div>
 		<form action="{{route('application.store')}}" method="post" role="form"  enctype="multipart/form-data"> 
 		{{csrf_field()}}
-        <div class = "col-lg-4 col-lg-offset-1">
+        <div class = "row text-title text-center">
+            <h2>Your Assesment Form</h2>
+            <p>Fill in the assessment form below and a VIP representative will reach out to you</p>
+            <p>ASAP about the program you are intereseted in. We recommend you check carefully all </p>
+            <p>the information you provide in order to have a smoother a application process. Thank you!</p>
+        </div>
+        <div class = "col-lg-4 col-lg-offset-1 left-side">
         	<div class = "row form-group">
         		<div class = "col-lg-4">
         			<label for = "program" class = "labels">Program</label>
@@ -212,7 +211,7 @@
                 <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="5" cols="50" name="message" id=""></textarea>
             </div>
         </div>
-        <div class = "col-lg-3 col-lg-offset-8 button-submit text-center">
+        <div class = "col-lg-3 col-lg-offset-9 button-submit text-center">
             <button class = "submit btn"><span>Submit Form</span></button>
         </div>
     </div>  

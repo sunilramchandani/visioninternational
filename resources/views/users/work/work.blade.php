@@ -24,7 +24,7 @@
 
     
     <div class = " row">
-        <div class = "col-lg-12 Top-header-message" "text-center">
+        <div class = "col-lg-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our work Programs prepare students for life and work outside of school.Participants  </p>

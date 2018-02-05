@@ -93,7 +93,7 @@
   	z-index:100;
   	width:23%;
   	height: 75px;
-	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	background-image: url("/image/sticky.png");
 	
 }
 .sticky p{
@@ -103,7 +103,10 @@
 .applynow-sticky{
 	background-color: transparent;
 	border-radius: 6px;
-	border:0.5px solid white;
+	border:1px solid white;
+	color:white;
+}
+.applynow-sticky:hover{
 	color:white;
 }
 .button-apply-sticky{

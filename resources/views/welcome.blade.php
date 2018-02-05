@@ -166,7 +166,7 @@
           <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
          
-          <button class = "submit btn"><span>More Info</span></button>
+          <a href = "fb" class = "submit btn"><span>More Info</span></a>
         </div>
       @endforeach
     </div>
@@ -201,11 +201,13 @@
                     @if ($featured->link == "internship")
                         <a href = "/internshipcompany" class = "btn moreinfo">More Info </a>
                     @else
-                        <a href = "/Jobs" class = "btn moreinfo">More Info </a>
+                        <a href = "/workcompany" class = "btn moreinfo">More Info </a>
                     @endif
                 </div>
-                <div class = "lowe-content">
-                    <p>Valid Until: {{$featured->sub_image3_validity}}</p>
+                <div class = "lower-content">
+                    <div class = "col-lg-6 col-lg-offset-6 validity-container">
+                        <p class = "validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
+                    </div>
                 </div>
             </div>
         </div>

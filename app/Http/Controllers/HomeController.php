@@ -22,6 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+  
         $featuredimage_home = FeaturedImage::where('page_name','home')->get();
         $state_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->distinct('state')->count('state');
         $company_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->count('id');

@@ -14,8 +14,10 @@
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
-            <div class ="col-lg-6 dynamic-text-container-box">
-                <h4> {{$featured->main_image_description}}</h4>
+            <div class ="col-lg-4 dynamic-text-container-box">
+                <h4> UNITED STATES </h4>
+                <H1> INTERNSHIP </H1>
+                <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
             </div>
         
 @endforeach
@@ -24,7 +26,7 @@
 
     
     <div class = " row">
-        <div class = "col-lg-12 Top-header-message" "text-center">
+        <div class = "col-lg-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
@@ -153,25 +155,214 @@
             </div>
         </div>
 <!----------------------------------------END OF HIDDEN DIV -------------------------------------->
-        <div class = "col-lg-12 company-whole" id = "x">
-            <div class = "col-lg-5 picture" id = "map">  
+
+
+<div class = "col-lg-12 company-whole" id = "x">
+    <div class = "col-lg-5 picture" id = "map">  
+    </div>
+    <div class = "col-lg-7 side-content">
+        @foreach ($internshipCompany_table as $company)
+            <div class = "col-lg-5 col-lg-offset-1 info-container">
+                <div class = "row company-picture">
+                    <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
+                </div>
+                <div class = "row info">
+                    <h4>{{$company->full_address}}</h4>
+                    <h2>{{$company->company_name}}</h2>
+                    <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
+                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
+                </div>
+            </div> 
+        @endforeach
+    </div>
+</div>
+<!--whats next?-->
+<div class = "container">
+    <!-- number 1 -->
+    <div class = "row">
+        <div class = "col-lg-12 ">
+            <div class = "row text-center what-next-text">
+                <h2 id=whatsnext-title>What's Next?</h2>
+                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
+                <p id=about-next>and get you to your dream destination as soon as possible!</p>
             </div>
-            <div class = "col-lg-7 side-content">
-                @foreach ($internshipCompany_table as $company)
-                    <div class = "col-lg-5 col-lg-offset-1 info-container">
-                        <div class = "row company-picture">
-                            <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
+            <div class="text-center boxshadow row"> 
+                <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
+                <div class="internship-icon col-md-6">
+                    <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}">
+                    <h1 id=reserve-title>Reservation</h1>
+                    <h1 id=reserve-title>& Application</h1>
+                    <p id=p-icon>Fill up the application form</p>
+                    <p id=p-icon>and pay for your reservation</p>
+                </div>
+
+                <div class="intership-content col-md-6">
+                    <p id=p-content>Upon receiving you proof of payment,</p>
+                    <p id=p-content>you will be assigned a dedicated program</p>
+                    <p id=p-content>specialist who will handle your application </p>
+                    <p id=p-content>until the end.</p>
+                    <div class="button">
+                        <a href class="btn locate-me">How do i make a deposit?</a>
+                        <br><br>
+                        <a href class="btn locate-me">What documents are required?</a>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!--number 2 -->
+    <div class = "row">
+        <div class = "col-lg-12 ">
+            <div class="text-center boxshadow row"> 
+                 <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
+                <div class="internship-icon col-md-6">
+                    {{--  <div class=circle-number>1</div>  --}}
+                    <img src="{{URL:: asset('image/icons/Interviews.png') }}">
+                    <h1 id=reserve-title>Interviews</h1>
+                    <p id=p-icon>Prepare interviews with the program</p>
+                    <p id=p-icon>sponsors and the US embassy</p>
+                </div>
+
+                <div class="intership-content col-md-6">
+                    <p id=p-content>Your assigned progam speacialist will help</p>
+                    <p id=p-content>you create a video resume that will be submitted.</p>
+                    <p id=p-content>Make sure you have a Skype account registered. </p>
+                    <p id=p-content>We will practive you for your interviews</p>
+                    <p id=p-content>and make sure you're reader!.</p>
+                    <div class="button">
+                        <a href class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!--number 3 -->
+    <div class = "row">
+        <div class = "col-lg-12 ">
+            <div class="text-center boxshadow row">
+                <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
+                <div class="internship-icon col-md-6">
+                    {{--  <div class=circle-number>1</div>  --}}
+                    <img src="{{URL:: asset('image/icons/flyout.png') }}">
+                    <h1 id=reserve-title>Flyout</h1>
+                    <p id=p-icon>Book your tickets to the US</p>
+                    <p id=p-icon>and enjoy the program!</p>
+                </div>
+
+                <div class="intership-content col-md-6">
+                    <p id=p-content>We can connect you with past and</p>
+                    <p id=p-content>current participants so that you can</p>
+                    <p id=p-content>transition properly to the US. </p>
+                    <p id=p-content>Have fun!</p>
+                    <div class="button">
+                        <a href class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+        <!--Rate -->
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-lg-12 rate-container">
+                        <div class = "col-lg-6">
+                            <div class = "text-left-side col-lg-offset-1">
+                                <h2 class = "gradient"> What's the rate? </h2>
+                                <h3 class = "gradient1"> There is plenty to experience! </h3>
+                            </div>
+                            <div class = "row row-price">
+                                <div class = "col-lg-3 col-lg-offset-1">
+                                    <h4>Duration</h4>
+                                </div>
+                               <div class = "col-lg-4">
+                                    <select class = "form-control" name="duration" id="duration">
+                                        <option value="6">6 Months</option>
+                                        <option value="3">3 Months</option>
+                                        <option value="12">12 Months</option>     
+                                    </select>
+                                </div>
+                            </div>
+                            <div class = "row row-price">
+                                 <div class = "col-lg-3 col-lg-offset-1">
+                                    <strong><p>PHP 3000</p></strong>
+                                </div>
+                                <div class = "col-lg-4">
+                                    <p>Reservation</p>
+                                </div>
+                            </div>
+                            <div class = "row row-price">
+                                 <div class = "col-lg-3 col-lg-offset-1">
+                                    <strong><p>USD 450</p></strong>
+                                </div>
+                                <div class = "col-lg-4">
+                                    <p>First Installment *</p>
+                                </div>
+                            </div>
+                            <div class = "row row-price">
+                                <div class = "col-lg-3 last-row col-lg-offset-1">
+                                    <strong><p>USD 3100</p></strong>
+                                </div>
+                               <div class = "col-lg-4 last-row">
+                                    <p>Second Installment **</p>
+                                </div>
+                            </div>
+                            <div class = "row row-price">
+                                 <div class = "col-lg-3 col-lg-offset-1">
+                                    <strong><p>USD 3550</p></strong>
+                                </div>
+                                <div class = "col-lg-4">
+                                    <p>Total Program Payment</p>
+                                </div>
+                            </div>
+                            <div clas = "row row-price">
+                                <div class = "col-lg-9 col-lg-offset-3">
+                                    <a class = "btn locate-me" href = "/application"> Apply Now </a>
+                                </div>
+                            </div>
+                            <div class = "row row-price-legend">
+                                <div class = "col-lg-offset-1">
+                                    <p> * Money Back Guarantee </p>
+                                    <p> ** Money Back Guarantee + includes medical insurance </p>
+                                    <strong><p class = "add-fees">Additional Fees:</p></strong>
+                                    <p>USD 180 SEVIS Fee and</p>
+                                    <p>USD 160 US embassy interview booking fee</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class = "row info">
-                            <h4>{{$company->full_address}}</h4>
-                            <h2>{{$company->company_name}}</h2>
-                            <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                            <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
+                        <div class = "col-lg-6 rate-image">
+                             <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner" height ="100">
                         </div>
-                    </div> 
-                @endforeach
+                    </div>
+                </div>
+            </div>
+        <!--Testimony-->
+
+        <div class="container">
+            <div class="row testimony-header">
+                <div class="about-font text-center">
+                     <h3>Our Community</h3>
+                     <p>Get inspiration from those who have come before you 
+                        <br>Here are some of our students who have experienced work life abroad
+                    </p>
+                </div>
+            </div>
+            <div class = "row testimony-content">
+                <div class = "col-lg-12">
+                    <div class = "col-lg-8 testimony-description">
+                        <blockquote>
+                            This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
+                            <cite>Karissa MArie Salengua</cite>
+                            <cite>Work & Travel Program, California</cite>
+                        </blockquote>
+                    </div>
+                    <div clas = "col-lg-4">
+                         <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-rounded testimony-picture" alt="Company Banner">
+                    </div>
+                </div>
             </div>
         </div>
+<!--end of testimony -->
 </div>
 <div class = "filler row" id = "filler">
 </div>

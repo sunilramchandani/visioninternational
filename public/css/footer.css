@@ -1,6 +1,6 @@
 .footer{
   background-color:#252525;
-  height: 55%;
+  height: 43%;
   color:#7e7e7e;
   width:100%;
   font-weight: bold;
@@ -12,7 +12,7 @@ hr{
   border-color:#4c4c4c;
 }
 .footer-logo{
-  height: 50%;
+      height: 57%;
 }
 li{
   line-height:2;
@@ -25,7 +25,8 @@ p{
   color: #4c4c4c;
 }
 .top-footer-content{
-  padding-bottom: 2%;
+      padding-bottom: 4%;
+    margin-top: -24px;
 }
 .bottom-footer-content{
   font-size:.65em;

@@ -17,7 +17,7 @@
     <p> future with us </p>
   </div>
   <div class = "col-lg-6 button-apply-sticky">
-    <a href = "" class = "btn applynow-sticky">Apply Now</a>
+    <a href = "/application" class = "btn applynow-sticky">Apply Now</a>
   </div>
 </div>
 <div class = "col-lg-12 events">

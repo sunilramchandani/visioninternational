@@ -302,7 +302,21 @@ margin-top: 5px;
 	bottom:   15;
 	left: 100;
 }
+.submit:hover{
+color:white;
+}
 .home-page-events{
 	padding-left: 6%;
 	padding-bottom: 5%;
+}
+.lower-content{
+	padding-top: 40px;
+	border-bottom: 1px solid white;
+	
+}
+.validity-text{
+	color:white!important;
+}
+.validity-container{
+	padding-top: 10;
 }

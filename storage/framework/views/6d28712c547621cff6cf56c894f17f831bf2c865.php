@@ -164,7 +164,7 @@
           <p class = "details text-center"><strong><?php echo e(Carbon\Carbon::parse($events->start_time)->toFormattedDateString()); ?> | <?php echo e(Carbon\Carbon::parse($events->start_time)->format('h:i')); ?> - <?php echo e($events->place_name); ?></strong> </p>
           <p class = "details text-center"><?php echo e(\Illuminate\Support\Str::words($events->event_description, 15,' .... ')); ?></p>
          
-          <button class = "submit btn"><span>More Info</span></button>
+          <a href = "fb" class = "submit btn"><span>More Info</span></a>
         </div>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
@@ -199,11 +199,13 @@
                     <?php if($featured->link == "internship"): ?>
                         <a href = "/internshipcompany" class = "btn moreinfo">More Info </a>
                     <?php else: ?>
-                        <a href = "/Jobs" class = "btn moreinfo">More Info </a>
+                        <a href = "/workcompany" class = "btn moreinfo">More Info </a>
                     <?php endif; ?>
                 </div>
-                <div class = "lowe-content">
-                    <p>Valid Until: <?php echo e($featured->sub_image3_validity); ?></p>
+                <div class = "lower-content">
+                    <div class = "col-lg-6 col-lg-offset-6 validity-container">
+                        <p class = "validity-text">Valid Until: <?php echo e($featured->sub_image3_validity); ?></p>
+                    </div>
                 </div>
             </div>
         </div>

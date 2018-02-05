@@ -3,14 +3,19 @@
 	z-index:1;
 	border-radius:12px;
 	letter-spacing: 2px;
+	margin-top: -127;
+	color:white;
 }
 	
 .dynamic-text-container{
 	padding-left: 5%;
 	color:white !important; 
 	padding-bottom: 3%;
-}
 
+}
+.p-dynamic{
+	color:white;
+}
 .text-inside-header-picture{
 	margin-top: -200px;
 	padding-bottom: 15%;
@@ -21,7 +26,8 @@
   width:105%;
 }
 .header{
-  height: 50%;
+      height: 75%;
+
   width:100%;
 }
 body{
@@ -163,4 +169,193 @@ hr{
     left: 0 !important;
     right:0 !important ;
     bottom:0 !important ;
+}
+.Top-header-message{
+	margin-top: -50px;
+    padding-bottom: 5%;
+}
+.text-header-lower-content{
+	padding-top: 50%;
+	padding-bottom: 5%;
+    }
+blockquote {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+margin: 0.25em 0;
+padding: 0.35em 40px;
+line-height: 1.45;
+position: relative;
+color: #383838;
+border:none;
+}
+
+blockquote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -30px;
+color: #7a7a7a;
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
+    float:right;
+    line-height: 1;
+    right:60;
+    bottom: 6px;
+    content: "\201D";
+    font-size: 80px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+.testimony-description{
+	padding-top: 5%;
+}
+.promo-pic-container{
+	padding-right: 0;
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+}
+.testimony-picture{
+	height:335px;
+	width:370px;
+}
+.picture-header{
+	padding-bottom: 5%;
+}
+.testimony-content{
+	padding-bottom: 7%;
+}
+.testimony-header{
+	padding-bottom: 5%;
+	padding-top: 5%;
+}
+.last-row{
+	border-bottom: 1px solid black;
+}
+.rate-container{
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding:0;
+	border-radius: 12px;
+}
+.rate-image{
+	padding:0;
+}
+.text-left-side{
+	letter-spacing: 2px;
+	padding-top: 2%;
+	
+}
+.row-price{
+	padding-bottom: 3%;
+}
+.row-price-legend{
+	padding-top: 12%;
+}
+#duration{
+	border:none;
+	border-bottom: 1px solid gray;
+}
+.gradient{
+	color: #c42b16;
+}
+.gradient1{
+	color: #900603;
+}
+.add-fees{
+	padding-top: 3%;
+}
+.img-price{
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.whats-next{
+	padding: 76px 0px 30px;
+    margin: 20px 0px 20px 0px;
+    font-size: 18px;
+}
+
+#about-next{
+    color: #7d7d7d;
+}
+
+#whatsnext-title{
+	margin-bottom: 30px;
+}
+
+#reserve-title{
+	color: #c42b16;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+
+#p-icon{
+	color: #900603;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+
+#p-content{
+	color: #7d7d7d;
+	font-size: 18px;
+
+}
+/* .circle-number{
+	width: 50px;	
+	height: 50px;
+	background: #c42b16;
+	border: 10px;
+} */
+.internship-content{
+	margin: 96px 0 0 0;
+}
+
+.boxshadow{
+	border-radius: 10px;
+	box-shadow: 0px 0px 6px 0px #ccc;
+	padding: 70px;
+	margin-bottom: 60px;
+  
+}
+
+.button{
+	margin-top: 68px;
+}
+
+.red-button{
+	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	 display: inline-block;
+	 color:white;
+	 border-radius: 8px;
+	 margin-bottom: 12px;
+	 width: 240px;
+	 margin-top: 3px;
+}
+.what-next-text{
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.number-icon{
+	position: absolute;
+	top: 220;
+}
+.number-icon2{
+	position: absolute;
+	top: -35;
+}
+.number-icon3{
+	position: absolute;
+	top: -35;
 }
