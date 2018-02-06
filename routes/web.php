@@ -308,3 +308,6 @@ Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
+Route::get('/aupair', function () {
+        return view('users.aupair.aupair');
+    });
