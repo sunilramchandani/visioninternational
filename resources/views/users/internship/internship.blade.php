@@ -81,79 +81,33 @@
         </div>
 
 
-
-
-
-
-
 <!--------------------HIDDEN DIV ---------------------------->
-        <div class = "col-lg-12 company-whole" id = "y">
-            <div class = "col-lg-4 picture">
-                <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
-            </div>
-            <div class = "col-lg-8 company-details" id = "company-details">
-                @foreach ($internshipCompany_table as $company)
-                    @if($company->id == app('request')->input('id'))
-                        <div class ="col-lg-12">
-                            <h1><strong>{{$company->company_name}}</strong></h1>
-                            <p>{{$company->description}}</p>
-                        </div>
-                        <div class = "col-lg-6">
-                            <p><strong>Housing</strong></p>
-                            <p> Type: {{$company->housing_type}}</p>
-                            <p> Distance: {{$company->housing_distance}}</p>
-                            <p> Address : {{$company->housing_address}}</p>
-                        </div>
-                        <div class = "col-lg-6">
-                            <p><strong>Stipend</strong></p>
-                            <p>${{$company->stipend}} / Month</p>
-                        </div>
-                        <div class = "col-lg-12 opportunities">
-                            <hr>
-                            <p><strong>Opportunities</strong></p>
-                             @foreach ($company->opportunity as $opportunities)
-                                @if($opportunities->company_id == app('request')->input('id'))
-                                    <div class = "col-lg-6">
-                                        @if ($opportunities->status == "Inactive" )
-                                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> {{$opportunities->opportunity_name}}</p>
-                                        @else
-                                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> {{$opportunities->opportunity_name}}</p>
-                                        @endif
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                        <div class = "col-lg-12 qualifications">
-                            <p><strong>Do I Qualify?</strong></p>
-                                 @foreach ($company->qualifications as $qualifications)
-                                  @if($qualifications->company_id == app('request')->input('id'))
-                                        @if ($qualifications->status == "Inactive" )
-                                            <div class = "col-lg-6">
-                                                <p><strike>{{$qualifications->qualification}}</strike></p>
-                                            </div>
-                                            @else
-                                            <div class = "col-lg-6">
-                                                <p>{{$qualifications->qualification}}</p>
-                                            </div>
-                                        @endif
-                                    @endif
-                                @endforeach
-                        </div>
-                        <div class = "col-lg-12 legend">
-                            <p>Opportunity Availability:</p>
-                            <div class ="col-lg-5">
-                                <div class ="col-lg-6">
-                                    <p> <i class="fa fa-circle" aria-hidden="true" style="color:#80bf40">  </i> Available </p>
-                                </div>
-                                <div class ="col-lg-6">
-                                    <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"> </i> Unavailable </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-            </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
         </div>
+            <div class="modal-body">
+
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
 <!----------------------------------------END OF HIDDEN DIV -------------------------------------->
 
 
@@ -373,6 +327,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+
+  var deletePostUri = "{{ route('internshipcompany.index')}}";
   var gmarkers = [];
   var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
   var gname = {!! json_encode($internship_name->toArray()) !!};
@@ -431,7 +388,7 @@ function initMap() {
                                 '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                 '<div id="bodyContent">'+
                                     gdesc[counter] +
-                                    '<a class = "btn locate-me" id = "refresh" onclick = "myFunction(\''+gid[counter]+'\')"> Learn More </a>' +
+                                    '<a data-toggle="modal" data-target="#myModal" class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>'
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
@@ -442,6 +399,10 @@ function initMap() {
         });
         counter++;
     }
+    
+    $('#myModal').on('hidden.bs.modal', function () {
+ location.reload();
+})
     function myFunction(id){
         window.history.replaceState(null, null, "/internshipcompany?id="+id);
         var x = document.getElementById('x');

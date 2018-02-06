@@ -19,7 +19,7 @@
     
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-        </div>
+</div>
     <div class = " row Top-header-message">
         <div class = "col-lg-12 text-center">
             <h1>Your Destination</h1>
