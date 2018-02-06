@@ -210,13 +210,13 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="{{ route('workpcompany.list') }}">
+                            <a href="{{ route('workcompany.list') }}">
                                 <i class="fa fa-list"></i>
                                 List
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('workpcompany.new') }}">
+                            <a href="{{ route('workcompany.new') }}">
                                 <i class="fa fa-plus-circle"></i>
                                 New
                             </a>

@@ -1,33 +1,11 @@
 <?php $__env->startSection('page-css'); ?>
 <link rel="stylesheet" href="<?php echo e(asset('css/internship-company.css')); ?>">
 <?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->startSection('content'); ?>
 <form action="" method="post" role="form">
  <?php echo e(csrf_field()); ?>
 
 <div class = "col-lg-12 whole-page">
-<?php $__currentLoopData = $featuredimage_internship; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $featured): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-<img src="<?php echo e(URL::asset('image/uploaded_featured_image')); ?>/<?php echo e($featured->main_image); ?>" class="img img-responsive img-rounded header" alt="Company Banner">
-<img src="<?php echo e(URL::asset('image/Arrow.png')); ?>" class="img img-responsive img-border" alt="Company Banner">
-<div class = "text-inside-header-picture">
-    <div class = "row dynamic-text-container">
-        <div class ="col-lg-6 dynamic-text-container-box">
-            <h4> <?php echo e($featured->main_image_description); ?></h4>
-        </div>
-    
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
-        </div>
-    <div class = " row Top-header-message">
-        <div class = "col-lg-12 text-center">
-            <h1>Your Destination</h1>
-            <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
-            <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
-        </div>
-    </div>
     <div class = "body-content">
         <div class = "row filter-top">
             <div class = "col-lg-9 col-lg-offset-1 filter-main">

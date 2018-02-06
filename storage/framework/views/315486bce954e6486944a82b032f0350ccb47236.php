@@ -4,7 +4,7 @@
     <div class = "row bg-color">
         <div class = "top-prefooter-content text-center">
             <p class = "banner-paragraph">Start an amazing future with us! </p> 
-            <a class = "btn applynow-button" href = "#"> Apply Now</a>
+            <a class = "btn applynow-button" href = "application"> Apply Now</a>
         </div>
     </div>
 
@@ -24,11 +24,11 @@
         <?php endif; ?>
 
 
-    <div class = "row bottom-prefooter-content text-center">
-        <p class = "subscribe-paragraph">Get the latest updates and news: </p>
+    <div class = "row bottom-prefooter-content text-center"> 
         <form action="<?php echo e(route('subscribe.store')); ?>" method="post" role="form">
         <?php echo e(csrf_field()); ?>
 
+        <p class = "subscribe-paragraph">Get the latest updates and news: </p>
         <input type = "email" class = "input-email-subscribe text-center" name = "email" placeholder="Enter your email address">
         <button type="submit" class = "btn subscribe-button"><i class="fa fa-2x fa-angle-right" aria-hidden="true"></i></button>
         </form>

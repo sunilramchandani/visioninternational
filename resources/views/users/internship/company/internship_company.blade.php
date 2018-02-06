@@ -19,6 +19,7 @@
         </div>
     
 @endforeach
+
     </div>
 </div>
     <div class = " row Top-header-message">
