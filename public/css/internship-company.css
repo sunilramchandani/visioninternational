@@ -119,13 +119,27 @@ hr{
 }
 .side-content{
 	height:100%;
-	overflow-y:scroll;
+	overflow-y:auto;
 }
 .locate-me{
+
+}
+.locate-me1{
+	position: absolute;
+    bottom: 10px;	
+    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	color:white;
+	border-radius: 8px;
+	font-size: 15px;
+}
+    
+.locate-me2{
 	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
 	color:white;
 	border-radius: 8px;
 	font-size: 15px;
+    position: absolute;
+    bottom: 20px;
 }
 .info{
 	padding-right: 3%;
@@ -255,13 +269,19 @@ margin-top: 5px;
 .text-left-side{
 	letter-spacing: 2px;
 	padding-top: 2%;
-	
+}
+.stip-hous{
+	padding-top: 15%;
+	padding-left: 2%;
 }
 .row-price{
 	padding-bottom: 3%;
 }
 .row-price-legend{
 	padding-top: 12%;
+}
+.modal-dialog{
+	width: 100%;
 }
 #duration{
 	border:none;
@@ -300,17 +320,28 @@ margin-top: 5px;
 	margin-bottom: 30px;
 	letter-spacing: 2px;
 }
-
+.map-description{
+	line-height: 1.6;
+}
 #p-icon{
 	color: #900603;
 	letter-spacing: 2px;
 	font-size: 18px;
 }
-
+#siteNotice{
+	overflow-y:auto;
+	height: 240px;
+}
+.infowindow{
+	width: 400;
+}
 #p-content{
 	color: #7d7d7d;
 	font-size: 18px;
 
+}
+.image-container{
+	padding:0;
 }
 /* .circle-number{
 	width: 50px;	
@@ -321,7 +352,11 @@ margin-top: 5px;
 .internship-content{
 	margin: 96px 0 0 0;
 }
-
+.gm-style .gm-style-iw {
+    font-weight: 300;
+    font-size: 13px;
+    overflow: visible;
+}
 .boxshadow{
 	border-radius: 10px;
 	box-shadow: 0px 0px 6px 0px #ccc;
