@@ -10,8 +10,4 @@ class InternshipDuration extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
-    public function internshipCompany()
-    {
-        return $this->belongsTo('App\InternshipCompany', 'company_id');
-    }
 }

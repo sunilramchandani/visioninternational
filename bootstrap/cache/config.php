@@ -46,6 +46,7 @@
     'aliases' => 
     array (
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
       'App' => 'Illuminate\\Support\\Facades\\App',
       'Artisan' => 'Illuminate\\Support\\Facades\\Artisan',
       'Auth' => 'Illuminate\\Support\\Facades\\Auth',

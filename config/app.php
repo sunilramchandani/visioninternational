@@ -195,7 +195,7 @@ return [
 
     'aliases' => [
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

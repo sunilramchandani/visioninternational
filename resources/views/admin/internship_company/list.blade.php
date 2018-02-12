@@ -3,8 +3,8 @@
 @section('content-header')
     <section class="content-header">
         <h1 class="page-header">
-            News
-        </h1>
+            Internship Company  
+        </h1>   
     </section>
 @endsection
 

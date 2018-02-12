@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\News;
 use App\Lib\NewsLib;
 use App\Http\Controllers\Controller;
+use App\Subscribe;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Mail;
 
 
 class NewsController extends Controller
@@ -28,15 +32,42 @@ class NewsController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $error = false;
         $action = route('news.save');
 
+        /* TODO:
+        * 
+        * PUT QUEUE
+        * https://www.youtube.com/watch?v=-6ihHxXTMPU
+         */
+        
+
         if(request()->isMethod('post')) {
             $data = request()->all();
 
+            $getTitle = $request->input('title');
+            $getArticle = $request->input('article');
+
+            
+            $emails = Subscribe::select('email')
+            ->pluck('email')->all();
+
+
+            $dataResult = array(
+            'title' => $getTitle,
+            'article'   => $getArticle, 
+            );
+
+            Mail::send('users.application_form.application_sent', $dataResult, function ($mail) use($dataResult, $emails) {
+            $mail->from('careers@visioninternational.skyrocketph.technology');
+            $mail->to($emails)->subject($dataResult['title']);
+            });
+
+
             $result = NewsLib::create($data);
+
 
             if ($result) {
                 return redirect()
@@ -45,6 +76,8 @@ class NewsController extends Controller
                         'type' => 'success',
                         'message' => 'Successfully Added'
                     ]);
+                
+                
             }
         }
 
