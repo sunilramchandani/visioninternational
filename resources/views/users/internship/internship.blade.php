@@ -82,6 +82,9 @@
 
 
 
+<!--------------------HIDDEN DIV ---------------------------->
+
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -104,7 +107,6 @@
   </div>
 
 
-<!--------------------HIDDEN DIV ---------------------------->
 
 
 
@@ -124,7 +126,7 @@
                     <h4>{{$company->full_address}}</h4>
                     <h2>{{$company->company_name}}</h2>
                     <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
+                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me1"> Locate Me </a>
                 </div>
             </div> 
         @endforeach
@@ -380,15 +382,16 @@ function initMap() {
         addInfoWindow(markers);
     }
     function addInfoWindow(markers){
-        var secretMessage = '<div id="container infowindow">'+
-                                '<div class = "col-lg-6" id="siteNotice">'+
+        var secretMessage = '<div id="container " class = "infowindow">'+
+                                '<div class = "col-lg-4 image-container" >'+
                                     '<img src="image/uploads/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
                                 '</div>'+
-                                '<div class = "col-lg-6" id="siteNotice">'+
-                                '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
-                                '<div id="bodyContent">'+
-                                    gdesc[counter] +
-                                    '<a data-toggle="modal" data-target="#myModal" class = "btn" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>'
+                                '<div class = "col-lg-8" id="siteNotice">'+
+                                    '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
+                                    '<div id="bodyContent">'+
+                                       '<p class = "map-description">'  + gdesc[counter].slice(0, 150) + '</p><br><br>'+
+                                        '<a data-toggle="modal" data-target="#myModal" class = "btn locate-me2" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>' +
+                                    '</div>'+
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
@@ -403,21 +406,7 @@ function initMap() {
     $('#myModal').on('hidden.bs.modal', function () {
  location.reload();
 })
-    function myFunction(id){
-        window.history.replaceState(null, null, "/internshipcompany?id="+id);
-        var x = document.getElementById('x');
-        var y = document.getElementById('y');
-        
-        if (!x.style.display || x.style.display == "block") {
-            x.style.display = "none";
-            y.style.display = "block";
-            
-        }
-        else {
-            x.style.display = "block";
-            y.style.display = "none";
-        }
-    }
+
 </script>
 
 <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap">
