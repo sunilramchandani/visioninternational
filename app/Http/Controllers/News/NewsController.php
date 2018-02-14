@@ -7,7 +7,7 @@ use App\Subscribe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Mail;
-
+use App\Jobs\SendNotificationJob;
 
 class NewsController extends Controller
 {
@@ -47,24 +47,11 @@ class NewsController extends Controller
         if(request()->isMethod('post')) {
             $data = request()->all();
 
-            $getTitle = $request->input('title');
-            $getArticle = $request->input('article');
-
-            
-            $emails = Subscribe::select('email')
-            ->pluck('email')->all();
+            $title = $request->input('title');
+            $article = $request->input('article');
 
 
-            $dataResult = array(
-            'title' => $getTitle,
-            'article'   => $getArticle, 
-            );
-
-            Mail::send('users.application_form.application_sent', $dataResult, function ($mail) use($dataResult, $emails) {
-            $mail->from('careers@visioninternational.skyrocketph.technology');
-            $mail->to($emails)->subject($dataResult['title']);
-            });
-
+            $this->dispatch(new SendNotificationJob($title, $article ));
 
             $result = NewsLib::create($data);
 

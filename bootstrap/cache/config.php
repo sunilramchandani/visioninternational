@@ -308,8 +308,8 @@
     'port' => '465',
     'from' => 
     array (
-      'address' => 'hello@example.com',
-      'name' => 'Example',
+      'address' => 'careers@visioninternational.skyrocketph.technology',
+      'name' => 'Vision International',
     ),
     'encryption' => 'ssl',
     'username' => 'careers@visioninternational.skyrocketph.technology',
@@ -326,7 +326,7 @@
   ),
   'queue' => 
   array (
-    'default' => 'sync',
+    'default' => 'database',
     'connections' => 
     array (
       'sync' => 
