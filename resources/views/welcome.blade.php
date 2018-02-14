@@ -166,7 +166,8 @@
           <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
          
-          <a href = "fb" class = "submit btn"><span>More Info</span></a>
+
+          <a href = "{{ route('event.single', $events->fbevent_id) }}" class = "submit btn"><span>More Info</span></a>
         </div>
       @endforeach
     </div>

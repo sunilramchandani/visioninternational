@@ -13,6 +13,19 @@
 <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">   
 @endforeach
 </div>
+@if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif @if(Session::has('ok'))
+        <div class="alert alert-info">
+            {{Session::get('ok')}}
+        </div>
+        @endif
 		<form action="{{route('application.store')}}" method="post" role="form"  enctype="multipart/form-data"> 
 		{{csrf_field()}}
         <div class = "row text-title text-center">
