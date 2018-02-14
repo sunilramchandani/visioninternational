@@ -13,6 +13,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     }, 'as' => 'admin.home']);
 
     Route::resource('featuredimage', 'FeaturedImageController');
+    Route::resource('blog', 'BlogController');
 
     
     // News Routes
@@ -322,3 +323,8 @@ Route::resource('internship', 'InternshipController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });
+
+Route::get('/event/{fbevent_id}', [
+        'uses' => 'EventPluginController@eventSingle',
+        'as' => 'event.single'
+]);

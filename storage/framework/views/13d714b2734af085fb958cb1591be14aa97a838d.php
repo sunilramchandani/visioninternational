@@ -164,7 +164,8 @@
           <p class = "details text-center"><strong><?php echo e(Carbon\Carbon::parse($events->start_time)->toFormattedDateString()); ?> | <?php echo e(Carbon\Carbon::parse($events->start_time)->format('h:i')); ?> - <?php echo e($events->place_name); ?></strong> </p>
           <p class = "details text-center"><?php echo e(\Illuminate\Support\Str::words($events->event_description, 15,' .... ')); ?></p>
          
-          <a href = "fb" class = "submit btn"><span>More Info</span></a>
+
+          <a href = "<?php echo e(route('event.single', $events->fbevent_id)); ?>" class = "submit btn"><span>More Info</span></a>
         </div>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

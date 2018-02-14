@@ -2,11 +2,14 @@
 
 namespace App\Lib;
 
-use App\Application;
+use App\Blog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\UploadedFile;
+use Carbon\Carbon;
 
-class ApplicationLib
+
+class BlogLib
 {
 
     public static function getPaginated($params = array())
@@ -14,57 +17,70 @@ class ApplicationLib
         $limit = isset($params['limit']) ? $params['limit'] : 10;
         $current_page = isset($params['current_page']) ? $params['current_page'] : 1;
 
-        $query  = DB::table('application');
+        $query  = DB::table('internship_company');
 
         // Implements soft delete, Via query builder automatically getting all
         $query->where('deleted_at', NULL);
 
-        $app = $query->paginate($limit, ['*'], 'page', $current_page);
+        $company = $query->paginate($limit, ['*'], 'page', $current_page);
 
-        return $app;
+        return $company;
     }
 
     public static function create($data)
     {
         
-        $app = new Application();
+        $company = new InternshipCompany();
+        $company->company_name = $data['company_name'];
+        $company->description = $data['description'];
+        $company->housing_type = $data['housing_type'];
+        $company->housing_distance = $data['housing_distance'];
+        $company->housing_address = $data['housing_address'];
+        $company->full_address = $data['full_address'];
+        $company->stipend = $data['stipend'];
+        $company->state = $data['state'];
 
-        $app->program_id = $data['program_id'];
-        $app->country_id = $data['country_id'];
-        $app->location_id = $data['location_id'];
-        $app->first_name = $data['first_name'];
-        $app->last_name = $data['last_name'];
-        $app->contact_no = $data['contact_no'];
-        $app->birthdate = $data['birthdate'];
-        $app->gender = $data['gender'];
-        $app->current_city = $data['current_city'];
-        $app->university_id = $data['university_id'];
-        $app->degree_id = $data['degree_id'];
-        $app->major_id = $data['major_id'];
-        $app->grad_date = $data['grad_date'];
-        $app->start_date = $data['start_date'];
-        $app->upload_resume = $data['upload_resume'];
-        $app->about_vip = $data['about_vip'];
-        $app->message = $data['message'];
+        $file = $data['image'];
+        $name = $file->getClientOriginalName();
+        $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+        $file->move('../storage/app/upload_company_image', $fileName);
+
+        $company->image = $fileName;   
+
+
         
-        $result = $app->save();
+        $result = $company->save();
 
         return ($result) ? true : false;
     }
 
     public static function getById($id)
     {
-        return $app = Application::find($id);
+        return $company = InternshipCompany::find($id);
     }
 
-/*    public static function update($id, $data)
+   public static function update($id, $data)
     {
-        $news = ApplicationLib::getById($id);
+        $company = CompanyLib::getById($id);
 
-        $news->title = $data['title'];
-        $news->article = $data['article'];
-        $result = $news->save();
+        $company->company_name = $data['company_name'];
+        $company->description = $data['description'];
+        $company->housing_type = $data['housing_type'];
+        $company->housing_distance = $data['housing_distance'];
+        $company->housing_address = $data['housing_address'];
+        $company->full_address = $data['full_address'];
+        $company->stipend = $data['stipend'];
+        $company->state = $data['state'];
+
+        $file = $data['image'];
+        $name = $file->getClientOriginalName();
+        $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+        $file->move('../storage/app/upload_company_image', $fileName);
+
+        $company->image = $fileName; 
+
+        $result = $company->save();
 
         return ($result) ? true : false;
-    }*/
+    }
 }
