@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -277,12 +277,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\app',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\app/uploads',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +297,7 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\public',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
       ),
     ),
   ),
@@ -320,7 +320,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\resources\\views/vendor/mail',
+        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -400,7 +400,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\framework/sessions',
+    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,9 +419,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\resources\\views',
+      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -429,10 +429,10 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'DOMPDF_FONT_DIR' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\fonts/',
-      'DOMPDF_FONT_CACHE' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational\\storage\\fonts/',
+      'DOMPDF_FONT_DIR' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\fonts/',
+      'DOMPDF_FONT_CACHE' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\fonts/',
       'DOMPDF_TEMP_DIR' => 'C:\\Users\\Nikko\\AppData\\Local\\Temp',
-      'DOMPDF_CHROOT' => 'C:\\xampp\\htdocs\\vision_sr\\visioninternational',
+      'DOMPDF_CHROOT' => 'D:\\Programming\\laragon\\www\\visioninternational',
       'DOMPDF_UNICODE_ENABLED' => true,
       'DOMPDF_ENABLE_FONT_SUBSETTING' => false,
       'DOMPDF_PDF_BACKEND' => 'CPDF',
