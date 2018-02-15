@@ -14,11 +14,10 @@ class FeaturedImageController extends Controller
      */
     public function index()
     {
-        $featuredimage_table = FeaturedImage::all();
+        $featuredimage_table = FeaturedImage::where('page_name', '=', 'home');
         return view('admin.featured_image.view', compact('featuredimage_table'));
-
-
     }
+    
 
     /**
      * Show the form for creating a new resource.

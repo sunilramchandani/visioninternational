@@ -234,20 +234,22 @@
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/featuredimage') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-bookmark"></i>
-                        <span>Featured Images   </span>
+                        <span>  Featured Images   </span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
+                    @foreach ($featuredimage_table as $featuredimage)
                     <ul class="treeview-menu">
                         <li>
                             <a href="{{ route('featuredimage.index') }}">
                                 <i class="fa fa-list"></i>
-                                List
+                                <td>{{$featuredimage->page_name}}</td>
                             </a>
                         </li>
 
                     </ul>
+                    @endforeach
                 </li>
 
                 <li class="">
