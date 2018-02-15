@@ -14,7 +14,7 @@ class FeaturedImageController extends Controller
      */
     public function index()
     {
-        $featuredimage_table = FeaturedImage::where('page_name', '=', 'home');
+        $featuredimage_table = FeaturedImage::all();
         return view('admin.featured_image.view', compact('featuredimage_table'));
     }
     

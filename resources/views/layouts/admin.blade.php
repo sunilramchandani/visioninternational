@@ -239,17 +239,18 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
-                    @foreach ($featuredimage_table as $featuredimage)
+                    
                     <ul class="treeview-menu">
+                    @foreach ($featuredimage_table as $featuredimage)
                         <li>
-                            <a href="{{ route('featuredimage.index') }}">
+                            <a href="{{ route('featuredimage.edit', $featuredimage->id) }}">
                                 <i class="fa fa-list"></i>
                                 <td>{{$featuredimage->page_name}}</td>
                             </a>
                         </li>
-
+                        @endforeach
                     </ul>
-                    @endforeach
+                   
                 </li>
 
                 <li class="">
