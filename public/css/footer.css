@@ -32,3 +32,20 @@ p{
   font-size:.65em;
 }
 /*# sourceMappingURL=style.css.map */
+@media screen and (max-width: 991px) and (min-width: 720px) {
+  .footer {
+      background-color: #252525;
+      height: 60%;
+      color: #7e7e7e;
+      width: 100%;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding-top: 5%;
+  }
+  .line-divider{
+    padding-top: 2%;
+  }
+  .footer-logo {
+      height: 35%;
+  }
+}
