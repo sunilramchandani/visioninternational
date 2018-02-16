@@ -4,10 +4,14 @@
 .link{
 	display: inline !important;
 	margin-right: 5% !important;
+	text-decoration: none; 
+    color: black; 
+
 }
 .nav-links{
 	margin-top: 15px;
 	letter-spacing: 1px;
+	
 }
 
 .navbar-logo{

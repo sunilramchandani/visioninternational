@@ -6,7 +6,7 @@
 	</div>
 	<div class = "col-lg-7 col-lg-offset-1 col-md-9 nav-links">
 		<ul>
-			<a href ="/"></a><li class = "link">Home</li></a>
+			<a href ="/"><li class = "link">Home</li></a>
 			<div class="dropdown">
 				<button class="dropbtn">Opportunities</button>
 				<div class="dropdown-content">
