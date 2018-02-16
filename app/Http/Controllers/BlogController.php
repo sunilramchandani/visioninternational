@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Blog;
 use App\Author;
+use App\FeaturedImage;
 use Carbon\Carbon;
 class BlogController extends Controller
 {
@@ -102,7 +103,9 @@ class BlogController extends Controller
 
     public function userIndex(){
         $blog_table = Blog::all();
-        return view('users.blogs.main_blog', compact('blog_table', 'author_name'));
+        $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
+        $author_name = Author::all();
+        return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
     }
 
 }

@@ -216,7 +216,7 @@
           
           <h4 class = " details text-center">{{$events->event_name}} </h4> 
           <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
-          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' .... ')}}</p>
+          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' ... ')}}</p>
          
           <a href = "fb" class = "submit btn"><span>More Info</span></a>
         </div>
