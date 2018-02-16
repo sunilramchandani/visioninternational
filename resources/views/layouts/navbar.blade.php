@@ -13,7 +13,7 @@
 					<div class = "col-lg-6">
 						<p class = "dropdown-content-header">United States</p>
 						<a href="#">Work & Travel</a>
-						<a href="#">Internship</a>
+						<a href="{{route('internshipcompany.index')}}}">Internship</a>
 						<a href="#">Au Pair</a>
 					</div>
 					<div class = "col-lg-6">
