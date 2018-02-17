@@ -105,11 +105,14 @@ margin-top: 5px;
 	margin-right: 2%;
 
 }
-.locate-me{
-	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
-	color:white;
-	border-radius: 8px;
-	font-size: 15px;
+.locate-me {
+    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
 }
 .testimony-description{
 	padding-top: 5%;
@@ -217,4 +220,205 @@ margin-top: 5px;
 .number-icon3{
 	position: absolute;
 	top: -35;
+}
+
+.img-line{
+	display: none;
+}
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+	.testimony-picture {
+	    height: 300px;
+	    width: 300px;
+	}
+	.locate-me {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 15px;
+	    position: absolute;
+	    bottom: 8%;
+	    left: 27%;
+	}
+	.locate-me21 {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 15px;
+	    position: absolute;
+	    bottom: -9%;
+	    left: 24%;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 720px) {
+	.icon-title {
+	    color: #c42b16;
+	    padding-bottom: 0%;
+	}
+	.dynamic-text-container {
+	    padding-left: 0%;
+	    color: white !important;
+	    padding-bottom: 3%;
+	}
+	.text-description {
+	    line-height: 1.5;
+	    font-size: 34px;
+	    padding-right: 27%;
+	    padding-left: 8%;
+	    letter-spacing: 2px;
+	}
+	.img-line{
+		display: block;
+		margin-top: -5px;
+	}
+	.img-border{
+		display:none;
+	}
+	#p-content {
+	    color: #7d7d7d;
+	    font-size: 14px;
+	    line-height: 2;
+	    padding-bottom: 10%;
+	}
+	.aupair-icon-text {
+	    padding-right: 3%;
+	    padding-left: 3%;
+	    padding-bottom: 0%;
+	    line-height: 1.2;
+	    font-size: 15px;
+	}
+	.locate-me {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 15px;
+	    position: absolute;
+	    bottom: 10%;
+	    left: 23%;
+	}
+	.locate-me21 {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 15px;
+	    position: absolute;
+	    bottom: -5%;
+	    left: 16%;
+	}
+	.testimony-picture {
+	    height: 260px;
+	    width: 230px;
+	}
+	.testimony-header {
+	    padding-bottom: 5%;
+	    padding-top: 0%;
+	}
+	.number-icon {
+	    position: absolute;
+	    top: 180px;
+	}
+}
+@media screen and (max-width: 719px) and (min-width: 320px) {
+	.img-line{
+		display: block;
+		margin-top: -5px;
+	}
+	.img-border{
+		display:none;
+	}
+	#p-content {
+	    color: #7d7d7d;
+	    font-size: 12px;
+	    line-height: 1.5;
+	    padding-bottom: 0%;
+	    padding-top: 10%;
+	}
+	#p-content-red {
+	    color: #e28174;
+	    letter-spacing: 1;
+	    font-size: 12;
+	}
+	#p-icon {
+	    color: #900603;
+	    letter-spacing: 2px;
+	    font-size: 12px;
+	    padding-right: 0%;
+	    padding-left: 0%;
+	}
+	#reserve-title {
+	    color: #c42b16;
+	    margin-bottom: 25px;
+	    letter-spacing: 2px;
+	    font-size: 16px;
+	}
+	.boxshadow {
+	    border-radius: 10px;
+	    box-shadow: 0px 0px 6px 0px #ccc;
+	    padding: 20px;
+	    margin-bottom: 60px;
+	}
+	.locate-me21 {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 12px;
+	    position: absolute;
+	    bottom: -13%;
+	    left: -3%;
+	}
+	.number-icon {
+	    position: absolute;
+	    top: 176px;
+	    height: 45;
+	}
+	.number-icon2 {
+	    position: absolute;
+	    top: -20px;
+	    height: 45;
+	}
+	.number-icon3 {
+	    position: absolute;
+	    top: -20px;
+	    height: 45;
+	}
+	.img-logo21{
+		padding-top: 25%;
+	}
+	.testimony-picture {
+	    height: 146px;
+	    width: 95px;
+	}
+	.logo-aupair-icon {
+	    padding-top: 5%;
+	    padding-bottom: 5%;
+	    height: 35%;
+	}
+	.aupair-icon-text {
+	    padding-right: 3%;
+	    padding-left: 3%;
+	    padding-bottom: 5%;
+	    line-height: 1.5;
+	    font-size: 12px;
+	}
+	.locate-me {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 9px;
+	    position: absolute;
+	    bottom: 1%;
+	    left: 20%;
+	}
+	.locate-me21 {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 9px;
+	    position: absolute;
+	    bottom: 0%;
+	    left: 1%;
+	}
+	.what-next-text {
+	    padding-top: 8%;
+	    padding-bottom: 5%;
+	}
 }
