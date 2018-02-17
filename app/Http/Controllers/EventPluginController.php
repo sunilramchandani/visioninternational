@@ -18,7 +18,7 @@ class EventPluginController extends Controller
     public function index()
     {
         $curl = curl_init();
-        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-10-12&until=2018-02-01&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
+        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&until=2018-02-01&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
         curl_setopt($curl, CURLOPT_URL, $rss_url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
         curl_setopt($curl, CURLOPT_REFERER, '');
