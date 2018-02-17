@@ -16,9 +16,8 @@ class FeaturedImageController extends Controller
     {
         $featuredimage_table = FeaturedImage::all();
         return view('admin.featured_image.view', compact('featuredimage_table'));
-
-
     }
+    
 
     /**
      * Show the form for creating a new resource.

@@ -8,7 +8,6 @@ use App\Opportunity;
 use App\Qualification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\InternshipDuration;
 use App\FeaturedImage;
 
 use App\Lib\CompanyLib;

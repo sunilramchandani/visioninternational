@@ -2,18 +2,18 @@
  <!----------------------- DESKTOP NAVBAR ---------------------------------------->
 <div class = "col-lg-12 col-md-12 nav-whole hidden-sm hidden-xs">
 	<div class = "col-lg-3 col-lg-offset-1 col-md-3 logo">
-		<img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo">
+		<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 	</div>
 	<div class = "col-lg-7 col-lg-offset-1 col-md-9 nav-links">
 		<ul>
-			<li class = "link">Home</li>
+			<a href ="/"><li class = "link">Home</li></a>
 			<div class="dropdown">
 				<button class="dropbtn">Opportunities</button>
 				<div class="dropdown-content">
 					<div class = "col-lg-6 col-md-6">
 						<p class = "dropdown-content-header">United States</p>
 						<a href="#">Work & Travel</a>
-						<a href="#">Internship</a>
+						<a href="/internshipcompany">Internship</a>
 						<a href="#">Au Pair</a>
 					</div>
 					<div class = "col-lg-6 col-md-6">
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<li class = "link">About</li>
-			<li class = "link">Contact</li>
+			<a href="/contactus"><li class = "link">Contact</li></a>
 			<div class="dropdown">
 				<button class="dropbtn">Learn More</button>
 				<div class="dropdown-content">
