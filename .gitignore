@@ -1,8 +1,9 @@
-/storage/logs
-/storage/framework
+/storage/logs/*
 /node_modules
 /public/hot
 /public/storage
+/storage/framework/sessions/*
+/storage/framework/views/*.php
 /storage/*.key
 /vendor
 /.idea

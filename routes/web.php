@@ -328,3 +328,7 @@ Route::get('/event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'
 ]);
+Route::get('/blog', [
+    'uses' => 'BlogController@userIndex',
+    'as' => 'userBlog.index'
+]);
