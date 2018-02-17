@@ -122,7 +122,10 @@ hr{
 	overflow-y:auto;
 }
 .locate-me{
-
+    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	color:white;
+	border-radius: 8px;
+	font-size: 15px;
 }
 .locate-me1{
 	position: absolute;
@@ -299,6 +302,7 @@ margin-top: 5px;
 .img-price{
 	border-top-right-radius: 12px;
 	border-bottom-right-radius: 12px;
+	height: 100%;
 }
 
 .whats-next{
@@ -393,4 +397,214 @@ margin-top: 5px;
 .number-icon3{
 	position: absolute;
 	top: -35;
+}
+.img-line{
+	display: none;
+}
+.img-border{
+	display:visible;
+}
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+	.testimony-picture {
+	    height: 300px;
+	    width: 300px;
+	}
+	.last-row1{
+		font-size: 14;
+    	padding-bottom: 20px;
+	}
+	.number-icon {
+	    position: absolute;
+	    top: 185px;
+	}
+}
+@media screen and (max-width: 991px) and (min-width: 720px) {
+	.header {
+	    height: 650px;
+	    width: 100%;
+	}
+	.img-border{
+		display: none;
+	}
+	.img-line{
+		display: block;
+		margin-top: -5px;
+	}
+	.Top-header-message {
+	    margin-top: 20px;
+	    padding-bottom: 5%;
+	}
+	.company-head {
+    	height: 30%;
+	    width: 100%;
+	    border-top-left-radius: 12px;
+	    border-top-right-radius: 12px;
+	}
+	.text-left-side {
+	    letter-spacing: 1px;
+	    padding-top: 0%;
+	}
+	.row-price {
+	    padding-bottom: 3%;
+	    font-size: 9px;
+	}
+	.locate-me3 {
+	    position: absolute;
+	    bottom: -30px;
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 15px;
+	}
+	.img-price {
+	    border-top-right-radius: 12px;
+	    border-bottom-right-radius: 12px;
+	    height: 80%;
+	}
+	.testimony-picture {
+	    height: 262px;
+	    width: 236px;
+	}
+}
+@media screen and (max-width: 719px) and (min-width: 320px) {
+	.header {
+	    height: 500px;
+	    width: 100%;
+	}
+	.img-border{
+		display: none;
+	}
+	.img-line{
+		display: block;
+		margin-top: -5px;
+	}
+	.Top-header-message {
+	    margin-top: 120px;
+	    padding-bottom: 5%;
+	}
+	.dynamic-text-container-box {
+	    background-color: rgba(54,56,60,0.7);
+	    z-index: 1;
+	    border-radius: 12px;
+	    letter-spacing: 1px;
+	    margin-top: -225px;
+	    color: white;
+	}
+	.info {
+	    padding-right: 3%;
+	    padding-left: 3%;
+	    font-size: 10px !important;
+	}
+	h2 {
+	    font-size: 10px;
+	}
+	h4 {
+	    font-size: 10px;
+	}
+	h3{
+		font-size: 15px;
+	}
+	.desc{
+		display:none;
+	}
+	.info-container {
+	    background: #f2f2f2;
+	    padding-bottom: 3%;
+	    box-shadow: 2px 4px 12px 2px #B0B0B0;
+	    border-top-left-radius: 12px;
+	    border-top-right-radius: 12px;
+	    margin-top: 3%;
+	    height: 50%;
+	}
+	.locate-me1 {
+	    position: absolute;
+	    bottom: 10px;
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 6px;
+	    font-size: 10px;
+	    width: 95%;
+	}
+	.locate-me {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 10px;
+	    width: 130%;
+	}
+	#reserve-title {
+	    color: #c42b16;
+	    margin-bottom: 21px;
+	    letter-spacing: 0px;
+	    font-size: 14px;
+	}
+	#p-icon {
+	    color: #900603;
+	    letter-spacing: 2px;
+	    font-size: 12px;
+	}
+	#p-content {
+	    color: #7d7d7d;
+	    font-size: 12px;
+	}
+	.boxshadow {
+	    border-radius: 10px;
+	    box-shadow: 0px 0px 6px 0px #ccc;
+	    padding: 30px 10 10 0;
+	    margin-bottom: 60px;
+	}
+	.number-icon {
+	    position: absolute;
+	    top: 165px;
+	    height: 50;
+	}
+	.number-icon2 {
+	    position: absolute;
+	    top: -25px;
+	    height: 50;
+	}
+	.number-icon3 {
+	    position: absolute;
+	    top: -25px;
+	    height: 50;
+	}
+	.left-side{
+		padding-top: 5%;
+	}
+	.last-row1{
+		font-size: 14;
+    	padding-bottom: 20px;
+	}
+	blockquote {
+	    line-height: 0;
+	    font-family: Georgia, serif;
+	    font-size: 12px;
+	    font-style: italic;
+	    margin: 0.25em 0;
+	    padding: 0.35em 40px;
+	    position: relative;
+	    color: #383838;
+	    border: none;
+	}
+	blockquote cite {
+	    color: #999999;
+	    font-size: 8px;
+	    display: block;
+	    margin-top: 5px;
+	}
+	blockquote:after {
+	    font-family: Georgia, serif;
+	    position: absolute;
+	    float: right;
+	    line-height: 1;
+	    right: 6px;
+	    bottom: 6px;
+	    content: "\201D";
+	    font-size: 80px;
+	    color: #7a7a7a;
+	}
+	.testimony-picture {
+	    height: 200px;
+	    width: 96px;
+	}
 }
