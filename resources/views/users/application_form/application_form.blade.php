@@ -7,11 +7,12 @@
 @include('layouts.navbar')
 
 @section('content')
-<div class = "col-lg-12">
-@foreach ($featuredimage_application as $featured)
-<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
-<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">   
-@endforeach
+<div class = "row">
+    @foreach ($featuredimage_application as $featured)
+        <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
+        <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
+        <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">   
+    @endforeach
 </div>
 @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -34,12 +35,12 @@
             <p>ASAP about the program you are intereseted in. We recommend you check carefully all </p>
             <p>the information you provide in order to have a smoother a application process. Thank you!</p>
         </div>
-        <div class = "col-lg-4 col-lg-offset-1 left-side">
+        <div class = "col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1 left-side">
         	<div class = "row form-group">
-        		<div class = "col-lg-4">
+        		<div class = "col-lg-4  col-md-4 ">
         			<label for = "program" class = "labels">Program</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
 	                <select class = "form-control" name="program_id" id="">
 	                    <option value="" disabled selected>Select</option>
 						<option value="1">test</option>
@@ -51,10 +52,10 @@
             	</div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
-        			<label for = "country" class = "labels">Country</label>
+            	<div class = "col-lg-4  col-md-4">
+        			<label for = "country_id" class = "labels">Country</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
 	                <select class = "form-control" name="country_id" id="">
 	                    <option value="" disabled selected>Select</option>
 	                    @foreach($country_table as $country )
@@ -64,10 +65,10 @@
 	           </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
-        			<label for = "location" class = "labels">Location</label>
+            	<div class = "col-lg-4  col-md-4">
+        			<label for = "location_id" class = "labels">Location</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
 	                <select class = "form-control" name="location_id" id="">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="1">test</option>
@@ -77,50 +78,50 @@
 	            </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4">
         			<label for = "last_name" class = "labels">Last Name</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
                 	<input type = "text" class = "form-control"  name="last_name" id="">
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4">
         			<label for = "first_name" class = "labels">First Name</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
                 	<input type = "text" class = "form-control"  name="first_name" id="">
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4">
         			<label for = "email" class = "labels">Email</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
                 	<input type = "email" class = "form-control"  name="email" id="">
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4">
         			<label for = "contact_no" class = "labels">Contact Number</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
                 	<input type = "tel" class = "form-control"  name="contact_no" id="" >
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4">
         			<label for = "bdate" class = "labels">Birthdate</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
                 	<input type = "date" class = "form-control"  name="birthdate" id="" >
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4 ">
         			<label for = "gender" class = "labels">Gender</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
 	                <select class = "form-control" name="gender" id="">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="m">test</option>
@@ -130,10 +131,10 @@
 	            </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-4">
+            	<div class = "col-lg-4  col-md-4  ">
         			<label for = "current_city" class = "labels">Current City</label>
         		</div>
-        		<div class = "col-lg-8">
+        		<div class = "col-lg-8 col-md-8">
 	                <select class = "form-control" name="current_city" id="">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="test">test</option>
@@ -143,12 +144,12 @@
 	            </div>
             </div>
         </div>
-        <div class = "col-lg-4 col-lg-offset-1">
+        <div class = "col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
             <div class = "row form-group">
-        		<div class = "col-lg-5">
-        			<label for = "school" class = "labels">University/School</label>
+        		<div class = "col-lg-5 col-md-5">
+        			<label for = "university_id" class = "labels">University/School</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7">
 	                <select class = "form-control" name="university_id" id="school">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="5">test</option>
@@ -158,10 +159,10 @@
             	</div>
             </div>
             <div class = "row form-group">
-        		<div class = "col-lg-5">
-        			<label for = "degree" class = "labels">Degree</label>
+        		<div class = "col-lg-5 col-md-5">
+        			<label for = "degree_id" class = "labels">Degree</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7">
 	                <select class = "form-control" name="degree_id" id="degree">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="6">test</option>
@@ -171,10 +172,10 @@
             	</div>
             </div>
             <div class = "row form-group">
-        		<div class = "col-lg-5">
-        			<label for = "major" class = "labels">Major</label>
+        		<div class = "col-lg-5 col-md-5">
+        			<label for = "major_id" class = "labels">Major</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7">
 	                <select class = "form-control" name="major_id" id="major">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="7">test</option>
@@ -184,34 +185,34 @@
             	</div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-5">
-        			<label for = "grad" class = "labels">Graduation Date</label>
+            	<div class = "col-lg-5 col-md-5">
+        			<label for = "grad_date" class = "labels">Graduation Date</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7">
                 	<input type = "date" class = "form-control"  name="grad_date" id="grad" >
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-5">
-        			<label for = "start" class = "labels">Preferred Start Date</label>
+            	<div class = "col-lg-5 col-md-5">
+        			<label for = "start_date" class = "labels">Preferred Start Date</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7">
                 	<input type = "date" class = "form-control"  name="start_date" id="start" >
                 </div>
             </div>
             <div class = "row form-group">
-            	<div class = "col-lg-5">
+            	<div class = "col-lg-5 col-md-5">
         			<label for = "resume" class = "labels">Upload Resume</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7 col-xs-7 col-sm-7">
                 	<input type = "file" class = "form-control"  name="upload_resume" id="resume"  >
                 </div>
             </div>
             <div class = "row form-group">
-        		<div class = "col-lg-5">
+        		<div class = "col-lg-5 col-md-5">
         			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
         		</div>
-        		<div class = "col-lg-7">
+        		<div class = "col-lg-7 col-md-7 col-xs-7 col-sm-7">
 	                <select class = "form-control" name="about_vip" id="learn">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="dada">test</option>
@@ -224,7 +225,7 @@
                 <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="5" cols="50" name="message" id=""></textarea>
             </div>
         </div>
-        <div class = "col-lg-3 col-lg-offset-9 button-submit text-center">
+        <div class = "col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-3 col-xs-offset-4 button-submit text-center">
             <button class = "submit btn"><span>Submit Form</span></button>
         </div>
     </div>  

@@ -49,3 +49,52 @@ p{
       height: 35%;
   }
 }
+@media screen and (max-width: 719px) and (min-width: 320px) {
+  .footer {
+      background-color: #252525;
+      height: 65%;
+      color: #7e7e7e;
+      width: 100%;
+      font-weight: bold;
+      letter-spacing: 0px;
+      padding-top: 10%;
+  }
+  .top-footer-content {
+      padding-bottom: 13%;
+      margin-top: -30px;
+  }
+  .footer-logo {
+      height: 20%;
+  }
+  li{
+    font-size: 10px;
+  }
+  blockquote {
+      font-family: Georgia, serif;
+      font-size: 10px;
+      font-style: italic;
+      margin: 0.25em 0;
+      padding: 0.35em 40px;
+      line-height: 1;
+      position: relative;
+      color: #383838;
+      border: none;
+  }
+  blockquote cite {
+      color: #999999;
+      font-size: 10px;
+      display: block;
+      margin-top: 5px;
+  }
+  blockquote:after {
+      font-family: Georgia, serif;
+      position: absolute;
+      float: right;
+      line-height: 1;
+      right: 10px;
+      bottom: 6px;
+      content: "\201D";
+      font-size: 80px;
+      color: #7a7a7a;
+  }
+}

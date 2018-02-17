@@ -549,6 +549,13 @@ color:white;
 	    padding-left: 8%;
 	    letter-spacing: 2px;
 	}
+	.counter-container-infinity {
+	    padding-top: 25px;
+	}
+	.infin{
+		height: 45px;
+		width: 90px;
+	}
 	.text-inside-header-picture {
 	    margin-top: -600px;
 	    padding-bottom: 15%;
@@ -682,5 +689,8 @@ color:white;
 	    position: relative;
 	    color: #383838;
 	    border: none;
+	}
+	.h4, h4 {
+	    font-size: 9px;
 	}
 }

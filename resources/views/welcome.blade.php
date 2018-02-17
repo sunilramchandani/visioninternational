@@ -35,7 +35,7 @@
                      <h1 class = "counter">{{$applicant_count}}</h1>
                 </div>
                 <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container-infinity">
-                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded" alt="Company Banner">
+                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded infin" alt="Company Banner">
                 </div>
             </div>
         </div>
