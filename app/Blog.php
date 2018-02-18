@@ -22,4 +22,15 @@ class Blog extends Model
         'deleted_at',
         'updated_at'
     ];
+
+    public function author()
+    {
+        return $this->hasMany('App\Author', 'author_id', 'author_id');
+    }
+
+    public function mainimageupload()
+    {
+        return $this->hasMany('App\BlogMainImageUpload', 'blog_id');
+    }
+
 }

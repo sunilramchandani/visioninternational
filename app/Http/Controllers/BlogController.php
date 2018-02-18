@@ -9,6 +9,8 @@ use App\Blog;
 use App\Author;
 use App\FeaturedImage;
 use Carbon\Carbon;
+use App\BlogMainImageUpload;
+
 class BlogController extends Controller
 {
     /**
@@ -18,8 +20,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog_table = Blog::all();
-        $author_name = Author::all();
+        $blog_table = Blog::with('author')->orderBy('created_at', 'desc')->get();
         return view('admin.blogs.list', compact('blog_table', 'author_name'));
     }
 
@@ -64,7 +65,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('admin.blogs.view', compact('blog'));
     }
 
     /**
@@ -101,11 +103,42 @@ class BlogController extends Controller
         //
     }
 
+    //custom functions
+
     public function userIndex(){
-        $blog_table = Blog::all();
+        $blog_table = Blog::with('author')->orderBy('created_at', 'desc')->get();
         $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
-        $author_name = Author::all();
         return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+    }
+
+    public function indexMainUpload($id){
+        $blog = Blog::find($id);
+        
+        $main_upload = BlogMainImageUpload::where('id', $id)->get();
+        
+        return view('admin.blogs.image-upload-view', compact('blog', 'main_upload'));
+    }
+
+    public function storeMainUpload($id, Request $request){
+        $main_upload = Blog::find($id);
+
+
+        
+        $main_upload = new BlogMainImageUpload;
+        $main_upload->blog_id = $id;
+
+        if ($request->hasFile('upload_blog_main_image')){
+            $file = $request->file('upload_blog_main_image');
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('../storage/app/upload_main_blog_image', $fileName);
+    
+            $main_upload->image_name = $fileName;
+        }
+        $main_upload->save();
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->back()->with($success);
     }
 
 }

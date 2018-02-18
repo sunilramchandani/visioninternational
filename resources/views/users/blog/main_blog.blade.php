@@ -37,12 +37,14 @@
 
                                 <div class="row">
                                     <div class="col-lg-12 left-main-title ">
-                                        <strong>Blog Title</strong>
+                                        <strong>{{$blog->title}}</strong>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 left-main-title ">
-                                        Author: Yanni Pranini | October
+                                    @foreach ($blog->author as $blogs)
+                                    {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}
+                                    
                                     </div>
 
                                 </div>
@@ -64,16 +66,28 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-11 sdfsdfdf ">
-                                    
+                                    <div class="col-lg-6 share-main-title ">
+                                    <span>Share This Article: </span>
                                         <a  href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                                        <i class="fa fa-facebook-official " style="font-size:24px"></i>
+                                        <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
                                         </a>
                                         <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                                            Share on Twitter
+                                        <i class="fa fa-twitter " style="font-size:20px; padding-right:1%; color:black;"></i>
                                         </a>
                                         <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                                            Share on Google
+                                        <i class="fa fa-google-plus " style="font-size:20px; color:black;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6 share-main-title ">
+                                    <span>Categories: </span>
+                                        <a  href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                        <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
+                                        </a>
+                                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                        <i class="fa fa-twitter " style="font-size:20px; padding-right:1%; color:black;"></i>
+                                        </a>
+                                        <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                        <i class="fa fa-google-plus " style="font-size:20px; color:black; "></i>
                                         </a>
                                     </div>
                                 </div>

@@ -13,6 +13,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     }, 'as' => 'admin.home']);
 
     Route::resource('featuredimage', 'FeaturedImageController');
+    Route::group(['prefix' => 'blog'], function() {
+        Route::get('/image-view/{id}', ['uses' => 'BlogController@indexMainUpload', 'as' => 'mainblogimage.view']);
+        Route::post('/new/{id}', ['uses' => 'BlogController@storeMainUpload', 'as' => 'mainblogimage.save']);
+    });
     Route::resource('blog', 'BlogController');
 
     
