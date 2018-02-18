@@ -72,6 +72,10 @@ hr{
 	overflow: hidden;
  }
 
+ .single-img-reponsive{
+	border-radius: 40px 40px 40px 40px;
+ }
+
 
  .left-main-title{
 	margin-top: 2%;

@@ -55,15 +55,15 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <textarea name="description" rows="10" cols="94"></textarea>
+                    <textarea name="description" id="description" rows="20" required class="summernote"></textarea>
                     </div>
                 </div>
                 <div class="btn-container">
                     <div class="row">
                         <div class="col-xs-12">
                             <br>
-                            <a href="{{route('author.list')}}" class="btn btn-danger pull-left">Cancel</a>
-                            <button type="submit" class="btn btn-primary pull-left">Submit</button>
+                            <a href="{{route('author.list')}}" class="btn btn-danger pull-right">Cancel</a>
+                            <button type="submit" class="btn btn-primary pull-right">Submit</button>
                         </div>
                     </div>
                 </div>

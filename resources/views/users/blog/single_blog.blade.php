@@ -1,6 +1,5 @@
 @extends('layouts.master') @section('page-css')
 <link rel="stylesheet" href="{{ asset('css/image-preview.css') }}">
-<link rel="stylesheet" href="{{ asset('css/events-single.css') }}">
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}"> @stop @include('layouts.navbar') @section('content')
 
 <div class="whole-page">
@@ -66,10 +65,8 @@
                 </a>
             </div>
             <div class="col-lg-3 Categories">
-                <span>Categories: @foreach($categories as $categories_list)
-                    {{$categories_list->category_name}}, 
-                    @endforeach
-                
+                <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
+
                 </span>
             </div>
         </div>
@@ -107,20 +104,46 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($category_table as $category)
+                @foreach($category_table as $category)
                 <tr class='clickable-row' data-href='fb?ecat=General'>
-                    @foreach ($category->categorylist as $name)
-                    <td>{{$name->category_name  }}</td>
-                    <td>{{$category->categorylist_count}}</td>
-                   @endforeach
+                    <td>{{$category->category_name}}</td>
+                    <td>
+                        <a href="/blog?category_id={{$category->id}}">
+                            <i style="color:black;">{{$category->blogcategory_count}}</i>
+                        </a>
+                    </td>
+
                 </tr>
-            @endforeach
+                @endforeach
+
             </tbody>
         </table>
     </div>
 </div>
 
 <div class="row filler"></div>
+<br>
+
+<div class="container">
+    <div class="row">
+    <div class="col-lg-2 col-lg-offset-1">
+        @foreach ($blog->author as $blogs)
+
+        <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="single-img-reponsive img-thumbnail img-responsive "
+            alt="Company Banner">
+    </div>
+
+
+    <p> 
+    <div class="col-lg-1">
+        {!!$blogs->description!!}
+    </p>
+
+    @endforeach
+    </div>
+
+</div>
+
 <script>
     var popupMeta = {
         width: 400,

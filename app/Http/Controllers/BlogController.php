@@ -144,13 +144,36 @@ class BlogController extends Controller
     //custom functions
 
     public function userIndex(){
-        $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->get();
-        $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
-        return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+        if (request()->has('category_id')){
+
+            $category_blog = BlogCategory::where('category_id', request('category_id'))->pluck('blog_id');
+
+            $blog_table = Blog::with('author', 'mainimageupload')
+                    ->orderBy('created_at', 'desc')
+                    ->whereIn('id', $category_blog)
+                    ->paginate(5);
+                    
+            $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
+
+  
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+
+        }
+        else{
+            $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->get();
+
+            $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
+    
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+        }
+        
+        
     }
 
     public function userSingle($id)
     {
+
+        
         $previous_blog = $id - 1;
         $next_blog = $id + 1;
 
@@ -164,9 +187,11 @@ class BlogController extends Controller
         ->join('category_list', 'category_list.id', '=', 'category_blog.category_id')
         ->select('category_blog.*', 'category_list.category_name')
         ->get();
+
+        
  
 
-        $category_table = BlogCategory::withCount('categorylist')->get();
+        $category_table = CategoryList::withCount('blogcategory')->get();
 
        
         
