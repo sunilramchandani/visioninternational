@@ -21,6 +21,8 @@
 .next-previous-container{
 	background-color: #d64c39;
 	border-radius: 12px;
+	padding-top: 2%;
+	padding-bottom: 1%;
 }
 .Categories{
 	padding-bottom: 5%;
