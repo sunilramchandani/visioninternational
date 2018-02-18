@@ -61,7 +61,6 @@ class EventPluginController extends Controller
                         'location_latitude' => $result['place']['location']['latitude'],
                         'location_longtitude' => $result['place']['location']['longitude'],
                         'location_street' => $result['place']['location']['street'],
-                        'location_zip' => $result['place']['location']['zip'],
                         'timezone' => $result['timezone'],
                         'post_id' => $result['id'],
                 );
