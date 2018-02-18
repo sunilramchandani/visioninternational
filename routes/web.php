@@ -351,10 +351,10 @@ Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
+Route::resource('faq', 'faqController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });
-
 Route::get('/event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'
