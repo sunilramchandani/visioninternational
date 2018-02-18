@@ -56,19 +56,20 @@ hr{
 }
 
 /* For Blogs (NIKKO) */
+
 .main-page{
-    margin-left: 120px;
+    margin-left: 80px;
 }
 .image-blog{
-	padding-bottom: 5%;
-	box-shadow: 2px 2px 2px 2px #B0B0B0;
+	padding-bottom: 1%;
+
 }
 .main-img-reponsive{
 	border-radius: 25px 25px 0px 0px;
 	width: 100%;
 	height: 100%;
 	max-height: 370px;
-	padding: 8px 8px 8px 8px;
+
 	max-width: 910px;
 	overflow: hidden;
  }
@@ -79,6 +80,11 @@ hr{
 	padding-left: 4%;
 	
   }
+  .share-main-title{
+	padding-left: 4%;
+	
+  }
+
 
   .hr-main-title{
 	margin-top: 4%;
@@ -89,7 +95,7 @@ hr{
 	overflow: hidden;
 	
   }
-
+  
   .submit{
 	font-size: 14px;
 	border-radius: 8px;
@@ -104,4 +110,3 @@ hr{
 .submit:hover{
 color:white;
 }
-
