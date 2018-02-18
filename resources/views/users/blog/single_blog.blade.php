@@ -74,10 +74,10 @@
             @if($previousblog != Null)
             <div class="col-lg-6 left">
                 <div class="text-left arrow">
-                    <a href="blog/{{$previousblog->id}}" class="text-left">
+                    <a href="{{$previousblog->id}}" class="text-left">
                         < Previous</a>
                             <br>
-                            <a href="blog/{{$previousblog->id}}" class="text-left">
+                            <a href="{{$previousblog->id}}" class="text-left">
                                 <h4>{{$previousblog->title}}</h4>
                             </a>
                 </div>
@@ -85,9 +85,9 @@
             @endif @if($nextblog != Null)
             <div class="col-lg-6">
                 <div class="arrow">
-                    <a href="blog/{{$nextblog->id}}">Next ></a>
+                    <a href="{{$nextblog->id}}">Next ></a>
                     <br>
-                    <a href="blog/{{$nextblog->id}}">
+                    <a href="{{$nextblog->id}}">
                         <h4>{{$nextblog->title}}</h4>
                     </a>
                 </div>
@@ -99,8 +99,8 @@
         <table class="table table-categories table-borderless table-hover">
             <thead bgcolor="#800000">
                 <tr>
-                    <th class="header-table text-center">CATEGORIES</th>
-                    <th class="header-table text-center"></th>
+                    <th class="header-table" style="padding-left: 25px">CATEGORIES</th>
+                    <th class="header-table" style="padding-left: 25px"></th>
                 </tr>
             </thead>
             <tbody>
@@ -118,6 +118,61 @@
 
             </tbody>
         </table>
+
+        <table class="table table-categories table-borderless table-hover">
+            <thead bgcolor="#800000">
+                <tr>
+                    <th class="header-table" style="padding-left: 25px">RECENT POST</th>
+                    <th class="header-table" style="padding-left: 25px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($blog_table as $blog)
+                <tr class='clickable-row' data-href='fb?ecat=General'>
+                    <td>
+                        <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                @foreach( $blog->mainimageupload as $mainblogimage )
+
+                                <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                @foreach( $blog->mainimageupload as $mainblogimage )
+
+                                <div class="item {{ $loop->first ? ' active' : '' }}">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="single-img-reponsive img-responsive "
+                                                alt="Company Banner">
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            <!-- end of carousel -->
+                        </div>
+                    <td>
+                    <!-- TODO: -->
+                    @foreach ($blog->blogcategory as $blogz)
+                    {{$blogz->category_id}}
+                    @endforeach
+                    </td>
+                    <td>{{$blog->title}}</td>
+                    <td>
+                        <a href="/blog?blog_id={{$blog->id}}">
+                            <i style="color:black;">{{$blog->dasdasd}}</i>
+                        </a>
+                    </td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -126,44 +181,43 @@
 
 <div class="container">
     <div class="row">
-    <div class="col-lg-2 col-lg-offset-1">
-        @foreach ($blog->author as $blogs)
+        <div class="col-lg-2 col-lg-offset-1">
+            @foreach ($blog->author as $blogs)
 
-        <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="single-img-reponsive img-thumbnail img-responsive "
-            alt="Company Banner">
+            <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
+        </div>
+
+
+        <p>
+            <div class="col-lg-1">
+                {!!$blogs->description!!}
+        </p>
+
+        @endforeach
+        </div>
+
     </div>
 
-
-    <p> 
-    <div class="col-lg-1">
-        {!!$blogs->description!!}
-    </p>
-
-    @endforeach
-    </div>
-
-</div>
-
-<script>
-    var popupMeta = {
-        width: 400,
-        height: 400
-    }
-    $(document).on('click', '.social-share', function (event) {
-        event.preventDefault();
-
-        var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
-            hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
-
-        var url = $(this).attr('href');
-        var popup = window.open(url, 'Social Share',
-            'width=' + popupMeta.width + ',height=' + popupMeta.height +
-            ',left=' + vpPsition + ',top=' + hPosition +
-            ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
-
-        if (popup) {
-            popup.focus();
-            return false;
+    <script>
+        var popupMeta = {
+            width: 400,
+            height: 400
         }
-    });
-</script>
+        $(document).on('click', '.social-share', function (event) {
+            event.preventDefault();
+
+            var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
+                hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
+
+            var url = $(this).attr('href');
+            var popup = window.open(url, 'Social Share',
+                'width=' + popupMeta.width + ',height=' + popupMeta.height +
+                ',left=' + vpPsition + ',top=' + hPosition +
+                ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
+
+            if (popup) {
+                popup.focus();
+                return false;
+            }
+        });
+    </script>

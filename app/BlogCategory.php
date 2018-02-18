@@ -13,7 +13,6 @@ class BlogCategory extends Model
     {
         return $this->belongsTo('App\Blog', 'blog_id');
     }
-
     public function categorylist()
     {
         return $this->belongsTo('App\CategoryList', 'id');

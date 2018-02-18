@@ -13,4 +13,10 @@ class CategoryList extends Model
     {
         return $this->hasMany('App\BlogCategory', 'category_id');
     }
+
+    public function blog()
+    {
+        return $this->hasMany('App\Blog', 'category_id');
+    }
+
 }

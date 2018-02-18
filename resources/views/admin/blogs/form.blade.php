@@ -56,7 +56,7 @@
                         <label for="body">
                             Body
                         </label>
-                        <textarea name="description" rows="10" cols="94"></textarea>
+                        <textarea name="body" id="body" rows="20" required class="summernote">
                         </textarea>
                     </div>
                 </div>

@@ -131,6 +131,7 @@
                         <!-- end of row -->
                     </div>
                     <!--end of main-page-->
+                    {{$blog_table->links()}}
                 </div>
                 <!-- end of container -->
             </div>

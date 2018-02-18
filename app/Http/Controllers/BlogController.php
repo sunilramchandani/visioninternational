@@ -160,7 +160,7 @@ class BlogController extends Controller
 
         }
         else{
-            $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->get();
+            $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->paginate(5);
 
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
     
@@ -179,7 +179,10 @@ class BlogController extends Controller
 
         $blog = Blog::find($id);  
         $previousblog = Blog::find($previous_blog);  
-        $nextblog = Blog::find($next_blog);    
+        $nextblog = Blog::find($next_blog); 
+        
+
+        $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory', 'categorylist')->orderBy('created_at', 'desc')->get();
 
 
         $categories = DB::table('category_blog')
@@ -188,14 +191,11 @@ class BlogController extends Controller
         ->select('category_blog.*', 'category_list.category_name')
         ->get();
 
-        
- 
-
         $category_table = CategoryList::withCount('blogcategory')->get();
 
        
         
-        return view('users.blog.single_blog', compact(  'previousblog','nextblog', 'blog', 'category_table', 'category_count', 'categories'));
+        return view('users.blog.single_blog', compact('blog_table', 'previousblog','nextblog', 'blog', 'category_table', 'category_count', 'categories'));
     }
 
     public function indexMainUpload($id){
