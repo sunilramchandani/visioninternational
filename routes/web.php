@@ -363,3 +363,7 @@ Route::get('/blog', [
     'uses' => 'BlogController@userIndex',
     'as' => 'userBlog.index'
 ]);
+Route::get('/blog/{id}', [
+    'uses' => 'BlogController@userSingle',
+    'as' => 'userBlog.single'
+]);

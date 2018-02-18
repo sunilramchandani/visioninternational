@@ -12,6 +12,8 @@ use Carbon\Carbon;
 use App\BlogMainImageUpload;
 use Storage;
 use File;
+use App\CategoryList;
+use App\BlogCategory;
 class BlogController extends Controller
 {
     /**
@@ -80,6 +82,7 @@ class BlogController extends Controller
         
         return redirect()->back()->with($success);
     }
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -144,6 +147,30 @@ class BlogController extends Controller
         $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->get();
         $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
         return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+    }
+
+    public function userSingle($id)
+    {
+        $previous_blog = $id - 1;
+        $next_blog = $id + 1;
+
+        $blog = Blog::find($id);  
+        $previousblog = Blog::find($previous_blog);  
+        $nextblog = Blog::find($next_blog);    
+
+
+        $categories = DB::table('category_blog')
+        ->where('blog_id', $id)
+        ->join('category_list', 'category_list.id', '=', 'category_blog.category_id')
+        ->select('category_blog.*', 'category_list.category_name')
+        ->get();
+ 
+
+        $category_table = BlogCategory::withCount('categorylist')->get();
+
+       
+        
+        return view('users.blog.single_blog', compact(  'previousblog','nextblog', 'blog', 'category_table', 'category_count', 'categories'));
     }
 
     public function indexMainUpload($id){
@@ -212,6 +239,7 @@ class BlogController extends Controller
         $success = array('ok'=> 'Successfully Restored');
         return redirect()->back()->with($success);
     }
+    
 
     
 
