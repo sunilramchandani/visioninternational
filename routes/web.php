@@ -5,17 +5,44 @@ Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
 //Admin Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
-
-
     
     Route::get('/', ['uses' => function () {
         return view('admin.home');
     }, 'as' => 'admin.home']);
 
     Route::resource('featuredimage', 'FeaturedImageController');
+
+    Route::group(['prefix' => 'author'], function() {
+        Route::get('/list', ['uses' => 'SubDataController@indexAuthor', 'as' => 'author.list']);
+        Route::get('/new', ['uses' => 'SubDataController@createAuthor', 'as' => 'author.create']);
+        Route::post('/new', ['uses' => 'SubDataController@storeAuthor', 'as' => 'author.store']);
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'BlogController@deleteMainUpload',
+            'as' => 'mainblogimage.delete'
+        ]);
+        Route::get('/trash', ['uses' => 'BlogController@viewTrash', 'as' => 'blog.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'BlogController@restoreTrash', 'as' => 'blog.restoretrash']);
+
+    });
+
     Route::group(['prefix' => 'blog'], function() {
         Route::get('/image-view/{id}', ['uses' => 'BlogController@indexMainUpload', 'as' => 'mainblogimage.view']);
         Route::post('/new/{id}', ['uses' => 'BlogController@storeMainUpload', 'as' => 'mainblogimage.save']);
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'BlogController@deleteMainUpload',
+            'as' => 'mainblogimage.delete'
+        ]);
+        Route::get('/trash', ['uses' => 'BlogController@viewTrash', 'as' => 'blog.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'BlogController@restoreTrash', 'as' => 'blog.restoretrash']);
+
     });
     Route::resource('blog', 'BlogController');
 
