@@ -9,6 +9,19 @@
     </div>
 </section>
 @endsection @section('content-main')
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif @if(Session::has('ok'))
+    <div class="alert alert-success">
+       {{Session::get('ok')}} 
+    </div>
+    @endif
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
@@ -29,10 +42,10 @@
                             <label for="author">
                                 Author
                             </label>
-                            <select class = "form-control" name="author_id" id="">
+                            <select class = "form-control" name="author_id" id="author_id">
                                 <option value="" disabled selected>Select Author</option>
                                 @foreach($author_name as $author )
-                                <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                <option value="{{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach
 	                        </select>
                         </div>

@@ -64,6 +64,29 @@
                         </li>
                     </ul>
                 </li>
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/blog') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-thumb-tack"></i>
+                        <span>Blog</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('blog.index') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('blog.create') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-thumb-tack"></i>
