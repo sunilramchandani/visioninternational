@@ -153,7 +153,22 @@ class EventPluginController extends Controller
 
     public function eventSingle($fbevent_id)
     {
-        $events = EventPlugin::find($fbevent_id);
-        return view('users.events.single_event', compact('events'));
+         $previous_events = $fbevent_id - 1;
+         $next_events = $fbevent_id + 1;
+         $events = EventPlugin::find($fbevent_id);
+         $nextevents = EventPlugin::find($next_events);
+         $previousevents = EventPlugin::find($previous_events);
+         $category_events_general = EventPlugin::where('category', 'General')->count();
+         $category_events_design = EventPlugin::where('category', 'Design')->count();
+         $category_events_events = EventPlugin::where('category', 'Events')->count();
+         $category_events_food = EventPlugin::where('category', 'Food')->count();
+         $category_events_jobfair = EventPlugin::where('category', 'Job Fair')->count();
+         if (request()->has('ecat')){
+            $events_table = EventPlugin::where('category',request('ecat'))->get();
+         }
+         else{
+            $events_table = EventPlugin::all();
+         } 
+        return view('users.events.single_event', compact('previousevents','nextevents','events','category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'));
     }
 }
