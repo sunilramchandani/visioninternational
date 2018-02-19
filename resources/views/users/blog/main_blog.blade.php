@@ -1,4 +1,5 @@
 @extends('layouts.master') @section('page-css')
+<link rel="stylesheet" href="{{ asset('css/image-preview.css') }}">
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}"> @stop @include('layouts.navbar') @section('content')
 
 <div class="col-lg-12 whole-page">
@@ -87,7 +88,7 @@
                         <div class="row">
                             <div class="col-lg-6 share-main-title ">
                                 <span>Share This Article: </span>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=#http%3A%2F%2Fvisioninternational.oo%2Fblog/{{$blog->id}}" target="_blank">
                                     <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
                                 </a>
                                 <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
@@ -115,7 +116,7 @@
 
                 <!-- right side -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
-                    <div class="col-lg-offset-6">
+                    <div class="col-lg-offset-3">
                         <form action="{{route('userBlog.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -154,6 +155,60 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    <table class="table table-categories table-borderless table-hover">
+                        <thead bgcolor="#800000">
+                            <tr>
+                                <th class="header-table" style="padding-left: 25px">RECENT POST</th>
+                                <th class="header-table" style="padding-left: 25px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($blog_table as $blog)
+                            <tr class='clickable-row' data-href='fb?ecat=General'>
+                                <td>
+                                    <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            @foreach( $blog->mainimageupload as $mainblogimage )
+
+                                            <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                                            @endforeach
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner" role="listbox">
+                                            @foreach( $blog->mainimageupload as $mainblogimage )
+
+                                            <div class="item {{ $loop->first ? ' active' : '' }}">
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="single-img-reponsive img-responsive "
+                                                            alt="Company Banner">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        <!-- end of carousel -->
+                                    </div>
+                                    <td>
+                                        <!-- TODO: -->
+                                        @foreach ($blog->blogcategory as $blogz) {{$blogz->categorylist->category_name}} @endforeach
+                                    </td>
+
+                                    <td>
+                                        <a href="/blog/{{$blog->id}}">
+                                            <i style="color:black;">{{$blog->title}}</i>
+                                        </a>
+                                    </td>
+
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+
                 </div>
 
                 <!-- end of row -->

@@ -50,13 +50,13 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
-                    <p class="event-description">{!!$blog->body!!}</p>
-                </div>
+            <div class="col-lg-11 left-main-title2 ">
+                <p class="event-description">{{(strip_tags($blog->body))}}</p>
+            </div>
         </div>
 
         <div class="row hr-main-title2">
-            <hr >
+            <hr>
         </div>
 
 
@@ -168,10 +168,10 @@
                             <!-- TODO: -->
                             @foreach ($blog->blogcategory as $blogz) {{$blogz->categorylist->category_name}} @endforeach
                         </td>
-                        <td>{{$blog->title}}</td>
+
                         <td>
-                            <a href="/blog?blog_id={{$blog->id}}">
-                                <i style="color:black;">{{$blog->dasdasd}}</i>
+                            <a href="/blog/{{$blog->id}}">
+                                <i style="color:black;">{{$blog->title}}</i>
                             </a>
                         </td>
 
@@ -197,31 +197,31 @@
         </p>
 
         @endforeach
-        </div>
     </div>
+</div>
 
-    <div class = "row"></div>
+<div class="row"></div>
 
-    <script>
-        var popupMeta = {
-            width: 400,
-            height: 400
+<script>
+    var popupMeta = {
+        width: 400,
+        height: 400
+    }
+    $(document).on('click', '.social-share', function (event) {
+        event.preventDefault();
+
+        var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
+            hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
+
+        var url = $(this).attr('href');
+        var popup = window.open(url, 'Social Share',
+            'width=' + popupMeta.width + ',height=' + popupMeta.height +
+            ',left=' + vpPsition + ',top=' + hPosition +
+            ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
+
+        if (popup) {
+            popup.focus();
+            return false;
         }
-        $(document).on('click', '.social-share', function (event) {
-            event.preventDefault();
-
-            var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
-                hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
-
-            var url = $(this).attr('href');
-            var popup = window.open(url, 'Social Share',
-                'width=' + popupMeta.width + ',height=' + popupMeta.height +
-                ',left=' + vpPsition + ',top=' + hPosition +
-                ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
-
-            if (popup) {
-                popup.focus();
-                return false;
-            }
-        });
-    </script>
+    });
+</script>
