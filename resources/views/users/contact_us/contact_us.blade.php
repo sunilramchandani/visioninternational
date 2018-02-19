@@ -110,7 +110,7 @@
 
 
         <div class="our-offices-mobile">
-            <div class = "col-lg-12 text-center">
+            <div class = "hidden-lg text-center">
                 <h1>Our Offices</h1>
             </div>
             <div class=col-lg-12>
