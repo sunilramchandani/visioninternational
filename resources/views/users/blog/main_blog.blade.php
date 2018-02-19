@@ -120,12 +120,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ()
-                                <tr class='clickable-row' data-href=''>
-                                  <td>{{}}</td>
-                                  <td>(1)</td>
-                                </tr>
-                                @endforeach
+ 
                               </tbody>
                             </table>    
                         </div>
