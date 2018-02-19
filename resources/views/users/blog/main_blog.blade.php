@@ -19,7 +19,6 @@
             </div>
         </div>
 
-        <div>
             <div class="container-fluid ">
                 <div class="main-page">
                     <div class="row">
@@ -135,6 +134,8 @@
                 </div>
                 <!-- end of container -->
             </div>
+        </div>
+        <div class = "row"></div>
             <script>
                 var popupMeta = {
                     width: 400,
