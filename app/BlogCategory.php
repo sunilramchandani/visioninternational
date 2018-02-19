@@ -24,4 +24,10 @@ class BlogCategory extends Model
         return $this->belongsTo('App\CategoryList', 'category_id');
     }
 
+    public function categorylisttable()
+    {
+        return $this->hasMany('App\CategoryList', 'id');
+    }
+
+
 }

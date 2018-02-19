@@ -193,23 +193,27 @@ class BlogController extends Controller
 
             $category_blog = BlogCategory::where('category_id', request('category_id'))->pluck('blog_id');
 
-            $blog_table = Blog::with('author', 'mainimageupload')
+            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')
                     ->orderBy('created_at', 'desc')
                     ->whereIn('id', $category_blog)
                     ->paginate(5);
+            
+            $category_table = CategoryList::withCount('blogcategorytable')->get();
                     
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
 
   
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table'));
 
         }
         else{
-            $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->paginate(5);
+            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')->orderBy('created_at', 'desc')->paginate(5);
+            
+            $category_table = CategoryList::withCount('blogcategorytable')->get();
 
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
     
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table'));
         }
         
         
@@ -236,7 +240,7 @@ class BlogController extends Controller
         ->select('category_blog.*', 'category_list.category_name')
         ->get();
 
-        $category_table = CategoryList::withCount('blogcategory')->get();
+        $category_table = CategoryList::withCount('blogcategorytable')->get();
 
        
         

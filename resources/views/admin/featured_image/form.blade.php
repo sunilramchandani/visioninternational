@@ -72,19 +72,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="sub_image1_description">
-                                    Sub image 1 Description
-                                </label>
-                                <input type="text" class="form-control" id="sub_image1_description" name="sub_image1_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image1_description : '' }}"
-                                placeholder="Some Title">
-                            </div>
-                        </div>
-                    </div>
-
                     
                     <div class="border-bot"></div>
                     <br>
@@ -102,19 +89,7 @@
                                 <input type="file" class="form-control" name="sub_image2" id="sub_image2" value="{{ isset($featuredimage) ? $featuredimage->sub_image2 : '' }}">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="sub_image2_description">
-                                    Sub image 2 Description
-                                </label>
-                                <input type="text" class="form-control" id="sub_image2_description" name="sub_image2_description" value="{{ isset($featuredimage) ? $featuredimage->sub_image2_description : '' }}"
-                                placeholder="Some Title">
-                            </div>
-                        </div>
-                    </div>
+                    </div>  
 
                     
                     <div class="border-bot"></div>
@@ -133,6 +108,8 @@
                                 <input type="file" class="form-control" name="sub_image3" id="sub_image3" value="{{ isset($featuredimage) ? $featuredimage->sub_image3 : '' }}">
                             </div>
                         </div>
+                @endif
+                @if(isset($featuredimage->sub_image3_description))
 
                         <div class="col-xs-12">
                             <div class="form-group">

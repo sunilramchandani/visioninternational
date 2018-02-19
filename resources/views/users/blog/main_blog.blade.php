@@ -120,11 +120,16 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                @foreach ()
-                                <tr class='clickable-row' data-href=''>
-                                  <td>{{}}</td>
-                                  <td>(1)</td>
-                                </tr>
+                                @foreach ($category_table as $category)
+                                <tr class='clickable-row' data-href='fb?ecat=General'>
+                    <td>{{$category->category_name}}</td>
+                    <td>
+                        <a href="/blog?category_id={{$category->id}}">
+                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
+                        </a>
+                    </td>
+
+                </tr>
                                 @endforeach
                               </tbody>
                             </table>    
