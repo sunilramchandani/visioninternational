@@ -79,9 +79,12 @@
                 </span>
             </div>
         </div>
+        <br>
+        <br>
+
         <div class="row next-previous-container">
             @if($previousblog != Null)
-            <div class="col-lg-6 left">
+            <div class="col-lg- left">
                 <div class="text-left arrow">
                     <a href="{{$previousblog->id}}" class="text-left">
                         < Previous</a>
