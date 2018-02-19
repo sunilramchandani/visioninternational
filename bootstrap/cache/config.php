@@ -14,7 +14,7 @@
     'log_level' => 'debug',
     'providers' => 
     array (
-      0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+      0 => 'Intervention\\Image\\ImageServiceProvider',
       1 => 'Illuminate\\Auth\\AuthServiceProvider',
       2 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
       3 => 'Illuminate\\Bus\\BusServiceProvider',
@@ -45,8 +45,8 @@
     ),
     'aliases' => 
     array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
-      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
       'App' => 'Illuminate\\Support\\Facades\\App',
       'Artisan' => 'Illuminate\\Support\\Facades\\Artisan',
       'Auth' => 'Illuminate\\Support\\Facades\\Auth',
@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -227,7 +227,7 @@
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
         'prefix' => '',
-        'strict' => true,
+        'strict' => false,
         'engine' => NULL,
       ),
       'pgsql' => 
@@ -277,12 +277,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +297,7 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
       ),
     ),
   ),
@@ -320,7 +320,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
+        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -400,7 +400,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
+    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,31 +419,12 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
+      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
   ),
-  'dompdf' => 
+  'image' => 
   array (
-    'show_warnings' => false,
-    'orientation' => 'portrait',
-    'defines' => 
-    array (
-      'font_dir' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
-      'font_cache' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
-      'temp_dir' => 'C:\\Users\\SUNILR~1\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational',
-      'enable_font_subsetting' => false,
-      'pdf_backend' => 'CPDF',
-      'default_media_type' => 'screen',
-      'default_paper_size' => 'a4',
-      'default_font' => 'serif',
-      'dpi' => 96,
-      'enable_php' => false,
-      'enable_javascript' => true,
-      'enable_remote' => true,
-      'font_height_ratio' => 1.1,
-      'enable_html5_parser' => false,
-    ),
+    'driver' => 'gd',
   ),
 );

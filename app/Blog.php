@@ -33,4 +33,17 @@ class Blog extends Model
         return $this->hasMany('App\BlogMainImageUpload', 'blog_id');
     }
 
+    public function blogcategory()
+    {
+        return $this->hasMany('App\BlogCategory', 'blog_id', 'id');
+    }
+
+    public function categorylist()
+    {
+        return $this->belongsTo('App\CategoryList', 'id');
+    }
+
+    
+
+
 }

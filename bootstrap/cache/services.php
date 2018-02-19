@@ -1,7 +1,7 @@
 <?php return array (
   'providers' => 
   array (
-    0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    0 => 'Intervention\\Image\\ImageServiceProvider',
     1 => 'Illuminate\\Auth\\AuthServiceProvider',
     2 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     3 => 'Illuminate\\Bus\\BusServiceProvider',
@@ -32,7 +32,7 @@
   ),
   'eager' => 
   array (
-    0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    0 => 'Intervention\\Image\\ImageServiceProvider',
     1 => 'Illuminate\\Auth\\AuthServiceProvider',
     2 => 'Illuminate\\Cookie\\CookieServiceProvider',
     3 => 'Illuminate\\Database\\DatabaseServiceProvider',

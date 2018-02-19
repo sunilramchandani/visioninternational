@@ -28,7 +28,7 @@
                             @foreach($blog_table as $blog)
                             <div class="image-blog">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-10 col-lg-offset-1">
                                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                             <!-- Indicators -->
                                             <ol class="carousel-indicators">
@@ -58,25 +58,25 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-12 left-main-title ">
+                                    <div class="col-lg-10 col-lg-offset-1 left-main-title  ">
                                         <strong>{{$blog->title}}</strong>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-12 left-main-title ">
+                                    <div class="col-lg-10 col-lg-offset-1 left-main-title ">
                                         @foreach ($blog->author as $blogs) {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}
 
                                     </div>
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-11 left-main-title ">
+                                    <div class="col-lg-10 col-lg-offset-1 left-main-title ">
                                         {{ \Illuminate\Support\Str::words(strip_tags($blog->body), 30,' ... ')}}
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-12 left-main-title ">
-                                        <a href="#" class="submit btn">
+                                    <div class="col-lg-10 col-lg-offset-1 left-main-title ">
+                                        <a href = "/blog/{{$blog->id}}" class="submit btn">
                                             <span>Read More</span>
                                         </a>
                                     </div>
@@ -131,6 +131,7 @@
                         <!-- end of row -->
                     </div>
                     <!--end of main-page-->
+                    {{$blog_table->links()}}
                 </div>
                 <!-- end of container -->
             </div>

@@ -44,27 +44,32 @@
                             <input type="file" class="form-control-file" name="upload_author_image" id="upload_author_image">
                         </div>
                     </div>
-                 </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <label for="description">
+                            Body
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                    <textarea name="description" id="description" rows="20" required class="summernote"></textarea>
+                    </div>
+                </div>
+                <div class="btn-container">
                     <div class="row">
-
                         <div class="col-xs-12">
-
-                            <label for="description">
-                                Body
-                            </label>
-
-                            <textarea name="description" id="description" rows="20" required class="summernote">
-                            </textarea>
+                            <br>
+                            <a href="{{route('author.list')}}" class="btn btn-danger pull-right">Cancel</a>
+                            <button type="submit" class="btn btn-primary pull-right">Submit</button>
                         </div>
                     </div>
-
-                    <div class="btn-container">
-                        <a href="#" class="btn btn-danger pull-right">Cancel</a>
-                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
-                    </div>
+                </div>
             </form>
-            </div>
         </div>
+    </div>
 </section>
 @endsection @section('scripts')
 <script>
