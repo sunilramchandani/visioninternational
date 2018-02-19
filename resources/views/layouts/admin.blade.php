@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="{{ asset('css/bower_bundle.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/bundle.css')  }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap-multiselect.css') }}">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
 
     <!-- Google Font -->
     <link rel="stylesheet"
@@ -64,6 +66,29 @@
                         </li>
                     </ul>
                 </li>
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/blog') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-thumb-tack"></i>
+                        <span>Blog</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('blog.index') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('blog.create') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-thumb-tack"></i>
@@ -81,76 +106,6 @@
                         </li>
                         <li>
                             <a href="{{ route('news.new') }}">
-                                <i class="fa fa-plus-circle"></i>
-                                New
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="treeview {{ ($currentRoutePrefix === 'admin/opportunities') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fa fa-briefcase"></i>
-                        <span>Opportunities</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="{{ route('opportunities.list') }}">
-                                <i class="fa fa-list"></i>
-                                List
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('opportunities.create') }}">
-                                <i class="fa fa-plus-circle"></i>
-                                New
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="treeview {{ ($currentRoutePrefix === 'admin/programs') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fa fa-file"></i>
-                        <span>Programs</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="{{ route('programs.list') }}">
-                                <i class="fa fa-list"></i>
-                                List
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('programs.create') }}">
-                                <i class="fa fa-plus-circle"></i>
-                                New
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="treeview {{ ($currentRoutePrefix === 'admin/testimonials') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fa fa-comment"></i>
-                        <span>Testimonials</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="{{ route('testimonials.list') }}">
-                                <i class="fa fa-list"></i>
-                                List
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('testimonials.new') }}">
                                 <i class="fa fa-plus-circle"></i>
                                 New
                             </a>
@@ -253,6 +208,49 @@
                    
                 </li>
 
+                <hr>
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/author') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Author</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('author.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('author.create') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/category') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Category</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('category.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="">
                     <a href="#">
                         <i class="fa fa-cog"></i>
@@ -292,7 +290,7 @@
 </div>
 
 <script src="{{ asset('js/bundle.js') }}"></script>
-
+<script src="{{ asset('/js/bootstrap-multiselect.js') }}"></script> 
 @yield('scripts')
 
 </body>

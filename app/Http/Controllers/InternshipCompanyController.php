@@ -22,20 +22,24 @@ class InternshipCompanyController extends Controller
     public function index(Request $request)
     {
         if (request()->has('state')){
+
+            
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->where('id', request('id'))->paginate(0)->appends('id', request('id'))->orderBy('ID','ASC');
-        
-            $internship_addresses = InternshipCompany::where('state', request('state'))->orderBy('ID','ASC')->pluck('housing_address');
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('id','asc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
+
+            
+            $internship_addresses = InternshipCompany::where('state', request('state'))->pluck('housing_address');
             $internship_name = InternshipCompany::where('state', request('state'))->pluck('company_name');
             $internship_desc = InternshipCompany::where('state', request('state'))->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
             $internship_id = InternshipCompany::where('state', request('state'))->pluck('id');
+            $internship_image = InternshipCompany::pluck('image');
             
-            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id'));
+            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
         }
         else{
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('ID','ASC')->get();
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('id','asc')->get();
         
             $internship_addresses = InternshipCompany::orderBy('ID','ASC')->pluck('housing_address');
             $internship_name = InternshipCompany::pluck('company_name');

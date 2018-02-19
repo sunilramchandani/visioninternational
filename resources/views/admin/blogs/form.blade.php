@@ -9,6 +9,19 @@
     </div>
 </section>
 @endsection @section('content-main')
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif @if(Session::has('ok'))
+    <div class="alert alert-success">
+       {{Session::get('ok')}} 
+    </div>
+    @endif
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
@@ -29,10 +42,10 @@
                             <label for="author">
                                 Author
                             </label>
-                            <select class = "form-control" name="author_id" id="">
+                            <select class = "form-control" name="author_id" id="author_id">
                                 <option value="" disabled selected>Select Author</option>
                                 @foreach($author_name as $author )
-                                <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                <option value="{{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach
 	                        </select>
                         </div>
@@ -48,6 +61,26 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="body">
+                            Category
+                        </label>
+                        <select id="category_list" name="category_list[]" multiple="multiple" class="form-control">
+                            <option value="India">India</option>
+                            <option value="Australia">Australia</option>
+                            <option value="United State">United State</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Romania">Romania</option>
+                        </select>
+                    </select>
+                    </div>
+                </div>
+                
+
+                
+
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -57,11 +90,27 @@
     </div>
 </section>
 @endsection @section('scripts')
+
+
 <script>
     $(document).ready(function () {
         $('.summernote').summernote({
             height: 250
         });
     });
+
+</script>
+
+
+<script>
+$(function() {  
+ $('#category_list').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...',
+            buttonWidth: '400px',
+        }); 
+});
 </script>
 @endsection

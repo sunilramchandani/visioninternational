@@ -14,7 +14,7 @@
     'log_level' => 'debug',
     'providers' => 
     array (
-      0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+      0 => 'Intervention\\Image\\ImageServiceProvider',
       1 => 'Illuminate\\Auth\\AuthServiceProvider',
       2 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
       3 => 'Illuminate\\Bus\\BusServiceProvider',
@@ -45,8 +45,8 @@
     ),
     'aliases' => 
     array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
-      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
       'App' => 'Illuminate\\Support\\Facades\\App',
       'Artisan' => 'Illuminate\\Support\\Facades\\Artisan',
       'Auth' => 'Illuminate\\Support\\Facades\\Auth',
@@ -172,7 +172,11 @@
       'file' => 
       array (
         'driver' => 'file',
+<<<<<<< HEAD
         'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/cache/data',
+=======
+        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
       ),
       'memcached' => 
       array (
@@ -227,7 +231,7 @@
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
         'prefix' => '',
-        'strict' => true,
+        'strict' => false,
         'engine' => NULL,
       ),
       'pgsql' => 
@@ -277,12 +281,20 @@
       'local' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app',
+=======
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
       ),
       'public' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app/uploads',
+=======
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +309,11 @@
       'uploads' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\public',
+=======
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
       ),
     ),
   ),
@@ -320,7 +336,11 @@
       'theme' => 'default',
       'paths' => 
       array (
+<<<<<<< HEAD
         0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views/vendor/mail',
+=======
+        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
       ),
     ),
   ),
@@ -400,7 +420,11 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
+<<<<<<< HEAD
     'files' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/sessions',
+=======
+    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,12 +443,19 @@
   array (
     'paths' => 
     array (
+<<<<<<< HEAD
       0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views',
     ),
     'compiled' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework\\views',
+=======
+      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
+    ),
+    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
   ),
-  'dompdf' => 
+  'image' => 
   array (
+<<<<<<< HEAD
     'show_warnings' => false,
     'orientation' => 'portrait',
     'defines' => 
@@ -447,5 +478,8 @@
       'DOMPDF_ENABLE_CSS_FLOAT' => false,
       'DOMPDF_ENABLE_HTML5PARSER' => false,
     ),
+=======
+    'driver' => 'gd',
+>>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
   ),
 );

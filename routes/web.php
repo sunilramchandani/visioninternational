@@ -5,14 +5,49 @@ Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
 //Admin Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
-
-
     
     Route::get('/', ['uses' => function () {
         return view('admin.home');
     }, 'as' => 'admin.home']);
 
     Route::resource('featuredimage', 'FeaturedImageController');
+
+    Route::group(['prefix' => 'author'], function() {
+        Route::get('/list', ['uses' => 'SubDataController@indexAuthor', 'as' => 'author.list']);
+        Route::get('/new', ['uses' => 'SubDataController@createAuthor', 'as' => 'author.create']);
+        Route::post('/new', ['uses' => 'SubDataController@storeAuthor', 'as' => 'author.store']);
+
+
+
+        
+        Route::get('/edit/{id}', ['uses' => 'SubDataController@editAuthor', 'as' => 'author.save']);
+        Route::post('/edit/{id}', ['uses' => 'SubDataController@updateAuthor', 'as' => 'author.update']);
+
+        Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteAuthor', 'as' => 'author.delete']);
+    });
+
+    Route::group(['prefix' => 'category'], function() {
+        Route::get('/list', ['uses' => 'SubDataController@indexCategory', 'as' => 'category.list']);
+        Route::post('/list', ['uses' => 'SubDataController@storeCategory', 'as' => 'category.store']);
+        Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteCategory', 'as' => 'category.delete']);
+    });
+
+
+    Route::group(['prefix' => 'blog'], function() {
+        Route::get('/image-view/{id}', ['uses' => 'BlogController@indexMainUpload', 'as' => 'mainblogimage.view']);
+        Route::post('/new/{id}', ['uses' => 'BlogController@storeMainUpload', 'as' => 'mainblogimage.save']);
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'BlogController@deleteMainUpload',
+            'as' => 'mainblogimage.delete'
+        ]);
+        Route::get('/trash', ['uses' => 'BlogController@viewTrash', 'as' => 'blog.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'BlogController@restoreTrash', 'as' => 'blog.restoretrash']);
+
+    });
     Route::resource('blog', 'BlogController');
 
     
@@ -320,11 +355,19 @@ Route::resource('contactus', 'ContactUsController');
 Route::resource('fb', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
+Route::resource('faq', 'faqController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });
-
 Route::get('/event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'
+]);
+Route::get('/blog', [
+    'uses' => 'BlogController@userIndex',
+    'as' => 'userBlog.index'
+]);
+Route::get('/blog/{id}', [
+    'uses' => 'BlogController@userSingle',
+    'as' => 'userBlog.single'
 ]);

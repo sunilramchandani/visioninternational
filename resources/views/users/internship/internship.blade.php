@@ -118,6 +118,7 @@
     <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 picture" id = "map">  
     </div>
     <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
+
         @foreach ($internshipCompany_table as $company)
             <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
@@ -131,6 +132,7 @@
                 </div>
             </div> 
         @endforeach
+    
     </div>
 </div>
 <!--whats next?-->
