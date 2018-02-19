@@ -50,18 +50,18 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-lg-12 left-main-title ">
+                <div class="col-lg-12 left-main-title2 ">
                     <p class="event-description">{!!$blog->body!!}</p>
                 </div>
         </div>
 
-        <div class="row">
-            <hr>
+        <div class="row hr-main-title2">
+            <hr >
         </div>
 
 
         <div class="row">
-            <div class="col-lg-9 share-main-title ">
+            <div class="col-lg-9 share-main-title2 ">
                 <span>Share This Article: </span>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
                     <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
@@ -182,15 +182,10 @@
         </table>
     </div>
 </div>
-
-<div class="row filler"></div>
-<br>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-lg-offset-1">
             @foreach ($blog->author as $blogs)
-
             <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
         </div>
 
@@ -198,12 +193,14 @@
         <p>
             <div class="col-lg-4">
                 {{(strip_tags($blogs->description))}}
+            </div>
         </p>
 
         @endforeach
         </div>
-
     </div>
+
+    <div class = "row"></div>
 
     <script>
         var popupMeta = {

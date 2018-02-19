@@ -7,6 +7,7 @@
         <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
             alt="Company Banner">
         <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+        <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
         <div class="text-inside-header-picture">
             <div class="row dynamic-text-container">
                 <div class="col-lg-4 dynamic-text-container-box">
@@ -111,7 +112,7 @@
                         </div>
 
                         <!-- right side -->
-                        <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
+                        <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 categories-sidebar">
                             <table class="table table-categories table-borderless table-hover">
                               <thead bgcolor="#800000">
                                 <tr>
@@ -121,15 +122,15 @@
                               </thead>
                               <tbody>
                                 @foreach ($category_table as $category)
-                                <tr class='clickable-row' data-href='fb?ecat=General'>
-                    <td>{{$category->category_name}}</td>
-                    <td>
-                        <a href="/blog?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                        </a>
-                    </td>
+                                <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
+                                    <td>{{$category->category_name}}</td>
+                                    <td>
+                                        <a href="/blog?category_id={{$category->id}}">
+                                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
+                                        </a>
+                                    </td>
 
-                </tr>
+                                </tr>
                                 @endforeach
                               </tbody>
                             </table>    
