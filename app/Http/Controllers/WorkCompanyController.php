@@ -26,7 +26,7 @@ class WorkCompanyController extends Controller
     {
 
         if (request()->has('state')){
-            $featuredimage_work = FeaturedImage::where('page_name','internship')->get();
+            $featuredimage_work = FeaturedImage::where('page_name','work')->get();
             $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
             
             $work_addresses = WorkCompany::where('state', request('state'))->pluck('housing_address');
@@ -37,7 +37,7 @@ class WorkCompanyController extends Controller
             $work_image = WorkCompany::pluck('image');
          
 
-            return view('users.work.company.work_company', compact('work_image'. 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
+            return view('users.work.work', compact('work_image', 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
         }
         else{
             $featuredimage_work = FeaturedImage::where('page_name','work')->get();
@@ -50,7 +50,7 @@ class WorkCompanyController extends Controller
             $work_id = WorkCompany::pluck('id');
             $work_image = WorkCompany::pluck('image');
 
-            return view('users.work.work', compact('work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
+            return view('users.work.work', compact('featuredimage_work', 'work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
         }
     }
 

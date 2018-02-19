@@ -17,8 +17,8 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-                <H1> Work & Travel </H1>
-                <p class ="p-dynamic"> Get ahead in your careers with an Work experience abroad</p>
+                <H1> work </H1>
+                <p class ="p-dynamic"> Get ahead in your careers with an work experience abroad</p>
             </div>
         
 @endforeach
@@ -30,7 +30,7 @@
         <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
-            <p> Our Work Programs prepare students for life and work outside of school.Participants  </p>
+            <p> Our work Programs prepare students for life and work outside of school.Participants  </p>
             <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
         </div>
     </div>
@@ -96,20 +96,6 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Modal Header</h4>
             </div>
-            <div class = "col-lg-7 side-content">
-                @foreach ($workCompany_table as $company)
-                    <div class = "col-lg-5 col-lg-offset-1 info-container">
-                        <div class = "row company-picture">
-                            <img src="{{ URL::asset('image/uploaded_featured_image/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
-                        </div>
-                        <div class = "row info">
-                            <h4>{{$company->full_address}}</h4>
-                            <h3>{{$company->company_name}}</h3>
-                            <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                            <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
-                        </div>
-                    </div> 
-                @endforeach
             <div class="modal-body">
 
             </div>
@@ -175,9 +161,9 @@
                     <p id=p-content>specialist who will handle your application </p>
                     <p id=p-content>until the end.</p>
                     <div class="button">
-                        <a href class="btn locate-me">How do i make a deposit?</a>
+                        <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
                         <br><br>
-                        <a href class="btn locate-me">What documents are required?</a>
+                        <a href = "/faq" class="btn locate-me">What documents are required?</a>
                     </div>
                 </div>
              </div>
@@ -203,7 +189,7 @@
                     <p id=p-content>We will practive you for your interviews</p>
                     <p id=p-content>and make sure you're reader!.</p>
                     <div class="button">
-                        <a href class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                        <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
                     </div>
                 </div>
              </div>
@@ -228,7 +214,7 @@
                     <p id=p-content>transition properly to the US. </p>
                     <p id=p-content>Have fun!</p>
                     <div class="button">
-                        <a href class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
+                        <a href= "/faq" class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
                     </div>
                 </div>
              </div>
@@ -238,7 +224,7 @@
         <!--Rate -->
         <div class = "container">
             <div class = "row">
-                <div class = "col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 rate-container">
+                <div class = "col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-xs-12 rate-container">
                         <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class = "text-left-side col-lg-offset-1">
                                 <h2 class = "gradient"> What's the rate? </h2>
@@ -251,14 +237,15 @@
                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <select class = "form-control" name="duration" id="duration">
                                         <option value="6">6 Months</option>
-                                        <option value="3">3 Months</option>
-                                        <option value="12">12 Months</option>     
+                                        <option value="7">7 Months</option>
+                                        <option value="8">8 Months</option>
+                                        <option value="9">9 Months</option>     
                                     </select>
                                 </div>
                             </div>
                             <div class = "row row-price">
                                  <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p>PHP 3000</p></strong>
+                                    <strong><p id = "reservation">PHP 3000</p></strong>
                                 </div>
                                 <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <p>Reservation</p>
@@ -266,7 +253,7 @@
                             </div>
                             <div class = "row row-price">
                                  <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p>USD 450</p></strong>
+                                    <strong><p id = "1st-Installment">USD 450</p></strong>
                                 </div>
                                 <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <p>First Installment *</p>
@@ -274,7 +261,7 @@
                             </div>
                             <div class = "row row-price">
                                 <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 last-row last-row1 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p>USD 3100</p></strong>
+                                    <strong><p id = "2nd-Installment">USD 3100</p></strong>
                                 </div>
                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 last-row">
                                     <p>Second Installment **</p>
@@ -282,7 +269,7 @@
                             </div>
                             <div class = "row row-price">
                                  <div class = "col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
-                                    <strong><p>USD 3550</p></strong>
+                                    <strong><p id = "3rd-Installment">USD 3550</p></strong>
                                 </div>
                                 <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <p>Total Program Payment</p>
@@ -310,6 +297,32 @@
                     </div>
                 </div>
             </div>
+        <script>
+            var e = document.getElementById("duration");
+            e.onchange = function() {
+                var strUser = e.options[e.selectedIndex].value;
+                if(strUser == "6"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 3100";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 3550";
+                }
+                if(strUser == "7"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 3150";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 3600";
+                }   
+                if(strUser == "8"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 3350";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 3800";
+                }   
+                if(strUser == "9"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 3650";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 4100";
+                }                 
+            }
+        </script>
         <!--Testimony-->
 
         <div class="container">
