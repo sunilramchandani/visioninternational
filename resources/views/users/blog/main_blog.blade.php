@@ -99,7 +99,13 @@
                                         </a>
                                     </div>
                                     <div class="col-lg-6 share-main-title ">
-                                        <span>Categories: </span>
+                                        <span>Categories: 
+
+                                        @foreach($blog->blogcategory as $category)
+                                        {{$category->categorylist->category_name}},
+                                        @endforeach
+                                        
+                                         </span>
                                         
                                     </div>
                                 </div>
