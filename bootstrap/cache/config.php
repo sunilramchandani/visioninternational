@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -277,12 +277,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app/uploads',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +297,7 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\public',
       ),
     ),
   ),
@@ -320,7 +320,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -400,7 +400,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,9 +419,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
+      0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -429,21 +429,23 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'font_dir' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
-      'font_cache' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
-      'temp_dir' => 'C:\\Users\\SUNILR~1\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational',
-      'enable_font_subsetting' => false,
-      'pdf_backend' => 'CPDF',
-      'default_media_type' => 'screen',
-      'default_paper_size' => 'a4',
-      'default_font' => 'serif',
-      'dpi' => 96,
-      'enable_php' => false,
-      'enable_javascript' => true,
-      'enable_remote' => true,
-      'font_height_ratio' => 1.1,
-      'enable_html5_parser' => false,
+      'DOMPDF_FONT_DIR' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
+      'DOMPDF_FONT_CACHE' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
+      'DOMPDF_TEMP_DIR' => 'C:\\Users\\jionn\\AppData\\Local\\Temp',
+      'DOMPDF_CHROOT' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational',
+      'DOMPDF_UNICODE_ENABLED' => true,
+      'DOMPDF_ENABLE_FONT_SUBSETTING' => false,
+      'DOMPDF_PDF_BACKEND' => 'CPDF',
+      'DOMPDF_DEFAULT_MEDIA_TYPE' => 'screen',
+      'DOMPDF_DEFAULT_PAPER_SIZE' => 'a4',
+      'DOMPDF_DEFAULT_FONT' => 'serif',
+      'DOMPDF_DPI' => 96,
+      'DOMPDF_ENABLE_PHP' => false,
+      'DOMPDF_ENABLE_JAVASCRIPT' => true,
+      'DOMPDF_ENABLE_REMOTE' => true,
+      'DOMPDF_FONT_HEIGHT_RATIO' => 1.1,
+      'DOMPDF_ENABLE_CSS_FLOAT' => false,
+      'DOMPDF_ENABLE_HTML5PARSER' => false,
     ),
   ),
 );
