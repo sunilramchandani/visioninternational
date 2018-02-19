@@ -63,16 +63,14 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-                        <label for="body">
+                        <label for="category">
                             Category
                         </label>
-                        <select id="category_list" name="category_list[]" multiple="multiple" class="form-control">
-                            <option value="India">India</option>
-                            <option value="Australia">Australia</option>
-                            <option value="United State">United State</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Taiwan">Taiwan</option>
-                            <option value="Romania">Romania</option>
+                        <select id="category" name="category_bulk[]" multiple="multiple" class="form-control">
+                        @foreach($category_list as $cate)
+                            <option value="{{$cate->id}}">{{$cate->category_name}}</option>
+                        @endforeach
+
                         </select>
                     </select>
                     </div>
@@ -104,7 +102,7 @@
 
 <script>
 $(function() {  
- $('#category_list').multiselect({
+ $('#category').multiselect({
             includeSelectAllOption: true,
             enableFiltering: true,
             enableCaseInsensitiveFiltering: true,
