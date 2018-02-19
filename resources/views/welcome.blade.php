@@ -218,7 +218,7 @@
           <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' ... ')}}</p>
          
-          <a href = "fb" class = "submit btn"><span>More Info</span></a>
+          <a href = "event/{{$events->fbevent_id}}" class = "submit btn"><span>More Info</span></a>
         </div>
       @endforeach
         <div class = "col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 show-all-container">

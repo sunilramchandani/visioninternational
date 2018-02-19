@@ -96,6 +96,20 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Modal Header</h4>
             </div>
+            <div class = "col-lg-7 side-content">
+                @foreach ($workCompany_table as $company)
+                    <div class = "col-lg-5 col-lg-offset-1 info-container">
+                        <div class = "row company-picture">
+                            <img src="{{ URL::asset('image/uploaded_featured_image/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
+                        </div>
+                        <div class = "row info">
+                            <h4>{{$company->full_address}}</h4>
+                            <h3>{{$company->company_name}}</h3>
+                            <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
+                            <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
+                        </div>
+                    </div> 
+                @endforeach
             <div class="modal-body">
 
             </div>

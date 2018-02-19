@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -227,7 +227,7 @@
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
         'prefix' => '',
-        'strict' => false,
+        'strict' => true,
         'engine' => NULL,
       ),
       'pgsql' => 
@@ -277,12 +277,18 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
+
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
+
+
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
+
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
+
+
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +303,9 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
+
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
+
       ),
     ),
   ),
@@ -320,7 +328,8 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
+
+        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -400,7 +409,9 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
+
+
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,12 +430,33 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
+      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
   ),
   'image' => 
   array (
-    'driver' => 'gd',
+    'show_warnings' => false,
+    'orientation' => 'portrait',
+    'defines' => 
+    array (
+      'DOMPDF_FONT_DIR' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
+      'DOMPDF_FONT_CACHE' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
+      'DOMPDF_TEMP_DIR' => 'C:\\Users\\jionn\\AppData\\Local\\Temp',
+      'DOMPDF_CHROOT' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational',
+      'DOMPDF_UNICODE_ENABLED' => true,
+      'DOMPDF_ENABLE_FONT_SUBSETTING' => false,
+      'DOMPDF_PDF_BACKEND' => 'CPDF',
+      'DOMPDF_DEFAULT_MEDIA_TYPE' => 'screen',
+      'DOMPDF_DEFAULT_PAPER_SIZE' => 'a4',
+      'DOMPDF_DEFAULT_FONT' => 'serif',
+      'DOMPDF_DPI' => 96,
+      'DOMPDF_ENABLE_PHP' => false,
+      'DOMPDF_ENABLE_JAVASCRIPT' => true,
+      'DOMPDF_ENABLE_REMOTE' => true,
+      'DOMPDF_FONT_HEIGHT_RATIO' => 1.1,
+      'DOMPDF_ENABLE_CSS_FLOAT' => false,
+      'DOMPDF_ENABLE_HTML5PARSER' => false,
+    ),
   ),
 );

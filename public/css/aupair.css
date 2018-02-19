@@ -112,7 +112,7 @@ margin-top: 5px;
     font-size: 15px;
     position: absolute;
     bottom: 10%;
-    left: 30%;
+    left: 33%;
 }
 .testimony-description{
 	padding-top: 5%;
@@ -212,14 +212,17 @@ margin-top: 5px;
 .number-icon{
 	position: absolute;
 	top: 220;
+	right: 46%;
 }
 .number-icon2{
 	position: absolute;
 	top: -35;
+	right: 46%;
 }
 .number-icon3{
 	position: absolute;
 	top: -35;
+	right: 46%;
 }
 
 .img-line{

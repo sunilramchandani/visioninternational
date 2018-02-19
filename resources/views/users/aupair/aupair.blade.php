@@ -58,14 +58,14 @@
                     <img src="{{URL:: asset('image/icons/9.png') }}" height = "40%" class = "logo-aupair-icon">
                     <h3 class = "icon-title">Qualifications</h3>
                     <h4 class = "aupair-icon-text"> Au pairs benefits from the enriching experience of learning about American culture during their stay with a host family.</h4>
-                    <a href class="btn locate-me">View Qualifications</a>
+                    <a href= "/faq" class="btn locate-me">View Qualifications</a>
                 </div>
 
                 <div class="aupair-icon2 aupair-icon-right col-lg-4 col-md-4 col-sm-4 col-xs-5">
                      <img src="{{URL:: asset('image/icons/6.png') }}" height = "40%" class = "logo-aupair-icon">
                      <h3 class = "icon-title">Requirements</h3>
                      <h4 class = "aupair-icon-text"> Host family benefits from having consistent, reliable, in-home childcare and the opportunity to learn about the au pair and their culture.</h4>
-                     <a href class="btn locate-me">View Requirements</a>
+                     <a href= "/faq" class="btn locate-me">View Requirements</a>
                 </div>
             </div>
     </div>
@@ -91,7 +91,7 @@
 
                 <div class="intership-content col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <p id=p-content>After paying your reservation,please scan or take a photo of the deposit slip and send to us. Upon receiving your receipt, we will issue you our welcome kit and assist you to complete your online au pair account.</p>
-                    <a href class="btn locate-me locate-me21">Download Reservation Form</a>
+                    <a href= "/faq" class="btn locate-me locate-me21">Download Reservation Form</a>
                 </div>
              </div>
 

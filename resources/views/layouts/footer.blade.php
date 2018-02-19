@@ -8,11 +8,11 @@
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 company">
             <p>COMPANY</p>
             <ul>
-                <li>Opportunities</li>
-                <li>About</li>
-                <li>News</li>
-                <li>Events</li>
-                <li>Blog</li>
+                <li><a href = "">Opportunities</a></li>
+                <li><a href = "/aboutus">About</a></li>
+                <li><a href = "news">News</a></li>
+                <li><a href = "/fb">Events</a></li>
+                <li><a href = "/blog">Blog</a></li>
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 resources">
@@ -27,8 +27,8 @@
             <p>SUPPORT</p>
             <ul>
                 <li>Job</li>
-                <li>FAQ</li>
-                <li>Contact Us</li>
+                <li><a href = "/faq">FAQ</a></li>
+                <li><a href = "/contactus">Contact Us</a></li>
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 Business">
@@ -43,7 +43,7 @@
     </div>
     <div class = "col-lg-12 col-md-12 col-sm-12 bottom-footer-content">
         <div class = "col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-4">
-            <p>Crafted by Sky Rocket PH</p>
+            <p>Crafted by SkyRocket PH</p>
         </div>
         <div class = "col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-6 col-sm-offset-2 col-xs-8">
             <p>&copy; 2017, Vision International Philippines All rights reserved.   Privacy Policy. Terms of Service </p>

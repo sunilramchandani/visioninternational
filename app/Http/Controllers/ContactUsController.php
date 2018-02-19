@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ContactUs;
 use Mail;
 use App\FeaturedImage;
+use App\Country;
 
 class ContactUsController extends Controller
 {
@@ -18,7 +19,8 @@ class ContactUsController extends Controller
     {
         $featuredimage_contactus = FeaturedImage::where('page_name','contact_us')->get();
         $contactus_table = ContactUs::all();
-        return view('users.contact_us.contact_us', compact('featuredimage_contactus', 'contactus_table'));
+        $country = Country::pluck('country_name');
+        return view('users.contact_us.contact_us', compact('featuredimage_contactus', 'contactus_table','country'));
     }
 
     /**
