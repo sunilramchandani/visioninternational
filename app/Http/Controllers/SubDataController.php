@@ -30,7 +30,7 @@ class SubDataController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'upload_author_image' => 'required',
+            'upload_author_image' => 'mimes:jpeg,bmp,png|required',
             'description'   => 'required',
             ]);
 
@@ -41,7 +41,7 @@ class SubDataController extends Controller
             $file = $request->file('upload_author_image');
             $name = $file->getClientOriginalName();
             $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
-            $file->move('../storage/app/upload_author_image', $fileName);
+            $file->move('../storage/app/public/upload_author_image', $fileName);
             $author->image = $fileName;
         }
 
@@ -50,7 +50,88 @@ class SubDataController extends Controller
 
         $success = array('ok'=> 'Success');
         
-        return redirect()->route('blog.index')->with($success);
+        return redirect()->route('author.list')->with($success);
+        
+    }
+
+    public function editAuthor($id)
+    {
+        $author = Author::findOrFail($id);
+        return view('admin.subdata.author_edit', compact('author'));
+
+    }
+
+    public function updateAuthor($id, Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'upload_author_image' => 'mimes:jpeg,bmp,png',
+            'description'   => 'required',
+        ]);
+
+        $author = Author::find($id);
+        $author->name = $request['name'];
+        if ($request->hasFile('upload_author_image')){
+            $file = $request->file('upload_author_image');
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('../storage/app/public/upload_author_image', $fileName);
+            $author->image = $fileName;
+        }
+
+        $author->description = $request['description'];
+        $author->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('author.list')->with($success);;
+
+    }
+
+    public function deleteAuthor($id, Request $request)
+    {
+        $author = Author::findOrFail($id);
+
+        $author->delete();
+
+        $success = array('ok'=> 'Successfully Deleted');
+        
+        return redirect()->route('author.list')->with($success);
+
+    }
+
+    public function indexCategory()
+    {
+        $category_table = CategoryList::orderBy('category_name','asc')->paginate(10);
+        return view('admin.subdata.category', compact('category_table'));
+    }
+
+
+    public function storeCategory(Request $request)
+    {
+        $this->validate($request, [
+            'category_name' => 'required',
+            ]);
+
+        $category = new CategoryList;
+        $category->category_name = $request['category_name'];
+        $category->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('category.list')->with($success);
+        
+    }
+
+    public function deleteCategory($id)
+    {
+        $category = CategoryList::findOrFail($id);
+
+        $category->delete();
+
+        $success = array('ok'=> 'Successfully Deleted');
+        
+        return redirect()->route('category.list')->with($success);
         
     }
     /**

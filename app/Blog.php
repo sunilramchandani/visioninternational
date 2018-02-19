@@ -35,12 +35,12 @@ class Blog extends Model
 
     public function blogcategory()
     {
-        return $this->hasMany('App\BlogCategory', 'blog_id', 'id');
+        return $this->hasMany('App\BlogCategory', 'blog_id');
     }
 
     public function categorylist()
     {
-        return $this->belongsTo('App\CategoryList', 'id');
+        return $this->hasMany('App\CategoryList', 'id');
     }
 
     

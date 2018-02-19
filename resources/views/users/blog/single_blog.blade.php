@@ -158,7 +158,7 @@
                     <td>
                     <!-- TODO: -->
                     @foreach ($blog->blogcategory as $blogz)
-                    {{$blogz->category_id}}
+                    {{$blogz->categorylist->category_name}}
                     @endforeach
                     </td>
                     <td>{{$blog->title}}</td>
@@ -190,7 +190,7 @@
 
         <p>
             <div class="col-lg-1">
-                {!!$blogs->description!!}
+                {{(strip_tags($blogs->description))}}
         </p>
 
         @endforeach

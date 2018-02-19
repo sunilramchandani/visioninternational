@@ -50,7 +50,7 @@
                     </a>
 
                     <img height="200px" width="200px" src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$image_preview->image_name}}"
-                        class=" img-thumbnail" alt="Company Banner">
+                        class="img-preview" alt="Company Banner">
                 </div>
             </a>
             @endforeach
