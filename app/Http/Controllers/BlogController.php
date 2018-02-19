@@ -236,7 +236,7 @@ class BlogController extends Controller
         ->select('category_blog.*', 'category_list.category_name')
         ->get();
 
-        $category_table = CategoryList::withCount('blogcategory')->get();
+        $category_table = CategoryList::withCount('blogcategorytable')->get();
 
        
         

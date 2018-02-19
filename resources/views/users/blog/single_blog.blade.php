@@ -118,7 +118,7 @@
                     <td>{{$category->category_name}}</td>
                     <td>
                         <a href="/blog?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->blogcategory_count}}</i>
+                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
                         </a>
                     </td>
 

@@ -97,19 +97,7 @@ class FeaturedImageController extends Controller
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image1 = $fileName;
         }
-
-        if ($request->has('sub_image1_description')){
-            $featuredimage->sub_image1_description = $request['sub_image1_description'];
-        }
-
-        if ($request->has('sub_image1_description_header')){
-            $featuredimage->sub_image1_description_header = $request['sub_image1_description_header'];
-        }
-
-        if ($request->has('sub_image1_description_subheader')){
-            $featuredimage->sub_image1_description_subheader = $request['sub_image1_description_subheader'];
-        }
-
+    
         //Sub Image 2
         if ($request->hasFile('sub_image2')){
             $file = $request->file('sub_image2');
@@ -119,19 +107,6 @@ class FeaturedImageController extends Controller
             $featuredimage->sub_image2 = $fileName;
             
         }
-
-        if ($request->has('sub_image2_description')){
-            $featuredimage->sub_image2_description = $request['sub_image2_description'];
-        }
-
-        if ($request->has('sub_image2_description_header')){
-            $featuredimage->sub_image2_description = $request['sub_image2_description_header'];
-        }
-
-        if ($request->has('sub_image2_description_subheader')){
-            $featuredimage->sub_image2_description = $request['sub_image2_description_subheader'];
-        }
-
 
         //Sub Image 3
         if ($request->hasFile('sub_image3')){
@@ -152,14 +127,6 @@ class FeaturedImageController extends Controller
 
         if ($request->has('sub_image3_description')){
             $featuredimage->sub_image3_description = $request['sub_image3_description'];
-        }
-
-        if ($request->has('sub_image3_description_header')){
-            $featuredimage->sub_image3_description = $request['sub_image3_description_header'];
-        }
-
-        if ($request->has('sub_image3_description_subheader')){
-            $featuredimage->sub_image3_description = $request['sub_image3_description_subheader'];
         }
 
         //Sub Image 4
@@ -185,138 +152,6 @@ class FeaturedImageController extends Controller
             $featuredimage->sub_image4_sender_title = $request['sub_image4_sender_title'];
         }
 
-        if ($request->has('sub_image4_description_header')){
-            $featuredimage->sub_image4_description = $request['sub_image4_description_header'];
-        }
-
-        if ($request->has('sub_image4_description_subheader')){
-            $featuredimage->sub_image4_description = $request['sub_image4_description_subheader'];
-        }
-
-        //Sub Image 5
-        if ($request->hasFile('sub_image5')){
-            $file = $request->file('sub_image5');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image5 = $fileName;
-            $featuredimage->sub_image5_description = $request['sub_image5_description'];
-        }
-
-       if ($request->has('sub_image5_description')){
-            $featuredimage->sub_image5_description = $request['sub_image5_description'];
-        }
-
-        if ($request->has('sub_image5_description_header')){
-            $featuredimage->sub_image5_description = $request['sub_image5_description_header'];
-        }
-
-        if ($request->has('sub_image5_description_subheader')){
-            $featuredimage->sub_image5_description = $request['sub_image5_description_subheader'];
-        }
-        //Sub Image 6
-        if ($request->hasFile('sub_image6')){
-            $file = $request->file('sub_image6');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image6 = $fileName;
-        }
-
-        if ($request->has('sub_image6_description')){
-            $featuredimage->sub_image6_description = $request['sub_image6_description'];
-        }
-
-        if ($request->has('sub_image6_description_header')){
-            $featuredimage->sub_image6_description = $request['sub_image6_description_header'];
-        }
-
-        if ($request->has('sub_image6_description_subheader')){
-            $featuredimage->sub_image6_description = $request['sub_image6_description_subheader'];
-        }
-        //Sub Image 7
-        if ($request->hasFile('sub_image7')){
-            $file = $request->file('sub_image7');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image7 = $fileName;
-        }
-
-        if ($request->has('sub_image7_description_header')){
-            $featuredimage->sub_image7_description = $request['sub_image7_description_header'];
-        }
-
-        if ($request->has('sub_image7_description_subheader')){
-            $featuredimage->sub_image7_description = $request['sub_image7_description_subheader'];
-        }
-
-        if ($request->has('sub_image7_description')){
-            $featuredimage->sub_image7_description = $request['sub_image7_description'];
-        }
-
-        //Sub Image 8
-       if ($request->hasFile('sub_image8')){
-            $file = $request->file('sub_image8');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image8 = $fileName;
-        }
-
-        if ($request->has('sub_image8_description')){
-            $featuredimage->sub_image8_description = $request['sub_image8_description'];
-        }
-
-        if ($request->has('sub_image8_description_header')){
-            $featuredimage->sub_image8_description = $request['sub_image8_description_header'];
-        }
-
-        if ($request->has('sub_image8_description_subheader')){
-            $featuredimage->sub_image8_description = $request['sub_image8_description_subheader'];
-        }
-         //Sub Image 9
-        if ($request->hasFile('sub_image9')){
-            $file = $request->file('sub_image9');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image9 = $fileName;
-        }
-
-       if ($request->has('sub_image9_description')){
-            $featuredimage->sub_image9_description = $request['sub_image9_description'];
-        }
-
-        if ($request->has('sub_image9_description_header')){
-            $featuredimage->sub_image9_description = $request['sub_image9_description_header'];
-        }
-
-        if ($request->has('sub_image9_description_subheader')){
-            $featuredimage->sub_image9_description = $request['sub_image9_description_subheader'];
-        }
-
-        //Sub Image 10
-        if ($request->hasFile('sub_image10')){
-            $file = $request->file('sub_image10');
-            $name = $file->getClientOriginalName();
-            $fileName = $name;
-            $file->move('image/uploaded_featured_image', $fileName);
-            $featuredimage->sub_image10 = $fileName;
-        }
-
-        if ($request->has('sub_image10_description')){
-            $featuredimage->sub_image10_description = $request['sub_image10_description'];
-        }
-
-        if ($request->has('sub_image10_description_header')){
-            $featuredimage->sub_image10_description = $request['sub_image10_description_header'];
-        }
-
-        if ($request->has('sub_image10_description_subheader')){
-            $featuredimage->sub_image10_description = $request['sub_image10_description_subheader'];
-        }
-       
         $featuredimage->save();
         $success = array('ok'=> 'The Request has been approved!');
         return redirect()->route('featuredimage.index')->with($success);

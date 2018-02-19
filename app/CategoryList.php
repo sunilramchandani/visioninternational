@@ -16,6 +16,12 @@ class CategoryList extends Model
         return $this->belongsTo('App\BlogCategory', 'category_name');
     }
 
+    public function blogcategorytable()
+    {
+        return $this->hasMany('App\BlogCategory', 'category_id');
+    }
+
+
     public function blog()
     {
         return $this->belongsTo('App\Blog', 'id');
