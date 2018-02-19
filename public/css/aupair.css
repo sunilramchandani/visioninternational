@@ -212,14 +212,17 @@ margin-top: 5px;
 .number-icon{
 	position: absolute;
 	top: 220;
+	right: 46%;
 }
 .number-icon2{
 	position: absolute;
 	top: -35;
+	right: 46%;
 }
 .number-icon3{
 	position: absolute;
 	top: -35;
+	right: 46%;
 }
 
 .img-line{
@@ -237,7 +240,7 @@ margin-top: 5px;
 	    font-size: 15px;
 	    position: absolute;
 	    bottom: 8%;
-	    left: 27%;
+    	left: 35%;
 	}
 	.locate-me21 {
 	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);

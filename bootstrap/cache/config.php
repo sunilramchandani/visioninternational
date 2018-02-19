@@ -172,15 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-<<<<<<< HEAD
         'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
-=======
-<<<<<<< HEAD
-        'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/cache/data',
-=======
-        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
       ),
       'memcached' => 
       array (
@@ -285,28 +277,18 @@
       'local' => 
       array (
         'driver' => 'local',
-<<<<<<< HEAD
+
         'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
-=======
-<<<<<<< HEAD
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app',
-=======
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
+
+
       ),
       'public' => 
       array (
         'driver' => 'local',
-<<<<<<< HEAD
+
         'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
-=======
-<<<<<<< HEAD
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app/uploads',
-=======
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
+
+
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -321,15 +303,9 @@
       'uploads' => 
       array (
         'driver' => 'local',
-<<<<<<< HEAD
+
         'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
-=======
-<<<<<<< HEAD
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\public',
-=======
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
+
       ),
     ),
   ),
@@ -352,15 +328,8 @@
       'theme' => 'default',
       'paths' => 
       array (
-<<<<<<< HEAD
+
         0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
-=======
-<<<<<<< HEAD
-        0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views/vendor/mail',
-=======
-        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
       ),
     ),
   ),
@@ -440,15 +409,9 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-<<<<<<< HEAD
     'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
-=======
-<<<<<<< HEAD
-    'files' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/sessions',
-=======
-    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
+
+
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -467,25 +430,12 @@
   array (
     'paths' => 
     array (
-<<<<<<< HEAD
       0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
     ),
     'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
-=======
-<<<<<<< HEAD
-      0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views',
-    ),
-    'compiled' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework\\views',
-=======
-      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
-    ),
-    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
   ),
   'image' => 
   array (
-<<<<<<< HEAD
     'show_warnings' => false,
     'orientation' => 'portrait',
     'defines' => 
@@ -508,8 +458,5 @@
       'DOMPDF_ENABLE_CSS_FLOAT' => false,
       'DOMPDF_ENABLE_HTML5PARSER' => false,
     ),
-=======
-    'driver' => 'gd',
->>>>>>> e4e37095bf05a09db86e4ee865f92ec6eb744df9
   ),
 );

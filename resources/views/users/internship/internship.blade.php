@@ -161,9 +161,9 @@
                     <p id=p-content>specialist who will handle your application </p>
                     <p id=p-content>until the end.</p>
                     <div class="button">
-                        <a href class="btn locate-me">How do i make a deposit?</a>
+                        <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
                         <br><br>
-                        <a href class="btn locate-me">What documents are required?</a>
+                        <a href = "/faq" class="btn locate-me">What documents are required?</a>
                     </div>
                 </div>
              </div>
@@ -189,7 +189,7 @@
                     <p id=p-content>We will practive you for your interviews</p>
                     <p id=p-content>and make sure you're reader!.</p>
                     <div class="button">
-                        <a href class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                        <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
                     </div>
                 </div>
              </div>
@@ -214,7 +214,7 @@
                     <p id=p-content>transition properly to the US. </p>
                     <p id=p-content>Have fun!</p>
                     <div class="button">
-                        <a href class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
+                        <a href= "/faq" class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
                     </div>
                 </div>
              </div>
@@ -224,7 +224,7 @@
         <!--Rate -->
         <div class = "container">
             <div class = "row">
-                <div class = "col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 rate-container">
+                <div class = "col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-xs-12 rate-container">
                         <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class = "text-left-side col-lg-offset-1">
                                 <h2 class = "gradient"> What's the rate? </h2>

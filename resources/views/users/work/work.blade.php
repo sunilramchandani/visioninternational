@@ -96,7 +96,6 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Modal Header</h4>
             </div>
-<<<<<<< HEAD
             <div class = "col-lg-7 side-content">
                 @foreach ($workCompany_table as $company)
                     <div class = "col-lg-5 col-lg-offset-1 info-container">
@@ -111,13 +110,11 @@
                         </div>
                     </div> 
                 @endforeach
-=======
             <div class="modal-body">
 
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
->>>>>>> 96f01a6e36206a51fa4739c8c6002498bb5f8df0
             </div>
         </div>
         
