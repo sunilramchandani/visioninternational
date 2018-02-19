@@ -17,7 +17,7 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-                <H1> Work </H1>
+                <H1> Work & Travel </H1>
                 <p class ="p-dynamic"> Get ahead in your careers with an Work experience abroad</p>
             </div>
         
