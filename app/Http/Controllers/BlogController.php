@@ -23,6 +23,8 @@ class BlogController extends Controller
      */
     public function index()
     {
+        
+
         $blog_table = Blog::with('author')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.blogs.list', compact('blog_table', 'author_name'));
     }
@@ -188,13 +190,18 @@ class BlogController extends Controller
 
     //custom functions
 
-    public function userIndex(){
+    public function userIndex(Request $request){
         if (request()->has('category_id')){
+
+            $s = $request->input('s');
+
+            
 
             $category_blog = BlogCategory::where('category_id', request('category_id'))->pluck('blog_id');
 
             $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')
                     ->orderBy('created_at', 'desc')
+                    ->search($s)
                     ->whereIn('id', $category_blog)
                     ->paginate(5);
             
@@ -203,17 +210,23 @@ class BlogController extends Controller
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
 
   
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table', 's'));
 
         }
         else{
-            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')->orderBy('created_at', 'desc')->paginate(5);
+
+            $s = $request->input('s');
+
+            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')
+                            ->orderBy('created_at', 'desc')
+                            ->search($s)
+                            ->paginate(5);
             
             $category_table = CategoryList::withCount('blogcategorytable')->get();
 
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
     
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table', 's'));
         }
         
         
