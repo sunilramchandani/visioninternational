@@ -9,6 +9,11 @@ class BlogCategory extends Model
     protected $table = 'category_blog'; 
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'blog_id',
+        'category_id'
+    ];
+
     public function blog()
     {
         return $this->belongsTo('App\Blog', 'blog_id');

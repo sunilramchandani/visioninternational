@@ -36,7 +36,9 @@ class BlogController extends Controller
     {
         $blog_table = Blog::all();
         $author_name = Author::all();
-        return view('admin.blogs.form', compact('blog_table', 'author_name'));
+        $category_list = CategoryList::all();
+        $category_blog = BlogCategory::all();
+        return view('admin.blogs.form', compact('blog_table', 'author_name', 'category_blog', 'category_list' ));
 
     }
 
@@ -59,11 +61,22 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
-        if (request()->has('category_list')){
-            
-        }
+        $category_blog = new BlogCategory;
+        $category_blog->category_id = $request['category_bulk'];
         $blog->save();
 
+
+        if ($request->has('category_bulk'))
+        {
+            $category_list = $request->input('category_bulk');
+            $id = $blog->id;
+            foreach($category_list as $caca)
+            {
+            DB::table('category_blog')->insert([
+                ['blog_id' => $id, 'category_id' => $caca, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            }
+        }
         $success = array('ok'=> 'Success');
         
         return redirect()->route('blog.index')->with($success);
@@ -97,7 +110,19 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $author_name = Author::all();
-        return view('admin.blogs.edit', compact('blog', 'author_name'));
+        
+        $getid_blog = DB::table('category_blog')
+            ->where('blog_id', $id)
+            ->pluck('category_id');
+        
+        $category_list = DB::table('category_list')
+            ->wherenotIn('id', $getid_blog)
+            ->get();
+
+
+        
+        $category_blog = BlogCategory::all();
+        return view('admin.blogs.edit', compact('blog', 'author_name', 'category_blog', 'category_list' ));
     }
 
     /**
@@ -120,8 +145,24 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
+
+        $category_blog = new BlogCategory;
+        $category_blog->category_id = $request['category_bulk'];
         
         $blog->save();
+        
+        if ($request->has('category_bulk'))
+        {
+        $category_list = $request->input('category_bulk');
+        foreach($category_list as $caca)
+        {
+
+        DB::table('category_blog')->insert([
+            ['blog_id' => $id, 'category_id' => $caca, 'updated_at' => Carbon::now()]
+        ]);
+        }
+        }
+
 
         $success = array('ok'=> 'Success');
         
