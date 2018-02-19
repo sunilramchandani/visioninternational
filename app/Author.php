@@ -13,4 +13,9 @@ class Author extends Model
     {
         return $this->belongsTo('App\Blog', 'author_id', 'author_id');
     }
+
+    public function news()
+    {
+        return $this->belongsTo('App\News', 'author_id', 'author_id');
+    }
 }

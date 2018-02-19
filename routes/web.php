@@ -49,10 +49,27 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
     });
     Route::resource('blog', 'BlogController');
+    
+    Route::group(['prefix' => 'news'], function() {
+        Route::get('/image-view/{id}', ['uses' => 'NewsController@indexMainUpload', 'as' => 'mainnewsimage.view']);
+        Route::post('/new/{id}', ['uses' => 'NewsController@storeMainUpload', 'as' => 'mainnewsimage.save']);
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'NewsController@deleteMainUpload',
+            'as' => 'mainnewsimage.delete'
+        ]);
+        Route::get('/trash', ['uses' => 'NewsController@viewTrash', 'as' => 'news.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'NewsController@restoreTrash', 'as' => 'news.restoretrash']);
+
+    });
+    Route::resource('news', 'NewsController');
 
     
     // News Routes
-    Route::group(['prefix' => 'news'], function() {
+   /* Route::group(['prefix' => 'news'], function() {
         Route::get('/new', ['uses' => 'News\NewsController@create', 'as' => 'news.new']);
         Route::post('/new', ['uses' => 'News\NewsController@create', 'as' => 'news.save']);
         Route::get('/list', ['uses' => 'News\NewsController@index', 'as' => 'news.list']);
@@ -61,7 +78,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/edit/{id}', ['uses' => 'News\NewsController@edit', 'as' => 'news.edit']);
         Route::post('/edit/{id}', ['uses' => 'News\NewsController@edit', 'as' => 'news.update']);
         Route::get('/{id}', ['uses' => 'News\NewsController@view', 'as' => 'news.view']);
-    });
+    }); */
 
     //Work company routes
     Route::group(['prefix' => 'workcompany'], function() {
@@ -370,4 +387,13 @@ Route::get('/blog', [
 Route::get('/blog/{id}', [
     'uses' => 'BlogController@userSingle',
     'as' => 'userBlog.single'
+]);
+
+Route::get('/news', [
+    'uses' => 'NewsController@userIndex',
+    'as' => 'userNews.index'
+]);
+Route::get('/news/{id}', [
+    'uses' => 'NewsController@userSingle',
+    'as' => 'userNews.single'
 ]);

@@ -56,6 +56,7 @@ class BlogController extends Controller
             'title' => 'required',
             'author_id'   => 'required',
             'body'   => 'required',
+            'upload_blog_main_image' => 'mimes:jpeg,bmp,png'
             ]);
 
         $blog = new Blog;
@@ -65,7 +66,19 @@ class BlogController extends Controller
         $blog->body = $request['body'];
         $category_blog = new BlogCategory;
         $category_blog->category_id = $request['category_bulk'];
+        $main_upload = new BlogMainImageUpload;
         $blog->save();
+
+        if ($request->hasFile('upload_blog_main_image')){
+            $id = $blog->id;
+            $file = $request->file('upload_blog_main_image');
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_main_blog_image', $fileName);
+            $main_upload->image_name = $fileName;
+            $main_upload->blog_id = $id;
+            $main_upload->save();
+        }
 
 
         if ($request->has('category_bulk'))
