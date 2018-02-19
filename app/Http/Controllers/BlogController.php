@@ -14,6 +14,9 @@ use Storage;
 use File;
 use App\CategoryList;
 use App\BlogCategory;
+use App\Jobs\SendNotificationJob;
+use Mail;
+
 class BlogController extends Controller
 {
     /**
@@ -23,8 +26,6 @@ class BlogController extends Controller
      */
     public function index()
     {
-        
-
         $blog_table = Blog::with('author')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.blogs.list', compact('blog_table', 'author_name'));
     }
@@ -68,6 +69,21 @@ class BlogController extends Controller
         $category_blog->category_id = $request['category_bulk'];
         $main_upload = new BlogMainImageUpload;
         $blog->save();
+
+        $author_id = $request->input('author_id');
+        
+        $get_name = DB::table('author')
+            ->where('author_id', $author_id)
+            ->first()
+            ->name;
+
+    
+        $title = $request->input('title');
+        $author = $get_name;
+        $body = $request->input('body');
+
+
+        $this->dispatch(new SendNotificationJob($title, $author, $body ));
 
         if ($request->hasFile('upload_blog_main_image')){
             $id = $blog->id;

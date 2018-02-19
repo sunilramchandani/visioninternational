@@ -14,6 +14,8 @@ use Storage;
 use File;
 use App\CategoryList;
 use App\NewsCategory;
+use App\Jobs\SendNotificationJob;
+use Mail;
 
 class NewsController extends Controller
 {
@@ -65,7 +67,25 @@ class NewsController extends Controller
         $category_news = new NewsCategory;
         $category_news->category_id = $request['category_bulk'];
         $main_upload = new NewsMainImageUpload;
+
+        
+
         $news->save();
+
+        $author_id = $request->input('author_id');
+        
+        $get_name = DB::table('author')
+            ->where('author_id', $author_id)
+            ->first()
+            ->name;
+
+    
+        $title = $request->input('title');
+        $author = $get_name;
+        $body = $request->input('body');
+
+
+        $this->dispatch(new SendNotificationJob($title, $author, $body ));
 
         if ($request->hasFile('upload_news_main_image')){
             $id = $news->id;
