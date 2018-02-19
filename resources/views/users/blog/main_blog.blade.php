@@ -1,24 +1,6 @@
 @extends('layouts.master') @section('page-css')
 <link rel="stylesheet" href="{{ asset('css/image-preview.css') }}">
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}"> @stop @include('layouts.navbar') @section('content')
-<<<<<<< HEAD
-=======
-<form action="" method="post" role="form">
-    {{csrf_field()}}
-    <div class="col-lg-12 whole-page">
-        @foreach ($featuredimage_blog as $featured)
-        <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
-            alt="Company Banner">
-        <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-        <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-        <div class="text-inside-header-picture">
-            <div class="row dynamic-text-container">
-                <div class="col-lg-4 dynamic-text-container-box">
-                    <h4> UNITED STATES </h4>
-                    <H1> INTERNSHIP </H1>
-                    <p class="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
-                </div>
->>>>>>> 319a0a1450d9e26da40ba9b0cffc5b57d35e880b
 
 <div class="col-lg-12 whole-page">
     @foreach ($featuredimage_blog as $featured)
@@ -126,7 +108,6 @@
                             </div>
                         </div>
 
-<<<<<<< HEAD
                         <!-- end of image-blog -->
                     </div>
                     <br> @endforeach
@@ -142,32 +123,6 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}">
                             </div>
-=======
-                        <!-- right side -->
-                        <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 categories-sidebar">
-                            <table class="table table-categories table-borderless table-hover">
-                              <thead bgcolor="#800000">
-                                <tr>
-                                  <th class = "header-table text-center">CATEGORIES</th>
-                                  <th class = "header-table text-center"></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                @foreach ($category_table as $category)
-                                <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
-                                    <td>{{$category->category_name}}</td>
-                                    <td>
-                                        <a href="/blog?category_id={{$category->id}}">
-                                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                @endforeach
-                              </tbody>
-                            </table>    
-                        </div>
->>>>>>> 319a0a1450d9e26da40ba9b0cffc5b57d35e880b
 
                             <div class="form-group">
                                 <button class="btn" type="submit">
