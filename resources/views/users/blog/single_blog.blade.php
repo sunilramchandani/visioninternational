@@ -49,8 +49,17 @@
                 @foreach ($blog->author as $blogs) {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}
             </div>
         </div>
-        <p class="event-description">{!!$blog->body!!}</p>
-        <hr>
+        <div class="row">
+                <div class="col-lg-12 left-main-title ">
+                    <p class="event-description">{!!$blog->body!!}</p>
+                </div>
+        </div>
+
+        <div class="row">
+            <hr>
+        </div>
+
+
         <div class="row">
             <div class="col-lg-9 share-main-title ">
                 <span>Share This Article: </span>
@@ -155,18 +164,16 @@
                             </div>
                             <!-- end of carousel -->
                         </div>
-                    <td>
-                    <!-- TODO: -->
-                    @foreach ($blog->blogcategory as $blogz)
-                    {{$blogz->categorylist->category_name}}
-                    @endforeach
-                    </td>
-                    <td>{{$blog->title}}</td>
-                    <td>
-                        <a href="/blog?blog_id={{$blog->id}}">
-                            <i style="color:black;">{{$blog->dasdasd}}</i>
-                        </a>
-                    </td>
+                        <td>
+                            <!-- TODO: -->
+                            @foreach ($blog->blogcategory as $blogz) {{$blogz->categorylist->category_name}} @endforeach
+                        </td>
+                        <td>{{$blog->title}}</td>
+                        <td>
+                            <a href="/blog?blog_id={{$blog->id}}">
+                                <i style="color:black;">{{$blog->dasdasd}}</i>
+                            </a>
+                        </td>
 
                 </tr>
                 @endforeach
@@ -189,7 +196,7 @@
 
 
         <p>
-            <div class="col-lg-1">
+            <div class="col-lg-4">
                 {{(strip_tags($blogs->description))}}
         </p>
 
