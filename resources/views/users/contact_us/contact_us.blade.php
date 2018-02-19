@@ -38,17 +38,9 @@
                     <div class = "row form-group">
                         <select class = "form-control" name="country" id="">
                             <option value="" disabled selected>Countries</option>
-                            <option value="PS">Palestinian Territory, Occupied</option>
-                            <option value="PA">Panama</option>
-                            <option value="PG">Papua New Guinea</option>
-                            <option value="PY">Paraguay</option>
-                            <option value="PE">Peru</option>
-                            <option value="PH">Philippines</option>
-                            <option value="PN">Pitcairn</option>
-                            <option value="PL">Poland</option>
-                            <option value="PT">Portugal</option>
-                            <option value="PR">Puerto Rico</option>
-                            <option value="QA">Qatar</option>
+                            @foreach($country as $country)
+                                <option value="{{$country}}">{{$country}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
