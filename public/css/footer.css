@@ -21,6 +21,14 @@ ul{
     list-style:none;
     padding-left:0;
 }
+a{
+  text-decoration: none;
+  color: #7e7e7e;
+}
+a:hover{
+  text-decoration: none;
+  color: #7e7e7e;
+}
 p{
   color: #4c4c4c;
 }

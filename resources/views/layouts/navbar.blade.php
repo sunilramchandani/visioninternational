@@ -12,9 +12,9 @@
 				<div class="dropdown-content">
 					<div class = "col-lg-6 col-md-6">
 						<p class = "dropdown-content-header">United States</p>
-						<a href="#">Work & Travel</a>
+						<a href="/workcompany">Work & Travel</a>
 						<a href="/internshipcompany">Internship</a>
-						<a href="#">Au Pair</a>
+						<a href="/aupair">Au Pair</a>
 					</div>
 					<div class = "col-lg-6 col-md-6">
 						<p class = "dropdown-content-header">Australia</p>
@@ -28,10 +28,10 @@
 			<div class="dropdown">
 				<button class="dropbtn">Learn More</button>
 				<div class="dropdown-content">
-					<a href="#">News</a>
-					<a href="#">Events</a>
-					<a href="#">Blog</a>
-					<a href="#">FAQ</a>
+					<a href="news">News</a>
+					<a href="fb">Events</a>
+					<a href="blog">Blog</a>
+					<a href="faq">FAQ</a>
 				</div>
 			</div>
 			<div class = "applynow-btn">
