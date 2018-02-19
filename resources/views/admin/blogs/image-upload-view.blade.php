@@ -87,4 +87,15 @@
     }
 </script>
 
+<script>
+$(function() {  
+ $('#multiselect').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...'
+        }); 
+});
+</script>
+
 @endsection
