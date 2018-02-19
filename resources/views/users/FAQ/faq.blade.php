@@ -22,34 +22,34 @@
         </div>
     </div>
 
-    <!-- VIDEO -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-				<iframe class = "video-class"
-				src="https://www.youtube.com/embed/aJYjGsQM6eM" frameborder="0" allowfullscreen>
-				</iframe>			
-			</div>
-		</div>
-	</div>
+   
 
-	<!--Internship -->
+	
 	<div class="container">
         <div class="row">
             <div class="col-lg-8">
+            	<!-- VIDEO -->
+        	    <div class="row">
+		            <div class="video-div">
+						<iframe class = "video-class"
+						src="https://www.youtube.com/embed/aJYjGsQM6eM" frameborder="0" allowfullscreen>
+						</iframe>			
+					</div>
+				</div>
+            	<!--Internship -->
             	<div class = "internship">
-            		<h4>Internship</h4>
+            		<h4 class = "faq-header">Internship</h4>
 	            	@foreach ($internship as $internship)
 						<div class="panel-group">
 						    <div class="panel panel-default bg-nav">
 						        <div class="panel-heading bg-nav" >
 						            <h5 class="panel-title white">
-						                <a  data-toggle="collapse" href="#dash" class = "down{{$internship->faq_id}}"> 
-						                   <i class="fa fa-chevron-circle-right white" aria-hidden="true"> {{$internship->question}}</i> 
+						                <a  data-toggle="collapse" href="#dash{{$internship->faq_id}}" class = "down{{$internship->faq_id}}"> 
+						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {{$internship->question}}</p>
 						                </a>
 						            </h5>
 						        </div>
-						        <div id="dash" class="panel-collapse collapse bg-nav navbar-content">
+						        <div id="dash{{$internship->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
 						            <p>{{$internship->answer}}</p>
 						            <hr>
 						        </div>    
@@ -57,9 +57,92 @@
 						</div>
 					@endforeach
 				</div>
+				<!--Spring -->
+				<div class = "spring">
+            		<h4 class = "faq-header">Spring Work & Travel</h4>
+	            	@foreach ($spring as $spring)
+						<div class="panel-group">
+						    <div class="panel panel-default bg-nav">
+						        <div class="panel-heading bg-nav" >
+						            <h5 class="panel-title white">
+						                <a  data-toggle="collapse" href="#dash{{$spring->faq_id}}" class = "down{{$spring->faq_id}}"> 
+						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {{$spring->question}}</p>
+						                </a>
+						            </h5>
+						        </div>
+						        <div id="dash{{$spring->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
+						            <p>{{$spring->answer}}</p>
+						            <hr>
+						        </div>    
+						    </div>  
+						</div>
+					@endforeach
+				</div>
+				<!--Summer -->
+				<div class = "summer">
+            		<h4 class = "faq-header">Summer Work & Travel</h4>
+	            	@foreach ($summer as $summer)
+						<div class="panel-group">
+						    <div class="panel panel-default bg-nav">
+						        <div class="panel-heading bg-nav" >
+						            <h5 class="panel-title white">
+						                <a  data-toggle="collapse" href="#dash{{$summer->faq_id}}" class = "down{{$summer->faq_id}}"> 
+						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i>  {{$summer->question}}</p>
+						                </a>
+						            </h5>
+						        </div>
+						        <div id="dash{{$summer->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
+						            <p>{{$summer->answer}}</p>
+						            <hr>
+						        </div>    
+						    </div>  
+						</div>
+					@endforeach
+				</div>
+				<!--aupair -->
+				<div class = "aupair">
+            		<h4 class = "faq-header">Au Pair</h4>
+	            	@foreach ($aupair as $aupair)
+						<div class="panel-group">
+						    <div class="panel panel-default bg-nav">
+						        <div class="panel-heading bg-nav" >
+						            <h5 class="panel-title white">
+						                <a  data-toggle="collapse" href="#dash{{$aupair->faq_id}}" class = "down{{$aupair->faq_id}}"> 
+						                    <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {{$aupair->question}}</p>
+						                </a>
+						            </h5>
+						        </div>
+						        <div id="dash{{$aupair->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
+						            <p>{{$aupair->answer}}</p>
+						            <hr>
+						        </div>    
+						    </div>  
+						</div>
+					@endforeach
+				</div>
 			</div>
+			<!--FILTER -->
+		    <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
+		        <table class="table table-categories table-borderless table-hover">
+		          <thead bgcolor="#800000">
+		            <tr>
+		              <th class = "header-table text-center">CATEGORIES</th>
+		              <th class = "header-table text-center"></th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		          	@foreach ($faq_types as $faq_type)
+		            <tr class='clickable-row' data-href='fb?ecat=General'>
+		              <td>{{$faq_type}}</td>
+		              <td>(1)</td>
+		            </tr>
+		            @endforeach
+		          </tbody>
+		        </table>    
+		    </div>
 		</div>
 	</div>
+
 
 
 </div>
