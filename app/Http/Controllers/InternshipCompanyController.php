@@ -22,17 +22,13 @@ class InternshipCompanyController extends Controller
     public function index(Request $request)
     {
         if (request()->has('state')){
+
+            
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
             $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('id','asc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
-        
 
-            $address = InternshipCompany::where('state', request('state'))->pluck('housing_address');
-
-
-            $internship_addresses = InternshipCompany::orderBy('id','asc')->whereIn('housing_address', $address)
-            ->paginate(5);
-
-
+            
+            $internship_addresses = InternshipCompany::where('state', request('state'))->pluck('housing_address');
             $internship_name = InternshipCompany::where('state', request('state'))->pluck('company_name');
             $internship_desc = InternshipCompany::where('state', request('state'))->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
