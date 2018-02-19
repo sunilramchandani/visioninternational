@@ -61,6 +61,26 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="body">
+                            Category
+                        </label>
+                        <select id="category_list" name="category_list[]" multiple="multiple" class="form-control">
+                            <option value="India">India</option>
+                            <option value="Australia">Australia</option>
+                            <option value="United State">United State</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Romania">Romania</option>
+                        </select>
+                    </select>
+                    </div>
+                </div>
+                
+
+                
+
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -70,11 +90,27 @@
     </div>
 </section>
 @endsection @section('scripts')
+
+
 <script>
     $(document).ready(function () {
         $('.summernote').summernote({
             height: 250
         });
     });
+
+</script>
+
+
+<script>
+$(function() {  
+ $('#category_list').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...',
+            buttonWidth: '400px',
+        }); 
+});
 </script>
 @endsection

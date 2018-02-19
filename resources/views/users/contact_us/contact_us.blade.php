@@ -21,7 +21,7 @@
         @endforeach
             </div>
         </div>
-            <div class = "Say Hello row">
+            <div class = "SayHello">
                 <div class = "col-lg-12 text-center">
                     <h1>Say Hello!</h1>
                 </div>
@@ -73,7 +73,7 @@
         </div>
 
 
-        <div class = "Our Offices row">
+        <div class = "our-offices row">
             <div class = "col-lg-12 text-center">
                 <h1>Our Offices</h1>
             </div>
@@ -115,6 +115,56 @@
                 </ul>
             </div>
         </div>
+
+
+        <div class="our-offices-mobile">
+            <div class = "col-lg-12 text-center">
+                <h1>Our Offices</h1>
+            </div>
+            <div class=col-lg-12>
+                    <div class="col-lg-4 col-lg-offset-1">
+                            <div class ="row form-group">
+                                 <select class = "form-control" name="country" id="">
+                                    <option value="" disabled selected>Philippines</option>
+                                    <option value="PS">Palestinian Territory, Occupied</option>
+                                    <option value="PA">Panama</option>
+                                    <option value="PG">Papua New Guinea</option>
+                                    <option value="PY">Paraguay</option>
+                                    <option value="PE">Peru</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="PN">Pitcairn</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="PR">Puerto Rico</option>
+                                    <option value="QA">Qatar</option>
+                                </select>
+                                <select class = "form-control" name="city" id="">
+                                        <option value="" disabled selected>Manila</option>
+                                        <option value="PS">Makati</option>
+                                        <option value="PA">Quezon City</option>
+                                </select>
+                            </div>
+                     </div>  
+            </div>
+        </div>
+
+        <div class = "office-details-mobile row">
+                <div class = "col-lg-12">
+                    <h4 id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> Telephone Here</h4>
+                </div>
+                <div class = "col-lg-12">
+                    <h4 id = "mobilephone" name="mobilephone"><i class="fa fa-mobile" aria-hidden="true"></i> Mobilephone Here</h4>
+                </div>
+                 <div class = "col-lg-12">
+                    <h4 id = "address" name="address"> <i class="fa fa-map-pin" aria-hidden="true"></i> Office Address</h4> 
+                </div>
+                 <div class = "col-lg-12">
+                    <h4 id = "hours" name="hours"> <i class="fa fa-clock-o" aria-hidden="true"></i> Office Hours </h4>
+                </div>
+                <div class = "col-lg-12">
+                    <h4 id = "hours" name="hours"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Office Email Address </h4>
+                </div>
+         </div>
 
         <br/>
         <div class = "country-city-offices row">

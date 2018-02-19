@@ -59,6 +59,9 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
+        if (request()->has('category_list')){
+            
+        }
         $blog->save();
 
         $success = array('ok'=> 'Success');
@@ -117,11 +120,12 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
+        
         $blog->save();
 
         $success = array('ok'=> 'Success');
         
-        return redirect()->back()->with($success);
+        return redirect()->route('blog.index')->with($success);
     }
 
     /**
@@ -182,7 +186,7 @@ class BlogController extends Controller
         $nextblog = Blog::find($next_blog); 
         
 
-        $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory', 'categorylist')->orderBy('created_at', 'desc')->get();
+        $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')->orderBy('created_at', 'desc')->get();
 
 
         $categories = DB::table('category_blog')
@@ -209,7 +213,7 @@ class BlogController extends Controller
     public function storeMainUpload($id, Request $request){
 
         $this->validate($request, [
-            'upload_blog_main_image' => 'mimes:jpeg,bmp,png|required'
+            'upload_blog_main_image' => 'mimes:jpeg,bmp,png'
         ]);
 
         $main_upload = Blog::find($id);
@@ -250,6 +254,8 @@ class BlogController extends Controller
         
         return redirect()->back()->with($success);
     }
+
+
 
     public function viewTrash(){
         $blog_trash = Blog::onlyTrashed()->get();

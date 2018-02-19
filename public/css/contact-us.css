@@ -101,3 +101,56 @@ a:hover
   height: 50%;
   width:100%;
 }
+
+/* .office-details-mobile{
+  display: none;
+}
+
+.our-offices-mobile{
+  display: none;
+} */
+
+
+
+
+
+
+/* MEDIA QUERIES */ 
+
+/*Iphone 4 and 4s*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+ /*IMAGE AND ARROW */
+  .header{
+    display: none;
+  }
+
+  .img-border{
+    display: none;
+  }
+ /* -- END -- */
+
+ .SayHello{
+    font-size: 22px;
+  }
+
+
+  .submit{
+    margin: 12px auto;
+    width: 265px;
+    margin-bottom: 40px;
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  /* remove DESKTOP VERSION when mobile */
+  .our-offices{
+    display: none
+  }
+
+  .country-city-offices{
+    display: none;
+  }
+
+
+}

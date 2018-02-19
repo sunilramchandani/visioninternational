@@ -25,26 +25,32 @@ class WorkCompanyController extends Controller
     public function index(Request $request)
     {
 
-        if (request()->has('cid')){
+        if (request()->has('state')){
             $featuredimage_work = FeaturedImage::where('page_name','internship')->get();
-            $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_work_industry', 'work_duration')->where('id', request('cid'))->paginate(0)->appends('id', request('cid'));
-        	
-            $work_addresses = WorkCompany::where('id', request('cid'))->pluck('housing_address');
-            $work_name = WorkCompany::where('id', request('cid'))->pluck('company_name');
-            $work_desc = WorkCompany::where('id', request('cid'))->pluck('description');
-            $work_filter = WorkCompany::with('opportunity', 'qualifications','work_industry', 'work_duration')->get();
- 			$work_id = WorkCompany::where('state', request('state'))->pluck('id');
-            return view('users.work.company.work_company', compact('featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
+            $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
+            
+            $work_addresses = WorkCompany::where('state', request('state'))->pluck('housing_address');
+            $work_name = WorkCompany::where('state', request('state'))->pluck('company_name');
+            $work_desc = WorkCompany::where('state', request('state'))->pluck('description');
+            $work_filter = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
+            $work_id = WorkCompany::where('state', request('state'))->pluck('id');
+            $work_image = WorkCompany::pluck('image');
+         
+
+            return view('users.work.company.work_company', compact('work_image'. 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
         }
         else{
             $featuredimage_work = FeaturedImage::where('page_name','work')->get();
             $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
         
-            $work_addresses = WorkCompany::pluck('housing_address');
+
+            $work_addresses = WorkCompany::orderBy('ID','ASC')->pluck('housing_address');
             $work_name = WorkCompany::pluck('company_name');
             $work_desc = WorkCompany::pluck('description');
-            $work_id = WorkCompany::where('state', request('state'))->pluck('id');
-            return view('users.work.work', compact('work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
+            $work_id = WorkCompany::pluck('id');
+            $work_image = WorkCompany::pluck('image');
+
+            return view('users.work.work', compact('work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
         }
     }
 
