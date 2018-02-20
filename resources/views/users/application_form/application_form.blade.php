@@ -41,13 +41,11 @@
         			<label for = "program" class = "labels">Program</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="program_id" id="">
+	                <select class = "form-control" name="program_id" id="duration">
 	                    <option value="" disabled selected>Select</option>
-						<option value="1">test</option>
-						@foreach($program_table as $program )
-						<option value="{{ $program->program_id }}">{{ $program->title }}</option>
-					  	@endforeach
-						  
+						<option value="1">Internship</option>
+						<option value="2">Work & Travel</option>
+						<option value="3">AuPair</option>	  
 	                </select>
             	</div>
             </div>
@@ -56,24 +54,21 @@
         			<label for = "country_id" class = "labels">Country</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="country_id" id="">
-	                    <option value="" disabled selected>Select</option>
-	                    @foreach($country_table as $country )
-						<option value="{{ $country->country_id }}">{{ $country->country_name }}</option>
-					  	@endforeach
+	                <select class = "form-control" name="country_id" id="country">
+                        <option value="" disabled selected>Select</option>
 	                </select>
 	           </div>
             </div>
+
+           
+
             <div class = "row form-group">
             	<div class = "col-lg-4  col-md-4">
         			<label for = "location_id" class = "labels">Location</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="location_id" id="">
+	                <select class = "form-control" name="location_id" id="location">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="1">test</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
 	                </select>
 	            </div>
             </div>
@@ -152,9 +147,9 @@
         		<div class = "col-lg-7 col-md-7">
 	                <select class = "form-control" name="university_id" id="school">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="5">test</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
+                        @foreach($university_table as $university)
+	                       <option >{{$university->university_name}}</option>
+                        @endforeach
 	                </select>
             	</div>
             </div>
@@ -165,9 +160,9 @@
         		<div class = "col-lg-7 col-md-7">
 	                <select class = "form-control" name="degree_id" id="degree">
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="6">test</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
+	                   @foreach($degree_table as $degree)
+                           <option >{{$degree->degree_name}}</option>
+                        @endforeach
 	                </select>
             	</div>
             </div>
@@ -234,4 +229,67 @@
 <div class = "filler row">
 </div>
 </form>
+ <script>
+                var e = document.getElementById("duration");
+                var f = document.getElementById("country");
+                var g = document.getElementById("location");
+                var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
+                var haddress = {!! json_encode($work_addresses->toArray()) !!};
+                var max = gaddress.length;
+                var max2 = haddress.length;
+                e.onchange = function() {
+                    
+                    var strUser = e.options[e.selectedIndex].value;
+                    if(strUser == "1"){
+                      f.innerText = null;
+                      g.innerText = null;
+                      var option13 = document.createElement("option");
+                        option3.text = "SELECT";
+                        f.add(option3);
+                      var option = document.createElement("option");
+                        option.text = "United States";
+                        f.add(option);
+                        var option2 = document.createElement("option");
+                        option2.text = "Australia";
+                        f.add(option2);
+                        
+                        for (var i = 0; i<max; i++){
+                            var opt = document.createElement('option');
+                            opt.value = gaddress[i];
+                            opt.innerHTML = gaddress[i];
+                            g.add(opt);
+                        }
+                    }
+                    if(strUser == "2"){
+                        f.innerText = null;
+                        g.innerText = null;
+                        var option13 = document.createElement("option");
+                        option3.text = "SELECT";
+                        f.add(option3);
+                        var option = document.createElement("option");
+                        option.text = "United States";
+                        f.add(option);
+                        for (var i = 0; i<max2; i++){
+                            var opt = document.createElement('option');
+                            opt.value = haddress[i];
+                            opt.innerHTML = haddress[i];
+                            g.add(opt);
+                        }
+                    }   
+                    if(strUser == "3"){
+                        f.innerText = null;
+                        g.innerText = null;
+                        var option13 = document.createElement("option");
+                        option3.text = "SELECT";
+                        f.add(option3);
+                        var option = document.createElement("option");
+                        option.text = "United States";
+                        f.add(option);
+                        var option2 = document.createElement("option");
+                        option2.text = "Not Applicable";
+                        g.add(option2);
+                    }                  
+                }
+            </script>
+
 @stop

@@ -70,7 +70,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-10 col-lg-offset-1 left-main-title ">
-                                {{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}
+                                <p> {{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}} </p>
                             </div>
                         </div>
                         <div class="row">
