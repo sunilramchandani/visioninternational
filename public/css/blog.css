@@ -81,24 +81,37 @@ hr{
 	overflow: hidden;
  }
 
-
  .left-main-title{
 	margin-top: 2%;
 
 	
   }
-  .share-main-title{
-	padding-left: 4%;
+
+ .left-main-title2{
+	margin-top: 2%;
+	padding-bottom: 5%;
+
 	
   }
-
+  .share-main-title{
+	padding-left: 10%;
+	
+  }
+   .share-main-title2{
+	padding-left: 2%;
+	
+  }
+	.hr-main-title2 {
+	    padding-left: 2%;
+	    padding-right: 5%;
+	}
 
   .hr-main-title{
 	margin-top: 4%;
 	margin-left: 8px;
 	margin-right: 8px;
 	width: 100%;
-	max-width: 917px;
+	max-width: 1020px;
 	overflow: hidden;
 	
   }
@@ -115,5 +128,21 @@ hr{
 
 
 .submit:hover{
-color:white;
+	color:white;
+}
+.hr-main-title {
+    padding-left: 9%;
+    padding-right: 10%;
+}
+.img-line{
+	display: none;
+}
+@media screen and (max-width: 991px) and (min-width: 720px) {
+	.img-border{
+		display: none;
+	}
+	.img-line{
+		display: block;
+		margin-top: -5px;
+	}
 }

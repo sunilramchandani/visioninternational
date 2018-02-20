@@ -89,7 +89,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
+              <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-thumb-tack"></i>
                         <span>News</span>
@@ -99,19 +99,19 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="{{ route('news.list') }}">
+                            <a href="{{ route('news.index') }}">
                                 <i class="fa fa-list"></i>
                                 List
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('news.new') }}">
+                            <a href="{{ route('news.create') }}">
                                 <i class="fa fa-plus-circle"></i>
                                 New
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> 
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
                     <a href="#">

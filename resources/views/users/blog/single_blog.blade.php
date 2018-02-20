@@ -49,10 +49,19 @@
                 @foreach ($blog->author as $blogs) {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}
             </div>
         </div>
-        <p class="event-description">{!!$blog->body!!}</p>
-        <hr>
         <div class="row">
-            <div class="col-lg-9 share-main-title ">
+            <div class="col-lg-11 left-main-title2 ">
+                <p class="event-description">{{(strip_tags($blog->body))}}</p>
+            </div>
+        </div>
+
+        <div class="row hr-main-title2">
+            <hr>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-9 share-main-title2 ">
                 <span>Share This Article: </span>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
                     <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
@@ -70,9 +79,12 @@
                 </span>
             </div>
         </div>
+        <br>
+        <br>
+
         <div class="row next-previous-container">
             @if($previousblog != Null)
-            <div class="col-lg-6 left">
+            <div class="col-lg- left">
                 <div class="text-left arrow">
                     <a href="{{$previousblog->id}}" class="text-left">
                         < Previous</a>
@@ -109,7 +121,7 @@
                     <td>{{$category->category_name}}</td>
                     <td>
                         <a href="/blog?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->blogcategory_count}}</i>
+                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
                         </a>
                     </td>
 
@@ -155,18 +167,16 @@
                             </div>
                             <!-- end of carousel -->
                         </div>
-                    <td>
-                    <!-- TODO: -->
-                    @foreach ($blog->blogcategory as $blogz)
-                    {{$blogz->categorylist->category_name}}
-                    @endforeach
-                    </td>
-                    <td>{{$blog->title}}</td>
-                    <td>
-                        <a href="/blog?blog_id={{$blog->id}}">
-                            <i style="color:black;">{{$blog->dasdasd}}</i>
-                        </a>
-                    </td>
+                        <td>
+                            <!-- TODO: -->
+                            @foreach ($blog->blogcategory as $blogz) {{$blogz->categorylist->category_name}} @endforeach
+                        </td>
+
+                        <td>
+                            <a href="/blog/{{$blog->id}}">
+                                <i style="color:black;">{{$blog->title}}</i>
+                            </a>
+                        </td>
 
                 </tr>
                 @endforeach
@@ -175,49 +185,46 @@
         </table>
     </div>
 </div>
-
-<div class="row filler"></div>
-<br>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-2 col-lg-offset-1">
             @foreach ($blog->author as $blogs)
-
             <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
         </div>
 
 
         <p>
-            <div class="col-lg-1">
+            <div class="col-lg-4">
                 {{(strip_tags($blogs->description))}}
+            </div>
         </p>
 
         @endforeach
-        </div>
-
     </div>
+</div>
 
-    <script>
-        var popupMeta = {
-            width: 400,
-            height: 400
+<div class="row"></div>
+
+<script>
+    var popupMeta = {
+        width: 400,
+        height: 400
+    }
+    $(document).on('click', '.social-share', function (event) {
+        event.preventDefault();
+
+        var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
+            hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
+
+        var url = $(this).attr('href');
+        var popup = window.open(url, 'Social Share',
+            'width=' + popupMeta.width + ',height=' + popupMeta.height +
+            ',left=' + vpPsition + ',top=' + hPosition +
+            ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
+
+        if (popup) {
+            popup.focus();
+            return false;
         }
-        $(document).on('click', '.social-share', function (event) {
-            event.preventDefault();
-
-            var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),
-                hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);
-
-            var url = $(this).attr('href');
-            var popup = window.open(url, 'Social Share',
-                'width=' + popupMeta.width + ',height=' + popupMeta.height +
-                ',left=' + vpPsition + ',top=' + hPosition +
-                ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
-
-            if (popup) {
-                popup.focus();
-                return false;
-            }
-        });
-    </script>
+    });
+</script>

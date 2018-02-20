@@ -15,36 +15,38 @@
     'providers' => 
     array (
       0 => 'Intervention\\Image\\ImageServiceProvider',
-      1 => 'Illuminate\\Auth\\AuthServiceProvider',
-      2 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
-      3 => 'Illuminate\\Bus\\BusServiceProvider',
-      4 => 'Illuminate\\Cache\\CacheServiceProvider',
-      5 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
-      6 => 'Illuminate\\Cookie\\CookieServiceProvider',
-      7 => 'Illuminate\\Database\\DatabaseServiceProvider',
-      8 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
-      9 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
-      10 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
-      11 => 'Illuminate\\Hashing\\HashServiceProvider',
-      12 => 'Illuminate\\Mail\\MailServiceProvider',
-      13 => 'Illuminate\\Notifications\\NotificationServiceProvider',
-      14 => 'Illuminate\\Pagination\\PaginationServiceProvider',
-      15 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
-      16 => 'Illuminate\\Queue\\QueueServiceProvider',
-      17 => 'Illuminate\\Redis\\RedisServiceProvider',
-      18 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-      19 => 'Illuminate\\Session\\SessionServiceProvider',
-      20 => 'Illuminate\\Translation\\TranslationServiceProvider',
-      21 => 'Illuminate\\Validation\\ValidationServiceProvider',
-      22 => 'Illuminate\\View\\ViewServiceProvider',
-      23 => 'Laravel\\Tinker\\TinkerServiceProvider',
-      24 => 'App\\Providers\\AppServiceProvider',
-      25 => 'App\\Providers\\AuthServiceProvider',
-      26 => 'App\\Providers\\EventServiceProvider',
-      27 => 'App\\Providers\\RouteServiceProvider',
+      1 => 'Barryvdh\\Debugbar\\ServiceProvider',
+      2 => 'Illuminate\\Auth\\AuthServiceProvider',
+      3 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
+      4 => 'Illuminate\\Bus\\BusServiceProvider',
+      5 => 'Illuminate\\Cache\\CacheServiceProvider',
+      6 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
+      7 => 'Illuminate\\Cookie\\CookieServiceProvider',
+      8 => 'Illuminate\\Database\\DatabaseServiceProvider',
+      9 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
+      10 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
+      11 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
+      12 => 'Illuminate\\Hashing\\HashServiceProvider',
+      13 => 'Illuminate\\Mail\\MailServiceProvider',
+      14 => 'Illuminate\\Notifications\\NotificationServiceProvider',
+      15 => 'Illuminate\\Pagination\\PaginationServiceProvider',
+      16 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
+      17 => 'Illuminate\\Queue\\QueueServiceProvider',
+      18 => 'Illuminate\\Redis\\RedisServiceProvider',
+      19 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
+      20 => 'Illuminate\\Session\\SessionServiceProvider',
+      21 => 'Illuminate\\Translation\\TranslationServiceProvider',
+      22 => 'Illuminate\\Validation\\ValidationServiceProvider',
+      23 => 'Illuminate\\View\\ViewServiceProvider',
+      24 => 'Laravel\\Tinker\\TinkerServiceProvider',
+      25 => 'App\\Providers\\AppServiceProvider',
+      26 => 'App\\Providers\\AuthServiceProvider',
+      27 => 'App\\Providers\\EventServiceProvider',
+      28 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facade',
       'Image' => 'Intervention\\Image\\Facades\\Image',
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
       'App' => 'Illuminate\\Support\\Facades\\App',
@@ -172,7 +174,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -277,18 +279,12 @@
       'local' => 
       array (
         'driver' => 'local',
-
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
-
-
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
-
-
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -303,9 +299,7 @@
       'uploads' => 
       array (
         'driver' => 'local',
-
-        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
-
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
       ),
     ),
   ),
@@ -328,8 +322,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-
-        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
+        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -409,9 +402,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
-
-
+    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -430,33 +421,93 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
+      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
   ),
   'image' => 
   array (
-    'show_warnings' => false,
-    'orientation' => 'portrait',
-    'defines' => 
+    'driver' => 'gd',
+  ),
+  'debugbar' => 
+  array (
+    'enabled' => NULL,
+    'storage' => 
     array (
-      'DOMPDF_FONT_DIR' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
-      'DOMPDF_FONT_CACHE' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\fonts/',
-      'DOMPDF_TEMP_DIR' => 'C:\\Users\\jionn\\AppData\\Local\\Temp',
-      'DOMPDF_CHROOT' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational',
-      'DOMPDF_UNICODE_ENABLED' => true,
-      'DOMPDF_ENABLE_FONT_SUBSETTING' => false,
-      'DOMPDF_PDF_BACKEND' => 'CPDF',
-      'DOMPDF_DEFAULT_MEDIA_TYPE' => 'screen',
-      'DOMPDF_DEFAULT_PAPER_SIZE' => 'a4',
-      'DOMPDF_DEFAULT_FONT' => 'serif',
-      'DOMPDF_DPI' => 96,
-      'DOMPDF_ENABLE_PHP' => false,
-      'DOMPDF_ENABLE_JAVASCRIPT' => true,
-      'DOMPDF_ENABLE_REMOTE' => true,
-      'DOMPDF_FONT_HEIGHT_RATIO' => 1.1,
-      'DOMPDF_ENABLE_CSS_FLOAT' => false,
-      'DOMPDF_ENABLE_HTML5PARSER' => false,
+      'enabled' => true,
+      'driver' => 'file',
+      'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\debugbar',
+      'connection' => NULL,
+      'provider' => '',
     ),
+    'include_vendors' => true,
+    'capture_ajax' => true,
+    'add_ajax_timing' => false,
+    'error_handler' => false,
+    'clockwork' => false,
+    'collectors' => 
+    array (
+      'phpinfo' => true,
+      'messages' => true,
+      'time' => true,
+      'memory' => true,
+      'exceptions' => true,
+      'log' => true,
+      'db' => true,
+      'views' => true,
+      'route' => true,
+      'auth' => true,
+      'gate' => true,
+      'session' => true,
+      'symfony_request' => true,
+      'mail' => true,
+      'laravel' => false,
+      'events' => false,
+      'default_request' => false,
+      'logs' => false,
+      'files' => false,
+      'config' => false,
+    ),
+    'options' => 
+    array (
+      'auth' => 
+      array (
+        'show_name' => true,
+      ),
+      'db' => 
+      array (
+        'with_params' => true,
+        'backtrace' => true,
+        'timeline' => false,
+        'explain' => 
+        array (
+          'enabled' => false,
+          'types' => 
+          array (
+            0 => 'SELECT',
+          ),
+        ),
+        'hints' => true,
+      ),
+      'mail' => 
+      array (
+        'full_log' => false,
+      ),
+      'views' => 
+      array (
+        'data' => false,
+      ),
+      'route' => 
+      array (
+        'label' => true,
+      ),
+      'logs' => 
+      array (
+        'file' => NULL,
+      ),
+    ),
+    'inject' => true,
+    'route_prefix' => '_debugbar',
+    'route_domain' => NULL,
   ),
 );

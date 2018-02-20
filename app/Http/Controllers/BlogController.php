@@ -14,6 +14,9 @@ use Storage;
 use File;
 use App\CategoryList;
 use App\BlogCategory;
+use App\Jobs\SendNotificationJob;
+use Mail;
+
 class BlogController extends Controller
 {
     /**
@@ -36,7 +39,9 @@ class BlogController extends Controller
     {
         $blog_table = Blog::all();
         $author_name = Author::all();
-        return view('admin.blogs.form', compact('blog_table', 'author_name'));
+        $category_list = CategoryList::all();
+        $category_blog = BlogCategory::all();
+        return view('admin.blogs.form', compact('blog_table', 'author_name', 'category_blog', 'category_list' ));
 
     }
 
@@ -52,6 +57,7 @@ class BlogController extends Controller
             'title' => 'required',
             'author_id'   => 'required',
             'body'   => 'required',
+            'upload_blog_main_image' => 'mimes:jpeg,bmp,png'
             ]);
 
         $blog = new Blog;
@@ -59,11 +65,49 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
-        if (request()->has('category_list')){
-            
-        }
+        $category_blog = new BlogCategory;
+        $category_blog->category_id = $request['category_bulk'];
+        $main_upload = new BlogMainImageUpload;
         $blog->save();
 
+        $author_id = $request->input('author_id');
+        
+        $get_name = DB::table('author')
+            ->where('author_id', $author_id)
+            ->first()
+            ->name;
+
+    
+        $title = $request->input('title');
+        $author = $get_name;
+        $body = $request->input('body');
+
+
+        $this->dispatch(new SendNotificationJob($title, $author, $body ));
+
+        if ($request->hasFile('upload_blog_main_image')){
+            $id = $blog->id;
+            $file = $request->file('upload_blog_main_image');
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_main_blog_image', $fileName);
+            $main_upload->image_name = $fileName;
+            $main_upload->blog_id = $id;
+            $main_upload->save();
+        }
+
+
+        if ($request->has('category_bulk'))
+        {
+            $category_list = $request->input('category_bulk');
+            $id = $blog->id;
+            foreach($category_list as $caca)
+            {
+            DB::table('category_blog')->insert([
+                ['blog_id' => $id, 'category_id' => $caca, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            }
+        }
         $success = array('ok'=> 'Success');
         
         return redirect()->route('blog.index')->with($success);
@@ -97,7 +141,19 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $author_name = Author::all();
-        return view('admin.blogs.edit', compact('blog', 'author_name'));
+        
+        $getid_blog = DB::table('category_blog')
+            ->where('blog_id', $id)
+            ->pluck('category_id');
+        
+        $category_list = DB::table('category_list')
+            ->wherenotIn('id', $getid_blog)
+            ->get();
+
+
+        
+        $category_blog = BlogCategory::all();
+        return view('admin.blogs.edit', compact('blog', 'author_name', 'category_blog', 'category_list' ));
     }
 
     /**
@@ -120,8 +176,24 @@ class BlogController extends Controller
         $blog->date = Carbon::now();
         $blog->author_id = $request['author_id'];
         $blog->body = $request['body'];
+
+        $category_blog = new BlogCategory;
+        $category_blog->category_id = $request['category_bulk'];
         
         $blog->save();
+        
+        if ($request->has('category_bulk'))
+        {
+        $category_list = $request->input('category_bulk');
+        foreach($category_list as $caca)
+        {
+
+        DB::table('category_blog')->insert([
+            ['blog_id' => $id, 'category_id' => $caca, 'updated_at' => Carbon::now()]
+        ]);
+        }
+        }
+
 
         $success = array('ok'=> 'Success');
         
@@ -147,28 +219,43 @@ class BlogController extends Controller
 
     //custom functions
 
-    public function userIndex(){
+    public function userIndex(Request $request){
         if (request()->has('category_id')){
+
+            $s = $request->input('s');
+
+            
 
             $category_blog = BlogCategory::where('category_id', request('category_id'))->pluck('blog_id');
 
-            $blog_table = Blog::with('author', 'mainimageupload')
+            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')
                     ->orderBy('created_at', 'desc')
+                    ->search($s)
                     ->whereIn('id', $category_blog)
                     ->paginate(5);
+            
+            $category_table = CategoryList::withCount('blogcategorytable')->get();
                     
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
 
   
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table', 's'));
 
         }
         else{
-            $blog_table = Blog::with('author', 'mainimageupload')->orderBy('created_at', 'desc')->paginate(5);
+
+            $s = $request->input('s');
+
+            $blog_table = Blog::with('author', 'mainimageupload', 'blogcategory')
+                            ->orderBy('created_at', 'desc')
+                            ->search($s)
+                            ->paginate(5);
+            
+            $category_table = CategoryList::withCount('blogcategorytable')->get();
 
             $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
     
-            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog'));
+            return view('users.blog.main_blog', compact('blog_table', 'author_name', 'featuredimage_blog', 'category_table', 's'));
         }
         
         
@@ -195,7 +282,7 @@ class BlogController extends Controller
         ->select('category_blog.*', 'category_list.category_name')
         ->get();
 
-        $category_table = CategoryList::withCount('blogcategory')->get();
+        $category_table = CategoryList::withCount('blogcategorytable')->get();
 
        
         

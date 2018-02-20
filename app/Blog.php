@@ -43,6 +43,10 @@ class Blog extends Model
         return $this->hasMany('App\CategoryList', 'id');
     }
 
+    public function scopeSearch($query, $s){
+        return $query->where('title', 'like', '%' .$s. '%');
+    }
+
     
 
 

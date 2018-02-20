@@ -67,6 +67,21 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="body">
+                            category
+                        </label>
+                        <select id="category" name="category_bulk[]" multiple="multiple" class="form-control">
+                        @foreach($category_list as $cate)
+                            <option value="{{$cate->id}}">{{$cate->category_name}}</option>
+                        @endforeach
+
+                        </select>
+                    </select>
+                    </div>
+                </div>
+
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -82,5 +97,16 @@
             height: 250
         });
     });
+</script>
+<script>
+$(function() {  
+ $('#category').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...',
+            buttonWidth: '400px',
+        }); 
+});
 </script>
 @endsection

@@ -8,25 +8,26 @@
         </div>
     </div>
 </section>
-@endsection @section('content-main')
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif @if(Session::has('ok'))
-    <div class="alert alert-success">
-       {{Session::get('ok')}} 
-    </div>
-    @endif
+@endsection @section('content-main') @if (count($errors) > 0)
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif @if(Session::has('ok'))
+<div class="alert alert-success">
+    {{Session::get('ok')}}
+</div>
+@endif
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
             <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="form-group">
@@ -42,15 +43,46 @@
                             <label for="author">
                                 Author
                             </label>
-                            <select class = "form-control" name="author_id" id="author_id">
+                            <select class="form-control" name="author_id" id="author_id">
                                 <option value="" disabled selected>Select Author</option>
                                 @foreach($author_name as $author )
                                 <option value="{{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach
-	                        </select>
+                            </select>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label for="category">
+                            Category
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+
+                            <select id="category" name="category_bulk[]" multiple="multiple" class="form-control">
+                                @foreach($category_list as $cate)
+                                <option value="{{$cate->id}}">{{$cate->category_name}}</option>
+                                @endforeach
+
+                            </select>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                    <input type="file" class="form-control-file" name="upload_blog_main_image" id="upload_blog_main_image">
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="col-xs-12">
                         <label for="body">
@@ -61,25 +93,10 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <label for="body">
-                            Category
-                        </label>
-                        <select id="category_list" name="category_list[]" multiple="multiple" class="form-control">
-                            <option value="India">India</option>
-                            <option value="Australia">Australia</option>
-                            <option value="United State">United State</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Taiwan">Taiwan</option>
-                            <option value="Romania">Romania</option>
-                        </select>
-                    </select>
-                    </div>
-                </div>
-                
 
-                
+
+
+
 
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
@@ -98,19 +115,18 @@
             height: 250
         });
     });
-
 </script>
 
 
 <script>
-$(function() {  
- $('#category_list').multiselect({
+    $(function () {
+        $('#category').multiselect({
             includeSelectAllOption: true,
             enableFiltering: true,
             enableCaseInsensitiveFiltering: true,
             filterPlaceholder: 'Search for something...',
-            buttonWidth: '400px',
-        }); 
-});
+            buttonWidth: '615px',
+        });
+    });
 </script>
 @endsection

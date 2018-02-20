@@ -17,17 +17,19 @@ class SendNotificationJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $title;
-    protected $article;
+    protected $author;
+    protected $body;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($title, $article)
+    public function __construct($title, $author, $body)
     {
         $this->title = $title;
-        $this->article = $article;
+        $this->author = $author;
+        $this->body = $body;
     }
 
     /**
@@ -42,7 +44,8 @@ class SendNotificationJob implements ShouldQueue
 
         $dataResult = [
             'title'  => $this->title,
-            'article' => $this->article,
+            'author' => $this->author,
+            'body' => $this->body,
         ];
         
         foreach ($emails as $email){
