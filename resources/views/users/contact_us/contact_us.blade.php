@@ -72,8 +72,8 @@
             <div class = "col-lg-2 col-lg-offset-1">
                 <label class = "country"> Philippines </label>
                 <ul>
-                    <li id="loc-1" onclick="showLocation(this.id)"><a href="">Manila</a></li>
-                    <li id="loc-2" onclick="showLocation(this.id)"><a href="">Cubao</a></></li>
+                    <li id="loc-1" ><a>Manila</a></li>
+                    <li id="loc-2" ><a>Cubao</a></></li>
                 </ul>
             </div>
             {{--  <div class = "col-lg-4">
@@ -107,60 +107,6 @@
             </div>  --}}
         </div>
 
-<<<<<<< HEAD
-=======
-
-        <div class="our-offices-mobile">
-            <div class = "hidden-lg text-center">
-                <h1>Our Offices</h1>
-            </div>
-            <div class=col-lg-12>
-                    <div class="col-lg-4 col-lg-offset-1">
-                            <div class ="row form-group">
-                                 <select class = "form-control" name="country" id="">
-                                    <option value="" disabled selected>Philippines</option>
-                                    <option value="PS">Palestinian Territory, Occupied</option>
-                                    <option value="PA">Panama</option>
-                                    <option value="PG">Papua New Guinea</option>
-                                    <option value="PY">Paraguay</option>
-                                    <option value="PE">Peru</option>
-                                    <option value="PH">Philippines</option>
-                                    <option value="PN">Pitcairn</option>
-                                    <option value="PL">Poland</option>
-                                    <option value="PT">Portugal</option>
-                                    <option value="PR">Puerto Rico</option>
-                                    <option value="QA">Qatar</option>
-                                </select>
-                                <select class = "form-control" name="city" id="">
-                                        <option value="" disabled selected>Manila</option>
-                                        <option value="PS">Makati</option>
-                                        <option value="PA">Quezon City</option>
-                                </select>
-                            </div>
-                     </div>  
-            </div>
-        </div>
-
-        <div class = "office-details-mobile row">
-                <div class = "col-lg-12">
-                    <h4 id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> Telephone Here</h4>
-                </div>
-                <div class = "col-lg-12">
-                    <h4 id = "mobilephone" name="mobilephone"><i class="fa fa-mobile" aria-hidden="true"></i> Mobilephone Here</h4>
-                </div>
-                 <div class = "col-lg-12">
-                    <h4 id = "address" name="address"> <i class="fa fa-map-pin" aria-hidden="true"></i> Office Address</h4> 
-                </div>
-                 <div class = "col-lg-12">
-                    <h4 id = "hours" name="hours"> <i class="fa fa-clock-o" aria-hidden="true"></i> Office Hours </h4>
-                </div>
-                <div class = "col-lg-12">
-                    <h4 id = "hours" name="hours"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Office Email Address </h4>
-                </div>
-         </div>
-
-        <br/>
->>>>>>> 6ef4b779a2ba68703b4bb089bc45d80bb3a297a7
         <div class = "country-city-offices row">
             <div class = "col-lg-5 col-lg-offset-1">
                 <div class = "row top-header">
@@ -199,7 +145,7 @@
                     </div>
                 </div>
 
-                <div class = "office-details-cubao hidden row" id=cont-2>
+                <div class = "office-details-cubao row" id=cont-2>
                     <div class = "col-lg-12">
                         <h4 id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> (02) 554 1465 </h4>
                     </div>
@@ -227,11 +173,17 @@
                     </div>
                  </div>
             </div>
-            <div class = "col-lg-5 col-lg-offset-1">
+            <div class = "col-lg-5 col-lg-offset-1" id="map-1">
                 <div class = "map">
-                    <img src="{{ URL::asset('image/map-placeholder.png')}}" class="img img-responsive" alt="Location Map">
+                    <img src="{{ URL::asset('image/manila.png')}}" class="img img-responsive" alt="Location Map">
                 </div>
             </div>
+            <div class = "col-lg-5 col-lg-offset-1" id="map-2">
+                <div class = "map">
+                    <img src="{{ URL::asset('image/cubao.png')}}" class="img img-responsive" alt="Location Map">
+                </div>
+            </div>
+
         </div>
 
 
@@ -293,31 +245,31 @@
 
 <!--SCRIPT JS -->
 <script>
-    function showLocation(element_id){
-        var id_tokens = element_id.split("-");
-        var item_id = id_tokens[1];
-        
+    
+    var theloc1 = document.getElementById("loc-1");
+    var theloc2 = document.getElementById("loc-2");
+    
+    var thecon1 = document.getElementById("cont-1");
+    var thecon2 = document.getElementById("cont-2");
 
-    
-        for(var i=1; i<=7; i++){
-            if (i == item_id){
-                jQuery("#"+element_id).addClass("clicked");
-                jQuery("#cont-"+j).css("height","auto");
-            }else{
-                jQuery("#loc-"+i).removeClass("clicked");
-                jQuery("#cont-"+j).css("height","0px");
-            }
-        }
-    
-        for(var j=1; j<=7; j++){
-            if (j == item_id){
-                jQuery("#cont-"+j).removeClass("hidden");
-                jQuery("#cont-"+j).css("height","auto");
-            }else{
-                jQuery("#cont-"+j).addClass("hidden");
-                jQuery("#cont-"+j).css("height","0px");
-            }
-        }
+    var themap1 = document.getElementById("map-1");
+    var themap2 = document.getElementById("map-2");
+
+    theloc1.onclick = function() {
+        //cont
+        thecon1.style.display = "block";
+        thecon2.style.display = "none";
+        //map
+        themap1.style.display = "block";
+        themap2.style.display = "none";
+    }
+    theloc2.onclick = function() {
+        //cont
+        thecon1.style.display = "none";
+        thecon2.style.display = "block";
+        //map
+        themap2.style.display = "block";
+        themap1.style.display = "none";
     }
 
     jQuery(function(){
