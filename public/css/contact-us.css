@@ -102,13 +102,14 @@ a:hover
   width:100%;
 }
 
-/* .office-details-mobile{
+.office-details-cubao h4{
+ line-height: 20px;
+}
+
+#cont-2, #map-2{
   display: none;
 }
 
-.our-offices-mobile{
-  display: none;
-} */
 
 
 
@@ -142,6 +143,15 @@ a:hover
     padding: 12px;
     border-radius: 6px;
   }
+
+  h4{
+    line-height: 30px;
+  }
+
+  .office-details-mobile{
+    margin: 0;
+    padding: 0;
+  }
   
   /* remove DESKTOP VERSION when mobile */
   .our-offices{
@@ -151,6 +161,8 @@ a:hover
   .country-city-offices{
     display: none;
   }
+
+
 
 
 }

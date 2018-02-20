@@ -18,7 +18,8 @@ use Storage;
 use PDF;
 use Carbon\Carbon;
 use App\FeaturedImage;
-
+use App\InternshipCompany;
+use App\WorkCompany;
 class ApplicationController extends Controller
 {
     /**
@@ -36,7 +37,9 @@ class ApplicationController extends Controller
         $university_table = University::all();
         $degree_table = Degree::all();
         $major_table = Major::all();
-        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table'));
+        $internship_addresses = InternshipCompany::pluck('company_name');
+        $work_addresses = WorkCompany::pluck('company_name');
+        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table','internship_addresses','work_addresses'));
     }
 
     /**

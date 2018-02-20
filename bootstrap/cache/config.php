@@ -174,7 +174,11 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
+<<<<<<< HEAD
+        'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/cache/data',
+=======
+        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
       ),
       'memcached' => 
       array (
@@ -279,12 +283,20 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
+<<<<<<< HEAD
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
+<<<<<<< HEAD
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app/uploads',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -299,7 +311,11 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
+<<<<<<< HEAD
+        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\public',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
       ),
     ),
   ),
@@ -322,7 +338,11 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
+<<<<<<< HEAD
+        0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views/vendor/mail',
+=======
+        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
       ),
     ),
   ),
@@ -402,7 +422,11 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
+<<<<<<< HEAD
+    'files' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/sessions',
+=======
+    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -421,9 +445,15 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
+<<<<<<< HEAD
+      0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework\\views',
+=======
+      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
+    ),
+    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
   ),
   'image' => 
   array (
@@ -436,7 +466,11 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\debugbar',
+<<<<<<< HEAD
+      'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\debugbar',
+=======
+      'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\debugbar',
+>>>>>>> af7570c40adca053925151bdf3f308bdd973d32a
       'connection' => NULL,
       'provider' => '',
     ),

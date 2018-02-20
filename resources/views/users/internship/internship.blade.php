@@ -135,7 +135,7 @@
                 </div>
                 <div class = "row info">
                     <h4>{{$company->full_address}}</h4>
-                    <h2>{{$company->company_name}}</h2>
+                    <h3>{{$company->company_name}}</h3>
                     <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
                     <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                 </div>

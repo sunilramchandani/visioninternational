@@ -12,7 +12,7 @@ class faqController extends Controller
      	$spring = faq::where('faq_type','spring')->get();
      	$summer = faq::where('faq_type','summer')->get();
      	$aupair = faq::where('faq_type','aupair')->get();
-     	$faq_types = faq::pluck('faq_type');
+     	$faq_types = faq::distinct('state')->pluck('faq_type');
 
         return view('users.FAQ.faq', compact('internship','summer','spring','aupair','faq_types'));
     }

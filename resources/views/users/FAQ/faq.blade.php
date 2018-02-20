@@ -51,7 +51,6 @@
 						        </div>
 						        <div id="dash{{$internship->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
 						            <p>{{$internship->answer}}</p>
-						            <hr>
 						        </div>    
 						    </div>  
 						</div>
@@ -72,7 +71,6 @@
 						        </div>
 						        <div id="dash{{$spring->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
 						            <p>{{$spring->answer}}</p>
-						            <hr>
 						        </div>    
 						    </div>  
 						</div>
@@ -93,7 +91,6 @@
 						        </div>
 						        <div id="dash{{$summer->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
 						            <p>{{$summer->answer}}</p>
-						            <hr>
 						        </div>    
 						    </div>  
 						</div>
@@ -114,7 +111,6 @@
 						        </div>
 						        <div id="dash{{$aupair->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
 						            <p>{{$aupair->answer}}</p>
-						            <hr>
 						        </div>    
 						    </div>  
 						</div>
@@ -134,7 +130,18 @@
 		          	@foreach ($faq_types as $faq_type)
 		            <tr class='clickable-row' data-href='fb?ecat=General'>
 		              <td>{{$faq_type}}</td>
-		              <td>(1)</td>
+		              @if ($faq_type == "internship")
+		              	<td>(16)</td>
+		              @endif
+		              @if ($faq_type == "summer")
+		              	<td>(9)</td>
+		              @endif
+		              @if ($faq_type == "spring")
+		              	<td>(9)</td>
+		              @endif
+		              @if ($faq_type == "aupair")
+		              	<td>(14)</td>
+		              @endif
 		            </tr>
 		            @endforeach
 		          </tbody>
