@@ -1,3 +1,6 @@
+
+<div id='pageLoad'>
+
 @extends('layouts.master')
 
 @section('page-css')
@@ -22,6 +25,7 @@
             </div>
         
 @endforeach
+
         </div>
             </div>
 
@@ -40,8 +44,11 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
+                  <div id="links">
+                  <a href="/internshipcompany">All</a>
                     @if ( Request::get('state')  )
                         @foreach ($internship_filter as $filter)
+                          
                             <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
@@ -49,6 +56,7 @@
                             <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
                         @endforeach
                     @endif
+                    </div>
                   </div>
                 </div>
                 <div class="dropdown">
@@ -118,8 +126,9 @@
     <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 picture" id = "map">  
     </div>
     <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
-
+    
         @foreach ($internshipCompany_table as $company)
+        
             <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
                     <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
@@ -128,12 +137,15 @@
                     <h4>{{$company->full_address}}</h4>
                     <h2>{{$company->company_name}}</h2>
                     <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me1"> Locate Me </a>
+                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                 </div>
             </div> 
+        
         @endforeach
+       
+         
     
-    </div>
+</div>
 </div>
 <!--whats next?-->
 <div class = "container">
@@ -351,6 +363,7 @@
         </div>
 <!--end of testimony -->
 </div>
+</div>
 <div class = "filler row" id = "filler">
 </div>
 </form>
@@ -358,8 +371,29 @@
 
 
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(function() {
+    $("#links > a").click(function(e) {
+        e.preventDefault(); //so the browser doesn't follow the link
+
+        $("#pageLoad").load(this.href, function() {
+            //execute here after load completed
+        });
+    });
+});
+
+
+
+</script>
+<script>
+
+</script>
+
+<script type="text/javascript">
+
+
 
 
   var deletePostUri = "{{ route('internshipcompany.index')}}";
@@ -434,12 +468,8 @@ function initMap() {
         counter++;
     }
     
-    $('#myModal').on('hidden.bs.modal', function () {
- location.reload();
-})
 
 </script>
 
 <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap">
- </script> 
-
+ </script>

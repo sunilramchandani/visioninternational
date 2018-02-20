@@ -3,7 +3,9 @@
 
 <div class = "col-lg-12 company-whole">
     <div class = "col-lg-4 picture">
-        <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
+    @foreach ($internshipCompany_table as $company)
+    <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
+    @endforeach
     </div>
     <div class = "col-lg-8 company-details">
         @foreach ($internshipCompany_table as $company)
@@ -67,4 +69,9 @@
 
 <div class = "filler row">
 </div>
+<script>
+$('body').on('hidden.bs.modal', '.modal', function () {
+  $(this).removeData('bs.modal');
+});
+    </script>
 </form>
