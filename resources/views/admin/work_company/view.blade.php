@@ -10,6 +10,16 @@
 </section>
 @endsection {{--{{ dd($company) }}--}} @section('content-main')
 <section class="content page-opportunities">
+
+@foreach($company->work_qualifications as $qualification)
+    {{$qualification->qualificationlist->qualification_name}}
+    @endforeach
+
+    @foreach($company->work_opportunity as $opportunity)
+    {{$opportunity->opportunitylist->opportunity_name}}
+    @endforeach
+
+
     <div class="row">
         <div class="col-xs-12">
             <h2 class="page-header">

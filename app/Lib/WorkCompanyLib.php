@@ -38,7 +38,11 @@ class WorkCompanyLib
         $workcompany->full_address = $data['full_address'];
         $workcompany->stipend = $data['stipend'];
         $workcompany->state = $data['state'];
+
+
         $workcompany->country = $data['country'];
+        $workcompany->remark = $data['remark'];
+        $workcompany->featured = $data['featured'];
 
         if (isset($data['image'])){
         $file = $data['image'];
@@ -103,6 +107,8 @@ class WorkCompanyLib
         $workcompany->stipend = $data['stipend'];
         $workcompany->state = $data['state'];
         $workcompany->country = $data['country'];
+        $workcompany->remark = $data['remark'];
+        $workcompany->featured = $data['featured'];
 
         if (isset($data['image'])){
         $file = $data['image'];

@@ -31,9 +31,9 @@
                  @foreach ($company->opportunity as $opportunities)
                     <div class = "col-lg-6">
                         @if ($opportunities->status == "Inactive" )
-                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> {{$opportunities->opportunity_name}}</p>
+                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#cccccc"></i> {{$opportunities->opportunitylist->opportunity_name}}</p>
                         @else
-                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> {{$opportunities->opportunity_name}}</p>
+                        <p><i class="fa fa-circle" aria-hidden="true" style="color:#80bf40"></i> {{$opportunities->opportunitylist->opportunity_name}}</p>
                         @endif
                     </div>
                 @endforeach
@@ -43,11 +43,11 @@
                      @foreach ($company->qualifications as $qualifications)
                         @if ($qualifications->status == "Inactive" )
                             <div class = "col-lg-6">
-                                <p><strike>{{$qualifications->qualification}}</strike></p>
+                                <p><strike>{{$qualifications->qualificationlist->qualification}}</strike></p>
                             </div>
                             @else
                             <div class = "col-lg-6">
-                                <p>{{$qualifications->qualification}}</p>
+                                <p>{{$qualifications->qualificationlist->qualification}}</p>
                             </div>
                         @endif
                     @endforeach

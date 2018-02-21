@@ -222,6 +222,8 @@ class InternshipCompanyController extends Controller
         ];
 
         $pagination = CompanyLib::getPaginated($params);
+
+
         $company = $pagination->items();
 
 
@@ -237,6 +239,7 @@ class InternshipCompanyController extends Controller
     public function delete($id)
     {
         $company = CompanyLib::getById($id);
+        
 
         $data = [
             'type' => 'success',
@@ -254,7 +257,10 @@ class InternshipCompanyController extends Controller
 
     public function view($id)
     {
-        $company = CompanyLib::getById($id);
+        $company = InternshipCompany::with('qualifications', 'opportunity')->find($id);
+
+      
+
 
         if(!$company) {
            return redirect()->route('internshipcompany.list')->with('flash', [
@@ -263,7 +269,7 @@ class InternshipCompanyController extends Controller
            ]);
         }
 
-        return view('admin.internship_company.view', [ 'company' => $company]);
+        return view('admin.internship_company.view', compact('company'));
     }
 
     public function createOpportunity($id)

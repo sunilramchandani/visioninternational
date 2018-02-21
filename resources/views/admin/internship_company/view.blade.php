@@ -8,8 +8,19 @@
         </div>
     </div>
 </section>
-@endsection {{--{{ dd($company) }}--}} @section('content-main')
+@endsection {{--{{ dd($company) }}--}}  @section('content-main')
 <section class="content page-opportunities">
+
+    @foreach($company->qualifications as $qualification)
+    {{$qualification->qualificationlist->qualification_name}}
+    @endforeach
+
+    @foreach($company->opportunity as $opportunity)
+    {{$opportunity->opportunitylist->opportunity_name}}
+    @endforeach
+
+
+
     <div class="row">
         <div class="col-xs-12">
             <h1 class="page-header">
