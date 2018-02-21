@@ -29,48 +29,49 @@
 
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-12 col-md-3">
-                    <span class="label">Description: </span>
-                    {{ $company->description }}
+                <div class="col-xs-12 col-md-6">
+                    <p><label>Description: </label>
+                    {{ $company->description }}</p>
                 </div>
 
                 <div class="col-xs-12 col-md-3">
-                    <span class="label">Housing Type:</span>
-                    {{ $company->housing_type }}
+                    <p><label>Housing Type:</label>
+                    {{ $company->housing_type }}</p>
                 </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <span class="label">Housing Distance:</span>
-                    {{ $company->housing_distance }}
+                 <div class="col-xs-12 col-md-3">
+                    <p><label>Company Address:</label>
+                    {{ $company->full_address }}</p>
                 </div>
             </div>
-
+            <br>
             <div class="row">
                 <div class="col-xs-12 col-md-3">
-                    <span class="label">Housing Address:</span>
-                    {{ $company->housing_address }}
+                    <p><label>Housing Address:</label>
+                    {{ $company->housing_address }}</p>
                 </div>
-
                 <div class="col-xs-12 col-md-3">
-                    <span class="label">Full Address:</span>
-                    {{ $company->full_address }}
+                    <p><label>Housing Distance:</label>
+                    {{ $company->housing_distance }}</p>
                 </div>
-
                 <div class="col-xs-12 col-md-3">
-                    <span class="label">Stipend:</span>
-                    {{ $company->stipend }}
+                    <p><label>Stipend:</label>
+                    {{ $company->stipend }}</p>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <p><label>State:</label>
+                    {{ $company->state }}</p>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-xs-12 col-md-3">
-                    <span class="label">State:</span>
-                    {{ $company->state }}
+                    <span class="label">Image:</span>
+                    {{ $company->image }}
+                    <img src="{{ URL::asset('image/uploads')}}/{{ $company->image }}" class="img img-responsive img-rounded header" alt="Company Banner">
                 </div>
-            
-            <div class="col-xs-12 col-md-3">
-                <span class="label">Image:</span>
-                {{ $company->image }}
-            </div>
+                <div class="col-xs-12 col-md-3">
+                    
+                </div>
             </div>
         </div>
 
