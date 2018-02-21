@@ -28,6 +28,8 @@ class WorkCompanyLib
 
     public static function create($data)
     {
+
+
         
         $workcompany = new WorkCompany();
         $workcompany->company_name = $data['company_name'];
@@ -48,7 +50,7 @@ class WorkCompanyLib
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
-        $file->move('../storage/app/upload_company_image', $fileName);
+        $file->move('image/uploaded_workcompany_image', $fileName);
         $workcompany->image = $fileName;    
         }
         
@@ -96,6 +98,8 @@ class WorkCompanyLib
 
    public static function update($id, $data)
     {
+
+        
         $workcompany = WorkCompanyLib::getById($id);
 
         $workcompany->company_name = $data['company_name'];
@@ -114,7 +118,7 @@ class WorkCompanyLib
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
-        $file->move('../storage/app/upload_company_image', $fileName);
+        $file->move('image/uploaded_workcompany_image', $fileName);
 
         $workcompany->image = $fileName; 
         }

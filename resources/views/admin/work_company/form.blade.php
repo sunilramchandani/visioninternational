@@ -72,7 +72,15 @@
                         <label for="state">
                             State
                         </label>
-                        <input type="text" class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="State">
+                        <input type="number" min="0"  class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="State">
+                    </div>
+                </div>
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="note">
+                            Notes
+                        </label>
+                        <input type = "text" class = "form-control"  name="remark" id="remark" value="{{ isset($company) ? $company->remark : '' }}"  >
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -83,6 +91,24 @@
                         <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}"  >
                     </div>
                 </div>
+                <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" class="form-control">   
+                                <option value="United States">United States</option>
+                                <option value="Australia">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="featured">Featured?</label>
+                            <select id="featured" name="featured" class="form-control">   
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
 
 
                 <div class="row">

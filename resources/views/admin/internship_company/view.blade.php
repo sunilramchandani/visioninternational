@@ -67,7 +67,7 @@
                 <div class="col-xs-12 col-md-3">
                     <span class="label">Image:</span>
                     {{ $company->image }}
-                    <img src="{{ URL::asset('image/uploads')}}/{{ $company->image }}" class="img img-responsive img-rounded header" alt="Company Banner">
+                    <img src="{{ URL::asset('image/uploaded_company_image')}}/{{ $company->image }}" class="img img-responsive img-rounded header" alt="Company Banner">
                 </div>
                 <div class="col-xs-12 col-md-3">
                     
