@@ -1,7 +1,7 @@
 @extends('layouts.admin') @section('content-header')
 <section class="content-header">
     <h1>
-        {{ ucwords(request()->route()->getActionMethod()) }} Internship Company
+        Internship Company
     </h1>
 </section>
 @endsection @section('content-main')

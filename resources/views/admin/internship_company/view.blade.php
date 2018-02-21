@@ -11,15 +11,22 @@
 @endsection {{--{{ dd($company) }}--}} @section('content-main')
 <section class="content page-opportunities">
     <div class="row">
-        <div class="col-xs-12">
-            <h2 class="page-header">
+        <div class="col-xs-12 col-md-8">
+            <h1 class="page-header">
                 {{ $company->company_name }}
-            </h2>
+            </h1>
         </div>
-
+        <div class="col-xs-12 col-md-3">
+            <a href="{{ route('internshipcompany.new_opportunity', $company->id) }}" class="btn btn-warning">
+        Opportunity
+            </a>
+            <a href="{{ route('internshipcompany.new_qualification', $company->id) }}" class="btn btn-warning">
+                Qualification
+            </a>
+        </div>
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-6">
                     <span class="label">Description: </span>
                     {{ $company->description }}
                 </div>
@@ -34,7 +41,7 @@
                     {{ $company->housing_distance }}
                 </div>
             </div>
-
+            <br>
             <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <span class="label">Housing Address:</span>
@@ -50,32 +57,28 @@
                     <span class="label">Stipend:</span>
                     {{ $company->stipend }}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-xs-12 col-md-3">
                     <span class="label">State:</span>
                     {{ $company->state }}
                 </div>
-            
-            <div class="col-xs-12 col-md-3">
-                <span class="label">Image:</span>
-                {{ $company->image }}
             </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-12 col-md-3">
+                    <span class="label">Image:</span>
+                    {{ $company->image }}
+                    <img src="{{ URL::asset('image/uploads')}}/{{ $company->image }}" class="img img-responsive img-rounded header" alt="Company Banner">
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    
+                </div>
             </div>
         </div>
 
 
     </div>
     </br>
-    <a href="{{ route('internshipcompany.new_opportunity', $company->id) }}" class="btn btn-warning">
-        Opportunity
-    </a>
-    <a href="{{ route('internshipcompany.new_qualification', $company->id) }}" class="btn btn-warning">
-        Qualification
-    </a>
-    <a href="{{ route('internshipcompany.new_duration', $company->id) }}" class="btn btn-warning">
-        Duration
-    </a>
+
     </div>
     </div>
     </div>
