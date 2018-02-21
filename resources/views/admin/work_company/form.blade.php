@@ -1,7 +1,7 @@
 @extends('layouts.admin') @section('content-header')
 <section class="content-header">
     <h1>
-        Internship Company
+        Work & Travel
     </h1>
 </section>
 @endsection @section('content-main')
@@ -16,7 +16,7 @@
                         <label for="company_name">
                             Company Name
                         </label>
-                        <input type="text" class="form-control" id="company_name" name="company_name" value="{{ isset($company) ? $company->company_name : '' }}" placeholder="Company Name">
+                        <input type="text" class="form-control" id="company_name" name="company_name" value="{{ isset($company) ? $company->company_name : '' }}" placeholder="Company Name" required >
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -24,7 +24,7 @@
                         <label for="description">
                             Description
                         </label>
-                        <input type="text" class="form-control" id="description" name="description" value="{{ isset($company) ? $company->description : '' }}" placeholder="Description">
+                        <input type="text" class="form-control" id="description" name="description" value="{{ isset($company) ? $company->description : '' }}" placeholder="Description"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -32,7 +32,7 @@
                         <label for="housing_type">
                             Housing type
                         </label>
-                        <input type="text" class="form-control" id="housing_type" name="housing_type" value="{{ isset($company) ? $company->housing_type : '' }}" placeholder="Housing Type">
+                        <input type="text" class="form-control" id="housing_type" name="housing_type" value="{{ isset($company) ? $company->housing_type : '' }}" placeholder="Housing Type"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -40,7 +40,7 @@
                         <label for="housing_distance">
                             Housing Distance
                         </label>
-                        <input type="text" class="form-control" id="housing_distance" name="housing_distance" value="{{ isset($company) ? $company->housing_distance : '' }}" placeholder="Housing Distance">
+                        <input type="text" class="form-control" id="housing_distance" name="housing_distance" value="{{ isset($company) ? $company->housing_distance : '' }}" placeholder="Housing Distance"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -48,7 +48,7 @@
                         <label for="housing_address">
                             Housing Address
                         </label>
-                        <input type="text" class="form-control" id="housing_address" name="housing_address" value="{{ isset($company) ? $company->housing_address : '' }}" placeholder="Housing Address">
+                        <input type="text" class="form-control" id="housing_address" name="housing_address" value="{{ isset($company) ? $company->housing_address : '' }}" placeholder="Housing Address"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -56,7 +56,7 @@
                         <label for="full_address">
                             Full Address
                         </label>
-                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address">
+                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -64,7 +64,7 @@
                         <label for="stipend">
                             Stipend
                         </label>
-                        <input type="text" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Stipend">
+                        <input type="number" min ="0" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Stipend"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -72,7 +72,15 @@
                         <label for="state">
                             State
                         </label>
-                        <input type="text" class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="State">
+                        <input type="text" class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="State"required>
+                    </div>
+                </div>
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="note">
+                            Notes
+                        </label>
+                        <input type = "text" class = "form-control"  name="remark" id="remark" value="{{ isset($company) ? $company->remark : '' }}"  >
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -83,13 +91,31 @@
                         <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}"  >
                     </div>
                 </div>
+                <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" class="form-control" required>   
+                                <option value="United States">United States</option>
+                                <option value="Australia">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="featured">Featured?</label>
+                            <select id="featured" name="featured" class="form-control"required>   
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
 
 
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         <div class="form-group">
                             <label for="category">Qualifications</label>
-                            <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control">
+                            <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control" >
                                 @foreach($qualification_list as $cate)
                                 <option value="{{$cate->id}}">{{$cate->qualification_name}}</option>
                                 @endforeach
@@ -99,7 +125,7 @@
                     <div class="col-xs-12 col-md-6">
                         <div class="form-group">
                             <label for="category">Opportunities</label>
-                            <select id="opportunity" name="opportunity_bulk[]" multiple="multiple" class="form-control">
+                            <select id="opportunity" name="opportunity_bulk[]" multiple="multiple" class="form-control"  >
                                 @foreach($opportunity_list as $cate)
                                 <option value="{{$cate->id}}">{{$cate->opportunity_name}}</option>
                                 @endforeach

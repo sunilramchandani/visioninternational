@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\UploadedFile;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Validator;
+
 class CompanyLib
 {
 
@@ -28,6 +31,8 @@ class CompanyLib
 
     public static function create($data)
     {
+
+
         
         $company = new InternshipCompany();
         $company->company_name = $data['company_name'];
@@ -49,7 +54,7 @@ class CompanyLib
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
-        $file->move('../storage/app/upload_company_image', $fileName);
+        $file->move('image/uploaded_company_image', $fileName);
 
         $company->image = $fileName;   
         }
@@ -98,6 +103,7 @@ class CompanyLib
 
    public static function update($id, $data)
     {
+
         $company = CompanyLib::getById($id);
 
         $company->company_name = $data['company_name'];
@@ -118,7 +124,7 @@ class CompanyLib
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
-        $file->move('../storage/app/upload_company_image', $fileName);
+        $file->move('image/uploaded_company_image', $fileName);
         $company->image = $fileName; 
 
         }
