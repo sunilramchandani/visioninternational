@@ -256,7 +256,7 @@ class WorkCompanyController extends Controller
 
     public function view($id)
     {
-        $company = WorkCompanyLib::getById($id);
+        $company = WorkCompany::with('work_qualifications', 'work_opportunity')->find($id); 
 
         if(!$company) {
            return redirect()->route('workcompany.list')->with('flash', [

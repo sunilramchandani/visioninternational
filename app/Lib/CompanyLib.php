@@ -38,6 +38,11 @@ class CompanyLib
         $company->full_address = $data['full_address'];
         $company->stipend = $data['stipend'];
         $company->state = $data['state'];
+        
+        $company->country = $data['country'];
+        $company->remark = $data['remark'];
+        $company->featured = $data['featured'];
+
 
 
         if (isset($data['image'])){
@@ -104,6 +109,10 @@ class CompanyLib
         $company->stipend = $data['stipend'];
         $company->state = $data['state'];
 
+        $company->country = $data['country'];
+        $company->remark = $data['remark'];
+        $company->featured = $data['featured'];
+
         if (isset($data['image'])){
 
         $file = $data['image'];
@@ -141,7 +150,7 @@ class CompanyLib
             ]);
             }
         }
-        
+
 
         $result = $company->save();
 
