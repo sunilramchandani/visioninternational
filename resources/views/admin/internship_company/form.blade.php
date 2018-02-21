@@ -77,14 +77,38 @@
                 </div>
                 <div class = "col-md-4 col-xs-12">
                     <div class="form-group">
+                        <label for="note">
+                            Notes
+                        </label>
+                        <input type = "text" class = "form-control"  name="image" id="remark" value="{{ isset($company) ? $company->remark : '' }}"  >
+                    </div>
+                </div>
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
                         <label for="image">
                             image
                         </label>
                         <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}"  >
                     </div>
                 </div>
-
-
+                <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" class="form-control">   
+                                <option value="United States">United States</option>
+                                <option value="Australia">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="featured">Featured?</label>
+                            <select id="featured" name="featured" class="form-control">   
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         <div class="form-group">
@@ -107,6 +131,7 @@
                             </select>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
