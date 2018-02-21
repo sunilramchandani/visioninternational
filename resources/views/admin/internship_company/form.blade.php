@@ -72,6 +72,43 @@
                     <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}"  >
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label for="category">
+                            Category
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+
+                            <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control">
+                                @foreach($qualification_list as $cate)
+                                <option value="{{$cate->id}}">{{$cate->qualification_name}}</option>
+                                @endforeach
+
+                            </select>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+
+                            <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control">
+                                @foreach($qualification_list as $cate)
+                                <option value="{{$cate->id}}">{{$cate->qualification_name}}</option>
+                                @endforeach
+
+                            </select>
+                            </select>
+                        </div>
+                    </div>
+
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -80,4 +117,38 @@
         </div>
     </div>
 </section>
+@endsection
+@section('scripts')
+
+
+<script>
+    $(document).ready(function () {
+        $('.summernote').summernote({
+            height: 250
+        });
+    });
+</script>
+
+
+<script>
+    $(function () {
+        $('#qualification').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...',
+            buttonWidth: '615px',
+        });
+    });
+
+    $(function () {
+        $('#opportunity').multiselect({
+            includeSelectAllOption: true,
+            enableFiltering: true,
+            enableCaseInsensitiveFiltering: true,
+            filterPlaceholder: 'Search for something...',
+            buttonWidth: '615px',
+        });
+    });
+</script>
 @endsection

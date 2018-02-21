@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\InternshipCompany;
 use App\Opportunity;
 use App\Qualification;
+use App\QualificationList;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\FeaturedImage;
@@ -64,6 +65,7 @@ class InternshipCompanyController extends Controller
     {
     
     $error = false;
+    $qualification_list = QualificationList::all();
     $action = route('internshipcompany.save');
 
     if(request()->isMethod('post')) {
@@ -83,7 +85,10 @@ class InternshipCompanyController extends Controller
 
     return view('admin.internship_company.form', [
         'error' => $error,
-        'action' => $action
+        'action' => $action,
+        'qualification_list' => $qualification_list,
+        'opportunity_list' => $opportunity_list,
+
     ]);
     }
 
@@ -201,6 +206,7 @@ class InternshipCompanyController extends Controller
         return view('admin.internship_company.list', [
             'company' => $company,
             'paginator' => $pagination
+
         ]);
     }
 
