@@ -153,10 +153,6 @@
                             </a>
 
                             <li>
-                            <a href="{{ route('internshipcompany.durationList') }}">
-                                <i class="fa fa-plus-circle"></i>
-                                Duration
-                            </a>
                         </li>
                         </li>
                     </ul>
@@ -181,10 +177,6 @@
                             <a href="{{ route('workcompany.new') }}">
                                 <i class="fa fa-plus-circle"></i>
                                 New
-                            </a>
-                            <a href="{{ route('workcompany.durationList') }}">
-                                <i class="fa fa-plus-circle"></i>
-                                Duration
                             </a>
                         </li>
                     </ul>
