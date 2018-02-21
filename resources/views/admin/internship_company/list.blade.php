@@ -21,7 +21,7 @@
                         <tr>
                             <th>Company Name</th>
                             <th>Company Description</th>
-                            <th>Action</th>
+                            <th colspan="3">Action</th>
                         </tr>
                     </thead>
 
@@ -34,18 +34,22 @@
                                     <a
                                         href="{{ route('internshipcompany.view', $single_company->id) }}"
                                         class="btn btn-info">
-                                        View
+                                        <i class="fa fa-eye"><br>view</i>
                                     </a>
-                                    <a
-                                        href="{{ route('internshipcompany.delete', $single_company->id) }}"
-                                        class="btn btn-danger">
-                                        Delete
-                                    </a>
+                                </td>
+                                <td>
                                     <a
                                         href="{{ route('internshipcompany.adminedit', $single_company->id) }}"
                                         class="btn btn-warning">
-                                    Edit
-                                </a>
+                                        <i class="fa fa-edit"><br>edit</i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        href="{{ route('internshipcompany.delete', $single_company->id) }}"
+                                        class="btn btn-danger">
+                                        <i class="fa fa-trash"><br>delete</i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
