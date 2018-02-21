@@ -2,11 +2,45 @@
 
 @section('page-css')
 <link rel="stylesheet" href="{{ asset('css/application-form.css') }}">
+
 @stop
 
 @include('layouts.navbar')
 
 @section('content')
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#school" ).autocomplete({
+      source: availableTags
+    });
+  } );
+</script>
 <div class = "row">
     @foreach ($featuredimage_application as $featured)
         <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
@@ -155,12 +189,7 @@
         			<label for = "university_id" class = "labels">University/School</label>
         		</div>
         		<div class = "col-lg-7 col-md-7">
-	                <select class = "form-control" name="university_id" id="school" >
-	                    <option value="" disabled selected>Select</option>
-                        @foreach($university_table as $university)
-	                       <option value ="{{$university->id}}">{{$university->university_name}}</option>
-                        @endforeach
-	                </select>
+	                <input type = "text" class = "form-control" name="university_id" id="school">
             	</div>
             </div>
             <div class = "row form-group">
@@ -240,66 +269,68 @@
 </div>
 </form>
  <script>
-                var e = document.getElementById("duration");
-                var f = document.getElementById("country");
-                var g = document.getElementById("location");
-                var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
-                var haddress = {!! json_encode($work_addresses->toArray()) !!};
-                var max = gaddress.length;
-                var max2 = haddress.length;
-                e.onchange = function() {
-                    
-                    var strUser = e.options[e.selectedIndex].value;
-                    if(strUser == "1"){
-                      f.innerText = null;
-                      g.innerText = null;
-                      var option13 = document.createElement("option");
-                        option3.text = "SELECT";
-                        f.add(option3);
-                      var option = document.createElement("option");
-                        option.text = "United States";
-                        f.add(option);
-                        var option2 = document.createElement("option");
-                        option2.text = "Australia";
-                        f.add(option2);
-                        
-                        for (var i = 0; i<max; i++){
-                            var opt = document.createElement('option');
-                            opt.value = gaddress[i];
-                            opt.innerHTML = gaddress[i];
-                            g.add(opt);
-                        }
-                    }
-                    if(strUser == "2"){
-                        f.innerText = null;
-                        g.innerText = null;
-                        var option13 = document.createElement("option");
-                        option3.text = "SELECT";
-                        f.add(option3);
-                        var option = document.createElement("option");
-                        option.text = "United States";
-                        f.add(option);
-                        for (var i = 0; i<max2; i++){
-                            var opt = document.createElement('option');
-                            opt.value = haddress[i];
-                            opt.innerHTML = haddress[i];
-                            g.add(opt);
-                        }
-                    }   
-                    if(strUser == "3"){
-                        f.innerText = null;
-                        g.innerText = null;
-                        var option13 = document.createElement("option");
-                        option3.text = "SELECT";
-                        f.add(option3);
-                        var option = document.createElement("option");
-                        option.text = "United States";
-                        f.add(option);
-                        var option2 = document.createElement("option");
-                        option2.text = "Not Applicable";
-                        g.add(option2);
-                    }                  
-                }
-            </script>
+
+    var e = document.getElementById("duration");
+    var f = document.getElementById("country");
+    var g = document.getElementById("location");
+    var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
+    var haddress = {!! json_encode($work_addresses->toArray()) !!};
+    var max = gaddress.length;
+    var max2 = haddress.length;
+    e.onchange = function() {
+        
+        var strUser = e.options[e.selectedIndex].value;
+        if(strUser == "1"){
+          f.innerText = null;
+          g.innerText = null;
+          var option13 = document.createElement("option");
+            option3.text = "SELECT";
+            f.add(option3);
+          var option = document.createElement("option");
+            option.text = "United States";
+            f.add(option);
+            var option2 = document.createElement("option");
+            option2.text = "Australia";
+            f.add(option2);
+            
+            for (var i = 0; i<max; i++){
+                var opt = document.createElement('option');
+                opt.value = gaddress[i];
+                opt.innerHTML = gaddress[i];
+                g.add(opt);
+            }
+        }
+        if(strUser == "2"){
+            f.innerText = null;
+            g.innerText = null;
+            var option13 = document.createElement("option");
+            option3.text = "SELECT";
+            f.add(option3);
+            var option = document.createElement("option");
+            option.text = "United States";
+            f.add(option);
+            for (var i = 0; i<max2; i++){
+                var opt = document.createElement('option');
+                opt.value = haddress[i];
+                opt.innerHTML = haddress[i];
+                g.add(opt);
+            }
+        }   
+        if(strUser == "3"){
+            f.innerText = null;
+            g.innerText = null;
+            var option13 = document.createElement("option");
+            option3.text = "SELECT";
+            f.add(option3);
+            var option = document.createElement("option");
+            option.text = "United States";
+            f.add(option);
+            var option2 = document.createElement("option");
+            option2.text = "Not Applicable";
+            g.add(option2);
+        }                  
+    }
+</script>
+
 
 @stop
