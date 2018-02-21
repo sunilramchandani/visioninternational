@@ -40,7 +40,7 @@
                         <label for="housing_distance">
                             Housing Distance
                         </label>
-                        <input type="text" class="form-control" id="housing_distance" name="housing_distance" value="{{ isset($company) ? $company->housing_distance : '' }}" placeholder="Some Title">
+                        <input type="text" class="form-control" id="housing_distance" name="housing_distance" value="{{ isset($company) ? $company->housing_distance : '' }}" placeholder="Housing Distance">
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -48,7 +48,7 @@
                         <label for="housing_address">
                             Housing Address
                         </label>
-                        <input type="text" class="form-control" id="housing_address" name="housing_address" value="{{ isset($company) ? $company->housing_address : '' }}" placeholder="Some Title">
+                        <input type="text" class="form-control" id="housing_address" name="housing_address" value="{{ isset($company) ? $company->housing_address : '' }}" placeholder="Housing Address">
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -56,7 +56,7 @@
                         <label for="full_address">
                             Full Address
                         </label>
-                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Some Title">
+                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address">
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -64,7 +64,7 @@
                         <label for="stipend">
                             Stipend
                         </label>
-                        <input type="text" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Some Title">
+                        <input type="text" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Stipend">
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -72,7 +72,7 @@
                         <label for="state">
                             State
                         </label>
-                        <input type="text" class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="Some Title">
+                        <input type="text" class="form-control" id="state" name="state" value="{{ isset($company) ? $company->state : '' }}" placeholder="State">
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
@@ -83,47 +83,31 @@
                         <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}"  >
                     </div>
                 </div>
-<<<<<<< HEAD
-=======
+
 
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label for="category">
-                            Category
-                        </label>
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <div class="form-group">
-
+                            <label for="category">Qualifications</label>
                             <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control">
                                 @foreach($qualification_list as $cate)
                                 <option value="{{$cate->id}}">{{$cate->qualification_name}}</option>
                                 @endforeach
-
-                            </select>
                             </select>
                         </div>
                     </div>
-
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <div class="form-group">
-
+                            <label for="category">Opportunities</label>
                             <select id="opportunity" name="opportunity_bulk[]" multiple="multiple" class="form-control">
                                 @foreach($opportunity_list as $cate)
                                 <option value="{{$cate->id}}">{{$cate->opportunity_name}}</option>
                                 @endforeach
 
                             </select>
-                            </select>
                         </div>
                     </div>
-
->>>>>>> ccf2630fbbb54418348609fff253d3ec94f4ec0a
+                </div>
                 <div class="btn-container">
                     <a href="#" class="btn btn-danger pull-right">Cancel</a>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -152,7 +136,7 @@
             enableFiltering: true,
             enableCaseInsensitiveFiltering: true,
             filterPlaceholder: 'Search for something...',
-            buttonWidth: '615px',
+            buttonWidth: '100%',
         });
     });
 
@@ -162,7 +146,7 @@
             enableFiltering: true,
             enableCaseInsensitiveFiltering: true,
             filterPlaceholder: 'Search for something...',
-            buttonWidth: '615px',
+            buttonWidth: '100%',
         });
     });
 </script>
