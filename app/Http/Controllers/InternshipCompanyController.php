@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\InternshipCompany;
 use App\Opportunity;
 use App\Qualification;
+use App\QualificationList;
+use App\OpportunityList;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\FeaturedImage;
@@ -64,6 +66,8 @@ class InternshipCompanyController extends Controller
     {
     
     $error = false;
+    $qualification_list = QualificationList::all();
+    $opportunity_list = OpportunityList::all();
     $action = route('internshipcompany.save');
 
     if(request()->isMethod('post')) {
@@ -83,7 +87,10 @@ class InternshipCompanyController extends Controller
 
     return view('admin.internship_company.form', [
         'error' => $error,
-        'action' => $action
+        'action' => $action,
+        'qualification_list' => $qualification_list,
+        'opportunity_list' => $opportunity_list,
+
     ]);
     }
 
@@ -201,6 +208,7 @@ class InternshipCompanyController extends Controller
         return view('admin.internship_company.list', [
             'company' => $company,
             'paginator' => $pagination
+
         ]);
     }
 
@@ -333,6 +341,20 @@ class InternshipCompanyController extends Controller
 
         $success = array('ok'=> 'Success');
         return redirect()->route('internshipcompany.durationList')->with($success);
+    }
+
+    public function viewTrash(){
+        $company = InternshipCompany::onlyTrashed()->get();
+        return view('admin.internship_company.trash', compact('company'));
+    }
+
+
+    public function restoreTrash($id){
+        $company = InternshipCompany::withTrashed()
+        ->where('id', $id)
+        ->restore();
+        $success = array('ok'=> 'Successfully Restored');
+        return redirect()->back()->with($success);
     }
 
 

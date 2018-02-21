@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Author;
 use App\CategoryList;
 use Carbon\Carbon;
+use App\QualificationList;
+use App\OpportunityList;
 
 class SubDataController extends Controller
 {
@@ -132,6 +134,76 @@ class SubDataController extends Controller
         $success = array('ok'=> 'Successfully Deleted');
         
         return redirect()->route('category.list')->with($success);
+        
+    }
+
+    public function indexQualification()
+    {
+        $qualification_table = QualificationList::orderBy('qualification_name','asc')->paginate(10);
+        return view('admin.subdata.qualification', compact('qualification_table'));
+    }
+
+
+    public function storequalification(Request $request)
+    {
+        $this->validate($request, [
+            'qualification_name' => 'required',
+            ]);
+
+        $qualification = new qualificationList;
+        $qualification->qualification_name = $request['qualification_name'];
+        $qualification->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('qualification.list')->with($success);
+        
+    }
+
+    public function deletequalification($id)
+    {
+        $qualification = qualificationList::findOrFail($id);
+
+        $qualification->delete();
+
+        $success = array('ok'=> 'Successfully Deleted');
+        
+        return redirect()->route('qualification.list')->with($success);
+        
+    }
+
+    public function indexOpportunity()
+    {
+        $opportunity_table = OpportunityList::orderBy('opportunity_name','asc')->paginate(10);
+        return view('admin.subdata.opportunity', compact('opportunity_table'));
+    }
+
+
+    public function storeOpportunity(Request $request)
+    {
+        $this->validate($request, [
+            'opportunity_name' => 'required',
+            ]);
+
+        $opportunity = new OpportunityList;
+        $opportunity->opportunity_name = $request['opportunity_name'];
+        $opportunity->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('opportunity.list')->with($success);
+        
+    }
+
+    public function deleteOpportunity($id)
+    {
+        $opportunity = OpportunityList::findOrFail($id);
+
+        $opportunity->delete();
+
+        $success = array('ok'=> 'Successfully Deleted');
+        
+        return redirect()->route('opportunity.list')->with($success);
         
     }
     /**
