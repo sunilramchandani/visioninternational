@@ -104,8 +104,8 @@
                         <div class="form-group">
                             <label for="featured">Featured?</label>
                             <select id="featured" name="featured" class="form-control"required >   
-                                <option value="Yes">Yes</option>
                                 <option value="No">No</option>
+                                <option value="Yes">Yes</option>
                             </select>
                         </div>
                     </div>

@@ -79,9 +79,7 @@
                 </div>
                 <div class="col-xs-12 col-md-3">
                      <label>Note:</label>
-                    @foreach($company->opportunity as $opportunity)
-                        <p>{{$opportunity->remark}}</p>
-                    @endforeach
+                        <p>{{$company->remark}}</p>
                 </div>
             </div>
         </div>

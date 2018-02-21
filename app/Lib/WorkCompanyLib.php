@@ -54,17 +54,20 @@ class WorkCompanyLib
         $workcompany->image = $fileName;    
         }
         
+        $result = $workcompany->save();
 
+
+        
         if (isset($data['qualification_bulk']))
         {
             $qualification_list = $data['qualification_bulk'];
 
-            $id = $company->id;
+            $id = $workcompany->id;
 
             foreach($qualification_list as $qualification)
             {
 
-            DB::table('qualifications')->insert([
+            DB::table('work_qualifications')->insert([
                 ['company_id' => $id, 'qualification_id' => $qualification, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
             ]);
             
@@ -75,18 +78,18 @@ class WorkCompanyLib
         {
             $opportunity_list = $data['opportunity_bulk'];
 
-            $id = $company->id;
+            $id = $workcompany->id;
 
             foreach($opportunity_list as $opportunity)
             {
-            DB::table('opportunity')->insert([
+            DB::table('work_opportunity')->insert([
                 ['company_id' => $id, 'opportunity_id' => $opportunity, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
             ]);
             }
         }
 
         
-        $result = $workcompany->save();
+        
 
         return ($result) ? true : false;
     }
@@ -122,9 +125,41 @@ class WorkCompanyLib
 
         $workcompany->image = $fileName; 
         }
-
         $result = $workcompany->save();
 
+
+        if (isset($data['qualification_bulk']))
+        {
+            $qualification_list = $data['qualification_bulk'];
+
+            $id = $workcompany->id;
+
+            foreach($qualification_list as $qualification)
+            {
+
+            DB::table('work_qualifications')->insert([
+                ['company_id' => $id, 'qualification_id' => $qualification, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            
+            }
+        }
+
+        if (isset($data['opportunity_bulk']))
+        {
+            $opportunity_list = $data['opportunity_bulk'];
+
+            $id = $workcompany->id;
+
+            foreach($opportunity_list as $opportunity)
+            {
+            DB::table('work_opportunity')->insert([
+                ['company_id' => $id, 'opportunity_id' => $opportunity, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            }
+        }
+
+
+        
         return ($result) ? true : false;
     }
 }

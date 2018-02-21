@@ -69,21 +69,19 @@
                 </div>
                 <div class="col-xs-12 col-md-3">
                     <label>Qualifications:</label>
-                    @foreach($company->qualifications as $qualification)
+                    @foreach($company->work_qualifications as $qualification)
                         <ul>{{$qualification->qualificationlist->qualification_name}}</ul>
                     @endforeach
                 </div>
                  <div class="col-xs-12 col-md-3">
                      <label>Opportunities:</label>
-                    @foreach($company->opportunity as $opportunity)
+                    @foreach($company->work_opportunity as $opportunity)
                         <ul>{{$opportunity->opportunitylist->opportunity_name}}</ul>
                     @endforeach
                 </div>
                 <div class="col-xs-12 col-md-3">
                      <label>Note:</label>
-                    @foreach($company->opportunity as $opportunity)
-                        <p>{{$opportunity->remark}}</p>
-                    @endforeach
+                        <p>{{$company->remark}}</p>
                 </div>
             </div>
         </div>
@@ -91,15 +89,7 @@
 
     </div>
     </br>
-    <a href="{{ route('workcompany.new_opportunity', $company->id) }}" class="btn btn-warning">
-        Opportunity
-    </a>
-    <a href="{{ route('workcompany.new_qualification', $company->id) }}" class="btn btn-warning">
-        Qualification
-    </a>
-    <a href="{{ route('workcompany.new_duration', $company->id) }}" class="btn btn-warning">
-        Duration
-    </a>
+
     </div>
     </div>
     </div>
