@@ -54,7 +54,7 @@
                                 <td>
                                     <a
                                         href="{{ route('internshipcompany.delete', $single_company->id) }}"
-                                        class="btn btn-danger">
+                                        class="btn btn-danger" onclick="ConfirmDelete();">
                                         <i class="fa fa-trash"><br>delete</i>
                                     </a>
                                 </td>
@@ -70,3 +70,14 @@
         </div>
     </section>
 @endsection
+<script>
+    function ConfirmDelete() {
+        var x = confirm("Are you sure you want to delete?");
+        if (x){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>

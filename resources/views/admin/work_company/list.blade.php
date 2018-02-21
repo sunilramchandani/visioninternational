@@ -5,7 +5,7 @@
     <h1 class="page-header">
         <div class="row">
             <div class="col-xs-10">
-                Internship Company 
+                Work & Travel Company 
             </div>
             <div class="col-xs-2">
             <a href="{{route('workcompany.trash')}}"><button class="btn"><i class="fa fa-trash" style="color:black;"> &nbsp; View Trash</i></button></a>
@@ -28,7 +28,7 @@
                         <tr>
                             <th>Company Name</th>
                             <th>Company Description</th>
-                            <th>Action</th>
+                            <th colspan="3">Action</th>
                         </tr>
                     </thead>
 
@@ -41,18 +41,22 @@
                                     <a
                                         href="{{ route('workcompany.view', $single_company->id) }}"
                                         class="btn btn-info">
-                                        View
+                                        <i class="fa fa-eye"><br>view</i>
                                     </a>
-                                    <a
-                                        href="{{ route('workcompany.delete', $single_company->id) }}"
-                                        class="btn btn-danger">
-                                        Delete
-                                    </a>
+                                </td>
+                                <td>
                                     <a
                                         href="{{ route('workcompany.adminedit', $single_company->id) }}"
                                         class="btn btn-warning">
-                                    Edit
-                                </a>
+                                        <i class="fa fa-edit"><br>edit</i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        href="{{ route('workcompany.delete', $single_company->id) }}"
+                                        class="btn btn-danger">
+                                        <i class="fa fa-trash"><br>delete</i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

@@ -11,7 +11,7 @@
 @endsection {{--{{ dd($company) }}--}} @section('content-main')
 <section class="content page-opportunities">
     <div class="row">
-        <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12">
             <h1 class="page-header">
                 {{ $company->company_name }}
             </h1>
