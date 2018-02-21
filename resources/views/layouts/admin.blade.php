@@ -272,6 +272,25 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/qualification') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Qualification</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('qualification.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="">
                     <a href="#">
                         <i class="fa fa-cog"></i>
