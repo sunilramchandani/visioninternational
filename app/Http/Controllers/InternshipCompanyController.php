@@ -66,6 +66,7 @@ class InternshipCompanyController extends Controller
     {
     
     $error = false;
+    
     $qualification_list = QualificationList::all();
     $opportunity_list = OpportunityList::all();
     $action = route('internshipcompany.save');
@@ -98,6 +99,23 @@ class InternshipCompanyController extends Controller
         $company = CompanyLib::getById($id);
         $error = false;
 
+        $getid_qualification = DB::table('qualifications')
+            ->where('company_id', $id)
+            ->pluck('qualification_id');
+        
+        $qualification_list = DB::table('qualification_list')
+            ->wherenotIn('id', $getid_qualification)
+            ->get();
+
+        $getid_opportunity = DB::table('opportunity')
+            ->where('company_id', $id)
+            ->pluck('opportunity_id');
+        
+        $opportunity_list = DB::table('opportunity_list')
+            ->wherenotIn('id', $getid_opportunity)
+            ->get();
+
+
         if (!$company) {
             return redirect()->route('internshipcompany.list')->with('flash', [
                 'type' => 'danger',
@@ -128,6 +146,8 @@ class InternshipCompanyController extends Controller
         return view('admin.internship_company.form', [
             'company' => $company,
             'action' => $action,
+            'qualification_list' => $qualification_list,
+            'opportunity_list' => $opportunity_list,
             'error' => $error
         ]);
     }

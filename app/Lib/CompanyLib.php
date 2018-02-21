@@ -105,14 +105,43 @@ class CompanyLib
         $company->state = $data['state'];
 
         if (isset($data['image'])){
+
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_company_image', $fileName);
         $company->image = $fileName; 
-         }
 
-         
+        }
+
+        if (isset($data['qualification_bulk']))
+        {
+            $qualification_list = $data['qualification_bulk'];
+
+            $id = $company->id;
+
+            foreach($qualification_list as $qualification)
+            {
+            DB::table('qualifications')->insert([
+                ['company_id' => $id, 'qualification_id' => $qualification, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            }
+        }
+
+        if (isset($data['opportunity_bulk']))
+        {
+            $opportunity_list = $data['opportunity_bulk'];
+
+            $id = $company->id;
+
+            foreach($opportunity_list as $opportunity)
+            {
+            DB::table('opportunity')->insert([
+                ['company_id' => $id, 'opportunity_id' => $opportunity, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ]);
+            }
+        }
+        
 
         $result = $company->save();
 
