@@ -40,11 +40,13 @@ class WorkCompanyLib
         $workcompany->state = $data['state'];
         $workcompany->country = $data['country'];
 
+        if (isset($data['image'])){
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_company_image', $fileName);
         $workcompany->image = $fileName;    
+        }
 
         
         $result = $workcompany->save();
@@ -71,13 +73,14 @@ class WorkCompanyLib
         $workcompany->state = $data['state'];
         $workcompany->country = $data['country'];
 
-
+        if (isset($data['image'])){
         $file = $data['image'];
         $name = $file->getClientOriginalName();
         $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
         $file->move('../storage/app/upload_company_image', $fileName);
 
         $workcompany->image = $fileName; 
+        }
 
         $result = $workcompany->save();
 

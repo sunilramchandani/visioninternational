@@ -41,7 +41,7 @@
         			<label for = "program" class = "labels">Program</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="program_id" id="duration">
+	                <select class = "form-control" name="program_id" id="duration" >
 	                    <option value="" disabled selected>Select</option>
 						<option value="1">Internship</option>
 						<option value="2">Work & Travel</option>
@@ -49,13 +49,18 @@
 	                </select>
             	</div>
             </div>
+
+
+
             <div class = "row form-group">
             	<div class = "col-lg-4  col-md-4">
         			<label for = "country_id" class = "labels">Country</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="country_id" id="country">
-                        <option value="" disabled selected>Select</option>
+	                <select class = "form-control" name="country_id" id="country" >
+                    <option value="" disabled selected>Select</option>
+                        <option value="1">Australia</option>
+						<option value="2">United States</option>
 	                </select>
 	           </div>
             </div>
@@ -67,17 +72,22 @@
         			<label for = "location_id" class = "labels">Location</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="location_id" id="location">
+	                <select class = "form-control" name="location_id" id="location" >
 	                    <option value="" disabled selected>Select</option>
+                        <option value="1">Washington</option>
 	                </select>
 	            </div>
             </div>
+
+
+
+            
             <div class = "row form-group">
             	<div class = "col-lg-4  col-md-4">
         			<label for = "last_name" class = "labels">Last Name</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-                	<input type = "text" class = "form-control"  name="last_name" id="">
+                	<input type = "text" class = "form-control"  name="last_name" id=""  >
                 </div>
             </div>
             <div class = "row form-group">
@@ -85,7 +95,7 @@
         			<label for = "first_name" class = "labels">First Name</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-                	<input type = "text" class = "form-control"  name="first_name" id="">
+                	<input type = "text" class = "form-control"  name="first_name" id="" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -93,7 +103,7 @@
         			<label for = "email" class = "labels">Email</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-                	<input type = "email" class = "form-control"  name="email" id="">
+                	<input type = "email" class = "form-control"  name="email" id="" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -101,7 +111,7 @@
         			<label for = "contact_no" class = "labels">Contact Number</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-                	<input type = "tel" class = "form-control"  name="contact_no" id="" >
+                	<input type = "tel" class = "form-control"  name="contact_no" id=""  >
                 </div>
             </div>
             <div class = "row form-group">
@@ -130,7 +140,7 @@
         			<label for = "current_city" class = "labels">Current City</label>
         		</div>
         		<div class = "col-lg-8 col-md-8">
-	                <select class = "form-control" name="current_city" id="">
+	                <select class = "form-control" name="current_city" id="" >
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="test">test</option>
 	                    <option value=""></option>
@@ -145,10 +155,10 @@
         			<label for = "university_id" class = "labels">University/School</label>
         		</div>
         		<div class = "col-lg-7 col-md-7">
-	                <select class = "form-control" name="university_id" id="school">
+	                <select class = "form-control" name="university_id" id="school" >
 	                    <option value="" disabled selected>Select</option>
                         @foreach($university_table as $university)
-	                       <option >{{$university->university_name}}</option>
+	                       <option value ="{{$university->id}}">{{$university->university_name}}</option>
                         @endforeach
 	                </select>
             	</div>
@@ -158,10 +168,10 @@
         			<label for = "degree_id" class = "labels">Degree</label>
         		</div>
         		<div class = "col-lg-7 col-md-7">
-	                <select class = "form-control" name="degree_id" id="degree">
+	                <select class = "form-control" name="degree_id" id="degree" >
 	                    <option value="" disabled selected>Select</option>
 	                   @foreach($degree_table as $degree)
-                           <option >{{$degree->degree_name}}</option>
+                           <option value ="{{$degree->id}}" >{{$degree->degree_name}}</option>
                         @endforeach
 	                </select>
             	</div>
@@ -171,9 +181,9 @@
         			<label for = "major_id" class = "labels">Major</label>
         		</div>
         		<div class = "col-lg-7 col-md-7">
-	                <select class = "form-control" name="major_id" id="major">
+	                <select class = "form-control" name="major_id" id="major" >
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="7">test</option>
+	                    <option value="7">Business</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
@@ -208,7 +218,7 @@
         			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
         		</div>
         		<div class = "col-lg-7 col-md-7 col-xs-7 col-sm-7">
-	                <select class = "form-control" name="about_vip" id="learn">
+	                <select class = "form-control" name="about_vip" id="learn" >
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="dada">test</option>
 	                    <option value=""></option>

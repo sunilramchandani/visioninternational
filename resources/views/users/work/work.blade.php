@@ -17,13 +17,8 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-<<<<<<< HEAD
-                <H1> WORK & TRAVEL </H1>
-                <p class ="p-dynamic"> Get ahead in your careers with an Work experience abroad</p>
-=======
                 <H1> work </H1>
                 <p class ="p-dynamic"> Get ahead in your careers with an work experience abroad</p>
->>>>>>> e9604ac314c452699c8979e1042075894a65a419
             </div>
         
 @endforeach
@@ -101,23 +96,6 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Modal Header</h4>
             </div>
-<<<<<<< HEAD
-            <div class = "col-lg-7 side-content">
-                @foreach ($workCompany_table as $company)
-                    <div class = "col-lg-5 col-lg-offset-1 info-container">
-                        <div class = "row company-picture">
-                            <img src="{{ URL::asset('image/uploaded_featured_image/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
-                        </div>
-                        <div class = "row info">
-                            <h4>{{$company->full_address}}</h4>
-                            <h4>{{$company->company_name}}</h4>
-                            <p>{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                            <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me"> Locate Me </a>
-                        </div>
-                    </div> 
-                @endforeach
-=======
->>>>>>> e9604ac314c452699c8979e1042075894a65a419
             <div class="modal-body">
 
             </div>

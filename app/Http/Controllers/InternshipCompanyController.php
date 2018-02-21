@@ -9,7 +9,7 @@ use App\Qualification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\FeaturedImage;
-
+use App\InternshipDuration;
 use App\Lib\CompanyLib;
 
 class InternshipCompanyController extends Controller

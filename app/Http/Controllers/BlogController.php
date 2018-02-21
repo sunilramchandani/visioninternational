@@ -54,9 +54,9 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'author_id'   => 'required',
-            'body'   => 'required',
+            'title' => '',
+            'author_id'   => '',
+            'body'   => '',
             'upload_blog_main_image' => 'mimes:jpeg,bmp,png'
             ]);
 
@@ -166,9 +166,9 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'author_id'   => 'required',
-            'body'   => 'required',
+            'title' => '',
+            'author_id'   => '',
+            'body'   => '',
         ]);
             
         $blog = Blog::findOrFail($id);

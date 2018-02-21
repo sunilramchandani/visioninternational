@@ -182,6 +182,10 @@
                                 <i class="fa fa-plus-circle"></i>
                                 New
                             </a>
+                            <a href="{{ route('workcompany.durationList') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                Duration
+                            </a>
                         </li>
                     </ul>
                 </li>
