@@ -28,7 +28,7 @@
             <form action="{{ route('opportunity.store') }}" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="text" name="opportunity_name" id="opportunity_name" required placeholder="Opportunity Name . . .">
-            <button type="submit">+</button>        
+            <button type="submit"><i class="fa fa-plus"> Add</i></button>        
             </form>
         </div>
     </div>
