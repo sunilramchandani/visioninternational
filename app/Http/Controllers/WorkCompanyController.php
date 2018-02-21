@@ -339,6 +339,19 @@ class WorkCompanyController extends Controller
         return redirect()->route('workcompany.durationList')->with($success);
     }
 
+    public function viewTrash(){
+        $company = WorkCompany::onlyTrashed()->get();
+        return view('admin.work_company.trash', compact('company'));
+    }
+
+
+    public function restoreTrash($id){
+        $company = WorkCompany::withTrashed()
+        ->where('id', $id)
+        ->restore();
+        $success = array('ok'=> 'Successfully Restored');
+        return redirect()->back()->with($success);
+    }
 
     
 }
