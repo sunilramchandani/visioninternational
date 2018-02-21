@@ -11,9 +11,7 @@
 @endsection {{--{{ dd($company) }}--}} @section('content-main')
 <section class="content page-opportunities">
 
-@foreach($company->work_qualifications as $qualification)
-    {{$qualification->qualificationlist->qualification_name}}
-    @endforeach
+
 
     @foreach($company->work_opportunity as $opportunity)
     {{$opportunity->opportunitylist->opportunity_name}}
@@ -70,7 +68,22 @@
                     <img src="{{ URL::asset('image/uploads')}}/{{ $company->image }}" class="img img-responsive img-rounded header" alt="Company Banner">
                 </div>
                 <div class="col-xs-12 col-md-3">
-                    
+                    <label>Qualifications:</label>
+                    @foreach($company->qualifications as $qualification)
+                        <ul>{{$qualification->qualificationlist->qualification_name}}</ul>
+                    @endforeach
+                </div>
+                 <div class="col-xs-12 col-md-3">
+                     <label>Opportunities:</label>
+                    @foreach($company->opportunity as $opportunity)
+                        <ul>{{$opportunity->opportunitylist->opportunity_name}}</ul>
+                    @endforeach
+                </div>
+                <div class="col-xs-12 col-md-3">
+                     <label>Note:</label>
+                    @foreach($company->opportunity as $opportunity)
+                        <p>{{$opportunity->remark}}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
