@@ -15,4 +15,9 @@ class OpportunityList extends Model
         {
             return $this->belongsTo('App\Opportunity', 'opportunity_name');
         }
+
+        public function workopportunity()
+        {
+            return $this->belongsTo('App\WorkOpportunity', 'opportunity_name');
+        }
 }

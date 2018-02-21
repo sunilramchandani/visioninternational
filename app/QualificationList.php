@@ -16,5 +16,10 @@ class QualificationList extends Model
             return $this->belongsTo('App\Qualification', 'qualification_name');
         }
 
+        public function workqualification()
+        {
+            return $this->belongsTo('App\WorkQualification', 'qualification_name');
+        }
+
 }
 

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use App\WorkDuration;
 use App\WorkIndustry;
 use App\FeaturedImage;
+use App\QualificationList;
+use App\OpportunityList;
 
 
 use App\Lib\WorkCompanyLib;
@@ -69,6 +71,8 @@ class WorkCompanyController extends Controller
     
     $error = false;
     $action = route('workcompany.save');
+    $qualification_list = QualificationList::all();
+    $opportunity_list = OpportunityList::all();
 
     if(request()->isMethod('post')) {
         $data = request()->all();
@@ -87,13 +91,33 @@ class WorkCompanyController extends Controller
 
     return view('admin.work_company.form', [
         'error' => $error,
-        'action' => $action
+        'action' => $action,
+        'qualification_list' => $qualification_list,
+        'opportunity_list' => $opportunity_list,
     ]);
     }
 
     public function adminEdit($id){
         $company = WorkCompanyLib::getById($id);
         $error = false;
+
+        $getid_qualification = DB::table('work_qualifications')
+            ->where('company_id', $id)
+            ->pluck('qualification_id');
+        
+        $qualification_list = DB::table('qualification_list')
+            ->wherenotIn('id', $getid_qualification)
+            ->get();
+
+        $getid_opportunity = DB::table('work_opportunity')
+            ->where('company_id', $id)
+            ->pluck('opportunity_id');
+        
+        $opportunity_list = DB::table('opportunity_list')
+            ->wherenotIn('id', $getid_opportunity)
+            ->get();
+
+
 
         if (!$company) {
             return redirect()->route('workcompany.list')->with('flash', [
@@ -125,6 +149,8 @@ class WorkCompanyController extends Controller
         return view('admin.work_company.form', [
             'company' => $company,
             'action' => $action,
+            'qualification_list' => $qualification_list,
+            'opportunity_list' => $opportunity_list,
             'error' => $error
         ]);
     }

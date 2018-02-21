@@ -97,6 +97,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::group(['prefix' => 'workcompany'], function() {
 
 
+        Route::get('/trash', ['uses' => 'WorkCompanyController@viewTrash', 'as' => 'workcompany.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'WorkCompanyController@restoreTrash', 'as' => 'workcompany.restoretrash']);
+
+
+
+        
         Route::get('/new', ['uses' => 'WorkCompanyController@adminCreate', 'as' => 'workcompany.new']);
         Route::post('/new', ['uses' => 'WorkCompanyController@adminCreate', 'as' => 'workcompany.save']);
 
