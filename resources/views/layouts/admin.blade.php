@@ -254,7 +254,24 @@
                         </li>
                     </ul>
                 </li>
-
+                
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/opportunity') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Opportunity</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('opportunity.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="">
                     <a href="#">
                         <i class="fa fa-cog"></i>

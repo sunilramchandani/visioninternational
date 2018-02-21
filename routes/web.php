@@ -38,6 +38,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteQualification', 'as' => 'qualification.delete']);
     });
 
+    Route::group(['prefix' => 'opportunity'], function() {
+        Route::get('/list', ['uses' => 'SubDataController@indexOpportunity', 'as' => 'opportunity.list']);
+        Route::post('/list', ['uses' => 'SubDataController@storeOpportunity', 'as' => 'opportunity.store']);
+        Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteOpportunity', 'as' => 'opportunity.delete']);
+    });
+
 
 
     Route::group(['prefix' => 'blog'], function() {
@@ -162,6 +168,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
     //company routes
     Route::group(['prefix' => 'internshipcompany'], function() {
+
+
+        Route::get('/trash', ['uses' => 'InternshipCompanyController@viewTrash', 'as' => 'internshipcompany.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'InternshipCompanyController@restoreTrash', 'as' => 'internshipcompany.restoretrash']);
 
 
         Route::get('/new', ['uses' => 'InternshipCompanyController@adminCreate', 'as' => 'internshipcompany.new']);

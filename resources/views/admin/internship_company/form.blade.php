@@ -99,9 +99,9 @@
                     <div class="col-xs-6">
                         <div class="form-group">
 
-                            <select id="qualification" name="qualification_bulk[]" multiple="multiple" class="form-control">
-                                @foreach($qualification_list as $cate)
-                                <option value="{{$cate->id}}">{{$cate->qualification_name}}</option>
+                            <select id="opportunity" name="opportunity_bulk[]" multiple="multiple" class="form-control">
+                                @foreach($opportunity_list as $cate)
+                                <option value="{{$cate->id}}">{{$cate->opportunity_name}}</option>
                                 @endforeach
 
                             </select>
