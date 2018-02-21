@@ -70,16 +70,36 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        /*
+        
         $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email'   => 'required|string|email',
-            'contact_no'   => 'required|numeric',
-            'country'   => 'required|string',
-            'general_inquiries'   => 'required',
+
+            'email'   => 'required|email',
+
+            
+            /*
+            'program_id' => 'required',
+            'country_id'   => 'required',
+            'location_id'   => 'required',
+            'last_name'   => 'required',
+            'first_name'   => 'required',
+            'contact_no'   => 'required',
+            'birthdate'   => 'required',
+            'gender'   => 'required',
+
+            'current_city'   => 'required',
+            'university_id'   => 'required',
+            'degree_id'   => 'required',
+
+            'major_id'   => 'required',
+            'grad_date'   => 'required',
+            'start_date'   => 'required',
+
+            'about_vip'   => 'required',
             'message'   => 'required',
+            */
+
             ]);
-        */
+
 
         $application = new Application;
         $application->program_id = $request['program_id'];

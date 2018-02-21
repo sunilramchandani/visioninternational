@@ -43,7 +43,7 @@
                             <label for="author">
                                 Author
                             </label>
-                            <select class="form-control" name="author_id" id="author_id">
+                            <select class="form-control" name="author_id" id="author_id" required>
                                 <option value="" disabled selected>Select Author</option>
                                 @foreach($author_name as $author )
                                 <option value="{{ $author->author_id }}">{{ $author->name }}</option>

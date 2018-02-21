@@ -314,41 +314,29 @@ class WorkCompanyController extends Controller
         return redirect()->route('workcompany.list')->with($success);
     }
 
+    public function durationIndex()
+    {
+        $duration_table = WorkDuration::all();
+        return view('admin.work_company.duration.list', compact('duration_table'));
+    }
+
     public function createDuration($id)
     {
-        $company = WorkCompanyLib::getById($id);
-
-        if(!$company) {
-           return redirect()->route('workcompany.list')->with('flash', [
-               'type' => 'danger',
-               'message' => 'Invalid Duration'
-           ]);
-        }
-
-        return view('admin.work_company.duration', [ 'company' => $company]);
+        $duration = WorkDuration::find($id);
+        return view('admin.work_company.duration.form', compact('duration'));
     }
 
     public function storeDuration($id, Request $request)
     {
-        $company = WorkCompanyLib::getById($id);
 
-        if(!$company) {
-           return redirect()->route('workcompany.list')->with('flash', [
-               'type' => 'danger',
-               'message' => 'Invalid Duration'
-           ]);
-        }
-
-        $work_duration = new WorkDuration();
-        $work_duration->company_id = $id;
-        $work_duration->duration_months	 = $request['duration_months'];
-        $work_duration->duration_price = $request['duration_price'];
-        $work_duration->duration_start_date = $request['duration_start_date'];
-        $work_duration->save();
+        $duration = WorkDuration::find($id);
+        $duration->duration_months	 = $request['duration_months'];
+        $duration->duration_price = $request['duration_price'];
+        $duration->duration_start_date = $request['duration_start_date'];
+        $duration->save();
 
         $success = array('ok'=> 'Success');
-        
-        return redirect()->route('workcompany.list')->with($success);
+        return redirect()->route('workcompany.durationList')->with($success);
     }
 
 
