@@ -30,7 +30,7 @@
 
         
         <div class="row">
-            <div class = "col-md-5 col-md-offset-1 col-xs-12 ">
+            <div class = "col-md-12 text-center col-xs-12 ">
             @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -208,7 +208,7 @@
         			<label for = "resume" class = "labels">Upload Resume</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-                	<input type = "file" class = "form-control"  name="upload_resume" id="resume"  required >
+                	<input type = "file" class = "form-control"  name="upload_resume" id="resume" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -218,9 +218,13 @@
         		<div class = "col-md-7 col-xs-12">
 	                <select class = "form-control" name="about_vip" id="learn" required >
 	                    <option value="" disabled selected>Select</option>
-	                    <option value="dada">test</option>
-	                    <option value=""></option>
-	                    <option value=""></option>
+	                    <option value="event">Event (at school/college)</option>
+	                    <option value="newspaper">Local News Paper</option>
+	                    <option value="fb/twitter">Facebook/Twitter</option>
+                        <option value="google">Google Search</option>
+                        <option value="someone">Family/Friend</option>
+                        <option value="otherWeb">Other Websites</option>
+                        <option value="other">Other</option>
 	                </select>
             	</div>
             </div>

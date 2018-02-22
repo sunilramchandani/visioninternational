@@ -48,7 +48,6 @@
                   <a href="/internshipcompany">All</a>
                     @if ( Request::get('state')  )
                         @foreach ($internship_filter as $filter)
-                          
                             <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
@@ -62,21 +61,37 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">Industry</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($internshipCompany_table as $company)
-                        @foreach ($company->internship_industry as $industry)
-                            <a href="#">{{$industry->industry_name}}</a>
+                    @if ( Request::get('state')  )
+                        @foreach ($internship_filter as $filter)
+                            @foreach ($filter->internship_industry as $industry)
+                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                            @endforeach
                         @endforeach
-                    @endforeach
+                    @else
+                        @foreach ($internshipCompany_table as $company)
+                            @foreach ($company->internship_industry as $industry)
+                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                            @endforeach
+                        @endforeach
+                    @endif
                   </div>
                 </div>
                 <div class="dropdown">
                   <a class="dropbtn-filter">Start Dates</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($internshipCompany_table as $company)
-                         @foreach ($company->internship_duration as $duration)
-                            <a href="#">{{$duration->duration_start_date}}</a>
+                     @if ( Request::get('state')  )
+                        @foreach ($internship_filter as $filter)
+                            @foreach ($filter->internship_duration as $duration)
+                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                            @endforeach
                         @endforeach
-                    @endforeach
+                    @else
+                        @foreach ($internshipCompany_table as $company)
+                             @foreach ($company->internship_duration as $duration)
+                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                            @endforeach
+                        @endforeach
+                    @endif
                   </div>
                 </div>
             </div>

@@ -132,7 +132,7 @@ class ApplicationController extends Controller
         );
 
 
-        $success = array('ok'=> 'Success');
+        $success = array('ok'=> 'Thank you! Your application has been successfully sent. We will contact you very soon!');
         
         return redirect()->route('application.index')->with($success);
     }
