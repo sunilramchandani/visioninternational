@@ -34,9 +34,9 @@
                         @foreach($app as $single_app)
                             <tr>
                                 <td>{{ $single_app->id }}</td>
-                                <td>{{ $single_app->program_id }}</td>
-                                <td>{{ $single_app->country_id }}</td>
-                                <td>{{ $single_app->location_id }}</td>
+                                <td>{{ $single_app->program_name }}</td>
+                                <td>{{ $single_app->country_name }}</td>
+                                <td>{{ $single_app->location_name }}</td>
                                 <td>{{ $single_app->last_name }}</td>
                                 <td>{{ $single_app->first_name }}</td>
                                 <td>{{ $single_app->email }}</td>

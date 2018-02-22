@@ -33,17 +33,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-3">
                         <span class="label">Program ID: </span>
-                        {{ $app->program_id }}
+                        {{ $app->program_name }}
                     </div>
 
                     <div class="col-xs-12 col-md-3">
                         <span class="label">Country ID: </span>
-                        {{ $app->country_id }}
+                        {{ $app->country_name }}
                     </div>
 
                     <div class="col-xs-12 col-md-3">
                         <span class="label">Location ID:</span>
-                        {{ $app->location_id }}
+                        {{ $app->location_name }}
                     </div>  
                 </div>
 
@@ -100,17 +100,17 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                         <span class="label">Duration:</span>
-                        {{ $app->university_id }} 
+                        {{ $app->university_name }} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                         <span class="label">Duration:</span>
-                        {{ $app->degree_id }} 
+                        {{ $app->degree_name }} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                         <span class="label">Duration:</span>
-                        {{ $app->major_id }} 
+                        {{ $app->major_name }} 
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
