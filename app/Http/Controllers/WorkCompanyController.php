@@ -13,8 +13,8 @@ use App\WorkIndustry;
 use App\FeaturedImage;
 use App\QualificationList;
 use App\OpportunityList;
-
-
+use App\Qualification;
+use App\Opportunity;
 use App\Lib\WorkCompanyLib;
 
 class WorkCompanyController extends Controller
@@ -258,6 +258,7 @@ class WorkCompanyController extends Controller
     {
         $company = WorkCompany::with('work_qualifications', 'work_opportunity')->find($id); 
 
+
         if(!$company) {
            return redirect()->route('workcompany.list')->with('flash', [
                'type' => 'danger',
@@ -303,6 +304,31 @@ class WorkCompanyController extends Controller
         
         return redirect()->route('work_company.view')->with($success);
     }
+
+    public function deleteOpportunity($id)
+    {
+
+        
+        $opportunity = WorkOpportunity::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function deleteQualification($id)
+    {
+
+        
+        $qualification = WorkQualification::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
 
     public function createQualification($id)
     {

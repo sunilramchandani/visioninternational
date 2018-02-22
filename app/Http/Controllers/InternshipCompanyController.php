@@ -308,6 +308,32 @@ class InternshipCompanyController extends Controller
         return redirect()->route('internship_company.view')->with($success);
     }
 
+    public function deleteOpportunity($id)
+    {
+
+        
+        $opportunity = Opportunity::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function deleteQualification($id)
+    {
+
+        
+        $qualification = Qualification::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    
+
     public function createQualification($id)
     {
         $company = CompanyLib::getById($id);
@@ -321,6 +347,19 @@ class InternshipCompanyController extends Controller
 
         return view('admin.internship_company.qualification', [ 'company' => $company]);
     }
+
+    public function deleteQualification($id)
+    {
+
+        
+        $qualification = Qualification::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
 
     public function storeQualification($id, Request $request)
     {
