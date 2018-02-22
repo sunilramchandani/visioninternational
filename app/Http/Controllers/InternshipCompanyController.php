@@ -23,6 +23,23 @@ class InternshipCompanyController extends Controller
      */
     public function index(Request $request)
     {
+
+        if ($request()->has('company')){
+
+            $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('id','asc')->get();
+
+            
+            $internship_addresses = InternshipCompany::where('id', request('id'))->pluck('housing_address');
+            $internship_name = InternshipCompany::where('id', request('id'))->pluck('company_name');
+            $internship_desc = InternshipCompany::where('id', request('id'))->pluck('description');
+            $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internship_id = InternshipCompany::where('id', request('id'))->pluck('id');
+            $internship_image = InternshipCompany::pluck('image');
+            
+            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+            
+        }
         if (request()->has('state')){
 
             
@@ -347,20 +364,7 @@ class InternshipCompanyController extends Controller
 
         return view('admin.internship_company.qualification', [ 'company' => $company]);
     }
-
-    public function deleteQualification($id)
-    {
-
-        
-        $qualification = Qualification::find($id)->delete();
-        
-            return response()->json([
-        'success' => 'Record has been deleted successfully!'
-    ]);
-
-    }
-
-
+    
     public function storeQualification($id, Request $request)
     {
         $company = CompanyLib::getById($id);
