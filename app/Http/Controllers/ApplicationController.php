@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Application;
 use App\Location;
 use App\Country;
+use App\City;
 use App\Program;
 use App\University;
 use App\Degree;
@@ -34,12 +35,13 @@ class ApplicationController extends Controller
         $location_table = Location::all();
         $country_table = Country::all();
         $program_table    = Program::all();
-        $university_table = University::all();
-        $degree_table = Degree::all();
+        $university_table = University::pluck('university_name');
+        $city_table = City::all();
+        $degree_table = Degree::pluck('degree_name');
         $major_table = Major::all();
         $internship_addresses = InternshipCompany::pluck('company_name');
         $work_addresses = WorkCompany::pluck('company_name');
-        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table','internship_addresses','work_addresses'));
+        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table','internship_addresses','work_addresses','city_table'));
     }
 
     /**
