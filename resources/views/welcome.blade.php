@@ -292,7 +292,7 @@
           <h4 class = " details text-center">{{$internship->company_name}} </h4> 
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($internship->description, 17,' ... ')}}</p>
          
-          <a href = "/internshipcompany?id={{$internship->id}}" class = "submit btn"><span>More Info</span></a>
+          <a href = "/internshipcompany?id={{internship->id}}" class = "submit btn"><span>More Info</span></a>
         </div>
       @endforeach
     </div>
