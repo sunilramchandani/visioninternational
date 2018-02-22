@@ -10,7 +10,7 @@
 </section>
 @endsection @section('content-main')
 <section class="content">
-    <form action="{{ $action }}" method="POST">
+    <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-xs-6">
@@ -42,6 +42,19 @@
                 class="form-control">
         </div>
 
+
+        <div class="form-group">
+            <label for="organization">
+                Image Upload
+            </label>
+
+            <input type = "file" class = "form-control"  name="upload_testimony_image" id="upload_testimony_image" value="{{ isset($company) ? $company->image : '' }}" >
+
+        </div>
+
+
+        
+
         <div class="form-group">
             <label for="testimony">
                 Testimony
@@ -50,6 +63,8 @@
             <textarea name="testimony" id="testimony" class="form-control" required rows="10">{{ (isset($testimonial)) ? $testimonial->testimony : '' }}
             </textarea>
         </div>
+
+        
 
         <div class="row">
             <div class="col-xs-12 btn-container">

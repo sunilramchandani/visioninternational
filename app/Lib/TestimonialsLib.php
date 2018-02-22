@@ -5,6 +5,10 @@ namespace App\Lib;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Testimonials;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\UploadedFile;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Validator;
 
 class TestimonialsLib
 {
@@ -32,6 +36,18 @@ class TestimonialsLib
         $testimonial->organization = $data['organization'];
         $testimonial->testimony = $data['testimony'];
         $testimonial->created_by = Auth::user()->getAuthIdentifier();
+        
+
+        if (isset($data['upload_testimony_image'])){
+
+            $file = $data['upload_testimony_image'];
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_testimony_image', $fileName);
+            $testimonial->image_testimony = $fileName; 
+    
+        }
+
 
         $result = $testimonial->save();
 
@@ -51,6 +67,16 @@ class TestimonialsLib
         $testimonial->last_name = $data['last_name'];
         $testimonial->organization = $data['organization'];
         $testimonial->testimony = $data['testimony'];
+
+        if (isset($data['upload_testimony_image'])){
+
+            $file = $data['upload_testimony_image'];
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_testimony_image', $fileName);
+            $testimonial->image_testimony = $fileName; 
+    
+        }
 
         $result = $testimonial->save();
 

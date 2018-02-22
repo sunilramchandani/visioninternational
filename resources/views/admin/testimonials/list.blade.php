@@ -3,8 +3,11 @@
 @section('content-header')
     <section class="content-header">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-10">
                 <h1 class="page-header">Testimonials</h1>
+            </div>
+            <div class="col-xs-2">
+                <a href="{{route('testimonials.new')}}"><button style ="" class="btn btn-success">New Testimonial</button></a>
             </div>
         </div>
     </section>

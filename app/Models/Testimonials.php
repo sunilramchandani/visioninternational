@@ -14,6 +14,7 @@ class Testimonials extends Model
         'last_name',
         'organization',
         'testimony',
+        'image_testimony',
         'created_by'
     ];
 

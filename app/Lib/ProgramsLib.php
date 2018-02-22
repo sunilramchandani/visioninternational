@@ -4,6 +4,12 @@ namespace App\Lib;
 use App\Models\Programs;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\UploadedFile;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Validator;
+
+
 
 class ProgramsLib
 {
@@ -32,6 +38,18 @@ class ProgramsLib
         $program->title = $data['title'];
         $program->description = $data['description'];
         $program->created_by = Auth::user()->getAuthIdentifier();
+        $program->validity = $data['validity'];
+
+        if (isset($data['image_promo'])){
+
+            $file = $data['image_promo'];
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_promo_image', $fileName);
+            $program->image_promo = $fileName; 
+    
+        }
+
 
         try {
             $result = $program->save();
@@ -54,6 +72,18 @@ class ProgramsLib
 
         $program->title = $data['title'];
         $program->description = $data['description'];
+        $program->validity = $data['validity'];
+
+        if (isset($data['image_promo'])){
+
+            $file = $data['image_promo'];
+            $name = $file->getClientOriginalName();
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
+            $file->move('image/uploaded_promo_image', $fileName);
+            $program->image_promo = $fileName; 
+    
+        }
+
 
         $result = $program->save();
 

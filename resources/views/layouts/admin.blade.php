@@ -198,13 +198,34 @@
                                 <i class="fa fa-list"></i>
                                 <td>{{$featuredimage->page_name}}</td>
                             </a>
+                            
+
                         </li>
                         @endforeach
+                        <li>
+                            <a href="{{ route('testimonials.list') }}">
+                                <i class="fa fa-list"></i>
+                                <td>Testimonials</td>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="{{ route('programs.list') }}">
+                                <i class="fa fa-list"></i>
+                                <td>Promo</td>
+                            </a>
+
+                        </li>
+
                     </ul>
                    
                 </li>
 
                 <hr>
+                
+
+                
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/author') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-building"></i>
