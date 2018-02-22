@@ -58,6 +58,10 @@ class Handler extends ExceptionHandler
                 return redirect()->guest('500');
                 break;
 
+                case $exception instanceof \Symfony\Component\HttpKernel\Exception\ErrorException:
+                return redirect()->guest('404');
+                break;
+
                 default:
                     return $this->renderHttpException($exception);
                 break;

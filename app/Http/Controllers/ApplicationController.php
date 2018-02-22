@@ -75,38 +75,15 @@ class ApplicationController extends Controller
         
         $this->validate($request, [
 
-            'email'   => 'required|email',
-
-            
-            /*
-            'program_id' => 'required',
-            'country_id'   => 'required',
-            'location_id'   => 'required',
-            'last_name'   => 'required',
-            'first_name'   => 'required',
-            'contact_no'   => 'required',
-            'birthdate'   => 'required',
-            'gender'   => 'required',
-
-            'current_city'   => 'required',
-            'university_id'   => 'required',
-            'degree_id'   => 'required',
-
-            'major_id'   => 'required',
-            'grad_date'   => 'required',
-            'start_date'   => 'required',
-
-            'about_vip'   => 'required',
-            'message'   => 'required',
-            */
-
+            'email'   => 'email',
+            'upload_resume' => 'mimes:pdf'
             ]);
 
 
         $application = new Application;
-        $application->program_id = $request['program_id'];
-        $application->country_id = $request['country_id'];
-        $application->location_id = $request['location_id'];
+        $application->program_name = $request['program_name'];
+        $application->country_name = $request['country_name'];
+        $application->location_name = $request['location_name'];
         $application->last_name = $request['last_name'];
         $application->first_name = $request['first_name'];
         $application->email = $request['email'];
@@ -114,9 +91,9 @@ class ApplicationController extends Controller
         $application->birthdate = $request['birthdate'];
         $application->gender = $request['gender'];
         $application->current_city = $request['current_city'];
-        $application->university_id = $request['university_id'];
-        $application->degree_id = $request['degree_id'];
-        $application->major_id = $request['major_id'];
+        $application->university_name = $request['university_name'];
+        $application->degree_name = $request['degree_name'];
+        $application->major_name = $request['major_name'];
         $application->grad_date = $request['grad_date'];
         $application->start_date = $request['start_date'];
         $application->about_vip = $request['about_vip'];
@@ -137,9 +114,9 @@ class ApplicationController extends Controller
 
 
         $data = array(
-            'program_id' => $request->program_id,
-            'country_id'   => $request->country_id,
-            'location_id'   => $request->location_id,
+            'program_name' => $request->program_name,
+            'country_name'   => $request->country_name,
+            'location_name'   => $request->location_name,
             'last_name'   => $request->last_name,
             'first_name'   => $request->first_name,
             'email'   => $request->email,
@@ -147,22 +124,12 @@ class ApplicationController extends Controller
             'birthdate'   => $request->birthdate,
             'gender'   => $request->gender,
             'current_city'   => $request->current_city,
-            'university_id'   => $request->university_id,
-            'degree_id'   => $request->degree_id,
-            'major_id'   => $request->major_id,
+            'university_name'   => $request->university_name,
+            'degree_name'   => $request->degree_name,
+            'major_name'   => $request->major_name,
             'grad_date'   => $request->grad_date,
             'start_date'   => $request->start_date,
         );
-
-        Mail::send('users.application_form.application_received', $data, function ($mail) use($data) {
-            $mail->from($data['email']);
-            $mail->to('careers@visioninternational.skyrocketph.technology')->subject("Application");
-        });
-
-        Mail::send('users.application_form.application_sent', $data, function ($mail) use($data) {
-            $mail->from('careers@visioninternational.skyrocketph.technology');
-            $mail->to($data['email'])->subject($data['first_name']);
-        });
 
 
         $success = array('ok'=> 'Success');

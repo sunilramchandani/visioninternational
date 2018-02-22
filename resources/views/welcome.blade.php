@@ -35,7 +35,7 @@
                      <h1 class = "counter">{{$applicant_count}}</h1>
                 </div>
                 <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container-infinity">
-                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded infin" alt="Company Banner">
+                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded infin" id="infin" alt="Company Banner">
                 </div>
             </div>
         </div>
@@ -292,7 +292,11 @@
           <h4 class = " details text-center">{{$internship->company_name}} </h4> 
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($internship->description, 17,' ... ')}}</p>
          
+<<<<<<< HEAD
           <a href = "/internshipcompany?m={{$loop->index}}" class = "submit btn"><span>More Info</span></a>
+=======
+          <a href = "/internshipcompany?id" class = "submit btn"><span>More Info</span></a>
+>>>>>>> 671a4615483c2228bc0b59ed1acdfac4a77a8003
         </div>
       @endforeach
     </div>
