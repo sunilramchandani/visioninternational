@@ -128,7 +128,6 @@
     <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
     
         @foreach ($internshipCompany_table as $company)
-        
             <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
                     <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
@@ -411,14 +410,8 @@ $(function() {
 
 
 </script>
-<script>
-
-</script>
 
 <script type="text/javascript">
-
-
-
 
   var deletePostUri = "{{ route('internshipcompany.index')}}";
   var gmarkers = [];
@@ -427,26 +420,41 @@ $(function() {
   var gdesc = {!! json_encode($internship_desc->toArray()) !!};
   var gid = {!! json_encode($internship_id->toArray()) !!};
   var image = {!! json_encode($internship_image->toArray()) !!};
+  var featured = {!! json_encode($internship_featured->toArray()) !!};
   var counter = 0 ;
+  var infowindow; 
+  var map;
+  var goldStar = {
+          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+          fillColor: 'yellow',
+          fillOpacity: 0.8,
+          scale: 1,
+          strokeColor: 'gold',
+          strokeWeight: 14
+        };
 function initMap() {
-    var map;
+    
     var elevator;
 
 
+    
+
+
     var myOptions = {
-        zoom: 1,
+        zoom: 4,
+        maxZoom: 10,
         center: new google.maps.LatLng(0, 0),
         mapTypeId: 'terrain'
     };
 
     //map settings
-    map = new google.maps.Map($('#map')[0], myOptions);
+    map = new google.maps.Map($('#map')[0], myOptions);    
+
     var bounds = new google.maps.LatLngBounds();
     map.setCenter(bounds.getCenter());
-    map.setZoom(map.getZoom()-1); 
-    if(map.getZoom()> 15){
-      map.setZoom(15);
-    }
+
+
+
 
     //controller addresses
     var addresses = {!! json_encode($internship_addresses->toArray()) !!};
@@ -455,25 +463,36 @@ function initMap() {
         $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
             var p = data.results[0].geometry.location
             var latlng = new google.maps.LatLng(p.lat, p.lng);     
-            addMarker(map,bounds,latlng);
+            addMarker(map,bounds,latlng,featured[counter]);
            
         });
     }
+        map.fitBounds(bounds);
 } 
-    function addMarker(map,bounds, latlng){
-        var markers = new google.maps.Marker({
-                position: latlng,
-                map: map
-        });
+    function addMarker(map,bounds, latlng,featured){
+        if(featured == 'Yes'){
+            var markers = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+            });
+        }
+        else{
+            var markers = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+            });
+        }
         gmarkers.push(markers);
         bounds.extend(markers.getPosition());
-        map.fitBounds(bounds);
+        
         addInfoWindow(markers);
     }
     function addInfoWindow(markers){
         var secretMessage = '<div id="container " class = "infowindow">'+
                                 '<div class = "col-lg-4 image-container" >'+
-                                    '<img src="image/uploads/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
+                                    '<img src="image/uploaded_company_image/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
                                 '</div>'+
                                 '<div class = "col-lg-8" id="siteNotice">'+
                                     '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
@@ -486,7 +505,9 @@ function initMap() {
         var infowindow = new google.maps.InfoWindow({
           content: secretMessage
         });
-        markers.addListener('click', function() {
+        google.maps.event.addListener(markers,'click',function() {
+          map.setZoom(10);
+          map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });
         counter++;
