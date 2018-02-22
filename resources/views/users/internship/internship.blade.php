@@ -504,6 +504,7 @@ function initMap() {
         if(eid !== undefined){
             if(gid[counter] == eid)
             {
+                map.setCenter(gmarkers[counter].getPosition());
                 infowindow.open(map, gmarkers[counter]);
             }
         }
