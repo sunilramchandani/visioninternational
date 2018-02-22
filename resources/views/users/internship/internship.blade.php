@@ -251,7 +251,11 @@
                                         <option value="6">6 Months</option>
                                         <option value="7">7 Months</option>
                                         <option value="8">8 Months</option>
-                                        <option value="9">9 Months</option>     
+                                        <option value="9">9 Months</option>
+                                        <option value="10">10 Months</option>  
+                                        <option value="11">11 Months</option>  
+                                        <option value="12">12 Months</option>  
+                                        <option value="18">18 Months</option>       
                                     </select>
                                 </div>
                             </div>
@@ -332,7 +336,27 @@
                     document.getElementById('1st-Installment').innerHTML = "USD 450";
                     document.getElementById('2nd-Installment').innerHTML = "USD 3650";
                     document.getElementById('3rd-Installment').innerHTML = "USD 4100";
-                }                 
+                }  
+                if(strUser == "10"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 3850";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 4300";
+                }   
+                if(strUser == "11"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 4050";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 4500";
+                }  
+                if(strUser == "12"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 4100";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 4550";
+                }
+                if(strUser == "18"){
+                    document.getElementById('1st-Installment').innerHTML = "USD 450";
+                    document.getElementById('2nd-Installment').innerHTML = "USD 6050";
+                    document.getElementById('3rd-Installment').innerHTML = "USD 6500";
+                }                     
             }
         </script>
         <!--Testimony-->
