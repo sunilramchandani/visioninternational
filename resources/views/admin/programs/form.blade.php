@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-xs-12">
                 @if($error) @include('partials.notif', ['flash' => $error]) @endif
-
+            
                 <div class="form-group">
                     <label for="title">
                         Title
@@ -40,6 +40,15 @@
 
                     <input type="date" name="validity" id="validity" value="{{ (isset($program['validity'])) ? $program['validity'] : '' }}" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label for="title">
+                        Link
+                    </label>
+                    <input type="text" name="link" id="link" value="{{ (isset($program['link'])) ? $program['link'] : '' }}" class="form-control">
+                </div>
+
+
 
                 <div class="form-group">
                     <label for="description">

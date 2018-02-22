@@ -39,6 +39,7 @@ class ProgramsLib
         $program->description = $data['description'];
         $program->created_by = Auth::user()->getAuthIdentifier();
         $program->validity = $data['validity'];
+        $program->link = $data['link'];
 
         if (isset($data['image_promo'])){
 
@@ -73,6 +74,7 @@ class ProgramsLib
         $program->title = $data['title'];
         $program->description = $data['description'];
         $program->validity = $data['validity'];
+        $program->link = $data['link'];
 
         if (isset($data['image_promo'])){
 

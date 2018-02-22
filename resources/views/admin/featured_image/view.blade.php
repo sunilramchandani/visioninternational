@@ -11,9 +11,19 @@
     <section class="content page-news">
         <div class="row">
             <div class="col-xs-12">
-                @if(session('flash'))
-                    @include('partials.notif', ['flash' => session('flash')])
-                @endif
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif @if(Session::has('ok'))
+            <div class="alert alert-info">
+                {{Session::get('ok')}}
+            </div>
+            @endif
 
 
                 @foreach ($featuredimage_table as $featuredimage)

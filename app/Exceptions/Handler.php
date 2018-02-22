@@ -49,9 +49,6 @@ class Handler extends ExceptionHandler
             switch ($exception->getStatusCode()) 
                 {
                 // not found
-                case 404:
-                return redirect()->guest('404');
-                break;
 
                 // internal error
                 case '500':

@@ -20,7 +20,7 @@
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{$app}}</h3>
 
                         <p>Applications</p>
                     </div>
@@ -31,8 +31,8 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>53</h3>
-                        <p>Postings</p>
+                        <h3>{{$blog}}</h3>
+                        <p>Blogs</p>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>44</h3>
-                        <p>Opportunities</p>
+                        <h3>{{$news}}</h3>
+                        <p>News</p>
                     </div>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>65</h3>
-                        <p>Testimonials</p>
+                        <h3>{{$programs}}</h3>
+                        <p>Promo</p>
                     </div>
                 </div>
             </div>

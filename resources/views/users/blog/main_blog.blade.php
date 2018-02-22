@@ -116,7 +116,7 @@
 
                 <!-- right side -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
-                    <div class="col-lg-offset-3">
+    
                         <form action="{{route('userBlog.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -132,7 +132,7 @@
 
 
                         </form>
-                    </div>
+            
                     <br>
                     <table class="table table-categories table-borderless table-hover">
                         <thead bgcolor="#800000">
@@ -143,7 +143,7 @@
                         </thead>
                         <tbody>
                             @foreach ($category_table as $category)
-                            <tr class='clickable-row' data-href='fb?ecat=General'>
+                            <tr class='clickable-row'>
                                 <td>{{$category->category_name}}</td>
                                 <td>
                                     <a href="/blog?category_id={{$category->id}}">
@@ -159,8 +159,8 @@
                     <table class="table table-categories table-borderless table-hover">
                         <thead bgcolor="#800000">
                             <tr>
-                                <th class="header-table" style="padding-left: 25px">RECENT POST</th>
-                                <th class="header-table" style="padding-left: 25px"></th>
+                                <th class="header-table text-center">RECENT POST</th>
+                                <th class="header-table text-center"></th>
                             </tr>
                         </thead>
                         <tbody>

@@ -44,14 +44,19 @@
 
                 <tbody>
                     @foreach($qualification_table as $qualification)
+                    <form action="{{ route('qualification.edit', $qualification->id) }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
                     <tr>
-                        <td>{{ $qualification->qualification_name }}</td>
+                        <td><input type="text" id="qualification_name" name="qualification_name" value ="{{ $qualification->qualification_name }}"></td>
                         <td>
-                            <a href="{{ route('qualification.delete', $qualification->id) }}" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <button class="btn btn-warning" type="submit">
+                            Edit
+                            </button>
                         </td>
                     </tr>
+                    
+                </form>
                     @endforeach
                 </tbody>
             </table>

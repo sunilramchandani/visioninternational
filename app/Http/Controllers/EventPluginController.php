@@ -7,6 +7,9 @@ use App\EventPlugin;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 use DateTimeZone;
+use App\CategoryList;
+use App\EventCategory;
+use Carbon\Carbon;
 
 class EventPluginController extends Controller
 {
@@ -15,7 +18,7 @@ class EventPluginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $curl = curl_init();
         $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
@@ -133,33 +136,71 @@ class EventPluginController extends Controller
         
         
         
-    }
-         $category_events_general = EventPlugin::where('category', 'General')->count();
-         $category_events_design = EventPlugin::where('category', 'Design')->count();
-         $category_events_events = EventPlugin::where('category', 'Events')->count();
-         $category_events_food = EventPlugin::where('category', 'Food')->count();
-         $category_events_jobfair = EventPlugin::where('category', 'Job Fair')->count();
-         if (request()->has('ecat')){
-            $events_table = EventPlugin::where('category',request('ecat'))->get();
+            }
+
+                if (request()->has('event_id')){
+                    $s = $request->input('s');
+
+                    
+
+                    $category_event = EventCategory::where('category_id', request('event_id'))->pluck('event_id');
+
+
+                    $events_table = EventPlugin::with('eventcategory')
+                            ->orderBy('created_at', 'desc')
+                            ->search($s)
+                            ->whereIn('fbevent_id', $category_event)
+                            ->paginate(6);
+            
+
          }
          else{
-            $events_table = EventPlugin::all();
+            $s = $request->input('s');
+            
+            $events_table = EventPlugin::with('eventcategory')
+                            ->orderBy('created_at', 'desc')
+                            ->search($s)
+                            ->paginate(6);
+
+
          } 
-        return view('users.facebook', compact('category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'))->with('data', json_decode($data, true));  
+
+        $category_table = CategoryList::withCount('eventcategorytable')->get();
+        return view('users.facebook', compact('s', 'event_table', 'category_table','events_table'))->with('data', json_decode($data, true));  
         }
+
+        //END OF IF INSERT RESULT
         else{
-            $category_events_general = EventPlugin::where('category', 'General')->count();
-         $category_events_design = EventPlugin::where('category', 'Design')->count();
-         $category_events_events = EventPlugin::where('category', 'Events')->count();
-         $category_events_food = EventPlugin::where('category', 'Food')->count();
-         $category_events_jobfair = EventPlugin::where('category', 'Job Fair')->count();
-         if (request()->has('ecat')){
-            $events_table = EventPlugin::where('category',request('ecat'))->get();
+
+         if (request()->has('event_id')){
+            $s = $request->input('s');
+
+            
+
+            $category_event = EventCategory::where('category_id', request('event_id'))->pluck('event_id');
+
+
+            $events_table = EventPlugin::with('eventcategory')
+                    ->orderBy('created_at', 'desc')
+                    ->search($s)
+                    ->whereIn('fbevent_id', $category_event)
+                    ->paginate(6);
+            
+
          }
          else{
-            $events_table = EventPlugin::all();
+            $s = $request->input('s');
+            
+            $events_table = EventPlugin::with('eventcategory')
+                            ->orderBy('created_at', 'desc')
+                            ->search($s)
+                            ->paginate(6);
+
+
          } 
-        return view('users.facebook', compact('category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'))->with('data', json_decode($data, true));  
+
+         $category_table = CategoryList::withCount('eventcategorytable')->get();
+        return view('users.facebook', compact('s', 'events_table' , 'category_table'))->with('data', json_decode($data, true));  
         }
      
         
@@ -230,6 +271,55 @@ class EventPluginController extends Controller
         //
     }
 
+    public function adminIndex()
+    {
+        $event = EventPlugin::all();
+        return view('admin.event.list', compact('event'));
+    }
+
+    public function adminView($id)
+    {
+        
+        $event = EventPlugin::find($id);
+
+        $event_category = DB::table('category_event')
+            ->where('event_id', $id)
+            ->pluck('category_id');
+
+
+        $category_list = DB::table('category_list')
+            ->wherenotIn('id', $event_category)
+            ->get();
+
+        return view('admin.event.view', compact('event','event_category','category_list'));
+
+    }
+
+    public function adminUpdate($id, Request $request)
+    {
+
+        $event = EventPlugin::findorFail($id);
+
+        if ($request->has('event_bulk'))
+        {
+        $event_list = $request->input('event_bulk');
+        foreach($event_list as $caca)
+        {
+
+        DB::table('category_event')->insert([
+            ['event_id' => $id, 'category_id' => $caca, 'updated_at' => Carbon::now()]
+        ]);
+        }
+        }
+
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('event.list')->with($success);
+
+    }
+
+
     public function eventSingle($fbevent_id)
     {
          $previous_events = $fbevent_id - 1;
@@ -237,6 +327,12 @@ class EventPluginController extends Controller
          $events = EventPlugin::find($fbevent_id);
          $nextevents = EventPlugin::find($next_events);
          $previousevents = EventPlugin::find($previous_events);
+
+         $event_table = EventPlugin::with('eventcategory')->orderBy('created_at', 'desc')->get();
+
+         $category_table = CategoryList::withCount('eventcategorytable')->get();
+
+
          $category_events_general = EventPlugin::where('category', 'General')->count();
          $category_events_design = EventPlugin::where('category', 'Design')->count();
          $category_events_events = EventPlugin::where('category', 'Events')->count();
@@ -248,6 +344,6 @@ class EventPluginController extends Controller
          else{
             $events_table = EventPlugin::all();
          } 
-        return view('users.events.single_event', compact('previousevents','nextevents','events','category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'));
+        return view('users.events.single_event', compact('event_table', 'category_table', 'previousevents','nextevents','events','category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'));
     }
 }

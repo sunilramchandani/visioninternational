@@ -41,6 +41,14 @@
                                 <input type="file" class="form-control" name="main_image" id="main_image" value="{{ isset($featuredimage) ? $featuredimage->main_image : '' }}">
                             </div>
                         </div>
+                
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                
+                                <img height="100px" width="200px" src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featuredimage->main_image}}"
+                                    class="img-preview" alt="Company Banner">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -49,8 +57,7 @@
                                 <label for="main_image_description">
                                     Header Description
                                 </label>
-                                <input type="longtext" class="form-control" id="main_image_description" name="main_image_description" value="{{ isset($featuredimage) ? $featuredimage->main_image_description : '' }}"
-                                placeholder="   ">
+                                <textarea type="longtext" class="form-control" id="main_image_description" name="main_image_description" required rows="10">{{ isset($featuredimage) ? $featuredimage->main_image_description : '' }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -71,6 +78,16 @@
                                 <input type="file" class="form-control" name="sub_image1" id="sub_image1" value="{{ isset($featuredimage) ? $featuredimage->sub_image1 : '' }}">
                             </div>
                         </div>
+
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                
+                                <img height="100px" width="200px" src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featuredimage->sub_image1}}"
+                                    class="img-preview" alt="Company Banner">
+                            </div>
+                        </div>
+
+
                     </div>
                     
                     <div class="border-bot"></div>
@@ -89,6 +106,16 @@
                                 <input type="file" class="form-control" name="sub_image2" id="sub_image2" value="{{ isset($featuredimage) ? $featuredimage->sub_image2 : '' }}">
                             </div>
                         </div>
+
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                
+                                <img height="100px" width="200px" src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featuredimage->sub_image2}}"
+                                    class="img-preview" alt="Company Banner">
+                            </div>
+                        </div>
+
+
                     </div>  
 
                     

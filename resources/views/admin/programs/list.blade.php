@@ -4,10 +4,10 @@
 <section class="content-header">
 <div class="row">
     <div class="col-xs-10">
-        <h1 class="page-header">Program</h1>
+        <h1 class="page-header">Promo</h1>
     </div>
     <div class="col-xs-2">
-        <a href="{{route('programs.create')}}"><button style ="" class="btn btn-success">New Program</button></a>
+        <a href="{{route('programs.create')}}"><button style ="" class="btn btn-success">New Promo</button></a>
     </div>
 </div>
 </section>
@@ -33,6 +33,10 @@
                         @foreach($programs as $program)
                             <tr>
                                 <td>{{ $program->title }}</td>
+                                <td>
+                                <img height="150px" width "150px" src="{{URL::asset('image/uploaded_promo_image')}}/{{$program->image_promo}}"
+                                    alt="Image Error" />
+                                </td>
                                 <td>{{ $program->image_promo }}</td>
                                 <td>{{ $program->validity }}</td>
                                 <td>

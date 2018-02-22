@@ -57,6 +57,9 @@ class ProgramsController extends Controller
     public function edit($id)
     {
         $program = ProgramsLib::getById($id);
+        
+        $programs = Programs::all();
+
         $error = false;
 
         if (!$program) {
@@ -89,6 +92,7 @@ class ProgramsController extends Controller
         return view('admin.programs.form', [
             'program' => $program,
             'action' => $action,
+            'programs' =>$programs,
             'error' => $error
         ]);
     }

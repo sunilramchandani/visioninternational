@@ -14,11 +14,18 @@ Route::get('/500', function () {
 //Admin Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     
-    Route::get('/', ['uses' => function () {
-        return view('admin.home');
-    }, 'as' => 'admin.home']);
+    Route::get('/', ['uses' => 'HomeController@adminIndex', 'as' => 'admin.home']);
+
 
     Route::resource('featuredimage', 'FeaturedImageController');
+
+
+    Route::group(['prefix' => 'event'], function() {
+        Route::get('/list', ['uses' => 'EventPluginController@adminIndex', 'as' => 'event.list']);
+        Route::get('/view/{id}', ['uses' => 'EventPluginController@adminView', 'as' => 'event.view']);
+        Route::post('/view/{id}', ['uses' => 'EventPluginController@adminUpdate', 'as' => 'event.update']);
+    });
+
 
     Route::group(['prefix' => 'author'], function() {
         Route::get('/list', ['uses' => 'SubDataController@indexAuthor', 'as' => 'author.list']);
@@ -38,18 +45,26 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/list', ['uses' => 'SubDataController@indexCategory', 'as' => 'category.list']);
         Route::post('/list', ['uses' => 'SubDataController@storeCategory', 'as' => 'category.store']);
         Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteCategory', 'as' => 'category.delete']);
+
+        Route::post('/edit/{id}', ['uses' => 'SubDataController@editCategory', 'as' => 'category.edit']);
+
+
     });
 
     Route::group(['prefix' => 'qualification'], function() {
         Route::get('/list', ['uses' => 'SubDataController@indexQualification', 'as' => 'qualification.list']);
         Route::post('/list', ['uses' => 'SubDataController@storeQualification', 'as' => 'qualification.store']);
         Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteQualification', 'as' => 'qualification.delete']);
+
+        Route::post('/edit/{id}', ['uses' => 'SubDataController@editQualification', 'as' => 'qualification.edit']);
     });
 
     Route::group(['prefix' => 'opportunity'], function() {
         Route::get('/list', ['uses' => 'SubDataController@indexOpportunity', 'as' => 'opportunity.list']);
         Route::post('/list', ['uses' => 'SubDataController@storeOpportunity', 'as' => 'opportunity.store']);
         Route::get('/delete/{id}', ['uses' => 'SubDataController@deleteOpportunity', 'as' => 'opportunity.delete']);
+
+        Route::post('/edit/{id}', ['uses' => 'SubDataController@editOpportunity', 'as' => 'opportunity.edit']);
     });
 
 
@@ -295,6 +310,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     // Appllication Routes
     Route::group(['prefix' => 'application'], function() {
 
+        Route::get('/trash', ['uses' => 'ApplicationController@viewTrash', 'as' => 'application.trash']);
+
+
+        Route::get('/trash/{id}', ['uses' => 'ApplicationController@restoreTrash', 'as' => 'application.restoretrash']);
+
         Route::get('/list', [
             'uses' => 'ApplicationController@adminIndex',
             'as' => 'application.list'
@@ -395,7 +415,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     });
 
     // Program Routes
-    Route::group(['prefix' => 'programs'], function() {
+    Route::group(['prefix' => 'promo'], function() {
         Route::get('/new', [
             'uses' => 'Programs\ProgramsController@create',
             'as' => 'programs.create']);
@@ -441,7 +461,7 @@ Route::resource('fileupload', 'FileUploadController');
 Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('workcompany', 'WorkCompanyController');
 Route::resource('contactus', 'ContactUsController');
-Route::resource('fb', 'EventPluginController');
+Route::resource('event', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
 Route::resource('faq', 'faqController');

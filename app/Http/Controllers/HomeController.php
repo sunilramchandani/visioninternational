@@ -14,6 +14,8 @@ use App\Application;
 use App\EventPlugin;
 use App\Models\Testimonials;
 use App\Models\Programs;
+use App\Blog;
+use App\News;
 
 class HomeController extends Controller
 {
@@ -34,6 +36,16 @@ class HomeController extends Controller
         $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
         $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
         return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count','events_table','internshipcompany_table', 'programs', 'testimonials'));
+    }
+
+    public function adminIndex()
+    {
+        $app = Application::count('id');
+        $blog = Blog::count('id');
+        $news = News::count('id');
+        $programs = Programs::count('id');
+        $testimonials = Testimonials::count('id');
+        return view('admin.home', compact('app', 'blog', 'news', 'programs', 'testimonials'));
     }
 
     /**

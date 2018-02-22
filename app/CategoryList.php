@@ -16,6 +16,11 @@ class CategoryList extends Model
             return $this->belongsTo('App\BlogCategory', 'category_name');
         }
 
+        public function eventcategory()
+        {
+            return $this->belongsTo('App\EventCategory', 'category_name');
+        }
+
         public function blogcategorytable()
         {
             return $this->hasMany('App\BlogCategory', 'category_id');
@@ -36,6 +41,12 @@ class CategoryList extends Model
         {
             return $this->hasMany('App\NewsCategory', 'category_id');
         }
+
+        public function eventcategorytable()
+        {
+            return $this->hasMany('App\EventCategory', 'category_id');
+        }
+
 
 
         public function news()

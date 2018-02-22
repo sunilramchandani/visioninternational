@@ -167,6 +167,20 @@ class ApplicationController extends Controller
 
       }
 
+      public function viewTrash(){
+        $app = Application::onlyTrashed()->get();
+        return view('admin.application.trash', compact('app'));
+    }
+
+
+    public function restoreTrash($id){
+        $app = Application::withTrashed()
+        ->where('id', $id)
+        ->restore();
+        $success = array('ok'=> 'Successfully Restored');
+        return redirect()->back()->with($success);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

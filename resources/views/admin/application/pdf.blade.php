@@ -21,9 +21,9 @@
       @foreach($application_table as $app)
       <tr>
         <td>{{$app->id}}</td>
-        <td>{{$app->program_id}}</td>
-        <td>{{$app->country_id}}</td>
-        <td>{{$app->location_id}}</td>
+        <td>{{$app->program_name}}</td>
+        <td>{{$app->country_name}}</td>
+        <td>{{$app->location_name}}</td>
         <td>{{$app->last_name}}</td>
       </tr>
       @endforeach

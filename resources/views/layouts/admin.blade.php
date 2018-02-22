@@ -89,6 +89,23 @@
                         </li>
                     </ul>
                 </li>
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/blog') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-thumb-tack"></i>
+                        <span>Event</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('event.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
               <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-thumb-tack"></i>

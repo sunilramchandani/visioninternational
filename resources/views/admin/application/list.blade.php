@@ -1,11 +1,18 @@
 @extends('layouts.admin')
 
 @section('content-header')
-    <section class="content-header">
-        <h1 class="page-header">
-            News
-        </h1>
-    </section>
+<section class="content-header">
+    <h1 class="page-header">
+        <div class="row">
+            <div class="col-xs-10">
+                Application
+            </div>
+            <div class="col-xs-2">
+            <a href="{{route('application.trash')}}"><button class="btn"><i class="fa fa-trash" style="color:black;"> &nbsp; View Trash</i></button></a>
+            </div>
+        </div>
+    </h1>
+</section>
 @endsection
 
 @section('content-main')

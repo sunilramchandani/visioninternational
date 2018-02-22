@@ -136,7 +136,6 @@ class FeaturedImageController extends Controller
             $fileName = $name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image4 = $fileName;
-            $featuredimage->sub_image4_description = $request['sub_image4_description'];
         }
 
         if ($request->has('sub_image4_description')){
@@ -153,7 +152,7 @@ class FeaturedImageController extends Controller
         }
 
         $featuredimage->save();
-        $success = array('ok'=> 'The Request has been approved!');
+        $success = array('ok'=> 'Success!');
         return redirect()->route('featuredimage.index')->with($success);
     }
 

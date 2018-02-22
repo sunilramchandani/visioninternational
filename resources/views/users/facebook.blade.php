@@ -27,10 +27,24 @@
       <h2>Events</h2>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  search-row">
-      <input class="form-control search" type="text" name="searchroleName" id='search-text-input' placeholder="Search"/>
+   <!-- <form action="{{route('event.index') }}" method="get" class="form-inline">
+                            {{csrf_field()}}
+
+                            <div class="form-group">
+                                <input type="text" class="form-control search" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}">
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+
+
+                        </form>
       <div id='button-holder'>
         <i class="fa fa-search" aria-hidden="true"></i>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class = "row">
@@ -56,28 +70,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr class='clickable-row' data-href='fb?ecat=General'>
-              <td>General</td>
-              <td>({{$category_events_general}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Design'>
-              <td>Design</td>
-              <td>({{$category_events_design}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Events'>
-              <td>Events</td>
-              <td>({{$category_events_events}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Food'>
-              <td>Food</td>
-              <td>({{$category_events_food}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=JobFair'>
-              <td>Job Fair</td>
-              <td>({{$category_events_jobfair}})</td>
-            </tr>
+          @foreach ($category_table as $category)
+          <tr class='clickable-row'>
+              <td>{{$category->category_name}}</td>
+              <td>
+                  <a href="/event?event_id={{$category->id}}">
+                      <i style="color:black;">{{$category->eventcategorytable_count}}</i>
+                  </a>
+              </td>
+
+          </tr>
+          @endforeach
           </tbody>
         </table>    
+
+        {{$events_table->appends(['s' => $s])->links()}}
     </div>
   </div>
 </div> 

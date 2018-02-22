@@ -33,25 +33,31 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-5">
 
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Category Name</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     @foreach($category_table as $category)
+                    <form action="{{ route('category.edit', $category->id) }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
                     <tr>
-                        <td>{{ $category->category_name }}</td>
+                        <td><input type="text" id="category_name" name="category_name" value ="{{ $category->category_name }}"></td>
                         <td>
-                            <a href="{{ route('category.delete', $category->id) }}" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <button class="btn btn-warning" type="submit">
+                            Edit
+                            </button>
                         </td>
                     </tr>
+                    
+                </form>
                     @endforeach
                 </tbody>
             </table>

@@ -13,7 +13,13 @@ class Create extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('category_event', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('category_id')->unsigned();
+            $table->integer('company_id')->unsigned();
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**

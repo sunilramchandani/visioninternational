@@ -137,6 +137,23 @@ class SubDataController extends Controller
         
     }
 
+    public function editCategory($id, Request $request)
+    {
+        $this->validate($request, [
+            'category_name' => 'required',
+        ]);
+
+
+        $category = CategoryList::find($id);
+        $category->category_name = $request['category_name'];
+        $category->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('category.list')->with($success);
+
+    }
+
     public function indexQualification()
     {
         $qualification_table = QualificationList::orderBy('qualification_name','asc')->paginate(10);
@@ -150,7 +167,7 @@ class SubDataController extends Controller
             'qualification_name' => 'required',
             ]);
 
-        $qualification = new qualificationList;
+        $qualification = new QualificationList;
         $qualification->qualification_name = $request['qualification_name'];
         $qualification->save();
 
@@ -162,7 +179,7 @@ class SubDataController extends Controller
 
     public function deletequalification($id)
     {
-        $qualification = qualificationList::findOrFail($id);
+        $qualification = QualificationList::findOrFail($id);
 
         $qualification->delete();
 
@@ -170,6 +187,23 @@ class SubDataController extends Controller
         
         return redirect()->route('qualification.list')->with($success);
         
+    }
+
+    public function editQualification($id, Request $request)
+    {
+        $this->validate($request, [
+            'qualification_name' => 'required',
+        ]);
+
+
+        $qualification = QualificationList::find($id);
+        $qualification->qualification_name = $request['qualification_name'];
+        $qualification->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('qualification.list')->with($success);
+
     }
 
     public function indexOpportunity()
@@ -205,6 +239,25 @@ class SubDataController extends Controller
         
         return redirect()->route('opportunity.list')->with($success);
         
+    }
+
+    public function editOpportunity($id, Request $request)
+    {
+        $this->validate($request, [
+            'opportunity_name' => 'required',
+        ]);
+
+
+        $opportunity = OpportunityList::find($id);
+        $opportunity->opportunity_name = $request['opportunity_name'];
+        $opportunity->start_date = $request['start_date'];
+        $opportunity->end_date = $request['end_date'];
+        $opportunity->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('opportunity.list')->with($success);
+
     }
     /**
      * Display a listing of the resource.

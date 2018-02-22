@@ -48,14 +48,6 @@
                                 Edit
                             </a>
 
-                            <br>
-                            
-                            <br>
-
-                            <a href="{{ route('author.delete', $author->author_id) }}" class="btn btn-danger">
-                                Delete<br>
-                            </a>
-                            
 
 
                         </td>

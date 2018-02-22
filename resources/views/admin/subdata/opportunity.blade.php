@@ -33,26 +33,36 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-5">
 
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Opportunity Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach($opportunity_table as $opportunity)
+                @foreach($opportunity_table as $opportunity)
+                <form action="{{ route('opportunity.edit', $opportunity->id) }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
                     <tr>
-                        <td>{{ $opportunity->opportunity_name }}</td>
+                        <td><input type="text" id="opportunity_name" name="opportunity_name" value ="{{ $opportunity->opportunity_name }}"></td>
+                        <td><input type="date" id="start_date" name="start_date" value ="{{ $opportunity->start_date }}"></td>
+                        <td><input type="date" id="end_date" name="end_date" value ="{{ $opportunity->end_date }}"></td>
                         <td>
-                            <a href="{{ route('opportunity.delete', $opportunity->id) }}" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <button class="btn btn-warning" type="submit">
+                            Edit
+                            </button>
                         </td>
                     </tr>
-                    @endforeach
+                    
+                </form>
+                @endforeach
                 </tbody>
             </table>
         </div>

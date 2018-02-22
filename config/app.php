@@ -141,6 +141,7 @@ return [
          * Laravel Framework Service Providers...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -194,8 +195,8 @@ return [
 
     'aliases' => [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

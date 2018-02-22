@@ -43,9 +43,8 @@ class SubscribeController extends Controller
         $subscribe->email = $request['email'];
         $subscribe->save();
 
-        $success = array('ok'=> 'Success');
         
-        return redirect()->route('fb.index')->with($success);
+        return redirect()->back();
 
 
        
