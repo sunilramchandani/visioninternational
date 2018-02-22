@@ -4,19 +4,14 @@
         <div class="col-xs-12">
             <h1 class="page-header">
                 Opportunity
+                <meta name="csrf-token" content="{{ csrf_token() }}">
             </h1>
+           
         </div>
     </div>
 </section>
 @endsection {{--{{ dd($company) }}--}} @section('content-main')
 <section class="content page-opportunities">
-
-
-
-    @foreach($company->work_opportunity as $opportunity)
-    {{$opportunity->opportunitylist->opportunity_name}}
-    @endforeach
-
 
     <div class="row">
         <div class="col-xs-12">
@@ -71,12 +66,19 @@
                     <label>Qualifications:</label>
                     @foreach($company->work_qualifications as $qualification)
                         <ul>{{$qualification->qualificationlist->qualification_name}}</ul>
+
+
+                        <button  class="btn btn-danger btn-block delete_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
+                        Delete</button>
+
                     @endforeach
                 </div>
                  <div class="col-xs-12 col-md-3">
                      <label>Opportunities:</label>
                     @foreach($company->work_opportunity as $opportunity)
                         <ul>{{$opportunity->opportunitylist->opportunity_name}}</ul>
+                        <button  class="btn btn-danger btn-block delete_single_opportunity" data-id="{{ $opportunity->id }}" data-token="{{ csrf_token() }}">
+                        Delete</button>
                     @endforeach
                 </div>
                 <div class="col-xs-12 col-md-3">
@@ -96,3 +98,69 @@
 
 </section>
 @endsection
+@section('scripts')
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".delete_single_qualification").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "deleteQualification/"+id,
+                  type: 'delete',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'DELETE',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".delete_single_opportunity").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "deleteOpportunity/"+id,
+                  type: 'delete',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'DELETE',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+    @endsection
