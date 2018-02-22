@@ -25,7 +25,7 @@
                 <!-- left side -->
                 <div class="col-lg-8">
                     @foreach($blog_table as $blog)
-                    <div class="image-blog">
+                    <div class="container image-blog">
                         <div class="row">
                             <div class="col-lg-10 col-lg-offset-1">
                                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
