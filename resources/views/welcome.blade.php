@@ -96,7 +96,7 @@
 </div>
 @endforeach
 <div class="container">
-    <div class="about row">
+    <div class="commit row">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center about-font">
             <h1>Our Commitments</h1>
         </div>
