@@ -46,7 +46,7 @@
         			<label for = "program" class = "labels">Program</label>
         		</div>
         		<div class = "col-md-7">
-	                <select class = "form-control" name="program_id" id="program" >
+	                <select class = "form-control" name="program_id" id="duration" >
 	                    <option value="" disabled selected>Select</option>
 						<option value="1">Internship</option>
 						<option value="2">Work & Travel</option>
