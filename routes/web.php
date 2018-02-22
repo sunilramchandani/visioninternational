@@ -3,6 +3,14 @@
 //Home Routes
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
+
+Route::get('/404', function () {
+    return view('404');
+});
+Route::get('/500', function () {
+    return view('500');
+});
+
 //Admin Routes
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     
@@ -97,6 +105,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     Route::group(['prefix' => 'workcompany'], function() {
 
 
+         Route::delete('/deleteQualification/{id}', [
+            'uses' => 'WorkCompanyController@deleteQualification',
+            'as' => 'workcompany.deleteQualification'
+        ]);
+        
+        Route::delete('/deleteOpportunity/{id}', [
+            'uses' => 'WorkCompanyController@deleteOpportunity',
+            'as' => 'workcompany.deleteOpportunity'
+        ]);
+
         Route::get('/trash', ['uses' => 'WorkCompanyController@viewTrash', 'as' => 'workcompany.trash']);
 
 
@@ -177,6 +195,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
     //company routes
     Route::group(['prefix' => 'internshipcompany'], function() {
 
+        Route::delete('/deleteQualification/{id}', [
+            'uses' => 'InternshipCompanyController@deleteQualification',
+            'as' => 'internshipcompany.deleteQualification'
+        ]);
+
+        Route::delete('/deleteOpportunity/{id}', [
+            'uses' => 'InternshipCompanyController@deleteOpportunity',
+            'as' => 'internshipcompany.deleteOpportunity'
+        ]);
+
 
         Route::get('/trash', ['uses' => 'InternshipCompanyController@viewTrash', 'as' => 'internshipcompany.trash']);
 
@@ -208,10 +236,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'as' => 'internshipcompany.delete'
         ]);
 
+        
+
         Route::get('/{id}', [
             'uses' => 'InternshipCompanyController@view',
             'as' => 'internshipcompany.view'
         ]);
+
+        
 
         Route::get('/new_opportunity/{id}', [
             'uses' => 'InternshipCompanyController@createOpportunity',
@@ -232,6 +264,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'uses' => 'InternshipCompanyController@storeQualification',
             'as' => 'internshipcompany.store_qualification'
         ]);
+
+        
 
         Route::group(['prefix' => 'duration'], function() {
 

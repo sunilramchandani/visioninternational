@@ -172,7 +172,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/cache/data',
+        'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -277,12 +277,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\app/uploads',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -297,7 +297,7 @@
       'uploads' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\public',
+        'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
       ),
     ),
   ),
@@ -320,7 +320,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views/vendor/mail',
+        0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -400,7 +400,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework/sessions',
+    'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -419,9 +419,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\resources\\views',
+      0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\framework\\views',
+    'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
   ),
   'debugbar' => 
   array (
@@ -430,7 +430,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\Users\\jionn\\OneDrive\\Pictures\\Documents\\GitHub\\visioninternational\\storage\\debugbar',
+      'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
     ),

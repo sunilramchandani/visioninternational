@@ -19,7 +19,7 @@
             <p>COMPANY</p>
             <ul>
                 <li>Testimonials</li>
-                <li>Hiring Partners</li>
+                <li>Join Our Team</li>
                 <li>Media</li>
             </ul>
         </div>

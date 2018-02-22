@@ -131,7 +131,7 @@
         
             <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
-                    <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
+                    <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
                 </div>
                 <div class = "row info">
                     <h4>{{$company->full_address}}</h4>

@@ -28,7 +28,8 @@ class HomeController extends Controller
         $company_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->count('id');
         $applicant_count = Application::count('id');
         $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
-        return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count','events_table'));
+        $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
+        return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count','events_table','internshipcompany_table'));
     }
 
     /**
