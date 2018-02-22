@@ -19,123 +19,102 @@
                 <h2 class="page-header">
                     {{ $app->upload_resume }}
                 </h2>
-                <form action="{{route('application.show', $app)}}">
-                <button type="submit"> Download </button>
-                </form>
-            </div>
-
-            <form action="{{route('application.pdf', $app)}}">
-                <button type="submit"> Download as PDF </button>
-                </form>
-            </div>
+            </div>  
+        </div>
 
             <div class="col-xs-12">
                 <div class="row">
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Program ID: </span>
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Program: </span>
                         {{ $app->program_name }}
                     </div>
 
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Country ID: </span>
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Country: </span>
                         {{ $app->country_name }}
                     </div>
 
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Location ID:</span>
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Location:</span>
                         {{ $app->location_name }}
                     </div>  
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Lastname:</span>
-                        {{ $app->last_name }}
-                    </div>
-
-                    <div class="col-xs-12 col-md-3">
+                    
+                    <div class="col-xs-12 col-md-4">
                         <span class="label">Firstname:</span>
                         {{ $app->first_name }} 
                     </div>
 
 
-                    <div class="col-xs-12 col-md-3">
+                    <div class="col-xs-12 col-md-4">
                         <span class="label">Email:</span>
                         {{ $app->email }} 
+                    </div>
+                     <div class="col-xs-12 col-md-4">
+                        <span class="label">Contact Number:</span>
+                        {{ $app->contact_no }}
                     </div>
                 </div>
 
 
                 <div class="row">
-                    <div class="col-xs-12 col-md-3">
-                        <span class="label">Contact Number:</span>
-                        {{ $app->contact_no }}
-                    </div>
-
-                    <div class="col-xs-12 col-md-3">
+                    <div class="col-xs-12 col-md-4">
                         <span class="label">Birthdate:</span>
                         {{ $app->birthdate }} 
                     </div>
 
 
-                    <div class="col-xs-12 col-md-3">
+                    <div class="col-xs-12 col-md-4">
                         <span class="label">Gender:</span>
                         {{ $app->gender }} 
                     </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
-                        {{ $app->birthdate }} 
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
-                        {{ $app->gender }} 
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">City:</span>
                         {{ $app->current_city }} 
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">University:</span>
                         {{ $app->university_name }} 
                     </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
-                        {{ $app->degree_name }} 
+                    <div class="col-xs-12 col-md-4">
+                            <span class="label">Degree:</span>
+                            {{ $app->degree_name }} 
                     </div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Major:</span>
                         {{ $app->major_name }} 
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-6">
-                        <span class="label">Duration:</span>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Graduating:</span>
                         {{ $app->grad_date }} 
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12 col-md-6">
-                        <span class="label">Start:</span>
-                        {{ $app->start_date }}
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Preferred Start:</span>
+                        {{ $app->start_date }} 
                     </div>
-
-                    <div class="col-xs-12 col-md-6">
-                        <span class="label">Interview Date:</span>
-                        {{ $app->about_vip }}
+                    <div class="col-xs-12 col-md-4">
+                        <span class="label">Message:</span>
+                        {{ $app->message }} 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <span class="label">Description: </span>
-                        <div class="description-container">
-                            {!! $app->message !!}
-                        </div>
+                <div class = "row">
+                    <div class = "col-md-4 col-xs-12">
+                        <form action="{{route('application.show', $app)}}">
+                            <button type="submit" class = "btn btn-default"><i class="fa fa-download"></i> Download Resume</button>
+                        </form>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-md-4 col-xs-12">
+                        <form action="{{route('application.pdf', $app)}}">
+                            <button type="submit" class = "btn btn-default"><i class="fa fa-download"></i> Download Online Application </button>
+                        </form>
                     </div>
                 </div>
             </div>
