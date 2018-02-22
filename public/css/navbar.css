@@ -142,10 +142,15 @@ ul{
 		background-color: #F0F0F0;
 	}
 }
+
+
+
+
+/* --------------------------------------MEDIA QUERIES------------------------------------------------------------------------ */
 @media screen and (max-width: 719px) and (min-width: 320px) {
 	.navbar-logo {
 	    height: 50px;
-	    margin-top: 15px;
+	    margin-top: 30px;
 	}
 	.nav-whole {
 	    height: 150;
@@ -187,7 +192,33 @@ ul{
 		color:red;
 	}
 	.links-mobile{
-		margin-top: -27px;
+		height: 26px;
 		background-color: #F0F0F0;
+	}
+
+	.nav-links{
+		top: 18px;
+		right: -26px;
+	}
+
+	.applynow-btn{
+	    background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
+    	display: inline-block;
+   		color: white;
+   		border-radius: 4px;
+	}
+
+	.dropbtn{
+		letter-spacing: 1px;
+	}
+
+	.dropdown{
+		border-right: solid 1px #c2c2c2;
+	}
+
+	.glyphicon-triangle-bottom{
+		top: 2px;
+		right: -4px;
+
 	}
 }

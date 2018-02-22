@@ -66,7 +66,8 @@ class InternshipCompanyController extends Controller
             $internship_desc = InternshipCompany::pluck('description');
             $internship_id = InternshipCompany::pluck('id');
             $internship_image = InternshipCompany::pluck('image');
-            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image'));
+            $internship_featured = InternshipCompany::pluck('featured');
+            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image','internship_featured'));
         }
     }
 
@@ -331,18 +332,6 @@ class InternshipCompanyController extends Controller
 
         
         $opportunity = Opportunity::find($id)->delete();
-        
-            return response()->json([
-        'success' => 'Record has been deleted successfully!'
-    ]);
-
-    }
-
-    public function deleteQualification($id)
-    {
-
-        
-        $qualification = Qualification::find($id)->delete();
         
             return response()->json([
         'success' => 'Record has been deleted successfully!'

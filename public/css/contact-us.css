@@ -34,7 +34,7 @@
 .submit{
 	font-size: 14px;
 	border-radius: 8px;
-	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+  background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
 	color:white;
 	 transition: all 0.5s;
   	cursor: pointer;
@@ -106,22 +106,28 @@ a:hover
  line-height: 20px;
 }
 
-#cont-2, #map-2{
+#cont-2, #map-2, #cont-3, #map-3{
   display: none;
 }
 
 
+/*------------------------------------------------ MEDIA QUERIES------------------------------------- */ 
+
+@media screen and (max-width: 991px) and (min-width: 720px) {
+
+  .our-offices{
+    display: none
+  }
+
+  .country-city-offices{
+    display: none;
+  }
+
+}
 
 
-
-
-
-/* MEDIA QUERIES */ 
-
-/*Iphone 4 and 4s*/
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-
- /*IMAGE AND ARROW */
+@media screen and (max-width: 719px) and (min-width: 320px) {
+  /*IMAGE AND ARROW */
   .header{
     display: none;
   }
@@ -131,9 +137,13 @@ a:hover
   }
  /* -- END -- */
 
- .SayHello{
-    font-size: 22px;
+ .SayHello h1{
+    font-size: 28px;
   }
+
+  .our-offices-mobile h1{
+    font-size: 28px;
+   }
 
 
   .submit{
@@ -162,7 +172,9 @@ a:hover
     display: none;
   }
 
-
-
+  .text-inside-header-picture{
+    margin-top: -200px;
+    padding-bottom: unset;
+  }
 
 }

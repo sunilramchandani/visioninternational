@@ -4,8 +4,12 @@
     <div class = "row bg-color">
         <div class = "top-prefooter-content text-center">
             <p class = "banner-paragraph">Start an amazing future with us! </p> 
-            <a class = "btn applynow-button" href = "application"> Apply Now</a>
-        </div>
+            <a class = "btn applynow-button" id="btn-large" href = "application"> Apply Now</a>
+            <div class="col-sm-12 hidden-lg hidden-md hidden-xl">
+                <a class = "btn applynow-button" id="btn-small" href = "application"> Apply Now</a>
+            </div>
+            </div>
+           
     </div>
 
     @if (count($errors) > 0)
