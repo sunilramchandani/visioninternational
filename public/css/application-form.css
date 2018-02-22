@@ -58,8 +58,7 @@ body{
 	padding-bottom: 5%;
 }
 .text-title{
-	padding-bottom: 1%;
-	margin-top: -35px;
+	padding-bottom: 4%;
 }
 .left-side{
 	margin-right: 10%;
@@ -67,6 +66,15 @@ body{
 .img-line{
 	display: none;
 }
+.label-container{
+    padding-top: 4%;
+}
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; cursor: pointer; }
+.autocomplete-selected { background: blue; color: white; }
+.autocomplete-suggestions strong { font-weight: bold; color: orange; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.img-border{
 		display: none;

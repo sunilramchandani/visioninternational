@@ -96,7 +96,7 @@
 </div>
 @endforeach
 <div class="container">
-    <div class="about row">
+    <div class="commit row">
         <div class="col-lg-12 col-md-12 col-sm-12 text-center about-font">
             <h1>Our Commitments</h1>
         </div>
@@ -221,6 +221,7 @@
           <a href = "event/{{$events->fbevent_id}}" class = "submit btn"><span>More Info</span></a>
         </div>
       @endforeach
+      <!--BUTTON WHEN MOBILE -->
         <div class = "col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 show-all-container">
             <a href = "" class = "show-all btn"><span>Show All</span></a>
         </div>
@@ -276,6 +277,30 @@
     @endif
 @endforeach
 <!-- End of Promos -->
+<!-- Start of featured company-->
+<div class="container text-center">
+    <div class="row">
+        <h1>Featured Companies</h1>
+    </div>
+</div>
+ <div class="container">
+    <div class="container row home-page-events">
+      @foreach($internshipcompany_table as $internship)
+        <div class = "col-md-3 col-xs-5 events-content">
+          <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$internship->image}}" alt="" class = "event-img img">
+          
+          <h4 class = " details text-center">{{$internship->company_name}} </h4> 
+          <p class = "details text-center">{{ \Illuminate\Support\Str::words($internship->description, 17,' ... ')}}</p>
+         
+          <a href = "/internshipcompany" class = "submit btn"><span>More Info</span></a>
+        </div>
+      @endforeach
+    </div>
+</div>
+
+
+<!-- End of featured comapny --> 
+
 @foreach ($featuredimage_home as $featured)
     @if ($featured->sub_image4 != Null)
         <div class="container">

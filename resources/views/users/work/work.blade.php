@@ -8,7 +8,7 @@
 @section('content')
 <form action="" method="post" role="form">
  {{csrf_field()}}
-<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
+<div class = "col-md-12 col-sm-12 col-xs-12 whole-page">
 @foreach ($featuredimage_work as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
@@ -17,7 +17,7 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-                <H1> work </H1>
+                <H1> WORK & TRAVEL </H1>
                 <p class ="p-dynamic"> Get ahead in your careers with an work experience abroad</p>
             </div>
         
@@ -223,105 +223,108 @@
 </div>
         <!--Rate -->
         <div class = "container">
-            <div class = "row">
-                <div class = "col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-xs-12 rate-container">
-                        <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class = "text-left-side col-lg-offset-1">
-                                <h2 class = "gradient"> What's the rate? </h2>
-                                <h3 class = "gradient1"> There is plenty to experience! </h3>
-                            </div>
-                            <div class = "row row-price">
-                                <div class = "col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
-                                    <h4>Duration</h4>
-                                </div>
-                               <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <select class = "form-control" name="duration" id="duration">
-                                        <option value="6">6 Months</option>
-                                        <option value="7">7 Months</option>
-                                        <option value="8">8 Months</option>
-                                        <option value="9">9 Months</option>     
-                                    </select>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                 <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p id = "reservation">PHP 3000</p></strong>
-                                </div>
-                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <p>Reservation</p>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                 <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p id = "1st-Installment">USD 450</p></strong>
-                                </div>
-                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <p>First Installment *</p>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3 last-row last-row1 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <strong><p id = "2nd-Installment">USD 3100</p></strong>
-                                </div>
-                               <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 last-row">
-                                    <p>Second Installment **</p>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                 <div class = "col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
-                                    <strong><p id = "3rd-Installment">USD 3550</p></strong>
-                                </div>
-                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <p>Total Program Payment</p>
-                                </div>
-                            </div>
-                            <div clas = "row row-price">
-                                <div class = "col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3 col-xs-9">
-                                    <a class = "btn locate-me" href = "/application"> Apply Now </a>
-                                </div>
-                            </div>
+            <div class = "row rate-container">
+                    <div class = "col-md-7 col-xs-6 left-rate">
+                        <div class = "text-left-side ">
+                            <h2 class = "gradient"> What's the rate? </h2>
+                            <h3 class = "gradient1"> There is plenty to experience! </h3>
                             <br>
-                            <div class = "row row-price-legend">
-                                <div class = "col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                                    <p> * Money Back Guarantee </p>
-                                    <p> ** Money Back Guarantee + includes medical insurance </p>
-                                    <strong><p class = "add-fees">Additional Fees:</p></strong>
-                                    <p>USD 180 SEVIS Fee and</p>
-                                    <p>USD 160 US embassy interview booking fee</p>
+                            <h4>Choose your season</h4>
+                            <br>
+                        </div>
+                        <div class = "row row-price">
+                            <!--Spring -->
+                            <div class = "col-md-4 col-xs-6 spring">
+                                <div class = "col-md-2 col-xs-3 spring-bg">
+                                </div>
+                                <div class = "col-md-9 col-xs-9 ">
+                                    <p class = "spring-text"><strong>Spring</strong><br>March - June</p>
+                                </div>
+                            </div>
+                            <!--Summer -->
+                           <div class = "col-md-5 col-xs-6 summer">
+                                <div class = "col-md-2 col-xs-3 summer-bg">
+                                </div>
+                                <div class = "col-md-10 col-xs-9 ">
+                                    <p class = "summer-text"><strong>Summer</strong><br>June - September</p>
                                 </div>
                             </div>
                         </div>
-                        <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6 rate-image">
-                             <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner">
+                        <div class = "row row-price">
+                             <div class = "col-md-3  col-xs-3 ">
+                                <strong><p id = "reservation">PHP 1000</p></strong>
+                            </div>
+                            <div class = " col-md-4 col-sm-4 col-xs-4">
+                                <p>Reservation</p>
+                            </div>
                         </div>
+                        <div class = "row row-price">
+                             <div class = "col-md-3 col-xs-3">
+                                <strong><p id = "1st-Installment">USD 450</p></strong>
+                            </div>
+                            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>First Installment *</p>
+                            </div>
+                        </div>
+                        <div class = "row row-price">
+                            <div class = " col-md-3 col-xs-3 last-row last-row1">
+                                <strong><p id = "2nd-Installment">USD 3100</p></strong>
+                            </div>
+                           <div class = "col-md-5 col-sm-4 col-xs-4 last-row">
+                                <p>Second Installment *</p>
+                            </div>
+                        </div>
+                        <div class = "row row-price">
+                             <div class = "col-md-3  col-xs-3">
+                                <strong><p id = "3rd-Installment">USD 3550</p></strong>
+                            </div>
+                            <div class = " col-md-7 col-sm-4 col-xs-4">
+                                <p>Total Program Payment**</p>
+                            </div>
+                        </div>
+
+                        <div clas = "row row-price">
+                            <div class = "col-md-9 col-md-offset-3 col-xs-9">
+                                <a class = "btn locate-me" href = "/application"> Apply Now </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class = "row row-price-legend">
+                            <p> * Money Back Guarantee **   Airfare NOT included</p>
+                            <strong><p class = "add-fees">Additional Fees:</p></strong>
+                            <p>USD 35 SEVIS Fee</p>
+                            <p>USD 160 US embassy interview booking fee</p>
+                        </div>
+                    </div>
+                    <div class = "col-md-5  col-xs-6 rate-image">
+                         <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner">
                     </div>
                 </div>
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
-            var e = document.getElementById("duration");
-            e.onchange = function() {
-                var strUser = e.options[e.selectedIndex].value;
-                if(strUser == "6"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3100";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3550";
-                }
-                if(strUser == "7"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3150";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3600";
-                }   
-                if(strUser == "8"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3350";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3800";
-                }   
-                if(strUser == "9"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3650";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 4100";
-                }                 
-            }
+
+            $(".spring").hover(function(){
+                $(".spring-bg").css("background-image", 'url("/image/icons/Spring-H.png")');
+                $(".summer-bg").css("background-image", 'url("/image/icons/Summer.png")');
+                $(".spring-text").css("color", '#f4645f');
+                $(".summer-text").css("color", 'black');
+                document.getElementById('1st-Installment').innerHTML = "Php 4,000";
+                document.getElementById('2nd-Installment').innerHTML = "Php 45,000";
+                document.getElementById('3rd-Installment').innerHTML = "Php 50,000";
+                }, function(){
+            });
+
+           $(".summer").hover(function(){
+                $(".summer-bg").css("background-image", 'url("/image/icons/Summer-H.png")');
+                $(".spring-bg").css("background-image", 'url("/image/icons/Spring.png")');
+                $(".summer-text").css("color", '#f4645f');
+                $(".spring-text").css("color", 'black');
+                document.getElementById('1st-Installment').innerHTML = "USD 150";
+                document.getElementById('2nd-Installment').innerHTML = "USD 1,350";
+                document.getElementById('3rd-Installment').innerHTML = "USD 1,500";
+            }, function(){
+            });
         </script>
         <!--Testimony-->
 
@@ -358,7 +361,7 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
 
