@@ -37,13 +37,13 @@ class ProgramsController extends Controller
             if (!$result) {
                 $error = [
                     'type' => 'danger',
-                    'message' => 'Something went wrong while creating your program'
+                    'message' => 'Something went wrong while creating your Promo'
                 ];
             }
 
             return redirect()->route('programs.list')->with('flash', [
                 'type' => 'success',
-                'message' => 'Program was successfully added.'
+                'message' => 'Promo was successfully added.'
             ]);
         }
 
@@ -74,12 +74,12 @@ class ProgramsController extends Controller
             if (!$result) {
                 $error = [
                     'type' => 'danger',
-                    'message' => 'Something went wrong while updating program'
+                    'message' => 'Something went wrong while updating Promo'
                 ];
             } else {
                 return redirect()->route('programs.list')->with('flash', [
                     'type' => 'success',
-                    'message' => 'Program was successfully updated'
+                    'message' => 'Promo was successfully updated'
                 ]);
             }
         }
@@ -107,12 +107,12 @@ class ProgramsController extends Controller
         $result = Programs::destroy($id);
         $flash = [
             'type' => 'success',
-            'message' => 'Program was successfully deleted'
+            'message' => 'Promo was successfully deleted'
         ];
 
         if (!$result) {
             $flash['type'] = 'danger';
-            $flash['message'] = 'Something went wrong while deleting program';
+            $flash['message'] = 'Something went wrong while deleting Promo';
         }
 
         return redirect()->route('programs.list')->with('flash', $flash);

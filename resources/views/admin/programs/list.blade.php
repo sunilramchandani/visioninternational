@@ -1,13 +1,16 @@
 @extends('layouts.admin')
 
 @section('content-header')
-    <section class="content-header">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1 class="page-header">Programs</h1>
-            </div>
-        </div>
-    </section>
+<section class="content-header">
+<div class="row">
+    <div class="col-xs-10">
+        <h1 class="page-header">Program</h1>
+    </div>
+    <div class="col-xs-2">
+        <a href="{{route('programs.create')}}"><button style ="" class="btn btn-success">New Program</button></a>
+    </div>
+</div>
+</section>
 @endsection
 
 @section('content-main')
@@ -22,12 +25,16 @@
                 <table class="table table-bordered tabled-striped">
                     <thead>
                         <th>Title</th>
+                        <th>Image</th>
+                        <th>Validity</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
                         @foreach($programs as $program)
                             <tr>
                                 <td>{{ $program->title }}</td>
+                                <td>{{ $program->image_promo }}</td>
+                                <td>{{ $program->validity }}</td>
                                 <td>
                                     <a
                                         href="{{ route('programs.edit', $program->id) }}"
