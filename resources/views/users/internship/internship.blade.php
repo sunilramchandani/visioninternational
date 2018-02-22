@@ -421,25 +421,14 @@ $(function() {
   var gid = {!! json_encode($internship_id->toArray()) !!};
   var image = {!! json_encode($internship_image->toArray()) !!};
   var featured = {!! json_encode($internship_featured->toArray()) !!};
+  var $_GET = <?php echo json_encode($_GET); ?>;
+  var eid = $_GET['eid'];
   var counter = 0 ;
-  var infowindow; 
+  var infowindow ; 
   var map;
-  var goldStar = {
-          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
-          fillColor: 'yellow',
-          fillOpacity: 0.8,
-          scale: 1,
-          strokeColor: 'gold',
-          strokeWeight: 14
-        };
 function initMap() {
     
     var elevator;
-
-
-    
-
-
     var myOptions = {
         zoom: 4,
         maxZoom: 10,
@@ -464,10 +453,12 @@ function initMap() {
             var p = data.results[0].geometry.location
             var latlng = new google.maps.LatLng(p.lat, p.lng);     
             addMarker(map,bounds,latlng,featured[counter]);
-           
+
         });
+            
     }
         map.fitBounds(bounds);
+
 } 
     function addMarker(map,bounds, latlng,featured){
         if(featured == 'Yes'){
@@ -510,6 +501,12 @@ function initMap() {
           map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });
+        if(eid !== undefined){
+            if(gid[counter] == eid)
+            {
+                infowindow.open(map, gmarkers[counter]);
+            }
+        }
         counter++;
     }
     
