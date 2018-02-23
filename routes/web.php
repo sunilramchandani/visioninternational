@@ -468,7 +468,7 @@ Route::resource('faq', 'faqController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });
-Route::get('/event/{fbevent_id}', [
+Route::get('/single_event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'
 ]);

@@ -220,6 +220,8 @@ class BlogController extends Controller
     //custom functions
 
     public function userIndex(Request $request){
+
+        
         if (request()->has('category_id')){
 
             $s = $request->input('s');

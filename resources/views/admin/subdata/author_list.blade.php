@@ -37,7 +37,7 @@
                     <tr>
                         <td>{{ $author->name }}</td>
                             <td>
-                                <img height="150px" width "150px" src="{{URL::asset('storage/upload_author_image')}}/{{$author->image}}"
+                                <img height="200px" width "200px" src="{{URL::asset('storage/upload_author_image')}}/{{$author->image}}"
                                     alt="Image Error" />
                             </td>
                         <td>{{ (strip_tags($author->description)) }}</td>

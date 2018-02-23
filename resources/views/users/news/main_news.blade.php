@@ -1,8 +1,8 @@
 @extends('layouts.master') @section('page-css')
 <link rel="stylesheet" href="{{ asset('css/image-preview.css') }}">
-<link rel="stylesheet" href="{{ asset('css/news.css') }}"> @stop @include('layouts.navbar') @section('content')
+<link rel="stylesheet" href="{{ asset('css/blog.css') }}"> @stop @include('layouts.navbar') @section('content')
 
-<div class="col-lg-12 whole-page">
+<div class="col-lg-12 whole-page row">
     @foreach ($featuredimage_news as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
@@ -23,11 +23,11 @@
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
-                <div class="col-lg-8">
+                <div class="col-lg-8 col-lg-offset-1">
                     @foreach($news_table as $news)
-                    <div class="image-news">
+                    <div class="container-fluid image-blog">
                         <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1">
+                            <div class="col-lg-12">
                                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
                                     <ol class="carousel-indicators">
@@ -47,6 +47,7 @@
                                                     <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="main-img-reponsive img-responsive "
                                                         alt="Company Banner">
                                                 </div>
+                                                <br>
                                             </div>
                                         </div>
                                         @endforeach
@@ -57,34 +58,40 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1 left-main-title  ">
+                            <div class="col-lg-12  left-main-title  ">
                                 <strong>{{$news->title}}</strong>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1 left-main-title ">
-                                @foreach ($news->author as $newss) {{$newss->name}} @endforeach | {{Carbon\Carbon::parse($news->date)->toFormattedDateString()}}
+                            <div class="col-lg-12  left-main-title ">
+                                <p>@foreach ($news->author as $newss) {{$newss->name}} @endforeach | {{Carbon\Carbon::parse($news->date)->toFormattedDateString()}}</p>
 
                             </div>
 
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1 left-main-title ">
-                                <p> {{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}} </p>
+                            <div class="col-lg-12  left-main-title ">
+                               <p>{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p> 
                             </div>
                         </div>
+
+
                         <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1 left-main-title ">
+                            <div class="col-lg-12  left-main-title ">
                                 <a href="/news/{{$news->id}}" class="submit btn">
-                                    <span>Read More</span>
+                                    <span>Read More</span>  
                                 </a>
                             </div>
                         </div>
+
+                        
                         <div class="row">
                             <div class="col-lg-12 hr-main-title ">
-                                <hr>
+                            <hr>
                             </div>
                         </div>
+
+
                         <div class="row">
                             <div class="col-lg-6 share-main-title ">
                                 <span>Share This Article: </span>
@@ -115,8 +122,9 @@
                 </div>
 
                 <!-- right side -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
-                    <div class="col-lg-offset-3">
+                <div class="col-lg-3 ">
+                    <div class= "row">
+    
                         <form action="{{route('userNews.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -132,18 +140,22 @@
 
 
                         </form>
-                    </div>
+            
                     <br>
+                    </div>
+
+
+                    <div class= "row">
+                    
                     <table class="table table-categories table-borderless table-hover">
                         <thead bgcolor="#800000">
                             <tr>
-                                <th class="header-table text-center">CATEGORIES</th>
-                                <th class="header-table text-center"></th>
+                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p></h4>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($category_table as $category)
-                            <tr class='clickable-row' data-href='fb?ecat=General'>
+                            <tr class='clickable-row'>
                                 <td>{{$category->category_name}}</td>
                                 <td>
                                     <a href="/news?category_id={{$category->id}}">
@@ -155,26 +167,23 @@
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
+                    
+                    <div class= "row">
+
 
                     <table class="table table-categories table-borderless table-hover">
                         <thead bgcolor="#800000">
                             <tr>
-                                <th class="header-table" style="padding-left: 25px">RECENT POST</th>
-                                <th class="header-table" style="padding-left: 25px"></th>
+                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p></h4>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($news_table as $news)
-                            <tr class='clickable-row' data-href='fb?ecat=General'>
+                            <tr class='clickable-row'>
                                 <td>
                                     <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <ol class="carousel-indicators">
-                                            @foreach( $news->mainimageupload as $mainnewsimage )
 
-                                            <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                                            @endforeach
-                                        </ol>
 
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner" role="listbox">
@@ -183,7 +192,7 @@
                                             <div class="item {{ $loop->first ? ' active' : '' }}">
                                                 <div class="carousel-inner">
                                                     <div class="carousel-item active">
-                                                        <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="single-img-reponsive img-responsive "
+                                                        <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="caro-img-reponsive img-responsive "
                                                             alt="Company Banner">
                                                     </div>
                                                 </div>
@@ -192,12 +201,12 @@
                                         </div>
                                         <!-- end of carousel -->
                                     </div>
-                                    <td>
-                                        <!-- TODO: -->
-                                        @foreach ($news->newscategory as $newsz) {{$newsz->categorylist->category_name}} @endforeach
-                                    </td>
+                                </td>
 
                                     <td>
+                                        <p> @foreach ($news->newscategory as $newsz) 
+                                            @if ($loop->first) {{ $newsz->categorylist->category_name }}  @endif
+                                            @endforeach</p>
                                         <a href="/news/{{$news->id}}">
                                             <i style="color:black;">{{$news->title}}</i>
                                         </a>
@@ -208,6 +217,7 @@
 
                         </tbody>
                     </table>
+                        </div>
 
                 </div>
 

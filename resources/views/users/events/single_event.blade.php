@@ -14,7 +14,7 @@
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "col-lg-10 col-lg-offset-1 row">
-    	<a href = "/fb" class = "back"><h3> Back to Events </h3></a>
+    	<a href = "/event" class = "back"><h3> Back to Events </h3></a>
     </div>
     <div class = "col-lg-8 col-lg-offset-1">
     	<img src="{{$events->cover_source}}" alt="" class = "event-img img">
@@ -69,26 +69,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr class='clickable-row' data-href='fb?ecat=General'>
-              <td>General</td>
-              <td>({{$category_events_general}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Design'>
-              <td>Design</td>
-              <td>({{$category_events_design}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Events'>
-              <td>Events</td>
-              <td>({{$category_events_events}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=Food'>
-              <td>Food</td>
-              <td>({{$category_events_food}})</td>
-            </tr>
-            <tr class='clickable-row' data-href='fb?ecat=JobFair'>
-              <td>Job Fair</td>
-              <td>({{$category_events_jobfair}})</td>
-            </tr>
+          @foreach ($category_table as $category)
+          <tr class='clickable-row'>
+              <td>{{$category->category_name}}</td>
+              <td>
+                  <a href="/event?event_id={{$category->id}}">
+                      <i style="color:black;">{{$category->eventcategorytable_count}}</i>
+                  </a>
+              </td>
+
+          </tr>
+          @endforeach
           </tbody>
        </table>    
 	</div>
