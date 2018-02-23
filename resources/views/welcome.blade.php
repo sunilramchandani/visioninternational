@@ -234,6 +234,76 @@
     </div>
 
     <!--End of Events -->
+
+    <!--featured company -->
+    <div class="container text-center">
+        <div class="row promos-header">
+            <div class="about-font">
+                <h1>Featured Properties</h1>
+            </div>
+        </div>
+    </div>
+          <div class="row">
+            <div id ="carousel-featured" class="col-md-12 hidden-xs hidde-sm carousel slide " data-ride="carousel">
+                <!-- Indicators -->
+                
+                <ol class="carousel-indicators">
+                @foreach($internshipcompany_table as $internship)
+                    <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                @endforeach
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    @foreach($internshipcompany_table as $internship)
+                    <div class="item {{ $loop->first ? ' active' : '' }}">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container text-center promos">    
+                                    <div class="col-md-6 col-md-offset-1 hidden-xs hidden-sm hidden-xs promo-pic-container">
+                                        <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" class="img img-responsive  promo-pic"
+                                            alt="Company Banner">
+                                    </div>
+                                    <div class="col-md-4 hidden-sm hidden-xs  promo-desc">
+                                        <div class="upper-content">
+                                            <h3 class="dynamic-promo-title"> {{$internship->company_name}}</h3>
+                                            <p class="dynamic-promo-text">{{$internship->description}}</p>
+                                            <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn featured-btn">More Info</a>
+                                        </div>
+                                        <div class="lower-content col-md-11">
+                                            <div class="col-md-6 col-xs-4 validity-container">
+                                                <p class="validity-text">Share this promo: </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>  
+                    </div>
+                    @endforeach
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-featured" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-featured" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+                <!-- end of carousel -->
+            </div>
+            <div class="hidden-md hidden-lg col-xs-5 events-content">
+                <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" alt="" class="event-img img">
+
+                <h4 class=" details text-center">{{$internship->company_name}} </h4>
+                <p class="details text-center">{{ \Illuminate\Support\Str::words($internship->description, 14,' .... ')}}</p>
+            </div>
+</div>
+    <!-- end of Featured --> 
+
+
+
     @foreach ($featuredimage_home as $featured) @if ($featured->sub_image3_title != Null)
     <!-- Start of Promos -->
     <div class="container text-center">
@@ -247,31 +317,29 @@
         </div>
     </div>
 
-
     <!-- Promo picture -->
-
     <div class="container text-center promos">
-        <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 hidden-sm hidden-xs promo-pic-container">
+        <div class="col-md-6 col-md-offset-1 hidden-sm hidden-xs promo-pic-container">
             <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" class="img img-responsive  promo-pic"
                 alt="Company Banner">
         </div>
-        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs  promo-desc">
+        <div class="col-md-4 hidden-sm hidden-xs  promo-desc">
             <div class="upper-content">
-                <h4 class="dynamic-promo-title"> {{$featured->sub_image3_title}}</h4>
-                <h4 class="dynamic-promo-text">{{$featured->sub_image3_description}}</h4>
+                <h3 class="dynamic-promo-title"> {{$featured->sub_image3_title}}</h3>
+                <p class="dynamic-promo-text">{{$featured->sub_image3_description}}</p>
                 @if ($featured->link == "internship")
                 <a href="/internshipcompany" class="btn moreinfo">More Info </a>
                 @else
                 <a href="/workcompany" class="btn moreinfo">More Info </a>
                 @endif
             </div>
-            <div class="lower-content">
-                <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4 col-xs-8 col-xs-offset-4 validity-container">
+            <div class="lower-content col-md-11">
+                <div class="col-md-8 col-md-offset-4 col-xs-8 col-xs-offset-4 validity-container">
                     <p class="validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
                 </div>
             </div>
         </div>
-        <div class="hidden-lg hidden-md hidden-xl col-sm-5 col-xs-5 events-content">
+        <div class="hidden-lg hidden-md hidden-xl col-xs-5 events-content">
             <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" alt="" class="event-img img">
 
             <h4 class=" details text-center">{{$featured->sub_image3_title}} </h4>
@@ -281,97 +349,41 @@
     </div>
     @endif @endforeach
     <!-- End of Promos -->
-    <!-- Start of featured company-->
-    <div class="container text-center">
-        <div class="row">
-            <h1>Featured Companies</h1>
-        </div>
-    </div>
-    <div class="container">
-        <div class="container row home-page-events">
-            @foreach($internshipcompany_table as $internship)
-            <div class="col-md-3 col-xs-5 events-content">
-                <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$internship->image}}" alt="" class="event-img img">
 
-                <h4 class=" details text-center">{{$internship->company_name}} </h4>
-                <p class="details text-center">{{ \Illuminate\Support\Str::words($internship->description, 17,' ... ')}}</p>
-                <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn">
-                    <span>More Info</span>
-                </a>
+ 
+    <!--testimony-->
+        <div class="container">
+            <div class="row testimony-header">
+                <div class="about-font text-center">
+                     <h3>Our Community</h3>
+                     <p>Get inspiration from those who have come before you 
+                        <br>Here are some of our students who have experienced work life abroad
+                    </p>
+                </div>
             </div>
-            @endforeach
-        </div>
-    </div>
-
-
-
-
-
-
-    
-    
-    <div class="container">
-        <div class="row testimony-header">
-            <div class="about-font text-center">
-                <h1>Our Community</h1>
-                <p>We are proud to have an amazing community of students and professionals
-                    <br>who have received the VIP treatment. Listen to their stories.
-                </p>
-            </div>
-        </div>
-        <div class="row testimony-content">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div id ="carousel-testimony" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 carousel slide " data-ride="carousel">
-                    <!-- Indicators -->
-                    
-                    <ol class="carousel-indicators">
-                    @foreach ($testimonials as $testimonial)
-                        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                        @endforeach
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                    @foreach ($testimonials as $testimonial)
-                    
-                        <div class="item {{ $loop->first ? ' active' : '' }}">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                <blockquote>{{$testimonial->dsecription}}
-                                <cite>{{$testimonial->last_name}}, {{$testimonial->first_name}}</cite>
-                                <cite>{{$testimonial->organization}}</cite>
-                                 </blockquote>
-
-                                    <img src="{{ URL::asset('image/uploaded_testimony_image')}}/{{$testimonial->image_testimony}}" class="main-img-reponsive img-responsive "
-                                        alt="Company Banner">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        @endforeach
-                        <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-testimony" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-testimony" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
+            <div class = "row testimony-content">
+                <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-8 testimony-description">
+                        <blockquote>
+                            This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
+                            <cite>Karissa MArie Salengua</cite>
+                            <cite>Work & Travel Program, California</cite>
+                        </blockquote>
                     </div>
-                    <!-- end of carousel -->
+                    <div clas = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                         <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-rounded testimony-picture" alt="Company Banner">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 <div class="row">
 </div>
 @section('script')
+
 <script type="text/javascript">
-$('.carousel-testimony').carousel({
+$('.carousel-featured').carousel({
     interval: false
 });
 @endsection
