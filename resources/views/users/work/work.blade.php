@@ -8,8 +8,8 @@
 @section('content')
 <form action="" method="post" role="form">
  {{csrf_field()}}
-<div class = "col-md-12 col-sm-12 col-xs-12 whole-page">
-@foreach ($featuredimage_work as $featured)
+<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
+@foreach ($featuredimage_internship as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
@@ -17,11 +17,12 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-                <H1> WORK & TRAVEL </H1>
-                <p class ="p-dynamic"> Get ahead in your careers with an work experience abroad</p>
+                <H1> INTERNSHIP </H1>
+                <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
             </div>
         
 @endforeach
+
         </div>
             </div>
 
@@ -30,7 +31,7 @@
         <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
-            <p> Our work Programs prepare students for life and work outside of school.Participants  </p>
+            <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
             <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
         </div>
     </div>
@@ -40,41 +41,60 @@
                 <div class="dropdown">
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
+                  <div id="links">
+                  <a href="/internshipcompany">All</a>
                     @if ( Request::get('state')  )
-                        @foreach ($work_filter as $filter)
-                            <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                        @foreach ($internship_filter as $filter)
+                            <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
-                        @foreach ($workCompany_table as $company)
-                            <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
+                        @foreach ($internshipCompany_table as $company)
+                            <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
                         @endforeach
                     @endif
+                    </div>
                   </div>
                 </div>
                 <div class="dropdown">
                   <a class="dropbtn-filter">Industry</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($workCompany_table as $company)
-                        @foreach ($company->work_industry as $industry)
-                            <a href="#">{{$industry->industry_name}}</a>
+                    @if ( Request::get('state')  )
+                        @foreach ($internship_filter as $filter)
+                            @foreach ($filter->work_industry as $industry)
+                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                            @endforeach
                         @endforeach
-                    @endforeach
+                    @else
+                        @foreach ($internshipCompany_table as $company)
+                            @foreach ($company->work_industry as $industry)
+                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                            @endforeach
+                        @endforeach
+                    @endif
                   </div>
                 </div>
                 <div class="dropdown">
                   <a class="dropbtn-filter">Start Dates</a>
                   <div class="dropdown-content-filler">
-                    @foreach ($workCompany_table as $company)
-                         @foreach ($company->work_duration as $duration)
-                            <a href="#">{{$duration->duration_start_date}}</a>
+                     @if ( Request::get('state')  )
+                        @foreach ($internship_filter as $filter)
+                            @foreach ($filter->work_duration as $duration)
+                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                            @endforeach
                         @endforeach
-                    @endforeach
+                    @else
+                        @foreach ($internshipCompany_table as $company)
+                             @foreach ($company->work_duration as $duration)
+                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                            @endforeach
+                        @endforeach
+                    @endif
                   </div>
                 </div>
             </div>
             <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-4 filter-result">
-                @for ($i = 0; $i < count($workCompany_table)+1; $i++)
-                    @if ($i == count($workCompany_table))
+                @for ($i = 0; $i < count($internshipCompany_table)+1; $i++)
+                    @if ($i == count($internshipCompany_table))
                         <p>Total Results: <strong> {{ $i }} </strong></p>
                     @endif
                 @endfor
@@ -118,22 +138,25 @@
     <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 picture" id = "map">  
     </div>
     <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
-
-        @foreach ($workCompany_table as $company)
+    
+        @foreach ($internshipCompany_table as $company)
             <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
-                    <img src="{{ URL::asset('image/uploads/'.$company->image)}}" class="img img-responsive company-head" alt="Company Banner">
+                    <img src="{{ URL::asset('image\uploaded_workcompany_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
                 </div>
                 <div class = "row info">
                     <h4>{{$company->full_address}}</h4>
-                    <h2>{{$company->company_name}}</h2>
+                    <h3>{{$company->company_name}}</h3>
                     <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');" class = "btn locate-me1"> Locate Me </a>
+                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                 </div>
             </div> 
+        
         @endforeach
+       
+         
     
-    </div>
+</div>
 </div>
 <!--whats next?-->
 <div class = "container">
@@ -365,82 +388,104 @@
 <script type="text/javascript">
 
 
-  var deletePostUri = "{{ route('workcompany.index')}}";
+var deletePostUri = "{{ route('internshipcompany.index')}}";
   var gmarkers = [];
-  var gaddress = {!! json_encode($work_addresses->toArray()) !!};
-  var gname = {!! json_encode($work_name->toArray()) !!};
-  var gdesc = {!! json_encode($work_desc->toArray()) !!};
-  var gid = {!! json_encode($work_id->toArray()) !!};
-  var image = {!! json_encode($work_image->toArray()) !!};
+  var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
+  var gname = {!! json_encode($internship_name->toArray()) !!};
+  var gdesc = {!! json_encode($internship_desc->toArray()) !!};
+  var gid = {!! json_encode($internship_id->toArray()) !!};
+  var image = {!! json_encode($internship_image->toArray()) !!};
+  var featured = {!! json_encode($internship_featured->toArray()) !!};
+  var $_GET = <?php echo json_encode($_GET); ?>;
+  var eid = $_GET['eid'];
   var counter = 0 ;
+  var infowindow ; 
+  var map;
 function initMap() {
-    var map;
+    
     var elevator;
-
-
     var myOptions = {
-        zoom: 1,
+        zoom: 4,
+        maxZoom: 10,
         center: new google.maps.LatLng(0, 0),
         mapTypeId: 'terrain'
     };
 
     //map settings
-    map = new google.maps.Map($('#map')[0], myOptions);
+    map = new google.maps.Map($('#map')[0], myOptions);    
+
     var bounds = new google.maps.LatLngBounds();
     map.setCenter(bounds.getCenter());
-    map.setZoom(map.getZoom()-1); 
-    if(map.getZoom()> 15){
-      map.setZoom(15);
-    }
+
+
+
 
     //controller addresses
-    var addresses = {!! json_encode($work_addresses->toArray()) !!};
+    var addresses = {!! json_encode($internship_addresses->toArray()) !!};
 
     for (var x = 0; x < addresses.length; x++) {
         $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
             var p = data.results[0].geometry.location
             var latlng = new google.maps.LatLng(p.lat, p.lng);     
-            addMarker(map,bounds,latlng);
-           
+            addMarker(map,bounds,latlng,featured[counter]);
+
         });
+            
     }
+        map.fitBounds(bounds);
+
 } 
-    function addMarker(map,bounds, latlng){
-        var markers = new google.maps.Marker({
-                position: latlng,
-                map: map
-        });
+    function addMarker(map,bounds, latlng,featured){
+        if(featured == 'Yes'){
+            var markers = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+            });
+        }
+        else{
+            var markers = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+            });
+        }
         gmarkers.push(markers);
         bounds.extend(markers.getPosition());
-        map.fitBounds(bounds);
+        
         addInfoWindow(markers);
     }
     function addInfoWindow(markers){
         var secretMessage = '<div id="container " class = "infowindow">'+
                                 '<div class = "col-lg-4 image-container" >'+
-                                    '<img src="image/uploads/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
+                                    '<img src="image/uploaded_workcompany_image/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
                                 '</div>'+
                                 '<div class = "col-lg-8" id="siteNotice">'+
                                     '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                     '<div id="bodyContent">'+
                                        '<p class = "map-description">'  + gdesc[counter].slice(0, 150) + '</p><br><br>'+
-                                        '<a data-toggle="modal" data-target="#myModal" class = "btn locate-me2" href = "/work?cid=' +  gid[counter] + '"> Learn More </a>' +
+                                        '<a data-toggle="modal" data-target="#myModal" class = "btn locate-me2" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>' +
                                     '</div>'+
                                 '</div>'+
                             '</div>';
         var infowindow = new google.maps.InfoWindow({
           content: secretMessage
         });
-        markers.addListener('click', function() {
+        google.maps.event.addListener(markers,'click',function() {
+          map.setZoom(10);
+          map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });
+        if(eid !== undefined){
+            if(gid[counter] == eid)
+            {
+                map.setCenter(gmarkers[counter].getPosition());
+                infowindow.open(map, gmarkers[counter]);
+            }
+        }
         counter++;
     }
     
-    $('#myModal').on('hidden.bs.modal', function () {
- location.reload();
-})
-
 </script>
 
 <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAzQQYFrug-yB5tVMh7KL6av4U1SegZcec&callback=initMap">

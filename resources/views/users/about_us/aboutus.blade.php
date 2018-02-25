@@ -64,32 +64,36 @@
     </div>
     <!--end of boxes -->
     <!-- Management -->
-    <div class = "container employee-container">
-    	<div class = "management">
-    		<div class = "col-md-12">
-    			<p><strong>Management</strong></p>
-    		</div>
-    		<div class = "row">
-    			<div class = "col-md-12 whole-employee">
-    			@foreach($about_table as $about)
-    				<div class = "col-md-3 show-side"> 
-    					<img src="{{ URL::asset('image/uploaded_company_image/2018-02-21.49851370_jollibee.jpg')}}" class="img img-responsive employee" alt="Company Banner"/>
-    				</div>
-    				<div class = "col-md-3 hidden-side">
-    					<div class = "col-md-12 top-side-hidden">
-    						<h4>{{$about->about_name}}</h4>
-    						<p class = "position-hidden">{{$about->about_position}}</p>
-    					</div>
-    					<div class = "col-md-12 bottom-side-hidden">
-    						<p class = "desc-hidden">{{$about->about_description}}</p>
-    					</div>
-    				</div>
-    			@endforeach
-    			</div>
-    		</div>
-    	</div>
+     <div class = "container employee-container">
+        <div class = "management">
+            <div class = "col-md-12">
+                <p><strong>Management</strong></p>
+            </div>
+            <div class = "row">
+                <div class = "col-md-12 whole-employee">
+                @foreach($about_table as $about)
+                    <div class = "col-md-3 show-side"> 
+                        <img src="{{ URL::asset('image/uploaded_company_image/2018-02-21.49851370_jollibee.jpg')}}" class="img img-responsive employee" alt="Company Banner"/>
+                    </div>
+                    <div class = "col-md-3 hidden-side">
+                        <div class = "col-md-12 top-side-hidden">
+                            <h4>{{$about->about_name}}</h4>
+                            <p class = "position-hidden">{{$about->about_position}}</p>
+                        </div>
+                        <div class = "col-md-12 bottom-side-hidden">
+                            <p class = "desc-hidden">{{$about->about_description}}</p>
+                        </div>
+                    </div>
+                @endforeach
+                </div>
+            </div>
+        </div>
     </div>
     <!--End of Management -->
 </div>
 <div class = "row"></div> 
-@stop
+@section('script')
+
+<script type="text/javascript">
+</script>
+@endsection

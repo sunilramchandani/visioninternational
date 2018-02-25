@@ -26,33 +26,64 @@ class WorkCompanyController extends Controller
      */
     public function index(Request $request)
     {
+        if (request()->has('id')){
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('id','asc')->get();
 
-        if (request()->has('state')){
-            $featuredimage_work = FeaturedImage::where('page_name','work')->get();
-            $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
             
-            $work_addresses = WorkCompany::where('state', request('state'))->pluck('housing_address');
-            $work_name = WorkCompany::where('state', request('state'))->pluck('company_name');
-            $work_desc = WorkCompany::where('state', request('state'))->pluck('description');
-            $work_filter = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
-            $work_id = WorkCompany::where('state', request('state'))->pluck('id');
-            $work_image = WorkCompany::pluck('image');
-         
+            $internship_addresses = WorkCompany::where('id', request('id'))->pluck('housing_address');
+            $internship_name = WorkCompany::where('id', request('id'))->pluck('id');
+            $internship_desc = WorkCompany::where('id', request('id'))->pluck('description');
+            $internship_filter = WorkCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internship_id = WorkCompany::where('id', request('id'))->pluck('id');
+            $internship_image = WorkCompany::pluck('image');
+            
+            return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+        }
 
-            return view('users.work.work', compact('work_image', 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
+        else if (request()->has('state')){
+
+            
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->orderBy('featured','desc')->get();
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
+
+            
+            $internship_addresses = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('description');
+            $internship_filter = WorkCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internship_id = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('id');
+            $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
+            
+            return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+        }
+        else if (request()->has('duration')){
+
+            
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->orderBy('featured','desc')->get();
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('duration', request('duration'))->paginate(4)->appends('duration', request('duration'));
+
+            
+            $internship_addresses = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('description');
+            $internship_filter = WorkCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internship_id = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('id');
+            $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
+            
+            return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
         }
         else{
-            $featuredimage_work = FeaturedImage::where('page_name','work')->get();
-            $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->get();
         
-
-            $work_addresses = WorkCompany::orderBy('ID','ASC')->pluck('housing_address');
-            $work_name = WorkCompany::pluck('company_name');
-            $work_desc = WorkCompany::pluck('description');
-            $work_id = WorkCompany::pluck('id');
-            $work_image = WorkCompany::pluck('image');
-
-            return view('users.work.work', compact('featuredimage_work', 'work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
+            $internship_addresses = WorkCompany::orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = WorkCompany::orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = WorkCompany::orderBy('featured','desc')->pluck('description');
+            $internship_id = WorkCompany::orderBy('featured','desc')->pluck('id');
+            $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
+            $internship_featured = WorkCompany::orderBy('featured','desc')->pluck('featured');
+            return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image','internship_featured'));
         }
     }
 
