@@ -1,8 +1,9 @@
 .text-description{
 	line-height: 1.5;
 }
+
 .img-border{
-  margin-top: -17%;
+margin-top: -17%;
   width:105%;
 }
 .header{
@@ -179,19 +180,28 @@
 	padding-bottom: 5%;
 	padding-left: 5;
 	padding-right: 5;
+	color:white;
 }
 
 .dynamic-promo-title{
 	padding-bottom: 5%;
 	padding-top: 10%;
 }
-div.promos{
-	color:white;
-	width:100%;
-	padding-bottom: 5%;
+div.promos {
+    color: white;
+    width: 100%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+.featured-btn{
+	position: absolute !important;
+    bottom: 35px !important;
+    right: 25%;
+    left: 25% !important;
 }
 .testimony-description{
 	padding-top: 5%;
+	padding-left: 5%;
 }
 .promo-pic-container{
 	padding-right: 0;
@@ -200,7 +210,7 @@ div.promos{
 }
 .testimony-picture{
 	height:335px;
-	width:370px;
+	width:32%;
 }
 .picture-header{
 	padding-bottom: 5%;
@@ -310,10 +320,10 @@ color:white;
 .home-page-events{
 	padding-bottom: 5%;
 }
-.lower-content{
-	padding-top: 12px;
-	border-bottom: 1px solid white;
-	
+.lower-content {
+    position: absolute;
+    border-top: 1px solid white;
+    bottom: 0;
 }
 .validity-text{
 	color:white!important;
@@ -367,6 +377,7 @@ color:white;
 	    padding-left: 5;
 	    padding-right: 5;
 	    font-size: 16px;
+
 	}
 	.validity-text {
     	color: white!important;

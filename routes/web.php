@@ -461,6 +461,7 @@ Route::resource('fileupload', 'FileUploadController');
 Route::resource('internshipcompany', 'InternshipCompanyController');
 Route::resource('workcompany', 'WorkCompanyController');
 Route::resource('contactus', 'ContactUsController');
+Route::resource('aboutus', 'AboutUsController');
 Route::resource('event', 'EventPluginController');
 Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
