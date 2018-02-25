@@ -234,7 +234,7 @@ class BlogController extends Controller
                     ->orderBy('created_at', 'desc')
                     ->search($s)
                     ->whereIn('id', $category_blog)
-                    ->paginate(5);
+                    ->paginate(1);
             
             $category_table = CategoryList::withCount('blogcategorytable')->get();
                     

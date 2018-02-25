@@ -58,9 +58,14 @@
           <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
          
           <a class = "submit btn" href = "/single_event/{{$events->fbevent_id}}"><span>More Info</span></a>
+          
         </div>
       @endforeach
+      
+      {{$events_table->appends(['s' => $s])->links()}}
+      
     </div>
+    
     <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2 categories-sidebar">
         <table class="table table-categories table-borderless table-hover">
           <thead bgcolor="#800000">
@@ -84,7 +89,6 @@
           </tbody>
         </table>    
 
-        {{$events_table->appends(['s' => $s])->links()}}
     </div>
   </div>
 </div> 

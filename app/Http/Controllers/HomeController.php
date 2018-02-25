@@ -26,8 +26,29 @@ class HomeController extends Controller
      */
     public function index()
     {
+
   
         $featuredimage_home = FeaturedImage::where('page_name','home')->get();
+
+
+        //use $promo on foreach
+        $get_promo = DB::table('featuredimage')
+            ->where('page_name', 'home')
+            ->first()
+            ->promo_id;
+        
+        $promo = Programs::where('id', $get_promo)->get();
+
+        //use $testimonial on foreach
+        $get_testimonial = DB::table('featuredimage')
+            ->where('page_name', 'home')
+            ->first()
+            ->testimonial_id;
+
+        $testimonial = Testimonials::where('id', $get_testimonial)->get();
+
+
+
         $testimonials = Testimonials::all();
         $programs = Programs::all();
         $state_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->distinct('state')->count('state');
@@ -35,7 +56,7 @@ class HomeController extends Controller
         $applicant_count = Application::count('id');
         $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
         $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
-        return view('welcome', compact('featuredimage_home','state_count','company_count','applicant_count','events_table','internshipcompany_table', 'programs', 'testimonials'));
+        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','state_count','company_count','applicant_count','events_table','internshipcompany_table', 'programs', 'testimonials'));
     }
 
     public function adminIndex()

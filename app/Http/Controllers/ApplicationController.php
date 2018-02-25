@@ -21,6 +21,11 @@ use Carbon\Carbon;
 use App\FeaturedImage;
 use App\InternshipCompany;
 use App\WorkCompany;
+
+use App\Models\Testimonials;
+use App\Models\Programs;
+
+
 class ApplicationController extends Controller
 {
     /**
@@ -30,6 +35,17 @@ class ApplicationController extends Controller
      */
     public function index()
     {
+
+        //use $testimonial on foreach
+        $get_testimonial = DB::table('featuredimage')
+            ->where('page_name', 'application')
+            ->first()
+            ->testimonial_id;
+
+        $testimonial = Testimonials::where('id', $get_testimonial)->get();
+
+
+
         $featuredimage_application = FeaturedImage::where('page_name','application')->get();
         $application_table = Application::all();
         $location_table = Location::all();
@@ -41,7 +57,7 @@ class ApplicationController extends Controller
         $major_table = Major::all();
         $internship_addresses = InternshipCompany::pluck('company_name');
         $work_addresses = WorkCompany::pluck('company_name');
-        return view('users.application_form.application_form', compact('featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table','internship_addresses','work_addresses','city_table'));
+        return view('users.application_form.application_form', compact('testimonial', 'featuredimage_application', 'major_table', 'degree_table', 'university_table', 'program_table', 'application_table', 'location_table', 'country_table','internship_addresses','work_addresses','city_table'));
     }
 
     /**

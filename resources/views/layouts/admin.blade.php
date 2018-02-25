@@ -133,7 +133,7 @@
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-envelope"></i>
-                        <span>Application</span>
+                        <span>Applications</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -147,6 +147,8 @@
                         </li>
                     </ul>
                 </li>
+
+                
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/internshipcompany') ? 'active' : '' }}">
                     <a href="#">
@@ -237,6 +239,60 @@
 
                     </ul>
                    
+                </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/aboutus') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>About Us</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('aboutus.adminIndex') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('aboutus.adminCreate') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+
+                            <li>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/faq') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>FAQ</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('faq.adminIndex') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('faq.adminCreate') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+
+                            <li>
+                        </li>
+                        </li>
+                    </ul>
                 </li>
 
                 <hr>

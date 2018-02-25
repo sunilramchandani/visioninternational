@@ -7,6 +7,11 @@ use App\ContactUs;
 use Mail;
 use App\FeaturedImage;
 use App\Country;
+use Illuminate\Support\Facades\DB;
+use App\Models\Testimonials;
+use App\Models\Programs;
+
+
 
 class ContactUsController extends Controller
 {
@@ -18,9 +23,20 @@ class ContactUsController extends Controller
     public function index()
     {
         $featuredimage_contactus = FeaturedImage::where('page_name','contact_us')->get();
+
+        //use $testimonial on foreach
+        $get_testimonial = DB::table('featuredimage')
+            ->where('page_name', 'contact_us')
+            ->first()
+            ->testimonial_id;
+
+        $testimonial = Testimonials::where('id', $get_testimonial)->get();
+
+
+
         $contactus_table = ContactUs::all();
         $country = Country::pluck('country_name');
-        return view('users.contact_us.contact_us', compact('featuredimage_contactus', 'contactus_table','country'));
+        return view('users.contact_us.contact_us', compact('testimonial', 'featuredimage_contactus', 'contactus_table','country'));
     }
 
     /**

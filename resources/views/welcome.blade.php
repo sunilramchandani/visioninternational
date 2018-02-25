@@ -219,7 +219,7 @@
                 </p>
                 <p class="details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' ... ')}}</p>
 
-                <a href="event/{{$events->fbevent_id}}" class="submit btn">
+                <a href="single_event/{{$events->fbevent_id}}" class="submit btn">
                     <span>More Info</span>
                 </a>
             </div>

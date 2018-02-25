@@ -17,6 +17,11 @@ use App\Qualification;
 use App\Opportunity;
 use App\Lib\WorkCompanyLib;
 
+use App\Models\Testimonials;
+use App\Models\Programs;
+
+
+
 class WorkCompanyController extends Controller
 {
     /**
@@ -30,6 +35,7 @@ class WorkCompanyController extends Controller
             $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
             $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('id','asc')->get();
 
+<<<<<<< HEAD
             
             $internship_addresses = WorkCompany::where('id', request('id'))->pluck('housing_address');
             $internship_name = WorkCompany::where('id', request('id'))->pluck('id');
@@ -39,6 +45,30 @@ class WorkCompanyController extends Controller
             $internship_image = WorkCompany::pluck('image');
             
             return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+=======
+        //use $testimonial on foreach
+        $get_testimonial = DB::table('featuredimage')
+            ->where('page_name', 'work')
+            ->first()
+            ->testimonial_id;
+
+        $testimonial = Testimonials::where('id', $get_testimonial)->get();
+
+
+        if (request()->has('state')){
+            $featuredimage_work = FeaturedImage::where('page_name','work')->get();
+            $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->where('state', request('state'))->paginate(0)->appends('state', request('state'));
+            
+            $work_addresses = WorkCompany::where('state', request('state'))->pluck('housing_address');
+            $work_name = WorkCompany::where('state', request('state'))->pluck('company_name');
+            $work_desc = WorkCompany::where('state', request('state'))->pluck('description');
+            $work_filter = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
+            $work_id = WorkCompany::where('state', request('state'))->pluck('id');
+            $work_image = WorkCompany::pluck('image');
+         
+
+            return view('users.work.work', compact('testimonial', 'work_image', 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
+>>>>>>> bf5293cec1320a655c5232f65e6e5d64d5317511
         }
 
         else if (request()->has('state')){
@@ -63,6 +93,7 @@ class WorkCompanyController extends Controller
             $featuredimage_internship = FeaturedImage::where('page_name','Work')->orderBy('featured','desc')->get();
             $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('duration', request('duration'))->paginate(4)->appends('duration', request('duration'));
 
+<<<<<<< HEAD
             
             $internship_addresses = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('housing_address');
             $internship_name = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('company_name');
@@ -84,6 +115,9 @@ class WorkCompanyController extends Controller
             $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
             $internship_featured = WorkCompany::orderBy('featured','desc')->pluck('featured');
             return view('users.work.work', compact('featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image','internship_featured'));
+=======
+            return view('users.work.work', compact('testimonial', 'featuredimage_work', 'work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
+>>>>>>> bf5293cec1320a655c5232f65e6e5d64d5317511
         }
     }
 

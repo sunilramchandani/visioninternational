@@ -6,9 +6,6 @@
     <div class="col-xs-10">
         <h1 class="page-header">Promo</h1>
     </div>
-    <div class="col-xs-2">
-        <a href="{{route('programs.create')}}"><button style ="" class="btn btn-success">New Promo</button></a>
-    </div>
 </div>
 </section>
 @endsection
