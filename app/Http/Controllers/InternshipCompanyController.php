@@ -41,6 +41,22 @@ class InternshipCompanyController extends Controller
             return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
         }
 
+       /* else if (request()->has('country')){
+            $featuredimage_internship = FeaturedImage::where('page_name','internship')->orderBy('featured','desc')->get();
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('featured','desc')->where('country', request('country'))->paginate(4)->appends('country', request('country'));
+
+            
+            $internship_addresses = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('description');
+            $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
+            $internship_id = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('id');
+            $internship_image = InternshipCompany::orderBy('featured','desc')->pluck('image');
+            
+            return view('users.internship.internship', compact('featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+
+        } */
+
         else if (request()->has('state')){
 
             

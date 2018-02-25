@@ -133,7 +133,25 @@
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-envelope"></i>
-                        <span>Application</span>
+                        <span>Applications</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('application.list') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-envelope"></i>
+                        <span>About Us</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
