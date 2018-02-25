@@ -15,7 +15,10 @@
 	margin-top: -200px;
 	padding-bottom: 15%;
 }
-
+.country-city-offices{
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
 
 .textarea-input{
 	border: 2px solid #DCDCDC !important;
@@ -86,16 +89,19 @@ a {
     color: black;
     text-decoration: none;
 }
-
+.img-line{
+  display: none;
+}
 a:hover 
 {
      color:black; 
      text-decoration:none; 
      cursor:pointer;  
 }
-.img-border{
-  margin-top: -17%;
-  width:105%;
+.img-border {
+    margin-top: -18%;
+    width: 1505px;
+    margin-left: -50px;
 }
 .header{
   height: 50%;
@@ -122,21 +128,25 @@ a:hover
   .country-city-offices{
     display: none;
   }
-
+ .img-line{
+  display: block;
+}
+  .img-border{
+    display: none;
+  }
 }
 
 
 @media screen and (max-width: 719px) and (min-width: 320px) {
   /*IMAGE AND ARROW */
-  .header{
-    display: none;
-  }
 
   .img-border{
     display: none;
   }
  /* -- END -- */
-
+ .img-line{
+  display: block;
+}
  .SayHello h1{
     font-size: 28px;
   }
