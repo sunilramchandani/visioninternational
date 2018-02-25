@@ -1,22 +1,22 @@
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
  <!----------------------- DESKTOP NAVBAR ---------------------------------------->
-<div class = "col-lg-12 col-md-12 nav-whole hidden-sm hidden-xs">
-	<div class = "col-lg-3 col-lg-offset-1 col-md-3 logo">
+<div class = "col-md-12 nav-whole hidden-sm hidden-xs">
+	<div class = "col-md-6 logo">
 		<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 	</div>
-	<div class = "col-lg-7 col-lg-offset-1 col-md-9 nav-links">
+	<div class = "col-md-6 nav-links">
 		<ul>
 			<a href ="/"><li class = "link">Home</li></a>
 			<div class="dropdown">
 				<button class="dropbtn">Opportunities</button>
 				<div class="dropdown-content">
-					<div class = "col-lg-6 col-md-6">
+					<div class = "col-md-6">
 						<p class = "dropdown-content-header">United States</p>
 						<a href="/workcompany">Work & Travel</a>
 						<a href="/internshipcompany">Internship</a>
 						<a href="/aupair">Au Pair</a>
 					</div>
-					<div class = "col-lg-6 col-md-6">
+					<div class = "col-md-6">
 						<p class = "dropdown-content-header">Australia</p>
 						<a href="#">Internship</a>
 						<a href="#">Skilled Work Visa</a>
@@ -42,12 +42,12 @@
 </div>
 
 <!----------------------- MOBILE NAVBAR ---------------------------------------->
-<div class = "col-sm-12 col-xs-12 nav-whole hidden-lg hidden-md">
+<div class = "col-xs-12 nav-whole hidden-lg hidden-md">
 	<div class = "row">
-		<div class = "col-sm-3 col-sm-offset-1 col-xs-3 logo">
+		<div class = "col-xs-7 col-sm-9 logo">
 			<img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo">
 		</div>
-		<div class = "col-sm-3 col-sm-offset-5 col-xs-3 col-xs-offset-5 nav-links">
+		<div class = "col-xs-3 nav-links">
 			<ul>
 				<div class = "applynow-btn">
 					<a href = "application" class = "btn applynow-btn1">Apply Now</a>
@@ -66,7 +66,7 @@
 						<a href="#">Internship</a>
 						<a href="#">Au Pair</a>
 					</div>
-					<div class = "col-sm-6 col-xs-6">
+					<div class = "col-xs-6">
 						<p class = "dropdown-content-header">Australia</p>
 						<a href="#">Internship</a>
 						<a href="#">Skilled Migration</a>

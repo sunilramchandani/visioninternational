@@ -6,56 +6,56 @@
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
 
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img  img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class="text-inside-header-picture">
         <div class="row dynamic-text-container">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 dynamic-text-container-box">
+            <div class="col-xs-12 col-md-6 dynamic-text-container-box">
                 <h4 class="text-description"> {{$featured->main_image_description}}</h4>
             </div>
             @endforeach
         </div>
         <div class="row counters">
-            <div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-11 col-sm-offset-1 col-xs-11 col-xs-offset-1">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container">
+            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1">
+                <div class="col-xs-2 counter-container">
                     <h1 class="counter">2</h1>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container">
+                <div class="col-xs-2 counter-container">
                     <p>
                         <h1 class="counter"> {{ $state_count }} </h1>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container">
+                <div class="col-xs-2 counter-container">
                     <h1 class="counter">{{$company_count}}</h1>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container">
+                <div class="col-xs-2 counter-container">
                     <h1 class="counter">{{$applicant_count}}</h1>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-container-infinity">
-                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img img-responsive img-rounded infin" id="infin" alt="Company Banner">
+                <div class="col-xs-2 counter-container-infinity">
+                    <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img  img-rounded infin" id="infin" alt="Company Banner">
                 </div>
             </div>
         </div>
         <div class="row counter-label">
-            <div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-11 col-sm-offset-1 col-xs-11 col-xs-offset-1">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-label-container">
+            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1">
+                <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">Countries</h4>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-label-container">
+                <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">States</h4>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-label-container">
+                <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">Companies</h4>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 counter-label-container">
+                <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">Applicants</h4>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2  counter-container-infinity-label">
+                <div class="col-xs-2  counter-container-infinity-label">
                     <h4 class="labels">Opportunities</h4>
                 </div>
             </div>
         </div>
         <div class="row link-button">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-xs-3 col-sm-offset-4 col-md-offset-0">
                 <a href="www.fb.com" class="btn fblink">#onevision #vip</a>
             </div>
         </div>
@@ -63,31 +63,27 @@
     <!------------------------- CONTENT ---------------------->
     <div class="container">
         <div class="about row">
-            <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12 text-center about-font">
+            <div class="col-md-4 col-md-offset-4 col-xs-12 text-center about-font">
                 <h1>We believe that...</h1>
-                <p>Every Filipino deserves an opportunity to
-                    <br>showcase his or her talent to the world.
-                </p>
+                <p>Every Filipino deserves an opportunity to showcase his or her talent to the world.</p>
             </div>
         </div>
     </div>
 
     <!--Picture -->
     @foreach ($featuredimage_home as $featured)
-    <div class="container-fluid">
+    <div class="container">
         <div class="row picture-header">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home-pic-container">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="home-pic">
-                        <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image1}}" class="img-rounded img-responsive"
-                            alt="Photo">
-                    </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="home-pic">
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image1}}" class="img-rounded img-responsive sub-img"
+                        alt="Photo">
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="home-pic">
-                        <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image2}}" class="img-rounded img-responsive"
-                            alt="Photo">
-                    </div>
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="home-pic">
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image2}}" class="img-rounded img-responsive sub-img"
+                        alt="Photo">
                 </div>
             </div>
         </div>
@@ -95,7 +91,7 @@
     @endforeach
     <div class="container">
         <div class="commit row">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center about-font">
+            <div class="col-xs-12 text-center about-font">
                 <h1>Our Commitments</h1>
             </div>
         </div>
@@ -207,25 +203,27 @@
         </div>
     </div>
     <div class="container">
-        <div class="container row home-page-events">
+        <div class="row home-page-events">
             @foreach($events_table as $events)
-            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5 events-content">
-                <img src="{{$events->cover_source}}" alt="" class="event-img img">
+            <div class="col-md-3 col-xs-6 ">
+                <div class = "col-xs-12 events-content">
+                    <img src="{{$events->cover_source}}" alt="" class="event-img img">
 
-                <h4 class=" details text-center">{{$events->event_name}} </h4>
-                <p class="details text-center">
-                    <strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}}
-                        - {{$events->place_name}}</strong>
-                </p>
-                <p class="details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' ... ')}}</p>
+                    <h4 class=" details text-center">{{$events->event_name}} </h4>
+                    <p class="details text-center">
+                        <strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}}
+                            - {{$events->place_name}}</strong>
+                    </p>
+                    <p class="details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 14,' ... ')}}</p>
 
-                <a href="single_event/{{$events->fbevent_id}}" class="submit btn">
-                    <span>More Info</span>
-                </a>
+                    <a href="single_event/{{$events->fbevent_id}}" class="submit btn">
+                        <span>More Info</span>
+                    </a>
+                </div>
             </div>
             @endforeach
             <!--BUTTON WHEN MOBILE -->
-            <div class="col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 show-all-container">
+            <div class="col-xs-4 col-xs-offset-4 show-all-container">
                 <a href="" class="show-all btn">
                     <span>Show All</span>
                 </a>
@@ -243,63 +241,69 @@
             </div>
         </div>
     </div>
-          <div class="row">
-            <div id ="carousel-featured" class="col-md-12 hidden-xs hidde-sm carousel slide " data-ride="carousel">
-                <!-- Indicators -->
-                
-                <ol class="carousel-indicators">
+      <div class="row">
+        <div id ="carousel-featured" class="col-md-12 hidden-xs hidde-sm carousel slide " data-ride="carousel">
+            <!-- Indicators -->
+            
+            <ol class="carousel-indicators">
+            @foreach($internshipcompany_table as $internship)
+                <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+            @endforeach
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
                 @foreach($internshipcompany_table as $internship)
-                    <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                @endforeach
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach($internshipcompany_table as $internship)
-                    <div class="item {{ $loop->first ? ' active' : '' }}">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="container text-center promos">    
-                                    <div class="col-md-6 col-md-offset-1 hidden-xs hidden-sm hidden-xs promo-pic-container">
-                                        <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" class="img img-responsive  promo-pic"
-                                            alt="Company Banner">
+                <div class="item {{ $loop->first ? ' active' : '' }}">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container text-center promos">    
+                                <div class="col-md-6 col-md-offset-1 hidden-xs hidden-sm hidden-xs promo-pic-container">
+                                    <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" class="img img-responsive  promo-pic"
+                                        alt="Company Banner">
+                                </div>
+                                <div class="col-md-4 hidden-sm hidden-xs  promo-desc">
+                                    <div class="upper-content">
+                                        <h3 class="dynamic-promo-title"> {{$internship->company_name}}</h3>
+                                        <p class="dynamic-promo-text">{{$internship->description}}</p>
+                                        <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn featured-btn">More Info</a>
                                     </div>
-                                    <div class="col-md-4 hidden-sm hidden-xs  promo-desc">
-                                        <div class="upper-content">
-                                            <h3 class="dynamic-promo-title"> {{$internship->company_name}}</h3>
-                                            <p class="dynamic-promo-text">{{$internship->description}}</p>
-                                            <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn featured-btn">More Info</a>
-                                        </div>
-                                        <div class="lower-content col-md-11">
-                                            <div class="col-md-6 col-xs-4 validity-container">
-                                                <p class="validity-text">Share this promo: </p>
-                                            </div>
+                                    <div class="lower-content col-md-11">
+                                        <div class="col-md-6 validity-container">
+                                            <p class="validity-text">Share this promo: </p>
                                         </div>
                                     </div>
-                                </div> 
-                            </div>
-                        </div>  
-                    </div>
-                    @endforeach
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-featured" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-featured" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
+                                </div>
+                            </div> 
+                        </div>
+                    </div>  
                 </div>
-                <!-- end of carousel -->
-            </div>
-            <div class="hidden-md hidden-lg col-xs-5 events-content">
-                <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" alt="" class="event-img img">
+                @endforeach
+                <!-- Controls -->
+                <a class="left carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
 
-                <h4 class=" details text-center">{{$internship->company_name}} </h4>
-                <p class="details text-center">{{ \Illuminate\Support\Str::words($internship->description, 14,' .... ')}}</p>
             </div>
-</div>
+            <!-- end of carousel -->
+        </div>
+        <div class = "container">
+             @foreach($internshipcompany_table as $internship)
+            <div class="hidden-md hidden-lg col-xs-6 ">
+                <div class = "col-xs-12 events-content">
+                    <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" alt="" class="event-img img">
+
+                    <h4 class=" details text-center">{{$internship->company_name}} </h4>
+                    <p class="details text-center">{{ \Illuminate\Support\Str::words($internship->description, 14,' .... ')}}</p>
+                </div>
+            </div>
+             @endforeach
+        </div>
+    </div>
     <!-- end of Featured --> 
 
 
@@ -318,7 +322,7 @@
     </div>
 
     <!-- Promo picture -->
-    <div class="container text-center promos">
+    <div class="text-center promos">
         <div class="col-md-6 col-md-offset-1 hidden-sm hidden-xs promo-pic-container">
             <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" class="img img-responsive  promo-pic"
                 alt="Company Banner">
@@ -339,12 +343,14 @@
                 </div>
             </div>
         </div>
-        <div class="hidden-lg hidden-md hidden-xl col-xs-5 events-content">
-            <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" alt="" class="event-img img">
+        <div class="hidden-lg hidden-md hidden-xl col-xs-6 ">
+            <div class = "col-xs-12 events-content">
+                <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" alt="" class="event-img img">
 
-            <h4 class=" details text-center">{{$featured->sub_image3_title}} </h4>
-            <p class="details text-center">{{ \Illuminate\Support\Str::words($featured->sub_image3_description, 14,' .... ')}}</p>
-            <p class="validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
+                <h4 class=" details text-center">{{$featured->sub_image3_title}} </h4>
+                <p class="details text-center">{{ \Illuminate\Support\Str::words($featured->sub_image3_description, 14,' .... ')}}</p>
+                <p class="validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
+            </div>
         </div>
     </div>
     @endif @endforeach
@@ -354,25 +360,21 @@
     <!--testimony-->
         <div class="container">
             <div class="row testimony-header">
-                <div class="about-font text-center">
+                <div class=" col-xs-12 col-md-8 col-md-offset-2 about-font text-center">
                      <h3>Our Community</h3>
-                     <p>Get inspiration from those who have come before you 
-                        <br>Here are some of our students who have experienced work life abroad
-                    </p>
+                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
                 </div>
             </div>
             <div class = "row testimony-content">
-                <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-8 testimony-description">
-                        <blockquote>
-                            This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
-                            <cite>Karissa MArie Salengua</cite>
-                            <cite>Work & Travel Program, California</cite>
-                        </blockquote>
-                    </div>
-                    <div clas = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                         <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-rounded testimony-picture" alt="Company Banner">
-                    </div>
+                <div class = "col-xs-8 testimony-description">
+                    <blockquote>
+                        This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
+                        <cite>Karissa MArie Salengua</cite>
+                        <cite>Work & Travel Program, California</cite>
+                    </blockquote>
+                </div>
+                <div class = "col-xs-4">
+                     <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-responsive img-rounded testimony-picture" alt="Company Banner"/>
                 </div>
             </div>
         </div>

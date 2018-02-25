@@ -21,7 +21,6 @@ margin-top: -17%;
 }
 .counter-container{
 	border-right: solid 2px white;
-	padding: 0 50px;
 }
 .counter-container-infinity{
 	padding-top: 19;
@@ -88,9 +87,10 @@ margin-top: -17%;
   margin-bottom: 25px;
 }
 
-.img-border{
-  margin-top: -17%;
-  width:105%;
+.img-border {
+    margin-top: -20%;
+    width: 1505px;
+    margin-left: -52px;
 }
 
 #photo {
@@ -148,11 +148,7 @@ margin-top: -17%;
  	border-bottom-left-radius: 12px;
 	border-top-left-radius: 12px;
 }
-.home-pic img {
-  height: inherit;
-  width: 95%;
-  margin: 20px;
-}
+
 
 .icon-container{
   width: 20%;
@@ -210,8 +206,7 @@ div.promos {
 	border-top-left-radius: 12px;
 }
 .testimony-picture{
-	height:335px;
-	width:32%;
+	width:100%;
 }
 .picture-header{
 	padding-bottom: 5%;
@@ -269,13 +264,12 @@ font-size: 14px;
 display: block;
 margin-top: 5px;
 }
-.events-content{
-	border-radius: 6px;
-	height: 450px;
-	box-shadow: 2px 2px 2px 2px #B0B0B0;	
-	margin-top: 2%;
-	margin-left: 15px;
-
+.events-content {
+    border-radius: 6px;
+    height: 450px;
+    box-shadow: 2px 2px 2px 2px #B0B0B0;
+    margin-top: 2%;
+    padding: 0;
 }
 .events-content:hover{
 	background-color:#d64c39;
@@ -295,8 +289,7 @@ margin-top: 5px;
     color:gray;
 }
 .event-img{
-	width:111.5%;
-	margin-left: -6%;
+	width:100%;
 	height:40%;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -311,7 +304,7 @@ margin-top: 5px;
   	margin: 5px;
   	position: absolute;
 	bottom:   15;
-	left: 100;
+	left: 30%;
 }
 
 
@@ -339,7 +332,11 @@ color:white;
 	display:visible;
 }
 
+#infin{
+	width: 100%;
+    height: 30;
 
+}
 
 
 
@@ -503,13 +500,6 @@ color:white;
 	    height: 35px;
 	    font-size: 95%;
 	}
-	.event-img {
-	    width: 112%;
-	    margin-left: -6%;
-	    height: 40%;
-	    border-top-left-radius: 5px;
-	    border-top-right-radius: 5px;
-	}
 	.home-page-events {
 	    padding-bottom: 5%;
 	    padding-left: 5%;
@@ -519,7 +509,6 @@ color:white;
 	    height: 450px;
 	    box-shadow: 2px 2px 2px 2px #B0B0B0;
 	    margin-top: 2%;
-	    margin-left: 5%;
 	}
 	.submit {
 	    font-size: 14px;
@@ -545,11 +534,6 @@ color:white;
 	}
 	.show-all-container{
 		padding-top: 5%;
-	}
-	.testimony-picture {
-	    padding-top: 5%;
-	    height: 350px;
-	    width: 275px;
 	}
 	.details{
 		color:gray;
@@ -581,18 +565,19 @@ color:white;
 	    padding-top: 25px;
 	}
 
-
+	.labels {
+	    border-bottom: 4px solid #e04f3c;
+	    width: 30px;
+	}
 	/* INFINITY SIGN */
-	#infin{
-		height: 30px;
-		position: absolute;
-		top: 26px ;
-		right: 60px;
+	#infin {
+	    height: 30px;
+	    width: 50px;
 	}
 
 	.text-inside-header-picture {
 	    margin-top: -600px;
-	    padding-bottom: 15%;
+	    padding-bottom: 25%;
 	}
 	.header {
 	    height: 650px;
@@ -644,17 +629,13 @@ color:white;
 
 	.home-pic{
 		width: 100%;
-		height: 120px;
+		height: 135px;
 	}
-
+	.sub-img{
+		height:inherit;
+	}
 	.commit{
 		padding: 0;
-	}
-
-	.home-pic img {
-	    width: 100%;
-		height: 120px;
-		margin: 0 auto;
 	}
 
 	.dynamic-promo-text {
@@ -673,23 +654,16 @@ color:white;
 	    height: 35px;
 	    font-size: 95%;
 	}
-	.event-img {
-	    width: 128%;
-	    margin-left: -14%;
-	    height: 38%;
-	    border-top-left-radius: 5px;
-	    border-top-right-radius: 5px;
-	}
+
 	.home-page-events {
 	    padding-bottom: 5%;
-	    padding-left: 5%;
+	    padding-left: 0%;
 	}
 	.events-content {
 	    border-radius: 6px;
 	    height: 450px;
 	    box-shadow: 2px 2px 2px 2px #B0B0B0;
 	    margin-top: 2%;
-	    margin-left: 5%;
 	}
 	.submit {
 	    font-size: 14px;
@@ -701,7 +675,7 @@ color:white;
 	    margin: 5px;
 	    position: absolute;
 	    bottom: 15;
-	    left: 25px;
+	    left: 20px;
 	}
 	.show-all {
 	    display: block;
@@ -716,11 +690,6 @@ color:white;
 	.show-all-container{
 		padding-top: 5%;
 	}
-	.testimony-picture {
-	    padding-top: 5%;
-	    height: 230px;
-	    width: 120px;
-	}
 	.details {
 	    padding-top: 2%;
 	    letter-spacing: 0px;
@@ -731,9 +700,6 @@ color:white;
 	.events-content:hover .details{ color:white; }
 	.events-content:hover .validity-text{ color:white !important; }
 
-	.about {
-	    padding-top: 80px;
-	}
 	blockquote {
 	    font-family: Georgia, serif;
 	    font-size: 12px;
@@ -747,5 +713,9 @@ color:white;
 	}
 	.h4, h4 {
 	    font-size: 9px;
+	}
+	.testimony-description {
+	    padding-top: 0%;
+	    padding-left: 5%;
 	}
 }
