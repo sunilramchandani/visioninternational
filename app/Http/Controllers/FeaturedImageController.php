@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\FeaturedImage;
 use Illuminate\Support\Facades\DB;
+use App\Models\Testimonials;
+use App\Models\Programs;
+
+
 class FeaturedImageController extends Controller
 {
     /**
@@ -62,7 +66,9 @@ class FeaturedImageController extends Controller
     public function edit($id)
     {
         $featuredimage = FeaturedImage::find($id);
-        return view('admin.featured_image.form', compact('featuredimage'));
+        $testimonial_table = Testimonials::all();
+        $promo_table = Programs::all();
+        return view('admin.featured_image.form', compact('featuredimage', 'testimonial_table', 'promo_table'));
     }
 
     /**
@@ -149,6 +155,14 @@ class FeaturedImageController extends Controller
 
         if ($request->has('sub_image4_sender_title')){
             $featuredimage->sub_image4_sender_title = $request['sub_image4_sender_title'];
+        }
+
+        if ($request->has('promo_id')){
+            $featuredimage->promo_id = $request['promo_id'];
+        }
+
+        if ($request->has('testimony_id')){
+            $featuredimage->testimony_id = $request['testimony_id'];
         }
 
         $featuredimage->save();

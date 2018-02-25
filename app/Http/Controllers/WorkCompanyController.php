@@ -17,6 +17,11 @@ use App\Qualification;
 use App\Opportunity;
 use App\Lib\WorkCompanyLib;
 
+use App\Models\Testimonials;
+use App\Models\Programs;
+
+
+
 class WorkCompanyController extends Controller
 {
     /**
@@ -26,6 +31,15 @@ class WorkCompanyController extends Controller
      */
     public function index(Request $request)
     {
+
+        //use $testimonial on foreach
+        $get_testimonial = DB::table('featuredimage')
+            ->where('page_name', 'work')
+            ->first()
+            ->testimonial_id;
+
+        $testimonial = Testimonials::where('id', $get_testimonial)->get();
+
 
         if (request()->has('state')){
             $featuredimage_work = FeaturedImage::where('page_name','work')->get();
@@ -39,7 +53,7 @@ class WorkCompanyController extends Controller
             $work_image = WorkCompany::pluck('image');
          
 
-            return view('users.work.work', compact('work_image', 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
+            return view('users.work.work', compact('testimonial', 'work_image', 'featuredimage_work', 'workCompany_table', 'work_filter','work_addresses','work_name','work_desc','work_id'));
         }
         else{
             $featuredimage_work = FeaturedImage::where('page_name','work')->get();
@@ -52,7 +66,7 @@ class WorkCompanyController extends Controller
             $work_id = WorkCompany::pluck('id');
             $work_image = WorkCompany::pluck('image');
 
-            return view('users.work.work', compact('featuredimage_work', 'work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
+            return view('users.work.work', compact('testimonial', 'featuredimage_work', 'work_image', 'work_id', 'featuredimage_work', 'workCompany_table','work_addresses','work_name','work_desc'));
         }
     }
 

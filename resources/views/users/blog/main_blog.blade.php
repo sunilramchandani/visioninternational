@@ -71,7 +71,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12  left-main-title ">
-                               <p>{{ \Illuminate\Support\Str::words(strip_tags($blog->body), 30,' ... ')}}</p> 
+                                <p>{{ \Illuminate\Support\Str::words(strip_tags($blog->body), 30,' ... ')}}</p>
                             </div>
                         </div>
 
@@ -79,15 +79,15 @@
                         <div class="row">
                             <div class="col-lg-12  left-main-title ">
                                 <a href="/blog/{{$blog->id}}" class="submit btn">
-                                    <span>Read More</span>  
+                                    <span>Read More</span>
                                 </a>
                             </div>
                         </div>
 
-                        
+
                         <div class="row">
                             <div class="col-lg-12 hr-main-title ">
-                            <hr>
+                                <hr>
                             </div>
                         </div>
 
@@ -95,13 +95,13 @@
                         <div class="row">
                             <div class="col-lg-6 share-main-title ">
                                 <span>Share This Article: </span>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=#http%3A%2F%2Fvisioninternational.oo%2Fblog/{{$blog->id}}" target="_blank">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl().$blog->id ) }}" target="_blank">
                                     <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().$blog->id) }}" target="_blank">
                                     <i class="fa fa-twitter " style="font-size:20px; padding-right:1%; color:black;"></i>
                                 </a>
-                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
+                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().$blog->id) }}" target="_blank">
                                     <i class="fa fa-google-plus " style="font-size:20px; color:black;"></i>
                                 </a>
                             </div>
@@ -114,6 +114,11 @@
 
                             </div>
                         </div>
+                        <div class="row">
+                        <div class="col-lg-6 share-main-title col-lg-offset-4 ">
+                        {{$blog_table->appends(['s' => $s])->links()}}
+                        </div>
+                        </div>
 
                         <!-- end of image-blog -->
                     </div>
@@ -123,8 +128,8 @@
 
                 <!-- right side -->
                 <div class="col-lg-3 ">
-                    <div class= "row">
-    
+                    <div class="row">
+
                         <form action="{{route('userBlog.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -140,91 +145,95 @@
 
 
                         </form>
-            
-                    <br>
+
+                        <br>
                     </div>
 
 
-                    <div class= "row">
-                    
-                    <table class="table table-categories table-borderless table-hover">
-                        <thead bgcolor="#800000">
-                            <tr>
-                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p></h4>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($category_table as $category)
-                            <tr class='clickable-row'>
-                                <td>{{$category->category_name}}</td>
-                                <td>
-                                    <a href="/blog?category_id={{$category->id}}">
-                                        <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                                    </a>
-                                </td>
+                    <div class="row">
 
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                        <table class="table table-categories table-borderless table-hover">
+                            <thead bgcolor="#800000">
+                                <tr>
+                                    <h4 class="header-table text-left">
+                                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p>
+                                    </h4>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($category_table as $category)
+                                <tr class='clickable-row'>
+                                    <td>{{$category->category_name}}</td>
+                                    <td>
+                                        <a href="/blog?category_id={{$category->id}}">
+                                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    
-                    <div class= "row">
+
+                    <div class="row">
 
 
-                    <table class="table table-categories table-borderless table-hover">
-                        <thead bgcolor="#800000">
-                            <tr>
-                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p></h4>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($blog_table as $blog)
-                            <tr class='clickable-row'>
-                                <td>
-                                    <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+                        <table class="table table-categories table-borderless table-hover">
+                            <thead bgcolor="#800000">
+                                <tr>
+                                    <h4 class="header-table text-left">
+                                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p>
+                                    </h4>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($blog_table as $blog)
+                                <tr class='clickable-row'>
+                                    <td>
+                                        <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
 
 
-                                        <!-- Wrapper for slides -->
-                                        <div class="carousel-inner" role="listbox">
-                                            @foreach( $blog->mainimageupload as $mainblogimage )
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox">
+                                                @foreach( $blog->mainimageupload as $mainblogimage )
 
-                                            <div class="item {{ $loop->first ? ' active' : '' }}">
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="caro-img-reponsive img-responsive "
-                                                            alt="Company Banner">
+                                                <div class="item {{ $loop->first ? ' active' : '' }}">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="caro-img-reponsive img-responsive "
+                                                                alt="Company Banner">
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
-                                            @endforeach
+                                            <!-- end of carousel -->
                                         </div>
-                                        <!-- end of carousel -->
-                                    </div>
-                                </td>
+                                    </td>
 
                                     <td>
-                                        <p> @foreach ($blog->blogcategory as $blogz) 
-                                            @if ($loop->first) {{ $blogz->categorylist->category_name }}  @endif
-                                            @endforeach</p>
+                                        <p> @foreach ($blog->blogcategory as $blogz) @if ($loop->first) {{ $blogz->categorylist->category_name
+                                            }} @endif @endforeach
+                                        </p>
                                         <a href="/blog/{{$blog->id}}">
                                             <i style="color:black;">{{$blog->title}}</i>
                                         </a>
                                     </td>
 
-                            </tr>
-                            @endforeach
+                                </tr>
+                                @endforeach
 
-                        </tbody>
-                    </table>
-                        </div>
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
                 <!-- end of row -->
             </div>
             <!--end of main-page-->
-            {{$blog_table->appends(['s' => $s])->links()}}
+            
         </div>
         <!-- end of container -->
     </div>

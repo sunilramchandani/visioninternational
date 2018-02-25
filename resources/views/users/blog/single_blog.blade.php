@@ -215,7 +215,11 @@
 
 <div class="row"></div>
 
-<script>
+<script type="text/javascript" charset="utf8" src="{{ asset('/js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" charset="utf8" src="{{ asset('/js/bootstrap.min.js') }}"></script>
+
+
+<script type="text/javascript">
     var popupMeta = {
         width: 400,
         height: 400

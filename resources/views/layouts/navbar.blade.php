@@ -23,7 +23,7 @@
 					</div>
 				</div>
 			</div>
-			<li class = "link">About</li>
+			<a href="/aboutus"><li class = "link">About</li></a>
 			<a href="/contactus"><li class = "link">Contact</li></a>
 			<div class="dropdown">
 				<button class="dropbtn">Learn More</button>

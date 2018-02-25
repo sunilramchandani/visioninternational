@@ -101,6 +101,54 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/trash/{id}', ['uses' => 'NewsController@restoreTrash', 'as' => 'news.restoretrash']);
 
     });
+
+    Route::group(['prefix' => 'aboutus'], function() {
+        Route::get('/list', ['uses' => 'AboutUsController@adminIndex', 'as' => 'aboutus.adminIndex']);
+
+        Route::get('/new', ['uses' => 'AboutUsController@adminCreate', 'as' => 'aboutus.adminCreate']);
+        Route::post('/new', ['uses' => 'AboutUsController@adminStore', 'as' => 'aboutus.adminStore']);
+
+        Route::get('/edit/{id}', ['uses' => 'AboutUsController@adminEdit', 'as' => 'aboutus.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'AboutUsController@adminUpdate', 'as' => 'aboutus.adminUpdate']);
+
+        Route::get('/trash', ['uses' => 'AboutUsController@viewTrash', 'as' => 'aboutus.trash']);
+        Route::get('/trash/{id}', ['uses' => 'AboutUsController@restoreTrash', 'as' => 'aboutus.restoretrash']);
+
+
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'AboutUsController@adminDelete',
+            'as' => 'aboutus.adminDelete'
+        ]);
+
+
+    });
+
+    Route::group(['prefix' => 'faq'], function() {
+        Route::get('/list', ['uses' => 'faqController@adminIndex', 'as' => 'faq.adminIndex']);
+
+        Route::get('/new', ['uses' => 'faqController@adminCreate', 'as' => 'faq.adminCreate']);
+        Route::post('/new', ['uses' => 'faqController@adminStore', 'as' => 'faq.adminStore']);
+
+        Route::get('/edit/{id}', ['uses' => 'faqController@adminEdit', 'as' => 'faq.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'faqController@adminUpdate', 'as' => 'faq.adminUpdate']);
+
+        Route::get('/trash', ['uses' => 'faqController@viewTrash', 'as' => 'faq.trash']);
+        Route::get('/trash/{id}', ['uses' => 'faqController@restoreTrash', 'as' => 'faq.restoretrash']);
+
+
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'faqController@adminDelete',
+            'as' => 'faq.adminDelete'
+        ]);
+
+
+    });
+
+
     Route::resource('news', 'NewsController');
 
     
