@@ -373,29 +373,25 @@
                 }                     
             }
         </script>
-        <!--Testimony-->
 
+ <!--testimony-->
         <div class="container">
             <div class="row testimony-header">
-                <div class="about-font text-center">
+                <div class=" col-xs-12 col-md-8 col-md-offset-2 about-font text-center">
                      <h3>Our Community</h3>
-                     <p>Get inspiration from those who have come before you 
-                        <br>Here are some of our students who have experienced work life abroad
-                    </p>
+                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
                 </div>
             </div>
             <div class = "row testimony-content">
-                <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-8 testimony-description">
-                        <blockquote>
-                            This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
-                            <cite>Karissa MArie Salengua</cite>
-                            <cite>Work & Travel Program, California</cite>
-                        </blockquote>
-                    </div>
-                    <div clas = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                         <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-rounded testimony-picture" alt="Company Banner">
-                    </div>
+                <div class = "col-xs-8 testimony-description">
+                    <blockquote>
+                        This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
+                        <cite>Karissa MArie Salengua</cite>
+                        <cite>Work & Travel Program, California</cite>
+                    </blockquote>
+                </div>
+                <div class = "col-xs-4">
+                     <img src="{{ URL::asset('image/uploaded_featured_image')}}/joy.png" class="img img-responsive img-rounded testimony-picture" alt="Company Banner"/>
                 </div>
             </div>
         </div>
