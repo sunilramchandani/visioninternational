@@ -78,11 +78,11 @@ class InternshipCompanyController extends Controller
             $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('featured','desc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
 
             
-            $internship_addresses = InternshipCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('housing_address');
-            $internship_name = InternshipCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('company_name');
-            $internship_desc = InternshipCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('description');
+            $internship_addresses = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-            $internship_id = InternshipCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('id');
+            $internship_id = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('id');
             $internship_image = InternshipCompany::orderBy('featured','desc')->pluck('image');
             $internship_featured = InternshipCompany::orderBy('featured','desc')->pluck('featured');
             

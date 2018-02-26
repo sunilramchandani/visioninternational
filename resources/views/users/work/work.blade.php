@@ -1,3 +1,5 @@
+<div id='pageLoad'>
+
 @extends('layouts.master')
 
 @section('page-css')
@@ -11,7 +13,7 @@
 <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
 @foreach ($featuredimage_internship as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
@@ -42,14 +44,14 @@
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
                   <div id="links">
-                  <a href="/internshipcompany">All</a>
+                  <a href="/workcompany">All</a>
                     @if ( Request::get('state')  )
                         @foreach ($internship_filter as $filter)
-                            <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                            <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
                         @foreach ($internshipCompany_table as $company)
-                            <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                            <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                         @endforeach
                     @endif
                     </div>
@@ -382,6 +384,20 @@
 </form>
 
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("#links > a").click(function(e) {
+        e.preventDefault(); //so the browser doesn't follow the link
+
+        $("#pageLoad").load(this.href, function() {
+            //execute here after load completed
+        });
+    });
+}); 
+</script>
 
 
 
