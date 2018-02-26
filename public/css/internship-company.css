@@ -39,9 +39,11 @@
 	padding-bottom: 15%;
 }
 
-.img-border{
-  margin-top: -17%;
-  width:105%;
+.img-border {
+    margin-top: -20%;
+    width: 104%;
+    margin-left: -4%;
+    display: block;
 }
 .header{
       height: 75%;
@@ -425,9 +427,6 @@ margin-top: 5px;
 }
 .img-line{
 	display: none;
-}
-.img-border{
-	display:visible;
 }
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.testimony-picture {

@@ -11,7 +11,7 @@
 <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
 @foreach ($featuredimage_internship as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">

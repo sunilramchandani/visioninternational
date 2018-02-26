@@ -231,33 +231,31 @@
             </div>                                                                                                                      
         </div>
 
-    {{---------------------------------------------  MOBILE RESPONSIVE  -----------------------------------------------------}}
+    {{---------------------------------------------  MOBILE RESPONSIVE --------------------------------------}}
 
     <div class="our-offices-mobile hidden-lg hidden-md">
-        <div class = "col-lg-12 text-center">
+        <div class = "col-xs-12 text-center">
             <h1>Our Offices</h1>
         </div>
-        <div class=col-lg-12>
-                <div class="col-lg-4 col-lg-offset-1">
-                        <div class ="row form-group">
-                             <select class = "form-control" name="country" id="">
-                                <option value="" disabled selected>Country</option>
-                                <option value="PH">Philippines</option>
-                            </select>
-                            <select class = "form-control" name="city" id="thecity">
-                                    <option value="" disabled selected>Manila</option>
-                                    <option value="manila">Manila</option>
-                                    <option value="cubao">Cubao</option>
-                                    <option value="baguio">Baguio</option>
-                            </select>
-                        </div>
-                 </div>  
+        <div class=col-xs-12>
+            <div class="col-xs-12">
+                    <div class ="row form-group">
+                         <select class = "form-control" name="country" id="country-mobile">
+                            <option value="PH" selected>Philippines</option>
+                        </select>
+                        <select class = "form-control" name="city" id="city-mobile">
+                                <option value="manila" selected>Manila</option>
+                                <option value="cubao">Cubao</option>
+                                <option value="baguio">Baguio</option>
+                        </select>
+                    </div>
+             </div>   
         </div>
     </div>
 
     
 
-        <div class = "office-details-mobile row hidden-lg hidden-md col-lg-12">
+        <div class = "office-details-mobile row hidden-lg hidden-md">
             <div class = "col-xs-12">
                 <p id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> (02) 554 1465 </p>
             </div>
@@ -271,10 +269,10 @@
                 <p id = "hours" name="hours"> <i class="fa fa-clock-o" aria-hidden="true"></i> Office Hours (Open on Holidays) <br> Monday to Saturday | 9:00AM - 7:00PM  </p>
             </div>
             <div class = "col-xs-12">
-                <p id = "hours" name="hours"> <i class="fa fa-envelope-o" aria-hidden="true"></i> info@visionph.com </p>
+                <p id = "email" name="email"> <i class="fa fa-envelope-o" aria-hidden="true"></i> info@visionph.com </p>
             </div>
             <div class = "col-xs-12">
-                <p id = "hours" name="hours"> <i class="fa fa-envelope-o" aria-hidden="true"></i> inquiry@visionph.com </p>
+                <p id = "email" name="email"> <i class="fa fa-envelope-o" aria-hidden="true"></i> inquiry@visionph.com </p>
             </div>
             <div class="col-xs-12">
                 <span>Follow us: </span>
@@ -283,12 +281,58 @@
                 <i class="fa fa-instagram" style="font-size:20px; padding-right:4%;"></i>
                 <a href=""><i class="fa fa-linkedin" style="font-size:20px; padding-right:4%;"></i></a>   
             </div>
+            <div class = "col-xs-12" id="map-mobile-1">
+                <div class = "map">
+                    <img src="{{ URL::asset('image/manila.png')}}" class="img img-responsive" alt="Location Map">
+                </div>
+            </div>
+            <div class = "col-xs-12" id="map-mobile-2">
+                <div class = "map">
+                    <img src="{{ URL::asset('image/cubao.png')}}" class="img img-responsive" alt="Location Map">
+                </div>
+            </div>
+            <div class = "col-xs-12" id="map-mobile-3">
+                <div class = "map">
+                    <img src="{{ URL::asset('image/baguio.png')}}" class="img img-responsive" alt="Location Map">
+                </div>
+            </div>
          </div>
-
+</form>
 
 <!---------------------------------------------SCRIPT JS ---------------------------------------------------------------->
 <script>
-    
+    var e = document.getElementById("city-mobile");
+    var themap1 = document.getElementById("map-mobile-1");
+    var themap2 = document.getElementById("map-mobile-2");
+    var themap3 = document.getElementById("map-mobile-3");
+
+    e.onchange = function() {
+        var strUser = e.options[e.selectedIndex].value;
+        if(strUser == "manila"){
+            document.getElementById('address').innerHTML = "Office 10, University Tower 1, 829 - 831 Moret Street, Sampaloc Manila ‎‎1008";
+            document.getElementById('hours').innerHTML = "Office Hours (Open on Holidays) <br> Monday to Saturday | 9:00AM - 7:00PM  ";
+            themap1.style.display = "block";
+            themap2.style.display = "none";
+            themap3.style.display = "none";
+        }
+        if(strUser == "cubao"){
+            document.getElementById('address').innerHTML = "Unit 320 - 321, Spark Place, P. Tuazon cor, 10th Avenue, Cubao, Quezon City,  Metro Manila 1109";
+            document.getElementById('hours').innerHTML = "Office Hours (Open on Holidays) <br> Monday to Saturday | 9:00AM - 7:00PM  ";
+            themap2.style.display = "block";
+            themap1.style.display = "none";
+            themap3.style.display = "none";
+        }   
+        if(strUser == "baguio"){
+            document.getElementById('address').innerHTML = " No. 42 Claro M. Recto Street Corner Leonard Wood Road, Baguio City 2600, 42 Claro M. Recto St, Baguio, 2600 Benguet";
+            document.getElementById('hours').innerHTML = "Monday to Saturday | 9:00AM - 7:00PM";
+            themap2.style.display = "none";
+            themap1.style.display = "none";
+            themap3.style.display = 'block';
+        }   
+    }
+
+
+
     var theloc1 = document.getElementById("loc-1");
     var theloc2 = document.getElementById("loc-2");
     var theloc3 = document.getElementById("loc-3");
@@ -310,17 +354,21 @@
         //cont
         thecon1.style.display = "block";
         thecon2.style.display = "none";
+        thecon3.style.display = "none";
         //map
         themap1.style.display = "block";
         themap2.style.display = "none";
+        themap3.style.display = "none";
     }
     theloc2.onclick = function() {
         //cont
         thecon1.style.display = "none";
         thecon2.style.display = "block";
+        thecon3.style.display = "none";
         //map
         themap2.style.display = "block";
         themap1.style.display = "none";
+        themap3.style.display = "none";
     }
     theloc3.onclick = function(){
          //cont
@@ -330,21 +378,9 @@
          //map
          themap2.style.display = "none";
          themap1.style.display = "none";
-         themap3.style.display = 'block'
+         themap3.style.display = 'block';
     }
 
-    jQuery(function(){
-
-        jQuery('#thecity').change(function(){
-            var selectValue = jQuery(this).val();
-
-            if(selectValue === "Manila"){
-
-            } else if(selectValue === "Cubao"){
-                alert('22222222');
-            }
-        });
-    });
 </script>
 
 

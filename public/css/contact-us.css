@@ -163,6 +163,12 @@ a:hover
     padding: 12px;
     border-radius: 6px;
   }
+  #map-mobile-2{
+    display:none;
+  }
+  #map-mobile-3{
+    display:none;
+  }
 
   h4{
     line-height: 30px;
