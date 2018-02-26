@@ -24,7 +24,7 @@
 
 .counter-label{
 	color:white;
-	padding-left: 5%;
+	padding-left: 4%;
 	padding-bottom: 2%;
 	
 }
@@ -332,7 +332,6 @@ color:white;
     height: 30;
 
 }
-
 
 
 @media screen and (max-width: 1199px) and (min-width: 992px) {
