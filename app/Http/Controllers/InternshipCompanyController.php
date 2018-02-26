@@ -71,18 +71,18 @@ class InternshipCompanyController extends Controller
 
         } */
 
-        else if (request()->has('state')){
+        else if (request()->has('country')){
 
             
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('featured','desc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('featured','desc')->where('country', request('country'))->paginate(4)->appends('state', request('state'));
 
             
-            $internship_addresses = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('housing_address');
-            $internship_name = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('company_name');
-            $internship_desc = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('description');
+            $internship_addresses = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('description');
             $internship_filter = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
-            $internship_id = InternshipCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('id');
+            $internship_id = InternshipCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('id');
             $internship_image = InternshipCompany::orderBy('featured','desc')->pluck('image');
             $internship_featured = InternshipCompany::orderBy('featured','desc')->pluck('featured');
             

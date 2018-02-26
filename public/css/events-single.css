@@ -30,8 +30,13 @@
 .left{
 	border-right: 1px solid white;
 }
-.text-left{
-	float:right;
+.text-left {
+    float: right;
+    color: white;
+}
+.text-right {
+    float: left;
+    color: white;
 }
 a{
 	color:white;

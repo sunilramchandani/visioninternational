@@ -8,10 +8,10 @@ use App\faq;
 class faqController extends Controller
 {
      public function index(){
-     	$internship = faq::where('faq_type','internship')->get();
-     	$spring = faq::where('faq_type','spring')->get();
-     	$summer = faq::where('faq_type','summer')->get();
-     	$aupair = faq::where('faq_type','aupair')->get();
+     	$internship = faq::where('faq_type','Internship')->get();
+     	$spring = faq::where('faq_type','Spring Work & Travel')->get();
+     	$summer = faq::where('faq_type','Summer Work & Travel')->get();
+     	$aupair = faq::where('faq_type','Au Pair')->get();
      	$faq_types = faq::distinct('state')->pluck('faq_type');
 
         return view('users.FAQ.faq', compact('internship','summer','spring','aupair','faq_types'));

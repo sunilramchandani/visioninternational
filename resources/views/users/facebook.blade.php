@@ -10,23 +10,23 @@
 <form action="" method="post" role="form">
  {{csrf_field()}}
 <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+<img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
 <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-<div class = "col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-3 col-xs-offset-8 sticky">
-  <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class = "col-xs-3 col-xs-offset-8 sticky">
+  <div class = "col-xs-6">
     <p> Start an <strong> amazing </strong> </p>
     <p> future with us </p>
   </div>
-  <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6 button-apply-sticky">
+  <div class = "col-xs-6 button-apply-sticky">
     <a href = "/application" class = "btn applynow-sticky">Apply Now</a>
   </div>
 </div>
-<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 events">
-  <div class ="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class = "col-lg-9 col-md-9 col-sm-9 col-xs-9 events-header">
+<div class = "col-xs-12 events">
+  <div class ="row col-xs-12">
+    <div class = "col-xs-9 events-header">
       <h2>Events</h2>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  search-row">
+    <div class="col-xs-3  search-row">
    <!-- <form action="{{route('event.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -48,25 +48,26 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col-lg-10 col-md-10 col-sm-10 col-xs-10 events-content-container">
+    <div class = "col-xs-9 events-content-container">
       @foreach($events_table as $events)
-        <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 events-content">
-          <img src="{{$events->cover_source}}" alt="" class = "event-img img">
-          
-          <h4 class = " details text-center">{{$events->event_name}} </h4> 
-          <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
-          <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
-         
-          <a class = "submit btn" href = "/single_event/{{$events->fbevent_id}}"><span>More Info</span></a>
-          
+        <div class = "col-xs-4">
+          <div class = "col-xs-12 events-content">
+            <img src="{{$events->cover_source}}" alt="" class = "event-img img">
+            
+            <h4 class = " details text-center">{{$events->event_name}} </h4> 
+            <p class = "details text-center"><strong>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</strong> </p>
+            <p class = "details text-center">{{ \Illuminate\Support\Str::words($events->event_description, 15,' .... ')}}</p>
+           
+            <a class = "submit btn" href = "/single_event/{{$events->fbevent_id}}"><span>More Info</span></a>
+          </div>
         </div>
       @endforeach
-      
-      {{$events_table->appends(['s' => $s])->links()}}
+     
       
     </div>
     
-    <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2 categories-sidebar">
+    <div class = "col-xs-3 categories-sidebar">
+      <div class = "col-xs-12">
         <table class="table table-categories table-borderless table-hover">
           <thead bgcolor="#800000">
             <tr>
@@ -90,7 +91,11 @@
         </table>    
 
     </div>
-  </div>
+  </div> 
+  </div>   
+  <div class = "row text-center">
+       {{$events_table->appends(['s' => $s])->links()}}
+    </div>
 </div> 
 <div class = "row filler"></div>
 </form>

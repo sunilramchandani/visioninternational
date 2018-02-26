@@ -11,7 +11,7 @@
 @section('content')
 <form action="" method="post" role="form">
  {{csrf_field()}}
-<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
+<div class = "col-xs-12 whole-page">
 @foreach ($featuredimage_internship as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
@@ -27,11 +27,11 @@
 @endforeach
 
         </div>
-            </div>
+    </div>
 
     
     <div class = " row">
-        <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 Top-header-message text-center">
+        <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
@@ -42,21 +42,21 @@
         <div class = "row filter-top">
             <div class = "col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-7 col-xs-offset-1 filter-main">
                 <div class="dropdown">
-                  <a class="dropbtn-filter">State</a>
-                  <div class="dropdown-content-filler">
-                  <div id="links">
-                  <a href="/internshipcompany">All</a>
-                    @if ( Request::get('state')  )
-                        @foreach ($internship_filter as $filter)
-                            <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
-                        @endforeach
-                    @else
-                        @foreach ($internshipCompany_table as $company)
-                            <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
-                        @endforeach
-                    @endif
+                    <a class="dropbtn-filter">State</a>
+                    <div class="dropdown-content-filler">
+                      <div id="links">
+                      <a href="/internshipcompany">All</a>
+                        @if ( Request::get('state')  )
+                            @foreach ($internship_filter as $filter)
+                                <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                            @endforeach
+                        @else
+                            @foreach ($internshipCompany_table as $company)
+                                <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                            @endforeach
+                        @endif
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="dropdown">
                   <a class="dropbtn-filter">Industry</a>
@@ -103,7 +103,7 @@
                 @endfor
             </div>
         </div>
-
+    </div>
 
 
 <!--------------------HIDDEN DIV ---------------------------->
@@ -116,14 +116,14 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
 
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
         
@@ -137,13 +137,13 @@
 <!----------------------------------------END OF HIDDEN DIV -------------------------------------->
 
 
-<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 company-whole" id = "x">
-    <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 picture" id = "map">  
+<div class = "col-xs-12 company-whole" id = "x">
+    <div class = "col-xs-5 picture" id = "map">  
     </div>
-    <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
+    <div class = "col-xs-7 side-content">
     
         @foreach ($internshipCompany_table as $company)
-            <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
+            <div class = "col-xs-5 col-xs-offset-1 info-container">
                 <div class = "row company-picture">
                     <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
                 </div>
@@ -154,18 +154,15 @@
                     <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                 </div>
             </div> 
-        
         @endforeach
-       
-         
-    
-</div>
+
+    </div>
 </div>
 <!--whats next?-->
 <div class = "container">
     <!-- number 1 -->
     <div class = "row">
-        <div class = "col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <div class = "col-xs-12">
             <div class = "row text-center what-next-text">
                 <h2 id=whatsnext-title>What's Next?</h2>
                 <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
@@ -173,7 +170,7 @@
             </div>
             <div class="text-center boxshadow row"> 
                 <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
-                <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="internship-icon col-xs-6">
                     <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}">
                     <h1 id=reserve-title>Reservation</h1>
                     <h1 id=reserve-title>& Application</h1>
@@ -181,7 +178,7 @@
                     <p id=p-icon>and pay for your reservation</p>
                 </div>
 
-                <div class="intership-content left-side col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="intership-content left-side col-xs-6">
                     <p id=p-content>Upon receiving you proof of payment,</p>
                     <p id=p-content>you will be assigned a dedicated program</p>
                     <p id=p-content>specialist who will handle your application </p>
@@ -197,10 +194,10 @@
     </div>
     <!--number 2 -->
     <div class = "row">
-        <div class = "col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <div class = "col-xs-12">
             <div class="text-center boxshadow row"> 
                  <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
-                <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="internship-icon col-xs-6">
                     {{--  <div class=circle-number>1</div>  --}}
                     <img src="{{URL:: asset('image/icons/Interviews.png') }}">
                     <h1 id=reserve-title>Interviews</h1>
@@ -208,7 +205,7 @@
                     <p id=p-icon>sponsors and the US embassy</p>
                 </div>
 
-                <div class="intership-content col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="intership-content col-xs-6">
                     <p id=p-content>Your assigned progam speacialist will help</p>
                     <p id=p-content>you create a video resume that will be submitted.</p>
                     <p id=p-content>Make sure you have a Skype account registered. </p>
@@ -223,7 +220,7 @@
     </div>
     <!--number 3 -->
     <div class = "row">
-        <div class = "col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <div class = "col-xs-12">
             <div class="text-center boxshadow row">
                 <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
                 <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -252,7 +249,7 @@
             <div class = "row">
                 <div class = "col-xs-12 rate-container">
                         <div class = "col-xs-6">
-                            <div class = "text-left-side col-lg-offset-1">
+                            <div class = "text-left-side col-xs-offset-1">
                                 <h2 class = "gradient"> What's the rate? </h2>
                                 <h3 class = "gradient1"> There is plenty to experience! </h3>
                             </div>
@@ -282,7 +279,7 @@
                                 </div>
                             </div>
                             <div class = "row row-price">
-                                 <div class = "ccol-xs-3 col-xs-offset-1">
+                                 <div class = "col-xs-3 col-xs-offset-1">
                                     <strong><p id = "1st-Installment">USD 450</p></strong>
                                 </div>
                                 <div class = "col-xs-4">
@@ -306,7 +303,7 @@
                                 </div>
                             </div>
                             <div clas = "row row-price">
-                                <div class = "col-xs-9">
+                                <div class = "col-xs-6 col-xs-offset-3">
                                     <a class = "btn locate-me" href = "/application"> Apply Now </a>
                                 </div>
                             </div>
@@ -377,7 +374,7 @@
  <!--testimony-->
         <div class="container">
             <div class="row testimony-header">
-                <div class=" col-xs-12 col-md-8 col-md-offset-2 about-font text-center">
+                <div class=" col-xs-8 col-xs-offset-2 about-font text-center">
                      <h3>Our Community</h3>
                      <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
                 </div>
@@ -397,10 +394,12 @@
         </div>
 <!--end of testimony -->
 </div>
-</div>
+</form>
 <div class = "filler row" id = "filler">
 </div>
-</form>
+
+</div>
+
 
 
 
@@ -417,9 +416,6 @@ $(function() {
         });
     });
 });
-
-
-
 </script>
 
 <script type="text/javascript">
