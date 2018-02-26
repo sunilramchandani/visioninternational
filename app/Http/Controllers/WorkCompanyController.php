@@ -58,7 +58,7 @@ class WorkCompanyController extends Controller
         else if (request()->has('country')){
 
             
-            $featuredimage_internship = FeaturedImage::where('page_name','Work')->orderBy('featured','desc')->get();
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
             $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('country', request('state'))->paginate(4)->appends('state', request('state'));
 
             
@@ -74,7 +74,7 @@ class WorkCompanyController extends Controller
         else if (request()->has('duration')){
 
             
-            $featuredimage_internship = FeaturedImage::where('page_name','Work')->orderBy('featured','desc')->get();
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
             $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('duration', request('duration'))->paginate(4)->appends('duration', request('duration'));
 
             
