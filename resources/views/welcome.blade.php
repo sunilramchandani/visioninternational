@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="row counter-label">
-            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1">
+            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1 ">
                 <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">Countries</h4>
                 </div>
