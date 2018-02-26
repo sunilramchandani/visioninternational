@@ -1,3 +1,5 @@
+<div id='pageLoad'>
+
 @extends('layouts.master')
 
 @section('page-css')
@@ -42,14 +44,14 @@
                   <a class="dropbtn-filter">State</a>
                   <div class="dropdown-content-filler">
                   <div id="links">
-                  <a href="/internshipcompany">All</a>
+                  <a href="/workcompany">All</a>
                     @if ( Request::get('state')  )
                         @foreach ($internship_filter as $filter)
-                            <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                            <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                         @endforeach
                     @else
                         @foreach ($internshipCompany_table as $company)
-                            <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                            <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                         @endforeach
                     @endif
                     </div>
@@ -382,6 +384,20 @@
 </form>
 
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("#links > a").click(function(e) {
+        e.preventDefault(); //so the browser doesn't follow the link
+
+        $("#pageLoad").load(this.href, function() {
+            //execute here after load completed
+        });
+    });
+}); 
+</script>
 
 
 

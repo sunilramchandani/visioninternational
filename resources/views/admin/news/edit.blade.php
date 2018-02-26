@@ -48,7 +48,27 @@
                             <label for="author">
                                 Author
                             </label>
+                            
                             <select class = "form-control" name="author_id" id="">
+
+                            <option value="{{isset($news->author) ? $news->author :""}}" selected>
+                            @if(isset($news->author_id))
+                            @foreach($news->author as $name)
+                            {{ isset($news->author_id) ?
+                             
+    
+                                $name->name
+                                 
+                             
+                             
+                             
+                              :''}}@endforeach
+                            @else
+                            Select Author
+                            @endif
+                                </option>
+
+
                                 @foreach($author_name as $author )
                                 <option value="{{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach

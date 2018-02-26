@@ -140,7 +140,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::findOrFail($id);
+        $news = News::with('author')->findOrFail($id);
         $author_name = Author::all();
         
         $getid_news = DB::table('category_news')

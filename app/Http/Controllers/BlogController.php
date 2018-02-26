@@ -121,7 +121,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::with('author')->findOrFail($id);
 
         $blog->delete();
 
