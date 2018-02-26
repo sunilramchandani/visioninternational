@@ -116,7 +116,7 @@
                         </div>
                         <div class="row">
                         <div class="col-lg-6 share-main-title col-lg-offset-4 ">
-                        {{$blog_table->appends(['s' => $s])->links()}}
+                        {{$news_table->appends(['s' => $s])->links()}}
                         </div>
                         </div>
                         
