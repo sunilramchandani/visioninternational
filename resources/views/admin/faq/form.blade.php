@@ -23,10 +23,10 @@
                             </label>
                             <select class="form-control" name="faq_type" id="faq_type" required>
                                 <option value="" disabled selected>{{ isset($faq->faq_type) ? $faq->faq_type :''}}</option>
-                                <option value="internship">Internship</option>
-                                <option value="spring">Spring</option>
-                                <option value="summer">Summer</option>
-                                <option value="aupair">AuPair</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Spring">Spring</option>
+                                <option value="Summer">Summer</option>
+                                <option value="AuPair">AuPair</option>
                             </select>
 
                         </div>

@@ -148,6 +148,29 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
     });
 
+    Route::group(['prefix' => 'media'], function() {
+        Route::get('/list', ['uses' => 'MediaController@adminIndex', 'as' => 'media.adminIndex']);
+
+        Route::get('/new', ['uses' => 'MediaController@adminCreate', 'as' => 'media.adminCreate']);
+        Route::post('/new', ['uses' => 'MediaController@adminStore', 'as' => 'media.adminStore']);
+
+        Route::get('/edit/{id}', ['uses' => 'MediaController@adminEdit', 'as' => 'media.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'MediaController@adminUpdate', 'as' => 'media.adminUpdate']);
+
+        Route::get('/trash', ['uses' => 'MediaController@viewTrash', 'as' => 'media.trash']);
+        Route::get('/trash/{id}', ['uses' => 'MediaController@restoreTrash', 'as' => 'media.restoretrash']);
+
+
+
+
+        Route::get('/delete/{id}', [
+            'uses' => 'MediaController@adminDelete',
+            'as' => 'media.adminDelete'
+        ]);
+
+
+    });
+
 
     Route::resource('news', 'NewsController');
 

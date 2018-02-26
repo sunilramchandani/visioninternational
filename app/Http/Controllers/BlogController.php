@@ -37,7 +37,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $blog_table = Blog::all();
+        $blog_table = Blog::with('author');
         $author_name = Author::all();
         $category_list = CategoryList::all();
         $category_blog = BlogCategory::all();
