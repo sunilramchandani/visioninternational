@@ -45,17 +45,10 @@
                             </label>
                             <select class="form-control" name="author_id" id="author_id" required>
                             <option value="" selected>
-                            @foreach($blog_table->author as $name)
-                            {{ isset($blog_table->author_id) ?
-                             
-    
-                                $name->name
-                                 
-                             
-                             
-                             
-                              :''}}@endforeach
-                              
+
+                            {{$blog_table->author}}
+
+
                               
                               </option>
                                 @foreach($author_name as $author )

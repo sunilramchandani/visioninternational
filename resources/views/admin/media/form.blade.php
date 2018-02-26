@@ -23,7 +23,7 @@
                             </label>
                             <select class="form-control" name="media_type" id="media_type" required>
                             
-                                <option value="" selected>{{ isset($media->media_type) ? $media->media_type :''}}</option>
+                                <option value="" disabled selected>{{ isset($media->media_type) ? $media->media_type :''}}</option>
                                 <option value="Video">Video</option>
                                 <option value="Photo">Photo</option>
                             </select>
@@ -42,7 +42,8 @@
                                 Author
                             </label>
                             <select class="form-control" name="media_author" id="media_author" required>
-                            <option value="" selected>
+                            <option value="{{isset($media->author) ? $media->author :""}}" selected>
+                            @if(isset($media->media_author))
                             @foreach($media->author as $name)
                             {{ isset($media->media_author) ?
                              
@@ -53,9 +54,10 @@
                              
                              
                               :''}}@endforeach
-                              
-                              
-                              </option>
+                            @else
+                            Select Author
+                            @endif
+                                </option>
                                 @foreach($author_name as $author )
                                 <option value=" {{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach
