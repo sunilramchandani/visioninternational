@@ -28,10 +28,10 @@
 			<div class="dropdown">
 				<button class="dropbtn">Learn More</button>
 				<div class="dropdown-content">
-					<a href="news">News</a>
-					<a href="event">Events</a>
-					<a href="blog">Blog</a>
-					<a href="faq">FAQ</a>
+					<a href="/news">News</a>
+					<a href="/event">Events</a>
+					<a href="/blog">Blog</a>
+					<a href="/faq">FAQ</a>
 				</div>
 			</div>
 			<div class = "applynow-btn">

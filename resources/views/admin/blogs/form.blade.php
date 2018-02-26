@@ -44,7 +44,20 @@
                                 Author
                             </label>
                             <select class="form-control" name="author_id" id="author_id" required>
-                                <option value="" disabled selected>Select Author</option>
+                            <option value="" selected>
+                            @foreach($blog_table->author as $name)
+                            {{ isset($blog_table->author_id) ?
+                             
+    
+                                $name->name
+                                 
+                             
+                             
+                             
+                              :''}}@endforeach
+                              
+                              
+                              </option>
                                 @foreach($author_name as $author )
                                 <option value="{{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach

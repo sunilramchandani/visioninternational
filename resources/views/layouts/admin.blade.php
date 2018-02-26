@@ -130,6 +130,30 @@
                     </ul>
                 </li> 
 
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/media') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-thumb-tack"></i>
+                        <span>Media</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('media.adminIndex') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('media.adminCreate') }}">
+                                <i class="fa fa-plus-circle"></i>
+                                New
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/application') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-envelope"></i>

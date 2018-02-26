@@ -279,11 +279,11 @@
                 </div>
                 @endforeach
                 <!-- Controls -->
-                <a class="left carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="prev">
+                <a class="left carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="prev" style="background: none !important; color:black;">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="next">
+                <a class="right carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="next"style="background: none !important; color:black;">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
