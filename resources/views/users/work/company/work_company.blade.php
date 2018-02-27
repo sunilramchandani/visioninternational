@@ -68,3 +68,9 @@
 <div class = "filler row">
 </div>
 </form>
+<script>
+$('body').on('hidden.bs.modal', '.modal', function () {
+  $(this).removeData('bs.modal');
+});
+    </script>
+</form>

@@ -40,24 +40,28 @@
 	        </div>
 	    </div>
         <div class = "row next-previous-container">
-	        @if($previousevents != Null)
-	        <div class = "col-lg-6 left">
+	       
+	        <div class = "col-lg-6 left"> 
 	        	<div class = "text-left arrow">
+              @if($previousevents != Null)
 	        		<a href = "{{$previousevents->fbevent_id}}" class="text-left">< Previous</a>
 		        	<br>
 		        	<a href = "{{$previousevents->fbevent_id}}" class="text-left"><h4>{{$previousevents->event_name}}</h4></a>
+              @endif
 		        </div>
 	        </div>
-	        @endif
-	        @if($nextevents != Null)
+	        
+	        
 	        <div class = "col-lg-6">
 	        	<div class = "arrow">
-		        	<a href = "{{$nextevents->fbevent_id}}">Next ></a>
+              @if($nextevents != Null)
+		        	<a href = "{{$nextevents->fbevent_id}}" class="text-right">Next ></a>
 		        	<br>
-		        	<a href = "{{$nextevents->fbevent_id}}"><h4>{{$nextevents->event_name}}</h4></a>
-		        </div>
+		        	<a href = "{{$nextevents->fbevent_id}}" class="text-right"><h4>{{$nextevents->event_name}}</h4></a>
+		         @endif
+            </div>
 	        </div>
-	        @endif
+	        
 	    </div>
     </div>
 	<div class = "col-lg-3">

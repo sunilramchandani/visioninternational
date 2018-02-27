@@ -1,7 +1,4 @@
-.img-border{
-  margin-top: -17%;
-  width:105%;
-}
+
 .img-line{
 	display: none;
 }
@@ -57,3 +54,9 @@
     padding-top: 2%;
 }
 
+.img-border {
+    margin-top: -20%;
+    width: 104%;
+    margin-left: -4%;
+    display: block;
+}

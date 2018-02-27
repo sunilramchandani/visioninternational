@@ -160,7 +160,7 @@ class EventPluginController extends Controller
             $events_table = EventPlugin::with('eventcategory')
                             ->orderBy('created_at', 'desc')
                             ->search($s)
-                            ->paginate(2);
+                            ->paginate(6);
 
 
          } 

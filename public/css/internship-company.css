@@ -31,6 +31,9 @@
 	padding-bottom: 3%;
 
 }
+.company-details{
+	height:100%;
+}
 .p-dynamic{
 	color:white;
 }
@@ -39,9 +42,11 @@
 	padding-bottom: 15%;
 }
 
-.img-border{
-  margin-top: -17%;
-  width:105%;
+.img-border {
+    margin-top: -20%;
+    width: 104%;
+    margin-left: -4%;
+    display: block;
 }
 .header{
       height: 75%;
@@ -55,14 +60,19 @@ hr{
 	background-color:#cccccc;
 	color:#cccccc;
 }
-.legend{
-	background-color:#f2f2f2;
-	width:100%;
-	padding-top: 2%;
+#myModal{
+    padding-right: 17px;
+    padding-left: 17px;
+}
+.legend {
+    background-color: #f2f2f2;
+    width: 98%;
+    position: absolute;
+    bottom: 0;
 }
 .company-whole{
 	box-shadow: 5px 5px 5px grey;
-	height:95%;
+	height:100%;
 	padding: 0;
 }
 .qualifications{
@@ -129,12 +139,12 @@ hr{
 }
 .picture{
 	height:100%;
+	padding: 0;
 }
 .dropdown{
 	padding-right: 25px;
 }
-.company-whole{
-}
+
 .side-content{
 	height:100%;
 	overflow-y:auto;
@@ -286,6 +296,7 @@ margin-top: 5px;
 }
 .rate-image{
 	padding:0;
+	height: 100%;
 }
 .text-left-side{
 	letter-spacing: 2px;
@@ -425,9 +436,6 @@ margin-top: 5px;
 }
 .img-line{
 	display: none;
-}
-.img-border{
-	display:visible;
 }
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.testimony-picture {

@@ -21,10 +21,6 @@
 	padding-bottom: 15%;
 }
 
-.img-border{
-  margin-top: -17%;
-  width:105%;
-}
 .header{
       height: 75%;
 
@@ -97,14 +93,8 @@ margin-top: 5px;
 	padding-top: 5%;
 	padding-bottom: 5%;
 }
-.aupair-icon-right{
-	margin-left: 2%;
 
-}
-.aupair-icon-left{
-	margin-right: 2%;
 
-}
 .locate-me {
     background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
     color: white;
@@ -224,7 +214,12 @@ margin-top: 5px;
 	top: -35;
 	right: 46%;
 }
-
+.img-border {
+    margin-top: -20%;
+    width: 104%;
+    margin-left: -4%;
+    display: block;
+}
 .img-line{
 	display: none;
 }

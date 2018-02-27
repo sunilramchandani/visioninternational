@@ -12,13 +12,13 @@
 				<div class="dropdown-content">
 					<div class = "col-md-6">
 						<p class = "dropdown-content-header">United States</p>
-						<a href="/workcompany">Work & Travel</a>
-						<a href="/internshipcompany">Internship</a>
+						<a href="/workcompany?country=United States">Work & Travel</a>
+						<a href="/internshipcompany?country=United States">Internship</a>
 						<a href="/aupair">Au Pair</a>
 					</div>
 					<div class = "col-md-6">
 						<p class = "dropdown-content-header">Australia</p>
-						<a href="#">Internship</a>
+						<a href="/internshipcompany?country=Australia">Internship</a>
 						<a href="#">Skilled Work Visa</a>
 					</div>
 				</div>
