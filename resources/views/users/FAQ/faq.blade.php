@@ -9,13 +9,13 @@
 @section('content')
 <div class = "whole-page">
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
 
     <!-- FAQ header -->
     <div class="container">
         <div class="about row">
-            <div class="col-lg-4 col-lg-offset-4 text-center FAQ-font">
+            <div class="col-xs-4 col-xs-offset-4 text-center FAQ-font">
                 <h3>Frequently Asked Questions </h3>
                 <p>We understand that this is a huge step in your life. Read up answers to some of your most pressing questions and concerns</p>
             </div>
@@ -27,7 +27,7 @@
 	
 	<div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-xs-8">
             	<!-- VIDEO -->
         	    <div class="row">
 		            <div class="video-div">
@@ -118,7 +118,8 @@
 				</div>
 			</div>
 			<!--FILTER -->
-		    <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4 categories-sidebar">
+		    <div class = "col-xs-4 categories-sidebar">
+		    	<div class = "col-xs-12">
 		        <table class="table table-categories table-borderless table-hover">
 		          <thead bgcolor="#800000">
 		            <tr>
@@ -130,16 +131,16 @@
 		          	@foreach ($faq_types as $faq_type)
 		            <tr class='clickable-row' data-href='fb?ecat=General'>
 		              <td>{{$faq_type}}</td>
-		              @if ($faq_type == "internship")
+		              @if ($faq_type == "Internship")
 		              	<td>(16)</td>
 		              @endif
-		              @if ($faq_type == "summer")
+		              @if ($faq_type == "Summer Work & Travel")
 		              	<td>(9)</td>
 		              @endif
-		              @if ($faq_type == "spring")
+		              @if ($faq_type == "Spring Work & Travel")
 		              	<td>(9)</td>
 		              @endif
-		              @if ($faq_type == "aupair")
+		              @if ($faq_type == "Au Pair")
 		              	<td>(14)</td>
 		              @endif
 		            </tr>

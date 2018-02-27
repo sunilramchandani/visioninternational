@@ -59,14 +59,14 @@ class WorkCompanyController extends Controller
 
             
             $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
-            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('country', request('state'))->paginate(4)->appends('state', request('state'));
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('country', request('country'))->paginate(4)->appends('country', request('country'));
 
             
-            $internship_addresses = WorkCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('housing_address');
-            $internship_name = WorkCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('company_name');
-            $internship_desc = WorkCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('description');
+            $internship_addresses = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('description');
             $internship_filter = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
-            $internship_id = WorkCompany::where('country', request('state'))->orderBy('featured','desc')->pluck('id');
+            $internship_id = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('id');
             $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
              $internship_featured = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('featured');
             return view('users.work.work', compact('testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));

@@ -32,7 +32,7 @@
 }
 
 .header-table{
-	height: 5%;
+	height: 6%;
 	background-color: 800000;
 	color:white;
 }
@@ -114,22 +114,16 @@ hr{
 	
   }
 
- .left-main-title2{
-	margin-top: 2%;
-	padding-left: 5%;
 
-	
-  }
   .share-main-title{
 	margin-top: 2%;
-	padding-left: 5%;
-	
+	padding-left: 5%;	
   }
    .share-main-title2{
 	margin-top: 2%;
 	padding-left: 5%;
-	
   }
+
 	.hr-main-title2 {
 	    padding-left: 2%;
 	    padding-right: 5%;
@@ -146,7 +140,6 @@ hr{
   	position: absolute;
 }
 
-
 .submit:hover{
 	color:white;
 }
@@ -156,12 +149,174 @@ hr{
 .img-line{
 	display: none;
 }
-@media screen and (max-width: 991px) and (min-width: 720px) {
+
+.red-title h1{
+	background-color: #840502;
+	font-size: 18px;
+	padding: 5px;
+	color: white;
+}
+
+.hr-main-title-blog{
+	margin-top: 30px;
+}
+
+.categories{
+	margin-left: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------MEDIA QUERIES---------------------------------------------------------------------------------------- */
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	.hr-main-title{
+		margin-top: 6%;
+	}	
+
 	.img-border{
 		display: none;
 	}
+
 	.img-line{
 		display: block;
 		margin-top: -5px;
 	}
 }
+
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  	
+  }
+  
+
+
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media screen and (max-width: 480px) and (min-width: 320px){
+
+	.img-border{
+		display: none;
+	}
+
+	.left{
+		padding: 14px;
+	}
+
+	.right{
+		padding: 30px;
+	}
+
+	.hr-main-title{
+		margin-top: 14%;
+	}	
+
+	.text-inside-header-picture{
+		margin-top: -75%;
+		padding-bottom: unset;
+	}	
+
+	.dynamic-text-container{
+		padding-bottom: unset;
+	}
+
+	.dynamic-text-container-box{
+		margin-top: 100px;
+		width: 90%;
+	}
+
+	.dynamic-text-container-box h4{
+		font-size: 14px;
+		margin-top: 10px;
+   		margin-bottom: 10px;
+	}
+
+	.dynamic-text-container-box h1{
+		font-size: 22px;
+		margin-top: unset;
+		margin-bottom: 10px;
+	}
+
+	.p-dynamic{
+		font-size: 14px;
+	}
+
+
+	.categories{
+		margin-left: unset;
+	}
+
+}
+
+
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.text-inside-header-picture{
+		margin-top: -36%;
+		padding-bottom: unset;
+	}
+
+	.dynamic-text-container-box{
+		margin-top: 100px;
+		width: 90%;
+	}
+
+	.dynamic-text-container-box h1{
+		font-size: 22px;
+		margin-top: 10px;
+		margin-bottom: 4px;
+	}
+
+	.dynamic-text-container-box h4{
+		font-size: 14px;
+	}
+
+	.dynamic-text-container{
+		padding-bottom: 3%;
+	}
+
+	.hr-main-title{
+		margin-top: 8%;
+	}	
+
+	.img-border{
+		display: none;
+	}
+
+	.header-table{
+		height: 8%;
+	}
+
+	.right{
+		padding: 4%;
+	}
+
+
+}
+
