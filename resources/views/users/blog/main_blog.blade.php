@@ -156,7 +156,6 @@
                          <div class="red-title">
                              <h1>CATEGORIES</h1>
                          </div>
-                            </thead>
                             <tbody>
                                 @foreach ($category_table as $category)
                                 <tr class='clickable-row'>

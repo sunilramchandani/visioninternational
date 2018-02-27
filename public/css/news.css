@@ -137,6 +137,17 @@ hr{
 .img-line{
 	display: none;
 }
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------MEDIA QUERIES-------------------------------------------------- */
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.img-border{
 		display: none;

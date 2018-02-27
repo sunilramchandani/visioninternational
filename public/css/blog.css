@@ -161,8 +161,8 @@ hr{
 	margin-top: 30px;
 }
 
-.categories{
-	margin-left: 600px;
+.about-author{
+	margin: 0 0 50px;
 }
 
 
@@ -175,7 +175,38 @@ hr{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------------------------------------------MEDIA QUERIES---------------------------------------------------------------------------------------- */
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+	
+	.about-author-mobile{
+		display: none;
+	}
+
+  }
+
+
 /* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
@@ -201,18 +232,46 @@ hr{
   ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  	
+	  
+	
   }
   
-
-
-
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 @media screen and (max-width: 480px) and (min-width: 320px){
+
+	.blog-content{
+		padding: 30px;
+	}
+
+	.about-author{
+		display: none;
+	}
+
+	.about-author-mobile{
+		padding: 0px;
+	}
+
+	.back-to-news h3{
+		padding: 15px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+
+	.back-to-blog h3{
+		padding: 15px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+
+	.categories-content{
+		padding: 0px;
+	}
 
 	.img-border{
 		display: none;
@@ -260,7 +319,6 @@ hr{
 		font-size: 14px;
 	}
 
-
 	.categories{
 		margin-left: unset;
 	}
@@ -269,9 +327,8 @@ hr{
 
 
 
-
 /* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Device = Low Resolution Tablets, Mobiles (LANDSCAPE)
   ##Screen = B/w 481px to 767px
 */
 
@@ -310,7 +367,7 @@ hr{
 	}
 
 	.header-table{
-		height: 8%;
+		height: 5%;
 	}
 
 	.right{
