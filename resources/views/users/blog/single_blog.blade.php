@@ -61,14 +61,15 @@
                     <p class="event-description">{!! $blog->body!!}</p>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-lg-12 hr-main-title-blog ">
+                    <hr>
+                </div>
+            </div>
             
-        
-
-
-
+    
         <div class="row">
-            <div class="col-lg-9 left-main-title2 ">
+            <div class="col-lg-6 share-title ">
                 <p>
                     <span>Share This Article: </span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
@@ -82,7 +83,7 @@
                     </a>
                 </p>
             </div>
-            <div class="col-lg-3 Categories">
+            <div class="col-lg-6 categories">
                 <p>
                     <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
 

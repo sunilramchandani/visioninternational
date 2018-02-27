@@ -23,7 +23,7 @@
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
-                <div class="col-lg-8 col-lg-offset-1">
+                <div class=" left col-lg-8 col-lg-offset-1">
                     @foreach($blog_table as $blog)
                     <div class="container-fluid image-blog">
                         <div class="row">
@@ -127,7 +127,7 @@
                 </div>
 
                 <!-- right side -->
-                <div class="col-lg-3 ">
+                <div class="right col-lg-3 ">
                     <div class="row">
 
                         <form action="{{route('userBlog.index') }}" method="get" class="form-inline">
@@ -153,12 +153,9 @@
                     <div class="row">
 
                         <table class="table table-categories table-borderless table-hover">
-                            <thead bgcolor="#800000">
-                                <tr>
-                                    <h4 class="header-table text-left">
-                                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p>
-                                    </h4>
-                                </tr>
+                         <div class="red-title">
+                             <h1>CATEGORIES</h1>
+                         </div>
                             </thead>
                             <tbody>
                                 @foreach ($category_table as $category)
@@ -180,13 +177,9 @@
 
 
                         <table class="table table-categories table-borderless table-hover">
-                            <thead bgcolor="#800000">
-                                <tr>
-                                    <h4 class="header-table text-left">
-                                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p>
-                                    </h4>
-                                </tr>
-                            </thead>
+                            <div class="red-title">
+                                <h1>RECENT POST</h1>
+                            </div>
                             <tbody>
                                 @foreach($blog_table as $blog)
                                 <tr class='clickable-row'>
