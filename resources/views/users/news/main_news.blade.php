@@ -2,32 +2,25 @@
 <link rel="stylesheet" href="{{ asset('css/image-preview.css') }}">
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}"> @stop @include('layouts.navbar') @section('content')
 
-<div class="col-lg-12 whole-page row">
+<div class="whole-page row">
     @foreach ($featuredimage_news as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class="text-inside-header-picture">
-        <div class="row dynamic-text-container">
-            <div class="col-lg-4 dynamic-text-container-box">
-                <h4> UNITED STATES </h4>
-                <H1> INTERNSHIP </H1>
-                <p class="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
-            </div>
 
-            @endforeach
-        </div>
-    </div>
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
+    @endforeach
 
-    <div class="container-fluid ">
+
+    <div class="container">
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
-                <div class=" left col-lg-8 col-lg-offset-1">
+                <div class=" left col-xs-12 col-sm-8 ">
                     @foreach($news_table as $news)
                     <div class="container-fluid image-blog">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-xs-12">
                                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
                                     <ol class="carousel-indicators">
@@ -58,12 +51,12 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-12  left-main-title  ">
+                            <div class="col-xs-12  left-main-title  ">
                                 <strong>{{$news->title}}</strong>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12  left-main-title ">
+                            <div class="col-xs-12  left-main-title ">
                                 <p>@foreach ($news->author as $newss) {{$newss->name}} @endforeach | {{Carbon\Carbon::parse($news->date)->toFormattedDateString()}}</p>
 
                             </div>
@@ -71,13 +64,13 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12  left-main-title ">
-                               <p class = "description-news">{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p> 
+                            <p class = "description-news">{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p>
                             </div>
                         </div>
 
 
                         <div class="row">
-                            <div class="col-lg-12  left-main-title ">
+                            <div class="col-xs-6 col-xs-offset-4 col-sm-12 col-sm-offset-0  left-main-title ">
                                 <a href="/news/{{$news->id}}" class="submit btn">
                                     <span>Read More</span>
                                 </a>
@@ -86,26 +79,26 @@
 
 
                         <div class="row">
-                            <div class="col-lg-12 hr-main-title ">
+                            <div class="col-xs-12 hr-main-title ">
                                 <hr>
                             </div>
                         </div>
 
 
                         <div class="row">
-                            <div class="col-lg-6 share-main-title ">
+                            <div class="col-xs-6 share-main-title ">
                                 <span>Share This Article: </span>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl().$news->id ) }}" target="_blank">
-                                    <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/' .$news->id ) }}" target="_blank">
+                                    <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().$news->id) }}" target="_blank">
-                                    <i class="fa fa-twitter " style="font-size:20px; padding-right:1%; color:black;"></i>
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/' .$news->id) }}" target="_blank">
+                                    <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
                                 </a>
-                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().$news->id) }}" target="_blank">
-                                    <i class="fa fa-google-plus " style="font-size:20px; color:black;"></i>
+                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/' .$news->id) }}" target="_blank">
+                                    <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
                                 </a>
                             </div>
-                            <div class="col-lg-6 share-main-title ">
+                            <div class="col-xs-6 share-main-title ">
 
                                 <span>Categories: @foreach($news->newscategory as $category) {{$category->categorylist->category_name}},
                                     @endforeach
@@ -115,7 +108,7 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="col-lg-6 share-main-title col-lg-offset-4 ">
+                        <div class="col-xs-6 share-main-title col-lg-offset-4 ">
                         {{$news_table->appends(['s' => $s])->links()}}
                         </div>
                         </div>
@@ -127,18 +120,15 @@
                 </div>
 
                 <!-- right side -->
-                <div class="right col-lg-3 ">
-                    <div class="row">
+                <div class="right hidden-xs col-sm-4 ">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
                         <form action="{{route('userNews.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}">
-                            </div>
-
-                            <div class="form-group">
-                                <button class="btn" type="submit">
+                            <div class="form-group search-box">
+                                <input type="text" class="form-control search-box" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}"> 
+                                <button class="search" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
@@ -148,9 +138,9 @@
                     </div>
 
 
-                    <div class="row">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
-                        <table class="table table-categories table-borderless table-hover">
+                        <table class="table table-categories table-responsive table-borderless table-hover">
                          <div class="red-title">
                              <h1>CATEGORIES</h1>
                          </div>
@@ -159,9 +149,7 @@
                                 <tr class='clickable-row' data-href='/news?category_id={{$category->id}}'>
                                     <td>{{$category->category_name}}</td>
                                     <td>
-            
                                             <i style="color:black;">{{$category->newscategorytable_count}}</i>
-                               
                                     </td>
 
                                 </tr>
@@ -170,7 +158,7 @@
                         </table>
                     </div>
 
-                    <div class="row">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
 
                         <table class="table table-categories table-borderless table-hover">
@@ -262,4 +250,3 @@
     });
   });
 </script>
-
