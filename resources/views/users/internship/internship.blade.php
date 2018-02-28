@@ -457,12 +457,16 @@ function initMap() {
 
     for (var x = 0; x < addresses.length; x++) {
         $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-            var p = data.results[0].geometry.location
-            var latlng = new google.maps.LatLng(p.lat, p.lng);     
-            addMarker(map,bounds,latlng,featured[counter]);
-
-        });
             
+            if(data.results[0].geometry.location == null){
+                x--;
+            }
+            else{
+                var p = data.results[0].geometry.location;
+                var latlng = new google.maps.LatLng(p.lat, p.lng);     
+                addMarker(map,bounds,latlng,featured[counter]);
+            }  
+        });    
     }
         map.fitBounds(bounds);
 
