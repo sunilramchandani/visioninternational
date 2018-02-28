@@ -16,9 +16,9 @@
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 resources">
-            <p>COMPANY</p>
+            <p>RESOURCES</p>
             <ul>
-                <li>Join Our Team</li>
+                <li><a href = "/contactus">Join Our Team</a></li>
                 <li><a href = "/media">Media</a></li>
             </ul>
         </div>

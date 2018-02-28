@@ -11,7 +11,7 @@
 <div class = "whole-page">
 
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "col-xs-10 col-xs-offset-1 row">
     	<a href = "/event" class = "back"><h3> Back to Events </h3></a>
@@ -87,7 +87,7 @@
        </table>    
 	</div>
 </div>
-<div class = "row filler"></div>
+<div class = "row filler" style = "padding-bottom: 5%;"></div>
 <script type="text/javascript" charset="utf8" src="{{ asset('/js/jquery-3.2.1.min.js') }}"></script>
 <script type="text/javascript" charset="utf8" src="{{ asset('/js/bootstrap.min.js') }}"></script>
 

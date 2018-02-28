@@ -19,8 +19,8 @@
         <div class = "row dynamic-text-container">
             <div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
-                <H1> INTERNSHIP </H1>
-                <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
+                <H1> WORK & TRAVEL </H1>
+                <p class ="p-dynamic"> We provide travel opportunities for students, graduates, and those with industry experience</p>
             </div>
         
 @endforeach
@@ -30,7 +30,7 @@
 
     
     <div class = " row">
-        <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 Top-header-message text-center">
+        <div class = "col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
             <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
@@ -39,61 +39,63 @@
     </div>
     <div class = "body-content" id= "body-content">
         <div class = "row filter-top">
-            <div class = "col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-1 col-xs-7 col-xs-offset-1 filter-main">
-                <div class="dropdown">
-                  <a class="dropbtn-filter">State</a>
-                  <div class="dropdown-content-filler">
-                  <div id="links">
-                  <a href="/workcompany">All</a>
-                    @if ( Request::get('state')  )
-                        @foreach ($internship_filter as $filter)
-                            <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
-                        @endforeach
-                    @else
-                        @foreach ($internshipCompany_table as $company)
-                            <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
-                        @endforeach
-                    @endif
+            <div class = "col-xs-10 filter-main">
+                <div class = "col-xs-12">
+                    <div class="dropdown">
+                      <a class="dropbtn-filter">State</a>
+                      <div class="dropdown-content-filler">
+                      <div id="links">
+                      <a href="/workcompany">All</a>
+                        @if ( Request::get('state')  )
+                            @foreach ($internship_filter as $filter)
+                                <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                            @endforeach
+                        @else
+                            @foreach ($internshipCompany_table as $company)
+                                <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
+                            @endforeach
+                        @endif
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <a class="dropbtn-filter">Industry</a>
-                  <div class="dropdown-content-filler">
-                    @if ( Request::get('state')  )
-                        @foreach ($internship_filter as $filter)
-                            @foreach ($filter->work_industry as $industry)
-                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                    <div class="dropdown">
+                      <a class="dropbtn-filter">Industry</a>
+                      <div class="dropdown-content-filler">
+                        @if ( Request::get('state')  )
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->work_industry as $industry)
+                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    @else
-                        @foreach ($internshipCompany_table as $company)
-                            @foreach ($company->work_industry as $industry)
-                                <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                        @else
+                            @foreach ($internshipCompany_table as $company)
+                                @foreach ($company->work_industry as $industry)
+                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    @endif
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <a class="dropbtn-filter">Start Dates</a>
-                  <div class="dropdown-content-filler">
-                     @if ( Request::get('state')  )
-                        @foreach ($internship_filter as $filter)
-                            @foreach ($filter->work_duration as $duration)
-                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <a class="dropbtn-filter">Start Dates</a>
+                      <div class="dropdown-content-filler">
+                         @if ( Request::get('state')  )
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->work_duration as $duration)
+                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    @else
-                        @foreach ($internshipCompany_table as $company)
-                             @foreach ($company->work_duration as $duration)
-                                <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                        @else
+                            @foreach ($internshipCompany_table as $company)
+                                 @foreach ($company->work_duration as $duration)
+                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                @endforeach
                             @endforeach
-                        @endforeach
-                    @endif
-                  </div>
-                </div>
+                        @endif
+                      </div>
+                    </div>
             </div>
+        </div>
             <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-4 filter-result">
                 @for ($i = 0; $i < count($internshipCompany_table)+1; $i++)
                     @if ($i == count($internshipCompany_table))
@@ -249,7 +251,7 @@
         <!--Rate -->
         <div class = "container">
             <div class = "row rate-container">
-                    <div class = "col-md-7 col-xs-6 left-rate">
+                    <div class = "col-xs-6 left-rate">
                         <div class = "text-left-side ">
                             <h2 class = "gradient"> What's the rate? </h2>
                             <h3 class = "gradient1"> There is plenty to experience! </h3>
@@ -259,24 +261,24 @@
                         </div>
                         <div class = "row row-price">
                             <!--Spring -->
-                            <div class = "col-md-4 col-xs-6 spring">
-                                <div class = "col-md-2 col-xs-3 spring-bg">
+                            <div class = "col-xs-6 spring">
+                                <div class = "col-xs-3 spring-bg">
                                 </div>
-                                <div class = "col-md-9 col-xs-9 ">
+                                <div class = "col-xs-8 ">
                                     <p class = "spring-text"><strong>Spring</strong><br>March - June</p>
                                 </div>
                             </div>
                             <!--Summer -->
-                           <div class = "col-md-5 col-xs-6 summer">
-                                <div class = "col-md-2 col-xs-3 summer-bg">
+                           <div class = "col-xs-6 summer">
+                                <div class = "col-xs-3 summer-bg">
                                 </div>
-                                <div class = "col-md-10 col-xs-9 ">
+                                <div class = "col-xs-9 ">
                                     <p class = "summer-text"><strong>Summer</strong><br>June - September</p>
                                 </div>
                             </div>
                         </div>
                         <div class = "row row-price">
-                             <div class = "col-md-3  col-xs-3 ">
+                             <div class = "col-xs-3 ">
                                 <strong><p id = "reservation">PHP 1000</p></strong>
                             </div>
                             <div class = " col-md-4 col-sm-4 col-xs-4">
@@ -284,32 +286,32 @@
                             </div>
                         </div>
                         <div class = "row row-price">
-                             <div class = "col-md-3 col-xs-3">
+                             <div class = "col-xs-3">
                                 <strong><p id = "1st-Installment">USD 450</p></strong>
                             </div>
-                            <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class = "col-xs-4">
                                 <p>First Installment *</p>
                             </div>
                         </div>
                         <div class = "row row-price">
-                            <div class = " col-md-3 col-xs-3 last-row last-row1">
+                            <div class = "col-xs-3 last-row last-row1">
                                 <strong><p id = "2nd-Installment">USD 3100</p></strong>
                             </div>
-                           <div class = "col-md-5 col-sm-4 col-xs-4 last-row">
+                           <div class = "col-xs-5 last-row">
                                 <p>Second Installment *</p>
                             </div>
                         </div>
                         <div class = "row row-price">
-                             <div class = "col-md-3  col-xs-3">
+                             <div class = "col-xs-3">
                                 <strong><p id = "3rd-Installment">USD 3550</p></strong>
                             </div>
-                            <div class = " col-md-7 col-sm-4 col-xs-4">
+                            <div class = "col-xs-4">
                                 <p>Total Program Payment**</p>
                             </div>
                         </div>
 
                         <div clas = "row row-price">
-                            <div class = "col-md-9 col-md-offset-3 col-xs-9">
+                            <div class = "col-xs-9 col-xs-offset-2">
                                 <a class = "btn locate-me" href = "/application"> Apply Now </a>
                             </div>
                         </div>
@@ -321,7 +323,7 @@
                             <p>USD 160 US embassy interview booking fee</p>
                         </div>
                     </div>
-                    <div class = "col-md-5  col-xs-6 rate-image">
+                    <div class = "col-xs-6 rate-image">
                          <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner">
                     </div>
                 </div>

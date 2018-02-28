@@ -30,7 +30,8 @@
 }
 .labels{
     border-bottom: 4px solid #e04f3c;
-    width: 66px;
+    width: 70%;
+    color: white;
 }
 .fblink{
 	background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
@@ -314,7 +315,7 @@ color:white;
 .lower-content {
     position: absolute;
     border-top: 1px solid white;
-    bottom: 0;
+    bottom: -2%;
 }
 .validity-text{
 	color:white!important;
