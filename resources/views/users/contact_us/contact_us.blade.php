@@ -141,10 +141,10 @@
                         </div>
                         <div class="col-xs-12">
                             <span>Follow us: </span>
-                            <a href="https://www.facebook.com/visionphil/"><i class="fa fa-facebook-f" style="font-size:20px; padding-right:1%;"></i></a>
-                            <a href="https://twitter.com/onevisionph"><i class="fa fa-twitter" style="font-size:20px; padding-right:1%;"></i></a>
-                            <i class="fa fa-instagram" style="font-size:20px; padding-right:1%;"></i>
-                            <a href=""><i class="fa fa-linkedin" style="font-size:20px; padding-right:1%;"></i></a>
+                            <a href="https://www.facebook.com/visionphil/"><i class="fa fa-facebook-f" style="font-size:15px; padding-right:1%;"></i></a>
+                            <a href="https://twitter.com/onevisionph"><i class="fa fa-twitter" style="font-size:15px; padding-right:1%;"></i></a>
+                            <i class="fa fa-instagram" style="font-size:15px; padding-right:1%;"></i>
+                            <a href=""><i class="fa fa-linkedin" style="font-size:15px; padding-right:1%;"></i></a>
                         </div>
                     </div>
 
