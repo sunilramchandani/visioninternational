@@ -43,11 +43,13 @@
                     <div class = "col-xs-12">
                         <div class = "row form-group">
                             <select class = "form-control" name="general_inquiries">
-                                <option value="" disabled selected>General Inquiries</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
+                                <option value="General Inquiries" disabled selected>General Inquiries</option>
+                                <option value="Career Opportunity">Career Opportunity</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Au Pair">Au Pair</option>
+                                <option value="Work & Travel">Work & Travel</option>
+                                <option value="Skilled Work Visa">Skilled Work Visa</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                         <div class = "row form-group">
