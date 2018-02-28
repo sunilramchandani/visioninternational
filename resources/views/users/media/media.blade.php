@@ -37,7 +37,7 @@
 								<h4 class="title"> {{$media->media_title}} </h4>
 								<p> {{$media->media_description}} </p>
 								<div class="row bottom-media">
-									<div class="col-xs-2" style="padding: 0;">
+									<div class="col-xs-4" style="padding: 0;">
 										@foreach($media->author as $name)
 										<p>BY:
 											<strong> {{$name->name}} </strong>
@@ -60,7 +60,7 @@
 								<h4 class="title"> {{$media->media_title}} </h4>
 								<p> {{$media->media_description}} </p>
 								<div class="row bottom-media">
-									<div class="col-xs-2" style="padding: 0;">
+									<div class="col-xs-4" style="padding: 0;">
 										@foreach($media->author as $name)
 										<p>BY:
 											<strong> {{$name->name}} </strong>
