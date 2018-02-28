@@ -15,6 +15,20 @@
             <form action="{{ $action }}" method="{{  $method }}" enctype="multipart/form-data" role="form">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="media_title">
+                                Media Title
+                            </label>
+                            <input type="text" name="media_title" id="media_title" required>
+
+                        </div>
+                    </div>
+
+                </div>
+
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="form-group">

@@ -118,6 +118,7 @@ class MediaController extends Controller
 
 
         $media = new Media;
+        $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
         $media->media_description = $request['media_description'];
@@ -137,6 +138,7 @@ class MediaController extends Controller
     {
         $media = Media::findorFail($id);
 
+        $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
         $media->media_description = $request['media_description'];
