@@ -88,7 +88,7 @@
             {{-- END OF SOCIAL MEDIA --}}
 
         <br>
-        <br> {{{-- ABOUT AUTHOR --}}
+        <br> {{-- ABOUT AUTHOR --}}
         <div class="container col-xs-12  about-author" style="margin-top: 20px">
             @foreach ($news->author as $newss)
             <div class="row author-content">

@@ -7,16 +7,18 @@
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class="col-xs-10 col-xs-offset-1 row back-to-blog">
+    <div class="col-lg-10 col-lg-offset-1 row back-to-blog">
         <a href="/blog" class="back">
             <h3> Back to Blog </h3>
         </a>
     </div>
-
-    {{-- BLOG CONTENT --}}
-    <div class=" container col-xs-12 col-sm-7 col-sm-offset-1 blog-content">
-        <div class="row image-blog">
-            <div class="col-xs-12">
+  <div class="container">
+        <div class="main-page">
+            <div class="row">
+    {{-- blog CONTENT --}}
+    <div class="col-xs-12 col-sm-8 blog-content">
+        <div class="container-fluid image-blog">
+            <div class="row">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -45,65 +47,63 @@
             <!-- end of carousel -->
         </div>
         <div class="row">
-            <div class="col-xs-12 left-main-title2 " style="margin-left:10px">
+            <div class="col-xs-12 left-main-title2 ">
                 <p>
                     <strong>{{$blog->title}}</strong>
                 </p>
             </div>
-            <div class="col-xs-12 left-main-title2 " style="margin-left:10px">
+            <div class="col-xs-12 left-main-title2 ">
                 <p> @foreach ($blog->author as $blogs) {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}</p>
             </div>
-            <div class="col-xs-12 left-main-title2 " style="margin-left:10px">
+            <div class="col-xs-12 left-main-title2 ">
                 <p class="event-description">{!! $blog->body!!}</p>
             </div>
-            <div class="col-xs-12 hr-main-title-blog " style="margin-left:10px">
+            <div class="col-xs-12 hr-main-title-blog ">
                 <hr>
             </div>
         </div>
 
             {{-- SOCIAL MEDIA SHARE --}}
             <div class="row">
-                <div class="col-xs-6 share-title " style="margin-left:10px">
+                <div class="col-xs-6 share-title ">
                     <p>
                         <span>Share This Article: </span>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                            <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
+                            <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
                         </a>
                         <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                            <i class="fa fa-twitter " style="font-size:20px; padding-right:1%; color:black;"></i>
+                            <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
                         </a>
                         <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}" target="_blank">
-                            <i class="fa fa-google-plus " style="font-size:20px; color:black;"></i>
+                            <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
                         </a>
                     </p>
                 </div>
-                <div class="col-xs-6" style="margin-left:10px">
-                    <span>Categories: 
-                        @foreach($categories as $categories_list) 
-                        {{$categories_list->category_name}}, 
-                        @endforeach
+                <div class="col-xs-6">
+                    <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
+
                     </span>
                 </div>
             </div>
             {{-- END OF SOCIAL MEDIA --}}
-        {{-- ABOUT AUTHOR --}}
-        <div class="row about-author" style="margin-top: 20px">
-             @foreach ($blog->author as $blogs)
-             <div class="col-xs-12 author-content">
+
+        <br>
+        <br> {{-- ABOUT AUTHOR --}}
+        <div class="container col-xs-12  about-author" style="margin-top: 20px">
+            @foreach ($blog->author as $blogs)
+            <div class="row author-content">
                 <div class="col-xs-4">
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
-                <div class="col-lg-8">
-                    <p>{{(strip_tags($blogs->description))}}</p> 
+                <div class="col-xs-8">
+                     <p>{{(strip_tags($blogs->description))}}</p>
                 </div>
             </div>
             @endforeach
-        </div> 
-        
-        {{-- END --}}
- {{-- NEXT PREVIOUS SLIDER --}}
+        </div>
+{{-- END --}} {{-- NEXT & PREVIOUS SLIDER --}}
         <div class="row">
-            <div class="col-xs-12 next-previous-container">
+            <div class="container col-xs-12 next-previous-container">
                 <div class="col-xs-6 left">
                     <div class="text-left arrow">
                         @if($previousblog != Null)
@@ -113,7 +113,7 @@
                                 <a href="{{$previousblog->id}}" class="text-left">
                                     <h4>{{$previousblog->title}}</h4>
                                 </a>
-                         @endif
+                                @endif
                     </div>
                 </div>
                 <div class="col-xs-6 right">
@@ -132,66 +132,71 @@
         {{-- END 0F SLIDER --}}
 
     </div>
-    {{-- END OF BLOG CONTENT --}} {{-- CATEGORIES AND RECENT POSTS --}}
-    <div class="col-xs-3 col-xs-3 categories-content">
-        <table class="table table-categories table-borderless table-hover">
-            <div class="red-title">
-                <h1>CATEGORIES</h1>
-            </div>
-            <tbody>
-            @foreach ($category_table as $category)
-            <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
-                <td>{{$category->category_name}}</td>
-                <td>
-                        <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                </td>
-
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
-        <table class="table table-categories table-borderless table-hover">
-            <div class="red-title">
-                <h1>RECENT POST</h1>
-            </div>
-            <tbody>
-                @foreach($blog_table as $blog)
-                <tr class='clickable-row'>
+    {{-- END OF blog CONTENT --}} {{-- CATEGORIES AND RECENT POSTS --}}
+    <div class="hidden-xs col-sm-4 categories-content">
+        <div class="col-xs-12 col-md-11 col-md-offset-1">
+            <table class="table table-categories table-borderless table-hover">
+                <div class="red-title">
+                    <h1>CATEGORIES</h1>
+                </div>
+                <tbody>
+                    
+                @foreach ($category_table as $category)
+                <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
+                    <td>{{$category->category_name}}</td>
                     <td>
-                        <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
 
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                @foreach( $blog->mainimageupload as $mainblogimage )
-
-                                <div class="item {{ $loop->first ? ' active' : '' }}">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="caro-img-reponsive img-responsive "
-                                                alt="Company Banner">
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                            <!-- end of carousel -->
-                        </div>
-                    </td>
-
-                    <td>
-                        <p> @foreach ($blog->blogcategory as $blogz) @if ($loop->first) {{ $blogz->categorylist->category_name
-                            }} @endif @endforeach
-                        </p>
-                        <a href="/blog/{{$blog->id}}">
-                            <i style="color:black;">{{$blog->title}}</i>
-                        </a>
+                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
+               
                     </td>
 
                 </tr>
                 @endforeach
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <table class="table table-categories table-borderless table-hover">
+                <div class="red-title">
+                    <h1>RECENT POST</h1>
+                </div>
+                <tbody>
+                    @foreach($blog_table as $blog)
+                    <tr class='clickable-row'>
+                        <td>
+                            <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    @foreach( $blog->mainimageupload as $mainblogimage )
+
+                                    <div class="item {{ $loop->first ? ' active' : '' }}">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{ URL::asset('image/uploaded_main_blog_image')}}/{{$mainblogimage->image_name}}" class="caro-img-reponsive img-responsive "
+                                                    alt="Company Banner">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                                <!-- end of carousel -->
+                            </div>
+                        </td>
+
+                        <td>
+                            <p> @foreach ($blog->blogcategory as $blogz) @if ($loop->first) {{ $blogz->categorylist->category_name
+                                }} @endif @endforeach
+                            </p>
+                            <a href="/blog/{{$blog->id}}">
+                                <i style="color:black;">{{$blog->title}}</i>
+                            </a>
+                        </td>
+
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     {{-- END --}}
 
@@ -199,7 +204,7 @@
 
 </div>
 </div>
-
+</div>
 
 
 <div class="row" style = "padding-bottom: 5%;"></div>
