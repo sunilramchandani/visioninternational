@@ -2,7 +2,7 @@
  <!----------------------- DESKTOP NAVBAR ---------------------------------------->
 <div class = "col-md-12 nav-whole hidden-sm hidden-xs">
 	<div class = "col-md-6 logo">
-		<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
+			<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 	</div>
 	<div class = "col-md-6 nav-links">
 		<ul>
@@ -45,7 +45,7 @@
 <div class = "col-xs-12 nav-whole hidden-lg hidden-md">
 	<div class = "row">
 		<div class = "col-xs-7 col-sm-9 logo">
-			<img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo">
+			<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 		</div>
 		<div class = "col-xs-3 nav-links">
 			<ul>
@@ -62,30 +62,31 @@
 				<div class="dropdown-content">
 					<div class = "col-sm-6 col-xs-6">
 						<p class = "dropdown-content-header">United States</p>
-						<a href="#">Work & Travel</a>
-						<a href="#">Internship</a>
-						<a href="#">Au Pair</a>
+						<a href="/workcompany?country=United States">Work & Travel</a>
+						<a href="/internshipcompany?country=United States">Internship</a>
+						<a href="/aupair">Au Pair</a>
 					</div>
 					<div class = "col-xs-6">
 						<p class = "dropdown-content-header">Australia</p>
-						<a href="#">Internship</a>
-						<a href="#">Skilled Migration</a>
+						<a href="/internshipcompany?country=Australia">Internship</a>
+						<a href="/workvisa">Skilled Work Visa</a>
 					</div>
 				</div>
 			</div>
+	
 			<div class="dropdown">
-				<button class="dropbtn">About <span class="glyphicon glyphicon-triangle-bottom"></span> </button>
+				<a href="/aboutus" id="navlink">About</a> 
 			</div>
 			<div class="dropdown">
-				<button class="dropbtn">Contact <span class="glyphicon glyphicon-triangle-bottom"></span> </button>
+				<a href="/contactus" id="navlink">Contact</a> 
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">Learn More <span class="glyphicon glyphicon-triangle-bottom"></span> </button>
 				<div class="dropdown-content">
-					<a href="#">News</a>
-					<a href="#">Events</a>
-					<a href="#">Blog</a>
-					<a href="#">FAQ</a>
+					<a href="/news">News</a>
+					<a href="/event">Events</a>
+					<a href="/blog">Blog</a>
+					<a href="/faq">FAQ</a>
 				</div>
 			</div>
 		</ul>

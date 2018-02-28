@@ -3,7 +3,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
     @foreach ($featuredimage_home as $featured)
 
-    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
+    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive header"
         alt="Company Banner">
 
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img  img-border" alt="Company Banner">
@@ -38,19 +38,19 @@
         <div class="row counter-label">
             <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1 ">
                 <div class="col-xs-2 counter-label-container">
-                    <p class="labels">Countries</p>
+                    <h4 class="labels">Countries</h4>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <p class="labels">States</p>
+                    <h4 class="labels">States</h4>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <p class="labels">Companies</p>
+                    <h4 class="labels">Companies</h4>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <p class="labels">Applicants</p>
+                    <h4 class="labels">Applicants</h4>
                 </div>
                 <div class="col-xs-2  counter-container-infinity-label">
-                    <p class="labels">Opportunities</p>
+                    <h4 class="labels">Opportunities</h4>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@
                 </div>
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
-                        <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
+                        <img src="{{ URL::asset('image/icons/more-info.png') }}" alt="Content" id=more-info>
                         <p>More Info</p>
                     </div>
                 </div>
@@ -190,7 +190,7 @@
     <!-- More info button -->
     <div class="container text-center hidden-xs hidden-sm">
         <div class="row">
-            <a href="/faq" class="btn btn-lg moreinfo-btn">More info</a>
+            <a href="#" class="btn btn-lg moreinfo-btn">More info</a>
         </div>
     </div>
     <!-- end -->
@@ -269,19 +269,7 @@
                                     </div>
                                     <div class="lower-content col-md-11">
                                         <div class="col-md-6 validity-container">
-                                            <p class="validity-text">Share this promo:
-                                                
-                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
-                                    <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
-                                </a>
-                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id )}}" target="_blank">
-                                    <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
-                                </a>
-                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id) }}" target="_blank">
-                                    <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
-                                </a>
-                            
-                            </p>
+                                            <p class="validity-text">Share this promo: </p>
                                         </div>
                                     </div>
                                 </div>
