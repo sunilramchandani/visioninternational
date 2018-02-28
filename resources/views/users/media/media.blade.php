@@ -41,7 +41,9 @@
 				<p> {{$media->media_description}} </p>
 				<div class = "row bottom-media">
 					<div class = "col-xs-2" style="padding: 0;">
-						<p>BY: <strong> {{$media->media_author}} </strong></p>
+					@foreach($media->author as $name)
+						<p>BY: <strong> {{$name->name}} </strong></p>
+					@endforeach
 					</div>
 					<div class = "col-xs-6">
 						<p> {{Carbon\Carbon::parse($media->created_at)->toFormattedDateString()}}</p>
