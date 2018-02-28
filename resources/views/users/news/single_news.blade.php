@@ -137,7 +137,7 @@
 
      {{--  CATEGORIES AND RECENT POSTS  --}}
     <div class="col-xs-3 categories-content">
-        <div class = "col-xs-10 col-xs-offset-1">
+        <div class = "col-xs-11 col-xs-offset-1">
             <table class="table table-categories table-borderless table-hover">
                 <div class="red-title">
                     <h1>CATEGORIES</h1>
