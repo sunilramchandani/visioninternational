@@ -6,9 +6,24 @@
     @foreach ($featuredimage_blog as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
+<<<<<<< HEAD
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     @endforeach
+=======
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <div class="text-inside-header-picture">
+        <div class="row dynamic-text-container">
+            <div class="col-lg-4 dynamic-text-container-box">
+                <h4> UNITED STATES </h4>
+                <H1> INTERNSHIP </H1>
+                <p class="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
+            </div>
+
+            @endforeach
+        </div>
+    </div>
+>>>>>>> f40b29142024c6a41b013b6cad2c31271f340fb5
 
     <div class="container">
         <div class="main-page">
@@ -133,8 +148,6 @@
 
 
                         </form>
-
-                        <br>
                     </div>
 
 
