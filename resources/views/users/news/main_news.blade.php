@@ -6,7 +6,7 @@
     @foreach ($featuredimage_news as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <div class="text-inside-header-picture">
         <div class="row dynamic-text-container">
             <div class="col-xs-4 dynamic-text-container-box">
@@ -23,11 +23,7 @@
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
-<<<<<<< HEAD
-                <div class="col-xs-8 col-xs-offset-1">
-=======
-                <div class=" left col-lg-8 col-lg-offset-1">
->>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
+                <div class="col-xs-7 col-xs-offset-1">
                     @foreach($news_table as $news)
                     <div class="container-fluid image-blog">
                         <div class="row">
@@ -74,13 +70,8 @@
 
                         </div>
                         <div class="row">
-<<<<<<< HEAD
                             <div class="col-xs-12  left-main-title ">
                                <p class = "description-news">{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p> 
-=======
-                            <div class="col-lg-12  left-main-title ">
-                                <p>{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p>
->>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                             </div>
                         </div>
 
@@ -95,13 +86,8 @@
 
 
                         <div class="row">
-<<<<<<< HEAD
                             <div class="col-xs-12 hr-main-title ">
                             <hr>
-=======
-                            <div class="col-lg-12 hr-main-title ">
-                                <hr>
->>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                             </div>
                         </div>
 
@@ -141,37 +127,27 @@
                 </div>
 
                 <!-- right side -->
-<<<<<<< HEAD
-                <div class="col-xs-3" style="padding:30px;">
-                    <div class= "row">
     
-=======
-                <div class="right col-lg-3 ">
-                    <div class="row">
+                <div class="right col-xs-3 ">
+                    <div class = "col-xs-10 col-xs-offset-2">
+                        <div class="row">
+                            <form action="{{route('userNews.index') }}" method="get" class="form-inline">
+                                {{csrf_field()}}
 
->>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
-                        <form action="{{route('userNews.index') }}" method="get" class="form-inline">
-                            {{csrf_field()}}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}">
+                                </div>
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}">
-                            </div>
-
-                            <div class="form-group">
-                                <button class="btn" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-
-
-                        </form>
-
-                        <br>
-                    </div>
+                                <div class="form-group">
+                                    <button class="btn" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
 
 
                     <div class="row">
-
                         <table class="table table-categories table-borderless table-hover">
                          <div class="red-title">
                              <h1>CATEGORIES</h1>
@@ -241,7 +217,7 @@
                     </div>
 
                 </div>
-
+            </div>
                 <!-- end of row -->
             </div>
             <!--end of main-page-->

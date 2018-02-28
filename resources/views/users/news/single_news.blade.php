@@ -5,17 +5,17 @@
 <div class="whole-page">
 
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class="col-lg-10 col-lg-offset-1 row back-to-blog">
+    <div class="col-xs-10 col-xs-offset-1 row back-to-blog">
         <a href="/news" class="back">
             <h3> Back to News </h3>
         </a>
     </div>
 
     {{--  NEWS CONTENT  --}}
-    <div class="col-lg-8 col-lg-offset-1 blog-content">
-        <div class="container-fluid image-blog">
+    <div class="col-xs-8 col-xs-offset-1 blog-content">
+        <div class="col-xs-12 image-blog">
             <div class="row">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -42,36 +42,29 @@
                     </div>
                 </div>
             </div>
-            <!-- end of carousel -->
-        </div>  
+        </div>  <!-- end of carousel -->
         <div class="row">
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+            <div class = "col-xs-12">
+                <div class="col-xs-12 left-main-title2 ">
                     <p>
                         <strong>{{$news->title}}</strong>
                     </p>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+                <div class="col-xs-12 left-main-title2 ">
                     <p> @foreach ($news->author as $newss) {{$newss->name}} @endforeach | {{Carbon\Carbon::parse($news->date)->toFormattedDateString()}}</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+                <div class="col-xs-12 left-main-title2 ">
                     <p class="event-description">{!! $news->body!!}</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 hr-main-title-blog ">
+                <div class="col-xs-12 hr-main-title-blog ">
                     <hr>
                 </div>
             </div>
+        </div>
             
         {{--  SOCIAL MEDIA SHARE  --}}
         <div class="row">
-            <div class="col-lg-8 share-title ">
+            <div class="col-xs-8 share-title ">
                 <p>
                     <span>Share This Article: </span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
@@ -85,7 +78,7 @@
                     </a>
                 </p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-xs-4">
                 <p>
                     <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
 
@@ -94,154 +87,125 @@
             </div>
         </div>
         {{--  END OF SOCIAL MEDIA --}}
-      </div>
 
         <br>
         <br>
 
-        {{--  AUTHOR MOBILE  --}}
-        <div class="container col-lg-8 about-author-mobile">
+        {{--  ABOUT AUTHOR  --}}
+        <div class="container col-xs-8 about-author">
+            @foreach ($news->author as $newss)
             <div class="row author-content">
-                <div class="col-lg-2 col-sm-2 col-lg-offset-2">
-                    @foreach ($news->author as $newss)
+                <div class="col-xs-2 col-xs-offset-2">
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$newss->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
-        
-        
-                <p>
-                    <div class="col-lg-4 col-sm-4" style="padding:0;">
-                        {{(strip_tags($newss->description))}}
-                    </div>
-                </p>
-        
-                @endforeach
-            </div>
+                <div class="col-xs-8">
+                    <p>{{(strip_tags($newss->description))}}</p>
+                </div>
+            </div>    
+            @endforeach 
         </div>
-        {{--  END  --}}
-
+        {{--  END author --}}
 
         {{--  NEXT & PREVIOUS SLIDER  --}}
-        <div class="row next-previous-container">
-            @if($previousnews != Null)
-            <div class="col-lg- left">
-                <div class="text-left arrow">
-                    <a href="{{$previousnews->id}}" class="text-left">
-                        < Previous</a>
-                            <br>
-                            <a href="{{$previousnews->id}}" class="text-left">
-                                <h4>{{$previousnews->title}}</h4>
-                            </a>
-                </div>
-            </div>
-            @endif @if($nextnews != Null)
-            <div class="col-lg-6">
-                <div class="arrow">
-                    <a href="{{$nextnews->id}}">Next ></a>
+        <div class = "container col-xs-12 next-previous-container">
+            <div class = "col-xs-6 left"> 
+                <div class = "text-left arrow">
+              @if($previousnews != Null)
+                    <a href = "{{$previousnews->id}}" class="text-left">< Previous</a>
                     <br>
-                    <a href="{{$nextnews->id}}">
-                        <h4>{{$nextnews->title}}</h4>
-                    </a>
+                    <a href = "{{$previousnews->id}}" class="text-left"><h4>{{$previousnews->title}}</h4></a>
+              @endif
                 </div>
             </div>
-            @endif
+            
+            
+            <div class = "col-xs-6">
+                <div class = "arrow">
+              @if($nextnews != Null)
+                    <a href = "{{$nextnews->id}}" class="text-right">Next ></a>
+                    <br>
+                    <a href = "{{$nextnews->id}}" class="text-right"><h4>{{$nextnews->title}}</h4></a>
+                 @endif
+                </div>
+            </div>  
         </div>
         {{--  END 0F SLIDER --}}
-
     </div>
     {{--  END OF news CONTENT  --}}
 
 
 
      {{--  CATEGORIES AND RECENT POSTS  --}}
-    <div class="col-lg-3 col-sm-3 categories-content">
-        <table class="table table-categories table-borderless table-hover">
-            <div class="red-title">
-                <h1>CATEGORIES</h1>
-            </div>
-            <tbody>
-                @foreach ($category_table as $category)
-                <tr class='clickable-row'>
-                    <td>{{$category->category_name}}</td>
-                    <td>
-                        <a href="/news?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->newscategorytable_count}}</i>
-                        </a>
-                    </td>
+    <div class="col-xs-3 categories-content">
+        <div class = "col-xs-10 col-xs-offset-1">
+            <table class="table table-categories table-borderless table-hover">
+                <div class="red-title">
+                    <h1>CATEGORIES</h1>
+                </div>
+                <tbody>
+                    @foreach ($category_table as $category)
+                    <tr class='clickable-row'>
+                        <td>{{$category->category_name}}</td>
+                        <td>
+                            <a href="/news?category_id={{$category->id}}">
+                                <i style="color:black;">{{$category->newscategorytable_count}}</i>
+                            </a>
+                        </td>
 
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <table class="table table-categories table-borderless table-hover">
-            <div class="red-title">
-                <h1>RECENT POST</h1>
-            </div>
-            <tbody>
-                @foreach($news_table as $news)
-                <tr class='clickable-row'>
-                    <td>
-                        <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <table class="table table-categories table-borderless table-hover">
+                <div class="red-title">
+                    <h1>RECENT POST</h1>
+                </div>
+                <tbody>
+                    @foreach($news_table as $news)
+                    <tr class='clickable-row'>
+                        <td>
+                            <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
 
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                @foreach( $news->mainimageupload as $mainnewsimage )
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    @foreach( $news->mainimageupload as $mainnewsimage )
 
-                                <div class="item {{ $loop->first ? ' active' : '' }}">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="caro-img-reponsive img-responsive "
-                                                alt="Company Banner">
+                                    <div class="item {{ $loop->first ? ' active' : '' }}">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="caro-img-reponsive img-responsive "
+                                                    alt="Company Banner">
+                                            </div>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
+                                <!-- end of carousel -->
                             </div>
-                            <!-- end of carousel -->
-                        </div>
-                    </td>
+                        </td>
 
-                    <td>
-                        <p> @foreach ($news->newscategory as $newsz) @if ($loop->first) {{ $newsz->categorylist->category_name
-                            }} @endif @endforeach
-                        </p>
-                        <a href="/news/{{$news->id}}">
-                            <i style="color:black;">{{$news->title}}</i>
-                        </a>
-                    </td>
+                        <td>
+                            <p> @foreach ($news->newscategory as $newsz) @if ($loop->first) {{ $newsz->categorylist->category_name
+                                }} @endif @endforeach
+                            </p>
+                            <a href="/news/{{$news->id}}">
+                                <i style="color:black;">{{$news->title}}</i>
+                            </a>
+                        </td>
 
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    {{--  END  --}}
-
-
-
-</div>
-</div>
-
-{{--  ABOUT AUTHOR  --}}
-<div class="container col-lg-8 about-author">
-    <div class="row author-content">
-        <div class="col-lg-2 col-sm-2 col-lg-offset-2">
-            @foreach ($news->author as $newss)
-            <img src="{{ URL::asset('storage/upload_author_image')}}/{{$newss->image}}" class="img-thumbnail img-responsive " alt="No Author">
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-
-        <p>
-            <div class="col-lg-4 col-sm-4">
-                {{(strip_tags($newss->description))}}
-            </div>
-        </p>
-
-        @endforeach
+        {{--  END  --}}
     </div>
 </div>
-{{--  END  --}}
 
-<div class="row"></div>
+
+
+<div class="row" style="padding-bottom: 5%;"></div>
 
 
 

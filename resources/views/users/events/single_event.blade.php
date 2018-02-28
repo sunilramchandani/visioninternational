@@ -13,17 +13,17 @@
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class = "col-lg-10 col-lg-offset-1 row">
+    <div class = "col-xs-10 col-xs-offset-1 row">
     	<a href = "/event" class = "back"><h3> Back to Events </h3></a>
     </div>
-    <div class = "col-lg-8 col-lg-offset-1">
+    <div class = "col-xs-8 col-xs-offset-1">
     	<img src="{{$events->cover_source}}" alt="" class = "event-img img">
     	<h4>{{$events->event_name}}</h4>
     	<p>{{Carbon\Carbon::parse($events->start_time)->toFormattedDateString()}} | {{Carbon\Carbon::parse($events->start_time)->format('h:i')}} - {{$events->place_name}}</p>
     	<p class = "event-description">{{$events->event_description}}</p>
     	<hr>
     	<div class = "row">
-			<div class="col-lg-9 share-main-title ">
+			<div class="col-xs-9 share-main-title ">
 	        <span>Share This Article: </span>
 	            <a  href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
 	            <i class="fa fa-facebook-f " style="font-size:20px; padding-right:1%; color:black;"></i>
@@ -35,13 +35,13 @@
 	            <i class="fa fa-google-plus " style="font-size:20px; color:black;"></i>
 	            </a>
 	        </div>
-	        <div class="col-lg-3 Categories">
+	        <div class="col-xs-3 Categories">
 	        	<span>Categories: {{$events->category}}</span>
 	        </div>
 	    </div>
         <div class = "row next-previous-container">
 	       
-	        <div class = "col-lg-6 left"> 
+	        <div class = "col-xs-6 left"> 
 	        	<div class = "text-left arrow">
               @if($previousevents != Null)
 	        		<a href = "{{$previousevents->fbevent_id}}" class="text-left">< Previous</a>
@@ -52,7 +52,7 @@
 	        </div>
 	        
 	        
-	        <div class = "col-lg-6">
+	        <div class = "col-xs-6">
 	        	<div class = "arrow">
               @if($nextevents != Null)
 		        	<a href = "{{$nextevents->fbevent_id}}" class="text-right">Next ></a>
@@ -64,7 +64,7 @@
 	        
 	    </div>
     </div>
-	<div class = "col-lg-3">
+	<div class = "col-xs-3">
         <table class="table table-categories table-borderless table-hover">
           <thead bgcolor="#800000">
             <tr>
