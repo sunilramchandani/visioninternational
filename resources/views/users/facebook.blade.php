@@ -79,12 +79,11 @@
           </thead>
           <tbody>
           @foreach ($category_table as $category)
-          <tr class='clickable-row'>
-              <td>{{$category->category_name}}</td>
+          <tr class='clickable-row' data-href='/event?event_id={{$category->id}}'>
               <td>
-                  <a href="/event?event_id={{$category->id}}">
+                {{$category->category_name}}</td>
+              <td>
                       <i style="color:black;">{{$category->eventcategorytable_count}}</i>
-                  </a>
               </td>
 
           </tr>
