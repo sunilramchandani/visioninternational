@@ -101,12 +101,8 @@
 
         <div class="container col-lg-8 about-author-mobile">
             <div class="row author-content">
-<<<<<<< HEAD
-                <div class="col-xs-4">
-=======
                 <div class="col-lg-2 col-sm-2 col-lg-offset-2">
                     @foreach ($news->author as $newss)
->>>>>>> f40b29142024c6a41b013b6cad2c31271f340fb5
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$newss->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
 
@@ -158,17 +154,18 @@
                 <h1>CATEGORIES</h1>
             </div>
             <tbody>
-                @foreach ($category_table as $category)
-                <tr class='clickable-row'>
-                    <td>{{$category->category_name}}</td>
-                    <td>
-                        <a href="/news?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->newscategorytable_count}}</i>
-                        </a>
-                    </td>
+                
+            @foreach ($category_table as $category)
+            <tr class='clickable-row' data-href='/news?category_id={{$category->id}}'>
+                <td>{{$category->category_name}}</td>
+                <td>
 
-                </tr>
-                @endforeach
+                        <i style="color:black;">{{$category->newscategorytable_count}}</i>
+           
+                </td>
+
+            </tr>
+            @endforeach
             </tbody>
         </table>
         <table class="table table-categories table-borderless table-hover">
@@ -275,4 +272,14 @@
             return false;
         }
     });
+</script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
 </script>

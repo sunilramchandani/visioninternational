@@ -6,11 +6,17 @@
     @foreach ($featuredimage_blog as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
+<<<<<<< HEAD
 
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     @endforeach
 
+=======
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
+    @endforeach
+>>>>>>> 6572e3697c72e2c202b33986b5c49a83058c5264
 
     <div class="container">
         <div class="main-page">
@@ -146,12 +152,10 @@
                          </div>
                             <tbody>
                                 @foreach ($category_table as $category)
-                                <tr class='clickable-row'>
+                                <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
                                     <td>{{$category->category_name}}</td>
                                     <td>
-                                        <a href="/blog?category_id={{$category->id}}">
                                             <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                                        </a>
                                     </td>
 
                                 </tr>
@@ -241,4 +245,14 @@
             return false;
         }
     });
+</script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
 </script>

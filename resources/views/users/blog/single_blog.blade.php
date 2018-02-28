@@ -154,17 +154,15 @@
                 <h1>CATEGORIES</h1>
             </div>
             <tbody>
-                @foreach ($category_table as $category)
-                <tr class='clickable-row'>
-                    <td>{{$category->category_name}}</td>
-                    <td>
-                        <a href="/blog?category_id={{$category->id}}">
-                            <i style="color:black;">{{$category->blogcategorytable_count}}</i>
-                        </a>
-                    </td>
+            @foreach ($category_table as $category)
+            <tr class='clickable-row' data-href='/blog?category_id={{$category->id}}'>
+                <td>{{$category->category_name}}</td>
+                <td>
+                        <i style="color:black;">{{$category->blogcategorytable_count}}</i>
+                </td>
 
-                </tr>
-                @endforeach
+            </tr>
+            @endforeach
             </tbody>
         </table>
         <table class="table table-categories table-borderless table-hover">
@@ -271,4 +269,14 @@
             return false;
         }
     });
+</script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
 </script>

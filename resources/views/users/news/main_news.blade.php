@@ -156,12 +156,12 @@
                          </div>
                             <tbody>
                                 @foreach ($category_table as $category)
-                                <tr class='clickable-row'>
+                                <tr class='clickable-row' data-href='/news?category_id={{$category->id}}'>
                                     <td>{{$category->category_name}}</td>
                                     <td>
-                                        <a href="/news?category_id={{$category->id}}">
+            
                                             <i style="color:black;">{{$category->newscategorytable_count}}</i>
-                                        </a>
+                               
                                     </td>
 
                                 </tr>
@@ -252,3 +252,14 @@
         }
     });
 </script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
+</script>
+

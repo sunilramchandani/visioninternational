@@ -74,12 +74,11 @@
           </thead>
           <tbody>
           @foreach ($category_table as $category)
-          <tr class='clickable-row'>
-              <td>{{$category->category_name}}</td>
+          <tr class='clickable-row' data-href='/event?event_id={{$category->id}}'>
               <td>
-                  <a href="/event?event_id={{$category->id}}">
+                {{$category->category_name}}</td>
+              <td>
                       <i style="color:black;">{{$category->eventcategorytable_count}}</i>
-                  </a>
               </td>
 
           </tr>
@@ -114,4 +113,14 @@ $(document).on('click', '.social-share', function(event){
         return false;
     }
 });
+</script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
 </script>
