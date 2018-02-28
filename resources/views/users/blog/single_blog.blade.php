@@ -7,12 +7,14 @@
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class="col-lg-10 col-lg-offset-1 row">
+    <div class="col-lg-10 col-lg-offset-1 row back-to-blog">
         <a href="/blog" class="back">
             <h3> Back to Blog </h3>
         </a>
     </div>
-    <div class="col-lg-8 col-lg-offset-1">
+
+    {{--  BLOG CONTENT  --}}
+    <div class="col-lg-8 col-lg-offset-1 blog-content">
         <div class="container-fluid image-blog">
             <div class="row">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -61,14 +63,15 @@
                     <p class="event-description">{!! $blog->body!!}</p>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-lg-12 hr-main-title-blog ">
+                    <hr>
+                </div>
+            </div>
             
-        
-
-
-
+        {{--  SOCIAL MEDIA SHARE  --}}
         <div class="row">
-            <div class="col-lg-9 left-main-title2 ">
+            <div class="col-lg-8 share-title ">
                 <p>
                     <span>Share This Article: </span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
@@ -82,7 +85,7 @@
                     </a>
                 </p>
             </div>
-            <div class="col-lg-3 Categories">
+            <div class="col-lg-4">
                 <p>
                     <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
 
@@ -90,10 +93,34 @@
                 </p>
             </div>
         </div>
-        </div>
+        {{--  END OF SOCIAL MEDIA --}}
+      </div>
+
         <br>
         <br>
 
+        {{--  AUTHOR MOBILE  --}}
+        <div class="container col-lg-8 about-author-mobile">
+            <div class="row author-content">
+                <div class="col-lg-2 col-sm-2 col-lg-offset-2">
+                    @foreach ($blog->author as $blogs)
+                    <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
+                </div>
+        
+        
+                <p>
+                    <div class="col-lg-4 col-sm-4" style="padding:0;">
+                        {{(strip_tags($blogs->description))}}
+                    </div>
+                </p>
+        
+                @endforeach
+            </div>
+        </div>
+        {{--  END  --}}
+
+
+        {{--  NEXT & PREVIOUS SLIDER  --}}
         <div class="row next-previous-container">
             @if($previousblog != Null)
             <div class="col-lg- left">
@@ -118,16 +145,19 @@
             </div>
             @endif
         </div>
+        {{--  END 0F SLIDER --}}
+
     </div>
-    <div class="col-lg-3">
+    {{--  END OF BLOG CONTENT  --}}
+
+
+
+     {{--  CATEGORIES AND RECENT POSTS  --}}
+    <div class="col-lg-3 col-sm-3 categories-content">
         <table class="table table-categories table-borderless table-hover">
-            <thead bgcolor="#800000">
-                <tr>
-                    <h4 class="header-table text-left">
-                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p>
-                    </h4>
-                </tr>
-            </thead>
+            <div class="red-title">
+                <h1>CATEGORIES</h1>
+            </div>
             <tbody>
                 @foreach ($category_table as $category)
                 <tr class='clickable-row'>
@@ -142,15 +172,10 @@
                 @endforeach
             </tbody>
         </table>
-
         <table class="table table-categories table-borderless table-hover">
-            <thead bgcolor="#800000">
-                <tr>
-                    <h4 class="header-table text-left">
-                        <p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p>
-                    </h4>
-                </tr>
-            </thead>
+            <div class="red-title">
+                <h1>RECENT POST</h1>
+            </div>
             <tbody>
                 @foreach($blog_table as $blog)
                 <tr class='clickable-row'>
@@ -187,23 +212,26 @@
 
                 </tr>
                 @endforeach
-
             </tbody>
         </table>
     </div>
+    {{--  END  --}}
+
+
+
 </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-lg-offset-2">
+{{--  ABOUT AUTHOR  --}}
+<div class="container col-lg-8 about-author">
+    <div class="row author-content">
+        <div class="col-lg-2 col-sm-2 col-lg-offset-2">
             @foreach ($blog->author as $blogs)
             <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
         </div>
 
-
         <p>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-sm-4">
                 {{(strip_tags($blogs->description))}}
             </div>
         </p>
@@ -211,15 +239,23 @@
         @endforeach
     </div>
 </div>
-
+{{--  END  --}}
 
 <div class="row"></div>
 
+
+
+
+
+
+
+
+
+{{----------------------------------------------------SCRIPTS-----------------------------------------------------  --}}
 <script type="text/javascript" charset="utf8" src="{{ asset('/js/jquery-3.2.1.min.js') }}"></script>
 <script type="text/javascript" charset="utf8" src="{{ asset('/js/bootstrap.min.js') }}"></script>
-
-
 <script type="text/javascript">
+
     var popupMeta = {
         width: 400,
         height: 400

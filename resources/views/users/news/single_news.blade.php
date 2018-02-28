@@ -7,7 +7,7 @@
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class="col-lg-10 col-lg-offset-1 row">
+    <div class="col-lg-10 col-lg-offset-1 back-to-news row">
         <a href="/news" class="back">
             <h3> Back to News </h3>
         </a>
