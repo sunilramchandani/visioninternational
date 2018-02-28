@@ -17,16 +17,16 @@
 
 
                 <div class="row">
-                    <div class="col-xs-12">
+
+                    <div class="col-xs-6">
                         <div class="form-group">
                             <label for="media_title">
                                 Media Title
                             </label>
-                            <input type="text" name="media_title" id="media_title" required>
-
+                            <input type="text" class="form-control" id="media_title" name="media_title" required 
+                            value="{{ isset($media->media_title) ? $media->media_title:""}}" placeholder="Title...">
                         </div>
                     </div>
-
                 </div>
 
                 <div class="row">
@@ -36,8 +36,8 @@
                                 Media Type
                             </label>
                             <select class="form-control" name="media_type" id="media_type" required>
-                            
-                                <option value="" disabled selected>{{ isset($media->media_type) ? $media->media_type :''}}</option>
+
+                                <option value="" disabled selected>{{ isset($media->media_type) ? $media->media_type:"Select Media Type"}}</option>
                                 <option value="Video">Video</option>
                                 <option value="Photo">Photo</option>
                             </select>
@@ -46,9 +46,9 @@
                     </div>
 
 
-                    
-                            
-              
+
+
+
 
                     <div class="col-xs-6">
                         <div class="form-group">
@@ -56,22 +56,43 @@
                                 Author
                             </label>
                             <select class="form-control" name="media_author" id="media_author" required>
-                            <option value="{{isset($media->author) ? $media->author :""}}" selected>
-                            @if(isset($media->media_author))
-                            @foreach($media->author as $name)
-                            {{ isset($media->media_author) ?
-                             
-    
-                                $name->name
-                                 
-                             
-                             
-                             
-                              :''}}@endforeach
-                            @else
-                            Select Author
-                            @endif
+                                <option value="
+                                
+                                @if(isset($media->media_author)) 
+                                    
+        
+                                    
+                                    {{ isset($media->media_author) ? $author_id :''}}
+                                    
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
+                                     
+                                     " selected>
+                                    @if(isset($media->media_author)) 
+                                    
+                                    @foreach($media->author as $name) 
+                                    
+                                    
+                                    {{ isset($media->media_author) ? $name->name :''}}
+                                    
+                                    
+                                    @endforeach
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
                                 </option>
+
+
+
                                 @foreach($author_name as $author )
                                 <option value=" {{ $author->author_id }}">{{ $author->name }}</option>
                                 @endforeach

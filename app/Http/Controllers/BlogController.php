@@ -141,6 +141,14 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $author_name = Author::all();
+
+        $blog_id = DB::table('blog')
+        ->where('id', $id)
+        ->first()
+        ->author_id;
+
+        $author_id = Author::where('author_id', $blog_id)->first()->author_id;
+
         
         $getid_blog = DB::table('category_blog')
             ->where('blog_id', $id)
@@ -153,7 +161,7 @@ class BlogController extends Controller
 
         
         $category_blog = BlogCategory::all();
-        return view('admin.blogs.edit', compact('blog', 'author_name', 'category_blog', 'category_list' ));
+        return view('admin.blogs.edit', compact('author_id','blog', 'author_name', 'category_blog', 'category_list' ));
     }
 
     /**

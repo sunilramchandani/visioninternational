@@ -480,7 +480,7 @@ function initMap() {
                                     '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                     '<div id="bodyContent">'+
                                        '<p class = "map-description">'  + gdesc[counter].slice(0, 150) + '</p><br><br>'+
-                                        '<a data-toggle="modal" data-target="#myModal" class = "btn locate-me2" href = "/internship?cid=' +  gid[counter] + '"> Learn More </a>' +
+                                        '<a data-toggle="modal" data-target="#myModal" class = "btn locate-me2" href = "/work?cid=' +  gid[counter] + '"> Learn More </a>' +
                                     '</div>'+
                                 '</div>'+
                             '</div>';

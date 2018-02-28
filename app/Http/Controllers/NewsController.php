@@ -142,6 +142,14 @@ class NewsController extends Controller
     {
         $news = News::with('author')->findOrFail($id);
         $author_name = Author::all();
+
+        $news_id = DB::table('news_v2')
+        ->where('id', $id)
+        ->first()
+        ->author_id;
+
+        $author_id = Author::where('author_id', $news_id)->first()->author_id;
+
         
         $getid_news = DB::table('category_news')
             ->where('news_id', $id)
@@ -154,7 +162,7 @@ class NewsController extends Controller
 
         
         $category_news = NewsCategory::all();
-        return view('admin.news.edit', compact('news', 'author_name', 'category_news', 'category_list' ));
+        return view('admin.news.edit', compact('author_id','news', 'author_name', 'category_news', 'category_list' ));
     }
 
     /**

@@ -51,21 +51,39 @@
                             
                             <select class = "form-control" name="author_id" id="">
 
-                            <option value="{{isset($news->author) ? $news->author :""}}" selected>
-                            @if(isset($news->author_id))
-                            @foreach($news->author as $name)
-                            {{ isset($news->author_id) ?
-                             
-    
-                                $name->name
-                                 
-                             
-                             
-                             
-                              :''}}@endforeach
-                            @else
-                            Select Author
-                            @endif
+                            <option value="
+                                
+                                @if(isset($news->author_id)) 
+                                    
+        
+                                    
+                                    {{ isset($news->author_id) ? $author_id :''}}
+                                    
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
+                                     
+                                     " selected>
+                                    @if(isset($news->author_id)) 
+                                    
+                                    @foreach($news->author as $name) 
+                                    
+                                    
+                                    {{  isset($news->author_id) ? $name->name :''}}
+                                    
+                                    
+                                    @endforeach
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
                                 </option>
 
 
