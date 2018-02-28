@@ -56,7 +56,7 @@
         </div>
         <div class="row link-button">
             <div class="col-xs-3 col-sm-offset-4 col-md-offset-0">
-                <a href="www.fb.com" class="btn fblink">#onevision #vip</a>
+                <a href="https://www.facebook.com/visionphil/" class="btn fblink">#onevision #vip</a>
             </div>
         </div>
     </div>

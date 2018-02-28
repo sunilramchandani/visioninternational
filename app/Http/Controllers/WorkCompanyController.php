@@ -87,6 +87,24 @@ class WorkCompanyController extends Controller
             $internship_featured = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('featured');
             return view('users.work.work', compact('testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
         }
+        else if (request()->has('state')){
+
+            
+            $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
+            $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->where('state', request('state'))->paginate(4)->appends('state', request('state'));
+
+            
+            $internship_addresses = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('housing_address');
+            $internship_name = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('company_name');
+            $internship_desc = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('description');
+            $internship_filter = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->get();
+            $internship_id = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('id');
+            $internship_image = WorkCompany::orderBy('featured','desc')->pluck('image');
+            $internship_featured = WorkCompany::orderBy('featured','desc')->pluck('featured');
+            
+            return view('users.work.work', compact('internship_featured','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+        }
+
         else{
             $featuredimage_internship = FeaturedImage::where('page_name','Work')->get();
             $internshipCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('featured','desc')->get();
