@@ -141,7 +141,8 @@ class AboutUsController extends Controller
         $aboutUs->about_department = $request['about_department'];
         $aboutUs->about_name = $request['about_name'];
         $aboutUs->about_position = $request['about_position'];
-        $aboutUs->about_description = $request['about_description'];
+        $aboutUs->about_twitter = $request['about_twitter'];
+        $aboutUs->about_linkedin = $request['about_linkedin'];
 
         if ($request->hasFile('upload_aboutUs_image')){
             $file = $request->file('upload_aboutUs_image');
@@ -167,7 +168,8 @@ class AboutUsController extends Controller
         $aboutUs->about_department = $request['about_department'];
         $aboutUs->about_name = $request['about_name'];
         $aboutUs->about_position = $request['about_position'];
-        $aboutUs->about_description = $request['about_description'];
+        $aboutUs->about_twitter = $request['about_twitter'];
+        $aboutUs->about_linkedin = $request['about_linkedin'];
 
         if ($request->hasFile('upload_aboutUs_image')){
             $file = $request->file('upload_aboutUs_image');

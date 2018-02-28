@@ -37,10 +37,10 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
+                        <th>Title</th>
                             <th>Type</th>
                             <th>Link</th>
                             <th>Description</th>
-                            <th>Author</th>
                             <th>Date</th>
                             <th colspan="2">Action</th>
                         </tr> 
@@ -49,10 +49,10 @@
                     <tbody>
                         @foreach($media_table as $media)
                             <tr>
+                                <td>{{ $media->media_title }}</td>
                                 <td>{{ $media->media_type }}</td>
                                 <td>{{ $media->media_link }}</td>
                                 <td>{{ $media->media_description }}</td>
-                                <td>{{ $media->media_author }}</td>
                                 <td>{{ $media->updated_at }}</td>
                                 <td>
                                     <a
