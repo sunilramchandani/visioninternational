@@ -19,7 +19,7 @@
 					<div class = "col-md-6">
 						<p class = "dropdown-content-header">Australia</p>
 						<a href="/internshipcompany?country=Australia">Internship</a>
-						<a href="#">Skilled Work Visa</a>
+						<a href="/workvisa">Skilled Work Visa</a>
 					</div>
 				</div>
 			</div>

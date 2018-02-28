@@ -173,7 +173,11 @@
       'file' => 
       array (
         'driver' => 'file',
+<<<<<<< HEAD
         'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/cache/data',
+=======
+        'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/cache/data',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       ),
       'memcached' => 
       array (
@@ -278,12 +282,20 @@
       'local' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       ),
       'public' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\app/uploads',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\app/uploads',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -298,7 +310,11 @@
       'uploads' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'D:\\Programming\\laragon\\www\\visioninternational\\public',
+=======
+        'root' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\public',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       ),
     ),
   ),
@@ -321,7 +337,11 @@
       'theme' => 'default',
       'paths' => 
       array (
+<<<<<<< HEAD
         0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views/vendor/mail',
+=======
+        0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views/vendor/mail',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       ),
     ),
   ),
@@ -401,7 +421,11 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
+<<<<<<< HEAD
     'files' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework/sessions',
+=======
+    'files' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework/sessions',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -420,9 +444,15 @@
   array (
     'paths' => 
     array (
+<<<<<<< HEAD
       0 => 'D:\\Programming\\laragon\\www\\visioninternational\\resources\\views',
     ),
     'compiled' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\framework\\views',
+=======
+      0 => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\resources\\views',
+    ),
+    'compiled' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\framework\\views',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
   ),
   'debugbar' => 
   array (
@@ -431,7 +461,11 @@
     array (
       'enabled' => true,
       'driver' => 'file',
+<<<<<<< HEAD
       'path' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\debugbar',
+=======
+      'path' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\debugbar',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       'connection' => NULL,
       'provider' => '',
     ),
@@ -511,10 +545,17 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
+<<<<<<< HEAD
       'font_dir' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\fonts/',
       'font_cache' => 'D:\\Programming\\laragon\\www\\visioninternational\\storage\\fonts/',
       'temp_dir' => 'C:\\Users\\Nikko\\AppData\\Local\\Temp',
       'chroot' => 'D:\\Programming\\laragon\\www\\visioninternational',
+=======
+      'font_dir' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
+      'font_cache' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational\\storage\\fonts/',
+      'temp_dir' => 'C:\\Users\\SUNILR~1\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\Users\\sunil raj\\Desktop\\visioninternational',
+>>>>>>> 307598e6970daaf424d54bbc33a5b0d3b0bf1752
       'enable_font_subsetting' => false,
       'pdf_backend' => 'CPDF',
       'default_media_type' => 'screen',

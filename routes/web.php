@@ -539,8 +539,12 @@ Route::resource('internship', 'InternshipController');
 Route::resource('work', 'WorkController');
 Route::resource('faq', 'faqController');
 Route::resource('media', 'MediaController');
+Route::resource('workvisa', 'SkilledWorkVisaController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
+    });
+Route::get('/workvisa', function () {
+        return view('users.skilled_migration.skilled');
     });
 Route::get('/single_event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
