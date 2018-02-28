@@ -293,9 +293,11 @@ class NewsController extends Controller
 
         $category_table = CategoryList::withCount('newscategorytable')->get();
 
+        $featuredimage_news = FeaturedImage::where('page_name','news')->get();
+
        
         
-        return view('users.news.single_news', compact('news_table', 'previousnews','nextnews', 'news', 'category_table', 'category_count', 'categories'));
+        return view('users.news.single_news', compact('featuredimage_news','news_table', 'previousnews','nextnews', 'news', 'category_table', 'category_count', 'categories'));
     }
 
     public function indexMainUpload($id){

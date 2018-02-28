@@ -4,9 +4,13 @@
 
 <div class="whole-page">
 
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
-    <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
+        @foreach ($featuredimage_blog as $featured)
+        <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
+            alt="Company Banner">
+
+        <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
+        <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
+        @endforeach
     <div class="col-lg-10 col-lg-offset-1 row back-to-blog">
         <a href="/blog" class="back">
             <h3> Back to Blog </h3>
