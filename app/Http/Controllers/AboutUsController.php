@@ -19,7 +19,9 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $about_table = AboutUs::all();
+        $management = AboutUs::where('about_department','Management')->get();
+        $operations = AboutUs::where('about_department','Operations')->get();
+        $marketting = AboutUs::where('about_department','Marketting')->get();
         $featuredimage_aboutUs = FeaturedImage::where('page_name', 'About_Us')->get();
 
         //use $testimonial on foreach
@@ -34,7 +36,7 @@ class AboutUsController extends Controller
 
 
     
-        return view('users.about_us.aboutus', compact('testimonial', 'about_table', 'featuredimage_aboutUs'));
+        return view('users.about_us.aboutus', compact('testimonial', 'management','operations','marketting', 'featuredimage_aboutUs'));
     }
 
     /**
