@@ -38,19 +38,19 @@
         <div class="row counter-label">
             <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1 ">
                 <div class="col-xs-2 counter-label-container">
-                    <h4 class="labels">Countries</h4>
+                    <p class="labels">Countries</p>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <h4 class="labels">States</h4>
+                    <p class="labels">States</p>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <h4 class="labels">Companies</h4>
+                    <p class="labels">Companies</p>
                 </div>
                 <div class="col-xs-2 counter-label-container">
-                    <h4 class="labels">Applicants</h4>
+                    <p class="labels">Applicants</p>
                 </div>
                 <div class="col-xs-2  counter-container-infinity-label">
-                    <h4 class="labels">Opportunities</h4>
+                    <p class="labels">Opportunities</p>
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
     <!-- More info button -->
     <div class="container text-center hidden-xs hidden-sm">
         <div class="row">
-            <a href="#" class="btn btn-lg moreinfo-btn">More info</a>
+            <a href="/faq" class="btn btn-lg moreinfo-btn">More info</a>
         </div>
     </div>
     <!-- end -->

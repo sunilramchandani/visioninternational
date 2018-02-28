@@ -95,7 +95,7 @@
         <div class="container col-xs-8 about-author">
             @foreach ($news->author as $newss)
             <div class="row author-content">
-                <div class="col-xs-2 col-xs-offset-2">
+                <div class="col-xs-4">
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$newss->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
                 <div class="col-xs-8">

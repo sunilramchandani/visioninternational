@@ -6,6 +6,7 @@
 
 @include('layouts.navbar')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <form action="{{route('contactus.store')}}" method="post" role="form">
         {{csrf_field()}}
         <div class = "content">
@@ -31,7 +32,7 @@
                         </div>
                         <div class = "row form-group">
                             <select class = "form-control" name="country" id="">
-                                <option value="" disabled selected>Country</option>
+                                <option value="" disabled selected> Country</option>
                                 @foreach($country as $country)
                                     <option value="{{$country}}">{{$country}}</option>
                                 @endforeach
@@ -42,7 +43,7 @@
                 <div class = "col-lg-6">
                     <div class = "col-xs-12">
                         <div class = "row form-group">
-                            <select class = "form-control" name="general_inquiries">
+                            <select class = "form-control" name="general_inquiries" class = "general_inquiries" id = "general_inquiries">
                                 <option value="General Inquiries" disabled selected>General Inquiries</option>
                                 <option value="Career Opportunity">Career Opportunity</option>
                                 <option value="Internship">Internship</option>
@@ -149,7 +150,7 @@
                     </div>
 
                     {{--  CUBAO OFFICE --}}
-                    <div class = "office-details-cubao row" id=cont-2>
+                    <div class = "office-details-manila  row" id=cont-2>
                         <div class = "col-xs-12">
                             <p id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> (02) 554 1465 </p>
                         </div>
@@ -383,6 +384,11 @@
          themap3.style.display = 'block';
     }
 
+  var $_GET = <?php echo json_encode($_GET); ?>;
+  var eid = $_GET['career'];
+  if(eid !== undefined){
+     $("#general_inquiries").val('Career Opportuniy').trigger('change');
+  }
 </script>
 
 
