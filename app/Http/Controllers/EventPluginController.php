@@ -184,7 +184,7 @@ class EventPluginController extends Controller
                     ->orderBy('created_at', 'desc')
                     ->search($s)
                     ->whereIn('fbevent_id', $category_event)
-                    ->paginate(2);
+                    ->paginate(6);
             
 
          }
@@ -194,7 +194,7 @@ class EventPluginController extends Controller
             $events_table = EventPlugin::with('eventcategory')
                             ->orderBy('created_at', 'desc')
                             ->search($s)
-                            ->paginate(2);
+                            ->paginate(6);
 
 
          } 

@@ -7,12 +7,13 @@
 @include('layouts.navbar')
 @section('content')
 
-<form action="" method="post" role="form">
+<form action="" method="post" role="form" class = "parent">
  {{csrf_field()}}
 <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
 <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
 <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-<div class = "col-xs-3 col-xs-offset-8 sticky">
+<!--Sticky-->
+<div class = "col-xs-3 col-xs-offset-9 sticky">
   <div class = "col-xs-6">
     <p> Start an <strong> amazing </strong> </p>
     <p> future with us </p>
@@ -21,6 +22,7 @@
     <a href = "/application" class = "btn applynow-sticky">Apply Now</a>
   </div>
 </div>
+<!--end of stick -->
 <div class = "col-xs-12 events">
   <div class ="row col-xs-12">
     <div class = "col-xs-9 events-header">
@@ -121,6 +123,5 @@
         window.location = $(this).data("href");
     });
   });
-
 </script>
 @stop

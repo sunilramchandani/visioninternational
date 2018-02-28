@@ -5,7 +5,7 @@
 <div class="whole-page">
 
     <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
+    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class="col-lg-10 col-lg-offset-1 row back-to-blog">
         <a href="/blog" class="back">
@@ -14,8 +14,8 @@
     </div>
 
     {{--  BLOG CONTENT  --}}
-    <div class="col-lg-8 col-lg-offset-1 blog-content">
-        <div class="container-fluid image-blog">
+    <div class="col-xs-7 col-xs-offset-1 blog-content">
+        <div class=" col-xs-12 image-blog">
             <div class="row">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -45,33 +45,27 @@
             <!-- end of carousel -->
         </div>  
         <div class="row">
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+            <div class ="col-xs-12">
+                <div class="col-xs-12 left-main-title2 ">
                     <p>
                         <strong>{{$blog->title}}</strong>
                     </p>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+                <div class="col-xs-12 left-main-title2 ">
                     <p> @foreach ($blog->author as $blogs) {{$blogs->name}} @endforeach | {{Carbon\Carbon::parse($blog->date)->toFormattedDateString()}}</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 left-main-title2 ">
+                <div class="col-xs-12 left-main-title2 ">
                     <p class="event-description">{!! $blog->body!!}</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 hr-main-title-blog ">
+                <div class="col-xs-12 hr-main-title-blog ">
                     <hr>
                 </div>
             </div>
+        </div>
             
         {{--  SOCIAL MEDIA SHARE  --}}
         <div class="row">
-            <div class="col-lg-8 share-title ">
+            <div class="col-xs-8 share-title ">
                 <p>
                     <span>Share This Article: </span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="_blank">
@@ -85,7 +79,7 @@
                     </a>
                 </p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-xs-4">
                 <p>
                     <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
 
@@ -94,56 +88,49 @@
             </div>
         </div>
         {{--  END OF SOCIAL MEDIA --}}
-      </div>
 
         <br>
         <br>
 
-        {{--  AUTHOR MOBILE  --}}
-        <div class="container col-lg-8 about-author-mobile">
+       
+        {{--  ABOUT AUTHOR  --}}
+        <div class="container col-xs-8 about-author">
             <div class="row author-content">
-                <div class="col-lg-2 col-sm-2 col-lg-offset-2">
+                <div class="col-xs-2  col-xs-offset-2">
                     @foreach ($blog->author as $blogs)
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
-        
-        
+
                 <p>
-                    <div class="col-lg-4 col-sm-4" style="padding:0;">
+                    <div class="col-xs-8">
                         {{(strip_tags($blogs->description))}}
                     </div>
                 </p>
-        
+
                 @endforeach
             </div>
         </div>
-        {{--  END  --}}
-
-
-        {{--  NEXT & PREVIOUS SLIDER  --}}
-        <div class="row next-previous-container">
-            @if($previousblog != Null)
-            <div class="col-lg- left">
-                <div class="text-left arrow">
-                    <a href="{{$previousblog->id}}" class="text-left">
-                        < Previous</a>
-                            <br>
-                            <a href="{{$previousblog->id}}" class="text-left">
-                                <h4>{{$previousblog->title}}</h4>
-                            </a>
-                </div>
-            </div>
-            @endif @if($nextblog != Null)
-            <div class="col-lg-6">
-                <div class="arrow">
-                    <a href="{{$nextblog->id}}">Next ></a>
+        {{--  END  author--}}
+         {{--  NEXT & PREVIOUS SLIDER  --}}
+       <div class = "container col-xs-12 next-previous-container">
+            <div class = "col-xs-6 left"> 
+                <div class = "text-left arrow">
+              @if($previousblog != Null)
+                    <a href = "{{$previousblog->id}}" class="text-left">< Previous</a>
                     <br>
-                    <a href="{{$nextblog->id}}">
-                        <h4>{{$nextblog->title}}</h4>
-                    </a>
+                    <a href = "{{$previousblog->id}}" class="text-left"><h4>{{$previousblog->title}}</h4></a>
+              @endif
                 </div>
             </div>
-            @endif
+            <div class = "col-xs-6">
+                <div class = "arrow">
+              @if($nextblog != Null)
+                    <a href = "{{$nextblog->id}}" class="text-right">Next ></a>
+                    <br>
+                    <a href = "{{$nextblog->id}}" class="text-right"><h4>{{$nextblog->title}}</h4></a>
+                 @endif
+                </div>
+            </div>  
         </div>
         {{--  END 0F SLIDER --}}
 
@@ -153,7 +140,8 @@
 
 
      {{--  CATEGORIES AND RECENT POSTS  --}}
-    <div class="col-lg-3 col-sm-3 categories-content">
+    <div class="col-xs-3 categories-content">
+        <div class = "col-xs-11 col-xs-offset-1">
         <table class="table table-categories table-borderless table-hover">
             <div class="red-title">
                 <h1>CATEGORIES</h1>
@@ -218,30 +206,12 @@
     {{--  END  --}}
 
 
-
 </div>
 </div>
 
-{{--  ABOUT AUTHOR  --}}
-<div class="container col-lg-8 about-author">
-    <div class="row author-content">
-        <div class="col-lg-2 col-sm-2 col-lg-offset-2">
-            @foreach ($blog->author as $blogs)
-            <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
-        </div>
 
-        <p>
-            <div class="col-lg-4 col-sm-4">
-                {{(strip_tags($blogs->description))}}
-            </div>
-        </p>
 
-        @endforeach
-    </div>
-</div>
-{{--  END  --}}
-
-<div class="row"></div>
+<div class="row" style="padding-bottom: 5%;"></div>
 
 
 
