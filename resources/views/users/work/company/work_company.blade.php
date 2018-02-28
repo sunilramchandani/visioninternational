@@ -4,7 +4,7 @@
 <div class = "col-xs-12 company-whole">
     <div class = "col-xs-4 picture">
     @foreach ($internshipCompany_table as $company)
-    <img src="{{ URL::asset('image/uploaded_company_image/'.$company->image)}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
+    <img src="{{ URL::asset('image/uploaded_workcompany_image/'.$company->image)}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
     @endforeach
     </div>
     <div class = "col-xs-8 company-details">

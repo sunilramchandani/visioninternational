@@ -67,7 +67,7 @@
     <!-- Management -->
      <div class = "container employee-container">
         <!--MANAGEMENT -->
-        <div class = "management">
+        <div class = "management pads">
             <div class = "col-xs-12">
                 <p><strong>Management</strong></p>
             </div>
@@ -80,6 +80,7 @@
                             <div class = "col-xs-12 hidden-side text-center">
                                 <h4>{{$about->about_name}}</h4>
                                 <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
                             </div>
                         </div>
                     </div>
@@ -88,7 +89,7 @@
             </div>
         </div>
         <!--OPERATIONS-->
-        <div class = "operations">
+        <div class = "operations pads">
             <div class = "col-xs-12">
                 <p><strong>Operations</strong></p>
             </div>
@@ -109,7 +110,7 @@
             </div>
         </div>
         <!--Marketting-->
-        <div class = "operations">
+        <div class = "operations pads">
             <div class = "col-xs-12">
                 <p><strong>Marketting</strong></p>
             </div>
