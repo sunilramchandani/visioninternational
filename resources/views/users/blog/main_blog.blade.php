@@ -6,17 +6,11 @@
     @foreach ($featuredimage_blog as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
-<<<<<<< HEAD
 
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     @endforeach
 
-=======
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
-    <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    @endforeach
->>>>>>> 6572e3697c72e2c202b33986b5c49a83058c5264
 
     <div class="container">
         <div class="main-page">
