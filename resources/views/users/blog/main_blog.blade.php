@@ -6,30 +6,17 @@
     @foreach ($featuredimage_blog as $featured)
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header"
         alt="Company Banner">
-<<<<<<< HEAD
+
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     @endforeach
-=======
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">
-    <div class="text-inside-header-picture">
-        <div class="row dynamic-text-container">
-            <div class="col-lg-4 dynamic-text-container-box">
-                <h4> UNITED STATES </h4>
-                <H1> INTERNSHIP </H1>
-                <p class="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
-            </div>
 
-            @endforeach
-        </div>
-    </div>
->>>>>>> f40b29142024c6a41b013b6cad2c31271f340fb5
 
     <div class="container">
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
-                <div class=" left col-xs-8 col-md-offset-1">
+                <div class=" left col-xs-12 col-sm-8 ">
                     @foreach($blog_table as $blog)
                     <div class="container-fluid image-blog">
                         <div class="row">
@@ -83,7 +70,7 @@
 
 
                         <div class="row">
-                            <div class="col-xs-12  left-main-title ">
+                            <div class="col-xs-6 col-xs-offset-4 col-sm-12 col-sm-offset-0  left-main-title ">
                                 <a href="/blog/{{$blog->id}}" class="submit btn">
                                     <span>Read More</span>
                                 </a>
@@ -133,14 +120,14 @@
                 </div>
 
                 <!-- right side -->
-                <div class="right col-xs-4 col-md-3 ">
-                    <div class="col-xs-12">
+                <div class="right hidden-xs col-sm-4 ">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
                         <form action="{{route('userBlog.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}"> 
+                            <div class="form-group search-box">
+                                <input type="text" class="form-control search-box" name="s" placeholder="Search Title" value="{{ isset($s) ? $s:''}}"> 
                                 <button class="search" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
@@ -151,7 +138,7 @@
                     </div>
 
 
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
                         <table class="table table-categories table-responsive table-borderless table-hover">
                          <div class="red-title">
@@ -173,7 +160,7 @@
                         </table>
                     </div>
 
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 col-md-11 col-md-offset-1">
 
 
                         <table class="table table-categories table-borderless table-hover">

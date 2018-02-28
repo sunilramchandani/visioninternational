@@ -186,7 +186,16 @@ hr{
 .about-author{
 	margin: 0 0 50px;
 }
-
+.search {
+    background-color: white;
+    border: none;
+    position: absolute;
+    right: 7%;
+    bottom: 45%;
+}
+.search-box{
+	width: 100% !important;
+}
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.img-border{
 		display: none;
@@ -194,6 +203,17 @@ hr{
 	.img-line{
 		display: block;
 		margin-top: -5px;
+	}
+	.main-page{
+		padding-top: 5%;
+	}
+	.search {
+	    background-color: white;
+	    border: none;
+	    /* margin-left: -16%; */
+	    position: absolute;
+	    right: 7%;
+	    bottom: 45%;
 	}
 }
 @media screen and (max-width: 719px) and (min-width: 320px) {
@@ -203,6 +223,15 @@ hr{
 	.img-line{
 		display: block;
 		margin-top: -5px;
+	}
+	.main-page{
+		padding-top: 5%;
+	}
+	.share-main-title{
+		font-size:12px;
+	}
+	.left-main-title{
+		font-size:12px;
 	}
 }
 
