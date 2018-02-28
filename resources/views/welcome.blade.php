@@ -269,7 +269,19 @@
                                     </div>
                                     <div class="lower-content col-md-11">
                                         <div class="col-md-6 validity-container">
-                                            <p class="validity-text">Share this promo: </p>
+                                            <p class="validity-text">Share this promo:
+                                                
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
+                                    <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id }}" target="_blank">
+                                    <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
+                                </a>
+                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id }}" target="_blank">
+                                    <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
+                                </a>
+                            
+                            </p>
                                         </div>
                                     </div>
                                 </div>
