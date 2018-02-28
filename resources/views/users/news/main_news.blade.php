@@ -23,7 +23,11 @@
         <div class="main-page">
             <div class="row">
                 <!-- left side -->
+<<<<<<< HEAD
                 <div class="col-xs-8 col-xs-offset-1">
+=======
+                <div class=" left col-lg-8 col-lg-offset-1">
+>>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                     @foreach($news_table as $news)
                     <div class="container-fluid image-blog">
                         <div class="row">
@@ -70,8 +74,13 @@
 
                         </div>
                         <div class="row">
+<<<<<<< HEAD
                             <div class="col-xs-12  left-main-title ">
                                <p class = "description-news">{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p> 
+=======
+                            <div class="col-lg-12  left-main-title ">
+                                <p>{{ \Illuminate\Support\Str::words(strip_tags($news->body), 30,' ... ')}}</p>
+>>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                             </div>
                         </div>
 
@@ -79,15 +88,20 @@
                         <div class="row">
                             <div class="col-xs-12  left-main-title ">
                                 <a href="/news/{{$news->id}}" class="submit btn">
-                                    <span>Read More</span>  
+                                    <span>Read More</span>
                                 </a>
                             </div>
                         </div>
 
-                        
+
                         <div class="row">
+<<<<<<< HEAD
                             <div class="col-xs-12 hr-main-title ">
                             <hr>
+=======
+                            <div class="col-lg-12 hr-main-title ">
+                                <hr>
+>>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                             </div>
                         </div>
 
@@ -119,7 +133,6 @@
                         {{$news_table->appends(['s' => $s])->links()}}
                         </div>
                         </div>
-                        
 
                         <!-- end of image-news -->
                     </div>
@@ -128,9 +141,15 @@
                 </div>
 
                 <!-- right side -->
+<<<<<<< HEAD
                 <div class="col-xs-3" style="padding:30px;">
                     <div class= "row">
     
+=======
+                <div class="right col-lg-3 ">
+                    <div class="row">
+
+>>>>>>> 195d04b5713e3ecda43f7221e2a506d97121ac97
                         <form action="{{route('userNews.index') }}" method="get" class="form-inline">
                             {{csrf_field()}}
 
@@ -146,87 +165,87 @@
 
 
                         </form>
-            
-                    <br>
+
+                        <br>
                     </div>
 
 
-                    <div class= "row">
-                    
-                    <table class="table table-categories table-borderless table-hover">
-                        <div class="red-title">
-                            <h1>CATEGORIES</h1>
-                        </div>
-                        <tbody>
-                            @foreach ($category_table as $category)
-                            <tr class='clickable-row'>
-                                <td>{{$category->category_name}}</td>
-                                <td>
-                                    <a href="/news?category_id={{$category->id}}">
-                                        <i style="color:black;">{{$category->newscategorytable_count}}</i>
-                                    </a>
-                                </td>
+                    <div class="row">
 
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                        <table class="table table-categories table-borderless table-hover">
+                         <div class="red-title">
+                             <h1>CATEGORIES</h1>
+                         </div>
+                            <tbody>
+                                @foreach ($category_table as $category)
+                                <tr class='clickable-row'>
+                                    <td>{{$category->category_name}}</td>
+                                    <td>
+                                        <a href="/news?category_id={{$category->id}}">
+                                            <i style="color:black;">{{$category->newscategorytable_count}}</i>
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    
-                    <div class= "row">
+
+                    <div class="row">
 
 
-                    <table class="table table-categories table-borderless table-hover">
-                        <div class="red-title">
-                            <h1>RECENT POST</h1>
-                        </div>
-                        <tbody>
-                            @foreach($news_table as $news)
-                            <tr class='clickable-row'>
-                                <td>
-                                    <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
+                        <table class="table table-categories table-borderless table-hover">
+                            <div class="red-title">
+                                <h1>RECENT POST</h1>
+                            </div>
+                            <tbody>
+                                @foreach($news_table as $news)
+                                <tr class='clickable-row'>
+                                    <td>
+                                        <div id="carousel-example-generic" class="recent-carousel carousel slide" data-ride="carousel">
 
 
-                                        <!-- Wrapper for slides -->
-                                        <div class="carousel-inner" role="listbox">
-                                            @foreach( $news->mainimageupload as $mainnewsimage )
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox">
+                                                @foreach( $news->mainimageupload as $mainnewsimage )
 
-                                            <div class="item {{ $loop->first ? ' active' : '' }}">
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="caro-img-reponsive img-responsive "
-                                                            alt="Company Banner">
+                                                <div class="item {{ $loop->first ? ' active' : '' }}">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="{{ URL::asset('image/uploaded_main_news_image')}}/{{$mainnewsimage->image_name}}" class="caro-img-reponsive img-responsive "
+                                                                alt="Company Banner">
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
-                                            @endforeach
+                                            <!-- end of carousel -->
                                         </div>
-                                        <!-- end of carousel -->
-                                    </div>
-                                </td>
+                                    </td>
 
                                     <td>
-                                        <p> @foreach ($news->newscategory as $newsz) 
-                                            @if ($loop->first) {{ $newsz->categorylist->category_name }}  @endif
-                                            @endforeach</p>
+                                        <p> @foreach ($news->newscategory as $newsz) @if ($loop->first) {{ $newsz->categorylist->category_name
+                                            }} @endif @endforeach
+                                        </p>
                                         <a href="/news/{{$news->id}}">
                                             <i style="color:black;">{{$news->title}}</i>
                                         </a>
                                     </td>
 
-                            </tr>
-                            @endforeach
+                                </tr>
+                                @endforeach
 
-                        </tbody>
-                    </table>
-                        </div>
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
                 <!-- end of row -->
             </div>
             <!--end of main-page-->
-            {{$news_table->appends(['s' => $s])->links()}}
+            
         </div>
         <!-- end of container -->
     </div>
