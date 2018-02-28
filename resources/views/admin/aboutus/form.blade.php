@@ -36,8 +36,30 @@
                                 <label for="company_website">
                                     Position
                                 </label>
-                                <input type="text" class="form-control" id="about_position" name="about_position" required value="{{ isset($aboutUs->about_position) ? $aboutUs->about_position : '' }} "
+                                <input type="text" class="form-control" id="about_position" name="about_position" required value="{{ isset($aboutUs->about_position) ? $aboutUs->about_position:""}} "
                                     placeholder="Senior Programmer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                        <label for="position">
+                            Twitter
+                        </label>
+                        <input type="text" class="form-control" id="about_twitter" name="about_twitter" required value="{{ isset($aboutUs->about_twitter) ? $aboutUs->about_twitter:""}} "
+                                    placeholder="@sam">
+                        
+                    </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="company_website">
+                                    Linkedin
+                                </label>
+                                <input type="text" class="form-control" id="about_linkedin" name="about_linkedin" required value="{{ isset($aboutUs->about_linkedin) ? $aboutUs->about_linkedin:"" }} "
+                                    placeholder="sammy-su">
                             </div>
                         </div>
                     </div>
@@ -60,15 +82,6 @@
                             <input type="file" class="form-control" id="upload_aboutUs_image" name="upload_aboutUs_image" >
         
                         </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="company_website">
-                                    Description
-                                </label>
-                                <textarea class="form-control" rows=5 id="about_description" name="about_description" required
-                                    placeholder="Senior Programmer">{{ isset($aboutUs->about_description) ? $aboutUs->about_description : '' }} </textarea>
-                            </div>
                         </div>
                     </div>
 
