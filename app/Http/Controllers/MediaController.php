@@ -139,6 +139,7 @@ class MediaController extends Controller
         $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
+        $media->media_album_link = $request['media_album_link'];
         $media->media_description = $request['media_description'];
         $media->media_author = $request['media_author'];
 
@@ -159,6 +160,7 @@ class MediaController extends Controller
         $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
+        $media->media_album_link = $request['media_album_link'];
         $media->media_description = $request['media_description'];
         $media->media_author = $request['media_author'];
 
