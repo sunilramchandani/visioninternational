@@ -6,7 +6,9 @@
 	margin-top: -127;
 	color:white;
 }
-	
+.description-news{
+	word-wrap:break-word;
+}
 .dynamic-text-container{
 	padding-left: 5%;
 	color:white !important; 
