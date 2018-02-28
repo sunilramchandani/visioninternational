@@ -538,6 +538,7 @@ Route::resource('subscribe', 'SubscribeController');
 Route::resource('internship', 'InternshipController');
 Route::resource('work', 'WorkController');
 Route::resource('faq', 'faqController');
+Route::resource('media', 'MediaController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });

@@ -128,7 +128,7 @@
                 </div>
 
                 <!-- right side -->
-                <div class="col-lg-3 ">
+                <div class="col-lg-3" style="padding:30px;">
                     <div class= "row">
     
                         <form action="{{route('userNews.index') }}" method="get" class="form-inline">
@@ -154,11 +154,9 @@
                     <div class= "row">
                     
                     <table class="table table-categories table-borderless table-hover">
-                        <thead bgcolor="#800000">
-                            <tr>
-                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">CATEGORIES</p></h4>
-                            </tr>
-                        </thead>
+                        <div class="red-title">
+                            <h1>CATEGORIES</h1>
+                        </div>
                         <tbody>
                             @foreach ($category_table as $category)
                             <tr class='clickable-row'>
@@ -179,11 +177,9 @@
 
 
                     <table class="table table-categories table-borderless table-hover">
-                        <thead bgcolor="#800000">
-                            <tr>
-                            <h4 class="header-table text-left"><p style="color:#e5e5e5; padding-top: 10px; padding-left: 5%; ">RECENT POST</p></h4>
-                            </tr>
-                        </thead>
+                        <div class="red-title">
+                            <h1>RECENT POST</h1>
+                        </div>
                         <tbody>
                             @foreach($news_table as $news)
                             <tr class='clickable-row'>

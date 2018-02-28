@@ -19,7 +19,7 @@
             <p>COMPANY</p>
             <ul>
                 <li>Join Our Team</li>
-                <li>Media</li>
+                <li><a href = "/media">Media</a></li>
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 support">

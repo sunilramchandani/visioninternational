@@ -1,0 +1,43 @@
+.media-container{
+	height: 250;
+	border-top: solid 1px #ebebe0;
+	padding: 0;
+
+}
+.media-photo{
+    height: 100%;
+    width: 100%;
+}
+.media-video {
+	position:relative;
+	height:240;
+}
+.media-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.photo-container{
+	padding: 0;
+}
+.bottom-media {
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    right: 0;
+}
+.media-description{
+	height: 250;
+}
+.media-description:hover .title{
+	color:red;
+}
+.header-desc{
+	padding-bottom: 5%;
+}
+.gray{
+	color: #c2c2a3;
+	padding-bottom: 2%;
+}

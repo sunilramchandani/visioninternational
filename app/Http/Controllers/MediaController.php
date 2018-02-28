@@ -16,7 +16,8 @@ class MediaController extends Controller
      */
     public function index()
     {
-        //
+        $media_table = Media::with('author')->get();
+         return view('users.media.media', compact('media_table'));
     }
 
     /**

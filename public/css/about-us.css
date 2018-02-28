@@ -34,12 +34,18 @@
 .icon-container{
 	padding-top: 10%;
 }
-.hidden-side{
-	padding: 0;
-	background-color: #d54b39;
-	color:white !important;
-	height: 200;
-	display:none;
+.hidden-side {
+    background-color: #d54b39;
+    color: white !important;
+    height: 30%;
+  	position: absolute;
+  	top: 30%;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	width: 100%;
+  	opacity: 0;
+  	transition: .5s ease;
 }
 .position-hidden{
 	color:white;
@@ -55,6 +61,7 @@
 .employee{
 	height: 100%;
 	width: 100%;
+	transition: all .5s ease; 
 }
 .employee-container{
 	padding-bottom: 5%;
@@ -63,20 +70,12 @@
 .bottom-side-hidden{
 	padding-top: 4%;
 }
-.show-side:hover + .hidden-side{
-	display:block;
-	-webkit-animation: slide-down .3s ease-out;
-    -moz-animation: slide-down .3s ease-out;
+.show-side:hover .hidden-side {
+  opacity: 1;
 }
-.employee-container{
-	overflow-x: auto;
+.show-side:hover .employee {
+  transform: scale(1.1);
 }
-
-
-.whole-employee{
-	overflow-x: hidden;
-}
-
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.header {
 	    height: 650px;

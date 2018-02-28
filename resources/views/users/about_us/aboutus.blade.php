@@ -66,31 +66,72 @@
     <!--end of boxes -->
     <!-- Management -->
      <div class = "container employee-container">
+        <!--MANAGEMENT -->
         <div class = "management">
             <div class = "col-xs-12">
                 <p><strong>Management</strong></p>
             </div>
             <div class = "row">
                 <div class = "col-xs-12 whole-employee">
-                @foreach($about_table as $about)
+                @foreach($management as $about)
                     <div class = "col-xs-3 show-side"> 
-                        <img src="{{ URL::asset('image/uploaded_company_image/2018-02-21.49851370_jollibee.jpg')}}" class="img img-responsive employee" alt="Company Banner"/>
-                    </div>
-                    <div class = "col-xs-3 hidden-side">
-                        <div class = "col-xs-12 top-side-hidden">
-                            <h4>{{$about->about_name}}</h4>
-                            <p class = "position-hidden">{{$about->about_position}}</p>
-                        </div>
-                        <div class = "col-xs-12 bottom-side-hidden">
-                            <p class = "desc-hidden">{{$about->about_description}}</p>
+                        <div class = "col-xs-12">
+                            <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
+                            <div class = "col-xs-12 hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                            </div>
                         </div>
                     </div>
                 @endforeach
                 </div>
             </div>
         </div>
+        <!--OPERATIONS-->
+        <div class = "operations">
+            <div class = "col-xs-12">
+                <p><strong>Operations</strong></p>
+            </div>
+            <div class = "row">
+                <div class = "col-xs-12 whole-employee">
+                @foreach($operations as $about)
+                    <div class = "col-xs-3 show-side"> 
+                        <div class = "col-xs-12">
+                            <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
+                            <div class = "col-xs-12 hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                </div>
+            </div>
+        </div>
+        <!--Marketting-->
+        <div class = "operations">
+            <div class = "col-xs-12">
+                <p><strong>Marketting</strong></p>
+            </div>
+            <div class = "row">
+                <div class = "col-xs-12 whole-employee">
+                @foreach($marketting as $about)
+                    <div class = "col-xs-3 show-side"> 
+                        <div class = "col-xs-12">
+                            <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
+                            <div class = "col-xs-12 hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                </div>
+            </div>
+        </div>
+        <!--end of marketting -->
     </div>
-    <!--End of Management -->
+    <!--End of Employees -->
 </div>
 <div class = "row"></div> 
 @section('script')
