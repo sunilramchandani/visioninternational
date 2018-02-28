@@ -43,11 +43,11 @@
                      @foreach ($company->qualifications as $qualifications)
                         @if ($qualifications->status == "Inactive" )
                             <div class = "col-xs-6">
-                                <p><strike>{{$qualifications->qualificationlist->qualification}}</strike></p>
+                                <p><strike>{{$qualifications->qualificationlist->qualification_name}}</strike></p>
                             </div>
                             @else
                             <div class = "col-xs-6">
-                                <p>{{$qualifications->qualificationlist->qualification}}</p>
+                                <p>{{$qualifications->qualificationlist->qualification_name}}</p>
                             </div>
                         @endif
                     @endforeach

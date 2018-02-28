@@ -51,21 +51,39 @@
                             <select class = "form-control" name="author_id" id="">
 
 
-                            <option value="{{isset($blog->author) ? $blog->author :""}}" selected>
-                            @if(isset($blog->author_id))
-                            @foreach($blog->author as $name)
-                            {{ isset($blog->author_id) ?
-                             
-    
-                                $name->name
-                                 
-                             
-                             
-                             
-                              :''}}@endforeach
-                            @else
-                            Select Author
-                            @endif
+                            <option value="
+                                
+                                @if(isset($blog->author_id)) 
+                                    
+        
+                                    
+                                    {{ isset($blog->author_id) ? $author_id :''}}
+                                    
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
+                                     
+                                     " selected>
+                                    @if(isset($blog->author_id)) 
+                                    
+                                    @foreach($blog->author as $name) 
+                                    
+                                    
+                                    {{ isset($blog->author_id) ? $name->name :''}}
+                                    
+                                    
+                                    @endforeach
+
+
+
+                                    @else Select Author
+                                    
+                                    
+                                     @endif
                                 </option>
 
                                 @foreach($author_name as $author )

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Media;
 use App\Author;
+use Illuminate\Support\Facades\DB;
 
 class MediaController extends Controller
 {
@@ -96,6 +97,10 @@ class MediaController extends Controller
     public function adminCreate()
     {
        $media = Media::all();
+
+       $media_title = Media::select('media_title')->get();
+
+
        $author_name = Author::all();
        $action = route('media.adminStore');
        $method = "post";
@@ -106,10 +111,22 @@ class MediaController extends Controller
     public function adminEdit($id)
     {
        $media = Media::with('author')->findorFail($id);
+
+       $media_id = DB::table('media')
+        ->where('media_id', $id)
+        ->first()
+        ->media_author;
+
        $author_name = Author::all();
+
+
+       $author_id = Author::where('author_id', $media_id)->first()->author_id;
+
+
+
        $action = route('media.adminUpdate', $id);
        $method = "post";
-       return view('admin.media.form', compact('author_name','media', 'action', 'method'));
+       return view('admin.media.form', compact('author_id', 'author_name','media', 'action', 'method'));
     }
 
 
@@ -119,6 +136,7 @@ class MediaController extends Controller
 
 
         $media = new Media;
+        $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
         $media->media_description = $request['media_description'];
@@ -138,6 +156,7 @@ class MediaController extends Controller
     {
         $media = Media::findorFail($id);
 
+        $media->media_title = $request['media_title'];
         $media->media_type = $request['media_type'];
         $media->media_link = $request['media_link'];
         $media->media_description = $request['media_description'];
