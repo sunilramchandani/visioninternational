@@ -38,8 +38,8 @@
                             <select class="form-control" name="media_type" id="media_type" required>
 
                                 <option value="" disabled selected>{{ isset($media->media_type) ? $media->media_type:"Select Media Type"}}</option>
-                                <option value="Video">Video</option>
                                 <option value="Photo">Photo</option>
+                                <option value="Video">Video</option>
                             </select>
 
                         </div>
@@ -109,7 +109,7 @@
                             <label for="company_website">
                                 Media Link
                             </label>
-                            <textarea class="form-control" rows=5 id="media_link" name="media_link" required placeholder="Senior Programmer">{{ isset($media->media_link) ? $media->media_link : '' }} </textarea>
+                            <textarea class="form-control" rows=5 id="media_link" name="media_link" required placeholder="Http://??">{{ isset($media->media_link) ? $media->media_link : '' }}</textarea>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -117,7 +117,18 @@
                             <label for="company_website">
                                 Media Description
                             </label>
-                            <textarea class="form-control" rows=5 id="media_description" name="media_description" required placeholder="Senior Programmer">{{ isset($media->media_description) ? $media->media_description : '' }} </textarea>
+                            <textarea class="form-control" rows=5 id="media_description" name="media_description" required placeholder="Description . . .">{{ isset($media->media_description) ? $media->media_description : '' }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="company_website">
+                                Media Album Link
+                            </label>
+                            <textarea class="form-control" rows=5 id="media_album_link" name="media_album_link" required placeholder="http://??">{{ isset($media->media_album_link) ? $media->media_album_link:""}}</textarea>
                         </div>
                     </div>
                 </div>
