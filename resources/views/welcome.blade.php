@@ -103,32 +103,32 @@
             <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
-                    <p>Unlimited
-                        <br> opportunities
+                    <p>UNLIMITED
+                        <br> OPPORTUNITIES
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/2.png') }}" alt="Content" id=icon>
-                    <p>Guaranteed
-                        <br> placement and visa
+                    <p>GUARANTEED
+                        <br> PLACEMENT and VISA
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
-                    <p>Fast
-                        <br> procesing
+                    <p>FAST
+                        <br> PROCESSING
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/4.png') }}" alt="Content" id=icon>
-                    <p>Lowest priced
-                        <br> programs
+                    <p>LOWEST PRICED
+                        <br> PROGRAMS
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
-                    <p>Highest level
-                        <br> of service
+                    <p>HIGHEST LEVEL
+                        <br> of SERVICE
                     </p>
                 </div>
             </div>
@@ -136,24 +136,24 @@
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
-                        <p>Unlimited
-                            <br> opportunities
+                        <p>UNLIMITED
+                            <br> OPPORTUNITIES
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/2.png') }}" alt="Content" id=icon class="text-center">
-                        <p class="text-center">Guaranteed
-                            <br> placement and visa
+                        <p class="text-center">GUARANTEED
+                        <br> PLACEMENT and VISA
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
-                        <p>Fast
-                            <br> procesing
+                        <p>FAST
+                        <br> PROCESSING
                         </p>
                     </div>
                 </div>
@@ -162,23 +162,23 @@
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/4.png') }}" alt="Content" id=icon>
-                        <p>Lowest priced
-                            <br> programs
+                        <p>LOWEST PRICED
+                        <br> PROGRAMS
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
-                        <p>Highest level
-                            <br> of service
+                        <p>HIGHEST LEVEL
+                        <br> of SERVICE
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/more-info.png') }}" alt="Content" id=more-info>
-                        <p>More Info</p>
+                        <p>MORE INFO</p>
                     </div>
                 </div>
             </div>

@@ -69,7 +69,7 @@
         			<label for = "country_id" class = "labels">Country</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="country_name" id="country_name" required>
+	                <select class = "form-control" name="country_name" id="country_name">
                     <option value="" disabled selected>Select Country</option>
 	                </select>
 	           </div>
@@ -82,7 +82,7 @@
         			<label for = "location_id" class = "labels">Location</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="location_name" id="location_name" required>
+	                <select class = "form-control" name="location_name" id="location_name">
                         <option value="" disabled selected>Select</option>
 	                </select>
 	            </div>
@@ -128,7 +128,7 @@
         			<label for = "bdate" class = "labels">Birthdate</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-                	<input type = "date" class = "form-control"  name="birthdate" id="" required>
+                	<input type = "date" class = "form-control"  name="birthdate" id="">
                 </div>
             </div>
             <div class = "row form-group">
@@ -136,7 +136,7 @@
         			<label for = "gender" class = "labels">Gender</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="gender" id="" required>
+	                <select class = "form-control" name="gender" id="">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="Male">Male</option>
 	                    <option value="Female">Female</option>
@@ -148,13 +148,21 @@
         			<label for = "current_city" class = "labels">Current City</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="current_city" id="" required>
+	                <select class = "form-control" name="current_city" id="">
                         <option value="" disabled selected>Select</option>
                        @foreach($city_table as $city)
                            <option value ="{{$city->city_name}}">{{$city->city_name}}</option>
                         @endforeach
 	                </select>
 	            </div>
+            </div>
+            <div class = "row form-group">
+                <div class = "col-md-4 col-xs-12 label-container">
+                    <label for = "resume" class = "labels">Upload Resume</label>
+                </div>
+                <div class = "col-md-7 col-xs-12">
+                    <input type = "file" class = "form-control"  name="upload_resume" id="resume" >
+                </div>
             </div>
         </div>
         <div class = "col-md-5  col-xs-12">
@@ -163,7 +171,7 @@
         			<label for = "university_name" class = "labels">University/School</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <input type = "text" class = "form-control" name="university_name" id="university_name" required>
+	                <input type = "text" class = "form-control" name="university_name" id="university_name">
             	</div>
             </div>
             <div class = "row form-group">
@@ -171,7 +179,7 @@
         			<label for = "degree_name" class = "labels">Degree</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-                    <input type = "text" class = "form-control" name="degree_name" id="degree_name" required>
+                    <input type = "text" class = "form-control" name="degree_name" id="degree_name">
             	</div>
             </div>
             <div class = "row form-group">
@@ -179,13 +187,24 @@
         			<label for = "major_name" class = "labels">Major</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="major_name" id="major_name" required >
+	                <select class = "form-control" name="major_name" id="major_name">
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="7">Business</option>
 	                    <option value=""></option>
 	                    <option value=""></option>
 	                </select>
             	</div>
+            </div>
+            <div class = "row form-group">
+                <div class = "col-md-4 col-xs-12 label-container">
+                    <label for = "studies" class = "labels">Studies</label>
+                </div>
+                <div class = "col-md-7 col-xs-12">
+                    <select class = "form-control" name="major_name" id="major_name">
+                        <option value="Undergraduate" selected>Undergraduate</option>
+                        <option value="No Further Studies">No Further Studies</option>
+                    </select>
+                </div>
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
@@ -200,15 +219,7 @@
         			<label for = "start_date" class = "labels">Preferred Start Date</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-                	<input type = "date" class = "form-control"  name="start_date" id="start" required >
-                </div>
-            </div>
-            <div class = "row form-group">
-            	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "resume" class = "labels">Upload Resume</label>
-        		</div>
-        		<div class = "col-md-7 col-xs-12">
-                	<input type = "file" class = "form-control"  name="upload_resume" id="resume" >
+                	<input type = "date" class = "form-control"  name="start_date" id="start" >
                 </div>
             </div>
             <div class = "row form-group">
@@ -216,7 +227,7 @@
         			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
-	                <select class = "form-control" name="about_vip" id="learn" required >
+	                <select class = "form-control" name="about_vip" id="learn" >
 	                    <option value="" disabled selected>Select</option>
 	                    <option value="event">Event (at school/college)</option>
 	                    <option value="newspaper">Local News Paper</option>
@@ -230,7 +241,7 @@
             </div>
             <div class = "row form-group">
                 <div class = "col-md-11 col-xs-12">
-                    <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="6" cols="50" name="message" id="" required ></textarea>
+                    <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="9" cols="10" name="message" id="" required ></textarea>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
     @yield('page-css')
 </head>
 <body>
-    <div class="container-fluid content">
+    <div class="container-fluid content parallax">
         @yield('content')
         @include('layouts.prefooter')
         @include('layouts.footer')
