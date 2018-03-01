@@ -41,6 +41,10 @@ class CompanyLib
         $company->housing_distance = $data['housing_distance'];
         $company->housing_address = $data['housing_address'];
         $company->full_address = $data['full_address'];
+
+        $company->latitude = $data['latitude'];
+        $company->longtitude = $data['longtitude'];
+        
         $company->stipend = $data['stipend'];
         $company->state = $data['state'];
         
@@ -112,6 +116,8 @@ class CompanyLib
         $company->housing_distance = $data['housing_distance'];
         $company->housing_address = $data['housing_address'];
         $company->full_address = $data['full_address'];
+        $company->latitude = $data['latitude'];
+        $company->longtitude = $data['longtitude'];
         $company->stipend = $data['stipend'];
         $company->state = $data['state'];
 
