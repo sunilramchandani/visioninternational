@@ -38,8 +38,14 @@ class WorkCompanyLib
         $workcompany->housing_distance = $data['housing_distance'];
         $workcompany->housing_address = $data['housing_address'];
         $workcompany->full_address = $data['full_address'];
+
+        $company->latitude = $data['latitude'];
+        $company->longtitude = $data['longtitude'];
+
+
         $workcompany->stipend = $data['stipend'];
         $workcompany->state = $data['state'];
+        
 
 
         $workcompany->country = $data['country'];
@@ -111,6 +117,11 @@ class WorkCompanyLib
         $workcompany->housing_distance = $data['housing_distance'];
         $workcompany->housing_address = $data['housing_address'];
         $workcompany->full_address = $data['full_address'];
+
+        $workcompany->latitude = $data['latitude'];
+        $workcompany->longtitude = $data['longtitude'];
+
+
         $workcompany->stipend = $data['stipend'];
         $workcompany->state = $data['state'];
         $workcompany->country = $data['country'];

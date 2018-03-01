@@ -294,9 +294,11 @@ class BlogController extends Controller
 
         $category_table = CategoryList::withCount('blogcategorytable')->get();
 
+        $featuredimage_blog = FeaturedImage::where('page_name','blog')->get();
+
        
         
-        return view('users.blog.single_blog', compact('blog_table', 'previousblog','nextblog', 'blog', 'category_table', 'category_count', 'categories'));
+        return view('users.blog.single_blog', compact('featuredimage_blog', 'blog_table', 'previousblog','nextblog', 'blog', 'category_table', 'category_count', 'categories'));
     }
 
     public function indexMainUpload($id){

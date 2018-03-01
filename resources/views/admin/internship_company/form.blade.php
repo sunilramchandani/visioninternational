@@ -59,6 +59,26 @@
                         <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address"required>
                     </div>
                 </div>
+
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="full_address">
+                            Latitude
+                        </label>
+                        <input type="text" class="form-control" id="latitude" name="latitude" value="{{ isset($company) ? $company->latitude : '' }}" placeholder="30.201320"required>
+                    </div>
+                </div>
+
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="full_address">
+                            Longtitude
+                        </label>
+                        <input type="text" class="form-control" id="longtitude" name="longtitude" value="{{ isset($company) ? $company->longtitude : '' }}" placeholder="30.201320"required>
+                    </div>
+                </div>
+
+
                 <div class = "col-md-4 col-xs-12">
                     <div class="form-group">
                         <label for="stipend">
