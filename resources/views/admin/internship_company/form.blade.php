@@ -66,7 +66,7 @@
                         <label for="full_address">
                             Latitude
                         </label>
-                        <input type="text" class="form-control" id="latitude" name="latitude" value="{{ isset($company) ? $company->latitude : '' }}" placeholder="latitude" required disabled>
+                        <input type="text" class="form-control" id="latitude" name="latitude" value="{{ isset($company) ? $company->latitude : '' }}" placeholder="latitude" required readonly>
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
                         <label for="full_address">
                             Longtitude
                         </label>
-                        <input type="text" class="form-control" id="longtitude" name="longtitude" value="{{ isset($company) ? $company->longtitude : '' }}" placeholder="longtitude" required disabled>
+                        <input type="text" class="form-control" id="longtitude" name="longtitude" value="{{ isset($company) ? $company->longtitude : '' }}" placeholder="longtitude" required readonly>
                     </div>
                 </div>
 
