@@ -55,7 +55,7 @@ class InternshipCompanyController extends Controller
             $internship_latitude = InternshipCompany::where('id', request('id'))->orderBy('featured','desc')->pluck('latitude');
             $internship_longtitude = InternshipCompany::where('id', request('id'))->orderBy('featured','desc')->pluck('longtitude');
             
-            return view('users.internship.internship', compact('internship_featured','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+            return view('users.internship.internship', compact('internship_latitude','internship_longtitude','internship_featured','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
         }
 
        /* else if (request()->has('state')){

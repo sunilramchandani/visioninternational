@@ -440,6 +440,8 @@ $(function() {
   var gid = {!! json_encode($internship_id->toArray()) !!};
   var image = {!! json_encode($internship_image->toArray()) !!};
   var featured = {!! json_encode($internship_featured->toArray()) !!};
+  var lat = {!! json_encode($internship_latitude->toArray()) !!};
+  var long = {!! json_encode($internship_longtitude->toArray()) !!};
   var $_GET = <?php echo json_encode($_GET); ?>;
   var eid = $_GET['eid'];
   var counter = 0 ;
@@ -462,23 +464,9 @@ function initMap() {
     map.setCenter(bounds.getCenter());
 
 
-
-
-    //controller addresses
-    var addresses = {!! json_encode($internship_addresses->toArray()) !!};
-
-    for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-            
-            if (data.results[0].geometry.location){
-                    var p = data.results[0].geometry.location;
-                    var latlng = new google.maps.LatLng(p.lat, p.lng);     
-                    addMarker(map,bounds,latlng,featured[counter]); 
-                }
-                else{
-                    y--;
-                }
-        });    
+    for (var x = 0; x < gaddress.length; x++) {
+        var latlng = new google.maps.LatLng(lat[x], long[x]);     
+        addMarker(map,bounds,latlng,featured[counter]);    
     }
         map.fitBounds(bounds);
 
