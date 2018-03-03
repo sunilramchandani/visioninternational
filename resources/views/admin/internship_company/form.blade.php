@@ -56,16 +56,17 @@
                         <label for="full_address">
                             Full Address
                         </label>
-                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address"required>
-                    </div>
+                        <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address" required> 
+                    </div> 
+                    <a onclick="getgeo()" class = "form-control btn btn-info">Get Address</a>
                 </div>
-
+               
                 <div class = "col-md-4 col-xs-12">
                     <div class="form-group">
                         <label for="full_address">
                             Latitude
                         </label>
-                        <input type="text" class="form-control" id="latitude" name="latitude" value="{{ isset($company) ? $company->latitude : '' }}" placeholder="30.201320"required>
+                        <input type="text" class="form-control" id="latitude" name="latitude" value="{{ isset($company) ? $company->latitude : '' }}" placeholder="latitude" required disabled>
                     </div>
                 </div>
 
@@ -74,7 +75,7 @@
                         <label for="full_address">
                             Longtitude
                         </label>
-                        <input type="text" class="form-control" id="longtitude" name="longtitude" value="{{ isset($company) ? $company->longtitude : '' }}" placeholder="30.201320"required>
+                        <input type="text" class="form-control" id="longtitude" name="longtitude" value="{{ isset($company) ? $company->longtitude : '' }}" placeholder="longtitude" required disabled>
                     </div>
                 </div>
 
@@ -195,4 +196,14 @@
         });
     });
 </script>
+<script>
+ function getgeo(){
+    var addresses = document.getElementById("full_address").value;
+    $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses +'&sensor=false', null, function (data) {
+            var p = data.results[0].geometry.location;
+            document.getElementById("latitude").value = p.lat;
+            document.getElementById("longtitude").value = p.lng;      
+        }); 
+}
+</script>   
 @endsection
