@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FileUpload;
+use App\AboutUs;
+
 
 class FileUploadController extends Controller
 {
@@ -15,7 +17,9 @@ class FileUploadController extends Controller
     public function index()
     {
         $fileupload_table = FileUpload::all();
-        return view('file', compact('fileupload_table'));
+        $about_table = AboutUs::all();
+        $management = AboutUs::where('about_department','Management')->get();
+        return view('file', compact('fileupload_table', 'about_table', 'management'));
     }
 
     /**
