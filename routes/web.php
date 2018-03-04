@@ -26,6 +26,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::post('/view/{id}', ['uses' => 'EventPluginController@adminUpdate', 'as' => 'event.update']);
     });
 
+    Route::group(['prefix' => 'counter'], function() {
+        Route::get('/edit/{id}', ['uses' => 'HomeController@adminCounterEdit', 'as' => 'counter.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'HomeController@adminCounterUpdate', 'as' => 'counter.adminUpdate']);
+
+    });
+
 
     Route::group(['prefix' => 'author'], function() {
         Route::get('/list', ['uses' => 'SubDataController@indexAuthor', 'as' => 'author.list']);
@@ -168,6 +174,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'as' => 'media.adminDelete'
         ]);
 
+
+    });
+
+    Route::group(['prefix' => 'rate'], function() {
+        Route::get('/list', ['uses' => 'RateController@adminIndex', 'as' => 'rate.adminIndex']);
+
+        Route::get('/edit/{id}', ['uses' => 'RateController@adminEdit', 'as' => 'rate.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'RateController@adminUpdate', 'as' => 'rate.adminUpdate']);
 
     });
 

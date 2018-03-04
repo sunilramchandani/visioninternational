@@ -261,6 +261,14 @@
 
                         </li>
 
+                        <li>
+                            <a href="{{ route('counter.adminEdit', 1) }}">
+                                <i class="fa fa-list"></i>
+                                <td>Counter</td>
+                            </a>
+
+                        </li>
+
                     </ul>
                    
                 </li>
@@ -322,7 +330,25 @@
                 <hr>
                 
 
-                
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/rate') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Rates</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('rate.adminIndex') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/author') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fa fa-building"></i>

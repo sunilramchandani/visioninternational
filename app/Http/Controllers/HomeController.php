@@ -16,7 +16,7 @@ use App\Models\Testimonials;
 use App\Models\Programs;
 use App\Blog;
 use App\News;
-
+use App\Counter;
 class HomeController extends Controller
 {
     /**
@@ -67,69 +67,27 @@ class HomeController extends Controller
         return view('admin.home', compact('app', 'blog', 'news', 'programs', 'testimonials'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function adminCounterEdit(Request $request , $id = 1){
+        $counter = Counter::find($id);
+        $action = route('counter.adminUpdate', 1);
+        $method = "post";
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('admin.featured_image.counter', compact('counter','action', 'method'));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function adminCounterUpdate(Request $request, $id = 1)
     {
-        //
-    }
+        $counter = Counter::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $counter->country = $request['country'];
+        $counter->state = $request['state'];
+        $counter->company = $request['company'];
+        $counter->applicant = $request['applicant'];
+        $counter->save();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->back()->with($success);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
