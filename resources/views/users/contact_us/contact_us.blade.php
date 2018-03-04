@@ -37,11 +37,9 @@
                         <div class = "row form-group">
                             <select class = "form-control" name="general_inquiries" class = "general_inquiries" id = "general_inquiries">
                                 <option value="General Inquiries" disabled selected>General Inquiries</option>
-                                <option value="Career Opportunity">Career Opportunity</option>
-                                <option value="Internship">Internship</option>
-                                <option value="Au Pair">Au Pair</option>
-                                <option value="Work & Travel">Work & Travel</option>
-                                <option value="Skilled Work Visa">Skilled Work Visa</option>
+                                <option value="About Your Programs"> About Your Programs</option>
+                                <option value="Business Partnerships">Business Partnerships</option>
+                                <option value="Career Opportunities">Career Opportunities</option>
                                 <option value="Others">Others</option>
                             </select>
                         </div>

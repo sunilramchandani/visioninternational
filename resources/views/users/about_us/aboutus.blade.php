@@ -18,7 +18,7 @@
     <div class = "container">
     	<div class = "text-center">
     		<h4> About </h4>
-    		<div class = "col-xs-6 col-xs-offset-3">
+    		<div class = "col-xs-12 col-md-6 col-md-offset-3">
     			<p>We are a dynamic, energetic, and driven team committed to delivering unlimited opportunities to deserving students and prefessionals.</p>
     		</div>
     	</div>
@@ -27,7 +27,7 @@
     <!--Boxes-->
     <div class = "container box-container">
     		<!--First Box -->
-		<div class = "col-xs-4 text-center">
+		<div class = "col-xs-12 col-md-4 text-center">
 			<div class = "col-xs-12 box ">
     			 <div class = "icon-container">
     			 	<img src="{{ URL::asset('image/icons/VIP-Icons-01.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
@@ -39,7 +39,7 @@
     		</div>
 		</div>
 		<!--Second Box -->
-		<div class = "col-xs-4  text-center">
+		<div class = "col-xs-12 col-md-4  text-center">
 			<div class = "col-xs-12 box">
 				<div class = "icon-container">
 					<img src="{{ URL::asset('image/icons/VIP-Icons-02.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<!--Third Box -->
-		<div class = "col-xs-4  text-center">
+		<div class = "col-xs-12 col-md-4  text-center">
 			<div class = "col-xs-12 box">
 				<div class = "icon-container">
 					<img src="{{ URL::asset('image/icons/8.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
@@ -74,7 +74,7 @@
             <div class = "row">
                 <div class = "col-xs-12 whole-employee">
                 @foreach($management as $about)
-                    <div class = "col-xs-3 show-side"> 
+                    <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
                             <div class = "col-xs-12 hidden-side text-center">
@@ -96,12 +96,12 @@
             <div class = "row">
                 <div class = "col-xs-12 whole-employee">
                 @foreach($operations as $about)
-                    <div class = "col-xs-3 show-side"> 
+                    <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
                             <div class = "col-xs-12 hidden-side text-center">
                                 <h4>{{$about->about_name}}</h4>
-                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
                             </div>
                         </div>
                     </div>
@@ -117,12 +117,12 @@
             <div class = "row">
                 <div class = "col-xs-12 whole-employee">
                 @foreach($marketting as $about)
-                    <div class = "col-xs-3 show-side"> 
+                    <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
                             <div class = "col-xs-12 hidden-side text-center">
                                 <h4>{{$about->about_name}}</h4>
-                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}</p>
                             </div>
                         </div>
                     </div>
@@ -132,56 +132,9 @@
         </div>
         <!--end of marketting -->
     </div>
-      <div id ="carousel-featured" class="col-md-12 hidden-xs hidde-sm carousel slide " data-ride="carousel">
-            <!-- Indicators -->
-            
-            <ol class="carousel-indicators">
-             @foreach($management as $about)
-                <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-            @endforeach
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                 @foreach($management as $about)
-                <div class="item {{ $loop->first ? ' active' : '' }}">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container text-center promos">  
-                            @for($i = 0; $i != 4; $i++)  
-                                <div class = "col-xs-3 show-side"> 
-                                    <div class = "col-xs-12">
-                                        <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
-                                        <div class = "col-xs-12 hidden-side text-center">
-                                            <h4>{{$about->about_name}}</h4>
-                                            <p class = "position-hidden">{{$about->about_position}}</p>
-                                            <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-                            </div> 
-                        </div>
-                    </div>  
-                </div>
-                @endforeach
-                <!-- Controls -->
-                <a class="left carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="prev" style="background: none !important; color:black;">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="next"style="background: none !important; color:black;">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
-            </div>
-            <!-- end of carousel -->
-        </div>
     <!--End of Employees -->
 </div>
 <div class = "row"></div> 
 @section('script')
 
-<script type="text/javascript">
-</script>
 @endsection
