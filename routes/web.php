@@ -131,6 +131,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
     });
 
+    Route::group(['prefix' => 'pagestep'], function() {
+        Route::get('/list', ['uses' => 'PageStepController@adminIndex', 'as' => 'page_step.adminIndex']);
+        Route::get('/edit/{id}', ['uses' => 'PageStepController@adminEdit', 'as' => 'page_step.adminEdit']);
+        Route::post('/edit/{id}', [ 'uses' => 'PageStepController@adminUpdate', 'as' => 'page_step.adminUpdate']);
+
+
+    });
+
+
+
     Route::group(['prefix' => 'faq'], function() {
         Route::get('/list', ['uses' => 'faqController@adminIndex', 'as' => 'faq.adminIndex']);
 

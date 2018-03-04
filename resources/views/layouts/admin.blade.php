@@ -328,6 +328,24 @@
                 </li>
 
                 <hr>
+
+                <li class="treeview {{ ($currentRoutePrefix === 'admin/pagestep') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fa fa-building"></i>
+                        <span>Page Steps</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{ route('page_step.adminIndex') }}">
+                                <i class="fa fa-list"></i>
+                                List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/rate') ? 'active' : '' }}">
