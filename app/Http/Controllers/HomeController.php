@@ -47,14 +47,14 @@ class HomeController extends Controller
 
         $testimonial = Testimonials::where('id', $get_testimonial)->get();
 
-
+        $counter = counter::all();
 
         $testimonials = Testimonials::all();
         $programs = Programs::all();
         
         $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
         $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
-        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','events_table','internshipcompany_table', 'programs', 'testimonials'));
+        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','events_table','internshipcompany_table', 'programs', 'testimonials','counter'));
     }
 
     public function adminIndex()

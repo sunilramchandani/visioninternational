@@ -18,22 +18,24 @@
         </div>
         <div class="row counters">
             <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1">
+                @foreach ($counter as $counters)
                 <div class="col-xs-2 counter-container">
-                    <h1 class="counter">2</h1>
+                    <h1 class="counter">{{ $counters->country}}</h1>
                 </div>
                 <div class="col-xs-2 counter-container">
                     <p>
-                        <h1 class="counter"> {{ $state_count }} </h1>
+                        <h1 class="counter"> {{ $counters->state }} </h1>
                 </div>
                 <div class="col-xs-2 counter-container">
-                    <h1 class="counter">{{$company_count}}</h1>
+                    <h1 class="counter">{{$counters->company}}</h1>
                 </div>
                 <div class="col-xs-2 counter-container">
-                    <h1 class="counter">{{$applicant_count}}</h1>
+                    <h1 class="counter">{{$counters->applicant}}</h1>
                 </div>
                 <div class="col-xs-2 counter-container-infinity">
                     <img src="{{ URL::asset('image/icons/InfinitySign.png')}}" class="img  img-rounded infin" id="infin" alt="Company Banner">
                 </div>
+                @endforeach
             </div>
         </div>
         <div class="row counter-label">
