@@ -7,6 +7,16 @@
 	margin-top: -127;
 	color:white;
 }
+.last-filter{
+	padding-bottom: 5%;
+}
+.modal-content{
+	width: 80%;
+    height: 80%;
+}
+.modal-dialog{
+	padding-left: 15%;
+}
 .spring-bg{
 	background-image: url("/image/icons/Spring-H.png"); 
 	height: 50px;
@@ -33,6 +43,7 @@
 }
 .company-details{
 	height:100%;
+	overflow-y: auto;
 }
 .p-dynamic{
 	color:white;
@@ -67,17 +78,14 @@ hr{
 .legend {
     background-color: #f2f2f2;
     width: 98%;
-    position: absolute;
+    position: sticky;
     bottom: 0;
 }
 .company-whole{
 	box-shadow: 5px 5px 5px grey;
-	height:100%;
 	padding: 0;
 }
-.qualifications{
-	padding-top: 2%;
-}
+
 .img-map{
 	height:100%;
 	width: 100%;
@@ -90,9 +98,10 @@ hr{
     z-index: 1;
     margin-top: 10px;
     border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: 150;
+    overflow-y: auto;
 }
-
 /* Links inside the dropdown */
 .dropdown-content-filler a {
     color: black;
@@ -179,15 +188,15 @@ hr{
 .company-head{
 	height: 52%;
 	width:100%;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 }
 .info-container{
 	background: #f2f2f2;
 	padding-bottom: 3%;
 	box-shadow: 2px 4px 12px 2px #B0B0B0;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	margin-top: 3%;
 	height: 68%;
 }
@@ -402,7 +411,7 @@ margin-top: 5px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 6px 0px #ccc;
 	padding: 70px;
-	margin-bottom: 60px;
+	margin-bottom: 5%;
   
 }
 
@@ -425,7 +434,7 @@ margin-top: 5px;
 }
 .number-icon{
 	position: absolute;
-	top: 220;
+	top: -7%;
 	left: 49%;
 }
 .number-icon2{
@@ -452,7 +461,7 @@ margin-top: 5px;
 	}
 	.number-icon {
 	    position: absolute;
-	    top: 185px;
+	    top: -7%;
 	}
 }
 @media screen and (max-width: 991px) and (min-width: 720px) {
@@ -471,11 +480,12 @@ margin-top: 5px;
 	    margin-top: 20px;
 	    padding-bottom: 5%;
 	}
+
 	.company-head {
     	height: 30%;
 	    width: 100%;
-	    border-top-left-radius: 12px;
-	    border-top-right-radius: 12px;
+	    border-top-left-radius: 6px;
+	    border-top-right-radius: 6px;
 	}
 	.text-left-side {
 	    letter-spacing: 1px;
@@ -502,6 +512,22 @@ margin-top: 5px;
 	    height: 262px;
 	    width: 236px;
 	}
+	.locate-me {
+	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+	    color: white;
+	    border-radius: 8px;
+	    font-size: 10px;
+	    width: 90%;
+	}
+	.company-whole{
+		box-shadow: none;
+		padding: 0;
+	}
+	.side-content {
+	    overflow: hidden;
+	    padding-bottom: 5%;
+	    padding-top: 5%;
+	}
 }
 @media screen and (max-width: 719px) and (min-width: 320px) {
 	.header {
@@ -519,6 +545,12 @@ margin-top: 5px;
 	    margin-top: 120px;
 	    padding-bottom: 5%;
 	}
+	.last-row{
+		border:none;
+	}
+	.row-price{
+		padding-bottom: 0%;
+	}
 	.dynamic-text-container-box {
 	    background-color: rgba(54,56,60,0.7);
 	    z-index: 0;
@@ -533,7 +565,7 @@ margin-top: 5px;
 	    font-size: 10px !important;
 	}
 	h2 {
-	    font-size: 10px;
+	    font-size: 20px;
 	}
 	h4 {
 	    font-size: 10px;
@@ -548,8 +580,8 @@ margin-top: 5px;
 	    background: #f2f2f2;
 	    padding-bottom: 3%;
 	    box-shadow: 2px 4px 12px 2px #B0B0B0;
-	    border-top-left-radius: 12px;
-	    border-top-right-radius: 12px;
+	    border-top-left-radius: 6px;
+	    border-top-right-radius: 6px;
 	    margin-top: 3%;
 	    height: 50%;
 	}
@@ -560,14 +592,14 @@ margin-top: 5px;
 	    color: white;
 	    border-radius: 6px;
 	    font-size: 10px;
-	    width: 95%;
+	    width: 60%;
 	}
 	.locate-me {
 	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
 	    color: white;
 	    border-radius: 8px;
 	    font-size: 10px;
-	    width: 130%;
+	    width: 90%;
 	}
 	#reserve-title {
 	    color: #c42b16;
@@ -588,22 +620,22 @@ margin-top: 5px;
 	    border-radius: 10px;
 	    box-shadow: 0px 0px 6px 0px #ccc;
 	    padding: 30px 10 10 0;
-	    margin-bottom: 60px;
+	    margin-bottom: 5%;
 	}
 	.number-icon {
 	    position: absolute;
-	    top: 165px;
-	    height: 50;
+		top: -4%;
+		height: 38px;
 	}
 	.number-icon2 {
 	    position: absolute;
-	    top: -25px;
-	    height: 50;
+	    top: -4%;
+	    height: 38px;
 	}
 	.number-icon3 {
 	    position: absolute;
-	    top: -25px;
-	    height: 50;
+	    top: -4%;
+	   height: 38px;
 	}
 	.left-side{
 		padding-top: 5%;
@@ -643,5 +675,27 @@ margin-top: 5px;
 	.testimony-picture {
 	    height: 200px;
 	    width: 96px;
+	}
+	.company-whole{
+		box-shadow: none;
+		padding: 0;
+	}
+	.side-content {
+	    overflow: hidden;
+	    padding-bottom: 5%;
+	    padding-top: 5%;
+	}
+	.dynamic-text-container{
+		padding:0;
+	}
+	.dynamic-text-container-box {
+	    background-color: #a94442;
+	    z-index: 0;
+	    border-radius: 12px;
+	    letter-spacing: 1px;
+	    margin-top: -310px;
+	    color: white;
+	    height: 74%;
+	    padding: 0;
 	}
 }

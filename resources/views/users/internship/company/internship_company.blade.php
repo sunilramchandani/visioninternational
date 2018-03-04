@@ -9,8 +9,13 @@
     </div>
     <div class = "col-xs-8 company-details">
         @foreach ($internshipCompany_table as $company)
-            <div class ="col-xs-12">
+            <div class ="col-xs-11">
                 <h1><strong>{{$company->company_name}}</strong></h1>
+            </div>
+            <div class = "col-xs-1">
+                <button class = "btn" data-dismiss="modal">x</button>
+            </div>
+            <div class ="col-xs-12">
                 <p>{{$company->description}}</p>
             </div>
             <div class = "row stip-hous">

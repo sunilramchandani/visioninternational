@@ -50,7 +50,7 @@
         <div class = "col-md-5 col-md-offset-1 col-xs-12 ">
         	<div class = "row form-group">
         		<div class = "col-md-4 label-container">
-        			<label for = "program" class = "labels">Program</label>
+        			<label for = "program" class = "labels">Program *</label>
         		</div>
         		<div class = "col-md-7">
 	                <select class = "form-control" name="program_name" id="program_name" required>
@@ -93,7 +93,7 @@
             
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "last_name" class = "labels">Last Name</label>
+        			<label for = "last_name" class = "labels">Last Name *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
                 	<input type = "text" class = "form-control"  name="last_name" id=""  required>
@@ -101,7 +101,7 @@
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "first_name" class = "labels">First Name</label>
+        			<label for = "first_name" class = "labels">First Name *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
                 	<input type = "text" class = "form-control"  name="first_name" id="" required>
@@ -109,7 +109,7 @@
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "email" class = "labels">Email</label>
+        			<label for = "email" class = "labels">Email *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12 ">
                 	<input type = "email" class = "form-control"  name="email" id=""required >
@@ -117,7 +117,7 @@
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "contact_no" class = "labels">Contact Number</label>
+        			<label for = "contact_no" class = "labels">Contact Number *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12 ">
                 	<input type = "tel" class = "form-control"  name="contact_no" id="" required >
@@ -125,7 +125,7 @@
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "bdate" class = "labels">Birthdate</label>
+        			<label for = "bdate" class = "labels">Birthdate *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
                 	<input type = "date" class = "form-control"  name="birthdate" id="">
@@ -197,7 +197,7 @@
             </div>
             <div class = "row form-group">
                 <div class = "col-md-4 col-xs-12 label-container">
-                    <label for = "studies" class = "labels">Studies</label>
+                    <label for = "studies" class = "labels">Studies *</label>
                 </div>
                 <div class = "col-md-7 col-xs-12">
                     <select class = "form-control" name="major_name" id="major_name">
@@ -208,7 +208,7 @@
             </div>
             <div class = "row form-group">
             	<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "grad_date" class = "labels">Graduation Date</label>
+        			<label for = "grad_date" class = "labels">Graduation Date *</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
                 	<input type = "date" class = "form-control"  name="grad_date" id="grad" required >

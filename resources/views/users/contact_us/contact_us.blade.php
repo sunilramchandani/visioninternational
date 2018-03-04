@@ -30,14 +30,6 @@
                         <div class = "row form-group">
                             <input type = "tel" class = "form-control"  name="contact_no" id="" placeholder="Contact Number">
                         </div>
-                        <div class = "row form-group">
-                            <select class = "form-control" name="country" id="">
-                                <option value="" disabled selected> Country</option>
-                                @foreach($country as $country)
-                                    <option value="{{$country}}">{{$country}}</option>
-                                @endforeach
-                            </select>
-                        </div>
                     </div>
                 </div>
                 <div class = "col-lg-6">
@@ -54,7 +46,7 @@
                             </select>
                         </div>
                         <div class = "row form-group">
-                            <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="8" cols="50" name="message" id=""></textarea>
+                        <textarea name="message" class = "form-control textarea-input" placeholder="Message" rows="5" cols="50" name="message" id=""></textarea>
                         </div>
                     </div>
                 </div>
@@ -113,9 +105,21 @@
         <div class = "country-city-offices row">
             <div class = "col-xs-5 col-xs-offset-1">
                 <div class =  "col-xs-12">
-                    <div class = "row top-header">
+                    <div class = "row top-header" id=cont-1>
                         <div class = "col-xs-12">
                             <span class = "h2">Manila <h4 class = "country-header inline-header">Philippines</h4> </span>
+                           
+                        </div>
+                    </div>
+                     <div class = "row top-header" id=cont-2>
+                        <div class = "col-xs-12">
+                            <span class = "h2">Cubao <h4 class = "country-header inline-header">Philippines</h4> </span>
+                           
+                        </div>
+                    </div>
+                     <div class = "row top-header" id=cont-3>
+                        <div class = "col-xs-12">
+                            <span class = "h2">Baguio <h4 class = "country-header inline-header">Philippines</h4> </span>
                            
                         </div>
                     </div>

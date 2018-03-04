@@ -38,8 +38,8 @@
         </div>
     </div>
     <div class = "body-content" id= "body-content">
-        <div class = "row filter-top">
-            <div class = "col-xs-10 filter-main">
+        <div class = "row hidden-xs hidden-sm filter-top">
+            <div class = "hidden-xs hidden-sm col-md-10 filter-main">
                 <div class = "col-xs-12">
                     <div class="dropdown">
                       <a class="dropbtn-filter">State</a>
@@ -94,9 +94,9 @@
                         @endif
                       </div>
                     </div>
+                </div>
             </div>
-        </div>
-            <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-4 filter-result">
+            <div class = "col-md-2 hidden-xs hidden-sm filter-result">
                 @for ($i = 0; $i < count($internshipCompany_table)+1; $i++)
                     @if ($i == count($internshipCompany_table))
                         <p>Total Results: <strong> {{ $i }} </strong></p>
@@ -138,21 +138,23 @@
 <!----------------------------------------END OF HIDDEN DIV -------------------------------------->
 
 
-<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12 company-whole" id = "x">
-    <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 picture" id = "map">  
+<div class = "col-xs-12 company-whole" id = "x">
+    <div class = "col-md-5 col-xs-12 picture" id = "map">  
     </div>
-    <div class = "col-lg-7 col-md-7 col-sm-7 col-xs-7 side-content">
+    <div class = "col-md-7 col-xs-12 side-content">
     
         @foreach ($internshipCompany_table as $company)
-            <div class = "col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-container">
-                <div class = "row company-picture">
-                    <img src="{{ URL::asset('image\uploaded_workcompany_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
-                </div>
-                <div class = "row info">
-                    <h4>{{$company->full_address}}</h4>
-                    <h3>{{$company->company_name}}</h3>
-                    <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
-                    <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
+            <div class = "col-xs-6 ">
+                <div class = "col-xs-12 info-container">
+                    <div class = "row company-picture">
+                        <img src="{{ URL::asset('image\uploaded_workcompany_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
+                    </div>
+                    <div class = "row info">
+                        <h4>{{$company->full_address}}</h4>
+                        <h3>{{$company->company_name}}</h3>
+                        <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
+                        <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
+                    </div>
                 </div>
             </div> 
         
@@ -337,8 +339,8 @@
                 $(".spring-text").css("color", '#f4645f');
                 $(".summer-text").css("color", 'black');
                 document.getElementById('1st-Installment').innerHTML = "Php 4,000";
-                document.getElementById('2nd-Installment').innerHTML = "Php 45,000";
-                document.getElementById('3rd-Installment').innerHTML = "Php 50,000";
+                document.getElementById('2nd-Installment').innerHTML = "Php 55,000";
+                document.getElementById('3rd-Installment').innerHTML = "Php 60,000";
                 }, function(){
             });
 
@@ -427,6 +429,7 @@ function initMap() {
     var myOptions = {
         zoom: 4,
         maxZoom: 10,
+        minZoom: 4,
         center: new google.maps.LatLng(0, 0),
         mapTypeId: 'terrain'
     };

@@ -1,6 +1,7 @@
 @extends('layouts.master') @section('page-css')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}"> @stop @include('layouts.navbar') @section('content')
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 whole-page">
+
     @foreach ($featuredimage_home as $featured)
 
     <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive header"
@@ -8,7 +9,7 @@
 
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img  img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-    <div class="text-inside-header-picture">
+    <div class="text-inside-header-picture next">
         <div class="row dynamic-text-container">
             <div class="col-xs-12 col-md-6 dynamic-text-container-box">
                 <h4 class="text-description"> {{$featured->main_image_description}}</h4>
@@ -61,7 +62,7 @@
         </div>
     </div>
     <!------------------------- CONTENT ---------------------->
-    <div class="container">
+    <div class="container next">
         <div class="about row">
             <div class="col-md-4 col-md-offset-4 col-xs-12 text-center about-font">
                 <h1>We believe that...</h1>
@@ -72,7 +73,7 @@
 
     <!--Picture -->
     @foreach ($featuredimage_home as $featured)
-    <div class="container">
+    <div class="container next">
         <div class="row picture-header">
             <div class="col-md-6 col-xs-6">
                 <div class="home-pic">
@@ -89,9 +90,9 @@
         </div>
     </div>
     @endforeach
-    <div class="container">
+    <div class="container next">
         <div class="commit row">
-            <div class="col-xs-12 text-center about-font">
+            <div class="col-xs-12 text-center commitment-font">
                 <h1>Our Commitments</h1>
             </div>
         </div>
@@ -198,12 +199,12 @@
 
     <!--Start of Events -->
     <div class="container text-center">
-        <div class="row">
+        <div class="row event-font">
             <h1>Events</h1>
         </div>
     </div>
     <div class="container">
-        <div class="row home-page-events">
+        <div class="row home-page-events next">
             @foreach($events_table as $events)
             <div class="col-md-3 col-xs-6 ">
                 <div class = "col-xs-12 events-content">
@@ -234,14 +235,14 @@
     <!--End of Events -->
 
     <!--featured company -->
-    <div class="container text-center">
+    <div class="container text-center ">
         <div class="row promos-header">
             <div class="about-font">
                 <h1>Featured Properties</h1>
             </div>
         </div>
     </div>
-      <div class="row">
+      <div class="row next">
         <div id ="carousel-featured" class="col-md-12 hidden-xs hidde-sm carousel slide " data-ride="carousel">
             <!-- Indicators -->
             
@@ -268,20 +269,19 @@
                                         <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn featured-btn">More Info</a>
                                     </div>
                                     <div class="lower-content col-md-11">
-                                        <div class="col-md-6 validity-container">
-                                        <p class="validity-text">Share this promo:
--                                                
--                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
--                                    <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
--                                </a>
--                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id )}}" target="_blank">
--                                    <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
--                                </a>
--                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id) }}" target="_blank">
--                                    <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
--                                </a>
--                            
--                            </p>
+                                        <div class="col-md-8 validity-container">
+                                        <p class="validity-text">Share this promo:                                                
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
+                                   <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
+                                 </a>
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id )}}" target="_blank">
+                                    <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
+                                </a>
+                                <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id) }}" target="_blank">
+                                    <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
+                                </a>
+                            
+                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -324,7 +324,7 @@
     <!-- Start of Promos -->
     <div class="container text-center">
         <div class="row promos-header">
-            <div class="about-font">
+            <div class="promo-font">
                 <h1>Promos</h1>
                 <p>Get one step closer to your dreams
                     <br>Take advantage of this amazing deal on our programs!
@@ -334,7 +334,7 @@
     </div>
 
     <!-- Promo picture -->
-    <div class="text-center promos">
+    <div class="text-center promos next">
         <div class="col-md-6 col-md-offset-1 hidden-sm hidden-xs promo-pic-container">
             <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" class="img img-responsive  promo-pic"
                 alt="Company Banner">
@@ -370,7 +370,7 @@
 
  
     <!--testimony-->
-        <div class="container">
+        <div class="container next">
             <div class="row testimony-header">
                 <div class=" col-xs-12 col-md-8 col-md-offset-2 about-font text-center">
                      <h3>Our Community</h3>
@@ -400,5 +400,31 @@
 $('.carousel-featured').carousel({
     interval: false
 });
+$(function() {
+  $.scrollify({
+    section : ".next",
+  });
+});
+
+ 
+ $.scrollify({
+    section : "section",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: true,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+  });
+
 @endsection
 </script>
