@@ -21,7 +21,7 @@ class AboutUsController extends Controller
     {
         $management = AboutUs::where('about_department','Management')->get();
         $operations = AboutUs::where('about_department','Operations')->get();
-        $marketting = AboutUs::where('about_department','Marketting')->get();
+        $marketting = AboutUs::where('about_department','Marketting')->paginate(4);
         $management_count = AboutUs::where('about_department','Management')->get()->count();
         $featuredimage_aboutUs = FeaturedImage::where('page_name', 'About_Us','management_count')->get();
 

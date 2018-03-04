@@ -51,12 +51,10 @@ class HomeController extends Controller
 
         $testimonials = Testimonials::all();
         $programs = Programs::all();
-        $state_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->distinct('state')->count('state');
-        $company_count = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->count('id');
-        $applicant_count = Application::count('id');
+        
         $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
         $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
-        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','state_count','company_count','applicant_count','events_table','internshipcompany_table', 'programs', 'testimonials'));
+        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','events_table','internshipcompany_table', 'programs', 'testimonials'));
     }
 
     public function adminIndex()
