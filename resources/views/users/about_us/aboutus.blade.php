@@ -142,19 +142,19 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                 @foreach($management as $index => $current)
+                 @foreach($management as $about)
                 <div class="item {{ $loop->first ? ' active' : '' }}">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="container text-center promos">  
-                            @for($i = 0; $i != 3; $i++)  
+                            @for($i = 0; $i != 4; $i++)  
                                 <div class = "col-xs-3 show-side"> 
                                     <div class = "col-xs-12">
                                         <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
                                         <div class = "col-xs-12 hidden-side text-center">
-                                            <h4>{{$about->about_name[$index + 1]}}</h4>
-                                            <p class = "position-hidden">{{$about->about_position[$index + 1]}}</p>
-                                            <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter[$index + 1]}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin[$index + 1]}}
+                                            <h4>{{$about->about_name}}</h4>
+                                            <p class = "position-hidden">{{$about->about_position}}</p>
+                                            <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
                                         </div>
                                     </div>
                                 </div>
