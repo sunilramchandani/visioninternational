@@ -101,37 +101,37 @@
     </div>
 
     <!--Commitments -->
-    <div class="text-center">
+     <div class="text-center">
         <div class="row" id=p-commit>
             <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
-                    <p>UNLIMITED
-                        <br> OPPORTUNITIES
+                    <p>Unlimited
+                        <br> Opportunities
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/2.png') }}" alt="Content" id=icon>
-                    <p>GUARANTEED
-                        <br> PLACEMENT and VISA
+                    <p>Guaranteed
+                        <br> Placement and Visa
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
                     <p>FAST
-                        <br> PROCESSING
+                        <br> Processing
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/4.png') }}" alt="Content" id=icon>
-                    <p>LOWEST PRICED
-                        <br> PROGRAMS
+                    <p>Lowest Priced
+                        <br> Programs
                     </p>
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
-                    <p>HIGHEST LEVEL
-                        <br> of SERVICE
+                    <p>Highest Level
+                        <br> of Service
                     </p>
                 </div>
             </div>
@@ -139,16 +139,16 @@
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/1.png') }}" alt="Content" id=icon>
-                        <p>UNLIMITED
-                            <br> OPPORTUNITIES
+                        <p>Unlimited
+                            <br> Opportunities
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/2.png') }}" alt="Content" id=icon class="text-center">
-                        <p class="text-center">GUARANTEED
-                        <br> PLACEMENT and VISA
+                        <p class="text-center">Guaranteed
+                        <br> Placement and Visa
                         </p>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
                         <p>FAST
-                        <br> PROCESSING
+                        <br> Processing
                         </p>
                     </div>
                 </div>
@@ -165,16 +165,16 @@
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/4.png') }}" alt="Content" id=icon>
-                        <p>LOWEST PRICED
-                        <br> PROGRAMS
+                        <p>Lowest Priced
+                        <br> Programs
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-4 ">
                     <div class="text-center">
                         <img src="{{ URL::asset('image/icons/highest.png') }}" alt="Content" id=icon>
-                        <p>HIGHEST LEVEL
-                        <br> of SERVICE
+                        <p>Highest Level
+                        <br> of Service
                         </p>
                     </div>
                 </div>
@@ -187,7 +187,6 @@
             </div>
         </div>
     </div>
-
     <!-- End Commitments -->
 
     <!-- More info button -->

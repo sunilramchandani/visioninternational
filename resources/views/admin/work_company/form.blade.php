@@ -58,6 +58,7 @@
                         </label>
                         <input type="text" class="form-control" id="full_address" name="full_address" value="{{ isset($company) ? $company->full_address : '' }}" placeholder="Company Address"required>
                     </div>
+                    <a onclick="getgeo()" class = "form-control btn btn-info">Get Address</a>
                 </div>
                 
                 <div class = "col-md-4 col-xs-12">
@@ -194,4 +195,14 @@
         });
     });
 </script>
+<script>
+ function getgeo(){
+    var addresses = document.getElementById("full_address").value;
+    $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses +'&sensor=false', null, function (data) {
+            var p = data.results[0].geometry.location;
+            document.getElementById("latitude").value = p.lat;
+            document.getElementById("longtitude").value = p.lng;      
+        }); 
+}
+</script>  
 @endsection 
