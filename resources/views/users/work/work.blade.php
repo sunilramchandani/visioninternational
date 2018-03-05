@@ -56,16 +56,16 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <a class="dropbtn-filter">State</a>
+                    <a class="dropbtn-filter">State</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
                           <a href="/workcompany">All</a>
                             @if ( Request::get('state')  )
-                                @foreach ($internship_filter as $filter)
+                                @foreach ($internshipCompany_table_filter_state as $filter)
                                     <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                                 @endforeach
                             @else
-                                @foreach ($internshipCompany_table as $company)
+                                @foreach ($internshipCompany_table_filter_state as $company)
                                     <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                                 @endforeach
                             @endif
@@ -75,37 +75,37 @@
                     <div class="dropdown">
                       <a class="dropbtn-filter">Industry</a>
                       <div class="dropdown-content-filler">
+                      <div id="links">
                         @if ( Request::get('state')  )
-                            @foreach ($internship_filter as $filter)
-                                @foreach ($filter->work_industry as $industry)
+                            @foreach ($internshipCompany_table_filter_industry as $industry)
                                     <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
-                                @endforeach
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table as $company)
-                                @foreach ($company->work_industry as $industry)
+                            @foreach ($internshipCompany_table_filter_industry as $industry)
                                     <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
-                                @endforeach
                             @endforeach
                         @endif
+                        </div>
                       </div>
                     </div>
                     <div class="dropdown">
                       <a class="dropbtn-filter">Start Dates</a>
                       <div class="dropdown-content-filler">
+                      <div id="links">
                          @if ( Request::get('state')  )
-                            @foreach ($internship_filter as $filter)
-                                @foreach ($filter->work_duration as $duration)
+                            @foreach ($internshipCompany_table_filter_duration as $duration)
+                        
                                     <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-                                @endforeach
+                             
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table as $company)
-                                 @foreach ($company->work_duration as $duration)
+                            @foreach ($internshipCompany_table_filter_duration as $duration)
+                
                                     <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-                                @endforeach
+
                             @endforeach
                         @endif
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -155,14 +155,14 @@
 <div class = "col-xs-12 hidden-md hidden-lg hidden-xl">
     <div class = "row ">
         <div class = "col-xs-6 form-group">
-            <select class = "form-control" name="current_city" id="dynamic_select" >
-                <option value="" disabled selected>Select</option>
+            <select class = "form-control" name="current_city" id="dynamic_select">
+            <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internship_filter as $filter)
+                    @foreach ($internshipCompany_table_filter_state as $filter)
                        <option value ="workcompany?state={{$filter->state}}">{{$filter->state}}</option>
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table as $company)
+                    @foreach ($internshipCompany_table_filter_state as $company)
                         <option value ="workcompany?state={{$company->state}}">{{$company->state}}</option>
                     @endforeach
                 @endif
@@ -172,17 +172,16 @@
             <select class = "form-control" name="internship_industry" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internship_filter as $filter)
-                        @foreach ($filter->work_industry as $industry)
-                            <option value ="{{$industry->industry_name}}">{{$industry->industry_name}}</option>
-                        @endforeach
+                    @foreach ($internshipCompany_table_filter_industry as $industry)
+    
+                            <option value ="workcompany?state={$industry->industry_name}}">{{$industry->industry_name}}</option>
+          
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table as $company)
-                        @foreach ($company->work_industry as $industry)
-                             <option value ="{{$industry->industry_name}}">{{$industry->industry_name}}</option>
+                    @foreach ($internshipCompany_table_filter_industry as $industry)
+                             <option value ="workcompany?state={{$industry->industry_name}}">{{$industry->industry_name}}</option>
                         @endforeach
-                    @endforeach
+                    
                 @endif
             </select>
         </div>
@@ -194,17 +193,17 @@
             <select class = "form-control" name="internship_duration" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internship_filter as $filter)
-                        @foreach ($filter->work_duration as $duration)
-                            <option value ="{{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
-                        @endforeach
+            
+                        @foreach ($internshipCompany_table_filter_duration as $duration)
+                            <option value ="workcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
+
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table as $company)
-                         @foreach ($company->work_duration as $duration)
-                            <option value ="{{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
+                 
+                         @foreach ($internshipCompany_table_filter_duration as $duration)
+                            <option value ="workcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
                         @endforeach
-                    @endforeach
+                
                 @endif
             </select>
         </div>
@@ -212,6 +211,7 @@
 </div>
 
 <!--End of filter mobile -->
+
 
 
 <div class = "col-xs-12 company-whole" id = "x">
