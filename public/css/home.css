@@ -1,6 +1,10 @@
 
-.text-description{
-	line-height: 1.5;
+.text-description {
+    line-height: 1.5;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .header{
@@ -73,9 +77,9 @@
 	padding-bottom: 3%;
 }
 
-.text-inside-header-picture{
-	margin-top: -480px;
-	padding-bottom: 15%;
+.text-inside-header-picture {
+    margin-top: -40%;
+    padding-bottom: 15%;
 }
 
 

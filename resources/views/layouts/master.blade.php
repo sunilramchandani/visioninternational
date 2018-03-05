@@ -17,7 +17,14 @@
 <body>
     <div class="container-fluid content parallax">
         @yield('content')
-        @include('layouts.prefooter')
+
+        @if(Request::getPathInfo() == '/application')
+            @include('layouts.prefooter-applynow')
+        @elseif(Request::getPathInfo()  == '/aboutus')
+            @include('layouts.prefooter-about')
+        @else
+            @include('layouts.prefooter')
+        @endif
         @include('layouts.footer')
     </div>
     

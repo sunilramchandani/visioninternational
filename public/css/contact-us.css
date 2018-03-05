@@ -25,6 +25,12 @@
 .textarea-input{
 	border: 2px solid #DCDCDC !important;
 }
+#head-2{
+  display:none;
+}
+#head-3{
+  display:none;
+}
 .form-control {
     border: 0;
     border-bottom: 2px solid #DCDCDC;
@@ -158,7 +164,15 @@ a:hover
     font-size: 28px;
    }
 
-
+  .map-container{
+    padding: 0;
+    padding-top: 5%;
+  }
+  .details-mobile-container{
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+      
   .submit{
     margin: 12px auto;
     width: 265px;

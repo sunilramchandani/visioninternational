@@ -15,7 +15,7 @@
     <!-- FAQ header -->
     <div class="container">
         <div class="about row">
-            <div class="col-xs-4 col-xs-offset-4 text-center FAQ-font">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center FAQ-font">
                 <h3>Frequently Asked Questions </h3>
                 <p>We understand that this is a huge step in your life. Read up answers to some of your most pressing questions and concerns</p>
             </div>
@@ -27,7 +27,7 @@
 	
 	<div class="container">
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-12 col-md-8">
             	<!-- VIDEO -->
         	    <div class="row">
 		            <div class="video-div">
@@ -118,7 +118,7 @@
 				</div>
 			</div>
 			<!--FILTER -->
-		    <div class = "col-xs-4 categories-sidebar">
+		    <div class = "hidden-xs hidden-sm col-md-4 categories-sidebar">
 		    	<div class = "col-xs-12">
 		        <table class="table table-categories table-borderless table-hover">
 		          <thead bgcolor="#800000">

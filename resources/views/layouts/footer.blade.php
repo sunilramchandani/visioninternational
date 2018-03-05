@@ -12,20 +12,17 @@
                 <li><a href = "/aboutus">About</a></li>
                 <li><a href = "news">News</a></li>
                 <li><a href = "/fb">Events</a></li>
-                <li><a href = "/blog">Blog</a></li>
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 resources">
             <p>RESOURCES</p>
             <ul>
                 <li><a href = "/contactus">Join Our Team</a></li>
-                <li><a href = "/media">Media</a></li>
             </ul>
         </div>
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 support">
             <p>SUPPORT</p>
             <ul>
-                <li>Job</li>
                 <li><a href = "/faq">FAQ</a></li>
                 <li><a href = "/contactus">Contact Us</a></li>
             </ul>

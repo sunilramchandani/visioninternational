@@ -140,7 +140,7 @@
                             </div>
                             <div clas = "row row-price">
                                 <div class = "col-xs-6 col-xs-offset-3">
-                                    <a class = "btn locate-me" href = "/application"> Apply Now </a>
+                                    <a class = "btn locate-me" href = "/application?c=SAU"> Apply Now </a>
                                 </div>
                             </div>
                             <br>

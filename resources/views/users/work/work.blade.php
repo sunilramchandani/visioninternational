@@ -49,9 +49,9 @@
                         <a class="dropbtn-filter">Country</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
-                              <a href="/internshipcompany">All</a>
-                              <a href="/internshipcompany?country=United States">United States</a>
-                              <a href="/internshipcompany?country=Australia">Australia</a>
+                              <a href="/workcompany">All</a>
+                              <a href="/workcompany?country=United States">United States</a>
+                              <a href="/workcompany?country=Australia">Australia</a>
                           </div>
                         </div>
                     </div>
@@ -59,14 +59,14 @@
                         <a class="dropbtn-filter">State</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
-                          <a href="/internshipcompany">All</a>
+                          <a href="/workcompany">All</a>
                             @if ( Request::get('state')  )
                                 @foreach ($internship_filter as $filter)
-                                    <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                                    <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                                 @endforeach
                             @else
                                 @foreach ($internshipCompany_table as $company)
-                                    <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                                    <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                                 @endforeach
                             @endif
                             </div>
@@ -78,13 +78,13 @@
                         @if ( Request::get('state')  )
                             @foreach ($internship_filter as $filter)
                                 @foreach ($filter->work_industry as $industry)
-                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                    <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
                                 @endforeach
                             @endforeach
                         @else
                             @foreach ($internshipCompany_table as $company)
                                 @foreach ($company->work_industry as $industry)
-                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                    <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
                                 @endforeach
                             @endforeach
                         @endif
@@ -96,13 +96,13 @@
                          @if ( Request::get('state')  )
                             @foreach ($internship_filter as $filter)
                                 @foreach ($filter->work_duration as $duration)
-                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                    <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
                                 @endforeach
                             @endforeach
                         @else
                             @foreach ($internshipCompany_table as $company)
                                  @foreach ($company->work_duration as $duration)
-                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                    <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
                                 @endforeach
                             @endforeach
                         @endif
@@ -155,15 +155,15 @@
 <div class = "col-xs-12 hidden-md hidden-lg hidden-xl">
     <div class = "row ">
         <div class = "col-xs-6 form-group">
-            <select class = "form-control" name="current_city" id="">
+            <select class = "form-control" name="current_city" id="dynamic_select" >
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
                     @foreach ($internship_filter as $filter)
-                       <option value ="{{$filter->state}}">{{$filter->state}}</option>
+                       <option value ="workcompany?state={{$filter->state}}">{{$filter->state}}</option>
                     @endforeach
                 @else
                     @foreach ($internshipCompany_table as $company)
-                        <option value ="{{$company->state}}">{{$company->state}}</option>
+                        <option value ="workcompany?state={{$company->state}}">{{$company->state}}</option>
                     @endforeach
                 @endif
             </select>
@@ -320,7 +320,6 @@
         </div>
     </div>
     </div>
-</div>
         <!--Rate -->
         <div class = "container">
             <div class = "row rate-container">
@@ -385,7 +384,7 @@
 
                         <div clas = "row row-price">
                             <div class = "col-xs-9 col-xs-offset-2">
-                                <a class = "btn locate-me" href = "/application"> Apply Now </a>
+                                <a class = "btn locate-me" href = "/application?c=WUS"> Apply Now </a>
                             </div>
                         </div>
                         <br>
@@ -453,7 +452,6 @@
             </div>
         </div>
 <!--end of testimony -->
-</div>
 <div class = "filler row" id = "filler">
 </div>
 </form>
@@ -472,6 +470,24 @@ $(function() {
         });
     });
 });
+</script>
+<script type="text/javascript">
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function (e) {
+          
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+          
+                e.preventDefault(); //so the browser doesn't follow the link
+
+                $("#pageLoad").load(url, function() {
+                    //execute here after load completed
+                });
+          }
+          return false;
+      });
+    });
 </script>
 
 <script type="text/javascript">
@@ -564,7 +580,7 @@ function initMap() {
           content: secretMessage
         });
         google.maps.event.addListener(markers,'click',function() {
-          map.setZoom(10);
+          map.setZoom(16);
           map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });

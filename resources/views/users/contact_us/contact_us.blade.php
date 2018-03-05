@@ -103,19 +103,19 @@
         <div class = "country-city-offices row">
             <div class = "col-xs-5 col-xs-offset-1">
                 <div class =  "col-xs-12">
-                    <div class = "row top-header" id=cont-1>
+                    <div class = "row top-header" id=head-1>
                         <div class = "col-xs-12">
                             <span class = "h2">Manila <h4 class = "country-header inline-header">Philippines</h4> </span>
                            
                         </div>
                     </div>
-                     <div class = "row top-header" id=cont-2>
+                     <div class = "row top-header" id=head-2>
                         <div class = "col-xs-12">
                             <span class = "h2">Cubao <h4 class = "country-header inline-header">Philippines</h4> </span>
                            
                         </div>
                     </div>
-                     <div class = "row top-header" id=cont-3>
+                     <div class = "row top-header" id=head-3>
                         <div class = "col-xs-12">
                             <span class = "h2">Baguio <h4 class = "country-header inline-header">Philippines</h4> </span>
                            
@@ -237,29 +237,30 @@
         </div>
 
     {{---------------------------------------------  MOBILE RESPONSIVE --------------------------------------}}
-
-    <div class="our-offices-mobile hidden-lg hidden-md">
-        <div class = "col-xs-12 text-center">
-            <h1>Our Offices</h1>
-        </div>
-        <div class=col-xs-12>
-            <div class="col-xs-12">
-                    <div class ="row form-group">
-                         <select class = "form-control" name="country" id="country-mobile">
-                            <option value="PH" selected>Philippines</option>
-                        </select>
-                        <select class = "form-control" name="city" id="city-mobile">
-                                <option value="manila" selected>Manila</option>
-                                <option value="cubao">Cubao</option>
-                                <option value="baguio">Baguio</option>
-                        </select>
-                    </div>
-             </div>   
+    <div class = "container">
+        <div class="our-offices-mobile hidden-lg hidden-md">
+            <div class = "col-xs-12 text-center">
+                <h1>Our Offices</h1>
+            </div>
+            <div class= "col-xs-12">
+                <div class="col-xs-12">
+                        <div class ="row form-group">
+                             <select class = "form-control" name="country" id="country-mobile">
+                                <option value="PH" selected>Philippines</option>
+                            </select>
+                            <select class = "form-control" name="city" id="city-mobile">
+                                    <option value="manila" selected>Manila</option>
+                                    <option value="cubao">Cubao</option>
+                                    <option value="baguio">Baguio</option>
+                            </select>
+                        </div>
+                 </div>   
+            </div>
         </div>
     </div>
 
     
-
+    <div class = "container details-mobile-container">
         <div class = "office-details-mobile row hidden-lg hidden-md">
             <div class = "col-xs-12">
                 <p id = "telephone" name = "telephone"><i class="fa fa-phone" aria-hidden="true"></i> (02) 554 1465 </p>
@@ -286,22 +287,24 @@
                 <i class="fa fa-instagram" style="font-size:20px; padding-right:4%;"></i>
                 <a href=""><i class="fa fa-linkedin" style="font-size:20px; padding-right:4%;"></i></a>   
             </div>
-            <div class = "col-xs-12" id="map-mobile-1">
-                <div class = "map">
-                    <img src="{{ URL::asset('image/manila.png')}}" class="img img-responsive" alt="Location Map">
-                </div>
-            </div>
-            <div class = "col-xs-12" id="map-mobile-2">
-                <div class = "map">
-                    <img src="{{ URL::asset('image/cubao.png')}}" class="img img-responsive" alt="Location Map">
-                </div>
-            </div>
-            <div class = "col-xs-12" id="map-mobile-3">
-                <div class = "map">
-                    <img src="{{ URL::asset('image/baguio.png')}}" class="img img-responsive" alt="Location Map">
-                </div>
-            </div>
          </div>
+    </div>
+    <div class = "col-xs-12 hidden-lg hidden-md map-container" id="map-mobile-1">
+        <div class = "map">
+            <img src="{{ URL::asset('image/manila.png')}}" class="img img-responsive" alt="Location Map">
+        </div>
+    </div>
+    <div class = "col-xs-12 hidden-lg hidden-md map-container" id="map-mobile-2">
+        <div class = "map">
+            <img src="{{ URL::asset('image/cubao.png')}}" class="img img-responsive" alt="Location Map">
+        </div>
+    </div>
+    <div class = "col-xs-12 hidden-lg hidden-md map-container" id="map-mobile-3">
+        <div class = "map">
+            <img src="{{ URL::asset('image/baguio.png')}}" class="img img-responsive" alt="Location Map">
+        </div>
+    </div>
+    <div class = "row"></div>
 </form>
 
 <!---------------------------------------------SCRIPT JS ---------------------------------------------------------------->
@@ -344,10 +347,13 @@
     
 
     
+    var head1 = document.getElementById("head-1");
+    var head2 = document.getElementById("head-2");
+    var head3 = document.getElementById("head-3");
+
     var thecon1 = document.getElementById("cont-1");
     var thecon2 = document.getElementById("cont-2");
     var thecon3 = document.getElementById("cont-3");
-
 
     var themap1 = document.getElementById("map-1");
     var themap2 = document.getElementById("map-2");
@@ -364,6 +370,10 @@
         themap1.style.display = "block";
         themap2.style.display = "none";
         themap3.style.display = "none";
+        //header
+        head1.style.display = "block";
+        head2.style.display = "none";
+        head3.style.display = "none";
     }
     theloc2.onclick = function() {
         //cont
@@ -374,6 +384,10 @@
         themap2.style.display = "block";
         themap1.style.display = "none";
         themap3.style.display = "none";
+        //header
+        head1.style.display = "none";
+        head2.style.display = "block";
+        head3.style.display = "none";
     }
     theloc3.onclick = function(){
          //cont
@@ -384,6 +398,10 @@
          themap2.style.display = "none";
          themap1.style.display = "none";
          themap3.style.display = 'block';
+         //header
+         head1.style.display = "none";
+         head2.style.display = "none";
+         head3.style.display = "block";
     }
 
   var $_GET = <?php echo json_encode($_GET); ?>;
