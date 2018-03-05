@@ -386,7 +386,11 @@
                         </div>
                         <div clas = "row row-price">
                             <div class = "col-md-6 col-md-offset-3 col-xs-11 col-xs-offset-1">
-                                <a class = "btn locate-me" href = "/application"> Apply Now </a>
+                                @if ( Request::get('country') == "United States"  )
+                                <a class = "btn locate-me" href = "/application?c=IUS"> Apply Now </a>
+                                @else
+                                <a class = "btn locate-me" href = "/application?c=IAU"> Apply Now </a>
+                                @endif
                             </div>
                         </div>
                         <br>
