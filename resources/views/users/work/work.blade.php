@@ -564,7 +564,7 @@ function initMap() {
           content: secretMessage
         });
         google.maps.event.addListener(markers,'click',function() {
-          map.setZoom(10);
+          map.setZoom(16);
           map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });

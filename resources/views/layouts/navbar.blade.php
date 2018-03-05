@@ -30,7 +30,6 @@
 				<div class="dropdown-content">
 					<a href="/news">News</a>
 					<a href="/event">Events</a>
-					<a href="/blog">Blog</a>
 					<a href="/faq">FAQ</a>
 				</div>
 			</div>
@@ -85,7 +84,6 @@
 				<div class="dropdown-content">
 					<a href="/news">News</a>
 					<a href="/event">Events</a>
-					<a href="/blog">Blog</a>
 					<a href="/faq">FAQ</a>
 				</div>
 			</div>

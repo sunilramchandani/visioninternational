@@ -2,15 +2,20 @@
 <link rel="stylesheet" href="{{ asset('css/internship-company.css') }}">
 
 <div class = "col-xs-12 company-whole">
-    <div class = "col-xs-4 picture">
+    <div class = "col-xs-5 picture">
     @foreach ($internshipCompany_table as $company)
-    <img src="{{ URL::asset('image/uploaded_workcompany_image/'.$company->image)}}" class="img img-responsive img-rounded img-map" alt="Company Banner" height ="100">
+    <img src="{{ URL::asset('image/uploaded_workcompany_image/'.$company->image)}}" class="img img-responsive img-map" alt="Company Banner" height ="100">
     @endforeach
     </div>
-    <div class = "col-xs-8 company-details">
+    <div class = "col-xs-7 company-details">
         @foreach ($internshipCompany_table as $company)
-            <div class ="col-xs-12">
+            <div class ="col-xs-11">
                 <h1><strong>{{$company->company_name}}</strong></h1>
+            </div>
+            <div class = "col-xs-1">
+                <button class = "btn" data-dismiss="modal">x</button>
+            </div>
+            <div class ="col-xs-12">
                 <p>{{$company->description}}</p>
             </div>
             <div class = "row stip-hous">

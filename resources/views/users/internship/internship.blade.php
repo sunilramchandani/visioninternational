@@ -541,7 +541,6 @@ function initMap() {
       var elevator;
         var myOptions = {
             zoom: 4,
-            maxZoom: 10,
             minZoom: 4,
             center: new google.maps.LatLng(0, 0),
             mapTypeId: 'terrain'
@@ -581,10 +580,10 @@ function initMap() {
     }
     function addInfoWindow(markers){
         var secretMessage = '<div id="container " class = "infowindow">'+
-                                '<div class = "col-lg-4 image-container" >'+
+                                '<div class = "col-xs-4 image-container" >'+
                                     '<img src="image/uploaded_company_image/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
                                 '</div>'+
-                                '<div class = "col-lg-8" id="siteNotice">'+
+                                '<div class = "col-xs-8" id="siteNotice">'+
                                     '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                     '<div id="bodyContent">'+
                                        '<p class = "map-description">'  + gdesc[counter].slice(0, 150) + '</p><br><br>'+
@@ -596,7 +595,7 @@ function initMap() {
           content: secretMessage
         });
         google.maps.event.addListener(markers,'click',function() {
-          map.setZoom(10);
+          map.setZoom(16);
           map.setCenter(markers.getPosition());
           infowindow.open(markers.get('map'), markers);
         });

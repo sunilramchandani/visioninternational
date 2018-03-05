@@ -100,7 +100,13 @@
                             </div>
                             <div class="col-xs-6 share-main-title ">
 
-                                <span>Categories: @foreach($news->newscategory as $category) {{$category->categorylist->category_name}},
+                                <span>Categories: 
+                                    @foreach($news->newscategory as $category)
+                                        @if($loop->last)
+                                        {{$category->categorylist->category_name}}
+                                        @else
+                                        {{$category->categorylist->category_name}},
+                                        @endif
                                     @endforeach
 
                                 </span>

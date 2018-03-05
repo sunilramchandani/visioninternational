@@ -85,8 +85,14 @@
                     </p>
                 </div>
                 <div class="col-xs-6">
-                    <span>Categories: @foreach($categories as $categories_list) {{$categories_list->category_name}}, @endforeach
-
+                    <span>Categories: 
+                        @foreach($categories as $categories_list)
+                            @if($loop->last)
+                            {{$categories_list->category_name}}
+                            @else
+                            {{$categories_list->category_name}},
+                            @endif
+                        @endforeach
                     </span>
                 </div>
             </div>

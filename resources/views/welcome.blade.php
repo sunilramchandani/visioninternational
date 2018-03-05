@@ -118,7 +118,7 @@
                 </div>
                 <div class="icon-container">
                     <img src="{{ URL::asset('image/icons/fastproc.png') }}" alt="Content" id=icon>
-                    <p>FAST
+                    <p>Fast
                         <br> Processing
                     </p>
                 </div>
@@ -178,12 +178,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-xs-4 ">
-                    <div class="text-center">
-                        <img src="{{ URL::asset('image/icons/more-info.png') }}" alt="Content" id=more-info>
-                        <p>MORE INFO</p>
+                <a href = "/faq">
+                    <div class="col-sm-4 col-xs-4 ">
+                        <div class="text-center">
+                            <img src="{{ URL::asset('image/icons/more-info.png') }}" alt="Content" id=more-info>
+                            <p>MORE INFO</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -192,7 +194,7 @@
     <!-- More info button -->
     <div class="container text-center hidden-xs hidden-sm">
         <div class="row">
-            <a href="#" class="btn btn-lg moreinfo-btn">More info</a>
+            <a href="/faq" class="btn btn-lg moreinfo-btn">More info</a>
         </div>
     </div>
     <!-- end -->
