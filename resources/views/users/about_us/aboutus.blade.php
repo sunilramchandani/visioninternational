@@ -17,7 +17,7 @@
     <!-- Text header on top -->
     <div class = "container">
     	<div class = "text-center">
-    		<h4> About </h4>
+    		<h4> We believe that. . . </h4>
     		<div class = "col-xs-12 col-md-6 col-md-offset-3">
     			<p>We are a dynamic, energetic, and driven team committed to delivering unlimited opportunities to deserving students and prefessionals.</p>
     		</div>

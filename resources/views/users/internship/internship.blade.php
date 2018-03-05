@@ -249,7 +249,7 @@
         </div>
           <!-- number 1 -->
         <div class = "col-xs-12">
-            <div class = "col-xs-12">
+            <div class = "col-xs-12 number-box">
                 <div class="text-center boxshadow row"> 
                     <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
                     <div class="internship-icon col-md-6 col-xs-12">
@@ -275,7 +275,7 @@
             </div>
 
         <!--number 2 -->
-            <div class = "col-xs-12">
+            <div class = "col-xs-12 number-box">
                 <div class="text-center boxshadow row"> 
                     <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
                     <div class="internship-icon  col-md-6 col-xs-12">
@@ -298,7 +298,7 @@
                  </div>
             </div>
         <!--number 3 -->
-            <div class = "col-xs-12">
+            <div class = "col-xs-12 number-box">
                 <div class="text-center boxshadow row">
                     <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
                     <div class="internship-icon col-md-6 col-xs-12">
