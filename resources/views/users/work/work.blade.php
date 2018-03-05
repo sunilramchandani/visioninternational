@@ -59,7 +59,7 @@
                         <a class="dropbtn-filter">State</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
-                          <a href="/internshipcompany">All</a>
+                          <a href="/workcompany">All</a>
                             @if ( Request::get('state')  )
                                 @foreach ($internship_filter as $filter)
                                     <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
@@ -155,15 +155,15 @@
 <div class = "col-xs-12 hidden-md hidden-lg hidden-xl">
     <div class = "row ">
         <div class = "col-xs-6 form-group">
-            <select class = "form-control" name="current_city" id="">
+            <select class = "form-control" name="current_city" id="dynamic_select" >
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
                     @foreach ($internship_filter as $filter)
-                       <option value ="{{$filter->state}}">{{$filter->state}}</option>
+                       <option value ="workcompany?state={{$filter->state}}">{{$filter->state}}</option>
                     @endforeach
                 @else
                     @foreach ($internshipCompany_table as $company)
-                        <option value ="{{$company->state}}">{{$company->state}}</option>
+                        <option value ="workcompany?state={{$company->state}}">{{$company->state}}</option>
                     @endforeach
                 @endif
             </select>
@@ -319,6 +319,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+    </div>
+>>>>>>> c7059edc4731a7ab37018ef975c1651d5df3f6c7
         <!--Rate -->
         <div class = "container">
             <div class = "col-xs-12">
@@ -456,7 +460,6 @@
             </div>
         </div>
 <!--end of testimony -->
-</div>
 <div class = "filler row" id = "filler">
 </div>
 </form>
@@ -475,6 +478,24 @@ $(function() {
         });
     });
 });
+</script>
+<script type="text/javascript">
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function (e) {
+          
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+          
+                e.preventDefault(); //so the browser doesn't follow the link
+
+                $("#pageLoad").load(url, function() {
+                    //execute here after load completed
+                });
+          }
+          return false;
+      });
+    });
 </script>
 
 <script type="text/javascript">
