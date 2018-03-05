@@ -25,86 +25,89 @@
     </div>
 
 
-<div class = "container">
-    <!-- number 1 -->
-    <div class = "row">
-        <div class = "col-xs-12">
-            <div class = "row text-center what-next-text">
-                <h2 id=whatsnext-title>What are the process?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+    <div class = "container">
+            <div class = "col-xs-12">
+                <div class = "row text-center what-next-text">
+                    <h2 id=whatsnext-title>What's Next?</h2>
+                    <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
+                    <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                </div>
             </div>
-            <div class="text-center boxshadow row"> 
-                <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
-                <div class="internship-icon col-xs-6">
-                    <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}">
-                    <div class = "col-xs-8 col-xs-offset-2">
-                        <h1 id=reserve-title>Reservation & Application</h1>
-                        <p id=p-icon>Fill up the application form and pay for your reservation</p>
-                    </div>
-                </div>
-
-                <div class="intership-content left-side col-xs-6">
-                    <div class = "col-xs-10 col-xs-offset-1">
-                        <p id=p-content>  Applicant will then be matched to a host company, this process can take up to 12 weeks, but also has the ability to move much quicker if an applicant is highly qualified and flexible about their interest in multiple locations. </p>
-                        <div class="button">
-                            <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
-                            <br><br>
-                            <a href = "/faq" class="btn locate-me">What documents are required?</a>
+              <!-- number 1 -->
+            <div class = "col-xs-12">
+                <div class = "col-xs-12">
+                    <div class="text-center boxshadow row"> 
+                        <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
+                        <div class="internship-icon col-md-6 col-xs-12">
+                            <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}">
+                            <h1 id=reserve-title>Reservation</h1>
+                            <h1 id=reserve-title>& Application</h1>
+                            <p id=p-icon>Fill up the application form</p>
+                            <p id=p-icon>and pay for your reservation</p>
                         </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-    </div>
-    <!--number 2 -->
-    <div class = "row">
-        <div class = "col-xs-12">
-            <div class="text-center boxshadow row"> 
-                 <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
-                <div class="internship-icon col-xs-6">
-                    {{--  <div class=circle-number>1</div>  --}}
-                    <img src="{{URL:: asset('image/icons/Interviews.png') }}">
-                    <h1 id=reserve-title>Visa Application</h1>
-                    <p id=p-icon>Prepare interviews with the program</p>
-                    <p id=p-icon>sponsors and the US embassy</p>
-                </div>
-                <div class="intership-content col-xs-6">
-                    <div class = "col-xs-10 col-xs-offset-1">
-                            <p id=p-content>Documents are filed with the Australian Department of Immigration. Participant is approved for the Sponsorship Visa </p>
+    
+                        <div class="intership-content left-side col-md-6 col-xs-12">
+                            <p id=p-content>Upon receiving you proof of payment,</p>
+                            <p id=p-content>you will be assigned a dedicated program</p>
+                            <p id=p-content>specialist who will handle your application </p>
+                            <p id=p-content>until the end.</p>
                             <div class="button">
-                                <a href= "/faq" class="btn locate-me">What documents are required?</a>
+                                <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
+                                <br><br>
+                                <a href = "/faq" class="btn locate-me">What documents are required?</a>
                             </div>
-                    </div>
-                </div>
-             </div>
-        </div>
-    </div>
-    <!--number 3 -->
-    <div class = "row">
-        <div class = "col-xs-12">
-            <div class="text-center boxshadow row">
-                <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
-                <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    {{--  <div class=circle-number>1</div>  --}}
-                    <img src="{{URL:: asset('image/icons/flyout.png') }}">
-                    <h1 id=reserve-title>Flyout</h1>
-                    <p id=p-icon>Book your tickets to the US</p>
-                    <p id=p-icon>and enjoy the program!</p>
-                </div>
-
-                <div class="intership-content col-xs-6">
-                    <div class = "col-xs-10 col-xs-offset-1">
-                        <p id=p-content>To ensure your participant is ready to have a successful program applicants will have an orientation prior to their departure to Australia. </p>
-                        <div class="button">
-                            <a href= "/faq" class="btn locate-me">What topics are included?</a>
                         </div>
-                    </div>
+                     </div>
                 </div>
-             </div>
+    
+            <!--number 2 -->
+                <div class = "col-xs-12">
+                    <div class="text-center boxshadow row"> 
+                        <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
+                        <div class="internship-icon  col-md-6 col-xs-12">
+                            <img src="{{URL:: asset('image/icons/Interviews.png') }}">
+                            <h1 id=reserve-title>Interviews</h1>
+                            <p id=p-icon>Prepare interviews with the program</p>
+                            <p id=p-icon>sponsors and the US embassy</p>
+                        </div>
+    
+                        <div class="intership-content  col-md-6 col-xs-12">
+                            <p id=p-content>Your assigned progam speacialist will help</p>
+                            <p id=p-content>you create a video resume that will be submitted.</p>
+                            <p id=p-content>Make sure you have a Skype account registered. </p>
+                            <p id=p-content>We will practive you for your interviews</p>
+                            <p id=p-content>and make sure you're reader!.</p>
+                            <div class="button">
+                                <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            <!--number 3 -->
+                <div class = "col-xs-12">
+                    <div class="text-center boxshadow row">
+                        <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
+                        <div class="internship-icon col-md-6 col-xs-12">
+                            {{--  <div class=circle-number>1</div>  --}}
+                            <img src="{{URL:: asset('image/icons/flyout.png') }}">
+                            <h1 id=reserve-title>Flyout</h1>
+                            <p id=p-icon>Book your tickets to the US</p>
+                            <p id=p-icon>and enjoy the program!</p>
+                        </div>
+    
+                        <div class="intership-content col-md-6 col-xs-12">
+                            <p id=p-content>We can connect you with past and</p>
+                            <p id=p-content>current participants so that you can</p>
+                            <p id=p-content>transition properly to the US. </p>
+                            <p id=p-content>Have fun!</p>
+                            <div class="button">
+                                <a href= "/faq" class="btn locate-me">Learn more about our Fly Now, <br> Pay Later Program</a>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
         <!--Rate -->
         <div class = "container">
             <div class = "row">
