@@ -100,7 +100,7 @@
                     <img src="{{ URL::asset('storage/upload_author_image')}}/{{$blogs->image}}" class="img-thumbnail img-responsive " alt="No Author">
                 </div>
                 <div class="col-xs-8">
-                     <p>{{(strip_tags($blogs->description))}}</p>
+                     <p>{{($blogs->description}}</p>
                 </div>
             </div>
             @endforeach
