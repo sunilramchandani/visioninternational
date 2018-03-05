@@ -399,7 +399,7 @@ color:white;
 	}
 	.header {
 	    height: 600px;
-	    width: 100%;
+	    width: auto;
 	}
 	.text-inside-header-picture {
 	    margin-top: -433px;
@@ -620,7 +620,7 @@ color:white;
 	}
 	.header {
 	    height: 650px;
-	    width: 100%;
+	    width: auto;
 	}
 	.img-border{
 		display: none;

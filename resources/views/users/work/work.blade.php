@@ -532,14 +532,14 @@ function initMap() {
             var markers = new google.maps.Marker({
                     position: latlng,
                     map: map,
-                    icon: "/image/icons/vip_map-01-Featured-01.png"
+                    icon: "/image/icons/vip_map-01-Featured.png"
             });
         }
         else{
             var markers = new google.maps.Marker({
                     position: latlng,
                     map: map,
-                    icon: "/image/icons/vip_map-01.png"
+                    icon: "/image/icons/vip_map.png"
             });
         }
         gmarkers.push(markers);

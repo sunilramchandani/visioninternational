@@ -4,7 +4,7 @@
 
     @foreach ($featuredimage_home as $featured)
 
-    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive header"
+    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="header"
         alt="Company Banner">
 
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img  img-border" alt="Company Banner">

@@ -532,7 +532,7 @@ margin-top: 5px;
 @media screen and (max-width: 719px) and (min-width: 320px) {
 	.header {
 	    height: 500px;
-	    width: 100%;
+	    width: auto;
 	}
 	.img-border{
 		display: none;
@@ -697,5 +697,15 @@ margin-top: 5px;
 	    color: white;
 	    height: 74%;
 	    padding: 0;
+	    opacity: 0.4;
+	}
+	.dynamic-text-container-box h4{
+		padding-top: 35%;
+	    text-align: center;
+	    font-size: 1.5em;
+	}
+		.dynamic-text-container-box h1{
+	    text-align: center;
+	    font-size: 1.5em;
 	}
 }
