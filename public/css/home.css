@@ -208,9 +208,9 @@ div.promos {
     padding-bottom: 5%;
     padding-top: 0%;
 }
-.featured-btn{
-	position: absolute !important;
-    bottom: 35px !important;
+.featured-btn {
+    position: absolute !important;
+    bottom: 60px !important;
     right: 25%;
     left: 25% !important;
 }

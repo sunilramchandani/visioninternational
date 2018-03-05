@@ -8,17 +8,17 @@
 
 <div class="whole-page">
 @foreach($featuredimage_aboutUs as $featured)
-	<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header">
+	<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="header">
 @endforeach
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img  img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
 
 
     <!-- Text header on top -->
-    <div class = "container">
-    	<div class = "text-center">
-    		<h4> We believe that. . . </h4>
-    		<div class = "col-xs-12 col-md-6 col-md-offset-3">
+    <div class = "container header-text">
+    	<div class = "text-center bigger-header">
+    		<h4> We believe that... </h4>
+    		<div class = "col-xs-12 col-md-6 col-md-offset-3 smaller-header">
     			<p>We are a dynamic, energetic, and driven team committed to delivering unlimited opportunities to deserving students and prefessionals.</p>
     		</div>
     	</div>

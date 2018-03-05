@@ -9,10 +9,10 @@
 
 <form action="" method="post" role="form" class = "parent">
  {{csrf_field()}}
-<img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
+<img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="header" alt="Company Banner">
 <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
 <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-<!--Sticky-->
+<!--Sticky
 <div class = "col-xs-3 col-xs-offset-9 sticky">
   <div class = "col-xs-6">
     <p> Start an <strong> amazing </strong> </p>
@@ -21,7 +21,7 @@
   <div class = "col-xs-6 button-apply-sticky">
     <a href = "/application" class = "btn applynow-sticky">Apply Now</a>
   </div>
-</div>
+</div>-->
 <!--end of stick -->
 <div class = "col-xs-12 events">
   <div class ="row col-xs-12">
@@ -50,9 +50,9 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col-xs-9 events-content-container">
+    <div class = "col-sm-9 col-xs-12 events-content-container">
       @foreach($events_table as $events)
-        <div class = "col-xs-4">
+        <div class = "col-xs-6 col-sm-4 capsules">
           <div class = "col-xs-12 events-content">
             <img src="{{$events->cover_source}}" alt="" class = "event-img img">
             
@@ -68,7 +68,7 @@
       
     </div>
     
-    <div class = "col-xs-3 categories-sidebar">
+    <div class = "col-sm-3 hidden-xs  categories-sidebar">
       <div class = "col-xs-12">
         <table class="table table-categories table-borderless table-hover">
           <thead bgcolor="#800000">
