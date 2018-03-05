@@ -75,10 +75,16 @@ margin-top: 5px;
 	color: #c42b16;
 	padding-bottom: 4%;
 }
+	
 .aupair-icon2{
 	height: 60%;
 	box-shadow: 0px 0px 12px 0px #ccc;
 }
+
+.aupair-icon2 h3{
+	font-size: 18px;
+}
+
 .aupair-icon{
 	box-shadow: 0px 0px 12px 0px #ccc;
 	height:50%;
@@ -162,7 +168,7 @@ margin-top: 5px;
 	letter-spacing: 2px;
 }
 .application-logo{
-	height: 20%;
+	height: 10%;
 }
 /* .circle-number{
 	width: 50px;	
@@ -223,6 +229,25 @@ margin-top: 5px;
 .img-line{
 	display: none;
 }
+
+.whole-page{
+	padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------MEDIA QUERIES---------------------------------------------------------------------------- */
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.testimony-picture {
 	    height: 300px;
@@ -247,6 +272,9 @@ margin-top: 5px;
 	    left: 24%;
 	}
 }
+
+
+
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.icon-title {
 	    color: #c42b16;
@@ -315,7 +343,52 @@ margin-top: 5px;
 	    top: 180px;
 	}
 }
-@media screen and (max-width: 719px) and (min-width: 320px) {
+
+
+
+
+@media screen and (max-width: 736px) and (min-width: 320px) {
+
+	.p-dynamic{
+		color: white;
+    	text-align: center;
+    	padding-left: 5%;
+    	padding-right: 5%;
+	}
+
+	.text-inside-header-picture{
+		padding-bottom: unset;
+	}
+
+	.dynamic-text-container-box{
+		background-color: #a4382b;
+   		z-index: 0;
+    	border-radius: 12px;
+    	letter-spacing: 1px;
+    	margin-top: -233;
+    	color: white;
+    	height: 421.5px;
+    	padding: 0;
+    	opacity: 0.7;
+	}
+
+	.dynamic-text-container-box h4{
+		padding-top: 35%;
+   		text-align: center;
+  		font-size: 2em;
+ 		font-weight: bold;
+	}
+
+	.dynamic-text-container h1{
+		text-align: center;
+    	font-size: 3.5em;
+    	letter-spacing: 3px;
+	}
+
+	.header{
+		height: 425px;
+	}
+
 	.img-line{
 		display: block;
 		margin-top: -5px;
@@ -365,7 +438,7 @@ margin-top: 5px;
 	}
 	.number-icon {
 	    position: absolute;
-	    top: 176px;
+	    top: 220px;
 	    height: 45;
 	}
 	.number-icon2 {
@@ -379,7 +452,7 @@ margin-top: 5px;
 	    height: 45;
 	}
 	.img-logo21{
-		padding-top: 25%;
+		padding-top: 3%;
 	}
 	.testimony-picture {
 	    height: 146px;
@@ -388,7 +461,8 @@ margin-top: 5px;
 	.logo-aupair-icon {
 	    padding-top: 5%;
 	    padding-bottom: 5%;
-	    height: 35%;
+		height: 35%;
+		width: 100%;
 	}
 	.aupair-icon-text {
 	    padding-right: 3%;
@@ -398,13 +472,13 @@ margin-top: 5px;
 	    font-size: 12px;
 	}
 	.locate-me {
-	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
-	    color: white;
-	    border-radius: 8px;
-	    font-size: 9px;
-	    position: absolute;
-	    bottom: 1%;
-	    left: 20%;
+		background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+		color: white;
+		border-radius: 8px;
+		font-size: 9px;
+		position: absolute;
+		bottom: 3%;
+		left: 12%;
 	}
 	.locate-me21 {
 	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
@@ -417,6 +491,8 @@ margin-top: 5px;
 	}
 	.what-next-text {
 	    padding-top: 8%;
-	    padding-bottom: 5%;
+		padding-bottom: 5%;
+		width: 105%;
+		padding: 30px;
 	}
 }

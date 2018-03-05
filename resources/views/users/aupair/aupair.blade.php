@@ -8,8 +8,8 @@
 @section('content')
 <form action="" method="post" role="form">
  {{csrf_field()}}
-<div class = "whole-page">
-    <img src="{{ URL::asset('image/photos/Au-Pair.png')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+<div class = "col-xs-12 whole-page">
+    <img src="{{ URL::asset('image/photos/Au-Pair.png')}}" class="header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "text-inside-header-picture">
@@ -82,84 +82,90 @@
     <!-- number 1 -->
     <div class = "row">
         <div class = "col-xs-12">
-            <div class = "row text-center what-next-text">
-                <h2 id=whatsnext-title>What's Next?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+            <div class="col-xs-12">
+                    <div class = "row text-center what-next-text">
+                            <h2 id=whatsnext-title>What's Next?</h2>
+                            <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
+                            <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                        </div>
+            
+            
+                        <div class="text-center boxshadow row"> 
+                            <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
+                            <div class="internship-icon col-xs-6">
+                                <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}" class = "application-logo">
+                                <h1 id=reserve-title>Reservation</h1>
+                                <p id=p-icon>Fill up the application form and pay for your reservation</p>
+                            </div>
+            
+                            <div class="intership-content col-xs-6">
+                                <p id=p-content>After paying your reservation,please scan or take a photo of the deposit slip and send to us. Upon receiving your receipt, we will issue you our welcome kit and assist you to complete your online au pair account.</p>
+                                <a href= "/faq" class="btn locate-me locate-me21">Fill Up Application Form</a>
+                            </div>
+                         </div>
             </div>
-
-
-            <div class="text-center boxshadow row"> 
-                <img src="{{URL:: asset('image/circle.png') }}" class = "number-icon"/>
-                <div class="internship-icon col-xs-6">
-                    <img src="{{URL:: asset('image/icons/Reserve-icon.png') }}" class = "application-logo">
-                    <h1 id=reserve-title>Reservation</h1>
-                    <p id=p-icon>Fill up the application form and pay for your reservation</p>
-                </div>
-
-                <div class="intership-content col-xs-6">
-                    <p id=p-content>After paying your reservation,please scan or take a photo of the deposit slip and send to us. Upon receiving your receipt, we will issue you our welcome kit and assist you to complete your online au pair account.</p>
-                    <a href= "/faq" class="btn locate-me locate-me21">Fill Up Application Form</a>
-                </div>
-             </div>
-
-
         </div>
     </div>
     <!--number 2 -->
     <div class = "row">
         <div class = "col-xs-12">
-            <div class="text-center boxshadow row"> 
-                 <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
-                 <div class="internship-icon col-xs-6 img-logo21">
-                    <img src="{{URL:: asset('image/icons/5.png') }}" class = "application-logo">
-                    <h1 id=reserve-title>Application</h1>
-                    <p id=p-icon>Pre-Training & Screening </p>
-                 </div>
-
-                <div class="intership-content col-xs-6">
-                    <p id=p-content>Deposit the first installment of $450 USD to commence and complete final assessment interviews. We will provide the training you need to ace your interviews. Your profile will go live for host families to view and select you. After matching with host family they will conduct 2 skype interviews with you before both parties can confirm a match.</p>
-                    <p id=p-content-red>If you back out after receiving a job offer, the first installment will not be refundable.</p>
-                </div>
-             </div>
+            <div class="col-xs-12">
+                    <div class="text-center boxshadow row"> 
+                            <img src="{{URL:: asset('image/circle2.png') }}" class = "number-icon2"/>
+                            <div class="internship-icon col-xs-6 img-logo21">
+                               <img src="{{URL:: asset('image/icons/5.png') }}" class = "application-logo">
+                               <h1 id=reserve-title>Application</h1>
+                               <p id=p-icon>Pre-Training & Screening </p>
+                            </div>
+           
+                           <div class="intership-content col-xs-6">
+                               <p id=p-content>Deposit the first installment of $450 USD to commence and complete final assessment interviews. We will provide the training you need to ace your interviews. Your profile will go live for host families to view and select you. After matching with host family they will conduct 2 skype interviews with you before both parties can confirm a match.</p>
+                               <p id=p-content-red>If you back out after receiving a job offer, the first installment will not be refundable.</p>
+                           </div>
+                    </div>
+            </div>
         </div>
     </div>
     <!--number 3 -->
     <div class = "row">
         <div class = "col-xs-12">
-            <div class="text-center boxshadow row">
-                <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
-                <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6 img-logo21">
-                    <img src="{{URL:: asset('image/icons/7.png') }}" class = "application-logo">
-                    <h1 id=reserve-title>Reservation</h1>
-                    <p id=p-icon>Fill up the application form and pay for your reservation</p>
-                </div>
-
-                <div class="intership-content col-xs-6">
-                    <p id=p-content>Deposit the second installment of $1,550 USD Deposit is inclusive of VAT, DS2019 and medical insurance, Complete documentation requirements and receive training to pass your VISA interview. If you fail at the interview, we will refund the second installment. Includes round-trip airfare to the US</p>
-                    <p id=p-content-red>Our proven training as helped 100% of our applicants pass. If you fail, we refund your money! Early termination of the program, for any possible reason, will result to applicant's personal purchase of return ticket</p>
-                </div>
-             </div>
-        </div>
+            <div class="col-xs-12">
+                    <div class="text-center boxshadow row">
+                            <img src="{{URL:: asset('image/circle3.png') }}" class = "number-icon3"/> 
+                            <div class="internship-icon col-lg-6 col-md-6 col-sm-6 col-xs-6 img-logo21">
+                                <img src="{{URL:: asset('image/icons/7.png') }}" class = "application-logo">
+                                <h1 id=reserve-title>Reservation</h1>
+                                <p id=p-icon>Fill up the application form and pay for your reservation</p>
+                            </div>
+            
+                            <div class="intership-content col-xs-6">
+                                <p id=p-content>Deposit the second installment of $1,550 USD Deposit is inclusive of VAT, DS2019 and medical insurance, Complete documentation requirements and receive training to pass your VISA interview. If you fail at the interview, we will refund the second installment. Includes round-trip airfare to the US</p>
+                                <p id=p-content-red>Our proven training as helped 100% of our applicants pass. If you fail, we refund your money! Early termination of the program, for any possible reason, will result to applicant's personal purchase of return ticket</p>
+                            </div>
+                         </div>
+                    </div>
+            </div>
     </div>
     <!--reminders-->
     <div class = "row">
         <div class = "col-xs-12">
-            <div class="text-center boxshadow row"> 
-                 <div class="internship-icon col-xs-6">
-                    <img src="{{URL:: asset('image/icons/11.png') }}" class = "application-logo">
-                    <h1 id=reserve-title>Reminders</h1>
-                 </div>
-
-                <div class="intership-content col-xs-6">
-                    <h4>
-                        <li>Pay $160 USD for US Embassy Interview Appointment</li>
-                        <li>Program Includes food, lodging and a weekly stipend of $197 USD</li>
-                        <li>Refunds excludes $160 US Embassy and $180 SEVIS fees</li>
-                    </h4>
-                </div>
-             </div>
-        </div>
+            <div class="col-xs-12">
+                    <div class="text-center boxshadow row"> 
+                            <div class="internship-icon col-xs-6">
+                               <img src="{{URL:: asset('image/icons/11.png') }}" class = "application-logo">
+                               <h1 id=reserve-title>Reminders</h1>
+                            </div>
+           
+                           <div class="intership-content col-xs-6">
+                               <h4>
+                                   <li>Pay $160 USD for US Embassy Interview Appointment</li>
+                                   <li>Program Includes food, lodging and a weekly stipend of $197 USD</li>
+                                   <li>Refunds excludes $160 US Embassy and $180 SEVIS fees</li>
+                               </h4>
+                           </div>
+                        </div>
+                   </div>
+            </div>
     </div>
     <!--mother div end -->
 </div>
