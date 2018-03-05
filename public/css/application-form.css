@@ -22,10 +22,7 @@
 	padding-bottom: 15%;
 }
 
-.img-border{
-  margin-top: -17%;
-  width:105%;
-}
+
 .header{
   height: 402px;
   width:100%;
@@ -65,6 +62,12 @@ body{
 }
 .img-line{
 	display: none;
+}
+.img-border {
+    margin-top: -20%;
+    width: 104%;
+    margin-left: -4%;
+    display: block;
 }
 .label-container{
     padding-top: 4%;

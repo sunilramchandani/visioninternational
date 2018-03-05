@@ -14,7 +14,7 @@
     @foreach ($featuredimage_application as $featured)
         <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="img img-responsive img-rounded header" alt="Company Banner">
         <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
-        <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-responsive img-border" alt="Company Banner">   
+        <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">   
     @endforeach
 </div>
 		<form action="{{route('application.store')}}" method="post" role="form"  enctype="multipart/form-data"> 
@@ -57,7 +57,8 @@
 	                    <option value="" disabled selected>Select Program</option>
 						<option value="Internship">Internship</option>
 						<option value="Work & Travel">Work & Travel</option>
-						<option value="AuPair">AuPair</option>	  
+						<option value="AuPair">AuPair</option>
+                        <option value="Skilled Work Visa">Skilled Work Visa</option>   	  
 	                </select>
             	</div>
             </div>
@@ -71,6 +72,8 @@
         		<div class = "col-md-7 col-xs-12">
 	                <select class = "form-control" name="country_name" id="country_name">
                     <option value="" disabled selected>Select Country</option>
+                    <option value="United States">United States</option>
+                    <option value="Australia" >Australia</option>
 	                </select>
 	           </div>
             </div>
@@ -200,7 +203,7 @@
                     <label for = "studies" class = "labels">Studies *</label>
                 </div>
                 <div class = "col-md-7 col-xs-12">
-                    <select class = "form-control" name="major_name" id="major_name">
+                    <select class = "form-control" name="studies_name" id="studies_name">
                         <option value="Undergraduate" selected>Undergraduate</option>
                         <option value="No Further Studies">No Further Studies</option>
                     </select>
@@ -263,12 +266,21 @@
     var e = document.getElementById("program_name");
     var f = document.getElementById("country_name");
     var g = document.getElementById("location_name");
+    var h = document.getElementById("studies_name");
     var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
     var haddress = {!! json_encode($work_addresses->toArray()) !!};
     var max = gaddress.length;
     var max2 = haddress.length;
+    h.onchange = function(){
+        var option = h.options[h.selectedIndex].value;
+        if(option == "Undergraduate"){
+            document.getElementById("grad").disabled=false;
+        }
+        else{
+            document.getElementById("grad").disabled=true;
+        }
+    }
     e.onchange = function() {
-        
         var strUser = e.options[e.selectedIndex].value;
         if(strUser == "Internship"){
           f.innerText = null;
@@ -364,6 +376,28 @@
     }
   });
 </script>
+<script>
+    var e = document.getElementById("program_name");
+    var f = document.getElementById("country_name");
+    var $_GET = <?php echo json_encode($_GET); ?>;
+    var eid = $_GET['c'];
 
+    if(eid == 'IUS'){
+        e.value = 'Internship';
+        f.value = 'United States';
+    }
+    else if(eid == 'IAU'){
+        e.value = 'Internship';
+        f.value = 'Australia';
+    }
+    else if(eid == 'WUS'){
+        e.value = 'Work & Travel';
+        f.value = 'United States';
+    }
+    else if(eid == 'SAU'){
+        e.value = 'Skilled Work Visa';
+        f.value = 'Australia';
+    }
+</script>
 
 @stop

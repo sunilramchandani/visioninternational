@@ -27,39 +27,45 @@
     <!--Boxes-->
     <div class = "container box-container">
     		<!--First Box -->
-		<div class = "col-xs-12 col-md-4 text-center">
-			<div class = "col-xs-12 box ">
-    			 <div class = "icon-container">
+		<div class = "col-xs-12 col-md-4 text-center biggest-box">
+			<div class = "col-xs-12 box">
+    			 <div class = "col-md-12 col-xs-4 icon-container">
     			 	<img src="{{ URL::asset('image/icons/VIP-Icons-01.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
     			 </div>
-    			 <p class="box-title"><strong>Most Trusted Partner</strong></p>
-    			 <div class = "col-xs-10 col-xs-offset-1">
-    			 	<p>We have a portfolio of prestigious companies, schools and organizations who have chosen to work with us. </p>
-    			 </div>
+                 <div class = "col-md-12 col-xs-8">
+        			 <p class="box-title"><strong>Most Trusted Partner</strong></p>
+        			 <div class = "col-md-10 col-md-offset-1 col-xs-12 boxes">
+        			 	<p>We have a portfolio of prestigious companies, schools and organizations who have chosen to work with us. </p>
+        			 </div>
+                </div>
     		</div>
 		</div>
 		<!--Second Box -->
-		<div class = "col-xs-12 col-md-4  text-center">
+		<div class = "col-xs-12 col-md-4  text-center biggest-box">
 			<div class = "col-xs-12 box">
-				<div class = "icon-container">
+				<div class = "col-md-12 col-xs-4 icon-container">
 					<img src="{{ URL::asset('image/icons/VIP-Icons-02.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
 				</div>
-				 <p class="box-title"><strong>Highest Care and Support</strong></p>
-    			 <div class = "col-xs-10 col-xs-offset-1">
-    			 	<p>Our service to each participants is world-class. We are committed to providing the support you need every step of the way </p>
-    			 </div>
+                <div class = "col-md-12 col-xs-8">
+    				 <p class="box-title"><strong>Highest Care and Support</strong></p>
+        			 <div class = "col-md-10 col-md-offset-1 col-xs-12 boxes">
+        			 	<p>Our service to each participants is world-class. We are committed to providing the support you need every step of the way </p>
+        			 </div>
+                </div>
 			</div>
 		</div>
 		<!--Third Box -->
-		<div class = "col-xs-12 col-md-4  text-center">
+		<div class = "col-xs-12 col-md-4  text-center biggest-box">
 			<div class = "col-xs-12 box">
-				<div class = "icon-container">
+				<div class = "col-md-12 col-xs-4 icon-container">
 					<img src="{{ URL::asset('image/icons/8.png')}}" class="img img-responsive icon center-block" alt="Company Banner">
 				 </div>
-				 <p class="box-title"><strong>Committed and Passionate</strong></p>
-    			 <div class = "col-xs-10 col-xs-offset-1">
-    			 	<p>Our team is comprised of professionals who have years of experience in their respective industries. Our collective wisdom and background ensure that you will be in good hands. </p>
-    			 </div>
+                 <div class = "col-md-12 col-xs-8">
+    				 <p class="box-title"><strong>Committed and Passionate</strong></p>
+        			 <div class = "col-md-10 col-md-offset-1 col-xs-12 boxes">
+        			 	<p>Our team is comprised of professionals who have years of experience in their respective industries. Our collective wisdom and background ensure that you will be in good hands. </p>
+        			 </div>
+                </div>
 			</div>
 		</div>
     </div>
@@ -77,16 +83,20 @@
                     <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
-                            <div class = "col-xs-12 hidden-side text-center">
+                            <div class = "hidden-md hidden-lg hidden-xl">
                                 <h4>{{$about->about_name}}</h4>
                                 <p class = "position-hidden">{{$about->about_position}}</p>
-                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
+                            </div>
+                            <div class = "col-md-12 hidden-xs hidden-sm hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 </div>
-            </div>
         </div>
         <!--OPERATIONS-->
         <div class = "operations pads">
@@ -99,9 +109,15 @@
                     <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
-                            <div class = "col-xs-12 hidden-side text-center">
+                            <div class = "hidden-md hidden-lg hidden-xl">
                                 <h4>{{$about->about_name}}</h4>
-                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
+                            </div>
+                            <div class = "col-md-12 hidden-xs hidden-sm hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
                             </div>
                         </div>
                     </div>
@@ -120,9 +136,15 @@
                     <div class = "col-xs-6 col-md-3 show-side"> 
                         <div class = "col-xs-12">
                             <img src="{{ URL::asset('image/uploaded_aboutus_image')}}/{{$about->about_image}}" class="img img-responsive employee" alt="Company Banner"/>
-                            <div class = "col-xs-12 hidden-side text-center">
+                           <div class = "hidden-md hidden-lg hidden-xl">
                                 <h4>{{$about->about_name}}</h4>
-                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}}</p>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
+                            </div>
+                            <div class = "col-md-12 hidden-xs hidden-sm hidden-side text-center">
+                                <h4>{{$about->about_name}}</h4>
+                                <p class = "position-hidden">{{$about->about_position}}</p>
+                                <p class = "position-hidden"> <i class="fa fa-twitter-square"></i> {{$about->about_twitter}} | <i class="fa fa-linkedin-square" aria-hidden="true"></i> {{$about->about_linkedin}} </p>
                             </div>
                         </div>
                     </div>
