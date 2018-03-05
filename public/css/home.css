@@ -34,7 +34,7 @@
 	
 }
 .labels{
-    border-bottom: 4px solid #e04f3c;
+    border-bottom: 2px solid #e04f3c;
     width: 66px;
 }
 .fblink{
@@ -350,6 +350,43 @@ color:white;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------MEDIA QUERIES------------------------------------------------------------------ */
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.submit{
 		font-size: 14px;
@@ -428,41 +465,6 @@ color:white;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------------------------------MEDIA QUERIES------------------------------------------------------------------ */
 
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.dynamic-text-container {
@@ -601,22 +603,27 @@ color:white;
 		letter-spacing: 2px;
 		font-weight: bolder;
 	}
+
+	.counter-container{
+		border-right: solid 2px white;
+  		padding-right: 10px;
+   		padding-left: 4px;
+    	width: 17.666667%;
+	}
+
 	.counter-container-infinity {
 	    padding-top: 25px;
 	}
 
 	.labels {
-	    border-bottom: 4px solid #e04f3c;
+	    border-bottom: 2px solid #e04f3c;
 	    width: 22px;
 	}
 	/* INFINITY SIGN */
 	#infin {
-	    height: 30px;
+	    height: 20px;
 	    width: 50px;
 	}
-
-
-
 
 	.text-inside-header-picture {
 	    margin-top: -600px;
@@ -635,7 +642,7 @@ color:white;
 	}
 	.counter {
 	    font-weight: bold;
-	    font-size: 47px;
+	    font-size: 30px;
 	}
 	.counters {
 	    padding-left: 0%;
@@ -643,6 +650,8 @@ color:white;
 	}
 	.counter-label-container{
 		border-right: 2px solid white;
+		width: 17.666667%;
+		padding: 0 8px;
 	}
 	.counter-label{
 		margin-top: -9px;

@@ -17,7 +17,7 @@
             @endforeach
         </div>
         <div class="row counters">
-            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1">
+            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1" style="padding:0;">
                 @foreach ($counter as $counters)
                 <div class="col-xs-2 counter-container">
                     <h1 class="counter">{{ $counters->country}}</h1>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="row counter-label">
-            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1 ">
+            <div class="col-md-6 col-md-offset-0 col-xs-11 col-xs-offset-1" style="padding:0;">
                 <div class="col-xs-2 counter-label-container">
                     <h4 class="labels">Countries</h4>
                 </div>
