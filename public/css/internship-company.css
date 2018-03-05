@@ -546,6 +546,10 @@ margin-top: 5px;
 	.picture{
 		height:60%;
 	}
+	.picture2{
+		height:100% !important;
+		padding:0;
+	}
 	.Top-header-message {
 	    margin-top: 120px;
 	    padding-bottom: 5%;
@@ -563,6 +567,14 @@ margin-top: 5px;
 	    letter-spacing: 1px;
 	    margin-top: -225px;
 	    color: white;
+	}
+	.row-price p {
+	    color: #4c4c4c;
+	    font-size: 0.75em;
+	}
+	.row-price-legend p {
+	    color: #4c4c4c;
+	    font-size: 0.75em;
 	}
 	.info {
 	    padding-right: 3%;
@@ -713,5 +725,18 @@ margin-top: 5px;
 		.dynamic-text-container-box h1{
 	    text-align: center;
 	    font-size: 1.5em;
+	}
+	.modal-content{
+		width: 100%;
+	    height: 100%;   
+	}
+	.modal-dialog{
+		padding:0;
+	}
+	.company-whole p{
+		font-size: 0.75em !important;
+	}
+	#mymodal{
+		padding:0;
 	}
 }

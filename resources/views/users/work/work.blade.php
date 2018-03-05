@@ -49,9 +49,9 @@
                         <a class="dropbtn-filter">Country</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
-                              <a href="/internshipcompany">All</a>
-                              <a href="/internshipcompany?country=United States">United States</a>
-                              <a href="/internshipcompany?country=Australia">Australia</a>
+                              <a href="/workcompany">All</a>
+                              <a href="/workcompany?country=United States">United States</a>
+                              <a href="/workcompany?country=Australia">Australia</a>
                           </div>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
                           <a href="/internshipcompany">All</a>
                             @if ( Request::get('state')  )
                                 @foreach ($internship_filter as $filter)
-                                    <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
+                                    <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                                 @endforeach
                             @else
                                 @foreach ($internshipCompany_table as $company)
-                                    <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
+                                    <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                                 @endforeach
                             @endif
                             </div>
@@ -78,13 +78,13 @@
                         @if ( Request::get('state')  )
                             @foreach ($internship_filter as $filter)
                                 @foreach ($filter->work_industry as $industry)
-                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                    <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
                                 @endforeach
                             @endforeach
                         @else
                             @foreach ($internshipCompany_table as $company)
                                 @foreach ($company->work_industry as $industry)
-                                    <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                    <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
                                 @endforeach
                             @endforeach
                         @endif
@@ -96,13 +96,13 @@
                          @if ( Request::get('state')  )
                             @foreach ($internship_filter as $filter)
                                 @foreach ($filter->work_duration as $duration)
-                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                    <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
                                 @endforeach
                             @endforeach
                         @else
                             @foreach ($internshipCompany_table as $company)
                                  @foreach ($company->work_duration as $duration)
-                                    <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
+                                    <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
                                 @endforeach
                             @endforeach
                         @endif
@@ -319,85 +319,88 @@
             </div>
         </div>
     </div>
-    </div>
-</div>
         <!--Rate -->
         <div class = "container">
-            <div class = "row rate-container">
-                    <div class = "col-xs-6 left-rate">
-                        <div class = "text-left-side ">
-                            <h2 class = "gradient"> What's the rate? </h2>
-                            <h3 class = "gradient1"> There is plenty to experience! </h3>
-                            <br>
-                            <h4>Choose your season</h4>
-                            <br>
-                        </div>
-                        <div class = "row row-price">
-                            <!--Spring -->
-                            <div class = "col-xs-6 spring">
-                                <div class = "col-xs-3 spring-bg">
+            <div class = "col-xs-12">
+                <div class = "row rate-container">
+                        <div class = "col-xs-12 col-md-6 left-rate">
+                            <div class = "text-left-side ">
+                                <h2 class = "gradient"> What's the rate? </h2>
+                                <h3 class = "gradient1"> There is plenty to experience! </h3>
+                                <br>
+                                <h4>Choose your season</h4>
+                                <br>
+                            </div>
+                            <div class = "row row-price">
+                                <!--Spring -->
+                                <div class = "col-xs-6 spring">
+                                    <div class = "col-xs-3 spring-bg">
+                                    </div>
+                                    <div class = "col-xs-9 ">
+                                        <p class = "spring-text"><strong>Spring</strong><br>March - June</p>
+                                    </div>
                                 </div>
-                                <div class = "col-xs-8 ">
-                                    <p class = "spring-text"><strong>Spring</strong><br>March - June</p>
+                                <!--Summer -->
+                               <div class = "col-xs-6 summer">
+                                    <div class = "col-xs-3 summer-bg">
+                                    </div>
+                                    <div class = "col-xs-9 ">
+                                        <p class = "summer-text"><strong>Summer</strong><br>June - September</p>
+                                    </div>
                                 </div>
                             </div>
-                            <!--Summer -->
-                           <div class = "col-xs-6 summer">
-                                <div class = "col-xs-3 summer-bg">
+                            <div class = "row row-price">
+                                 <div class = "col-xs-5 col-md-4">
+                                    <strong><p id = "reservation">PHP 1000</p></strong>
                                 </div>
-                                <div class = "col-xs-9 ">
-                                    <p class = "summer-text"><strong>Summer</strong><br>June - September</p>
+                                <div class = " col-xs-7 col-md-6">
+                                    <p>Reservation</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class = "row row-price">
-                             <div class = "col-xs-3 ">
-                                <strong><p id = "reservation">PHP 1000</p></strong>
+                            <div class = "row row-price">
+                                 <div class = "col-xs-5 col-md-4">
+                                    <strong><p id = "1st-Installment">USD 450</p></strong>
+                                </div>
+                                <div class = "col-xs-7 col-md-7">
+                                    <p>First Installment *</p>
+                                </div>
                             </div>
-                            <div class = " col-md-4 col-sm-4 col-xs-4">
-                                <p>Reservation</p>
+                            <div class = "row row-price">
+                                <div class = "col-xs-5 col-md-4 last-row last-row1">
+                                    <strong><p id = "2nd-Installment">USD 3100</p></strong>
+                                </div>
+                               <div class = "col-xs-7 col-md-6 last-row">
+                                    <p>Second Installment *</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class = "row row-price">
-                             <div class = "col-xs-3">
-                                <strong><p id = "1st-Installment">USD 450</p></strong>
+                            <div class = "hidden-md hidden-lg hidden-xl">
+                                <hr>
                             </div>
-                            <div class = "col-xs-4">
-                                <p>First Installment *</p>
+                            <div class = "row row-price">
+                                 <div class = "col-xs-5 col-md-4">
+                                    <strong><p id = "3rd-Installment">USD 3550</p></strong>
+                                </div>
+                                <div class = "col-xs-7 col-md-6">
+                                    <p>Total Program Payment**</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class = "row row-price">
-                            <div class = "col-xs-3 last-row last-row1">
-                                <strong><p id = "2nd-Installment">USD 3100</p></strong>
-                            </div>
-                           <div class = "col-xs-5 last-row">
-                                <p>Second Installment *</p>
-                            </div>
-                        </div>
-                        <div class = "row row-price">
-                             <div class = "col-xs-3">
-                                <strong><p id = "3rd-Installment">USD 3550</p></strong>
-                            </div>
-                            <div class = "col-xs-4">
-                                <p>Total Program Payment**</p>
-                            </div>
-                        </div>
 
-                        <div clas = "row row-price">
-                            <div class = "col-xs-9 col-xs-offset-2">
-                                <a class = "btn locate-me" href = "/application?c=WUS"> Apply Now </a>
+                            <div clas = "row row-price">
+                                <div class = "col-md-9 col-md-offset-2 col-xs-12">
+                                    <a class = "btn locate-me" href = "/application?c=WUS"> Apply Now </a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class = "row row-price-legend">
+                                <p> * Money Back Guarantee **   Airfare NOT included</p>
+                                <strong><p class = "add-fees">Additional Fees:</p></strong>
+                                <p>USD 35 SEVIS Fee</p>
+                                <p>USD 160 US embassy interview booking fee</p>
                             </div>
                         </div>
-                        <br>
-                        <div class = "row row-price-legend">
-                            <p> * Money Back Guarantee **   Airfare NOT included</p>
-                            <strong><p class = "add-fees">Additional Fees:</p></strong>
-                            <p>USD 35 SEVIS Fee</p>
-                            <p>USD 160 US embassy interview booking fee</p>
+                        <div class = "col-md-6 hidden-xs hidden-sm rate-image">
+                             <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner">
                         </div>
-                    </div>
-                    <div class = "col-xs-6 rate-image">
-                         <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-responsive img-price" alt="Company Banner">
                     </div>
                 </div>
             </div>
