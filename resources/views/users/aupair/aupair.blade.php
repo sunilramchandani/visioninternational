@@ -14,7 +14,7 @@
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "text-inside-header-picture">
         <div class = "row dynamic-text-container">
-            <div class ="col-lg-4 col-md-4 col-sm-12 col-xs-12 dynamic-text-container-box">
+            <div class ="col-md-4 col-xs-12 dynamic-text-container-box">
                 <h4> UNITED STATES </h4>
                 <H1> AU PAIR </H1>
                 <p class ="p-dynamic"> Immerse yourself in another culture all while being of service to others</p>
