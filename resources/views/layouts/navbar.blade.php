@@ -113,9 +113,9 @@
 				<li>- <a href="/internshipcompany?country=Australia">Internship</a></li>
 				<li>- <a href="/workvisa">Skilled Work Visa</a></li>
 				<br>
-				<li class="headd"><a href="/contactus">ABOUT</a></li>
+				<li class="headd"><a href="/contactus" style="color: #950904;">ABOUT</a></li>
 				<br>
-				<li class="headd"><a href="/contactus">CONTACT</a></li>
+				<li class="headd"><a href="/contactus" style="color: #950904;">CONTACT</a></li>
 				<br>
 				<li class="headd">LEARN MORE</li>
 				<li>- <a href="/news">News</a></li>
