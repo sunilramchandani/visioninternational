@@ -43,7 +43,7 @@
 <!----------------------- MOBILE NAVBAR ---------------------------------------->
 <div class = "col-xs-12 nav-whole hidden-lg hidden-md">
 	<div class = "row">
-		<div class = "col-xs-7 col-sm-9 logo">
+		<div class = "col-xs-5 col-sm-9 logo">
 			<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 		</div>
 		<div class = "col-xs-3 nav-links">
@@ -52,6 +52,17 @@
 					<a href = "application" class = "btn applynow-btn1">Apply Now</a>
 				</div>
 			</ul>
+		</div>
+
+		<div class="container">
+				<div class="col-xs-3">
+						<div id="nav-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+				</div>
 		</div>
 	</div>
 	<div class = "row text-center links-mobile">
@@ -89,4 +100,52 @@
 			</div>
 		</ul>
 	</div>
+	<div class="mobile-header-navi" id="xxxcy">
+		<div class="menu-header-menu-container">
+			<ul>
+				<li class="headd">OPPORTUNITIES</li>
+				<li class="subheadd">United States</li>
+				<li>- <a href="/workcompany?country=United States">Work & Travel</a></li>
+				<li>- <a href="/internshipcompany?country=United States">Internship</a></li>
+				<li>- <a href="/aupair">Au Pair</a></li>
+				<br>
+				<li class="subheadd">Australia</li>
+				<li>- <a href="/internshipcompany?country=Australia">Internship</a></li>
+				<li>- <a href="/workvisa">Skilled Work Visa</a></li>
+				<br>
+				<li class="headd"><a href="/contactus" style="color: #950904;">ABOUT</a></li>
+				<br>
+				<li class="headd"><a href="/contactus" style="color: #950904;">CONTACT</a></li>
+				<br>
+				<li class="headd">LEARN MORE</li>
+				<li>- <a href="/news">News</a></li>
+				<li>- <a href="/event">Events</a></li>
+				<li>- <a href="/faq">FAQ</a></li>
+			</ul>
+		</div>
+	</div>
+
+	
 </div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.26/jquery.autocomplete.min.js'></script>
+<script>	
+jQuery(document).ready(function(){
+	jQuery('#nav-icon').click(function(){
+					
+			jQuery(this).toggleClass('open');
+			jQuery('#xxxcy').show();
+		if ( jQuery('#xxxcy').hasClass('yeahh') ){
+			jQuery('#xxxcy').hide();
+			jQuery('#xxxcy').removeClass('yeahh');
+		} else{			
+			jQuery('#xxxcy').addClass('yeahh');
+		}
+
+	});
+});
+
+
+
+
+</script>
