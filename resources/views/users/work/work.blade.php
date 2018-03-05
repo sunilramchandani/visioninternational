@@ -319,10 +319,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
-    </div>
->>>>>>> c7059edc4731a7ab37018ef975c1651d5df3f6c7
         <!--Rate -->
         <div class = "container">
             <div class = "col-xs-12">
