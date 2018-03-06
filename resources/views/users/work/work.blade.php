@@ -24,7 +24,7 @@
                 <h4> Australia </h4>
                 @endif
                 <H1> WORK & TRAVEL </H1>
-                <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
+                <p class ="p-dynamic">We provide travel opportunities for students, graduates, and those with industry experience</p>
             </div>
         
 @endforeach
@@ -37,8 +37,8 @@
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
-            <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
+            <p> Your journey begins with Vision International and its wide network of reputable  </p>
+            <p> partners across the country, enabling you to travel and work in your location of choice</p>
         </div>
     </div>
     <div class = "body-content" id= "body-content">
