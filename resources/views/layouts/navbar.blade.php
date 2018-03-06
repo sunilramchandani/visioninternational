@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
  <!----------------------- DESKTOP NAVBAR ---------------------------------------->
 <div class = "col-md-12 nav-whole hidden-sm hidden-xs">
-	<div class = "col-md-6 logo">
+	<div class = "col-md-4 logo">
 			<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 	</div>
-	<div class = "col-md-6 nav-links">
+	<div class = "col-md-8 nav-links">
 		<ul>
 			<a href ="/"><li class = "link">Home</li></a>
 			<div class="dropdown">
@@ -43,10 +43,10 @@
 <!----------------------- MOBILE NAVBAR ---------------------------------------->
 <div class = "col-xs-12 nav-whole hidden-lg hidden-md">
 	<div class = "row">
-		<div class = "col-xs-5 col-sm-9 logo">
+		<div class = "col-xs-6 col-sm-8 logo">
 			<a href="/"><img src = "{{ URL::asset('image/logo-navbar.png')}}" class = "img navbar-logo"></a>
 		</div>
-		<div class = "col-xs-3 nav-links">
+		<div class = "col-sm-1 col-xs-2 nav-links" style="padding:0;">
 			<ul>
 				<div class = "applynow-btn">
 					<a href = "application" class = "btn applynow-btn1">Apply Now</a>
@@ -55,7 +55,7 @@
 		</div>
 
 		<div class="container">
-				<div class="col-xs-3">
+				<div class="col-xs-1">
 						<div id="nav-icon">
 							<span></span>
 							<span></span>
@@ -113,7 +113,7 @@
 				<li>- <a href="/internshipcompany?country=Australia">Internship</a></li>
 				<li>- <a href="/workvisa">Skilled Work Visa</a></li>
 				<br>
-				<li class="headd"><a href="/contactus" style="color: #950904;">ABOUT</a></li>
+				<li class="headd"><a href="/aboutus">ABOUT</a></li>
 				<br>
 				<li class="headd"><a href="/contactus" style="color: #950904;">CONTACT</a></li>
 				<br>
