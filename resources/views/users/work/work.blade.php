@@ -569,10 +569,10 @@ function initMap() {
     }
     function addInfoWindow(markers){
         var secretMessage = '<div id="container " class = "infowindow">'+
-                                '<div class = "col-lg-4 image-container" >'+
+                                '<div class = "col-xs-4 image-container" >'+
                                     '<img src="image/uploaded_workcompany_image/' + image[counter] + '" class="img map-img img-responsive" alt="Company Banner">' +
                                 '</div>'+
-                                '<div class = "col-lg-8" id="siteNotice">'+
+                                '<div class = "col-xs-8" id="siteNotice">'+
                                     '<h1 id="firstHeading" class="firstHeading">' + gname[counter] +  '</h1>'+
                                     '<div id="bodyContent">'+
                                        '<p class = "map-description">'  + gdesc[counter].slice(0, 150) + '</p><br><br>'+
