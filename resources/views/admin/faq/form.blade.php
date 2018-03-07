@@ -41,7 +41,7 @@
                             <label for="company_website">
                                 Question
                             </label>
-                            <textarea class="form-control" rows=5 id="question" name="question" required placeholder="Senior Programmer">{{ isset($faq->question) ? $faq->question : '' }} </textarea>
+                            <textarea class="summernote" rows=10 id="question" name="question" required placeholder="Senior Programmer">{{ isset($faq->question) ? $faq->question : '' }} </textarea>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -49,7 +49,7 @@
                             <label for="company_website">
                                 Answer
                             </label>
-                            <textarea class="form-control" rows=5 id="answer" name="answer" required placeholder="Senior Programmer">{{ isset($faq->answer) ? $faq->answer : '' }} </textarea>
+                            <textarea class="summernote" rows=10 id="answer" name="answer" required placeholder="Senior Programmer">{{ isset($faq->answer) ? $faq->answer : '' }} </textarea>
                         </div>
                     </div>
                 </div>

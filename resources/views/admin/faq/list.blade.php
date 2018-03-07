@@ -48,8 +48,8 @@
                         @foreach($faq_table as $faq)
                             <tr>
                                 <td>{{ $faq->faq_type }}</td>
-                                <td>{{ $faq->question }}</td>
-                                <td>{{ $faq->answer }}</td>
+                                <td>{{ strip_tags($faq->question) }}</td>
+                                <td>{{ strip_tags($faq->answer) }}</td>
                                 <td>
                                     <a
                                         href="{{ route('faq.adminEdit', $faq->faq_id) }}"
