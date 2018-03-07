@@ -271,9 +271,9 @@
                                         <p class="dynamic-promo-text">{{$internship->description}}</p>
                                         <a href="/internshipcompany?eid={{$internship->id}}" class="submit btn featured-btn">More Info</a>
                                     </div>
-                                    <div class="lower-content col-md-11">
-                                        <div class="col-md-8 validity-container">
-                                        <p class="validity-text">Share this promo:                                                
+                                    <div class="lower-content col-md-12">
+                                        <div class="col-md-12 validity-container">
+                                        <p class="validity-text">Share this property:                                                
                                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
                                    <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:white;"></i>
                                  </a>
@@ -293,6 +293,7 @@
                     </div>  
                 </div>
                 @endforeach
+                @if ($internshipcompany_table->count() != 1)
                 <!-- Controls -->
                 <a class="left carousel-control hidden-xs hidden-sm" href="#carousel-featured" role="button" data-slide="prev" style="background: none !important; color:black;">
                     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -302,6 +303,7 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
+                @endif
 
             </div>
             <!-- end of carousel -->
@@ -329,7 +331,7 @@
         <div class="row promos-header">
             <div class="promo-font">
                 <h1>Promos</h1>
-                <p>Get one step closer to your dreams
+                <p>Get one step closer to your dreams.
                     <br>Take advantage of this amazing deal on our programs!
                 </p>
             </div>
@@ -377,14 +379,14 @@
             <div class="row testimony-header">
                 <div class=" col-xs-12 col-md-8 col-md-offset-2 about-font text-center">
                      <h3>Our Community</h3>
-                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
+                     <p> We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
                 </div>
             </div>
             <div class = "row testimony-content">
                 <div class = "col-xs-8 testimony-description">
                     <blockquote>
                         This program is one of the challenging experiences, joyful events, and new things that ii've learned and molded me to become a better person
-                        <cite>Karissa MArie Salengua</cite>
+                        <cite>Karissa Marie Salengua</cite>
                         <cite>Work & Travel Program, California</cite>
                     </blockquote>
                 </div>

@@ -131,7 +131,7 @@
                            <div class = "col-xs-4 col-md-4 last-row">
                                 <p>Second Installment *</p>
                             </div>
-                        </div>
+                         </div>
                         <div class = "row row-price">
                              <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
                                 <strong><p id = "3rd-Installment">USD 3600</p></strong>

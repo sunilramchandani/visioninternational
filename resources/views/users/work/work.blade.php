@@ -264,12 +264,12 @@
                     </div>
 
                     <div class="intership-content left-side col-md-6 col-xs-12">
-                        <p id=p-content>Upon receiving you proof of payment,</p>
+                        <p id=p-content>Upon receiving your proof of payment,</p>
                         <p id=p-content>you will be assigned a dedicated program</p>
                         <p id=p-content>specialist who will handle your application </p>
                         <p id=p-content>until the end.</p>
                         <div class="button">
-                            <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
+                            <a href = "/faq" class="btn locate-me">How do I make a deposit?</a>
                             <br><br>
                             <a href = "/faq" class="btn locate-me">What documents are required?</a>
                         </div>
@@ -289,11 +289,11 @@
                     </div>
 
                     <div class="intership-content  col-md-6 col-xs-12">
-                        <p id=p-content>Your assigned progam speacialist will help</p>
+                        <p id=p-content>Your assigned program speacialist will help</p>
                         <p id=p-content>you create a video resume that will be submitted.</p>
                         <p id=p-content>Make sure you have a Skype account registered. </p>
-                        <p id=p-content>We will practive you for your interviews</p>
-                        <p id=p-content>and make sure you're reader!.</p>
+                        <p id=p-content>We will practice you for your interviews</p>
+                        <p id=p-content>and make sure you're ready!</p>
                         <div class="button">
                             <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
                         </div>
@@ -307,7 +307,7 @@
                     <div class="internship-icon col-md-6 col-xs-12">
                         {{--  <div class=circle-number>1</div>  --}}
                         <img src="{{URL:: asset('image/icons/flyout.png') }}">
-                        <h1 id=reserve-title>Flyout</h1>
+                        <h1 id=reserve-title>Fly Out</h1>
                         <p id=p-icon>Book your tickets to the US</p>
                         <p id=p-icon>and enjoy the program!</p>
                     </div>
@@ -441,8 +441,8 @@
             <div class="row testimony-header">
                 <div class="about-font text-center">
                      <h3>Our Community</h3>
-                     <p>Get inspiration from those who have come before you 
-                        <br>Here are some of our students who have experienced work life abroad
+                     <p>Get inspiration from those who have come before you. 
+                        <br>Here are some of our students who have experienced work life abroad.
                     </p>
                 </div>
             </div>

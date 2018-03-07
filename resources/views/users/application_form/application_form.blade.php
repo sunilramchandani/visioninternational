@@ -227,7 +227,7 @@
             </div>
             <div class = "row form-group">
         		<div class = "col-md-4 col-xs-12 label-container">
-        			<label for = "learn" class = "labels">How did you learned about V.I.P.?</label>
+        			<label for = "learn" class = "labels">How did you learn about V.I.P.?</label>
         		</div>
         		<div class = "col-md-7 col-xs-12">
 	                <select class = "form-control" name="about_vip" id="learn" >

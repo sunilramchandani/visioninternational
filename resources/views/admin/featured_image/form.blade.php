@@ -120,7 +120,7 @@
                                     <label for="promo">
                                         Promo
                                     </label>
-                                    <select class="form-control" name="promo_id" id="promo_id" required>
+                                    <select class="form-control" name="promo_id" id="promo_id">
                                         <option value="" disabled selected>Select Promo</option>
                                         @foreach($promo_table as $promo )
                                         <option value="{{ $promo->id }}">{{ $promo->title }}</option>
