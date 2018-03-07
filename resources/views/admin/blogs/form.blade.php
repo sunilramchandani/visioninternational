@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label for="category">
-                            Category
+                            Blog Category
                         </label>
                     </div>
 

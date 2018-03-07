@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <label for="body">
-                            category
+                            News Category
                         </label>
                         <select id="category" name="category_bulk[]" multiple="multiple" class="form-control">
                         @foreach($category_list as $cate)

@@ -107,7 +107,7 @@
                 <div class = "col-md-4 col-xs-12">
                     <div class="form-group">
                         <label for="image">
-                            image
+                            Image
                         </label>
                         <input type = "file" class = "form-control"  name="image" id="image" value="{{ isset($company) ? $company->image : '' }}" >
                     </div>

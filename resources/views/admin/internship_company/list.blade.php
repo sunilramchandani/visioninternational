@@ -41,21 +41,21 @@
                                     <a
                                         href="{{ route('internshipcompany.view', $single_company->id) }}"
                                         class="btn btn-info">
-                                        <i class="fa fa-eye"><br>view</i>
+                                        <i class="fa fa-eye"><br>View</i>
                                     </a>
                                 </td>
                                 <td>
                                     <a
                                         href="{{ route('internshipcompany.adminedit', $single_company->id) }}"
                                         class="btn btn-warning">
-                                        <i class="fa fa-edit"><br>edit</i>
+                                        <i class="fa fa-edit"><br>Edit</i>
                                     </a>
                                 </td>
                                 <td>
                                     <a
                                         href="{{ route('internshipcompany.delete', $single_company->id) }}"
                                         class="btn btn-danger" onclick="ConfirmDelete();">
-                                        <i class="fa fa-trash"><br>delete</i>
+                                        <i class="fa fa-trash"><br>Delete</i>
                                     </a>
                                 </td>
                             </tr>
