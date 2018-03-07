@@ -52,7 +52,7 @@
                             </a>
 
                             <a href="{{ route('mainnewsimage.view', $news->id) }}" class="btn btn-info">
-                                Main news Image
+                                Main News Image
                             </a>
                             
                             <a href="{{ route('news.destroy', $news->id) }}" class="btn btn-danger">

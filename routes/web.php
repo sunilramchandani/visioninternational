@@ -24,6 +24,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/list', ['uses' => 'EventPluginController@adminIndex', 'as' => 'event.list']);
         Route::get('/view/{id}', ['uses' => 'EventPluginController@adminView', 'as' => 'event.view']);
         Route::post('/view/{id}', ['uses' => 'EventPluginController@adminUpdate', 'as' => 'event.update']);
+
+        Route::delete('/deleteEventCategory/{id}', [
+            'uses' => 'EventPluginController@deleteEventCategory',
+            'as' => 'event.deleteEventCategory'
+        ]);
+
+
     });
 
     Route::group(['prefix' => 'counter'], function() {
@@ -89,6 +96,15 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
         Route::get('/trash/{id}', ['uses' => 'BlogController@restoreTrash', 'as' => 'blog.restoretrash']);
 
+        Route::delete('/deleteBlogCategory/{id}', [
+            'uses' => 'BlogController@deleteBlogCategory',
+            'as' => 'blog.deleteBlogCategory'
+        ]);
+        
+        
+
+
+
     });
     Route::resource('blog', 'BlogController');
     
@@ -105,6 +121,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
 
 
         Route::get('/trash/{id}', ['uses' => 'NewsController@restoreTrash', 'as' => 'news.restoretrash']);
+
+        Route::delete('/deleteNewsCategory/{id}', [
+            'uses' => 'NewsController@deleteNewsCategory',
+            'as' => 'news.deleteNewsCategory'
+        ]);
+
+
 
     });
 
@@ -564,12 +587,14 @@ Route::resource('work', 'WorkController');
 Route::resource('faq', 'faqController');
 Route::resource('media', 'MediaController');
 Route::resource('workvisa', 'SkilledWorkVisaController');
-Route::get('/aupair', function () {
-        return view('users.aupair.aupair');
-    });
-Route::get('/workvisa', function () {
-        return view('users.skilled_migration.skilled');
-    });
+Route::get('/aupair', [
+    'uses' => 'AuPairController@index',
+    'as' => 'aupaur.index'
+]);
+Route::get('/workvisa', [
+    'uses' => 'Skilledcontroller@index',
+    'as' => 'skilled.index'
+]);
 Route::get('/single_event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'

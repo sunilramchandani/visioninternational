@@ -7,6 +7,7 @@ use App\FeaturedImage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Testimonials;
 use App\Models\Programs;
+Use Carbon\Carbon;
 
 
 class FeaturedImageController extends Controller
@@ -86,7 +87,7 @@ class FeaturedImageController extends Controller
         if ($request->hasFile('main_image')){
             $file = $request->file('main_image');
             $name = $file->getClientOriginalName();
-            $fileName = $name;
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->main_image = $fileName;
         }
@@ -99,7 +100,7 @@ class FeaturedImageController extends Controller
         if ($request->hasFile('sub_image1')){
             $file = $request->file('sub_image1');
             $name = $file->getClientOriginalName();
-            $fileName = $name;
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image1 = $fileName;
         }
@@ -108,7 +109,7 @@ class FeaturedImageController extends Controller
         if ($request->hasFile('sub_image2')){
             $file = $request->file('sub_image2');
             $name = $file->getClientOriginalName();
-            $fileName = $name;
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image2 = $fileName;
             
@@ -118,7 +119,7 @@ class FeaturedImageController extends Controller
         if ($request->hasFile('sub_image3')){
             $file = $request->file('sub_image3');
             $name = $file->getClientOriginalName();
-            $fileName = $name;
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image3 = $fileName;
         }
@@ -139,7 +140,7 @@ class FeaturedImageController extends Controller
         if ($request->hasFile('sub_image4')){
             $file = $request->file('sub_image4');
             $name = $file->getClientOriginalName();
-            $fileName = $name;
+            $fileName = Carbon::now()->toDateString().'.'.rand(1,99999999).'_'.$name;
             $file->move('image/uploaded_featured_image', $fileName);
             $featuredimage->sub_image4 = $fileName;
         }
@@ -167,7 +168,7 @@ class FeaturedImageController extends Controller
 
         $featuredimage->save();
         $success = array('ok'=> 'Success!');
-        return redirect()->route('featuredimage.index')->with($success);
+        return redirect()->back()->with($success);
     }
 
     /**

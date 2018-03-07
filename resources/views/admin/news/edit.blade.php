@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <label for="body">
-                            News Category
+                            Add More Category
                         </label>
                         <select id="category" name="category_bulk[]" multiple="multiple" class="form-control">
                         @foreach($category_list as $cate)
@@ -125,6 +125,22 @@
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
                 </div>
             </form>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label for="body">
+                        Delete Category
+                    </label>
+                    @foreach($news->newscategory as $newscategory)
+
+
+                    <button class="btn btn-danger btn-block delete_single_newscategory" data-id="{{ $newscategory->id }}" data-token="{{ csrf_token() }}">
+                        Delete {{$newscategory->categorylist->category_name}}</button>
+
+
+                    @endforeach
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -147,4 +163,37 @@ $(function() {
         }); 
 });
 </script>
+
+<script>
+    jQuery(document).ready(function ($) {
+
+        $(".delete_single_newscategory").click(function () {
+            var id = $(this).data("id");
+            var token = $(this).data("token");
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "../deleteNewsCategory/" + id,
+                type: 'delete',
+                dataType: 'json',
+                data: {
+                    "id": id,
+                    "_method": 'DELETE',
+                    "_token": token,
+                },
+                success: function () {
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                },
+                error: function () {
+                    alert('error please contact administrator')
+                }
+            });
+        });
+
+    });
+</script>
+
 @endsection

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Media;
 use App\Author;
 use Illuminate\Support\Facades\DB;
-
+use App\FeaturedImage;
 class MediaController extends Controller
 {
     /**
@@ -16,8 +16,9 @@ class MediaController extends Controller
      */
     public function index()
     {
+        $featuredimage_media = FeaturedImage::where('page_name','media')->get();
         $media_table = Media::with('author')->get();
-         return view('users.media.media', compact('media_table'));
+         return view('users.media.media', compact('featuredimage_media', 'media_table'));
     }
 
     /**

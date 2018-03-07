@@ -140,7 +140,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::with('author')->findOrFail($id);
+        $news = News::with('author', 'newscategory')->findOrFail($id);
         $author_name = Author::all();
 
         $news_id = DB::table('news_v2')
@@ -368,4 +368,18 @@ class NewsController extends Controller
         $success = array('ok'=> 'Successfully Restored');
         return redirect()->back()->with($success);
     }
+
+    public function deleteNewsCategory($id)
+    {
+
+        
+        $newscategory = NewsCategory::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+
 }
