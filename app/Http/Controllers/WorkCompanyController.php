@@ -32,12 +32,6 @@ class WorkCompanyController extends Controller
     public function index(Request $request)
     {
 
-        $internshipCompany_table_filter_state = WorkCompany::groupBy('state')->get();
-        $internshipCompany_table_filter_industry = WorkIndustry::groupBy('industry_name')->get();
-        $internshipCompany_table_filter_duration = WorkDuration::groupBy('duration_start_date')->get();
-        
-
-
         $get_testimonial = DB::table('featuredimage')
         ->where('page_name', 'work')
         ->first()
@@ -63,7 +57,7 @@ class WorkCompanyController extends Controller
             $internship_longtitude = WorkCompany::where('id', request('id'))->orderBy('featured','desc')->pluck('longtitude');
 
 
-            return view('users.work.work', compact('internshipCompany_table_filter_state', 'internshipCompany_table_filter_industry', 'internshipCompany_table_filter_duration', 'internship_longtitude','internship_latitude','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
+            return view('users.work.work', compact('internship_longtitude','internship_latitude','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
         }
 
         else if (request()->has('country')){
@@ -85,7 +79,7 @@ class WorkCompanyController extends Controller
             $internship_longtitude = WorkCompany::where('country', request('country'))->orderBy('featured','desc')->pluck('longtitude');
 
 
-            return view('users.work.work', compact('internshipCompany_table_filter_state', 'internshipCompany_table_filter_industry', 'internshipCompany_table_filter_duration', 'internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
+            return view('users.work.work', compact('internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
         }
         else if (request()->has('duration')){
 
@@ -105,7 +99,7 @@ class WorkCompanyController extends Controller
 
             $internship_latitude = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('latitude');
             $internship_longtitude = WorkCompany::where('duration', request('duration'))->orderBy('featured','desc')->pluck('longtitude');
-            return view('users.work.work', compact('internshipCompany_table_filter_state', 'internshipCompany_table_filter_industry', 'internshipCompany_table_filter_duration', 'internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
+            return view('users.work.work', compact('internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image','internship_featured'));
         }
         else if (request()->has('state')){
 
@@ -126,7 +120,7 @@ class WorkCompanyController extends Controller
             $internship_longtitude = WorkCompany::where('state', request('state'))->orderBy('featured','desc')->pluck('longtitude');
 
 
-            return view('users.work.work', compact('internshipCompany_table_filter_state', 'internshipCompany_table_filter_industry', 'internshipCompany_table_filter_duration', 'internship_longtitude','internship_latitude','internship_featured','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
+            return view('users.work.work', compact('internship_longtitude','internship_latitude','internship_featured','testimonial', 'featuredimage_internship', 'internshipCompany_table', 'internship_filter','internship_addresses','internship_name','internship_desc','internship_id', 'internship_image'));
         }
 
         else{
@@ -143,7 +137,7 @@ class WorkCompanyController extends Controller
             $internship_latitude = WorkCompany::orderBy('featured','desc')->pluck('latitude');
             $internship_longtitude = WorkCompany::orderBy('featured','desc')->pluck('longtitude');
 
-            return view('users.work.work', compact('internshipCompany_table_filter_state', 'internshipCompany_table_filter_industry', 'internshipCompany_table_filter_duration', 'internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image','internship_featured','internship_filter'));
+            return view('users.work.work', compact('internship_longtitude','internship_latitude','testimonial','featuredimage_internship', 'internshipCompany_table','internship_addresses','internship_name','internship_desc','internship_id','internship_image','internship_featured','internship_filter'));
         }
     }
 

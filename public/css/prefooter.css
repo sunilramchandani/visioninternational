@@ -75,7 +75,9 @@
   .top-prefooter-content{
     height:120px;
   }
-
+  .top-prefooter-content-2{
+    height:65px;
+  }
   #btn-large{
     display: none;
   }

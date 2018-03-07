@@ -8,7 +8,7 @@
 
 @section('content')
 <div class = "whole-page">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="img img-responsive header" alt="Company Banner">
+    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="header" alt="Company Banner">
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
 

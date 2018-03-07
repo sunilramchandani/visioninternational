@@ -110,56 +110,54 @@
         </div>
         <!--Rate -->
         <div class = "container">
-            <div class = "row">
-                <div class = "col-xs-12 rate-container">
-                        <div class = "col-xs-6">
-                            <div class = "text-left-side col-xs-offset-1">
-                                <h2 class = "gradient"> What's the rate? </h2>
-                                <h3 class = "gradient1"> There is plenty to experience! </h3>
+            <div class = "col-xs-12 rate-container">
+                    <div class = "col-md-6 col-xs-12">
+                        <div class = "text-left-side col-xs-offset-1">
+                            <h2 class = "gradient"> What's the rate? </h2>
+                            <h3 class = "gradient1"> There is plenty to experience! </h3>
+                        </div>
+                        <div class = "row row-price">
+                             <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
+                                <strong><p id = "reservation">USD 600</p></strong>
                             </div>
-                            <div class = "row row-price">
-                                 <div class = "col-xs-3 col-xs-offset-1">
-                                    <strong><p id = "reservation">USD 600</p></strong>
-                                </div>
-                                <div class = "col-xs-4">
-                                    <p>First Installment *</p>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                <div class = " col-xs-3 col-xs-offset-1 last-row last-row1">
-                                    <strong><p id = "2nd-Installment">USD 3000</p></strong>
-                                </div>
-                               <div class = "col-md-5 col-sm-4 col-xs-4 last-row">
-                                    <p>Second Installment *</p>
-                                </div>
-                            </div>
-                            <div class = "row row-price">
-                                 <div class = "col-xs-3 col-xs-offset-1">
-                                    <strong><p id = "3rd-Installment">USD 3600</p></strong>
-                                </div>
-                                <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                    <p>Total Program Payment</p>
-                                </div>
-                            </div>
-                            <div clas = "row row-price">
-                                <div class = "col-xs-6 col-xs-offset-3">
-                                    <a class = "btn locate-me" href = "/application?c=SAU"> Apply Now </a>
-                                </div>
-                            </div>
-                            <br>
-                            <div class = "row row-price-legend">
-                                <div class = "col-xs-offset-1">
-                                    <p> The Remaining Program fee of $500AUD + gst/month for <br>the first 12-months is settled via a direct pay roll deduction </p>
-                                    <strong><p class = "add-fees">Additional Fees:</p></strong>
-                                    <p><strong>Partner or Spouse </strong> = $2500USD </p>
-                                    <p><strong>Partner/Spouse + 1 Child</strong> = $3575USD </p>
-                                    <p><strong>Each additional child</strong> = $750USD</p>
-                                </div>
+                            <div class = "col-xs-4 col-md-4">
+                                <p>First Installment *</p>
                             </div>
                         </div>
-                        <div class = "col-xs-6 rate-image2">
-                             <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-price" alt="Company Banner">
+                        <div class = "row row-price">
+                            <div class = " col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 last-row last-row1">
+                                <strong><p id = "2nd-Installment">USD 3000</p></strong>
+                            </div>
+                           <div class = "col-xs-4 col-md-4 last-row">
+                                <p>Second Installment *</p>
+                            </div>
                         </div>
+                        <div class = "row row-price">
+                             <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
+                                <strong><p id = "3rd-Installment">USD 3600</p></strong>
+                            </div>
+                            <div class = "col-xs-4 col-md-4">
+                                <p>Total Program Payment</p>
+                            </div>
+                        </div>
+                        <div clas = "row row-price">
+                            <div class = "col-xs-6 col-xs-offset-3">
+                                <a class = "btn locate-me" href = "/application?c=SAU"> Apply Now </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class = "row row-price-legend">
+                            <div class = "col-xs-offset-1">
+                                <p> The Remaining Program fee of $500AUD + gst/month for <br>the first 12-months is settled via a direct pay roll deduction </p>
+                                <strong><p class = "add-fees">Additional Fees:</p></strong>
+                                <p><strong>Partner or Spouse </strong> = $2500USD </p>
+                                <p><strong>Partner/Spouse + 1 Child</strong> = $3575USD </p>
+                                <p><strong>Each additional child</strong> = $750USD</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col-md-6 hidden-xs hidden-sm rate-image2">
+                         <img src="{{ URL::asset('image/photos/Price.jpg')}}" class="img img-price" alt="Company Banner">
                     </div>
                 </div>
             </div>

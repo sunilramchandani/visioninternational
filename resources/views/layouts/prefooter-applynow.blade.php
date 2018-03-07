@@ -2,7 +2,7 @@
 
 <div class = "prefooter">
     <div class = "row bg-color">
-        <div class = "top-prefooter-content text-center">
+        <div class = "top-prefooter-content-2 text-center">
             <p class = "banner-paragraph">Start an amazing future with us! </p> 
         </div>     
     </div>
