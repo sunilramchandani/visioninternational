@@ -52,7 +52,7 @@ class ApplicationController extends Controller
         $country_table = Country::all();
         $program_table    = Program::all();
         $university_table = University::pluck('university_name');
-        $city_table = City::all();
+        $city_table = City::orderBy('city_name', 'asc')->get();
         $degree_table = Degree::pluck('degree_name');
         $major_table = Major::all();
         $internship_addresses = InternshipCompany::pluck('company_name');

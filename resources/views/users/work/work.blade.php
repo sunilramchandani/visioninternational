@@ -61,11 +61,11 @@
                           <div id="links">
                           <a href="/workcompany">All</a>
                             @if ( Request::get('state')  )
-                                @foreach ($internshipCompany_table_filter_state as $filter)
+                                @foreach ($internship_filter as $filter)
                                     <a href="/workcompany?state={{$filter->state}}">{{$filter->state}}</a>
                                 @endforeach
                             @else
-                                @foreach ($internshipCompany_table_filter_state as $company)
+                                @foreach ($internshipCompany_table as $company)
                                     <a href="/workcompany?state={{$company->state}}">{{$company->state}}</a>
                                 @endforeach
                             @endif
@@ -77,12 +77,16 @@
                       <div class="dropdown-content-filler">
                       <div id="links">
                         @if ( Request::get('state')  )
-                            @foreach ($internshipCompany_table_filter_industry as $industry)
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->work_industry as $industry)
                                     <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table_filter_industry as $industry)
+                            @foreach ($internshipCompany_table as $company)
+                                @foreach ($company->work_industry as $industry)
                                     <a href="/workcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
                         @endif
                         </div>
@@ -93,16 +97,16 @@
                       <div class="dropdown-content-filler">
                       <div id="links">
                          @if ( Request::get('state')  )
-                            @foreach ($internshipCompany_table_filter_duration as $duration)
-                        
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->work_duration as $duration)
                                     <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-                             
+                                @endforeach
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table_filter_duration as $duration)
-                
+                            @foreach ($internshipCompany_table as $company)
+                                 @foreach ($company->work_duration as $duration)
                                     <a href="/workcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-
+                                @endforeach
                             @endforeach
                         @endif
                         </div>
@@ -157,12 +161,12 @@
         <div class = "col-xs-6 form-group">
             <select class = "form-control" name="current_city" id="dynamic_select">
             <option value="" disabled selected>Select</option>
-                @if ( Request::get('state')  )
-                    @foreach ($internshipCompany_table_filter_state as $filter)
+               @if ( Request::get('state')  )
+                    @foreach ($internship_filter as $filter)
                        <option value ="workcompany?state={{$filter->state}}">{{$filter->state}}</option>
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table_filter_state as $company)
+                    @foreach ($internshipCompany_table as $company)
                         <option value ="workcompany?state={{$company->state}}">{{$company->state}}</option>
                     @endforeach
                 @endif
@@ -172,16 +176,17 @@
             <select class = "form-control" name="internship_industry" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internshipCompany_table_filter_industry as $industry)
-    
-                            <option value ="workcompany?state={$industry->industry_name}}">{{$industry->industry_name}}</option>
-          
+                     @foreach ($internship_filter as $filter)
+                        @foreach ($filter->work_industry as $duration)
+                        <option value ="workcompany?state={$industry->industry_name}}">{{$industry->industry_name}}</option>
+                        @endforeach
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table_filter_industry as $industry)
+                    @foreach ($internshipCompany_table as $company)
+                        @foreach ($company->work_industry as $industry)
                              <option value ="workcompany?state={{$industry->industry_name}}">{{$industry->industry_name}}</option>
                         @endforeach
-                    
+                    @endforeach
                 @endif
             </select>
         </div>
@@ -193,17 +198,18 @@
             <select class = "form-control" name="internship_duration" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-            
-                        @foreach ($internshipCompany_table_filter_duration as $duration)
+                    @foreach ($internship_filter as $filter)
+                        @foreach ($filter->work_duration as $duration)
                             <option value ="workcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
-
+                        @endforeach
                     @endforeach
                 @else
                  
-                         @foreach ($internshipCompany_table_filter_duration as $duration)
+                     @foreach ($internshipCompany_table as $company)
+                        @foreach ($company->work_duration as $duration)
                             <option value ="workcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
                         @endforeach
-                
+                    @endforeach
                 @endif
             </select>
         </div>
@@ -258,12 +264,12 @@
                     </div>
 
                     <div class="intership-content left-side col-md-6 col-xs-12">
-                        <p id=p-content>Upon receiving you proof of payment,</p>
+                        <p id=p-content>Upon receiving your proof of payment,</p>
                         <p id=p-content>you will be assigned a dedicated program</p>
                         <p id=p-content>specialist who will handle your application </p>
                         <p id=p-content>until the end.</p>
                         <div class="button">
-                            <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
+                            <a href = "/faq" class="btn locate-me">How do I make a deposit?</a>
                             <br><br>
                             <a href = "/faq" class="btn locate-me">What documents are required?</a>
                         </div>
@@ -283,11 +289,11 @@
                     </div>
 
                     <div class="intership-content  col-md-6 col-xs-12">
-                        <p id=p-content>Your assigned progam speacialist will help</p>
+                        <p id=p-content>Your assigned program speacialist will help</p>
                         <p id=p-content>you create a video resume that will be submitted.</p>
                         <p id=p-content>Make sure you have a Skype account registered. </p>
-                        <p id=p-content>We will practive you for your interviews</p>
-                        <p id=p-content>and make sure you're reader!.</p>
+                        <p id=p-content>We will practice you for your interviews</p>
+                        <p id=p-content>and make sure you're ready!</p>
                         <div class="button">
                             <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
                         </div>
@@ -301,7 +307,7 @@
                     <div class="internship-icon col-md-6 col-xs-12">
                         {{--  <div class=circle-number>1</div>  --}}
                         <img src="{{URL:: asset('image/icons/flyout.png') }}">
-                        <h1 id=reserve-title>Flyout</h1>
+                        <h1 id=reserve-title>Fly Out</h1>
                         <p id=p-icon>Book your tickets to the US</p>
                         <p id=p-icon>and enjoy the program!</p>
                     </div>
@@ -435,8 +441,8 @@
             <div class="row testimony-header">
                 <div class="about-font text-center">
                      <h3>Our Community</h3>
-                     <p>Get inspiration from those who have come before you 
-                        <br>Here are some of our students who have experienced work life abroad
+                     <p>Get inspiration from those who have come before you. 
+                        <br>Here are some of our students who have experienced work life abroad.
                     </p>
                 </div>
             </div>

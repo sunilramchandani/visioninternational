@@ -36,7 +36,7 @@
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
             <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school.Participants  </p>
+            <p> Our Internship Programs prepare students for life and work outside of school. Participants  </p>
             <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
         </div>
     </div>
@@ -54,57 +54,57 @@
                           </div>
                         </div>
                     </div>
-                    <div class="dropdown">
+                      <div class="dropdown">
                         <a class="dropbtn-filter">State</a>
                         <div class="dropdown-content-filler">
                           <div id="links">
                           <a href="/internshipcompany">All</a>
                             @if ( Request::get('state')  )
-                                @foreach ($internshipCompany_table_filter_state as $filter)
+                                @foreach ($internship_filter as $filter)
                                     <a href="/internshipcompany?state={{$filter->state}}">{{$filter->state}}</a>
                                 @endforeach
                             @else
-                                @foreach ($internshipCompany_table_filter_state as $company)
+                                @foreach ($internshipCompany_table as $company)
                                     <a href="/internshipcompany?state={{$company->state}}">{{$company->state}}</a>
                                 @endforeach
                             @endif
                             </div>
                         </div>
                     </div>
-                    <div class="dropdown">
+                  <div class="dropdown">
                       <a class="dropbtn-filter">Industry</a>
                       <div class="dropdown-content-filler">
-                      <div id="links">
                         @if ( Request::get('state')  )
-                            @foreach ($internshipCompany_table_filter_industry as $industry)
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->internship_industry as $industry)
                                     <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table_filter_industry as $industry)
+                            @foreach ($internshipCompany_table as $company)
+                                @foreach ($company->internship_industry as $industry)
                                     <a href="/internshipcompany?industry={{$industry->industry_name}}">{{$industry->industry_name}}</a>
+                                @endforeach
                             @endforeach
                         @endif
-                        </div>
                       </div>
                     </div>
                     <div class="dropdown">
                       <a class="dropbtn-filter">Start Dates</a>
                       <div class="dropdown-content-filler">
-                      <div id="links">
                          @if ( Request::get('state')  )
-                            @foreach ($internshipCompany_table_filter_duration as $duration)
-                        
+                            @foreach ($internship_filter as $filter)
+                                @foreach ($filter->internship_duration as $duration)
                                     <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-                             
+                                @endforeach
                             @endforeach
                         @else
-                            @foreach ($internshipCompany_table_filter_duration as $duration)
-                
+                            @foreach ($internshipCompany_table as $company)
+                                 @foreach ($company->internship_duration as $duration)
                                     <a href="/internshipcompany?duration={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</a>
-
+                                @endforeach
                             @endforeach
                         @endif
-                        </div>
                       </div>
                     </div>
                 </div>
@@ -157,11 +157,11 @@
             <select class = "form-control" name="current_city" id="dynamic_select">
             <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internshipCompany_table_filter_state as $filter)
+                    @foreach ($internship_filter as $filter)
                        <option value ="internshipcompany?state={{$filter->state}}">{{$filter->state}}</option>
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table_filter_state as $company)
+                    @foreach ($internshipCompany_table as $company)
                         <option value ="internshipcompany?state={{$company->state}}">{{$company->state}}</option>
                     @endforeach
                 @endif
@@ -171,16 +171,17 @@
             <select class = "form-control" name="internship_industry" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-                    @foreach ($internshipCompany_table_filter_industry as $industry)
-    
-                            <option value ="internshipcompany?state={$industry->industry_name}}">{{$industry->industry_name}}</option>
-          
+                     @foreach ($internship_filter as $filter)
+                        @foreach ($filter->internship_duration as $duration)
+                        <option value ="internshipcompany?state={$industry->industry_name}}">{{$industry->industry_name}}</option>
+                        @endforeach
                     @endforeach
                 @else
-                    @foreach ($internshipCompany_table_filter_industry as $industry)
+                    @foreach ($internshipCompany_table as $company)
+                        @foreach ($company->internship_industry as $industry)
                              <option value ="internshipcompany?state={{$industry->industry_name}}">{{$industry->industry_name}}</option>
                         @endforeach
-                    
+                    @endforeach
                 @endif
             </select>
         </div>
@@ -192,17 +193,18 @@
             <select class = "form-control" name="internship_duration" id="">
                 <option value="" disabled selected>Select</option>
                 @if ( Request::get('state')  )
-            
-                        @foreach ($internshipCompany_table_filter_duration as $duration)
+                    @foreach ($internship_filter as $filter)
+                        @foreach ($filter->internship_duration as $duration)
                             <option value ="internshipcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
-
+                        @endforeach
                     @endforeach
                 @else
                  
-                         @foreach ($internshipCompany_table_filter_duration as $duration)
+                     @foreach ($internshipCompany_table as $company)
+                        @foreach ($company->internship_duration as $duration)
                             <option value ="internshipcompany?state={{$duration->duration_start_date}}">{{$duration->duration_start_date}}</option>
                         @endforeach
-                
+                    @endforeach
                 @endif
             </select>
         </div>
@@ -222,6 +224,11 @@
                     <div class = "row company-picture">
                         <img src="{{ URL::asset('image\uploaded_company_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
                     </div>
+                    @if ($company->featured == "Yes")
+                    <div class = "row featured-notif">
+                        <p><i class="fa fa-star"></i> Featured Property</p>
+                    </div>
+                    @endif
                     <div class = "row info">
                         <h4>{{$company->full_address}}</h4>
                         <h3>{{$company->company_name}}</h3>
@@ -256,12 +263,12 @@
                     </div>
 
                     <div class="intership-content left-side col-md-6 col-xs-12">
-                        <p id=p-content>Upon receiving you proof of payment,</p>
+                        <p id=p-content>Upon receiving your proof of payment,</p>
                         <p id=p-content>you will be assigned a dedicated program</p>
                         <p id=p-content>specialist who will handle your application </p>
                         <p id=p-content>until the end.</p>
                         <div class="button">
-                            <a href = "/faq" class="btn locate-me">How do i make a deposit?</a>
+                            <a href = "/faq" class="btn locate-me">How do I make a deposit?</a>
                             <br><br>
                             <a href = "/faq" class="btn locate-me">What documents are required?</a>
                         </div>
@@ -281,11 +288,11 @@
                     </div>
 
                     <div class="intership-content  col-md-6 col-xs-12">
-                        <p id=p-content>Your assigned progam speacialist will help</p>
+                        <p id=p-content>Your assigned program speacialist will help</p>
                         <p id=p-content>you create a video resume that will be submitted.</p>
                         <p id=p-content>Make sure you have a Skype account registered. </p>
-                        <p id=p-content>We will practive you for your interviews</p>
-                        <p id=p-content>and make sure you're reader!.</p>
+                        <p id=p-content>We will practice you for your interviews</p>
+                        <p id=p-content>and make sure you're ready!</p>
                         <div class="button">
                             <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
                         </div>
@@ -332,16 +339,29 @@
                                 <h4>Duration</h4>
                             </div>
                            <div class = "col-xs-5 col-md-4">
+                                
+                                @if ( Request::get('country') == "United States"  )
                                 <select class = "form-control" name="duration" id="duration">
-                                    <option value="6">6 Months</option>
-                                    <option value="7">7 Months</option>
-                                    <option value="8">8 Months</option>
-                                    <option value="9">9 Months</option>
-                                    <option value="10">10 Months</option>  
-                                    <option value="11">11 Months</option>  
-                                    <option value="12" selected>12 Months</option>  
-                                    <option value="18">18 Months</option>       
+                                    @foreach($rate_us as $rate)
+                                        @if ($rate->duration == "12")
+                                        <option value="{{$rate->duration}}" selected="">{{$rate->duration}} Months</option>
+                                        @else 
+                                        <option value="{{$rate->duration}}">{{$rate->duration}} Months</option>
+                                        @endif
+                                    @endforeach
                                 </select>
+                                @else
+                                <select class = "form-control" name="duration2" id="duration2">
+                                     @foreach($rate_au as $rate)
+                                        @if ($rate->duration == "12")
+                                        <option value="{{$rate->duration}}" selected="">{{$rate->duration}} Months</option>
+                                        @else 
+                                        <option value="{{$rate->duration}}">{{$rate->duration}} Months</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @endif     
+                                
                             </div>
                         </div>
                         <div class = "row row-price">
@@ -414,49 +434,64 @@
                 </div>
             </div>
         <script>
+            var first_installment = {!! json_encode($rate_us_1st->toArray()) !!};
+            var second_installment = {!! json_encode($rate_us_2nd->toArray()) !!};
+            var third_installment = {!! json_encode($rate_us_3rd->toArray()) !!};
             var e = document.getElementById("duration");
             e.onchange = function() {
                 var strUser = e.options[e.selectedIndex].value;
                 if(strUser == "6"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3100";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3550";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[1];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[1];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[1];
                 }
                 if(strUser == "7"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3150";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3600";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[2];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[2];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[2];
                 }   
                 if(strUser == "8"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3350";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 3800";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[3];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[3];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[3];
                 }   
                 if(strUser == "9"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3650";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 4100";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[4];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[4];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[4];
                 }  
                 if(strUser == "10"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 3850";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 4300";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[5];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[5];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[5];
                 }   
                 if(strUser == "11"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 4050";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 4500";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[6];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[6];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[6];
                 }  
                 if(strUser == "12"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 4100";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 4550";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[0];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[0];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[0];
                 }
                 if(strUser == "18"){
-                    document.getElementById('1st-Installment').innerHTML = "USD 450";
-                    document.getElementById('2nd-Installment').innerHTML = "USD 6050";
-                    document.getElementById('3rd-Installment').innerHTML = "USD 6500";
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + first_installment[7];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + second_installment[7];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + third_installment[7];
                 }                     
+            }
+            var au_first_installment = {!! json_encode($rate_au_1st->toArray()) !!};
+            var au_second_installment = {!! json_encode($rate_au_2nd->toArray()) !!};
+            var au_third_installment = {!! json_encode($rate_au_3rd->toArray()) !!};
+            var l = document.getElementById("duration2");
+            l.onchange = function() {
+                var strUser = l.options[l.selectedIndex].value;
+                if(strUser == "12"){
+                    document.getElementById('1st-Installment').innerHTML = "PHP " + au_first_installment[0];
+                    document.getElementById('2nd-Installment').innerHTML = "PHP " + au_second_installment[0];
+                    document.getElementById('3rd-Installment').innerHTML = "PHP " + au_third_installment[0];
+                }
             }
         </script>
 

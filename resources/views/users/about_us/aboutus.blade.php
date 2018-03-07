@@ -49,7 +49,7 @@
                 <div class = "col-md-12 col-xs-8">
     				 <p class="box-title"><strong>Highest Care and Support</strong></p>
         			 <div class = "col-md-10 col-md-offset-1 col-xs-12 boxes">
-        			 	<p>Our service to each participants is world-class. We are committed to providing the support you need every step of the way </p>
+        			 	<p>Our service to each participant is world-class. We are committed to providing the support you need every step of the way </p>
         			 </div>
                 </div>
 			</div>
@@ -125,10 +125,10 @@
                 </div>
             </div>
         </div>
-        <!--Marketting-->
+        <!--Marketing-->
         <div class = "operations pads">
             <div class = "col-xs-12">
-                <p><strong>Marketting</strong></p>
+                <p><strong>Marketing</strong></p>
             </div>
             <div class = "row">
                 <div class = "col-xs-12 whole-employee">

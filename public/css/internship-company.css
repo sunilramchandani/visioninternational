@@ -1,4 +1,13 @@
-
+.featured-notif{
+ 	background-color: #ffc217;
+    color: #724600;
+}
+.featured-notif p {
+    margin: auto 0;
+    padding-left: 5%;
+    letter-spacing: 1.5;
+}
+    
 
 .dynamic-text-container-box{
 	background-color: rgba(54,56,60,0.7);

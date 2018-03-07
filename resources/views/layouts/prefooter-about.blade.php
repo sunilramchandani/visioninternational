@@ -3,10 +3,10 @@
 <div class = "prefooter">
     <div class = "row bg-color">
         <div class = "top-prefooter-content text-center">
-            <p class = "banner-paragraph">Be part of out team! </p> 
-            <a class = "btn applynow-button" id="btn-large" href = "application"> Join us</a>
+            <p class = "banner-paragraph">Be part of our team! </p> 
+            <a class = "btn applynow-button" id="btn-large" href = "contactus"> Join us</a>
             <div class="col-sm-12 hidden-lg hidden-md hidden-xl">
-                <a class = "btn applynow-button" id="btn-small" href = "application"> Join us</a>
+                <a class = "btn applynow-button" id="btn-small" href = "contactus"> Join us</a>
             </div>
         </div>     
     </div>
