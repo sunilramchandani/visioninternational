@@ -38,30 +38,30 @@ class InternshipCompanyController extends Controller
                         ->get();
         $rate_us_1st = Rate::where('program', 'Internship')
                         ->where('country', 'United States')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('first');
         $rate_us_2nd = Rate::where('program', 'Internship')
                         ->where('country', 'United States')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('second');
         $rate_us_3rd = Rate::where('program', 'Internship')
                         ->where('country', 'United States')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('total');
         $rate_au = Rate::where('program', 'Internship')
                         ->where('country', 'Australia')
                         ->get();
         $rate_au_1st = Rate::where('program', 'Internship')
                         ->where('country', 'Australia')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('first');
         $rate_au_2nd = Rate::where('program', 'Internship')
                         ->where('country', 'Australia')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('second');
         $rate_au_3rd = Rate::where('program', 'Internship')
                         ->where('country', 'Australia')
-                        ->orderBy('id','desc')
+                        ->orderBy('id','asc')
                         ->pluck('total');
         $testimonial = Testimonials::where('id', $get_testimonial)->get();
 
