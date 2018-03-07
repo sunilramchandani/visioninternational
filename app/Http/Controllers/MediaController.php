@@ -16,6 +16,7 @@ class MediaController extends Controller
      */
     public function index()
     {
+        
         $featuredimage_media = FeaturedImage::where('page_name','media')->get();
         $media_table = Media::with('author')->get();
          return view('users.media.media', compact('featuredimage_media', 'media_table'));
@@ -89,9 +90,19 @@ class MediaController extends Controller
 
     public function adminIndex()
     {
-       $media_table = Media::paginate(10);
-       
-       return view('admin.media.list', compact('media_table'));
+        if (request()->has('media_type')){
+        $media_table = Media::orderBy('created_at','desc')->where('media_type', request('media_type'))->paginate(10)->appends('media_type', request('media_type'));
+        
+        $media_get = Media::select('media_type')->get();
+
+        
+        return view('admin.media.list', compact('media_get', 'media_table'));
+        }
+
+        else{
+        $media_table = Media::paginate(10);
+        return view('admin.media.list', compact('media_table'));
+        }
     }
 
 
