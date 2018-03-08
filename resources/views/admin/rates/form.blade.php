@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
             <h1 class="page-header">
-                rate
+                Rate
             </h1>
         </div>
     </div>
@@ -27,16 +27,16 @@
                             value="{{ isset($rate->program) ? $rate->program:""}}" placeholder="Title...">
                         </div>
                     </div>
-                </div>
+             
 
-                <div class="row">
+         
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label for="country">
                                 Country
                             </label>
                             <select class="form-control" name="country" id="country" required>
-                            <option value="" disabled selected>{{ isset($rate->country) ? $rate->country:"Select Country"}}</option>
+                            <option value="{{ isset($rate->country) ? $rate->country:"Select Country"}}" selected>{{ isset($rate->country) ? $rate->country:"Select Country"}}</option>
                                 <option value="United States">United States</option>
                                 <option value="Australia">Australia</option>
                             </select>
@@ -102,6 +102,32 @@
                         </div>
                         
                     </div>
+
+                    @if($rate->country == "Australia")
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="company_website">
+                                Visa
+                            </label>
+                            <input type="number" min="0" class="form-control" id="visa" name="visa" value="{{ isset($rate) ? $rate->visa : '' }}" placeholder="visa"required>
+                        </div>
+                        
+                    </div>
+                    @else
+                    @endif
+
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="company_website">
+                                Total
+                            </label>
+                            <input type="number" min="0" class="form-control" id="total" name="total" value="{{ isset($rate) ? $rate->total : '' }}" placeholder="total" disabled>
+                        </div>
+                        
+                    </div>
+                    
+
+
                 </div>
 
                 <div class="btn-container">
