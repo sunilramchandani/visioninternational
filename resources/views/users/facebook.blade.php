@@ -52,6 +52,7 @@
   <div class = "row">
     <div class = "col-sm-9 col-xs-12 events-content-container">
       @foreach($events_table as $events)
+      @if ($events->start_time > Carbon\Carbon::now()->addDay())
         <div class = "col-xs-6 col-sm-4 capsules">
           <div class = "col-xs-12 events-content">
             <img src="{{$events->cover_source}}" alt="" class = "event-img img">
@@ -63,6 +64,8 @@
             <a class = "submit btn" href = "/single_event/{{$events->fbevent_id}}"><span>More Info</span></a>
           </div>
         </div>
+      @else
+      @endif
       @endforeach
      
       
