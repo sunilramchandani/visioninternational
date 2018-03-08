@@ -462,6 +462,53 @@ margin-top: 5px;
 .img-line{
 	display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.side-content{
+		height: 130% !important;
+	}
+}
+
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.testimony-picture {
 	    height: 300px;
@@ -476,7 +523,9 @@ margin-top: 5px;
 	    top: -7%;
 	}
 }
-@media screen and (max-width: 991px) and (min-width: 720px) {
+
+
+ @media screen and (max-width: 991px) and (min-width: 720px) {
 	.header {
 	    height: 650px;
 	    width: 100%;
@@ -489,12 +538,12 @@ margin-top: 5px;
 		margin-top: -5px;
 	}
 	.Top-header-message {
-	    margin-top: 20px;
+	    margin-top: 15%;
 	    padding-bottom: 5%;
 	}
 
 	.company-head {
-    	height: 30%;
+    	height: auto;
 	    width: 100%;
 	    border-top-left-radius: 6px;
 	    border-top-right-radius: 6px;
@@ -531,21 +580,58 @@ margin-top: 5px;
 	    font-size: 10px;
 	    width: 90%;
 	}
+
+	.boxshadow{
+		margin-bottom: 10%;
+	}
+
 	.company-whole{
 		box-shadow: none;
 		padding: 0;
 	}
 	.side-content {
+		height: 240%;
 	    overflow: hidden;
 	    padding-bottom: 5%;
 	    padding-top: 5%;
 	}
-}
+	
+	.info-container{
+		height: 100%;
+	}
+
+	.what-next-text{
+		padding-bottom: 12%;
+	}
+
+	.number-icon{
+		top: -5%;
+		left: 45%;
+	}
+
+	.number-icon2{
+		top: -5%;
+		left: 45%;
+	}
+
+	.number-icon3{
+		top: -5%;
+		left: 45%;
+	}
+
+} 
+
+
 @media screen and (max-width: 719px) and (min-width: 320px) {
 	.header {
 	    height: 425px;
 	    width: auto;
 	}
+
+	.what-next-text{
+		padding-bottom: 15%;
+	}
+
 	.img-border{
 		display: none;
 	}
@@ -625,18 +711,18 @@ margin-top: 5px;
 	.locate-me1 {
 	    position: absolute;
 	    bottom: 10px;
-	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+		background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
 	    color: white;
 	    border-radius: 6px;
 	    font-size: 10px;
-	    width: 60%;
+	    width: 90%;
 	}
 	.locate-me {
-	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+		background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
 	    color: white;
 	    border-radius: 8px;
 	    font-size: 10px;
-	    width: 90%;
+	    width: 104%;
 	}
 	#reserve-title {
 	    color: #c42b16;
@@ -657,28 +743,29 @@ margin-top: 5px;
 	    border-radius: 10px;
 	    box-shadow: 0px 0px 6px 0px #ccc;
 	    padding: 30px 10 10 0;
-	    margin-bottom: 5%;
+	    margin-bottom: 15%;
 	}
 	.number-icon {
 	    position: absolute;
 		top: -4%;
 		height: 38px;
-		left: 43%;
+		left: 45%;
 	}
 	.number-icon2 {
 	    position: absolute;
-	    top: -4%;
+	    top: -3%;
 	    height: 38px;
 	    left: 45%;
 	}
 	.number-icon3 {
 	    position: absolute;
-	    top: -4%;
+	    top: -3%;
 	    height: 38px;
 	    left: 45%;
 	}
 	.left-side{
 		padding-top: 5%;
+		padding: 8%;
 	}
 	.last-row1{
 		font-size: 14;
@@ -727,7 +814,7 @@ margin-top: 5px;
 	    overflow: auto;
 	    padding-bottom: 5%;
 	    padding-top: 5%;
-	    height: 50%;
+	    height: 80%;
 	}
 	.dynamic-text-container{
 		padding:0;
