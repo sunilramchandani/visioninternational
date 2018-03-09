@@ -729,7 +729,7 @@ color:white;
 	    margin: 5px;
 	    position: absolute;
 	    bottom: 15;
-	    left: 20px;
+	    left: 20%;
 	}
 	.show-all {
 	    display: block;
@@ -747,6 +747,7 @@ color:white;
 	.details {
 	    padding-top: 0%;
 	    letter-spacing: 0px;
+	    font-size: 1em;;
 	}
 	.validity-text{
 		color:gray !important;
@@ -772,11 +773,13 @@ color:white;
 	    padding-top: 0%;
 	    padding-left: 5%;
 	}
-	.events-content h4{
+	.mobile-featured h4{
 		font-size: 20px;
 		color: black !important;
 	}
 	.mobile-featured{
 		height: 400;
-	}
+    	padding:0;
+    	box-shadow: 2px 2px 2px 2px #B0B0B0;
+    }
 }

@@ -315,22 +315,23 @@
         <div class = "container">
              @foreach($internshipcompany_table as $internship)
             <div class="hidden-md hidden-lg col-xs-12 ">
-                <div class = "col-xs-12 events-content mobile-featured">
+                <div class = "col-xs-12 mobile-featured">
                     <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" alt="" class="event-img img">
-
-                    <h4 class=" details text-center">{{$internship->company_name}} </h4>
-                    <p class="details text-center">{{$internship->description}}</p>
-                    <p class="details text-center"> Share
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
-                           <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
-                         </a>
-                        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id )}}" target="_blank">
-                            <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
-                        </a>
-                        <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id) }}" target="_blank">
-                            <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
-                        </a>
-                    </p>
+                    <div class = "col-xs-12">
+                        <h4 class=" details text-center">{{$internship->company_name}} </h4>
+                        <p class="details text-center">{{$internship->description}}</p>
+                        <p class="details text-center"> Share
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl(). '/internshipcompany?eid='. $internship->id ) }}" target="_blank">
+                               <i class="fa fa-facebook-f " style="font-size:14px; padding-right:1%; color:black;"></i>
+                             </a>
+                            <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id )}}" target="_blank">
+                                <i class="fa fa-twitter " style="font-size:14px; padding-right:1%; color:black;"></i>
+                            </a>
+                            <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl().'/internshipcompany?eid='. $internship->id) }}" target="_blank">
+                                <i class="fa fa-google-plus " style="font-size:14px; color:black;"></i>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
              @endforeach
@@ -376,12 +377,13 @@
             </div>
         </div>
         <div class="hidden-lg hidden-md hidden-xl col-xs-12 ">
-            <div class = "col-xs-12 events-content mobile-featured">
+            <div class = "col-xs-12 mobile-featured">
                 <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->sub_image3}}" alt="" class="event-img img">
-
-                <h4 class=" details text-center">{{$featured->sub_image3_title}} </h4>
-                <p class="details text-center">{{$featured->sub_image3_description}}</p>
-                <p class="validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
+                <div class = "col-xs-12">
+                    <h4 class=" details text-center">{{$featured->sub_image3_title}} </h4>
+                    <p class="details text-center">{{$featured->sub_image3_description}}</p>
+                    <p class="validity-text">Valid Until: {{$featured->sub_image3_validity}}</p>
+                </div>
             </div>
         </div>
     </div>

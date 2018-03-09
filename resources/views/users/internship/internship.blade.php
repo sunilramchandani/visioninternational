@@ -35,9 +35,9 @@
     <div class = " row">
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
-            <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school. Participants  </p>
-            <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
+            <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                <p> Our Internship Programs prepare students for life and work outside of school. Participants get to work in world-class facilities in the US and in other locations across the globe. </p>
+            </div>
         </div>
     </div>
     <div class = "body-content" id= "body-content">
@@ -245,8 +245,9 @@
         <div class = "col-xs-12">
             <div class = "row text-center what-next-text">
                 <h2 id=whatsnext-title>What's Next?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                    <p>Our process is  smooth and easy. We can facilitate your application and get you to your dream destination as soon as possible!</p>
+                </div>
             </div>
         </div>
           <!-- number 1 -->
@@ -408,7 +409,7 @@
                         </div>
                         @if ( Request::get('country') == "Australia"  )
                         <div class = "row row-price">
-                            <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 last-row last-row1">
+                            <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 ">
                                 @if ( Request::get('country') == "Australia"  )
                                     @foreach($rate_au as $rate)
                                     <strong><p id = "2nd-Installment">$ {{$rate->third}}</p></strong>
@@ -417,8 +418,18 @@
                                 <strong><p id = "2nd-Installment">USD 4100</p></strong>
                                 @endif
                             </div>
-                           <div class = "col-xs-4 col-md-4 last-row">
+                           <div class = "col-xs-4 col-md-4">
                                 <p>Third Installment **</p>
+                            </div>
+                        </div>
+                        <div class = "row row-price">
+                             <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 last-row last-row1">
+                                @foreach($rate_au as $rate)
+                                    <strong><p id = "reservation">$ {{$rate->visa}}</p></strong>
+                                @endforeach
+                            </div>
+                            <div class = "col-xs-4 col-md-4 last-row">
+                                <p>VISA and Insurance</p>
                             </div>
                         </div>
                         @endif

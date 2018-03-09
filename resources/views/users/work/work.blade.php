@@ -23,8 +23,12 @@
                 @else
                 <h4> Australia </h4>
                 @endif
-                <H1> WORK & TRAVEL </H1>
-                <p class ="p-dynamic">We provide travel opportunities for students, graduates, and those with industry experience</p>
+                <div class = "col-xs-12">
+                    <H1> WORK & TRAVEL </H1>
+                </div>
+                <div class = "col-xs-12">
+                    <p class ="p-dynamic">We provide travel opportunities for students, graduates, and those with industry experience</p>
+                </div>
             </div>
         
 @endforeach
@@ -36,9 +40,9 @@
     <div class = " row">
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
-            <br/>
-            <p> Your journey begins with Vision International and its wide network of reputable  </p>
-            <p> partners across the country, enabling you to travel and work in your location of choice.</p>
+            <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                <p> Your journey begins with Vision International and its wide network of reputable partners across the country, enabling you to travel and work in your location of choice. </p>
+            </div>
         </div>
     </div>
     <div class = "body-content" id= "body-content">
@@ -246,8 +250,9 @@
         <div class = "col-xs-12">
             <div class = "row text-center what-next-text">
                 <h2 id=whatsnext-title>What's Next?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                    <p>Our process is  smooth and easy. We can facilitate your application and get you to your dream destination as soon as possible!</p>
+                </div>
             </div>
         </div>
           <!-- number 1 -->

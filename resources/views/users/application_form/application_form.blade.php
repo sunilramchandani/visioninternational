@@ -200,7 +200,7 @@
             </div>
             <div class = "row form-group">
                 <div class = "col-md-4 col-xs-12 label-container">
-                    <label for = "studies" class = "labels">Studies *</label>
+                    <label for = "studies" class = "labels">Highest Level of Education *</label>
                 </div>
                 <div class = "col-md-7 col-xs-12">
                     <select class = "form-control" name="studies_name" id="studies_name">

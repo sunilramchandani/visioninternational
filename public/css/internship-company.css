@@ -431,7 +431,7 @@ margin-top: 5px;
 }
 
 .button{
-	margin-top: 68px;
+	margin-top: 35px;
 }
 
 .red-button{
@@ -630,6 +630,9 @@ margin-top: 5px;
 	    height: 425px;
 	    width: auto;
 	}
+	.internship-icon{
+		padding-left: 11%;
+	}
 
 	.what-next-text{
 		padding-bottom: 15%;
@@ -670,7 +673,7 @@ margin-top: 5px;
 	    z-index: 0;
 	    border-radius: 12px;
 	    letter-spacing: 1px;
-	    margin-top: -225px;
+	    margin-top: -234.5px;
 	    color: white;
 	}
 	.row-price p {
@@ -706,10 +709,9 @@ margin-top: 5px;
 	    background: #f2f2f2;
 	    padding-bottom: 3%;
 	    box-shadow: 2px 4px 12px 2px #B0B0B0;
-	    border-top-left-radius: 6px;
-	    border-top-right-radius: 6px;
+	    border-radius: 6px;
 	    margin-top: 3%;
-	    height: 90%;
+	    height: 60%;
 	}
 	.locate-me1 {
 	    position: absolute;
@@ -827,7 +829,7 @@ margin-top: 5px;
 	    z-index: 0;
 	    border-radius: 12px;
 	    letter-spacing: 1px;
-	    margin-top: -233;
+	    margin-top: -234.5px;
 	    color: white;
 	    height: 421.5px;
 	    padding: 0;

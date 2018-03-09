@@ -9,52 +9,89 @@
 <form action="" method="post" role="form">
  {{csrf_field()}}
 <div class = "col-xs-12 whole-page">
-@foreach ($featuredimage_internship as $featured)
-    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="header" alt="Company Banner">
-    <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
-    <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">      
-@endforeach
     <div class = "col-xs-12 text-center text-titles">
-        <h3>Internship</h3>
+        <h3>United States of America</h3>
+        <div class = "col-xs-12 col-md-4 col-md-offset-4 text-titles-description">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        </div>
     </div>
     <div class = "col-xs-10 col-xs-offset-1 internship" id = "internship">
-        @foreach($internshipCompany_table as $internship)
-        <a href = "internshipcompany?eid={{$internship->id}}">
-            <div class = "col-xs-4 company-content">
-                <div class = "col-xs-12 company-box">
-                    <div class = "image-container">
-                        <img src="{{ URL::asset('image/uploaded_company_image')}}/{{$internship->image}}" class = "img img-responsive company-image" alt="Company Image">
-                    </div>
-                    <div class = "col-xs-12 details-container">
-                        <h4>{{$internship->company_name}}</h4>
-                        <p>{{ \Illuminate\Support\Str::words($internship->description, 5,' .... ')}}</p>
+        <a href = "/internshipcompany?country=United States">
+            <div class = "col-xs-4">
+                <div class = "col-xs-10 col-xs-offset-1 box">
+                    @foreach ($featuredimage_internship as $featured)
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class = "img company-image" alt="Company Banner">
+                    @endforeach
+                    <div class = "col-xs-10 col-xs-offset-1 text-center">
+                        <h4><STRONG> INTERNSHIP </STRONG> </h4>
+                        <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
                     </div>
                 </div>
             </div>
         </a>
-        @endforeach
+        <a href = "/workcompany">
+            <div class = "col-xs-4">
+                <div class = "col-xs-10 col-xs-offset-1 box">
+                    @foreach ($featuredimage_work as $featured)
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class = "img company-image" alt="Company Banner">
+                    @endforeach
+                    <div class = "col-xs-10 col-xs-offset-1 text-center">
+                        <h4><STRONG> WORK & TRAVEL </STRONG> </h4>
+                        <p class ="p-dynamic"> We provide travel opportunities for students, graduates, and those with industry experience</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href = "/aupair">
+            <div class = "col-xs-4">
+                <div class = "col-xs-10 col-xs-offset-1 box">
+                    @foreach ($featuredimage_aupair as $featured)
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class = "img company-image" alt="Company Banner">
+                    @endforeach
+                    <div class = "col-xs-10 col-xs-offset-1 text-center">
+                        <h4><STRONG> AU PAIR </STRONG> </h4>
+                        <p class ="p-dynamic"> Immerse yourself in another culture all while being of service to others</p>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
     <div class = "col-xs-12 text-center text-titles">
-        <h3>Work & Travel</h3>
+        <h3>Australia</h3>
+        <div class = "col-xs-12 col-md-4 col-md-offset-4 text-titles-description">
+            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. </p>
+        </div>
     </div>
-    <div class = "col-xs-10 col-xs-offset-1 work" id = "work">
-        @foreach($workCompany_table as $work)
-        <a href = "workcompany?eid={{$internship->id}}">
-            <div class = "col-xs-4 company-content">
-                <div class = "col-xs-12 company-box">
-                    <div class = "image-container">
-                        <img src="{{ URL::asset('image/uploaded_workcompany_image')}}/{{$work->image}}" class = "img img-responsive company-image" alt="Company Image">
-                    </div>
-                    <div class = "col-xs-12 details-container">
-                        <h4>{{$work->company_name}}</h4>
-                        <p>{{ \Illuminate\Support\Str::words($work->description, 8,' .... ')}}</p>
+        <div class = "col-xs-10 col-xs-offset-1 internship" id = "internship">
+        <a href = "/internshipcompany?country=Australia">
+            <div class = "col-xs-4">
+                <div class = "col-xs-10 col-xs-offset-1 box">
+                    @foreach ($featuredimage_internship as $featured)
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class = "img company-image" alt="Company Banner">
+                    @endforeach
+                    <div class = "col-xs-10 col-xs-offset-1 text-center">
+                        <h4><STRONG> INTERNSHIP </STRONG> </h4>
+                        <p class ="p-dynamic"> Get ahead in your careers with an internship experience abroad</p>
                     </div>
                 </div>
             </div>
         </a>
-        @endforeach
+        <a href = "/workvisa">
+            <div class = "col-xs-4">
+                <div class = "col-xs-10 col-xs-offset-1 box">
+                    @foreach ($featuredimage_work as $featured)
+                    <img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class = "img company-image" alt="Company Banner">
+                    @endforeach
+                    <div class = "col-xs-10 col-xs-offset-1 text-center">
+                        <h4><STRONG> SKILLED WORK VISA </STRONG> </h4>
+                        <p class ="p-dynamic"> Get ahead in your careers with experience abroad</p>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
-</div> 
+</div>
+</form>
 <div class = "row" style = "padding-bottom: 5%;"></div>
 
     

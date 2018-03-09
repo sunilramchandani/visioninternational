@@ -19,11 +19,13 @@ class opportunityController extends Controller
 {
     public function index()
     {
-    	$featuredimage_internship = FeaturedImage::where('page_name','opportunity')->get();
-        $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->orderBy('id','asc')->get();
-        $workCompany_table = WorkCompany::with('work_opportunity', 'work_qualifications','work_industry', 'work_duration')->orderBy('id','asc')->get();
+    	$featuredimage_internship = FeaturedImage::where('page_name','Internship')->get();
+    	$featuredimage_work = FeaturedImage::where('page_name','Work')->get();
+ 		$featuredimage_aupair = FeaturedImage::where('page_name','aupair')->get();
+ 		$featuredimage_skilled = FeaturedImage::where('page_name','workvisa')->get();
+ 
 
-        return view('users.opportunity.opportunity', compact('internshipCompany_table','featuredimage_internship','workCompany_table'));
+        return view('users.opportunity.opportunity', compact('featuredimage_internship','featuredimage_work','featuredimage_aupair'));
     }
 
 }

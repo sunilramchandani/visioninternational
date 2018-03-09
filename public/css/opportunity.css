@@ -1,33 +1,28 @@
-.company-image{
-    height: 184px;
-    width: 100%;
-}
-.company-box {
+.box{
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 0;
     border: solid 1px gray;
-    padding:0;
+    height: 290px;
+    color:black;
 }
-.text-titles{
-	letter-spacing: 1.5px;
+.box:hover{
+	background-color:#d64c39;
+	color:white !important;
+}
+.box:hover p{
+	color:white !important;
+}
+.internship{
+	padding-bottom: 2%;
+}    
+.company-image{
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 50%;
+    width:100%;
+}
+.text-titles-description{
 	padding-bottom: 3%;
-}
-.company-content{
-	padding-bottom: 5%;
-}
-.header{
-    height: 75%;
-  	width:100%;
-  	overflow-x: hidden;
-}
-.img-line{
-	display: none;
-}
-.whole-page{
-	padding: 0;
-	overflow-x: hidden;
-}
-.img-border {
-    margin-top: -20%;
-    width: 104%;
-    margin-left: -4%;
-    display: block;
+	padding-top: 1%;
 }
