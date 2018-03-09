@@ -10,7 +10,11 @@
  {{csrf_field()}}
 <div class = "col-xs-12 whole-page">
 
-    <img src="{{ URL::asset('image/photos/Au-Pair.png')}}" class="img img-responsive img-rounded header" alt="Company Banner">
+@foreach($featuredimage_workvisa as $featured)
+	<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="header">
+@endforeach
+
+
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
     <div class = "text-inside-header-picture">

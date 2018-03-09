@@ -209,6 +209,7 @@
     <div class="container">
         <div class="row home-page-events next">
             @foreach($events_table as $events)
+            @if ($events->start_time > Carbon\Carbon::now()->addDay())
             <div class="col-md-3 col-xs-6 ">
                 <div class = "col-xs-12 events-content">
                     <img src="{{$events->cover_source}}" alt="" class="event-img img">
@@ -225,6 +226,9 @@
                     </a>
                 </div>
             </div>
+            @else
+            @endif
+
             @endforeach
             <!--BUTTON WHEN MOBILE -->
             <div class="col-xs-4 col-xs-offset-4 show-all-container">

@@ -32,7 +32,7 @@
                                     <a
                                         href="{{ route('event.view', $single_event->fbevent_id) }}"
                                         class="btn btn-success">
-                                        Add Category
+                                        Manage Category
                                     </a>
                                 </td>
                             </tr>

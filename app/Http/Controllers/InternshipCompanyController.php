@@ -455,6 +455,18 @@ class InternshipCompanyController extends Controller
 
     }
 
+    public function deleteQualification($id)
+    {
+
+        
+        $qualification = Qualification::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
     
 
     public function createQualification($id)

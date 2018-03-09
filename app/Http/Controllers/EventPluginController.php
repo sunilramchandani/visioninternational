@@ -21,7 +21,8 @@ class EventPluginController extends Controller
     public function index(Request $request)
     {
         $curl = curl_init();
-        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=EAAbDDDPZCZCFABACmIOHj1Hk81WZCpeleMY0gEkHgVgDF8C2vKMbf9ZBt2KNdhU9fZACWD9bBlt8Ny3Xa4dcmZAhRGZAiNxDjRmMTgsp2gqNH5BqXVT4NoNTb9kHOUOmOM9hmIfKcDJ42ddxm9DuLb7fZCHfUCYFef3vDG8iHfqsMQZDZD";
+        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=1903307039702096|nNl9j-XnQOaFXXcp2Z9GRrE8qQ8
+        ";
         curl_setopt($curl, CURLOPT_URL, $rss_url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
         curl_setopt($curl, CURLOPT_REFERER, '');
@@ -280,7 +281,7 @@ class EventPluginController extends Controller
     public function adminView($id)
     {
         
-        $event = EventPlugin::find($id);
+        $event = EventPlugin::with('eventcategory')->find($id);
 
         $event_category = DB::table('category_event')
             ->where('event_id', $id)
@@ -346,4 +347,19 @@ class EventPluginController extends Controller
          } 
         return view('users.events.single_event', compact('event_table', 'category_table', 'previousevents','nextevents','events','category_events_general','category_events_design','category_events_events','category_events_food','category_events_jobfair','events_table'));
     }
+
+    public function deleteEventCategory($id)
+    {
+
+        
+        $eventcategory = EventCategory::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+
+
 }

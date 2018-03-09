@@ -33,6 +33,15 @@
     <section class="content page-news">
         <div class="row">
             <div class="col-xs-12">
+            @if ( Request::get('media_type')  )
+            @foreach ($media_get as $media)
+             <a href="/admin/media/list?media_type={{$media->media_type}}"><button class="btn btn-primary">{{$media->media_type}}</button></a>
+            @endforeach
+            @else 
+            @foreach ($media_table as $media)
+            <a href="/admin/media/list?media_type={{$media->media_type}}"><button class="btn btn-primary">{{$media->media_type}}</button></a>
+            @endforeach
+            @endif
 
                 <table class="table table-striped table-bordered">
                     <thead>

@@ -40,17 +40,27 @@ class RateController extends Controller
         $rate = Rate::findorFail($id);
 
         $rate->program = $request['program'];
-        $rate->country = $request['country'];
         $rate->reservation = $request['reservation'];
         $rate->first = $request['first'];
         $rate->second = $request['second'];
         $rate->third = $request['third'];
 
+        $getCountry = $request->input('country');
+        
         $f = $request->get('first');
         $s = $request->get('second');
         $t = $request->get('third');
 
-        $total = $f + $s + $t;
+        if($getCountry == "Australia"){
+            $rate->visa = $request['visa'];
+            $v = $request->get('visa');
+            $total = $f + $s + $t +$v;
+        }
+        else{
+            $total = $f + $s + $t +$v;
+        }
+
+        
 
 
         $rate->total = $total;

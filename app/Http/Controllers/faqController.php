@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\faq;
+use App\FeaturedImage;
 
 class faqController extends Controller
 {
      public function index(){
+        $featuredimage_faq = FeaturedImage::where('page_name','faq')->get();
+
      	$internship = faq::where('faq_type','Internship')->get();
      	$spring = faq::where('faq_type','Spring Work & Travel')->get();
      	$summer = faq::where('faq_type','Summer Work & Travel')->get();
      	$aupair = faq::where('faq_type','Au Pair')->get();
      	$faq_types = faq::distinct('state')->pluck('faq_type');
 
-        return view('users.FAQ.faq', compact('internship','summer','spring','aupair','faq_types'));
+        return view('users.FAQ.faq', compact('featuredimage_faq', 'internship','summer','spring','aupair','faq_types'));
 	}
 	
 	

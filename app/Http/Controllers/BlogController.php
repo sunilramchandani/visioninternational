@@ -139,7 +139,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::with('blogcategory')->find($id);
         $author_name = Author::all();
 
         $blog_id = DB::table('blog')
@@ -369,6 +369,19 @@ class BlogController extends Controller
         $success = array('ok'=> 'Successfully Restored');
         return redirect()->back()->with($success);
     }
+
+     public function deleteBlogCategory($id)
+    {
+
+        
+        $blogcategory = BlogCategory::find($id)->delete();
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
     
 
     

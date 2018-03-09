@@ -8,7 +8,10 @@
 
 @section('content')
 <div class = "whole-page">
-    <img src="{{ URL::asset('image/photos/Internship.jpg')}}" class="header" alt="Company Banner">
+@foreach($featuredimage_faq as $featured)
+	<img src="{{ URL::asset('image/uploaded_featured_image')}}/{{$featured->main_image}}" class="header">
+@endforeach
+
     <img src="{{ URL::asset('image/Arrow.png')}}" class="img img-border" alt="Company Banner">
     <img src="{{ URL::asset('image/img-line.png')}}" class="img img-responsive img-line" alt="Company Banner">
 
@@ -45,12 +48,12 @@
 						        <div class="panel-heading bg-nav" >
 						            <h5 class="panel-title white">
 						                <a  data-toggle="collapse" href="#dash{{$internship->faq_id}}" class = "down{{$internship->faq_id}}"> 
-						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {{$internship->question}}</p>
+						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {!!$internship->question!!}</p>
 						                </a>
 						            </h5>
 						        </div>
 						        <div id="dash{{$internship->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
-						            <p>{{$internship->answer}}</p>
+						            <p>{!!$internship->answer!!}</p>
 						        </div>    
 						    </div>  
 						</div>
@@ -65,12 +68,12 @@
 						        <div class="panel-heading bg-nav" >
 						            <h5 class="panel-title white">
 						                <a  data-toggle="collapse" href="#dash{{$spring->faq_id}}" class = "down{{$spring->faq_id}}"> 
-						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {{$spring->question}}</p>
+						                   <p><i class="fa fa-angle-right red" aria-hidden="true"></i> {!!$spring->question!!}</p>
 						                </a>
 						            </h5>
 						        </div>
 						        <div id="dash{{$spring->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
-						            <p>{{$spring->answer}}</p>
+						            <p>{!!$spring->answer!!}</p>
 						        </div>    
 						    </div>  
 						</div>
@@ -90,7 +93,7 @@
 						            </h5>
 						        </div>
 						        <div id="dash{{$summer->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
-						            <p>{{$summer->answer}}</p>
+						            <p>{!!$summer->answer!!}</p>
 						        </div>    
 						    </div>  
 						</div>
@@ -110,7 +113,7 @@
 						            </h5>
 						        </div>
 						        <div id="dash{{$aupair->faq_id}}" class="panel-collapse collapse bg-nav navbar-content">
-						            <p>{{$aupair->answer}}</p>
+						            <p>{!!$aupair->answer!!}</p>
 						        </div>    
 						    </div>  
 						</div>

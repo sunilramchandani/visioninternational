@@ -68,7 +68,7 @@
                 </li>
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/blog') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-thumb-tack"></i>
+                        <i class="fa fa-bold"></i>
                         <span>Blog</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -91,7 +91,7 @@
                 </li>
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/blog') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-thumb-tack"></i>
+                        <i class="fa fa-calendar"></i>
                         <span>Event</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -108,7 +108,7 @@
                 </li>
               <li class="treeview {{ ($currentRoutePrefix === 'admin/news') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-thumb-tack"></i>
+                        <i class="fa fa-paper-plane"></i>
                         <span>News</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -132,7 +132,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/media') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-thumb-tack"></i>
+                        <i class="fa fa-tv"></i>
                         <span>Media</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -227,7 +227,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/featuredimage') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-bookmark"></i>
+                        <i class="fa fa-image"></i>
                         <span>  Featured Images   </span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -275,7 +275,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/aboutus') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-address-card"></i>
                         <span>About Us</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -302,7 +302,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/faq') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-book"></i>
                         <span>FAQ</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -331,7 +331,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/pagestep') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-step-forward"></i>
                         <span>Page Steps</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -350,7 +350,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/rate') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-credit-card"></i>
                         <span>Rates</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -369,7 +369,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/author') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-user-circle"></i>
                         <span>Author</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -393,7 +393,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/category') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-list-ol"></i>
                         <span>Category</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -411,7 +411,7 @@
                 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/opportunity') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-ambulance"></i>
                         <span>Opportunity</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -429,7 +429,7 @@
 
                 <li class="treeview {{ ($currentRoutePrefix === 'admin/qualification') ? 'active' : '' }}">
                     <a href="#">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-key"></i>
                         <span>Qualification</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>

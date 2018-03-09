@@ -65,20 +65,18 @@
                 <div class="col-xs-12 col-md-3">
                     <label>Qualifications:</label>
                     @foreach($company->work_qualifications as $qualification)
-                        <ul>{{$qualification->qualificationlist->qualification_name}}</ul>
 
 
                         <button  class="btn btn-danger btn-block delete_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
-                        Delete</button>
+                        Delete [{{$qualification->qualificationlist->qualification_name}}]</button>
 
                     @endforeach
                 </div>
                  <div class="col-xs-12 col-md-3">
                      <label>Opportunities:</label>
                     @foreach($company->work_opportunity as $opportunity)
-                        <ul>{{$opportunity->opportunitylist->opportunity_name}}</ul>
                         <button  class="btn btn-danger btn-block delete_single_opportunity" data-id="{{ $opportunity->id }}" data-token="{{ csrf_token() }}">
-                        Delete</button>
+                        Delete [{{$opportunity->opportunitylist->opportunity_name}}]</button>
                     @endforeach
                 </div>
                 <div class="col-xs-12 col-md-3">
