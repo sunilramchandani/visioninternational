@@ -204,8 +204,10 @@
                 </div>
                 <div class = "col-md-7 col-xs-12">
                     <select class = "form-control" name="studies_name" id="studies_name">
-                        <option value="Undergraduate" selected>Undergraduate</option>
-                        <option value="No Further Studies">No Further Studies</option>
+                        <option value="Secondary/High School" selected>Secondary/High School</option>
+                        <option value="Technical/vocational education">Technical/vocational education</option>
+                        <option value="Technical/vocational education">Undergraduate degree</option>
+                        <option value="Post-graduate education">Post-graduate education</option>
                     </select>
                 </div>
             </div>
@@ -266,20 +268,10 @@
     var e = document.getElementById("program_name");
     var f = document.getElementById("country_name");
     var g = document.getElementById("location_name");
-    var h = document.getElementById("studies_name");
     var gaddress = {!! json_encode($internship_addresses->toArray()) !!};
     var haddress = {!! json_encode($work_addresses->toArray()) !!};
     var max = gaddress.length;
     var max2 = haddress.length;
-    h.onchange = function(){
-        var option = h.options[h.selectedIndex].value;
-        if(option == "Undergraduate"){
-            document.getElementById("grad").disabled=false;
-        }
-        else{
-            document.getElementById("grad").disabled=true;
-        }
-    }
     e.onchange = function() {
         var strUser = e.options[e.selectedIndex].value;
         if(strUser == "Internship"){

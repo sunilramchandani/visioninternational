@@ -564,6 +564,7 @@ Route::resource('work', 'WorkController');
 Route::resource('faq', 'faqController');
 Route::resource('media', 'MediaController');
 Route::resource('workvisa', 'SkilledWorkVisaController');
+Route::resource('opportunities', 'opportunityController');
 Route::get('/aupair', function () {
         return view('users.aupair.aupair');
     });

@@ -8,7 +8,7 @@
         <div class = "col-lg-2 col-md-2 col-sm-3 col-xs-3 company">
             <p>COMPANY</p>
             <ul>
-                <li><a href = "">Opportunities</a></li>
+                <li><a href = "/opportunities">Opportunities</a></li>
                 <li><a href = "/aboutus">About</a></li>
                 <li><a href = "news">News</a></li>
                 <li><a href = "/fb">Events</a></li>
