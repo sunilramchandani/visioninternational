@@ -85,6 +85,13 @@ class ContactUsController extends Controller
             'bodyMessage'   => $request->message,
         );
 
+        /*  
+        $title = $request->input('title');
+        $article = $request->input('article');
+
+
+        $this->dispatch(new SendNotificationJob($title, $article ));
+
         Mail::send('users.contact_us.contact_received', $data, function ($mail) use($data) {
             $mail->from($data['email']);
             $mail->to('careers@visioninternational.skyrocketph.technology')->subject($data['general_inquiries']);
@@ -94,6 +101,7 @@ class ContactUsController extends Controller
             $mail->from('careers@visioninternational.skyrocketph.technology');
             $mail->to($data['email'])->subject($data['name']);
         });
+        */
 
 
         $success = array('ok'=> 'Success');

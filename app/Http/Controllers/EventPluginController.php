@@ -21,8 +21,7 @@ class EventPluginController extends Controller
     public function index(Request $request)
     {
         $curl = curl_init();
-        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=1903307039702096|nNl9j-XnQOaFXXcp2Z9GRrE8qQ8
-        ";
+        $rss_url = "https://graph.facebook.com/v2.11/visionphil/events?since=2017-12-30&fields=name,cover,description,end_time,start_time,place,timezone,limit=999&access_token=1903307039702096|nNl9j-XnQOaFXXcp2Z9GRrE8qQ8";
         curl_setopt($curl, CURLOPT_URL, $rss_url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)');
         curl_setopt($curl, CURLOPT_REFERER, '');
@@ -34,13 +33,29 @@ class EventPluginController extends Controller
         curl_close($curl);
 
         $insertResult = json_decode($data, true);
+/* 
+        $loop = count($insertResult['data']);
 
+        $forDelete = DB::table('fbevents')
+                    ->select('post_id')
+                    ->get();
+
+        for ($i=0; $i >= $loop; $i++){
+            $variable[] = $insertResult['data'][$i];
+
+            var_dump($variable);
+            
+            
+        }
+
+         */
+
+        
 
         if (isset($insertResult)){
             foreach ($insertResult['data'] as $result) {
                 // convert time to datetime instance
                 $starttimestamp = strtotime($result['start_time']);
-                
 
                 $datetime = new DateTime;
                 $datetime->setTimestamp($starttimestamp);
