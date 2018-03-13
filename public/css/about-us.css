@@ -78,6 +78,26 @@
 .show-side:hover .employee {
   transform: scale(1.127);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------MEDIA QUERIES */
 @media screen and (max-width: 991px) and (min-width: 720px) {
 	.header {
 	    height: 650px;
@@ -90,7 +110,35 @@
 		display: block;
 		margin-top: -5px;
 	}
+	.box{
+		height: 50%;
+		margin-bottom: 5%;
+	}
+
+	.show-side{
+		margin-bottom: 10%;
+	}
+
+	.show-side h4{
+		margin-top: 8%;
+	}
+
 }
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+	.box{
+		height: 50% !important;
+	}
+	
+  }
+
 @media screen and (max-width: 719px) and (min-width: 320px) {
 	.header-text {
 	    margin-top: -432;
@@ -133,16 +181,17 @@
 	}
 	.box {
 	    box-shadow: 0px 0px 12px 0px #ccc;
-	    height: 170px;
+	    height: 35%;
 	    border-radius: 6px;
-	    padding-bottom: 5%;
+		padding-bottom: 5%;
+		padding: 0;
 	}
 	.biggest-box{
 		padding-bottom: 5%;
 	}
 	.boxes p {
 	    color: #4c4c4c;
-	    font-size: 0.65em;
+	    font-size: 0.90em;
 	}
 	.bigger-header h4 {
 	    font-size: 2em;

@@ -169,7 +169,7 @@ class InternshipCompanyController extends Controller
         }
         else{
             $featuredimage_internship = FeaturedImage::where('page_name','internship')->get();
-            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get()->unique('state');
+            $internshipCompany_table = InternshipCompany::with('opportunity', 'qualifications','internship_industry', 'internship_duration')->get();
         
 
             $internship_addresses = InternshipCompany::orderBy('featured','desc')->pluck('housing_address');

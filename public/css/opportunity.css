@@ -1,0 +1,28 @@
+.box{
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 0;
+    border: solid 1px gray;
+    height: 290px;
+    color:black;
+}
+.box:hover{
+	background-color:#d64c39;
+	color:white !important;
+}
+.box:hover p{
+	color:white !important;
+}
+.internship{
+	padding-bottom: 2%;
+}    
+.company-image{
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 50%;
+    width:100%;
+}
+.text-titles-description{
+	padding-bottom: 3%;
+	padding-top: 1%;
+}

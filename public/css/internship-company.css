@@ -7,7 +7,6 @@
     padding-left: 5%;
     letter-spacing: 1.5;
 }
-    
 
 .dynamic-text-container-box{
 	background-color: rgba(54,56,60,0.7);
@@ -95,10 +94,14 @@ hr{
 	box-shadow: 5px 5px 5px grey;
 	padding: 0;
 }
-
+.picture2 {
+    padding: 0;
+}
 .img-map{
 	height:100%;
 	width: 100%;
+	border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 .dropdown-content-filler {
     display: none;
@@ -428,7 +431,7 @@ margin-top: 5px;
 }
 
 .button{
-	margin-top: 68px;
+	margin-top: 35px;
 }
 
 .red-button{
@@ -462,6 +465,53 @@ margin-top: 5px;
 .img-line{
 	display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.side-content{
+		height: 130% !important;
+	}
+}
+
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
 	.testimony-picture {
 	    height: 300px;
@@ -476,7 +526,9 @@ margin-top: 5px;
 	    top: -7%;
 	}
 }
-@media screen and (max-width: 991px) and (min-width: 720px) {
+
+
+ @media screen and (max-width: 991px) and (min-width: 720px) {
 	.header {
 	    height: 650px;
 	    width: 100%;
@@ -489,12 +541,12 @@ margin-top: 5px;
 		margin-top: -5px;
 	}
 	.Top-header-message {
-	    margin-top: 20px;
+	    margin-top: 15%;
 	    padding-bottom: 5%;
 	}
 
 	.company-head {
-    	height: 30%;
+    	height: auto;
 	    width: 100%;
 	    border-top-left-radius: 6px;
 	    border-top-right-radius: 6px;
@@ -531,21 +583,61 @@ margin-top: 5px;
 	    font-size: 10px;
 	    width: 90%;
 	}
+
+	.boxshadow{
+		margin-bottom: 10%;
+	}
+
 	.company-whole{
 		box-shadow: none;
 		padding: 0;
 	}
 	.side-content {
+		height: 240%;
 	    overflow: hidden;
 	    padding-bottom: 5%;
 	    padding-top: 5%;
 	}
-}
-@media screen and (max-width: 719px) and (min-width: 320px) {
+	
+	.info-container{
+		height: 100%;
+	}
+
+	.what-next-text{
+		padding-bottom: 12%;
+	}
+
+	.number-icon{
+		top: -5%;
+		left: 45%;
+	}
+
+	.number-icon2{
+		top: -5%;
+		left: 45%;
+	}
+
+	.number-icon3{
+		top: -5%;
+		left: 45%;
+	}
+
+} 
+
+
+@media screen and (max-width: 736px) and (min-width: 320px) {
 	.header {
 	    height: 425px;
 	    width: auto;
 	}
+	.internship-icon{
+		padding-left: 11%;
+	}
+
+	.what-next-text{
+		padding-bottom: 15%;
+	}
+
 	.img-border{
 		display: none;
 	}
@@ -581,7 +673,7 @@ margin-top: 5px;
 	    z-index: 0;
 	    border-radius: 12px;
 	    letter-spacing: 1px;
-	    margin-top: -225px;
+	    margin-top: -234.5px;
 	    color: white;
 	}
 	.row-price p {
@@ -617,26 +709,25 @@ margin-top: 5px;
 	    background: #f2f2f2;
 	    padding-bottom: 3%;
 	    box-shadow: 2px 4px 12px 2px #B0B0B0;
-	    border-top-left-radius: 6px;
-	    border-top-right-radius: 6px;
+	    border-radius: 6px;
 	    margin-top: 3%;
-	    height: 90%;
+	    height: 60%;
 	}
 	.locate-me1 {
 	    position: absolute;
 	    bottom: 10px;
-	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+		background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
 	    color: white;
 	    border-radius: 6px;
 	    font-size: 10px;
-	    width: 60%;
+	    width: 90%;
 	}
 	.locate-me {
-	    background: linear-gradient(to top left, #800000 0%, #ff0000 100%);
+		background: linear-gradient(to top left, #b31f10 20%, #950904 90%);
 	    color: white;
 	    border-radius: 8px;
 	    font-size: 10px;
-	    width: 90%;
+	    width: 104%;
 	}
 	#reserve-title {
 	    color: #c42b16;
@@ -657,28 +748,29 @@ margin-top: 5px;
 	    border-radius: 10px;
 	    box-shadow: 0px 0px 6px 0px #ccc;
 	    padding: 30px 10 10 0;
-	    margin-bottom: 5%;
+	    margin-bottom: 15%;
 	}
 	.number-icon {
 	    position: absolute;
 		top: -4%;
 		height: 38px;
-		left: 43%;
+		left: 45%;
 	}
 	.number-icon2 {
 	    position: absolute;
-	    top: -4%;
+	    top: -3%;
 	    height: 38px;
 	    left: 45%;
 	}
 	.number-icon3 {
 	    position: absolute;
-	    top: -4%;
+	    top: -3%;
 	    height: 38px;
 	    left: 45%;
 	}
 	.left-side{
 		padding-top: 5%;
+		padding: 8%;
 	}
 	.last-row1{
 		font-size: 14;
@@ -727,7 +819,7 @@ margin-top: 5px;
 	    overflow: auto;
 	    padding-bottom: 5%;
 	    padding-top: 5%;
-	    height: 50%;
+	    height: 80%;
 	}
 	.dynamic-text-container{
 		padding:0;
@@ -737,7 +829,7 @@ margin-top: 5px;
 	    z-index: 0;
 	    border-radius: 12px;
 	    letter-spacing: 1px;
-	    margin-top: -233;
+	    margin-top: -234.5px;
 	    color: white;
 	    height: 421.5px;
 	    padding: 0;
@@ -751,7 +843,7 @@ margin-top: 5px;
 	}
 	.dynamic-text-container-box h1 {
 	    text-align: center;
-	    font-size: 3.5em;
+	    font-size: 2.8em;
 	    letter-spacing: 3px;
 	}
 	.modal-content{

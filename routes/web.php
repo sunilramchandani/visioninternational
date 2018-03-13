@@ -586,15 +586,11 @@ Route::resource('internship', 'InternshipController');
 Route::resource('work', 'WorkController');
 Route::resource('faq', 'faqController');
 Route::resource('media', 'MediaController');
-Route::resource('workvisa', 'SkilledWorkVisaController');
-Route::get('/aupair', [
-    'uses' => 'AuPairController@index',
-    'as' => 'aupaur.index'
-]);
-Route::get('/workvisa', [
-    'uses' => 'Skilledcontroller@index',
-    'as' => 'skilled.index'
-]);
+Route::resource('workvisa', 'SkilledController');
+Route::resource('aupair', 'AuPairController');
+Route::resource('opportunities', 'opportunityController');
+
+
 Route::get('/single_event/{fbevent_id}', [
         'uses' => 'EventPluginController@eventSingle',
         'as' => 'event.single'

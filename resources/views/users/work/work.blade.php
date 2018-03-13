@@ -23,8 +23,12 @@
                 @else
                 <h4> Australia </h4>
                 @endif
-                <H1> WORK & TRAVEL </H1>
-                <p class ="p-dynamic">We provide travel opportunities for students, graduates, and those with industry experience</p>
+                <div class = "col-xs-12">
+                    <H1> WORK & TRAVEL </H1>
+                </div>
+                <div class = "col-xs-12">
+                    <p class ="p-dynamic">We provide travel opportunities for students, graduates, and those with industry experience</p>
+                </div>
             </div>
         
 @endforeach
@@ -36,9 +40,9 @@
     <div class = " row">
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
-            <br/>
-            <p> Your journey begins with Vision International and its wide network of reputable  </p>
-            <p> partners across the country, enabling you to travel and work in your location of choice</p>
+            <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                <p> Your journey begins with Vision International and its wide network of reputable partners across the country, enabling you to travel and work in your location of choice. </p>
+            </div>
         </div>
     </div>
     <div class = "body-content" id= "body-content">
@@ -231,9 +235,9 @@
                         <img src="{{ URL::asset('image\uploaded_workcompany_image')}}/{{$company->image}}" class="img img-responsive company-head" alt="Company Banner">
                     </div>
                     <div class = "row info">
-                        <h4>{{$company->full_address}}</h4>
+                        <h4>{{ \Illuminate\Support\Str::words($company->full_address, 5,' .... ')}}</h4>
                         <h3>{{$company->company_name}}</h3>
-                        <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
+                        <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 10,' .... ')}}</p>
                         <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                     </div>
                 </div>
@@ -246,8 +250,9 @@
         <div class = "col-xs-12">
             <div class = "row text-center what-next-text">
                 <h2 id=whatsnext-title>What's Next?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                    <p>Our process is  smooth and easy. We can facilitate your application and get you to your dream destination as soon as possible!</p>
+                </div>
             </div>
         </div>
           <!-- number 1 -->
@@ -289,13 +294,13 @@
                     </div>
 
                     <div class="intership-content  col-md-6 col-xs-12">
-                        <p id=p-content>Your assigned program speacialist will help</p>
+                        <p id=p-content>Your assigned program specialist will help</p>
                         <p id=p-content>you create a video resume that will be submitted.</p>
                         <p id=p-content>Make sure you have a Skype account registered. </p>
                         <p id=p-content>We will practice you for your interviews</p>
                         <p id=p-content>and make sure you're ready!</p>
                         <div class="button">
-                            <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                            <a href= "/faq" class="btn locate-me">Webinar: How do I Prepare for My Interview?</a>
                         </div>
                     </div>
                  </div>
@@ -439,11 +444,9 @@
 
         <div class="container">
             <div class="row testimony-header">
-                <div class="about-font text-center">
+                <div class=" col-md-8 col-md-offset-2 col-xs-12 about-font text-center">
                      <h3>Our Community</h3>
-                     <p>Get inspiration from those who have come before you. 
-                        <br>Here are some of our students who have experienced work life abroad.
-                    </p>
+                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories.</p>
                 </div>
             </div>
             <div class = "row testimony-content">
@@ -535,8 +538,8 @@ function initMap() {
       var elevator;
         var myOptions = {
             zoom: 4,
-            maxZoom: 10,
             minZoom: 4,
+            maxZoom: 16,
             center: new google.maps.LatLng(0, 0),
             mapTypeId: 'terrain'
         };

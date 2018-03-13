@@ -35,9 +35,9 @@
     <div class = " row">
         <div class = "col-md-12 col-xs-12 Top-header-message text-center">
             <h1>Your Destination</h1>
-            <br/>
-            <p> Our Internship Programs prepare students for life and work outside of school. Participants  </p>
-            <p> get to work in world-class facilities in the US and in other locations accross the globe</p>
+            <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                <p> Our Internship Programs prepare students for life and work outside of school. Participants get to work in world-class facilities in the US and in other locations across the globe. </p>
+            </div>
         </div>
     </div>
     <div class = "body-content" id= "body-content">
@@ -230,9 +230,9 @@
                     </div>
                     @endif
                     <div class = "row info">
-                        <h4>{{$company->full_address}}</h4>
+                        <h4>{{ \Illuminate\Support\Str::words($company->full_address, 5,' .... ')}}</h4>
                         <h3>{{$company->company_name}}</h3>
-                        <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 15,' .... ')}}</p>
+                        <p class = "desc">{{ \Illuminate\Support\Str::words($company->description, 10,' .... ')}}</p>
                         <a href = "javascript:google.maps.event.trigger(gmarkers[{{$loop->index}}],'click');"  class = "btn locate-me1"> Locate Me </a>
                     </div>
                 </div>
@@ -245,8 +245,9 @@
         <div class = "col-xs-12">
             <div class = "row text-center what-next-text">
                 <h2 id=whatsnext-title>What's Next?</h2>
-                <p id=about-next>Our process is  smooth and easy. We can facilitate your application</p>
-                <p id=about-next>and get you to your dream destination as soon as possible!</p>
+                <div class = "col-xs-12 col-md-4 col-md-offset-4">
+                    <p>Our process is  smooth and easy. We can facilitate your application and get you to your dream destination as soon as possible!</p>
+                </div>
             </div>
         </div>
           <!-- number 1 -->
@@ -288,13 +289,13 @@
                     </div>
 
                     <div class="intership-content  col-md-6 col-xs-12">
-                        <p id=p-content>Your assigned program speacialist will help</p>
+                        <p id=p-content>Your assigned program specialist will help</p>
                         <p id=p-content>you create a video resume that will be submitted.</p>
                         <p id=p-content>Make sure you have a Skype account registered. </p>
                         <p id=p-content>We will practice you for your interviews</p>
                         <p id=p-content>and make sure you're ready!</p>
                         <div class="button">
-                            <a href= "/faq" class="btn locate-me">Webinar: How do i Prepare for My Interview?</a>
+                            <a href= "/faq" class="btn locate-me">Webinar: How do I Prepare for My Interview?</a>
                         </div>
                     </div>
                  </div>
@@ -340,19 +341,16 @@
                             </div>
                            <div class = "col-xs-5 col-md-4">
                                 
-                                @if ( Request::get('country') == "United States"  )
-                                <select class = "form-control" name="duration" id="duration">
-                                    @foreach($rate_us as $rate)
-                                        @if ($rate->duration == "12")
-                                        <option value="{{$rate->duration}}" selected="">{{$rate->duration}} Months</option>
-                                        @else 
+                                @if ( Request::get('country') == "Australia"  )
+     
+                                 <select class = "form-control" name="duration2" id="duration2">
+                                    @foreach($rate_au as $rate)
                                         <option value="{{$rate->duration}}">{{$rate->duration}} Months</option>
-                                        @endif
                                     @endforeach
                                 </select>
                                 @else
-                                <select class = "form-control" name="duration2" id="duration2">
-                                     @foreach($rate_au as $rate)
+                                <select class = "form-control" name="duration" id="duration">
+                                    @foreach($rate_us as $rate)
                                         @if ($rate->duration == "12")
                                         <option value="{{$rate->duration}}" selected="">{{$rate->duration}} Months</option>
                                         @else 
@@ -374,26 +372,79 @@
                         </div>
                         <div class = "row row-price">
                              <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
+                                @if ( Request::get('country') == "Australia"  )
+                                    @foreach($rate_au as $rate)
+                                    <strong><p id = "1st-Installment">$ {{$rate->first}}</p></strong>
+                                    @endforeach
+                                @else
                                 <strong><p id = "1st-Installment">USD 450</p></strong>
+                                @endif
+                                
                             </div>
                             <div class = "col-xs-4 col-md-4">
                                 <p>First Installment *</p>
                             </div>
                         </div>
                         <div class = "row row-price">
+                           @if ( Request::get('country') == "Australia")
+                           <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
+                            @else
                             <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 last-row last-row1">
+                            @endif
+                                @if ( Request::get('country') == "Australia"  )
+                                    @foreach($rate_au as $rate)
+                                    <strong><p id = "2nd-Installment">$ {{$rate->second}}</p></strong>
+                                    @endforeach
+                                @else
                                 <strong><p id = "2nd-Installment">USD 4100</p></strong>
+                                @endif
                             </div>
-                           <div class = "col-xs-4 col-md-4 last-row">
+                            @if ( Request::get('country') == "Australia")
+                            <div class = "col-xs-4 col-md-4">
+                            @else
+                            <div class = "col-xs-4 col-md-4 last-row">
+                            @endif
                                 <p>Second Installment **</p>
                             </div>
                         </div>
+                        @if ( Request::get('country') == "Australia"  )
+                        <div class = "row row-price">
+                            <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 ">
+                                @if ( Request::get('country') == "Australia"  )
+                                    @foreach($rate_au as $rate)
+                                    <strong><p id = "2nd-Installment">$ {{$rate->third}}</p></strong>
+                                    @endforeach
+                                @else
+                                <strong><p id = "2nd-Installment">USD 4100</p></strong>
+                                @endif
+                            </div>
+                           <div class = "col-xs-4 col-md-4">
+                                <p>Third Installment **</p>
+                            </div>
+                        </div>
+                        <div class = "row row-price">
+                             <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1 last-row last-row1">
+                                @foreach($rate_au as $rate)
+                                    <strong><p id = "reservation">$ {{$rate->visa}}</p></strong>
+                                @endforeach
+                            </div>
+                            <div class = "col-xs-4 col-md-4 last-row">
+                                <p>VISA and Insurance</p>
+                            </div>
+                        </div>
+                        @endif
                         <div class = "col-xs-8 col-xs-offset-2 hidden-md hidden-xl hidden-lg">
                             <hr>
                         </div>
                         <div class = "row row-price">
                              <div class = "col-xs-4 col-xs-offset-2 col-md-3 col-md-offset-1">
+                                 @if ( Request::get('country') == "Australia"  )
+                                    @foreach($rate_au as $rate)
+                                    <strong><p id = "2nd-Installment">$ {{$rate->total}}</p></strong>
+                                    @endforeach
+                                @else
                                 <strong><p id = "3rd-Installment">USD 4550</p></strong>
+                                @endif
                             </div>
                             <div class = "col-xs-4 col-md-4">
                                 <p>Total Program Payment</p>
@@ -500,7 +551,7 @@
             <div class="row testimony-header">
                 <div class=" col-md-8 col-md-offset-2 col-xs-12 about-font text-center">
                      <h3>Our Community</h3>
-                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories</p>
+                     <p>We are proud to have an amazing community of students and professionals who have received the VIP treatment. Listen to their stories.</p>
                 </div>
             </div>
             <div class = "row testimony-content">
@@ -614,14 +665,14 @@ function initMap() {
             var markers = new google.maps.Marker({
                     position: latlng,
                     map: map,
-                    icon: "/image/icons/vip_map-01-Featured.png"
+                    icon: "/image/icons/VIP-MAP-F.png"
             });
         }
         else{
             var markers = new google.maps.Marker({
                     position: latlng,
                     map: map,
-                    icon: "/image/icons/vip_map.png"
+                    icon: "/image/icons/VIP-MAP.png"
             });
         }
         gmarkers.push(markers);

@@ -57,7 +57,7 @@ class RateController extends Controller
             $total = $f + $s + $t +$v;
         }
         else{
-            $total = $f + $s + $t +$v;
+            $total = $f + $s + $t;
         }
 
         
