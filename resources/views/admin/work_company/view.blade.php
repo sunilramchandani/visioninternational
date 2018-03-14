@@ -96,18 +96,6 @@
 
                     @endforeach
                 </div>
-                <div class="col-xs-12 col-md-3">
-                    <label>Qualifications:</label>
-                    @foreach($company->work_qualifications as $qualification)
-                    @if($qualification->status == "Inactive")
-                        <button  class="btn btn-success btn-block enable_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
-                        Enable [{{$qualification->qualificationlist->qualification_name}}]</button>
-                    @else
-                        <button  class="btn btn-info btn-block disable_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
-                        Disable [{{$qualification->qualificationlist->qualification_name}}]</button>
-                    @endif
-                    @endforeach
-                </div>
             </div>
         </div>
 
