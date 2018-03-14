@@ -467,6 +467,71 @@ class InternshipCompanyController extends Controller
 
     }
 
+    public function enableOpportunity($id)
+    {
+
+        
+        $opportunity = Opportunity::find($id);
+
+        if($opportunity->status = "Inactive")
+        {
+        $opportunity->status = "Active";
+        $opportunity->save();
+        }
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function disableOpportunity($id)
+    {
+
+        
+        $opportunity = Opportunity::find($id);
+
+
+        if($opportunity->status = "Active"){
+        $opportunity->status = "Inactive";
+        $opportunity->save();
+        }
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function disableQualification($id)
+    {
+
+        
+        $qualification = Qualification::find($id);
+        if($qualification->status = "Active"){
+        $qualification->status = "Inactive";
+        $qualification->save();}
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+    public function enableQualification($id)
+    {
+
+        
+        $qualification = Qualification::find($id);
+        if($qualification->status = "Inactive"){
+        $qualification->status = "Active";
+        $qualification->save();}
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+
     
 
     public function createQualification($id)

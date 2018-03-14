@@ -248,6 +248,28 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
             'as' => 'workcompany.deleteOpportunity'
         ]);
 
+        Route::patch('/enableOpportunity/{id}', [
+            'uses' => 'WorkCompanyController@enableOpportunity',
+            'as' => 'workcompany.enableOpportunity'
+        ]);
+
+        Route::patch('/disableOpportunity/{id}', [
+            'uses' => 'WorkCompanyController@disableOpportunity',
+            'as' => 'workcompany.disableOpportunity'
+        ]);
+
+        Route::patch('/enableQualification/{id}', [
+            'uses' => 'WorkCompanyController@enableQualification',
+            'as' => 'workcompany.enableQualification'
+        ]);
+
+        Route::patch('/disableQualification/{id}', [
+            'uses' => 'WorkCompanyController@disableQualification',
+            'as' => 'workcompany.disableQualification'
+        ]);
+
+        
+
         Route::get('/trash', ['uses' => 'WorkCompanyController@viewTrash', 'as' => 'workcompany.trash']);
 
 
@@ -336,6 +358,26 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::delete('/deleteOpportunity/{id}', [
             'uses' => 'InternshipCompanyController@deleteOpportunity',
             'as' => 'internshipcompany.deleteOpportunity'
+        ]);
+
+        Route::patch('/enableOpportunity/{id}', [
+            'uses' => 'InternshipCompanyController@enableOpportunity',
+            'as' => 'internshipcompany.enableOpportunity'
+        ]);
+
+        Route::patch('/disableOpportunity/{id}', [
+            'uses' => 'InternshipCompanyController@disableOpportunity',
+            'as' => 'internshipcompany.disableOpportunity'
+        ]);
+
+        Route::patch('/enableQualification/{id}', [
+            'uses' => 'InternshipCompanyController@enableQualification',
+            'as' => 'internshipcompany.enableQualification'
+        ]);
+
+        Route::patch('/disableQualification/{id}', [
+            'uses' => 'InternshipCompanyController@disableQualification',
+            'as' => 'internshipcompany.disableQualification'
         ]);
 
 

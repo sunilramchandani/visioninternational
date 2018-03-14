@@ -490,5 +490,70 @@ class WorkCompanyController extends Controller
         return redirect()->back()->with($success);
     }
 
+    public function enableOpportunity($id)
+    {
+
+        
+        $opportunity = WorkOpportunity::find($id);
+
+        if($opportunity->status = "Inactive")
+        {
+        $opportunity->status = "Active";
+        $opportunity->save();
+        }
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function disableOpportunity($id)
+    {
+
+        
+        $opportunity = WorkOpportunity::find($id);
+
+
+        if($opportunity->status = "Active"){
+        $opportunity->status = "Inactive";
+        $opportunity->save();
+        }
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+    public function disableQualification($id)
+    {
+
+        
+        $qualification = WorkQualification::find($id);
+        if($qualification->status = "Active"){
+        $qualification->status = "Inactive";
+        $qualification->save();}
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+    public function enableQualification($id)
+    {
+
+        
+        $qualification = WorkQualification::find($id);
+        if($qualification->status = "Inactive"){
+        $qualification->status = "Active";
+        $qualification->save();}
+        
+            return response()->json([
+        'success' => 'Record has been deleted successfully!'
+    ]);
+
+    }
+
+
     
 }

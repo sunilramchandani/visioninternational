@@ -72,11 +72,37 @@
                     @foreach($company->opportunity as $opportunity)
                         <button  class="btn btn-danger btn-block delete_single_opportunity" data-id="{{ $opportunity->id }}" data-token="{{ csrf_token() }}">
                         Delete [{{$opportunity->opportunitylist->opportunity_name}}]</button>
+
                     @endforeach
                 </div>
                 <div class="col-xs-12 col-md-3">
                      <label>Note:</label>
                         <p>{{$company->remark}}</p>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                     <label>Opportunities:</label>
+                    @foreach($company->opportunity as $opportunity)
+                        @if($opportunity->status == "Inactive")
+                        <button  class="btn btn-success btn-block enable_single_opportunity" data-id="{{ $opportunity->id }}" data-token="{{ csrf_token() }}">
+                        Enable [{{$opportunity->opportunitylist->opportunity_name}}]</button>
+                        @else 
+                        <button  class="btn btn-info btn-block disable_single_opportunity" data-id="{{ $opportunity->id }}" data-token="{{ csrf_token() }}">
+                        Disable [{{$opportunity->opportunitylist->opportunity_name}}]</button>
+                        @endif
+
+                    @endforeach
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <label>Qualifications:</label>
+                    @foreach($company->qualifications as $qualification)
+                    @if($qualification->status == "Inactive")
+                        <button  class="btn btn-success btn-block enable_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
+                        Enable [{{$qualification->qualificationlist->qualification_name}}]</button>
+                    @else
+                        <button  class="btn btn-info btn-block disable_single_qualification" data-id="{{ $qualification->id }}" data-token="{{ csrf_token() }}">
+                        Disable [{{$qualification->qualificationlist->qualification_name}}]</button>
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -158,4 +184,134 @@
 
             });
 </script>
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".enable_single_opportunity").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "enableOpportunity/"+id,
+                  type: 'patch',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'PATCH',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".disable_single_opportunity").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "disableOpportunity/"+id,
+                  type: 'patch',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'PATCH',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".enable_single_qualification").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "enableQualification/"+id,
+                  type: 'patch',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'PATCH',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+<script>
+             jQuery(document).ready(function($) {
+
+              $(".disable_single_qualification").click(function(){
+                var id = $(this).data("id");
+                var token = $(this).data("token");
+
+                $.ajax(
+                {
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                  url: "disableQualification/"+id,
+                  type: 'patch',
+                  dataType: 'json',
+                   data: {
+                    "id": id,
+                    "_method": 'PATCH',
+                    "_token": token,
+                  },
+                  success: function (){
+                    console.log("SUCCESSS!!!");
+                    window.location.reload();
+                  },
+                  error: function(){
+                    alert('error please contact administrator')
+                  } 
+                });
+              });
+
+            });
+</script>
+
     @endsection

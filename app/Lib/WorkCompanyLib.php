@@ -39,8 +39,8 @@ class WorkCompanyLib
         $workcompany->housing_address = $data['housing_address'];
         $workcompany->full_address = $data['full_address'];
 
-        $company->latitude = $data['latitude'];
-        $company->longtitude = $data['longtitude'];
+        $workcompany->latitude = $data['latitude'];
+        $workcompany->longtitude = $data['longtitude'];
 
 
         $workcompany->stipend = $data['stipend'];
