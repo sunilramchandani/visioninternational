@@ -261,7 +261,8 @@ class EventPluginController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = EventPlugin::find($id);
+        return view('admin.event.edit', compact('event'));
     }
 
     /**
@@ -273,7 +274,22 @@ class EventPluginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = EventPlugin::findorFail($id);
+
+        $event->event_name = $request['event_name'];
+        $event->event_description = $request['event_description'];
+        $event->cover_source = $request['cover_source'];
+        $event->start_time = $request['start_time'];
+        $event->end_time = $request['end_time'];
+        $event->place_name = $request['place_name'];
+        $event->location_city = $request['location_city'];
+        $event->location_country = $request['location_country'];
+        $event->location_street = $request['location_street'];
+        $event->save();
+
+        $success = array('ok'=> 'Success');
+        
+        return redirect()->route('event.list')->with($success);
     }
 
     /**

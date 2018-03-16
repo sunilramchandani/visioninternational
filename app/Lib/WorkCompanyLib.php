@@ -44,6 +44,7 @@ class WorkCompanyLib
 
 
         $workcompany->stipend = $data['stipend'];
+        $workcompany->stipend_maximum = $data['stipend_maximum'];
         $workcompany->state = $data['state'];
         
 
@@ -123,6 +124,7 @@ class WorkCompanyLib
 
 
         $workcompany->stipend = $data['stipend'];
+        $workcompany->stipend_maximum = $data['stipend_maximum'];
         $workcompany->state = $data['state'];
         $workcompany->country = $data['country'];
         $workcompany->remark = $data['remark'];

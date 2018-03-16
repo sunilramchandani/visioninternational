@@ -25,6 +25,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
         Route::get('/view/{id}', ['uses' => 'EventPluginController@adminView', 'as' => 'event.view']);
         Route::post('/view/{id}', ['uses' => 'EventPluginController@adminUpdate', 'as' => 'event.update']);
 
+        
+        Route::get('/edit/{id}', ['uses' => 'EventPluginController@edit', 'as' => 'event.adminEdit']);
+        Route::post('/edit/{id}', ['uses' => 'EventPluginController@update', 'as' => 'event.adminUpdate']);
+
+            
         Route::delete('/deleteEventCategory/{id}', [
             'uses' => 'EventPluginController@deleteEventCategory',
             'as' => 'event.deleteEventCategory'

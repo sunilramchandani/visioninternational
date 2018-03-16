@@ -20,7 +20,7 @@
                     <thead>
                         <tr>
                             <th>Event Name</th>
-                            <th>Actions</th>
+                            <th colspan="2">Actions</th>
                         </tr>
                     </thead>
 
@@ -28,6 +28,7 @@
                         @foreach($event as $single_event)
                             <tr>
                                 <td>{{ $single_event->event_name }}</td>
+                                
                                 <td>
                                     <a
                                         href="{{ route('event.view', $single_event->fbevent_id) }}"
@@ -35,6 +36,15 @@
                                         Manage Category
                                     </a>
                                 </td>
+                                @if($single_event->fbevent_id == 1)
+                                <td>
+                                    <a
+                                        href="{{ route('event.adminEdit', $single_event->fbevent_id) }}"
+                                        class="btn btn-info">
+                                        Edit
+                                    </a>
+                                </td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>

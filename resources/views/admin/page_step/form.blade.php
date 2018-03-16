@@ -23,7 +23,7 @@
                             <label for="step_number">
                                 Step Number
                             </label>
-                            <input type="number" min="1" max="3" class="form-control" id="step_number" name="step_number" required value="{{ isset($page_step->step_number) ? $page_step->step_number:"
+                            <input type="number" min="1" max="4" class="form-control" id="step_number" name="step_number" required value="{{ isset($page_step->step_number) ? $page_step->step_number:"
                                 "}}">
                         </div>
                     </div>
@@ -60,7 +60,26 @@
 
 
                 </div>
-
+                @if($page_step->step_number == 4)
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="company_website">
+                                Image Description
+                            </label>
+                            <textarea class="summernote" rows=5 id="image_description" name="image_description" required placeholder="Image Description . . .">{{isset($page_step->image_description) ? $page_step->image_description : '' }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="company_website">
+                                Description
+                            </label>
+                            <textarea class="summernote" rows=5 id="description" name="description" required placeholder="Description . . .">{{ isset($page_step->description) ? $page_step->description : '' }}</textarea>
+                        </div>
+                    </div>
+                </div>
+                @else
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="form-group">
@@ -79,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <div class="row">
                     <div class="col-xs-6">
@@ -115,4 +135,13 @@
         </div>
     </div>
 </section>
+@endsection
+@section('scripts')
+<script>
+    $(document).ready(function () {
+        $('.summernote').summernote({
+            height: 250
+        });
+    });
+</script>
 @endsection

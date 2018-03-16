@@ -140,6 +140,7 @@ class AboutUsController extends Controller
         $aboutUs = new AboutUs;
 
         $aboutUs->about_department = $request['about_department'];
+        $aboutUs->bio = $request['bio'];
         $aboutUs->about_name = $request['about_name'];
         $aboutUs->about_position = $request['about_position'];
         $aboutUs->about_twitter = $request['about_twitter'];
@@ -168,6 +169,7 @@ class AboutUsController extends Controller
 
         $aboutUs->about_department = $request['about_department'];
         $aboutUs->about_name = $request['about_name'];
+        $aboutUs->bio = $request['bio'];
         $aboutUs->about_position = $request['about_position'];
         $aboutUs->about_twitter = $request['about_twitter'];
         $aboutUs->about_linkedin = $request['about_linkedin'];

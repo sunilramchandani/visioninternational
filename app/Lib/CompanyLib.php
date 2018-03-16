@@ -46,6 +46,7 @@ class CompanyLib
         $company->longtitude = $data['longtitude'];
         
         $company->stipend = $data['stipend'];
+        $company->stipend_maximum = $data['stipend_maximum'];
         $company->state = $data['state'];
         
         $company->country = $data['country'];
@@ -119,6 +120,7 @@ class CompanyLib
         $company->latitude = $data['latitude'];
         $company->longtitude = $data['longtitude'];
         $company->stipend = $data['stipend'];
+        $company->stipend_maximum = $data['stipend_maximum'];
         $company->state = $data['state'];
 
         $company->country = $data['country'];

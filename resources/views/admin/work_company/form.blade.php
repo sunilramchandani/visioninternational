@@ -81,9 +81,17 @@
                 <div class = "col-md-4 col-xs-12">
                     <div class="form-group">
                         <label for="stipend">
-                            Stipend
+                            Stipend Minimum
                         </label>
-                        <input type="number" min ="0" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Stipend"required>
+                        <input type="number" min ="0" class="form-control" id="stipend" name="stipend" value="{{ isset($company) ? $company->stipend : '' }}" placeholder="Stipend Min"required>
+                    </div>
+                </div>
+                <div class = "col-md-4 col-xs-12">
+                    <div class="form-group">
+                        <label for="stipend">
+                            Stipend Maximum
+                        </label>
+                        <input type="number" min ="0" class="form-control" id="stipend_maximum" name="stipend_maximum" value="{{ isset($company) ? $company->stipend_maximum : '' }}" placeholder="Stipend Max"required>
                     </div>
                 </div>
                 <div class = "col-md-4 col-xs-12">
