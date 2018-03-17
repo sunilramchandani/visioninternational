@@ -64,7 +64,7 @@
             <a class = "submit btn" href = "/single_event/{{$events->fbevent_id}}"><span>More Info</span></a>
           </div>
         </div>
-      @else
+    @endif
       
       @if ($events->start_time > Carbon\Carbon::now()->addDay())
         <div class = "col-xs-6 col-sm-4 capsules">
@@ -79,7 +79,6 @@
           </div>
         </div>
       @else
-      @endif
       @endif
       @endforeach
      

@@ -52,9 +52,10 @@ class HomeController extends Controller
         $testimonials = Testimonials::all();
         $programs = Programs::all();
         
-        $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(4)->get();
+        $perma_event = EventPlugin::where('fbevent_id', '1')->get();
+        $events_table = EventPlugin::orderBy('fbevent_id', 'desc')->take(3)->get();
         $internshipcompany_table = InternshipCompany::where('featured','Yes')->get();
-        return view('welcome', compact('testimonial' , 'promo', 'featuredimage_home','events_table','internshipcompany_table', 'programs', 'testimonials','counter'));
+        return view('welcome', compact('perma_event', 'testimonial' , 'promo', 'featuredimage_home','events_table','internshipcompany_table', 'programs', 'testimonials','counter'));
     }
 
     public function adminIndex()
